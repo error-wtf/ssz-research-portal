@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-03 — Galactic-orbit evidence pass
+
+- Rebuilt the Galactic Year visual as a provenance-aware comparison of the kinematic, proper-motion, enclosed-mass and Sgr A* point-mass calculations.
+- Added propagated input uncertainty, a logarithmic period comparison and an explicit weak-field SSZ clock increment.
+- Reclassified the repository's 1.492 km/s output as a point-mass countercheck rather than a competing Solar-orbit prediction.
+- Added executable validation bounds for the source-period, angular-period, enclosed-mass and weak-field clock calculations.
+
 ## 2026-08-03 — scientific interface and evidence audit
 
 - expanded the reviewed formula catalogue from 58 to 98 equations and rebuilt formula cards with accessible MathJax display, including the pure metric’s inverse, determinant, volume density, coframe and flow form;

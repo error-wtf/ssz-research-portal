@@ -15,26 +15,48 @@
   }
   function quantities(){
     const radiusKpc=value("galactic-radius"),speedKmS=value("galactic-speed"),ecc=value("galactic-eccentricity"),zAmp=value("galactic-z-amplitude");
+    const radiusErr=value("galactic-radius-error"),speedErr=value("galactic-speed-error"),mu=value("galactic-proper-motion");
     const radius=radiusKpc*KPC,speed=speedKmS*1000,mass=4.3e6*M_SUN,rs=2*G*mass/C**2;
     const kinematic=2*Math.PI*radius/speed/YEAR/1e6,kepler=2*Math.PI*Math.sqrt(radius**3/(G*mass))/YEAR/1e6;
-    const xi=rs/(2*radius),D=1/(1+xi),ssz=kinematic/D;
-    return {radiusKpc,speedKmS,ecc,zAmp,kinematic,kepler,xi,D,ssz};
+    const omegaPeriod=1296000000/mu/1e6;
+    const enclosed=speed**2*radius/G/M_SUN;
+    const xi=rs/(2*radius),D=1/(1+xi),ssz=kinematic/D,clockDelta=(ssz-kinematic)*1e6;
+    const relativeError=Math.hypot(radiusErr/radiusKpc,speedErr/speedKmS);
+    const periodError=kinematic*relativeError;
+    const totalSpeed=4.74047*mu*radiusKpc;
+    return {radiusKpc,speedKmS,ecc,zAmp,radiusErr,speedErr,mu,kinematic,kepler,omegaPeriod,enclosed,xi,D,ssz,clockDelta,periodError,totalSpeed};
   }
   function draw(){
     const canvas=$("galactic-year-canvas");if(!canvas)return;const q=quantities(),{c,w,h,text,muted,line,gold}=surface(canvas);
     put("galactic-radius-out",`${fmt(q.radiusKpc,2)} kpc`);put("galactic-speed-out",`${fmt(q.speedKmS,0)} km/s`);
     put("galactic-eccentricity-out",fmt(q.ecc,3));put("galactic-z-amplitude-out",`${fmt(q.zAmp,3)} kpc`);
-    put("galactic-kinematic",`${fmt(q.kinematic,3)} Myr`);put("galactic-kepler",`${fmt(q.kepler,1)} Myr`);
-    put("galactic-xi",`${q.xi.toExponential(3)} / ${q.D.toFixed(12)}`);put("galactic-ssz-period",`${fmt(q.ssz,9)} Myr`);
-    const cx=w*.51,cy=h*.47,a=Math.min(w*.38,h*.34),b=a*Math.sqrt(1-q.ecc*q.ecc),focus=a*q.ecc;
+    put("galactic-radius-error-out",`±${fmt(q.radiusErr,3)} kpc`);put("galactic-speed-error-out",`±${fmt(q.speedErr,1)} km/s`);
+    put("galactic-proper-motion-out",`${fmt(q.mu,3)} mas yr⁻¹`);
+    put("galactic-kinematic",`${fmt(q.kinematic,2)} ± ${fmt(q.periodError,2)} Myr`);put("galactic-angular",`${fmt(q.omegaPeriod,2)} Myr`);
+    put("galactic-kepler",`${fmt(q.kepler,1)} Myr`);put("galactic-enclosed",`${q.enclosed.toExponential(3)} M☉`);
+    put("galactic-total-speed",`${fmt(q.totalSpeed,1)} km/s`);
+    put("galactic-xi",`${q.xi.toExponential(3)} / ${q.D.toFixed(12)}`);put("galactic-clock-delta",`${fmt(q.clockDelta,4)} yr orbit⁻¹`);
+    const compact=w<620,split=.58,cx=compact?w*.5:w*split*.52,cy=compact?h*.27:h*.47;
+    const a=compact?Math.min(w*.34,h*.2):Math.min(w*split*.39,h*.34),b=a*Math.sqrt(1-q.ecc*q.ecc),focus=a*q.ecc;
     c.strokeStyle=line;c.lineWidth=1;c.setLineDash([5,5]);for(let r=.25;r<=1;r+=.25){c.beginPath();c.ellipse(cx-focus*r,cy,a*r,b*r,0,0,Math.PI*2);c.stroke();}
     c.setLineDash([]);c.strokeStyle=gold;c.lineWidth=3;c.beginPath();c.ellipse(cx-focus,cy,a,b,0,0,Math.PI*2);c.stroke();
-    c.fillStyle=text;c.beginPath();c.arc(cx,cy,9,0,Math.PI*2);c.fill();c.fillStyle=muted;c.font="12px Inter";c.textAlign="center";c.fillText("Galactic centre",cx,cy+25);
+    c.fillStyle=text;c.beginPath();c.arc(cx,cy,8,0,Math.PI*2);c.fill();c.fillStyle=muted;c.font="12px Inter";c.textAlign="center";c.fillText("Galactic centre",cx,cy+23);
     const angle=phase,x=cx-focus+a*Math.cos(angle),baseY=cy+b*Math.sin(angle),z=q.zAmp/.2*h*.12*Math.sin(angle*q.kinematic/70*2*Math.PI);
     c.strokeStyle="#7c3aed";c.lineWidth=2;c.beginPath();c.moveTo(x,baseY);c.lineTo(x,baseY-z);c.stroke();
     c.fillStyle="#2563eb";c.beginPath();c.arc(x,baseY-z,7,0,Math.PI*2);c.fill();
-    c.fillStyle=text;c.textAlign="left";c.fillText(`Tkin ${fmt(q.kinematic,2)} Myr`,18,24);c.fillStyle="#b42318";c.fillText(`TBH ${fmt(q.kepler,0)} Myr`,18,45);
-    c.fillStyle=muted;c.fillText("vertical oscillation shown with the repository’s 70 Myr illustrative period",18,h-18);
+    c.fillStyle=text;c.textAlign="left";c.fillText(`parametric orbit · e=${fmt(q.ecc,3)}`,18,24);
+    const chartLeft=compact?34:w*split+22,chartRight=w-18,chartTop=compact?h*.56:50,chartBottom=compact?h-34:h-58,models=[
+      {name:"2πR/v",period:q.kinematic,color:gold},
+      {name:"μ(Sgr A*)",period:q.omegaPeriod,color:"#2563eb"},
+      {name:"declared",period:230,color:"#7c3aed"},
+      {name:"Sgr A* only",period:q.kepler,color:"#b42318"}
+    ],logMin=Math.log10(150),logMax=Math.log10(Math.max(20000,q.kepler*1.15));
+    c.strokeStyle=line;c.beginPath();c.moveTo(chartLeft,chartTop);c.lineTo(chartLeft,chartBottom);c.lineTo(chartRight,chartBottom);c.stroke();
+    models.forEach((model,index)=>{const y=chartTop+index*(chartBottom-chartTop)/3,xp=chartLeft+(Math.log10(model.period)-logMin)/(logMax-logMin)*(chartRight-chartLeft);
+      c.strokeStyle=model.color;c.lineWidth=3;c.beginPath();c.moveTo(chartLeft,y);c.lineTo(xp,y);c.stroke();c.fillStyle=model.color;c.beginPath();c.arc(xp,y,6,0,Math.PI*2);c.fill();
+      c.fillStyle=text;c.textAlign="left";c.fillText(model.name,chartLeft,y-10);c.fillStyle=muted;c.textAlign="right";c.fillText(`${fmt(model.period,model.period>1000?0:1)} Myr`,chartRight,y-10);});
+    if(!compact){c.fillStyle=muted;c.textAlign="center";c.fillText("logarithmic period comparison",chartLeft+(chartRight-chartLeft)/2,h-20);
+      c.textAlign="left";c.fillText("vertical motion: illustrative 70 Myr sinusoid from repository parameters",18,h-18);}
   }
   const gcd=(a,b)=>{while(b)[a,b]=[b,a%b];return Math.abs(a);};
   function drawChord(){
@@ -64,7 +86,7 @@
   }
   function frame(now){if(now-last<33){requestAnimationFrame(frame);return;}if(running&&!document.hidden){phase=(phase+Math.min((now-last)/1000,.05)*.28)%(Math.PI*2);draw();drawChord();}last=now;requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{
-    ["galactic-radius","galactic-speed","galactic-eccentricity","galactic-z-amplitude","chord-p","chord-k","chord-radius","schumann-eta","schumann-radius","schumann-shift","schumann-modes"].forEach(id=>$(id)?.addEventListener("input",()=>{draw();drawChord();drawSchumann();}));
+    ["galactic-radius","galactic-speed","galactic-eccentricity","galactic-z-amplitude","galactic-radius-error","galactic-speed-error","galactic-proper-motion","chord-p","chord-k","chord-radius","schumann-eta","schumann-radius","schumann-shift","schumann-modes"].forEach(id=>$(id)?.addEventListener("input",()=>{draw();drawChord();drawSchumann();}));
     addEventListener("resize",()=>{draw();drawChord();drawSchumann();});addEventListener("ssz-theme-change",()=>{draw();drawChord();drawSchumann();});addEventListener("ssz-animation-change",event=>{running=Boolean(event.detail?.running);});
     draw();drawChord();drawSchumann();requestAnimationFrame(frame);
   });

@@ -1,4 +1,16 @@
 (() => {
+  const repositoryFallbacks = {
+    "galactic-year": "Exploratory astronomical timing and orbital-period calculations centred on the Galactic year.",
+    "SEGMENTED_SPACETIME": "Self-hosted interactive demonstrations and visual explanations of public Segmented Spacetime concepts.",
+    "ssz-all-tests": "Cross-repository orchestration, captured run summaries and consistency reports for the public SSZ test suites.",
+    "SSZ-METRIC_COMPLETE": "Collected SSZ metric derivations, implementations, comparisons and historical strong-field documentation."
+  };
+  const repositoryCorrections = {
+    "segmented-calculation-suite": "Its public description still says singularity-free; P0 supersedes that global claim.",
+    "ssz-metric-pure": "Its public description claims a complete singularity-free solution; the portal treats that wording as superseded by P0.",
+    "frequency-curvature-validation": "The public test count is repository metadata and may differ from later all-tests snapshots.",
+    "ssz-lensing": "The public description's 28-test count is historical; later snapshots use different collection units."
+  };
   async function loadJson(path) {
     const response = await fetch(path);
     if (!response.ok) throw new Error(`${path}: ${response.status}`);
@@ -33,10 +45,10 @@
       );
       target.innerHTML = rows.map(repo => `
         <article class="catalog-item" data-searchable>
-          <h3><a href="${escapeHtml(repo.url)}" rel="noopener">${escapeHtml(repo.name)}</a></h3>
-          <p>${escapeHtml(repo.description || "No public repository description supplied.")}</p>
+          <h3><a href="${escapeHtml(repo.url)}" target="_blank" rel="noopener">${escapeHtml(repo.name)} <span aria-hidden="true">↗</span></a></h3>
+          <p>${escapeHtml(repo.description || repositoryFallbacks[repo.name] || "Public research repository; detailed role classification is pending source review.")}</p>
           <div class="catalog-meta">${badge(repo.domain.replaceAll("-", " "))}${badge(repo.archived ? "archived" : "active", repo.archived ? "" : "canonical")}${repo.language ? badge(repo.language) : ""}${repo.topics.slice(0,5).map(x => badge(x)).join("")}</div>
-          ${repo.portal_note ? `<div class="callout warning"><strong>Scientific scope note:</strong> ${escapeHtml(repo.portal_note)}</div>` : ""}
+          ${(repo.portal_note || repositoryCorrections[repo.name]) ? `<div class="callout warning"><strong>Scientific scope note:</strong> ${escapeHtml(repo.portal_note || repositoryCorrections[repo.name])}</div>` : ""}
           <p><strong>Default branch:</strong> <code>${escapeHtml(repo.default_branch || "unknown")}</code><br>
           <strong>Latest public push:</strong> ${escapeHtml((repo.pushed_at || "unknown").slice(0,10))}<br>
           <strong>Licence metadata:</strong> ${escapeHtml(repo.license || "not declared")} ·

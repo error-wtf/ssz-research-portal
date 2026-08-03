@@ -1,6 +1,6 @@
 # Formula Catalogue
 
-- `data/formulas.json`: 58 reviewed central equations with a stable identifier,
+- `data/formulas.json`: 92 reviewed central equations with a stable identifier,
   topic, readable MathJax source, units, domain and interpretation guardrail.
 - `data/formula-candidates.json`: 4,000 deduplicated automatically extracted equation candidates.
 

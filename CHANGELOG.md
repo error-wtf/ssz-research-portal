@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-08-03 — scientific interface and evidence audit
+
+- expanded the reviewed formula catalogue from 58 to 92 equations and rebuilt formula cards with accessible MathJax display;
+- added a dedicated regime-boundary page with canonical strong, C² bridge and weak branches plus an interactive continuity microscope;
+- expanded theory, strong-field, local-frame, geodesic, effective-source, rotation, electromagnetic and programme-scope documentation;
+- rebuilt the test presentation around a dated 1,296-outcome snapshot, a separately preserved conflicting historical snapshot, Unified execution categories and the 67-pair mass-projection evaluation;
+- added cautious summaries and direct repository manuscript links for all 25 numbered papers; removed null-link generation;
+- made atlas source paths and repository titles direct links where public remotes exist;
+- centralised interactive metric calculations on `assets/js/physics.js`, fixed repeated canvas reallocations and made all animation loops honour pause/reduced-motion state;
+- expanded reproducibility rules for environments, data layers, test semantics, anti-circular validation, tolerances and releases;
+- corrected glossary entries to distinguish definitions, static-observer relations, captured runs and P0-superseded claims.
+
 ## 2026-08-03 — Deep research extension
 
 - rebuilt the Starmaps module around 3,000 real Gaia-derived catalogue records,

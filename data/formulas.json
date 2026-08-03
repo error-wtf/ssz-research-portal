@@ -1,6 +1,6 @@
 {
   "status": "curated current formula reference",
-  "count": 58,
+  "count": 92,
   "formulas": [
     {
       "id": "rs",
@@ -523,6 +523,312 @@
       "units": "m⁻² and m⁻⁴",
       "domain": "geometric units restored consistently",
       "caution": "A required sanity check for central asymptotics."
+    },
+    {
+      "id": "strong-limit",
+      "name": "Strong-branch central field limit",
+      "latex": "\\lim_{x\\to0^+}\\Xi_s(x)=1",
+      "topic": "limits",
+      "units": "1",
+      "domain": "formal inner continuation",
+      "caution": "This is a field limit, not proof that the centre belongs to a regular manifold."
+    },
+    {
+      "id": "d-centre",
+      "name": "Central clock-factor limit",
+      "latex": "\\lim_{x\\to0^+}D(x)=1/2",
+      "topic": "limits",
+      "units": "1",
+      "domain": "formal inner continuation",
+      "caution": "Finite D does not imply finite curvature."
+    },
+    {
+      "id": "asymptotic-flat",
+      "name": "Asymptotic flatness checkpoint",
+      "latex": "\\lim_{x\\to\\infty}\\Xi=0,\\quad\\lim_{x\\to\\infty}D=1",
+      "topic": "limits",
+      "units": "1",
+      "domain": "weak branch",
+      "caution": "An asymptotic limit does not determine the global interior."
+    },
+    {
+      "id": "strong-weak-intersection",
+      "name": "Raw branch intersection",
+      "latex": "1-e^{-\\varphi/x_\\times}=1/(2x_\\times)",
+      "topic": "regimes",
+      "units": "1",
+      "domain": "comparison of unblended branch formulas",
+      "caution": "The raw intersection is not one of the declared bridge endpoints."
+    },
+    {
+      "id": "hermite-complete",
+      "name": "Complete C² bridge",
+      "latex": "H_5=h_{00}y_0+h h_{10}y'_0+h^2h_{20}y''_0+h_{01}y_1+h h_{11}y'_1+h^2h_{21}y''_1",
+      "topic": "regimes",
+      "units": "1",
+      "domain": "1.8 ≤ x ≤ 2.2",
+      "caution": "Every derivative is taken with respect to the same normalized coordinate x."
+    },
+    {
+      "id": "d-first",
+      "name": "Clock-factor derivative",
+      "latex": "D'=-\\Xi'/(1+\\Xi)^2",
+      "topic": "metric",
+      "units": "inverse length or 1 in x",
+      "domain": "differentiable branch",
+      "caution": "Derivative units depend on whether the independent variable is r or x."
+    },
+    {
+      "id": "a-first",
+      "name": "Temporal coefficient derivative",
+      "latex": "A'=2DD'",
+      "topic": "metric",
+      "units": "inverse length or 1 in x",
+      "domain": "A=D²",
+      "caution": "Used in circular-orbit diagnostics."
+    },
+    {
+      "id": "b-first",
+      "name": "Radial coefficient derivative",
+      "latex": "B'=-2D^{-3}D'",
+      "topic": "metric",
+      "units": "inverse length or 1 in x",
+      "domain": "B=D⁻²",
+      "caution": "Large coordinate coefficients are not by themselves invariant singularities."
+    },
+    {
+      "id": "static-tetrad-time",
+      "name": "Static orthonormal time leg",
+      "latex": "e_{\\hat 0}=D^{-1}c^{-1}\\partial_t",
+      "topic": "local frames",
+      "units": "inverse length",
+      "domain": "D>0, static observer",
+      "caution": "Defines a local frame only where a static observer is physically admissible."
+    },
+    {
+      "id": "static-tetrad-radial",
+      "name": "Static orthonormal radial leg",
+      "latex": "e_{\\hat r}=D\\,\\partial_r",
+      "topic": "local frames",
+      "units": "inverse length",
+      "domain": "D>0",
+      "caution": "Separates local radial measurements from coordinate components."
+    },
+    {
+      "id": "four-acceleration",
+      "name": "Static-observer radial acceleration",
+      "latex": "a^{\\hat r}=c^2D'(r)",
+      "topic": "local frames",
+      "units": "m/s²",
+      "domain": "static diagonal ansatz and proper radial frame",
+      "caution": "Sign and interpretation depend on derivative convention and observer choice."
+    },
+    {
+      "id": "lagrangian",
+      "name": "Geodesic Lagrangian",
+      "latex": "2\\mathcal L=g_{\\mu\\nu}\\dot x^\\mu\\dot x^\\nu",
+      "topic": "geodesics",
+      "units": "velocity squared",
+      "domain": "affinely parametrised trajectory",
+      "caution": "An effective test-particle Lagrangian is not the missing fundamental field action."
+    },
+    {
+      "id": "radial-timelike",
+      "name": "Timelike radial equation",
+      "latex": "\\dot r^2=E^2/c^2-A(r)\\left(c^2+L^2/r^2\\right)",
+      "topic": "geodesics",
+      "units": "m²/s²",
+      "domain": "equatorial timelike geodesic; convention-dependent E and L",
+      "caution": "Must be re-derived if the metric convention changes."
+    },
+    {
+      "id": "radial-null-effective",
+      "name": "Null radial equation",
+      "latex": "\\dot r^2=E^2/c^2-A(r)L^2/r^2",
+      "topic": "geodesics",
+      "units": "m²/s²",
+      "domain": "equatorial null geodesic",
+      "caution": "Turning points and circular orbits are different conditions."
+    },
+    {
+      "id": "photon-stability",
+      "name": "Null-orbit stability diagnostic",
+      "latex": "d^2[A(r)/r^2]/dr^2\\lessgtr0",
+      "topic": "strong field",
+      "units": "m⁻⁴",
+      "domain": "at a stationary null orbit",
+      "caution": "The sign convention must be matched to the chosen effective potential."
+    },
+    {
+      "id": "orbital-frequency",
+      "name": "Circular-orbit coordinate frequency",
+      "latex": "\\Omega^2=c^2A'(r)/(2r)",
+      "topic": "geodesics",
+      "units": "s⁻²",
+      "domain": "static spherical metric in areal radius",
+      "caution": "Coordinate frequency requires conversion before comparison with a local clock."
+    },
+    {
+      "id": "timelike-angular-momentum",
+      "name": "Circular timelike angular momentum",
+      "latex": "L^2=c^2r^3A'/(2A-rA')",
+      "topic": "geodesics",
+      "units": "m⁴/s² under specific convention",
+      "domain": "circular timelike orbit",
+      "caution": "Denominator and normalization conventions must be checked."
+    },
+    {
+      "id": "timelike-energy",
+      "name": "Circular timelike energy",
+      "latex": "E^2=2c^4A^2/(2A-rA')",
+      "topic": "geodesics",
+      "units": "energy-per-mass squared",
+      "domain": "circular timelike orbit",
+      "caution": "Stability requires a separate second-derivative condition."
+    },
+    {
+      "id": "isco-condition",
+      "name": "Marginal orbit stability",
+      "latex": "d^2V_{\\rm eff}/dr^2=0",
+      "topic": "strong field",
+      "units": "potential per length²",
+      "domain": "on a circular timelike solution",
+      "caution": "Solving this condition is metric- and branch-specific."
+    },
+    {
+      "id": "shadow-impact",
+      "name": "Critical shadow impact parameter",
+      "latex": "b_{\\rm crit}=r_{\\rm ph}/\\sqrt{A(r_{\\rm ph})}",
+      "topic": "strong field",
+      "units": "m",
+      "domain": "accessible unstable circular null orbit",
+      "caution": "A shadow observable additionally needs source, inclination, transfer and rotation."
+    },
+    {
+      "id": "redshift-two-static",
+      "name": "Two-radius frequency ratio",
+      "latex": "\\nu_o/\\nu_e=D(r_e)/D(r_o)",
+      "topic": "observables",
+      "units": "1",
+      "domain": "static emitter and observer",
+      "caution": "Inverse placement of emitter and observer changes the reported z convention."
+    },
+    {
+      "id": "doppler-factor",
+      "name": "Special-relativistic line-of-sight Doppler factor",
+      "latex": "\\delta=[\\gamma(1-\\beta\\cos\\vartheta)]^{-1}",
+      "topic": "observables",
+      "units": "1",
+      "domain": "local inertial comparison",
+      "caution": "This kinematic factor is separate from static gravitational scaling."
+    },
+    {
+      "id": "observed-frequency",
+      "name": "Combined schematic frequency map",
+      "latex": "\\nu_{\\rm obs}=\\nu_{\\rm emit}[D_e/D_o]\\,\\delta\\,\\mathcal T",
+      "topic": "observables",
+      "units": "Hz",
+      "domain": "declared transfer factor T",
+      "caution": "The transfer factor is model-dependent; this is a bookkeeping relation, not a universal closed formula."
+    },
+    {
+      "id": "ppn-gtt",
+      "name": "PPN temporal metric expansion",
+      "latex": "g_{tt}/c^2=-1+2U/c^2-2\\beta U^2/c^4+O(c^{-6})",
+      "topic": "weak field",
+      "units": "1",
+      "domain": "|U|/c² ≪ 1",
+      "caution": "The sign of U must follow the declared PPN convention."
+    },
+    {
+      "id": "ppn-gij",
+      "name": "PPN spatial metric expansion",
+      "latex": "g_{ij}=[1+2\\gamma U/c^2+O(c^{-4})]\\delta_{ij}",
+      "topic": "weak field",
+      "units": "1",
+      "domain": "weak quasi-static field",
+      "caution": "A coordinate-gauge statement used for specific observable calculations."
+    },
+    {
+      "id": "energy-density",
+      "name": "Effective density projection",
+      "latex": "\\rho_{\\rm eff}=T^{\\rm eff}_{\\hat0\\hat0}/c^2",
+      "topic": "energy conditions",
+      "units": "kg/m³",
+      "domain": "chosen orthonormal frame",
+      "caution": "Effective-source diagnostics are not fundamental SSZ matter content."
+    },
+    {
+      "id": "wec",
+      "name": "Weak energy condition",
+      "latex": "\\rho\\ge0,\\qquad \\rho+p_i/c^2\\ge0",
+      "topic": "energy conditions",
+      "units": "energy density",
+      "domain": "orthonormal principal frame",
+      "caution": "A diagnostic condition; violations do not alone select or reject an effective geometry."
+    },
+    {
+      "id": "dec",
+      "name": "Dominant energy condition",
+      "latex": "\\rho\\ge|p_i|/c^2",
+      "topic": "energy conditions",
+      "units": "energy density",
+      "domain": "orthonormal principal frame",
+      "caution": "Requires a physically interpreted effective source."
+    },
+    {
+      "id": "sec",
+      "name": "Strong energy condition",
+      "latex": "\\rho+\\sum_i p_i/c^2\\ge0,\\quad \\rho+p_i/c^2\\ge0",
+      "topic": "energy conditions",
+      "units": "energy density",
+      "domain": "orthonormal principal frame",
+      "caution": "Its relevance depends on the underlying dynamical theory."
+    },
+    {
+      "id": "binomial-sign",
+      "name": "Two-sided paired sign-test probability",
+      "latex": "p=2\\sum_{k=0}^{\\min(w,n-w)}{n\\choose k}2^{-n}",
+      "topic": "statistics",
+      "units": "1",
+      "domain": "independent exchangeable paired signs under the null",
+      "caution": "Does not account for model flexibility, selection or correlated pairs."
+    },
+    {
+      "id": "confidence-interval",
+      "name": "Bootstrap percentile interval",
+      "latex": "CI_{1-\\alpha}=[Q_{\\alpha/2}(\\hat\\theta^*),Q_{1-\\alpha/2}(\\hat\\theta^*)]",
+      "topic": "statistics",
+      "units": "same as estimator",
+      "domain": "representative resampling scheme",
+      "caution": "Bootstrap validity depends on sampling structure and independence assumptions."
+    },
+    {
+      "id": "bic",
+      "name": "Bayesian information criterion",
+      "latex": "\\mathrm{BIC}=k\\ln n-2\\ln\\hat L",
+      "topic": "statistics",
+      "units": "1",
+      "domain": "regular likelihood and sample-size assumptions",
+      "caution": "Lower BIC is an asymptotic model-selection heuristic, not proof."
+    },
+    {
+      "id": "aic",
+      "name": "Akaike information criterion",
+      "latex": "\\mathrm{AIC}=2k-2\\ln\\hat L",
+      "topic": "statistics",
+      "units": "1",
+      "domain": "maximum likelihood comparison",
+      "caution": "Relative predictive criterion; absolute fit and data quality remain separate."
+    },
+    {
+      "id": "sagnac-integral",
+      "name": "Stationary-spacetime Sagnac integral",
+      "latex": "\\Delta t=-2c^{-1}\\oint g_{0i}/g_{00}\\,dx^i",
+      "topic": "rotation",
+      "units": "s",
+      "domain": "stationary metric and declared coordinates",
+      "caution": "The leading 4AΩ/c² formula follows only in its controlled rotating-loop limit."
     }
   ]
 }

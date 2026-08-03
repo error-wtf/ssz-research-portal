@@ -12,7 +12,7 @@
     const status = document.getElementById("paper-status-filter").value;
     const shown = state.papers.filter(paper => {
       const text = `${paper.title} ${paper.authors} ${paper.topic} ${paper.status} ${paper.scope_note}`.toLowerCase();
-      const linked = paper.public_url !== profile;
+      const linked = Boolean(paper.public_url);
       return (!query || text.includes(query)) &&
         (!topic || paper.topic === topic) &&
         (!status || (status === "historical" && paper.status.startsWith("historical")) ||
@@ -22,13 +22,16 @@
     document.getElementById("paper-status").textContent = `${shown.length} of ${state.papers.length} primary papers shown.`;
     document.getElementById("paper-list").innerHTML = shown.map(paper => {
       const historic = paper.status.startsWith("historical");
-      const linked = paper.public_url !== profile;
+      const linked = Boolean(paper.public_url);
       return `<article class="paper-card">
         <div class="paper-number">${String(paper.number).padStart(2, "0")}</div>
         <div><div class="paper-meta"><span class="badge ${historic ? "corrected" : "canonical"}">${escape(paper.status)}</span><span>${escape(paper.year)}</span><span>${escape(paper.topic)}</span></div>
         <h3>${escape(paper.title)}</h3><p>${escape(paper.authors)}</p>
+        <p>${escape(paper.summary || "Summary pending source review.")}</p>
         <p class="scope-note">${escape(paper.scope_note)}</p>
-        <div class="paper-actions"><a href="${escape(paper.public_url)}" target="_blank" rel="noopener">${linked ? "Open verified public item" : "Search public profile"}</a><code>${escape(paper.key)}</code><span>${escape(paper.peer_review)}</span></div></div>
+        <div class="paper-actions">${linked ? `<a href="${escape(paper.public_url)}" target="_blank" rel="noopener">Public publication page</a>` : `<span class="scope-note">Item-level public page not yet verified</span>`}
+        ${paper.manuscript_url ? `<a href="${escape(paper.manuscript_url)}" target="_blank" rel="noopener">Read source manuscript</a>` : ""}
+        <code>${escape(paper.key)}</code><span>${escape(paper.peer_review)}</span></div></div>
       </article>`;
     }).join("") || `<div class="callout">No papers match these filters.</div>`;
   }
@@ -40,7 +43,7 @@
       const data = await response.json();
       state.papers = data.papers;
       document.getElementById("paper-count").textContent = data.count;
-      document.getElementById("linked-count").textContent = state.papers.filter(p => p.public_url !== profile).length;
+      document.getElementById("linked-count").textContent = state.papers.filter(p => Boolean(p.public_url)).length;
       document.getElementById("historic-count").textContent = state.papers.filter(p => p.status.startsWith("historical")).length;
       const topics = [...new Set(state.papers.map(p => p.topic))].sort();
       document.getElementById("paper-topic").insertAdjacentHTML("beforeend", topics.map(value => `<option>${escape(value)}</option>`).join(""));

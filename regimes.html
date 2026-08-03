@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="SSZ radial regime boundaries, C2 transition, branch domains, observable validity and interactive diagnostics.">
+<title>Regime Boundaries — Segmented Spacetime</title>
+<script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="assets/css/site.css">
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},options:{enableMenu:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script defer src="assets/js/site.js"></script><script defer src="assets/js/physics.js"></script><script defer src="assets/js/regimes.js"></script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">↔</span><span><strong>Segmented Spacetime</strong><small>REGIME BOUNDARIES</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a aria-current="page" href="regimes.html">Regimes</a><a href="strong-field.html">Strong field</a><a href="visual-lab.html">Visual lab</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<main id="main" class="page">
+<header class="hero"><div><span class="eyebrow">Domain before formula</span><h1>Regime<br><span class="gradient-text">boundaries</span></h1><p class="lead">The strong and weak expressions are not switched at their raw intersection. A declared \(C^2\) bridge transports value, slope and curvature across \(1.8\le r/r_s\le2.2\). This page separates mathematical joins, physical interpretation and observable validity.</p></div><div class="hero-orbit"><span class="orbit-core">C²</span></div></header>
+
+<section class="section"><div class="grid grid-3">
+<article class="math-box" data-label="Strong branch · x < 1.8">\(\displaystyle \Xi_s(x)=1-e^{-\varphi/x}\)</article>
+<article class="math-box" data-label="Transition · 1.8 ≤ x ≤ 2.2">\(\displaystyle \Xi_b(x)=H_5\!\left(\frac{x-1.8}{0.4}\right)\)</article>
+<article class="math-box" data-label="Weak branch · x > 2.2">\(\displaystyle \Xi_w(x)=\frac{1}{2x}\)</article>
+</div>
+<div class="callout warning"><strong>Important distinction:</strong> the raw equality \(\Xi_s=\Xi_w\), the chosen bridge endpoints, an extremum of a null effective potential and a fitted observational boundary are different mathematical objects. They must not share one symbol or one claimed physical meaning.</div></section>
+
+<section class="section"><div class="section-head"><span class="section-kicker">Interactive boundary microscope</span><h2>Values and derivatives through both joins</h2><p>Move the probe to inspect the operative branch, \(\Xi\), \(D\), first derivative and numerical second derivative. The chart uses exactly the same field implementation as the main explorer.</p></div>
+<div class="visual-grid"><div class="visual-controls">
+<div class="control"><label for="regime-radius">Normalised radius <output id="regime-radius-out">2.00</output> r<sub>s</sub></label><input id="regime-radius" type="range" min=".2" max="12" step=".002" value="2"></div>
+<div class="control"><label for="regime-span">Chart maximum <output id="regime-span-out">5</output> r<sub>s</sub></label><input id="regime-span" type="range" min="2.4" max="20" step=".2" value="5"></div>
+<div class="toggle-row"><label><input id="regime-log" type="checkbox"> logarithmic radius</label><label><input id="regime-derivatives" type="checkbox" checked> derivatives</label></div>
+<div class="result"><div><small>regime</small><strong id="regime-name">—</strong></div><div><small>Ξ</small><strong id="regime-xi">—</strong></div><div><small>D</small><strong id="regime-d">—</strong></div><div><small>dΞ/dx</small><strong id="regime-d1">—</strong></div><div><small>d²Ξ/dx²</small><strong id="regime-d2">—</strong></div><div><small>A·B</small><strong id="regime-ab">—</strong></div></div>
+</div><canvas id="regime-canvas" class="lab-canvas" aria-label="Interactive SSZ regime and derivative chart" tabindex="0"></canvas></div></section>
+
+<section class="section"><div class="section-head"><span class="section-kicker">Boundary taxonomy</span><h2>Four questions that must remain separate</h2></div><div class="grid grid-2">
+<article class="card"><h3>1 · Formula domain</h3><p>Which declared branch is evaluated? This is fixed by \(x=1.8\) and \(x=2.2\) in the current piecewise implementation.</p></article>
+<article class="card"><h3>2 · Smoothness</h3><p>Do value, slope and curvature match? The quintic bridge enforces six endpoint identities and removes artificial derivative jumps through second order.</p></article>
+<article class="card"><h3>3 · Observable regime</h3><p>Is a weak-field expansion, static clock map, full geodesic integral or perturbation model required? The radial branch alone does not answer this.</p></article>
+<article class="card"><h3>4 · Physical transition</h3><p>Does a genuine material, causal or dynamical phase boundary exist? The present bridge is an operational geometric prescription; a fundamental dynamics deriving it remains open.</p></article>
+</div></section>
+
+<section class="section"><div class="section-head"><span class="section-kicker">Exact endpoint data</span><h2>What the C² constraint matches</h2></div>
+<div class="math-box" data-label="Six conditions">\[
+H_5^{(k)}(1.8)=\Xi_s^{(k)}(1.8),\qquad
+H_5^{(k)}(2.2)=\Xi_w^{(k)}(2.2),\qquad k=0,1,2 .
+\]</div>
+<div class="table-wrap"><table><thead><tr><th>Location</th><th>Left description</th><th>Right description</th><th>Required continuity</th><th>What it does not prove</th></tr></thead><tbody>
+<tr><td>1.8 r<sub>s</sub></td><td>strong exponential branch</td><td>quintic bridge</td><td>Ξ, Ξ′ and Ξ″</td><td>a dynamically generated phase change</td></tr>
+<tr><td>2.2 r<sub>s</sub></td><td>quintic bridge</td><td>weak inverse-radius branch</td><td>Ξ, Ξ′ and Ξ″</td><td>validity of weak-field observable shortcuts immediately at the join</td></tr>
+<tr><td>r<sub>s</sub></td><td colspan="2">strong branch checkpoint</td><td>Ξ≈0.801711847; D≈0.555027709</td><td>central regularity or a material horizon surface</td></tr>
+<tr><td>r→∞</td><td colspan="2">weak asymptotic limit</td><td>Ξ→0; D→1</td><td>global completeness of the interior</td></tr>
+</tbody></table></div></section>
+
+<section class="section"><div class="section-head"><span class="section-kicker">Method assignment</span><h2>Which machinery is valid where?</h2></div><div class="table-wrap"><table><thead><tr><th>Observable</th><th>Near/strong field</th><th>Transition</th><th>Far/weak field</th><th>Guardrail</th></tr></thead><tbody>
+<tr><td>Static clock comparison</td><td>full \(D(r)\)</td><td>full bridged \(D(r)\)</td><td>full D or controlled expansion</td><td>state both radii and kinematics</td></tr>
+<tr><td>Radial null travel</td><td>integrate full metric</td><td>integrate full metric</td><td>full metric or justified PPN limit</td><td>coordinate slope is not local light speed</td></tr>
+<tr><td>Lensing/Shapiro</td><td>full null geodesic model required</td><td>full null geodesic model required</td><td>PPN with declared geometry</td><td>never substitute a clock-only Ξ shortcut</td></tr>
+<tr><td>Orbits</td><td>full effective potential and stability</td><td>full effective potential and stability</td><td>PPN or full geodesics</td><td>a named radius must carry metric variant and commit</td></tr>
+<tr><td>Waves/QNM</td><td>perturbation equations needed</td><td>matching and dynamics needed</td><td>controlled approximation</td><td>proxy frequency is not a waveform</td></tr>
+</tbody></table></div></section>
+</main>
+<footer class="footer"><div class="footer-inner"><div><strong>Regime boundaries</strong><p>Formula domain, smoothness and physical interpretation kept distinct.</p></div><div><a href="theory.html#bridge">Bridge derivation</a></div><div><a href="visual-lab.html#continuity">Continuity microscope</a></div></div></footer>
+</body></html>

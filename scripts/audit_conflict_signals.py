@@ -19,7 +19,6 @@ SIGNALS = {
     "centre-curvature-or-regularity": r"centre|center|singular|curvature|ricci|kretschmann|regular",
     "legacy-or-superseded": r"legacy|deprecated|old|supersed|migration",
     "negative-control-or-expected-failure": r"negative.?control|expected.?fail|xfail|reject|failure|fail",
-    "anti-circularity-or-fitting": r"anti.?circular|no.?fitting|curve_fit|least_squares|reference.?isolation",
     "uncertainty-or-tolerance": r"uncertain|tolerance|residual|error|noise|covarian|sigma",
 }
 

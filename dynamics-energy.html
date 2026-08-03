@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Public SSZ work on action principles, geodesics, segmented energy, lensing and radial scaling, with explicit scope and provenance.">
+  <title>Dynamics &amp; Energy · SSZ Research Portal</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">∂</span><span><strong>Segmented Spacetime</strong><small>DYNAMICS · ACTION · ENERGY</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"></div></div></nav>
+<main id="main" class="page">
+  <header class="hero">
+    <div><p class="eyebrow">Public research synthesis</p>
+    <h1>Dynamics, action<br><span class="gradient-text">and energy</span></h1>
+    <p class="lead">The public SSZ corpus contains substantially more than a static metric ansatz. This page connects its variational, geodesic, energetic, lensing and radial-scaling work while keeping domain-specific results distinct from a unique, completed fundamental theory.</p>
+    <div class="status-row"><span class="badge tested">implemented and tested</span><span class="badge open">global completion is a separate scope</span></div></div>
+    <div class="hero-orbit"><span class="orbit-core">ℒ</span></div>
+  </header>
+  <div class="scope-strip"><strong>Evidence:</strong> public repositories and local reruns <span>•</span><strong>Metric routing:</strong> canonical P0 branches <span>•</span><strong>Snapshot:</strong> 3 August 2026</div>
+  <nav class="toc"><a href="#action">Action</a><a href="#trajectories">Geodesics</a><a href="#energy">Energy</a><a href="#lensing">Lensing</a><a href="#radial-scaling">Radial scaling</a><a href="#completion">Global scope</a></nav>
+
+  <section id="action" class="section">
+    <p class="eyebrow">Action and conserved quantities</p>
+    <h2>Lagrange–Hamilton formulation</h2>
+    <div class="formula-card" id="formula-geodesic-lagrangian">
+      <div class="formula-label">Equatorial metric Lagrangian</div>
+      <div class="display-formula" aria-label="L equals one half times minus D squared c squared t dot squared plus D inverse squared r dot squared plus r squared phi dot squared">
+        <span>ℒ = ½ [−D²c² ṫ² + D⁻² ṙ² + r²φ̇²]</span>
+      </div>
+    </div>
+    <p>The public <a href="https://github.com/error-wtf/ssz-lagrange">ssz-lagrange repository</a> develops an action-based metric treatment, Euler–Lagrange equations, canonical momenta, a Hamiltonian description, geodesic equations, effective potentials, energy-condition calculations and exploratory extensions. Its local regression suite was independently rerun for this portal audit: <strong>54 of 54 checks passed</strong>.</p>
+    <div class="callout nuance"><strong>Precise scope.</strong> It is incorrect to say that no field-equation or action work exists. Public derivations and implementations do exist. A unique, universally accepted covariant fundamental action that closes every static, rotating, cosmological and matter sector is a broader completion question; it is not required to acknowledge the concrete results already present.</div>
+    <p>For a static diagonal metric, cyclic coordinates generate conserved quantities. The implementation uses those invariants to reduce the trajectory equations and to check numerical conservation. See the dedicated <a href="workbench.html">Geodesic Workbench</a> for interactive integration.</p>
+  </section>
+
+  <section id="trajectories" class="section">
+    <p class="eyebrow">Geodesics</p>
+    <h2>Radial and non-radial dynamics</h2>
+    <p>The public trajectory work contains radial and non-radial geodesics, turning-point detection, effective-potential diagnostics and bridge checks. These are genuine metric-level dynamical calculations, not merely decorative orbit sketches.</p>
+    <div class="grid two">
+      <article class="mini-card"><h3>What is established in code</h3><p>Conserved energy and angular momentum, null and timelike trajectory integration, turning points, numerical residuals and finite-domain tests.</p></article>
+      <article class="mini-card"><h3>Version-routing warning</h3><p>Some historical trajectory code routes branches at 80/120 r<sub>s</sub>. The current portal uses the canonical 1.8/2.2 r<sub>s</sub> derivative-matched C² bridge. Results must state which routing they use.</p></article>
+    </div>
+    <p><a href="https://github.com/error-wtf/ssz-trajectories">Open ssz-trajectories on GitHub</a></p>
+  </section>
+
+  <section id="energy" class="section">
+    <p class="eyebrow">Segmented energy</p>
+    <h2>Energy accounting and matter tests</h2>
+    <div class="formula-card">
+      <div class="formula-label">Generic segmented sum</div>
+      <div class="display-formula"><span>E<sub>total</sub> = Σ<sub>i</sub> E<sub>i</sub></span></div>
+    </div>
+    <p>The <a href="https://github.com/error-wtf/segmented-energy">segmented-energy repository</a> implements N-segment energy accounting, matter profiles and energy-condition diagnostics. Its catalog covers 129 objects; a stricter report isolates 16 objects with complete measured mass-and-radius inputs. These scopes must not be merged into one empirical count.</p>
+    <p>Weak-energy-condition samples and effective density/pressure quantities have been evaluated in the public code. That makes “energy conditions not evaluated” factually wrong. It does <em>not</em> turn every sampled condition into a proof for all radii, all matter models or every possible inner completion.</p>
+  </section>
+
+  <section id="lensing" class="section">
+    <p class="eyebrow">Forward calculations</p>
+    <h2>Lensing: successes and informative limits</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Evaluation</th><th>Reported result</th><th>Scientific meaning</th></tr></thead>
+      <tbody>
+        <tr><td>Exact synthetic recovery</td><td>relative residual ≈ 1.11 × 10⁻¹⁶</td><td>Internal algebra and solver consistency for matched synthetic input.</td></tr>
+        <tr><td>Randomized sweep</td><td>47 / 50 cases passed (94%)</td><td>Numerical robustness over the declared sampled domain.</td></tr>
+        <tr><td>Four real systems</td><td>processed with explicit residuals</td><td>A forward comparison; residuals expose limitations of the simple m = 2 model.</td></tr>
+        <tr><td>Noise test</td><td>passed in repository evaluation</td><td>Stability under the tested perturbation, not independent empirical confirmation.</td></tr>
+      </tbody>
+    </table></div>
+    <p><a href="https://github.com/error-wtf/ssz-lensing">Open ssz-lensing on GitHub</a>. The public residuals are useful evidence precisely because they reveal where a simplified model is inadequate.</p>
+  </section>
+
+  <section id="radial-scaling" class="section">
+    <p class="eyebrow">Mathematical structure</p>
+    <h2>Radial scaling and spectral checks</h2>
+    <p>The <a href="https://github.com/error-wtf/ssz-radial-scaling">ssz-radial-scaling repository</a> studies logarithmic radial transformations, the transformed time-independent Schrödinger equation, Langer-type corrections and WKB controls. Reported Bohr-spectrum checks for n = 1…5 remain below 0.001% error in the repository’s declared benchmark.</p>
+    <div class="callout"><strong>Scope boundary.</strong> These mathematical correspondences can validate transformations and numerical methods. They do not by themselves establish a quantum theory of gravity.</div>
+  </section>
+
+  <section id="completion" class="section">
+    <p class="eyebrow">Global structure</p>
+    <h2>What “completeness” means here</h2>
+    <p>Public SSZ repositories contain geodesic equations, conserved quantities, finite-domain integrations, action-based derivations, lensing calculations and energy-condition studies. Therefore a blanket “not evaluated” label is misleading.</p>
+    <p>The remaining question is narrower and more demanding: whether one declared global spacetime, including its areal centre or a replacement inner boundary, admits a maximal causal extension and complete null and timelike geodesics. That requires a specified inner completion and global analysis. It does not erase the existing domain-specific results.</p>
+    <p>Continue with <a href="interior-global-structure.html">Interior and Global Structure</a>, <a href="metric.html">Metric Explorer</a>, and <a href="evidence.html">Evidence Ledger</a>.</p>
+  </section>
+
+  <section class="section">
+    <h2>Repository-to-result guide</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Repository</th><th>Public contribution</th><th>Current caution</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://github.com/error-wtf/ssz-lagrange">ssz-lagrange</a></td><td>Action, Hamiltonian, geodesics, energy conditions; 54/54 audited checks</td><td>Exploratory extensions are not all one completed global theory.</td></tr>
+        <tr><td><a href="https://github.com/error-wtf/segmented-energy">segmented-energy</a></td><td>Segmented energy, matter profiles, WEC diagnostics</td><td>Catalog coverage and complete measured subsets must be counted separately.</td></tr>
+        <tr><td><a href="https://github.com/error-wtf/ssz-lensing">ssz-lensing</a></td><td>Synthetic, sweep, noise and real-system forward comparisons</td><td>Residuals of simplified models must remain visible.</td></tr>
+        <tr><td><a href="https://github.com/error-wtf/ssz-trajectories">ssz-trajectories</a></td><td>Radial/non-radial integration and turning points</td><td>Historical branch routing differs from the current canonical bridge.</td></tr>
+        <tr><td><a href="https://github.com/error-wtf/ssz-radial-scaling">ssz-radial-scaling</a></td><td>Log-radial transforms and spectral benchmarks</td><td>Mathematical/numerical evidence, not empirical gravity confirmation.</td></tr>
+        <tr><td><a href="https://github.com/error-wtf/emergent-spacetime">emergent-spacetime</a></td><td>Broader derivations and conceptual development</td><td>Claims are routed through the portal’s canonical-source hierarchy.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+</main>
+<footer class="footer"><div class="footer-inner"><div><strong>Dynamics &amp; Energy</strong><p>Public results with explicit domain boundaries.</p></div><div><a href="workbench.html">Scientific Workbench</a></div><div><a href="evidence.html">Evidence Ledger</a></div></div></footer>
+<script defer src="assets/js/site.js?v=20260803.5"></script>
+</body>
+</html>

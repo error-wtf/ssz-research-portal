@@ -120,6 +120,18 @@ def main():
     galactic_point_mass_myr = 2 * math.pi * math.sqrt(radius**3 / (G * central_mass)) / year / 1e6
     assert 230 < galactic_kinematic_myr < 235
     assert galactic_point_mass_myr > 10_000
+    source_radius = 8.122 * kpc
+    source_speed = 240_000
+    source_period_myr = 2 * math.pi * source_radius / source_speed / year / 1e6
+    angular_period_myr = 1_296_000_000 / 6.411 / 1e6
+    enclosed_mass_solar = source_speed**2 * source_radius / G / 1.98847e30
+    source_xi = (2 * G * central_mass / 299_792_458**2) / (2 * source_radius)
+    source_clock_increment_years = source_period_myr * 1e6 * source_xi
+    assert 207 < source_period_myr < 209
+    assert 201 < angular_period_myr < 203
+    assert 1.0e11 < enclosed_mass_solar < 1.2e11
+    assert 2.4e-11 < source_xi < 2.8e-11
+    assert 0.004 < source_clock_increment_years < 0.007
     schumann_f1 = .74 * c / (2 * math.pi * 6_371_000) * math.sqrt(2)
     assert 7.7 < schumann_f1 < 8.0
     print("OK: JSON schemas, page set and P0 scientific guardrails validated")

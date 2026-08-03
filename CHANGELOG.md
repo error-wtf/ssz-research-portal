@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-08-03 — Test-evidence dashboard reconstruction
+
+- Added a three-stage runner chronology that preserves the conflicting April snapshot, the intermediate audit failures and the later all-green capture as separate counting units.
+- Published the retained `ssz-paper-plots` failures and Starmaps timeout instead of hiding them behind the latest aggregate.
+- Added five source-linked numerical diagnostics with observed values, tolerances, interpretations and explicit evidence boundaries.
+- Added a claim-to-evidence matrix spanning tested, dataset-conditional, corrected and open statements.
+- Added an evidence ladder and a minimum acceptance protocol for future headline results.
+- Extended generated evaluation data and validation guardrails for the new audit structures.
+- Fixed the browser-breaking non-standard `NaN` values inherited from empty mass bins; generated evaluation data is now strict JSON with `null` for non-finite source values.
+
 ## 2026-08-03 — Galactic-orbit evidence pass
 
 - Rebuilt the Galactic Year visual as a provenance-aware comparison of the kinematic, proper-motion, enclosed-mass and Sgr A* point-mass calculations.

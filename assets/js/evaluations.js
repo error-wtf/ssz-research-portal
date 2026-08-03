@@ -123,6 +123,56 @@
     drawRankedBars("artifact-quantity-chart",data.quantities,"Scientific-quantity classification");
   }
 
+  function auditTrail() {
+    const audit=payload.audit_snapshot;
+    $("audit-detected").textContent=audit.detected.toLocaleString("en-US");
+    $("audit-mapped").textContent=audit.mapped.toLocaleString("en-US");
+    $("audit-executed").textContent=audit.executed.toLocaleString("en-US");
+    $("audit-minimum").textContent=audit.expected_minimum.toLocaleString("en-US");
+    $("audit-failures").innerHTML=audit.failures.map(row=>{const file=row.test.split("::")[0];return `<div><span class="badge corrected">${escapeHtml(row.repository)}</span><p><a href="https://github.com/error-wtf/${encodeURIComponent(row.repository)}/blob/main/${file.split("/").map(encodeURIComponent).join("/")}" target="_blank" rel="noopener"><code>${escapeHtml(row.test)}</code></a><br><small>${escapeHtml(row.classification)} · ${escapeHtml(row.status)}</small></p></div>`;}).join("");
+    $("audit-timeouts").innerHTML=audit.timeouts.map(row=>`<div><span class="badge open">${escapeHtml(row.repository)}</span><p><strong>${fmt(row.duration_seconds,2)} s</strong> · exit ${row.exit_code}<br><small>${escapeHtml(row.interpretation)}</small></p></div>`).join("")||"<p>No recorded timeout.</p>";
+  }
+
+  function drawSnapshots() {
+    const surface=canvasSurface("snapshot-chart");if(!surface||!payload)return;
+    const {c,w,h,text,muted,line,gold}=surface;
+    const historical=payload.historical_snapshot.repositories.reduce((sum,row)=>({passed:sum.passed+row.passed,failed:sum.failed+row.failed}),{passed:0,failed:0});
+    const rows=[
+      {label:"28 Apr conflict",passed:historical.passed,failed:historical.failed,colour:"#b42318",unit:"legacy counters"},
+      {label:"29 Apr audit",passed:payload.audit_snapshot.executed-payload.audit_snapshot.failures.length,failed:payload.audit_snapshot.failures.length,colour:"#7c3aed",unit:"executed outcomes"},
+      {label:"4–5 May capture",passed:payload.current_snapshot.passed,failed:payload.current_snapshot.failed,colour:gold,unit:"repository outcomes"}
+    ],max=Math.max(...rows.map(row=>row.passed+row.failed),1),left=64,right=w-24,top=46,bottom=h-72,slot=(right-left)/rows.length,chartHeight=bottom-top;
+    c.strokeStyle=line;c.beginPath();c.moveTo(left,bottom);c.lineTo(right,bottom);c.stroke();
+    rows.forEach((row,index)=>{const x=left+index*slot+slot*.22,width=slot*.56,passHeight=chartHeight*row.passed/max,failHeight=chartHeight*row.failed/max;
+      c.fillStyle=row.colour;c.globalAlpha=.8;c.fillRect(x,bottom-passHeight,width,passHeight);c.globalAlpha=1;
+      if(failHeight){c.fillStyle="#b42318";c.fillRect(x,bottom-passHeight-failHeight,width,Math.max(failHeight,3));}
+      c.fillStyle=text;c.font="700 12px Inter";c.textAlign="center";c.fillText(row.passed.toLocaleString("en-US"),x+width/2,bottom-passHeight-10);
+      c.fillStyle=muted;c.font="11px Inter";c.fillText(row.label,x+width/2,bottom+20);c.fillText(row.unit,x+width/2,bottom+37);});
+    c.fillStyle=muted;c.textAlign="left";c.fillText("Heights aid chronology only; unlike counting units must not be summed.",18,h-16);
+  }
+
+  function numericDiagnostics() {
+    $("numeric-diagnostics").innerHTML=payload.numeric_diagnostics.map(row=>{const sourceUrl=`https://github.com/error-wtf/${encodeURIComponent(row.repository)}/blob/main/${row.source.split("/").map(encodeURIComponent).join("/")}`;return `<tr><td><strong>${escapeHtml(row.name)}</strong></td><td>${escapeHtml(row.value_label)}</td><td>${escapeHtml(row.tolerance_label)}</td><td><a href="https://github.com/error-wtf/${encodeURIComponent(row.repository)}" target="_blank" rel="noopener">${escapeHtml(row.repository)}</a><br><a href="${sourceUrl}" target="_blank" rel="noopener"><code>${escapeHtml(row.source)}</code></a></td><td>${escapeHtml(row.meaning)}</td><td>${escapeHtml(row.boundary)}</td></tr>`;}).join("");
+  }
+
+  function drawDiagnostics() {
+    const surface=canvasSurface("diagnostic-chart");if(!surface||!payload)return;
+    const {c,w,h,text,muted,line,gold}=surface,rows=payload.numeric_diagnostics,left=Math.min(230,w*.5),right=w-30,top=55,gap=Math.min(68,(h-88)/rows.length);
+    c.fillStyle=text;c.font="700 13px Inter";c.textAlign="left";c.fillText("Observed value ÷ encoded tolerance",20,24);
+    rows.forEach((row,index)=>{const ratio=row.value/row.tolerance,y=top+index*gap,width=(right-left)*Math.min(ratio,1);
+      c.fillStyle=line;c.fillRect(left,y-13,right-left,24);c.fillStyle=ratio>.8?"#b42318":ratio>.4?"#7c3aed":gold;c.fillRect(left,y-13,Math.max(width,2),24);
+      c.fillStyle=text;c.textAlign="right";c.fillText(row.name.length>30?`${row.name.slice(0,28)}…`:row.name,left-10,y+4);c.textAlign="left";c.fillText(`${fmt(ratio*100,4)}%`,Math.min(left+width+8,right-58),y+4);});
+    c.fillStyle=muted;c.font="11px Inter";c.textAlign="left";c.fillText("100% is the encoded acceptance boundary.",20,h-18);
+  }
+
+  function claimMatrix() {
+    const rows=payload.claim_evidence_matrix,counts=rows.reduce((result,row)=>{result[row.status]=(result[row.status]||0)+1;return result;},{});
+    $("claims-tested").textContent=counts.tested||0;$("claims-conditional").textContent=counts.conditional||0;
+    $("claims-corrected").textContent=counts.corrected||0;$("claims-open").textContent=counts.open||0;
+    const badge={tested:"tested",conditional:"open",corrected:"corrected",open:"open"};
+    $("claim-matrix").innerHTML=rows.map(row=>`<tr><td><strong>${escapeHtml(row.claim)}</strong></td><td>${escapeHtml(row.class)}</td><td><span class="badge ${badge[row.status]||"open"}">${escapeHtml(row.status)}</span></td><td>${escapeHtml(row.support)}</td><td>${escapeHtml(row.does_not_establish)}</td></tr>`).join("");
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("data/evaluations.json");
     if (!response.ok) throw new Error(`evaluations.json: ${response.status}`);
@@ -130,8 +180,9 @@
     $("current-passed").textContent = payload.current_snapshot.passed.toLocaleString("en-US");
     $("current-repos").textContent = payload.current_snapshot.repositories;
     $("current-failed").textContent = payload.current_snapshot.failed;
-    repositoryTable(); historicalTable(); executionTable(); massResults(); artifactCoverage(); draw(); drawConfidenceIntervals(); drawMassBins();
-    const redraw=()=>{draw();drawConfidenceIntervals();drawMassBins();artifactCoverage();};
+    repositoryTable(); historicalTable(); executionTable(); massResults(); artifactCoverage(); auditTrail(); numericDiagnostics(); claimMatrix();
+    draw(); drawConfidenceIntervals(); drawMassBins(); drawSnapshots(); drawDiagnostics();
+    const redraw=()=>{draw();drawConfidenceIntervals();drawMassBins();artifactCoverage();drawSnapshots();drawDiagnostics();};
     addEventListener("resize", redraw); addEventListener("ssz-theme-change", redraw);
   });
 })();

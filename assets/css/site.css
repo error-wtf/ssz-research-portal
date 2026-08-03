@@ -309,6 +309,17 @@ details[open] summary { margin-bottom: .7rem; }
 .evidence-stack { display:grid; gap:.8rem; }
 .evidence-stack > div { padding:.8rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2); }
 .evidence-stack p { margin:.45rem 0 0; color:var(--muted); }
+.evidence-ladder { list-style:none; counter-reset:evidence; display:grid; gap:.55rem; padding:0; margin:1rem 0 0; }
+.evidence-ladder li {
+  counter-increment:evidence; display:grid; grid-template-columns:2.2rem minmax(0,1fr);
+  gap:.2rem .75rem; padding:.75rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2);
+}
+.evidence-ladder li::before {
+  content:counter(evidence); grid-row:1 / span 2; display:grid; place-items:center;
+  width:2rem; height:2rem; border-radius:50%; background:var(--deep); color:white; font-weight:800;
+}
+.evidence-ladder strong,.evidence-ladder span { grid-column:2; }
+.evidence-ladder span { color:var(--muted); font-size:.86rem; }
 
 .footer { border-top: 1px solid var(--line); background: var(--surface); }
 .footer-inner {

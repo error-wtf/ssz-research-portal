@@ -61,6 +61,8 @@
   function redraw(){const Q=q();render3D(Q);mini(Q);outputs(Q);}
   function download(name,type,data){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;a.click();URL.revokeObjectURL(a.href);}
   function bind(){
+    const viewbar=document.querySelector('.galactic-viewbar');
+    if(viewbar&&!document.getElementById('galactic-autorotate')){const b=document.createElement('button');b.id='galactic-autorotate';b.className='button';b.textContent='Auto-rotate';b.setAttribute('aria-pressed','false');b.addEventListener('click',()=>{state.playing=!state.playing;b.textContent=state.playing?'Pause rotation':'Auto-rotate';b.setAttribute('aria-pressed',String(state.playing));$('galactic-play').textContent=state.playing?'Pause':'Play';});viewbar.insertBefore(b,viewbar.firstChild);}
     document.querySelectorAll("[data-galactic-mode]").forEach(button=>button.addEventListener("click",()=>{state.mode=button.dataset.galacticMode;document.querySelectorAll("[data-galactic-mode]").forEach(b=>b.classList.toggle("active",b===button));redraw();}));
     document.querySelectorAll("[data-galactic-view]").forEach(button=>button.addEventListener("click",()=>{const v=button.dataset.galacticView;if(v==="sun"){const p=currentPos(q());state.panX=p[0];state.panY=p[2];state.view="free";state.distance=8;}else state.view=v;redraw();}));
     ["galactic-radius","galactic-radius-error","galactic-speed","galactic-speed-error","galactic-proper-motion","galactic-eccentricity","galactic-z-amplitude","galactic-z-period","galactic-z-scale","galactic-time"].forEach(id=>$(id).addEventListener("input",redraw));
@@ -68,7 +70,7 @@
     $("galactic-play").addEventListener("click",()=>{state.playing=!state.playing;$("galactic-play").textContent=state.playing?"Pause":"Play";});$("galactic-export-png").addEventListener("click",()=>{const a=document.createElement("a");a.download="solar-galactic-year-3d.png";a.href=canvas.toDataURL("image/png");a.click();});$("galactic-export-data").addEventListener("click",()=>download("solar-galactic-year-state.json","application/json",JSON.stringify({generated:new Date().toISOString(),parameters:q(),scientific_roles:{R0:"measured/adopted",speed:"adopted kinematics",eccentricity:"illustrative",vertical_motion:"illustrative",point_mass:"countermodel",clock_rate:"separate SSZ weak-field diagnostic"}},null,2)));
     addEventListener("resize",redraw);addEventListener("ssz-theme-change",redraw);
   }
-  function animate(now){if(state.playing){const dt=Math.min((now-state.last)/1000,.1),slider=$("galactic-time");slider.value=(Number(slider.value)+dt*4)%250;redraw();}state.last=now;requestAnimationFrame(animate);}
+  function animate(now){if(state.playing){const dt=Math.min((now-state.last)/1000,.1),slider=$("galactic-time");slider.value=(Number(slider.value)+dt*4)%250;state.yaw+=dt*.32;redraw();}state.last=now;requestAnimationFrame(animate);}
   window.SSZGalacticYear3D={calculate};
   document.addEventListener("DOMContentLoaded",()=>{try{initGL();$("galactic-webgl-status").textContent="WebGL active · drag rotate · wheel zoom · Shift-drag pan · double-click focus";}catch(error){$("galactic-webgl-status").textContent=`WebGL unavailable: ${error.message}. Use the accessible 2D fallback below.`;}bind();redraw();requestAnimationFrame(animate);});
 })();

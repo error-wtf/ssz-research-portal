@@ -305,6 +305,11 @@ details[open] summary { margin-bottom: .7rem; }
 .metric-wide-canvas { margin-top:1rem; border:1px solid var(--line); border-radius:1rem; box-shadow:var(--shadow); }
 .metric-wide-canvas:focus, #metric-geometry:focus { outline:3px solid var(--gold); outline-offset:3px; }
 .metric-scope-tabs .button[aria-pressed="true"] { background:var(--deep); color:var(--surface); border-color:var(--deep); }
+.metric-local-control { display:grid; grid-template-columns:1fr auto; gap:.35rem 1rem; align-items:center; margin:.65rem 1rem 1rem; padding:.75rem 1rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2); font-weight:700; }
+.metric-local-control input { grid-column:1/-1; width:100%; }
+.metric-local-control output { font-family:ui-monospace,monospace; color:var(--gold); }
+.metric-preset-card { cursor:pointer; }
+.metric-preset-card:hover { border-color:var(--gold); transform:translateY(-2px); }
 .plot-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
 .plot-gallery figure { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); box-shadow: var(--shadow); }
 .plot-gallery a { display: block; aspect-ratio: 16/9; overflow: hidden; background: var(--surface-2); }

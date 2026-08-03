@@ -61,6 +61,8 @@
     const x=value(),xi=SSZ.xi(x),D=SSZ.dilation(x),A=D*D,B=1/A,xip=SSZ.derivative(SSZ.xi,x),xipp=SSZ.derivative(q=>SSZ.derivative(SSZ.xi,q),x),vesc=1/Math.sqrt(x),vfall=Math.sqrt(x);
     $("metric-radius-out").textContent=fmt(x,4);$("metric-branch").textContent=SSZ.branch(x);$("metric-xi").textContent=fmt(xi);$("metric-d").textContent=fmt(D);$("metric-a").textContent=fmt(A);$("metric-b").textContent=fmt(B);$("metric-ab").textContent=fmt(A*B,9);$("metric-xip").textContent=fmt(xip);$("metric-xipp").textContent=fmt(xipp);
     $("metric-bridge-distance").textContent=x<1.8?`${fmt(1.8-x,4)} rₛ below`:x>2.2?`${fmt(x-2.2,4)} rₛ above`:"inside bridge";
+    document.querySelectorAll("[data-metric-local-radius]").forEach(input=>{if(document.activeElement!==input)input.value=$("metric-radius").value;});
+    document.querySelectorAll("[data-metric-local-output]").forEach(output=>output.textContent=fmt(x,4));
     $("metric-vesc").textContent=fmt(vesc);$("metric-vfall").textContent=fmt(vfall);$("metric-vproduct").textContent=fmt(vesc*vfall,9);$("metric-vproxy").textContent=fmt(Math.sqrt(Math.max(0,1-D*D)));
     $("metric-limit-a").textContent=x<=1?`${fmt(A,7)} (tends to 0.25)`:"select x≤1";geometry(x);branches(x);coefficients(x);velocities(x);limits(x);
   }
@@ -100,6 +102,8 @@
   }
   document.addEventListener("DOMContentLoaded",()=>{
     $("metric-radius").addEventListener("input",render);
+    document.querySelectorAll("[data-metric-local-radius]").forEach(input=>input.addEventListener("input",()=>setLogRadius(Number(input.value))));
+    document.querySelectorAll("[data-metric-preset]").forEach(control=>control.addEventListener("click",event=>{event.stopPropagation();setLogRadius(Number(control.dataset.metricPreset));}));
     $("metric-play").addEventListener("click",()=>{playing=!playing;if(reduced&&playing){$("metric-radius").value=1;playing=false;}syncPlay();render();});
     $("metric-reset").addEventListener("click",()=>{setLogRadius(0);});
     ["metric-geometry","metric-branches","metric-coefficients","metric-velocities","metric-limits"].forEach(id=>bindCanvas($(id)));

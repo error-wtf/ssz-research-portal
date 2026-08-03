@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A provenance-first, interactive research portal for Segmented Spacetime (SSZ) and JIF.">
+  <title>Segmented Spacetime — Research Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/physics.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>SSZ · JIF · RESEARCH PORTAL</small></span></a>
+    <button class="nav-button menu-toggle" aria-expanded="false" aria-label="Open navigation">Menu</button>
+    <div class="nav-links">
+      <a aria-current="page" href="index.html">Overview</a>
+      <a href="theory.html">Theory</a>
+      <a href="jif.html">JIF</a>
+      <a href="strong-field.html">Strong field</a>
+      <a href="tests.html">Tests</a>
+      <a href="repositories.html">Repositories</a>
+      <a href="reproducibility.html">Reproduce</a>
+      <a href="glossary.html">Glossary</a>
+      <button class="nav-button" data-theme-toggle aria-label="Toggle colour theme">◐ Theme</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main" class="page">
+  <header class="hero">
+    <div>
+      <span class="eyebrow"><i class="ph ph-seal-check"></i> P0-corrected scientific scope · August 2026</span>
+      <h1>Segmented<br><span class="gradient-text">Spacetime</span></h1>
+      <p class="lead">A complete, inspectable research portal for SSZ and JIF: geometry, observables, source code, test evidence, falsification criteria, conflicts, and the unresolved interior problem.</p>
+      <div class="actions">
+        <a class="button primary" href="#dashboard">Explore the metric</a>
+        <a class="button" href="theory.html">Read the theory from first principles</a>
+        <a class="button" href="reproducibility.html">Reproduce the work</a>
+      </div>
+    </div>
+    <div class="hero-orbit" aria-label="Abstract, non-physical diagram of nested radial domains">
+      <span class="orbit-core">Ξ</span>
+    </div>
+  </header>
+
+  <section class="section" aria-labelledby="classification">
+    <div class="section-head">
+      <span class="section-kicker">Scientific classification</span>
+      <h2 id="classification">What SSZ is — and what it is not</h2>
+      <p class="lead">SSZ is a scientifically serious, mathematically concrete and falsifiable strong-field research programme. It is not yet a complete or empirically confirmed fundamental theory of gravity.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card"><span class="badge canonical">Concrete</span><h3>Defined geometry</h3><p>A scalar segment-density field Ξ(r), a time factor D(r), a diagonal metric ansatz, explicit weak/strong branches, and an operational C² blend.</p></article>
+      <article class="card"><span class="badge tested">Reproducible</span><h3>Computable observables</h3><p>Clock rates, redshift proxies, PPN limits, trajectories, lensing pipelines, phase counting, and strong-field model comparisons are implemented in public code.</p></article>
+      <article class="card"><span class="badge open">Incomplete</span><h3>Open foundations</h3><p>No complete action, globally regular interior, non-perturbative rotating solution, or fully derived gravitational-wave theory currently closes the programme.</p></article>
+    </div>
+    <div class="callout warning" style="margin-top:1.2rem">
+      <strong>P0 correction:</strong> finite horizon time dilation is the strongest secure theoretical result. It does not establish a regular centre. In the canonical diagonal continuation, A(r)→1/4 while R(r)~3/(2r²) and K(r)~9/(4r⁴); the areal centre is therefore not regular.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid grid-4">
+      <article class="card metric-card"><strong>21,477</strong><span>inventoried files</span></article>
+      <article class="card metric-card"><strong>18,630</strong><span>text sources indexed</span></article>
+      <article class="card metric-card"><strong>10,817</strong><span>test definitions and result artefacts catalogued</span></article>
+      <article class="card metric-card"><strong>37</strong><span>local research repositories mapped</span></article>
+    </div>
+    <p><small>Counts are generated from the current local corpus. They are inventory counts, not claims of independent scientific confirmation.</small></p>
+  </section>
+
+  <section id="dashboard" class="section" aria-labelledby="metric-explorer">
+    <div class="section-head">
+      <span class="section-kicker">Interactive metric explorer</span>
+      <h2 id="metric-explorer">Ξ and D across radial regimes</h2>
+      <p>The plot uses the P0 decay branch below 1.8 r<sub>s</sub>, a derivative-matched quintic Hermite C² bridge from 1.8 to 2.2 r<sub>s</sub>, and Ξ=r<sub>s</sub>/(2r) outside. The blue Schwarzschild curve is a reference, not an interpolation target.</p>
+    </div>
+    <div class="dashboard">
+      <div class="controls">
+        <div class="control">
+          <label for="plot-quantity">Displayed field</label>
+          <select id="plot-quantity"><option value="xi">Segment density Ξ</option><option value="d">Time factor D</option></select>
+        </div>
+        <div class="control">
+          <label for="radius-max">Maximum r/r<sub>s</sub> <output id="radius-max-value"></output></label>
+          <input id="radius-max" type="range" min="3" max="100" step="1" value="12">
+        </div>
+        <div class="control">
+          <label for="probe-radius">Probe radius <output id="radius-value">1</output> r<sub>s</sub></label>
+          <input id="probe-radius" type="range" min=".1" max="12" step=".01" value="1">
+        </div>
+        <div class="toggle-row">
+          <label><input id="log-axis" type="checkbox"> Log radius</label>
+          <label><input id="show-limits" type="checkbox" checked> Regime limits</label>
+        </div>
+        <div class="result" aria-live="polite">
+          <div><small>Ξ(r)</small><strong id="xi-value">—</strong></div>
+          <div><small>D(r)</small><strong id="d-value">—</strong></div>
+          <div><small>z proxy</small><strong id="z-value">—</strong></div>
+          <div><small>Branch</small><strong>piecewise</strong></div>
+        </div>
+      </div>
+      <div class="chart-wrap"><canvas id="metric-chart" aria-label="Interactive plot of SSZ and Schwarzschild reference quantities"></canvas></div>
+    </div>
+    <div class="grid grid-3" style="margin-top:1rem">
+      <article class="card"><h3>Strong branch</h3><div class="formula">Ξ<sub>strong</sub>(r)=1−exp(−φr<sub>s</sub>/r)</div><p>Operative for r/r<sub>s</sub>&lt;1.8. It gives Ξ(r<sub>s</sub>)≈0.801711847.</p></article>
+      <article class="card"><h3>C² blend</h3><div class="formula">Ξ(r)=H<sub>5</sub>(t)</div><p>Values, slopes, and curvatures are matched at both endpoints. The original dashboard’s simplified cubic smoothstep has been corrected.</p></article>
+      <article class="card"><h3>Weak branch</h3><div class="formula">Ξ<sub>weak</sub>(r)=r<sub>s</sub>/(2r)</div><p>Operative for r/r<sub>s</sub>&gt;2.2 and asymptotically flat.</p></article>
+    </div>
+  </section>
+
+  <section class="section" id="calculators">
+    <div class="section-head"><span class="section-kicker">Live calculators</span><h2>From mass to clocks and counted phase</h2><p>Every output below is computed in the browser from the declared formulas. No decorative or random values are used.</p></div>
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>Mass and Schwarzschild scale</h3>
+        <div class="control"><label for="mass-input">Mass</label><input id="mass-input" type="number" min="0" step=".1" value="1"></div>
+        <div class="control"><label for="mass-unit">Unit</label><select id="mass-unit"><option value="solar">solar masses</option><option value="kg">kilograms</option></select></div>
+        <div class="formula">r<sub>s</sub> = 2GM/c² = <strong id="rs-output">—</strong></div>
+        <p>The mass sets the length scale. The normalized SSZ curves depend on x=r/r<sub>s</sub>.</p>
+      </article>
+      <article class="card">
+        <h3>Static SSZ quantities</h3>
+        <div class="control"><label for="calc-radius">Normalized radius r/r<sub>s</sub></label><input id="calc-radius" type="number" min=".01" step=".01" value="1"></div>
+        <div class="result">
+          <div><small>Ξ</small><strong id="calc-xi">—</strong></div>
+          <div><small>D</small><strong id="calc-d">—</strong></div>
+          <div><small>z=1/D−1</small><strong id="calc-z">—</strong></div>
+          <div><small>Comparison point</small><strong id="photon-output">—</strong></div>
+        </div>
+      </article>
+      <article class="card">
+        <h3>JIF phase counter</h3>
+        <div class="control"><label for="jif-frequency">Proper frequency f₀ (Hz)</label><input id="jif-frequency" type="number" min="0" value="1000000000"></div>
+        <div class="control"><label for="jif-duration">Coordinate interval dt (s)</label><input id="jif-duration" type="number" min="0" step=".001" value="1"></div>
+        <div class="formula">J = f₀D(r)dt = <strong id="jif-output">—</strong></div>
+        <p>JIF is a dimensionless cycle count. It does not replace proper time.</p>
+      </article>
+      <article class="card">
+        <h3>Strong-field comparisons</h3>
+        <p><strong>ISCO:</strong> <span id="isco-output">—</span></p>
+        <p><strong>Shadow:</strong> <span id="shadow-output">—</span></p>
+        <div class="callout open"><strong>Why no invented number?</strong> Photon sphere, ISCO and shadow values depend on the exact metric branch and geodesic derivation. The portal displays only values with an explicit provenance chain.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="theory-map">
+    <div class="section-head"><span class="section-kicker">Theory map</span><h2>From definition to confrontation with nature</h2></div>
+    <div class="graph" aria-label="Theory dependency map">
+      <div class="graph-node"><strong>Ξ(r)</strong><br><small>field definition</small></div>
+      <div class="graph-node"><strong>D(r), metric</strong><br><small>geometry</small></div>
+      <div class="graph-node"><strong>Observables</strong><br><small>clocks, paths, orbits</small></div>
+      <div class="graph-node"><strong>Data tests</strong><br><small>uncertainty and falsification</small></div>
+    </div>
+    <div class="grid grid-3" style="margin-top:1rem">
+      <article class="card"><h3>Understand</h3><p>Begin with segmentation, proper time, coordinate time, local light speed, and the difference between a model field and a physical mechanism.</p><a href="theory.html">Theory from A to Z →</a><br><a href="formulas.html">Formula reference →</a></article>
+      <article class="card"><h3>Inspect</h3><p>Trace a claim through formula, implementation, input, test, result, and commit-level repository evidence.</p><a href="tests.html">Test and provenance dashboard →</a></article>
+      <article class="card"><h3>Challenge</h3><p>Read what observations could reject SSZ and which calculations remain too incomplete for a decisive comparison.</p><a href="strong-field.html#falsification">Falsification and limitations →</a><br><a href="research.html">Papers, data and development →</a></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span class="section-kicker">Current state</span><h2>Secure results, model results, and open questions</h2></div>
+    <div class="grid grid-3">
+      <article class="card"><span class="badge canonical">Mathematical</span><h3>Finite horizon factor</h3><p>For the declared branch, Ξ(r_s)≈0.801711847 and D(r_s)≈0.555027709. This is directly calculable.</p></article>
+      <article class="card"><span class="badge tested">Implemented</span><h3>Weak-field machinery</h3><p>PPN β=γ=1 paths reproduce the corresponding standard weak-field formulas. This establishes compatibility of that implementation scope.</p></article>
+      <article class="card"><span class="badge open">Open</span><h3>Interior and dynamics</h3><p>A globally regular inner solution, complete action, field equations, stability analysis, and rotating completion remain research tasks.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span class="section-kicker">Source discipline</span><h2>How conflicting sources are handled</h2></div>
+    <div class="grid grid-2">
+      <article class="card">
+        <h3>Priority order</h3>
+        <ol>
+          <li>Current P0 corrections</li><li>Explicit canonical / single-source documents</li><li>Model and branch locks</li>
+          <li>Current reproducible tests</li><li>Current repository documentation</li><li>Legacy papers and audits</li>
+        </ol>
+      </article>
+      <article class="card">
+        <h3>Non-negotiable distinction</h3>
+        <p><strong>Software PASS</strong> means the implementation met its assertions. <strong>Data compatibility</strong> means a model was not rejected within a stated analysis. <strong>Empirical confirmation</strong> requires independent measurement, uncertainty control, and model comparison.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="footer-inner">
+  <div><strong>Segmented Spacetime Research Portal</strong><p>Static, provenance-first documentation generated from the public SSZ research corpus. No trackers, database, backend, or browser token.</p></div>
+  <div><strong>Research</strong><p><a href="theory.html">Theory</a><br><a href="tests.html">Tests</a><br><a href="repositories.html">Repositories</a></p></div>
+  <div><strong>Integrity</strong><p><a href="reproducibility.html">Reproducibility</a><br><a href="SCIENTIFIC_SCOPE.md">Scientific scope</a><br><a href="CONFLICT_REPORT.md">Conflict report</a></p></div>
+</div></footer>
+</body>
+</html>

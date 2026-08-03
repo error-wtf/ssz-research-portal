@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SSZ strong-field observables, interior structure, limitations and falsification."><title>Strong Field and Global Structure — SSZ</title>
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/@phosphor-icons/web"></script><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">R</span><span><strong>Segmented Spacetime</strong><small>STRONG FIELD · INTERIOR · FALSIFICATION</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a href="jif.html">JIF</a><a aria-current="page" href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<main id="main" class="page">
+<header class="hero"><div><span class="eyebrow">P0 scientific correction</span><h1>Strong field and<br><span class="gradient-text">global structure</span></h1><p class="lead">The horizon result is finite. The canonical areal centre is not regular. Both statements are true and must never be collapsed into one another.</p></div><div class="hero-orbit"><span class="orbit-core">K</span></div></header>
+<nav class="toc"><a href="#horizon">Horizon</a><a href="#observables">Observables</a><a href="#interior">Interior</a><a href="#global">Global completion</a><a href="#falsification">Falsification</a><a href="#roadmap">Roadmap</a></nav>
+
+<section id="horizon" class="section">
+<div class="section-head"><span class="section-kicker">Strongest secure result</span><h2>Finite horizon time dilation</h2></div>
+<div class="grid grid-4">
+<article class="card metric-card"><strong>0.801711847</strong><span>Ξ(r_s)</span></article>
+<article class="card metric-card"><strong>0.555027709</strong><span>D(r_s)</span></article>
+<article class="card metric-card"><strong>−0.308…</strong><span>g_tt/c² at r_s</span></article>
+<article class="card metric-card"><strong>finite</strong><span>diagonal coefficients at r_s</span></article>
+</div>
+<div class="formula big">Ξ(r_s)=1−e<sup>−φ</sup>, &nbsp; D(r_s)=1/(2−e<sup>−φ</sup>)</div>
+<p>This establishes that the declared diagonal SSZ metric does not have the Schwarzschild-coordinate zero/infinity pair at r_s. It is a precise model result. Whether the surface is a global event horizon requires the complete causal geometry, not just local coefficients.</p>
+</section>
+
+<section id="observables" class="section">
+<div class="section-head"><span class="section-kicker">Derived model observables</span><h2>Photon sphere, ISCO, shadow, redshift and ringdown</h2><p>Each quantity needs its own differential problem. None can be read from D(r_s) alone.</p></div>
+<div class="table-wrap"><table><thead><tr><th>Observable</th><th>Required calculation</th><th>Current evidence type</th><th>Main limitation</th></tr></thead><tbody>
+<tr><td>Photon sphere</td><td>Extremum of the null effective potential</td><td>repository calculations and tests</td><td>branch/metric conventions must be explicit</td></tr>
+<tr><td>ISCO</td><td>Timelike circular orbit plus marginal stability</td><td>geodesic/effective-potential code</td><td>not inferable from photon sphere</td></tr>
+<tr><td>Shadow radius</td><td>critical null impact parameter plus emission model</td><td>model comparison</td><td>observed image depends on plasma and instrument response</td></tr>
+<tr><td>Static redshift</td><td>emitter/observer clock ratio</td><td>direct D proxy</td><td>astrophysical kinematics and atmosphere matter</td></tr>
+<tr><td>Lensing</td><td>null geodesic integration</td><td>weak and strong lensing pipelines</td><td>PPN weak limit differs from strong path calculation</td></tr>
+<tr><td>QNM/ringdown</td><td>linear perturbation equation and boundary conditions</td><td>proxy/model-lock studies</td><td>full SSZ field dynamics is not yet derived</td></tr>
+<tr><td>Sgr A* / M87*</td><td>forward imaging and orbital data model</td><td>exploratory comparisons</td><td>systematics and degeneracies dominate percent-scale differences</td></tr>
+</tbody></table></div>
+<div class="callout tested"><strong>Interpretation rule:</strong> a numerically stable critical orbit is a result of the implemented effective metric. It is not automatically an observed feature of nature.</div>
+</section>
+
+<section id="interior" class="section">
+<div class="section-head"><span class="section-kicker">Central P0 correction</span><h2>SSZ Interior and Global Structure</h2><p class="lead">The formal strong branch approaches Ξ→1 and D→1/2 as r→0. Finite field and metric coefficients do not make the areal centre regular.</p></div>
+<div class="grid grid-3">
+<article class="card"><span class="badge corrected">Corrected</span><h3>Metric coefficient</h3><div class="formula big">A(r)→1/4</div><p>A finite non-unit constant multiplying time and its inverse multiplying radius leaves a solid-angle/areal-radius mismatch at the centre.</p></article>
+<article class="card"><span class="badge corrected">Divergent</span><h3>Ricci scalar</h3><div class="formula big">R(r)~3/(2r²)</div><p>The scalar curvature diverges quadratically as the areal radius vanishes.</p></article>
+<article class="card"><span class="badge corrected">Invariant</span><h3>Kretschmann scalar</h3><div class="formula big">K(r)~9/(4r⁴)</div><p>The quartic invariant divergence cannot be removed by a coordinate relabelling.</p></article>
+</div>
+<div class="callout warning"><strong>Conclusion:</strong> complete central singularity freedom has not been proven. Older documentation that states Ξ→0, D→1 or a flat centre from the same decay branch is mathematically inconsistent and is treated as superseded legacy material.</div>
+</section>
+
+<section id="global" class="section">
+<div class="section-head"><span class="section-kicker">What a completion must supply</span><h2>Requirements for a global solution</h2></div>
+<div class="grid grid-2">
+<article class="card"><h3>New interior solution</h3><ul><li>Areal-centre regularity or an explicitly non-central topology</li><li>Finite curvature invariants</li><li>Well-defined stress-energy and energy conditions</li><li>Matching of induced metric and extrinsic curvature</li><li>Stable perturbations and causal evolution</li></ul></article>
+<article class="card"><h3>Or a complete boundary geometry</h3><ul><li>A precise inner boundary instead of r=0</li><li>Boundary conditions for fields and geodesics</li><li>Proof of geodesic and causal completeness or a clear failure mode</li><li>Conservation laws and a well-posed initial-boundary value problem</li><li>Observable consequences distinct from an arbitrary cutoff</li></ul></article>
+</div>
+<div class="grid grid-3" style="margin-top:1rem">
+<article class="card"><h3>Action</h3><p>A fundamental or effective action must specify which variables are dynamical and how Ξ couples to matter and geometry.</p></article>
+<article class="card"><h3>Field equations</h3><p>Equations must determine solutions rather than merely define a metric profile, and their constraint propagation must be shown.</p></article>
+<article class="card"><h3>Global causal structure</h3><p>Penrose structure, trapped surfaces, horizons, extensions, and endpoints of causal curves require a full spacetime analysis.</p></article>
+</div>
+</section>
+
+<section id="falsification" class="section">
+<div class="section-head"><span class="section-kicker">Falsifiability</span><h2>How nature could reject SSZ</h2></div>
+<div class="grid grid-2">
+<article class="card"><h3>Static compact-object redshift</h3><p>A preregistered SSZ atmosphere-plus-geometry forward model that systematically fails accurate neutron-star line or clock measurements would reject that branch. A simple “+13%” slogan is not sufficient without source modelling.</p></article>
+<article class="card"><h3>Shadow and photon ring</h3><p>If a complete SSZ ray-traced image predicts a robust diameter or subring structure outside observational confidence regions while GR remains viable, the corresponding metric model is rejected.</p></article>
+<article class="card"><h3>Pulsar timing and Shapiro delay</h3><p>Binary timing can constrain deviations only after orbital dynamics, propagation, plasma, and parameter covariance are fitted jointly.</p></article>
+<article class="card"><h3>Ringdown</h3><p>A locked SSZ perturbation spectrum inconsistent with high-SNR multimode ringdowns would reject that dynamical completion. Current proxy shifts are not yet enough.</p></article>
+<article class="card"><h3>Internal mathematical failure</h3><p>No well-posed field equations, unavoidable ghosts, unstable modes, or impossible matching conditions could rule out proposed completions before observation.</p></article>
+<article class="card"><h3>Weak-field regression</h3><p>Any canonical change that breaks established PPN, clock, lensing, or orbital constraints would immediately invalidate that revision.</p></article>
+</div>
+<div class="callout open"><strong>Required precision:</strong> it cannot be stated as one universal percentage. It is observable- and instrument-specific and must include astrophysical nuisance parameters, calibration, model covariance, and look-elsewhere effects.</div>
+</section>
+
+<section id="roadmap" class="section">
+<div class="section-head"><span class="section-kicker">Research roadmap</span><h2>Priority-ordered open work</h2></div>
+<div class="timeline">
+<div class="timeline-item"><h3>P0 — interior and equations</h3><p>Construct or rule out a regular interior/boundary completion; derive the governing action and field equations; establish constraints and well-posedness.</p></div>
+<div class="timeline-item"><h3>P1 — rotation and perturbations</h3><p>Develop a non-perturbative rotating solution and derive linear perturbation equations, QNM spectra, and stability from the same dynamics.</p></div>
+<div class="timeline-item"><h3>P2 — forward observations</h3><p>Build uncertainty-aware shadow, spectrum, timing and gravitational-wave pipelines with blinded model comparison.</p></div>
+<div class="timeline-item"><h3>P3 — independent replication</h3><p>Freeze data, code, environments and predictions before external groups reproduce or challenge them.</p></div>
+</div></section>
+</main><footer class="footer"><div class="footer-inner"><div><strong>Strong-field scope</strong><p>Finite horizon; unresolved and singular canonical centre.</p></div><div><a href="tests.html">Evidence catalogue</a></div><div><a href="reproducibility.html">Reproduce</a></div></div></footer></body></html>

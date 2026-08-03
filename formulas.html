@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Formula and Symbol Reference — SSZ</title>
+<script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
+</head><body><a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">ƒ</span><span><strong>Segmented Spacetime</strong><small>FORMULA REFERENCE</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a href="jif.html">JIF</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<main id="main" class="page">
+<header class="hero"><div><span class="eyebrow">Formula → code → test</span><h1>Formula and<br><span class="gradient-text">symbol reference</span></h1><p class="lead">Central equations are stated with units, domains, limits, implementation rules, test links and the misinterpretations they do not permit.</p></div><div class="hero-orbit"><span class="orbit-core">Ξ</span></div></header>
+<div class="control"><label for="formula-search">Search formulas</label><input class="search" data-page-search id="formula-search" placeholder="redshift, JIF, PPN, centre…"></div>
+<section class="section"><div class="section-head"><h2>Geometry and scale</h2></div><div class="grid grid-2">
+<article class="card" data-searchable><h3>Schwarzschild scale</h3><div class="formula">r<sub>s</sub>=2GM/c²</div><p><strong>Units:</strong> m. <strong>Domain:</strong> M&gt;0. <strong>Example:</strong> one solar mass gives about 2.953 km. <strong>Code:</strong> <code>2*G*M/c**2</code>. <strong>Guardrail:</strong> do not use GM/c² under the same symbol.</p></article>
+<article class="card" data-searchable><h3>Diagonal metric</h3><div class="formula">ds²=−D²c²dt²+D⁻²dr²+r²dΩ²</div><p><strong>Units:</strong> length² per term. <strong>Scope:</strong> static spherical effective geometry. <strong>Test:</strong> tensor/inverse/horizon suites. <strong>Guardrail:</strong> this ansatz is not a derived global solution.</p></article>
+</div></section>
+<section class="section"><div class="section-head"><h2>Segment field and branches</h2></div><div class="grid grid-3">
+<article class="card" data-searchable><h3>Strong branch</h3><div class="formula">Ξ=1−exp(−φr_s/r)</div><p>Dimensionless; r/r_s&lt;1.8. Limits: Ξ(r_s)=0.801711847, Ξ→1 inward. Tested by strong-branch and horizon limits.</p></article>
+<article class="card" data-searchable><h3>C² blend</h3><div class="formula">Ξ=H<sub>5</sub>(t), t=(r/r_s−1.8)/0.4</div><p>Endpoint value, slope and curvature come from both branches. A cubic zero-slope smoothstep is not equivalent.</p></article>
+<article class="card" data-searchable><h3>Weak branch</h3><div class="formula">Ξ=r_s/(2r)</div><p>Dimensionless; r/r_s&gt;2.2. Limits: 0.05 at 10r_s and zero at infinity.</p></article>
+</div></section>
+<section class="section"><div class="section-head"><h2>Clocks, redshift and phase</h2></div><div class="grid grid-2">
+<article class="card" data-searchable><h3>Time factor</h3><div class="formula">D=1/(1+Ξ), dτ=Ddt</div><p>D is dimensionless. At r_s, D≈0.555027709. This demonstrates finite horizon time scaling, not central regularity.</p></article>
+<article class="card" data-searchable><h3>Static redshift proxy</h3><div class="formula">z=1/D−1=Ξ</div><p>Dimensionless. Applies to the declared static clock map. Real spectra also require motion, atmosphere, transfer and observer modelling.</p></article>
+<article class="card" data-searchable><h3>General JIF</h3><div class="formula">dJ=dΦ/(2π)</div><p>J is a cycle count. One full phase revolution is one JIF.</p></article>
+<article class="card" data-searchable><h3>Massive and photon JIF</h3><div class="formula">dJ=f₀dτ; &nbsp; ΔJ_γ=(1/2π)∫k_μdx^μ</div><p>Hz·s gives cycles. Photon phase is a path integral because photon proper time is zero.</p></article>
+</div></section>
+<section class="section"><div class="section-head"><h2>Weak-field observable machinery</h2></div><div class="grid grid-3">
+<article class="card" data-searchable><h3>Lensing</h3><div class="formula">α=(1+γ)r_s/b</div><p>Radians; γ=1 in the declared PPN limit. Uses both temporal and spatial metric contributions.</p></article>
+<article class="card" data-searchable><h3>Shapiro delay</h3><div class="formula">Δt=(1+γ)(r_s/c)ln(4r₁r₂/d²)</div><p>Seconds. One-way/round-trip geometry is separate from the PPN factor.</p></article>
+<article class="card" data-searchable><h3>Perihelion advance</h3><div class="formula">Δω=6πGM/[a(1−e²)c²]</div><p>Radians per orbit in the weak-field β=γ=1 limit. Agreement does not test the SSZ centre.</p></article>
+</div></section>
+<section class="section"><div class="section-head"><h2>Interior asymptotics</h2></div><div class="grid grid-3">
+<article class="card" data-searchable><h3>Metric limit</h3><div class="formula">A=D²→1/4</div><p>Finite but not sufficient for local Euclidean/Minkowski regularity at an areal centre.</p></article>
+<article class="card" data-searchable><h3>Ricci scalar</h3><div class="formula">R~3/(2r²)</div><p>Unit m⁻². Halving r multiplies the leading divergence by four.</p></article>
+<article class="card" data-searchable><h3>Kretschmann scalar</h3><div class="formula">K~9/(4r⁴)</div><p>Unit m⁻⁴. Halving r multiplies the leading divergence by sixteen; it is coordinate-invariant.</p></article>
+</div></section>
+<section class="section"><div class="callout"><strong>Extraction record:</strong> 4,000 unique formula candidates were extracted from normal text, Markdown and existing TeX sources. They remain candidates until a human assigns context, domain and canonical status. See <a href="data/formula-candidates.json">the machine catalogue</a> and <a href="FORMULA_CATALOG.md">curation notes</a>.</div></section>
+</main><footer class="footer"><div class="footer-inner"><div><strong>Formula reference</strong><p>Normal HTML mathematics; no TeX build pipeline.</p></div><div><a href="data/formulas.json">Curated formula JSON</a></div><div><a href="glossary.html">Symbols</a></div></div></footer></body></html>

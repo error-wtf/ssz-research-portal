@@ -1,0 +1,732 @@
+{
+  "count": 37,
+  "repositories": [
+    {
+      "name": "CALCULATION_OF_NUMBER_PI",
+      "full_name": "error-wtf/CALCULATION_OF_NUMBER_PI",
+      "description": "CALCULATION OF NUMBER PI AFTER CHUDNOWSKI",
+      "public_url": "https://github.com/error-wtf/CALCULATION_OF_NUMBER_PI",
+      "local_reference": "physics/CALCULATION_OF_NUMBER_PI",
+      "scientific_role": "Simulation, Mathematics",
+      "tags": [
+        "Simulation",
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "da3a9ab19b00",
+      "commit_date": "2025-11-16T12:39:27+01:00",
+      "release": "number_pi",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 123,
+      "test_related_files": 0
+    },
+    {
+      "name": "LOST_EINSTEIN_PAPERS",
+      "full_name": "error-wtf/LOST_EINSTEIN_PAPERS",
+      "description": "Princeton and Hebrew University decided to put the Papers offline and announced to put them 2026 behind Paywall",
+      "public_url": "https://github.com/error-wtf/LOST_EINSTEIN_PAPERS",
+      "local_reference": "physics/LOST_EINSTEIN_PAPERS",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "d278d93f4dc6",
+      "commit_date": "2025-11-13T12:36:30+01:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 93,
+      "test_related_files": 0
+    },
+    {
+      "name": "Riemann-Zeta-Zero-Finding-Suite",
+      "full_name": "error-wtf/Riemann-Zeta-Zero-Finding-Suite",
+      "description": "This repository contains a modular Python toolkit for studying the Riemann-Zeta function on the critical line and certifying its non-trivial zeros.",
+      "public_url": "https://github.com/error-wtf/Riemann-Zeta-Zero-Finding-Suite",
+      "local_reference": "physics/Riemann-Zeta-Zero-Finding-Suite",
+      "scientific_role": "Mathematics",
+      "tags": [
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "6cb723401683",
+      "commit_date": "2025-11-28T23:51:06+01:00",
+      "release": "Rieman_Zeta",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 39,
+      "test_related_files": 1
+    },
+    {
+      "name": "SEGMENTED_SPACETIME",
+      "full_name": "error-wtf/SEGMENTED_SPACETIME",
+      "description": "Keine Beschreibung hinterlegt.",
+      "public_url": "https://github.com/error-wtf/SEGMENTED_SPACETIME",
+      "local_reference": "physics/SEGMENTED_SPACETIME",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "main",
+      "commit": "3e57145e848e",
+      "commit_date": "2025-11-21T05:45:08+01:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 23,
+      "test_related_files": 0
+    },
+    {
+      "name": "SSZ-HOW-TO-BEAM",
+      "full_name": "error-wtf/SSZ-HOW-TO-BEAM",
+      "description": "SSZ-HOW-TO-BEAM: Bridge Metric Research Framework",
+      "public_url": "https://github.com/error-wtf/SSZ-HOW-TO-BEAM",
+      "local_reference": "physics/SSZ-HOW-TO-BEAM",
+      "scientific_role": "Theory, Documentation",
+      "tags": [
+        "Theory",
+        "Documentation"
+      ],
+      "default_branch": "main",
+      "commit": "72ac721652c1",
+      "commit_date": "2026-07-01T02:22:07+02:00",
+      "release": "v1.1.0",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 274,
+      "test_related_files": 78
+    },
+    {
+      "name": "SSZ-METRIC_COMPLETE",
+      "full_name": "error-wtf/SSZ-METRIC_COMPLETE",
+      "description": "Keine Beschreibung hinterlegt.",
+      "public_url": "https://github.com/error-wtf/SSZ-METRIC_COMPLETE",
+      "local_reference": "physics/SSZ-METRIC_COMPLETE",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "main",
+      "commit": "b7643f437f46",
+      "commit_date": "2026-07-28T14:53:17+02:00",
+      "release": "v1.1.0",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 290,
+      "test_related_files": 118
+    },
+    {
+      "name": "Segmented-Spacetime-Book",
+      "full_name": "error-wtf/Segmented-Spacetime-Book",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "",
+      "local_reference": "physics/Segmented-Spacetime-Book",
+      "scientific_role": "Theory, Documentation",
+      "tags": [
+        "Theory",
+        "Documentation"
+      ],
+      "default_branch": "stage-1-reconstruction",
+      "commit": "536371b120a0",
+      "commit_date": "2026-07-15T00:34:05+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 8431,
+      "test_related_files": 1289
+    },
+    {
+      "name": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "full_name": "error-wtf/Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "description": "This repository provides a full Python-based implementation and verification of the **Segmented Spacetime Mass Projection Model**, offering a high-precision, testable alternative to traditional gravitational models.",
+      "public_url": "https://github.com/error-wtf/Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "local_reference": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "scientific_role": "Theory, Tests, Data",
+      "tags": [
+        "Theory",
+        "Tests",
+        "Data"
+      ],
+      "default_branch": "main",
+      "commit": "957827e5bfe3",
+      "commit_date": "2026-07-01T02:22:15+02:00",
+      "release": "v2.0.0-frozen",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 2760,
+      "test_related_files": 1161
+    },
+    {
+      "name": "Segmented-Spacetime-Starmaps",
+      "full_name": "error-wtf/Segmented-Spacetime-Starmaps",
+      "description": "Starmap/Skymap basic structure with SSZ Physics basic Plots.",
+      "public_url": "https://github.com/error-wtf/Segmented-Spacetime-Starmaps",
+      "local_reference": "physics/Segmented-Spacetime-Starmaps",
+      "scientific_role": "Theory, Visualisation",
+      "tags": [
+        "Theory",
+        "Visualisation"
+      ],
+      "default_branch": "main",
+      "commit": "76b329aa4fa2",
+      "commit_date": "2026-07-01T02:22:19+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 399,
+      "test_related_files": 71
+    },
+    {
+      "name": "chord-partition",
+      "full_name": "error-wtf/chord-partition",
+      "description": "SSZ Chord-Partition Eigenmodes — parametric curves with golden ratio φ resonance. 103 tests, 100% pass.",
+      "public_url": "https://github.com/error-wtf/chord-partition",
+      "local_reference": "physics/chord-partition",
+      "scientific_role": "Theory, Tests, Mathematics",
+      "tags": [
+        "Theory",
+        "Tests",
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "fcbcad34ae2d",
+      "commit_date": "2026-04-29T22:54:19+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 6,
+      "test_related_files": 1
+    },
+    {
+      "name": "claudes-cycles",
+      "full_name": "error-wtf/claudes-cycles",
+      "description": "Hamiltonian cycle decomposition of 3D Cayley digraphs on Z_m^3, based on Knuth's \"Claude's Cycles\" (2026). Verified for all odd m from 3 to 101.",
+      "public_url": "https://github.com/error-wtf/claudes-cycles",
+      "local_reference": "physics/claudes-cycles",
+      "scientific_role": "Mathematics",
+      "tags": [
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "6406b9a9386b",
+      "commit_date": "2026-03-05T22:54:02+01:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 8,
+      "test_related_files": 1
+    },
+    {
+      "name": "counterexample-commons",
+      "full_name": "error-wtf/counterexample-commons",
+      "description": "An Anti-Capitalist AI-Assisted Mathematics Research Lab - Exact validation of planar unit-distance configurations",
+      "public_url": "https://github.com/error-wtf/counterexample-commons",
+      "local_reference": "physics/counterexample-commons",
+      "scientific_role": "Tests, Mathematics",
+      "tags": [
+        "Tests",
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "9a1febb68ff4",
+      "commit_date": "2026-05-28T10:42:24+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 143,
+      "test_related_files": 31
+    },
+    {
+      "name": "emergent-spacetime",
+      "full_name": "error-wtf/emergent-spacetime",
+      "description": "A generative model of spatial structure from temporal interference.",
+      "public_url": "https://github.com/error-wtf/emergent-spacetime",
+      "local_reference": "physics/emergent-spacetime",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "main",
+      "commit": "c485bc878c7a",
+      "commit_date": "2025-10-17T04:14:03+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 23,
+      "test_related_files": 0
+    },
+    {
+      "name": "frequency-curvature-validation",
+      "full_name": "error-wtf/frequency-curvature-validation",
+      "description": "Validation test suite for 'Frequency-Based Curvature Detection via Dynamic Comparisons' paper - 56/56 tests (100%)",
+      "public_url": "https://github.com/error-wtf/frequency-curvature-validation",
+      "local_reference": "physics/frequency-curvature-validation",
+      "scientific_role": "Tests",
+      "tags": [
+        "Tests"
+      ],
+      "default_branch": "main",
+      "commit": "2bb007e6c888",
+      "commit_date": "2026-07-01T00:36:26+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 24,
+      "test_related_files": 24
+    },
+    {
+      "name": "g79-cygnus-tests",
+      "full_name": "error-wtf/g79-cygnus-tests",
+      "description": "Reproducible Segmented Spacetime (SSZ) tests on G79.29+0.46 (Cygnus): data pipeline, T(r)/v(r) fits, CO/NH3 maps, PV diagrams, uncertainty bands.",
+      "public_url": "https://github.com/error-wtf/g79-cygnus-tests",
+      "local_reference": "physics/g79-cygnus-tests",
+      "scientific_role": "Theory, Tests, Data, Mathematics",
+      "tags": [
+        "Theory",
+        "Tests",
+        "Data",
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "c4d72c546a46",
+      "commit_date": "2026-07-01T02:22:23+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 211,
+      "test_related_files": 211
+    },
+    {
+      "name": "galactic-year",
+      "full_name": "error-wtf/galactic-year",
+      "description": "Keine Beschreibung hinterlegt.",
+      "public_url": "https://github.com/error-wtf/galactic-year",
+      "local_reference": "physics/galactic-year",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "61b7ca569da5",
+      "commit_date": "2026-07-01T02:22:27+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 23,
+      "test_related_files": 0
+    },
+    {
+      "name": "hilfsdateien",
+      "full_name": "error-wtf/hilfsdateien",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien.git",
+      "local_reference": "physics/hilfsdateien",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "fd3ac98ff221",
+      "commit_date": "2026-07-01T02:29:49+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "modified",
+      "file_count": 2521,
+      "test_related_files": 1149
+    },
+    {
+      "name": "pardon-symplectic-geometry-ssz-lab",
+      "full_name": "error-wtf/pardon-symplectic-geometry-ssz-lab",
+      "description": "Educational reconstruction lab for John Pardon's symplectic geometry, visualized against SSZ methods",
+      "public_url": "https://github.com/error-wtf/pardon-symplectic-geometry-ssz-lab",
+      "local_reference": "physics/pardon-symplectic-geometry-ssz-lab",
+      "scientific_role": "Theory, Mathematics",
+      "tags": [
+        "Theory",
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "89ecef894c86",
+      "commit_date": "2026-07-25T01:01:37+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 85,
+      "test_related_files": 9
+    },
+    {
+      "name": "pi-cluster",
+      "full_name": "error-wtf/pi-cluster",
+      "description": "HPC Pi computation suite + cluster benchmark tool for PHYSnet (Universität Hamburg). Chudnovsky/GMP, optional CUDA hybrid, MPI multi-node, Slurm-ready.",
+      "public_url": "https://github.com/error-wtf/pi-cluster",
+      "local_reference": "physics/pi-cluster",
+      "scientific_role": "Tests, Mathematics",
+      "tags": [
+        "Tests",
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "63a11f1072f4",
+      "commit_date": "2026-03-31T11:37:33+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 50,
+      "test_related_files": 5
+    },
+    {
+      "name": "segmented-calculation-suite",
+      "full_name": "error-wtf/segmented-calculation-suite",
+      "description": "SSZ (Segmented Spacetime) Calculation Suite - Production toolkit for singularity-free gravity calculations. 186 tests, GPS validated, Google Colab ready.",
+      "public_url": "https://github.com/error-wtf/segmented-calculation-suite",
+      "local_reference": "physics/segmented-calculation-suite",
+      "scientific_role": "Theory, Tests, Simulation",
+      "tags": [
+        "Theory",
+        "Tests",
+        "Simulation"
+      ],
+      "default_branch": "main",
+      "commit": "b32d89d2a336",
+      "commit_date": "2026-07-01T02:22:31+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 173,
+      "test_related_files": 55
+    },
+    {
+      "name": "segmented-energy",
+      "full_name": "error-wtf/segmented-energy",
+      "description": "Segmented Energy Model - SSZ Framework with 129 astronomical objects for statistical validation",
+      "public_url": "https://github.com/error-wtf/segmented-energy",
+      "local_reference": "physics/segmented-energy",
+      "scientific_role": "Tests, Data",
+      "tags": [
+        "Tests",
+        "Data"
+      ],
+      "default_branch": "main",
+      "commit": "94cb573ca1ce",
+      "commit_date": "2026-07-01T02:22:34+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 52,
+      "test_related_files": 8
+    },
+    {
+      "name": "ssz-all-tests",
+      "full_name": "error-wtf/ssz-all-tests",
+      "description": "Keine Beschreibung hinterlegt.",
+      "public_url": "https://github.com/error-wtf/ssz-all-tests",
+      "local_reference": "physics/ssz-all-tests",
+      "scientific_role": "Tests",
+      "tags": [
+        "Tests"
+      ],
+      "default_branch": "main",
+      "commit": "ed5359f15de3",
+      "commit_date": "2026-07-01T02:22:38+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 450,
+      "test_related_files": 450
+    },
+    {
+      "name": "ssz-complete-documentation",
+      "full_name": "error-wtf/ssz-complete-documentation",
+      "description": "Segmented Spacetime (SSZ) — Complete Documentation. Formulas, validation, falsification, papers, repositories. Authors: Carmen N. Wrede, Lino P. Casu.",
+      "public_url": "https://github.com/error-wtf/ssz-complete-documentation",
+      "local_reference": "physics/ssz-complete-documentation",
+      "scientific_role": "Theory, Tests, Documentation",
+      "tags": [
+        "Theory",
+        "Tests",
+        "Documentation"
+      ],
+      "default_branch": "main",
+      "commit": "b2bac976a75d",
+      "commit_date": "2026-07-01T02:22:42+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 195,
+      "test_related_files": 20
+    },
+    {
+      "name": "ssz-full-metric",
+      "full_name": "error-wtf/ssz-full-metric",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "https://github.com/error-wtf/ssz-full-metric.git",
+      "local_reference": "physics/ssz-full-metric",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "master",
+      "commit": "1a7d27843da7",
+      "commit_date": "2026-07-01T02:22:47+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 142,
+      "test_related_files": 19
+    },
+    {
+      "name": "ssz-jif-core",
+      "full_name": "error-wtf/ssz-jif-core",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "https://github.com/error-wtf/ssz-jif-core.git",
+      "local_reference": "physics/ssz-jif-core",
+      "scientific_role": "JIF",
+      "tags": [
+        "JIF"
+      ],
+      "default_branch": "main",
+      "commit": "be63a1fde558",
+      "commit_date": "2026-07-27T03:05:24+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "modified",
+      "file_count": 341,
+      "test_related_files": 141
+    },
+    {
+      "name": "ssz-jif-forward-lab",
+      "full_name": "error-wtf/ssz-jif-forward-lab",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "",
+      "local_reference": "physics/ssz-jif-forward-lab",
+      "scientific_role": "JIF",
+      "tags": [
+        "JIF"
+      ],
+      "default_branch": "",
+      "commit": "",
+      "commit_date": "",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 2370,
+      "test_related_files": 167
+    },
+    {
+      "name": "ssz-lagrange",
+      "full_name": "error-wtf/ssz-lagrange",
+      "description": "Lagrange and Hamilton Formulation of Segmented Spacetime (SSZ) — Action principle, geodesics, effective potentials, Kerr analog, gravitomagnetism, quantum corrections, cosmology, and numerical relativity for SSZ",
+      "public_url": "https://github.com/error-wtf/ssz-lagrange",
+      "local_reference": "physics/ssz-lagrange",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "main",
+      "commit": "119cc2a4bd64",
+      "commit_date": "2026-07-01T00:36:36+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 19,
+      "test_related_files": 1
+    },
+    {
+      "name": "ssz-lensing",
+      "full_name": "error-wtf/ssz-lensing",
+      "description": "SSZ-Lensing: Radial Scaling Gauge Validation Suite - 28/28 tests (100%)",
+      "public_url": "https://github.com/error-wtf/ssz-lensing",
+      "local_reference": "physics/ssz-lensing",
+      "scientific_role": "Tests, Visualisation",
+      "tags": [
+        "Tests",
+        "Visualisation"
+      ],
+      "default_branch": "master",
+      "commit": "86130b5a81a7",
+      "commit_date": "2026-07-01T02:22:51+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 275,
+      "test_related_files": 52
+    },
+    {
+      "name": "ssz-ligo-tests",
+      "full_name": "error-wtf/ssz-ligo-tests",
+      "description": "SSZ-LIGO Forward Model Test Suite — anti-circular exploratory strain pipeline with V0 proxy formulas. No physics claims.",
+      "public_url": "https://github.com/error-wtf/ssz-ligo-tests",
+      "local_reference": "physics/ssz-ligo-tests",
+      "scientific_role": "Tests, Mathematics",
+      "tags": [
+        "Tests",
+        "Mathematics"
+      ],
+      "default_branch": "main",
+      "commit": "85f366487721",
+      "commit_date": "2026-07-01T02:22:55+02:00",
+      "release": "gw240925-pipeline-freeze-v1",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 459,
+      "test_related_files": 459
+    },
+    {
+      "name": "ssz-metric-final",
+      "full_name": "error-wtf/ssz-metric-final",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "https://github.com/error-wtf/ssz-metric-final.git",
+      "local_reference": "physics/ssz-metric-final",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "master",
+      "commit": "ab006fd7322d",
+      "commit_date": "2026-07-01T02:22:59+02:00",
+      "release": "v1.0.0",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 146,
+      "test_related_files": 31
+    },
+    {
+      "name": "ssz-metric-pure",
+      "full_name": "error-wtf/ssz-metric-pure",
+      "description": "Complete singularity-free black hole solution using φ-based geometric structure. SSZ only.",
+      "public_url": "https://github.com/error-wtf/ssz-metric-pure",
+      "local_reference": "physics/ssz-metric-pure",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "main",
+      "commit": "293c7c1549fb",
+      "commit_date": "2026-07-01T02:23:03+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 122,
+      "test_related_files": 22
+    },
+    {
+      "name": "ssz-paper-plots",
+      "full_name": "error-wtf/ssz-paper-plots",
+      "description": "Collection of all Segmented Spacetime (SSZ) plots used in the current papers",
+      "public_url": "https://github.com/error-wtf/ssz-paper-plots",
+      "local_reference": "physics/ssz-paper-plots",
+      "scientific_role": "Theory, Visualisation",
+      "tags": [
+        "Theory",
+        "Visualisation"
+      ],
+      "default_branch": "main",
+      "commit": "e5319d16f343",
+      "commit_date": "2026-07-01T02:01:34+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 692,
+      "test_related_files": 254
+    },
+    {
+      "name": "ssz-qubits",
+      "full_name": "error-wtf/ssz-qubits",
+      "description": "SSZ-Qubits: Segmented Spacetime Framework for Quantum Computing - Applying SSZ theory to analyze and minimize gravitational effects on qubit systems",
+      "public_url": "https://github.com/error-wtf/ssz-qubits",
+      "local_reference": "physics/ssz-qubits",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "main",
+      "commit": "e068fe6d14d5",
+      "commit_date": "2026-07-01T02:23:07+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 137,
+      "test_related_files": 24
+    },
+    {
+      "name": "ssz-radial-scaling",
+      "full_name": "error-wtf/ssz-radial-scaling",
+      "description": "Radial Scaling Gauge (RSG) for Quantum Mechanics: Langer correction, WKB quantization, Coulomb spectrum, TISE solution without TDSE",
+      "public_url": "https://github.com/error-wtf/ssz-radial-scaling",
+      "local_reference": "physics/ssz-radial-scaling",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "83d58964238a",
+      "commit_date": "2026-05-13T15:33:00+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "modified",
+      "file_count": 21,
+      "test_related_files": 10
+    },
+    {
+      "name": "ssz-schumann",
+      "full_name": "error-wtf/ssz-schumann",
+      "description": "SSZ-Schumann: Segmented Spacetime Analysis of Schumann Resonances - Testing SSZ theory with Earth's electromagnetic resonances",
+      "public_url": "https://github.com/error-wtf/ssz-schumann",
+      "local_reference": "physics/ssz-schumann",
+      "scientific_role": "Theory, Tests",
+      "tags": [
+        "Theory",
+        "Tests"
+      ],
+      "default_branch": "main",
+      "commit": "6172213c7333",
+      "commit_date": "2026-07-01T02:23:11+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 220,
+      "test_related_files": 37
+    },
+    {
+      "name": "ssz-theory-readiness",
+      "full_name": "error-wtf/ssz-theory-readiness",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "https://github.com/error-wtf/ssz-theory-readiness.git",
+      "local_reference": "physics/ssz-theory-readiness",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "master",
+      "commit": "d85ffc0ec19a",
+      "commit_date": "2026-07-27T04:55:15+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 50,
+      "test_related_files": 8
+    },
+    {
+      "name": "ssz-trajectories",
+      "full_name": "error-wtf/ssz-trajectories",
+      "description": "SSZ (Segmented Spacetime) trajectory toolkit — geodesic integration, Xi functions, phi-Euler embedding, bridge identity verification",
+      "public_url": "https://github.com/error-wtf/ssz-trajectories",
+      "local_reference": "physics/ssz-trajectories",
+      "scientific_role": "Theory, Simulation",
+      "tags": [
+        "Theory",
+        "Simulation"
+      ],
+      "default_branch": "main",
+      "commit": "b8e6a0c25453",
+      "commit_date": "2026-07-01T00:36:46+02:00",
+      "release": "no local tag",
+      "status": "archived",
+      "working_tree": "clean",
+      "file_count": 22,
+      "test_related_files": 7
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Segmented Spacetime theory from intuitive foundations to geometry, implementation and tests.">
+<title>SSZ Theory — Segmented Spacetime</title>
+<script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/@phosphor-icons/web"></script>
+<link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
+</head><body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>THEORY FROM A TO Z</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a aria-current="page" href="theory.html">Theory</a><a href="jif.html">JIF</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<main id="main" class="page">
+<header class="hero"><div><span class="eyebrow">Four levels of explanation</span><h1>SSZ theory<br><span class="gradient-text">from A to Z</span></h1><p class="lead">Intuition, physics, mathematics, implementation and validation are kept together so that no formula floats free of its assumptions.</p></div><div class="hero-orbit"><span class="orbit-core">ds²</span></div></header>
+<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#weak">Weak field</a><a href="#rotation">Sagnac</a><a href="#observables">Observables</a><a href="#misreadings">Misreadings</a></nav>
+
+<section id="segmentation" class="section">
+<div class="section-head"><span class="section-kicker">Foundations</span><h2>What “segmented” means</h2><p class="lead">Segmentation is a model description of how local radial and temporal scaling is encoded by a dimensionless field Ξ. It is not, by itself, proof that spacetime is literally made of discrete blocks.</p></div>
+<div class="four-levels grid grid-2">
+<article class="card level"><h3>Intuitive</h3><p>Imagine comparing identical local clocks and rulers at different gravitational radii. SSZ summarises the comparison with one local scaling field. More Ξ means a smaller D and therefore fewer local proper-time seconds per coordinate-time second.</p></article>
+<article class="card level"><h3>Physical</h3><p>A static observer at radius r is assigned dτ=D(r)dt. Radial proper length is scaled inversely in the diagonal ansatz. Local measurements still use local proper time and proper distance.</p></article>
+<article class="card level"><h3>Mathematical</h3><div class="formula">D(r)=1/(1+Ξ(r)), &nbsp; s(r)=1+Ξ(r)=1/D(r)</div><p>Ξ and D are dimensionless. The field depends on the dimensionless ratio r/r_s once a central mass fixes r_s.</p></article>
+<article class="card level"><h3>Implementation</h3><p>Code must declare the observable class, select the applicable branch or PPN method, retain units, and test limits before producing a number.</p><pre>observable → class → method → scope → calculate</pre></article>
+</div>
+</section>
+
+<section id="time" class="section">
+<div class="section-head"><span class="section-kicker">Time, frames and light</span><h2>Proper time is not coordinate time</h2></div>
+<div class="grid grid-3">
+<article class="card"><h3>Proper time τ</h3><p>The time recorded by a clock travelling on a timelike worldline. It is local and invariant along that worldline.</p></article>
+<article class="card"><h3>Coordinate time t</h3><p>A coordinate label used to compare separated events within a chosen chart. It is not directly what every observer measures.</p></article>
+<article class="card"><h3>Light</h3><p>A photon follows a null path with dτ=0. Every local freely falling observer measures light at c; coordinate speeds may differ because coordinates and metric coefficients differ.</p></article>
+</div>
+<div class="callout"><strong>Local statement:</strong> c is locally constant. A radial coordinate expression such as dr/dt is not automatically a locally measured speed. Confusing the two produces false superluminal or “slowed photon” claims.</div>
+</section>
+
+<section id="metric" class="section">
+<div class="section-head"><span class="section-kicker">Geometry</span><h2>The canonical diagonal metric ansatz</h2></div>
+<div class="formula big">ds² = −D²(r)c²dt² + D⁻²(r)dr² + r²(dθ² + sin²θ dϕ²)</div>
+<div class="grid grid-2">
+<article class="card"><h3>Components</h3><table><tbody><tr><td>g<sub>tt</sub></td><td>−D²c²</td><td>static clock scaling</td></tr><tr><td>g<sub>rr</sub></td><td>D⁻²</td><td>radial proper-length scaling</td></tr><tr><td>g<sub>θθ</sub></td><td>r²</td><td>areal angular radius</td></tr><tr><td>g<sub>ϕϕ</sub></td><td>r²sin²θ</td><td>azimuthal angular term</td></tr></tbody></table></article>
+<article class="card"><h3>Areal radius</h3><p>The area of a symmetry sphere is 4πr². This makes r=0 a geometrically meaningful areal centre, not merely a coordinate label that can be dismissed when curvature invariants diverge.</p><p>The determinant and inverse metric being finite at one radius do not guarantee global regularity.</p></article>
+</div>
+<div class="callout warning"><strong>Scope boundary:</strong> this metric is a mathematically concrete effective geometry. A fundamental action and complete field equations that dynamically generate it are still missing.</div>
+</section>
+
+<section id="branches" class="section">
+<div class="section-head"><span class="section-kicker">Piecewise field</span><h2>Strong, transition and weak regimes</h2></div>
+<div class="grid grid-3">
+<article class="card"><span class="badge canonical">r/r_s &lt; 1.8</span><h3>Strong/inner branch</h3><div class="formula">Ξ=1−exp(−φr_s/r)</div><p>Ξ decreases outward. At r_s it is about 0.8017; as the formula is formally continued inward it approaches 1.</p></article>
+<article class="card"><span class="badge tested">1.8 ≤ r/r_s ≤ 2.2</span><h3>Blend zone</h3><div class="formula">Ξ=H<sub>5</sub>(t)</div><p>A quintic Hermite polynomial matches value, first derivative and second derivative of both branches. This is an operational interpolation, not yet a derived phase transition.</p></article>
+<article class="card"><span class="badge canonical">r/r_s &gt; 2.2</span><h3>Weak branch</h3><div class="formula">Ξ=r_s/(2r)</div><p>It tends to zero at infinity, so D tends to one and the metric tends to Minkowski form.</p></article>
+</div>
+<details><summary>Why C² rather than a simple smoothstep?</summary><p>A cubic 3t²−2t³ forces zero endpoint slopes and only guarantees C¹ matching when the neighbouring functions are not themselves flat. The current requirement transports the actual endpoint slope and curvature of both physical branches. That removes artificial derivative jumps through second order.</p></details>
+</section>
+
+<section id="weak" class="section">
+<div class="section-head"><span class="section-kicker">Weak field</span><h2>Newtonian and PPN limits</h2><p>The weak-field branch gives Ξ≈GM/(rc²). Different observable classes must still use different complete formulas.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>Static clocks</h3><div class="formula">D≈1−GM/(rc²)</div><p>At first order, this yields the familiar gravitational clock shift. Clock observables can use the direct D mapping.</p></article>
+<article class="card"><h3>Null paths</h3><div class="formula">α=(1+γ)r_s/b, &nbsp; γ=1</div><p>Lensing and Shapiro delay depend on both temporal and spatial metric structure. They must use the PPN completion, not an Ξ-only shortcut.</p></article>
+<article class="card"><h3>Mercury perihelion</h3><div class="formula">Δω=6πGM/[a(1−e²)c²]</div><p>The declared β=γ=1 PPN machinery reproduces the reference weak-field formula.</p></article>
+<article class="card"><h3>What that means</h3><p>Passing GPS, Pound–Rebka, Cassini, lensing, and perihelion reference tests demonstrates consistency of the implemented weak-field limit. It does not test the centre, strong-field stability, or a new fundamental dynamics.</p></article>
+</div>
+</section>
+
+<section id="rotation" class="section">
+<div class="section-head"><span class="section-kicker">Sagnac and rotation</span><h2>Direction comparison, not a conveyor-belt analogy</h2></div>
+<div class="grid grid-2">
+<article class="card"><h3>Classical structure</h3><p>On a rotating platform, counter-propagating signals accumulate different travel times. The effect is extracted by comparing directions; common, direction-symmetric contributions cancel in the subtraction.</p><div class="formula">Δt<sub>Sagnac</sub> ≈ 4AΩ/c²</div><p>This leading expression assumes the standard rotating-loop geometry.</p></article>
+<article class="card"><h3>SSZ research question</h3><p>Potential-dependent segment or phase contributions must be classified as one-way or two-way, local or global, and symmetric or antisymmetric under path reversal. Synchronisation conventions must be stated.</p><p>A rim-speed or conveyor-belt picture cannot replace the spacetime path integral.</p></article>
+</div>
+<details><summary>One-way versus two-way measurement</summary><p>One-way timing requires a synchronisation convention between separated clocks. Round-trip timing can avoid that convention but measures a different observable. A factor of two from path duplication is separate from a factor such as (1+γ) in a PPN formula.</p></details>
+</section>
+
+<section id="observables" class="section">
+<div class="section-head"><span class="section-kicker">Observable assignment</span><h2>One field does not mean one shortcut</h2></div>
+<div class="table-wrap"><table><thead><tr><th>Class</th><th>Examples</th><th>Method</th><th>Primary caution</th></tr></thead><tbody>
+<tr><td>Static timelike</td><td>clock rate, static redshift</td><td>direct D/Ξ mapping</td><td>include emitter/observer and kinematics</td></tr>
+<tr><td>Null path</td><td>lensing, Shapiro, VLBI</td><td>full metric or PPN completion</td><td>do not use Ξ-only factor</td></tr>
+<tr><td>Timelike orbit</td><td>perihelion, ISCO, epicycles</td><td>geodesic/effective-potential machinery</td><td>do not infer from D at one radius</td></tr>
+<tr><td>Phase</td><td>JIF clocks, interferometers</td><td>proper phase or path phase</td><td>photons have no proper time</td></tr>
+<tr><td>Wave dynamics</td><td>QNM, inspiral, ringdown</td><td>perturbation equations from declared dynamics</td><td>proxy frequency is not a full waveform</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="misreadings" class="section">
+<div class="section-head"><span class="section-kicker">Guardrails</span><h2>Common misreadings</h2></div>
+<div class="grid grid-2">
+<article class="card"><h3>“Finite at r_s means no singularity anywhere.”</h3><p>False. Horizon regularity and central regularity are different mathematical questions. Curvature diverges at the areal centre in the current diagonal continuation.</p></article>
+<article class="card"><h3>“A green test proves nature uses SSZ.”</h3><p>False. A test can prove a code path satisfies an assertion or reproduces a dataset transformation. Empirical preference requires uncertainty-aware comparison against alternatives.</p></article>
+<article class="card"><h3>“Segmentation means a literal lattice.”</h3><p>Not established. Ξ is an effective field in the present formalism; the microphysical origin remains open.</p></article>
+<article class="card"><h3>“JIF is a new universal clock.”</h3><p>False. JIF is phase counting: dJ=dΦ/(2π). It is tied to a physical oscillator or path phase.</p></article>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="footer-inner"><div><strong>SSZ Theory</strong><p>P0-corrected, provenance-first presentation.</p></div><div><a href="jif.html">Next: JIF</a></div><div><a href="strong-field.html">Strong-field structure</a></div></div></footer>
+</body></html>

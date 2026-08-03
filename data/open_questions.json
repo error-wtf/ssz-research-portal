@@ -1,0 +1,15 @@
+{
+  "count": 10,
+  "questions": [
+    {"title":"Globale innere Lösung","need":"Eine reguläre innere Geometrie oder formal vollständige Randgeometrie mit Matching-Bedingungen.","priority":"P0"},
+    {"title":"Fundamentale Wirkung","need":"Eine Wirkung, aus der die Dynamik und Feldgleichungen eindeutig folgen.","priority":"P0"},
+    {"title":"Stress-Energie und Energiebedingungen","need":"Vollständige, koordinatenrobuste Analyse über den gesamten Definitionsbereich.","priority":"P0"},
+    {"title":"Geodätische und kausale Vollständigkeit","need":"Maximale Fortsetzung und Klassifikation aller Geodäten.","priority":"P0"},
+    {"title":"Rotierende Lösung","need":"Nichtperturbative Kerr-artige SSZ-Geometrie statt nur PPN-Näherung.","priority":"high"},
+    {"title":"Gravitationswellen","need":"Aus Feldgleichungen abgeleitete inspiral-merger-ringdown Wellenformen.","priority":"high"},
+    {"title":"Blend-Herkunft","need":"Physikalische Herleitung statt ausschließlich operativer Interpolation.","priority":"high"},
+    {"title":"JIF-Messprotokolle","need":"Vorgeklärte Uhren-, Interferometer- und Pfadphasenexperimente samt Unsicherheiten.","priority":"high"},
+    {"title":"Starkfelddaten","need":"Unabhängige Fits mit Systematiken, Priors und Vergleich gegen GR/Alternativmodelle.","priority":"high"},
+    {"title":"Mikrophysik","need":"Herleitung der Segmentierung und von φ aus tieferer Dynamik oder klare effektive Einordnung.","priority":"open"}
+  ]
+}

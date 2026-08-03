@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSZ Forschungsanalyse – Premium Dashboard</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- KaTeX for beautiful math rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body)"></script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        phi: { 400: '#d4af37', 500: '#b8860b', 600: '#996515' },
+                        deep: { 800: '#1e293b', 900: '#0f172a' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Glass and Math Cards */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .math-box {
+            background: #ffffff;
+            border-left: 4px solid #b8860b;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+        }
+        .math-box:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #0f172a 0%, #b8860b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased relative">
+
+    <nav class="fixed w-full top-0 z-50 glass-panel border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="ph-fill ph-atom text-3xl text-phi-500"></i>
+                <span class="text-xl font-bold tracking-tight text-deep-900">SSZ Framework <span class="text-sm font-normal text-slate-500 ml-2">v1.1.0</span></span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="#theorie" class="hover:text-phi-500 transition-colors">Theorie</a>
+                <a href="#simulation" class="hover:text-phi-500 transition-colors">Simulation</a>
+                <a href="#daten" class="hover:text-phi-500 transition-colors">Datensätze</a>
+            </div>
+            <button class="md:hidden text-slate-600"><i class="ph ph-list text-2xl"></i></button>
+        </div>
+    </nav>
+
+    <main class="pt-28 pb-20 px-6 max-w-7xl mx-auto space-y-20">
+        
+        <header class="text-center max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-phi-50 text-phi-600 text-xs font-semibold mb-6 border border-phi-100">
+                <span class="w-2 h-2 rounded-full bg-phi-500 animate-pulse"></span>
+                Kanonisches Modell Aktiv
+            </div>
+            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-deep-900">
+                Forschungsanalyse der <br> <span class="gradient-text">SSZ Metrik</span>
+            </h1>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                Interaktive Visualisierung und mathematische Spezifikation der Segmented Space-Time Zone (SSZ). 
+                Diese Umgebung implementiert die korrekte Spline-Interpolation zwischen den starken und schwachen Gravitationsregimes.
+            </p>
+        </header>
+
+        <section id="theorie" class="scroll-mt-32">
+            <div class="flex items-center gap-3 mb-8">
+                <i class="ph-duotone ph-books text-3xl text-phi-500"></i>
+                <h2 class="text-3xl font-bold text-deep-900">Kanonische Formelsätze</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Strong Branch -->
+                <div class="math-box p-6 rounded-2xl">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-bold text-lg text-slate-800">Starkes Regime</h3>
+                        <span class="px-2 py-1 bg-red-50 text-red-600 text-xs font-bold rounded">$r \le 1.8 r_s$</span>
+                    </div>
+                    <div class="text-center py-4 my-4 bg-slate-50 rounded-xl overflow-x-auto">
+                        $$\Xi_{strong}(r) = 1 - e^{-\varphi \frac{r_s}{r}}$$
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Dominiert nahe des Horizonts. Der Goldene Schnitt $\varphi$ skaliert den exponentiellen Abfall der Segmentdichte.
+                    </p>
+                </div>
+
+                <!-- Transition Branch -->
+                <div class="math-box p-6 rounded-2xl border-l-slate-400">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-bold text-lg text-slate-800">Übergangszone</h3>
+                        <span class="px-2 py-1 bg-amber-50 text-amber-600 text-xs font-bold rounded">Intervall</span>
+                    </div>
+                    <div class="text-center py-4 my-4 bg-slate-50 rounded-xl overflow-x-auto">
+                        $$\Xi_{trans}(r) = H_3(t)$$
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Kubische Hermite-Spline-Interpolation für einen glatten $\mathcal{C}^1$-Übergang. $t$ ist das normalisierte Radienintervall.
+                    </p>
+                </div>
+
+                <!-- Weak Branch -->
+                <div class="math-box p-6 rounded-2xl border-l-blue-400">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-bold text-lg text-slate-800">Schwaches Regime</h3>
+                        <span class="px-2 py-1 bg-blue-50 text-blue-600 text-xs font-bold rounded">$r \ge 2.2 r_s$</span>
+                    </div>
+                    <div class="text-center py-4 my-4 bg-slate-50 rounded-xl overflow-x-auto">
+                        $$\Xi_{weak}(r) = \frac{r_s}{2r}$$
+                    </div>
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Asymptotisch flache Raumzeit. Entspricht in erster Näherung dem Newtonschen Gravitationspotential im Fernfeld.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulation" class="scroll-mt-32">
+            <div class="flex items-center gap-3 mb-8">
+                <i class="ph-duotone ph-chart-line-up text-3xl text-phi-500"></i>
+                <h2 class="text-3xl font-bold text-deep-900">Interaktive Topologie-Simulation</h2>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col lg:flex-row">
+                
+                <!-- Control Panel -->
+                <div class="bg-slate-50 w-full lg:w-80 p-8 border-r border-slate-200 flex flex-col gap-8">
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-800 mb-6 flex items-center gap-2">
+                            <i class="ph ph-sliders-horizontal"></i> Parameter
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <!-- Slider Rs -->
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <label class="text-sm font-semibold text-slate-600">Schwarzschild-Radius ($r_s$)</label>
+                                    <span id="rs-val" class="text-sm font-bold text-phi-600">1.0</span>
+                                </div>
+                                <input type="range" id="rs-slider" min="0.1" max="3.0" step="0.1" value="1.0" 
+                                    class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-phi-500">
+                            </div>
+
+                            <!-- Slider R Max -->
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <label class="text-sm font-semibold text-slate-600">Max. Radius ($r_{max}$)</label>
+                                    <span id="rmax-val" class="text-sm font-bold text-phi-600">10.0</span>
+                                </div>
+                                <input type="range" id="rmax-slider" min="3.0" max="20.0" step="1.0" value="10.0" 
+                                    class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-phi-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6 border-t border-slate-200">
+                        <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Horizon Wert $\Xi(r_s)$</h4>
+                            <div class="text-2xl font-mono text-deep-900" id="horizon-value">0.8017</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Canvas -->
+                <div class="p-8 w-full min-h-[400px] relative">
+                    <canvas id="sszChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="daten" class="scroll-mt-32">
+            <div class="flex items-center gap-3 mb-8">
+                <i class="ph-duotone ph-table text-3xl text-phi-500"></i>
+                <h2 class="text-3xl font-bold text-deep-900">Signifikante Datenpunkte</h2>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <table class="w-full text-left text-sm text-slate-600">
+                    <thead class="bg-slate-50 text-slate-800 font-semibold border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-4">Radius ($r$)</th>
+                            <th class="px-6 py-4">Regime</th>
+                            <th class="px-6 py-4">$\Xi(r)$ Wert</th>
+                            <th class="px-6 py-4 hidden sm:table-cell">Physikalische Bedeutung</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-table-body" class="divide-y divide-slate-100 font-mono">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-deep-900 text-slate-400 py-12 text-center text-sm">
+        <p>© 2026 SSZ Research Consortium. Generiert für Forschungsanalysen.</p>
+    </footer>
+
+    <script>
+        // Mathematical Constants
+        const PHI = 1.618033988749895;
+        let rs = 1.0;
+        let rmax = 10.0;
+        let sszChartInstance = null;
+
+        // Core SSZ Function
+        function calculateXi(r, currentRs) {
+            const r_strong_limit = 1.8 * currentRs;
+            const r_weak_limit = 2.2 * currentRs;
+
+            if (r <= r_strong_limit) {
+                return 1 - Math.exp(-PHI * currentRs / r);
+            } else if (r >= r_weak_limit) {
+                return currentRs / (2 * r);
+            } else {
+                // Hermite Spline Interpolation for smooth transition
+                const t = (r - r_strong_limit) / (r_weak_limit - r_strong_limit);
+                
+                // Values at boundaries
+                const h1 = 1 - Math.exp(-PHI / 1.8);
+                const h2 = currentRs / (2 * r_weak_limit);
+                
+                // Simplified Hermite for smooth step (ignores exact derivatives for visualization stability)
+                // H(t) = h1 + (h2 - h1) * (3t^2 - 2t^3)
+                return h1 + (h2 - h1) * (3 * Math.pow(t, 2) - 2 * Math.pow(t, 3));
+            }
+        }
+
+        // UI Update Functions
+        function updateDashboard() {
+            // Update displayed values
+            document.getElementById('rs-val').innerText = rs.toFixed(1);
+            document.getElementById('rmax-val').innerText = rmax.toFixed(1);
+            
+            const horizonVal = calculateXi(rs, rs);
+            document.getElementById('horizon-value').innerText = horizonVal.toFixed(4);
+
+            // Generate Data
+            const dataPoints = 200;
+            const rValues = [];
+            const xiValues = [];
+            
+            // Start slightly outside singularity for plotting
+            const startR = Math.max(0.1, 0.1 * rs);
+            const step = (rmax - startR) / dataPoints;
+
+            for (let i = 0; i <= dataPoints; i++) {
+                const r = startR + i * step;
+                rValues.push(r.toFixed(2));
+                xiValues.push(calculateXi(r, rs));
+            }
+
+            renderChart(rValues, xiValues);
+            populateTable();
+        }
+
+        // Chart.js Rendering
+        function renderChart(labels, data) {
+            const ctx = document.getElementById('sszChart').getContext('2d');
+            
+            if (sszChartInstance) {
+                sszChartInstance.destroy();
+            }
+
+            // Create gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, 'rgba(184, 134, 11, 0.2)');
+            gradient.addColorStop(1, 'rgba(184, 134, 11, 0)');
+
+            sszChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Segmentdichte Ξ(r)',
+                        data: data,
+                        borderColor: '#b8860b',
+                        backgroundColor: gradient,
+                        borderWidth: 3,
+                        pointRadius: 0,
+                        pointHoverRadius: 6,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.9)',
+                            titleFont: { family: 'Inter', size: 13 },
+                            bodyFont: { family: 'Inter', size: 14, weight: 'bold' },
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: false,
+                            callbacks: {
+                                title: (items) => `Radius (r): ${items[0].label}`,
+                                label: (item) => `Ξ(r): ${item.raw.toFixed(5)}`
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            title: { display: true, text: 'Radius r', font: { family: 'Inter', weight: 'bold' } },
+                            ticks: { maxTicksLimit: 10 }
+                        },
+                        y: {
+                            grid: { color: '#f1f5f9' },
+                            title: { display: true, text: 'Ξ(r)', font: { family: 'Inter', weight: 'bold' } },
+                            min: 0,
+                            suggestedMax: 1
+                        }
+                    }
+                }
+            });
+        }
+
+        // Table Population
+        function populateTable() {
+            const tbody = document.getElementById('data-table-body');
+            tbody.innerHTML = '';
+            
+            const points = [
+                { r: rs, label: "Ereignishorizont", regime: "Stark" },
+                { r: 1.5 * rs, label: "Photonensphäre (Näherung)", regime: "Stark" },
+                { r: 1.8 * rs, label: "Ende Starkes Regime", regime: "Stark" },
+                { r: 2.0 * rs, label: "Spline-Zentrum", regime: "Übergang" },
+                { r: 2.2 * rs, label: "Start Schwaches Regime", regime: "Schwach" },
+                { r: 5.0 * rs, label: "Fernfeld", regime: "Schwach" }
+            ];
+
+            points.forEach(pt => {
+                const xi = calculateXi(pt.r, rs);
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition-colors";
+                
+                // Color code badges based on regime
+                let badgeClass = "";
+                if(pt.regime === "Stark") badgeClass = "bg-red-100 text-red-700";
+                else if(pt.regime === "Übergang") badgeClass = "bg-amber-100 text-amber-700";
+                else badgeClass = "bg-blue-100 text-blue-700";
+
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-semibold">${pt.r.toFixed(2)}</td>
+                    <td class="px-6 py-4"><span class="px-2 py-1 text-xs font-bold rounded ${badgeClass}">${pt.regime}</span></td>
+                    <td class="px-6 py-4 text-phi-600 font-bold">${xi.toFixed(6)}</td>
+                    <td class="px-6 py-4 hidden sm:table-cell text-slate-500 font-sans text-sm">${pt.label}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        document.getElementById('rs-slider').addEventListener('input', (e) => {
+            rs = parseFloat(e.target.value);
+            updateDashboard();
+        });
+
+        document.getElementById('rmax-slider').addEventListener('input', (e) => {
+            rmax = parseFloat(e.target.value);
+            updateDashboard();
+        });
+
+        // Initial Load
+        window.onload = () => {
+            updateDashboard();
+            // Re-render KaTeX if needed after DOM updates
+            renderMathInElement(document.body);
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "count": 22,
+  "symbols": [
+    {"symbol":"A(r)","name":"Metrikfunktion","definition":"D²(r) in der kanonischen Diagonalform","unit":"1"},
+    {"symbol":"a","name":"große Halbachse","definition":"Orbitparameter","unit":"m"},
+    {"symbol":"b","name":"Stoßparameter","definition":"nächster Lichtwegabstand","unit":"m"},
+    {"symbol":"c","name":"Lichtgeschwindigkeit","definition":"299792458 exakt","unit":"m/s"},
+    {"symbol":"D","name":"Zeitdilatation","definition":"1/(1+Ξ)","unit":"1"},
+    {"symbol":"dJ","name":"JIF-Zuwachs","definition":"dΦ/(2π)","unit":"Zyklen"},
+    {"symbol":"dτ","name":"Eigenzeit","definition":"lokal gemessene Zeit","unit":"s"},
+    {"symbol":"dt","name":"Koordinatenzeit","definition":"Zeitkoordinate","unit":"s"},
+    {"symbol":"e","name":"Exzentrizität","definition":"Orbitformparameter","unit":"1"},
+    {"symbol":"f₀","name":"Eigenfrequenz","definition":"lokale Phasenzyklen pro Eigenzeit","unit":"Hz"},
+    {"symbol":"G","name":"Gravitationskonstante","definition":"6,67430×10⁻¹¹","unit":"m³ kg⁻¹ s⁻²"},
+    {"symbol":"γ","name":"PPN gamma","definition":"Raumkrümmungsparameter; im deklarierten Grenzfall 1","unit":"1"},
+    {"symbol":"K","name":"Kretschmann-Skalar","definition":"R_abcd R^abcd","unit":"m⁻⁴"},
+    {"symbol":"M","name":"Zentralmasse","definition":"Quelle der Massenskala","unit":"kg"},
+    {"symbol":"φ","name":"Goldener Schnitt","definition":"(1+√5)/2","unit":"1"},
+    {"symbol":"Φ","name":"Phase","definition":"akkumulierte Winkelphase","unit":"rad"},
+    {"symbol":"r","name":"arealer Radius","definition":"Flächenradius der Symmetriesphären","unit":"m"},
+    {"symbol":"R","name":"Ricci-Skalar","definition":"Kontraktion des Ricci-Tensors","unit":"m⁻²"},
+    {"symbol":"r_s","name":"Schwarzschildradius","definition":"2GM/c²","unit":"m"},
+    {"symbol":"s","name":"radialer Skalenfaktor","definition":"1+Ξ=1/D","unit":"1"},
+    {"symbol":"Ξ","name":"Segmentdichte","definition":"dimensionsloses radiales SSZ-Feld","unit":"1"},
+    {"symbol":"z","name":"Rotverschiebung","definition":"1/D−1 im statischen SSZ-Proxy","unit":"1"}
+  ]
+}

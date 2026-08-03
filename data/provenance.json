@@ -1,0 +1,11 @@
+{
+  "count": 6,
+  "chains": [
+    {"claim":"Endliche Horizont-Zeitdilatation","formula":"Ξ_strong → D=1/(1+Ξ)","implementation":"SSZ metric/JIF cores","input":"r/r_s=1, φ","test":"horizon and dilation limit tests","result":"Ξ=0,801711847; D=0,555027709","status":"mathematical/model result"},
+    {"claim":"Asymptotisches Fernfeld","formula":"Ξ_weak=r_s/(2r)","implementation":"weak branch","input":"r/r_s→∞","test":"asymptotic and PPN tests","result":"Ξ→0, D→1","status":"mathematical/model result"},
+    {"claim":"C²-Übergang","formula":"quintic Hermite H5","implementation":"JIF core / metric complete","input":"1,8≤r/r_s≤2,2 plus endpoint derivatives","test":"boundary value/slope/curvature tests","result":"C² continuity when fully implemented","status":"implementation requirement"},
+    {"claim":"Zentrale Nichtregularität","formula":"A→1/4; R~3/(2r²); K~9/(4r⁴)","implementation":"symbolic diagonal continuation","input":"r→0","test":"curvature asymptotics","result":"R and K diverge","status":"P0 correction"},
+    {"claim":"JIF als Phase","formula":"dJ=dΦ/(2π); dJ=f₀dτ","implementation":"ssz-jif-core","input":"phase/frequency/proper time","test":"phase-count and Decimal precision tests","result":"dimensionless cycle count","status":"operational definition"},
+    {"claim":"PPN compatibility","formula":"β=γ=1 standard PPN formulas","implementation":"observable-specific PPN paths","input":"weak field","test":"lensing, Shapiro, perihelion tests","result":"reference-limit agreement","status":"compatibility, not global confirmation"}
+  ]
+}

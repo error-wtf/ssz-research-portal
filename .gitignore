@@ -1,0 +1,16 @@
+gittoken.env
+*.env
+.env*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+dist/
+build/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+*.rar

@@ -1,0 +1,12 @@
+{
+  "count": 7,
+  "conflicts": [
+    {"topic":"Zentrale Regularität","current":"Nicht regulär: A→1/4, R~3/(2r²), K~9/(4r⁴).","legacy":"Ältere Dokumente behaupten flaches oder vollständig singularitätsfreies Zentrum.","resolution":"P0/current scope supersedes legacy claims.","severity":"P0"},
+    {"topic":"Horizont vs. Zentrum","current":"Horizontkoeffizienten und Horizontkrümmung können endlich sein; daraus folgt nichts über r=0.","legacy":"Horizontregularisierung wurde als vollständige Singularitätsfreiheit verallgemeinert.","resolution":"Beide Bereiche strikt getrennt darstellen.","severity":"P0"},
+    {"topic":"Blend","current":"C²-quintische Hermite-Verbindung mit Randwerten, Steigungen und Krümmungen.","legacy":"Dashboard nutzte kubischen C¹-Smoothstep ohne korrekte Ableitungen.","resolution":"Interaktive Website nutzt einen quintischen C²-Blend und kennzeichnet den Modellstatus.","severity":"P0"},
+    {"topic":"Starke Funktion","current":"1−exp(−φ r_s/r).","legacy":"Vertauschte Exponenten oder globale Sättigungsvarianten mit falschem Fernlimit.","resolution":"Decay-Form ist operativer starker Zweig; verbotene Varianten nur historisch.","severity":"P0"},
+    {"topic":"Testzahlen","current":"Website trennt extrahierte Testdefinitionen, Auditläufe und Repoangaben.","legacy":"1.125+, 2.000+, 522 oder andere Summen wurden ohne identischen Scope verglichen.","resolution":"Jede Zahl erhält Quelle, Zeitpunkt und Zählmethode.","severity":"high"},
+    {"topic":"Photonensphäre/ISCO/Schatten","current":"Nur Werte mit klarer Metrik, Ableitung und Testprovenienz als Modellresultat zeigen.","legacy":"Teilweise wurden Näherungen oder Repo-Beschreibungen als allgemein kanonisch ausgegeben.","resolution":"Als berechnete Modellresultate, nicht als Beobachtungsbestätigung klassifizieren.","severity":"high"},
+    {"topic":"Empirische Sprache","current":"Kompatibilität, Fit, Vorhersage und Bestätigung werden getrennt.","legacy":"Einzelne Audits verwenden Formulierungen wie „proven“ oder „perfect coherence“.","resolution":"Im Portal epistemisch vorsichtige Kategorien und Grenzen verwenden.","severity":"high"}
+  ]
+}

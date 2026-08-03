@@ -175,7 +175,19 @@
       set("calc-xi", fmt(xi(x), 10));
       set("calc-d", fmt(d, 10));
       set("calc-z", fmt(1 / d - 1, 10));
-      set("photon-output", `${fmt(1.594811, 6)} r_s (declared decay/global comparison)`);
+      let candidate = null;
+      const potentialAt = trial => dilation(trial) ** 2 / trial ** 2;
+      let left = potentialAt(1.8), centre = potentialAt(1.80006);
+      for (let i = 2; i < 20000; i += 1) {
+        const trial = 1.8 + i * (1.2 / 20000);
+        const right = potentialAt(trial);
+        if (centre > left && centre > right) candidate = {x: trial - 1.2 / 20000, value: centre};
+        left = centre;
+        centre = right;
+      }
+      set("photon-output", candidate
+        ? `${fmt(candidate.x, 6)} r_s (interior stationary null-potential candidate)`
+        : "No interior stationary maximum in the inspected interval");
       set("isco-output", "Repository-derived value: verify metric branch and provenance");
       set("shadow-output", "Model-dependent: do not infer from horizon D alone");
     };
@@ -186,6 +198,14 @@
   document.addEventListener("DOMContentLoaded", () => {
     ["radius-max","probe-radius","log-axis","show-limits","plot-quantity"].forEach(id => document.getElementById(id)?.addEventListener("input", updatePlot));
     document.getElementById("metric-chart")?.addEventListener("pointermove", inspectPlot);
+    document.getElementById("metric-export")?.addEventListener("click", () => {
+      const canvas = document.getElementById("metric-chart");
+      if (!canvas) return;
+      const link = document.createElement("a");
+      link.download = "ssz-metric-explorer.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+    });
     window.addEventListener("resize", updatePlot);
     updatePlot();
     calculators();

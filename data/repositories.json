@@ -1,5 +1,5 @@
 {
-  "count": 35,
+  "count": 34,
   "repositories": [
     {
       "name": "CALCULATION_OF_NUMBER_PI",
@@ -118,26 +118,6 @@
       "test_related_files": 118
     },
     {
-      "name": "Segmented-Spacetime-Book",
-      "full_name": "error-wtf/Segmented-Spacetime-Book",
-      "description": "Local SSZ/physics research repository",
-      "public_url": "",
-      "local_reference": "physics/Segmented-Spacetime-Book",
-      "scientific_role": "Theory, Documentation",
-      "tags": [
-        "Theory",
-        "Documentation"
-      ],
-      "default_branch": "stage-1-reconstruction",
-      "commit": "536371b120a0",
-      "commit_date": "2026-07-15T00:34:05+02:00",
-      "release": "no local tag",
-      "status": "local",
-      "working_tree": "clean",
-      "file_count": 8431,
-      "test_related_files": 1289
-    },
-    {
       "name": "Segmented-Spacetime-Mass-Projection-Unified-Results",
       "full_name": "error-wtf/Segmented-Spacetime-Mass-Projection-Unified-Results",
       "description": "This repository provides a full Python-based implementation and verification of the **Segmented Spacetime Mass Projection Model**, offering a high-precision, testable alternative to traditional gravitational models.",
@@ -155,7 +135,7 @@
       "release": "v2.0.0-frozen",
       "status": "archived",
       "working_tree": "modified",
-      "file_count": 2760,
+      "file_count": 2736,
       "test_related_files": 1161
     },
     {
@@ -175,7 +155,7 @@
       "release": "no local tag",
       "status": "archived",
       "working_tree": "clean",
-      "file_count": 399,
+      "file_count": 397,
       "test_related_files": 71
     },
     {
@@ -333,8 +313,8 @@
       "release": "no local tag",
       "status": "local",
       "working_tree": "modified",
-      "file_count": 2521,
-      "test_related_files": 1149
+      "file_count": 2509,
+      "test_related_files": 1144
     },
     {
       "name": "pardon-symplectic-geometry-ssz-lab",
@@ -454,7 +434,7 @@
       "release": "no local tag",
       "status": "archived",
       "working_tree": "clean",
-      "file_count": 195,
+      "file_count": 194,
       "test_related_files": 20
     },
     {
@@ -532,8 +512,8 @@
       "release": "gw240925-pipeline-freeze-v1",
       "status": "archived",
       "working_tree": "modified",
-      "file_count": 459,
-      "test_related_files": 459
+      "file_count": 454,
+      "test_related_files": 454
     },
     {
       "name": "ssz-metric-final",
@@ -667,8 +647,8 @@
       "release": "no local tag",
       "status": "local",
       "working_tree": "clean",
-      "file_count": 50,
-      "test_related_files": 8
+      "file_count": 32,
+      "test_related_files": 7
     },
     {
       "name": "ssz-trajectories",

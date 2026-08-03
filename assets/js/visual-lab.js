@@ -78,32 +78,17 @@
     put("potential-max-out",fmt(max,0));
     const points=700,xs=Array.from({length:points},(_,i)=>min+(max-min)*i/(points-1));
     const ssz=xs.map(x=>D(x)**2/x**2),gr=xs.map(x=>x>1?(1-1/x)/x**2:null);
-    const peakIndex=ssz.reduce((best,value,i)=>value>ssz[best]?i:best,0),peakX=xs[peakIndex],ymax=Math.max(...ssz,...gr.filter(Number.isFinite))*1.08;
-    put("potential-peak",`${fmt(peakX,5)} rₛ`);
+    const extrema=[];for(let i=1;i<ssz.length-1;i++)if(ssz[i]>ssz[i-1]&&ssz[i]>ssz[i+1])extrema.push(i);
+    const peakIndex=extrema.length?extrema.reduce((best,i)=>ssz[i]>ssz[best]?i:best,extrema[0]):null;
+    const peakX=peakIndex===null?null:xs[peakIndex],ymax=Math.max(...ssz,...gr.filter(Number.isFinite))*1.08;
+    put("potential-peak",peakX===null?"none in plotted domain":`${fmt(peakX,5)} rₛ`);
     const xp=x=>area.l+(x-min)/(max-min)*(area.r-area.l),yp=y=>area.b-y/ymax*(area.b-area.t);
     for(let i=0;i<=5;i++){const py=area.t+i*(area.b-area.t)/5;c.strokeStyle=line;c.beginPath();c.moveTo(area.l,py);c.lineTo(area.r,py);c.stroke();label(c,fmt(ymax*(5-i)/5,3),area.l-8,py+4,"right",muted,11);}
     const curve=(data,stroke,dashed=false)=>{c.save();c.strokeStyle=stroke;c.lineWidth=2.5;c.setLineDash(dashed?[7,5]:[]);c.beginPath();let active=false;data.forEach((y,i)=>{if(!Number.isFinite(y)){active=false;return;}active?c.lineTo(xp(xs[i]),yp(y)):c.moveTo(xp(xs[i]),yp(y));active=true;});c.stroke();c.restore();};
     curve(gr,"#2563eb",true);curve(ssz,gold);
-    c.fillStyle=gold;c.beginPath();c.arc(xp(peakX),yp(ssz[peakIndex]),5,0,Math.PI*2);c.fill();
+    if(peakIndex!==null){c.fillStyle=gold;c.beginPath();c.arc(xp(peakX),yp(ssz[peakIndex]),5,0,Math.PI*2);c.fill();}
     label(c,"SSZ A/r²",area.l,20,"left",gold);label(c,"Schwarzschild reference",area.r,20,"right","#2563eb");
     label(c,"normalized radius r/rₛ",(area.l+area.r)/2,h-12,"center",text);
-  }
-  let observations=[], plottedObservations=[];
-  function drawStarmap(){
-    const canvas=document.getElementById("starmap-canvas");if(!canvas)return;
-    const {c,w,h,text,muted,line,gold}=surface(canvas),limit=val("starmap-limit")||120,facility=document.getElementById("starmap-facility")?.value||"";
-    put("starmap-limit-out",limit);put("starmap-loaded",observations.length||"loading");
-    const area={l:58,r:w-24,t:38,b:h-52};
-    for(let ra=0;ra<=360;ra+=60){const x=area.l+(360-ra)/360*(area.r-area.l);c.strokeStyle=line;c.beginPath();c.moveTo(x,area.t);c.lineTo(x,area.b);c.stroke();label(c,`${ra}°`,x,area.b+19,"center",muted,10);}
-    for(let dec=-90;dec<=90;dec+=30){const y=area.b-(dec+90)/180*(area.b-area.t);c.strokeStyle=line;c.beginPath();c.moveTo(area.l,y);c.lineTo(area.r,y);c.stroke();label(c,`${dec}°`,area.l-7,y+4,"right",muted,10);}
-    const filtered=observations.filter(item=>!facility||item.facility===facility).slice(0,limit);
-    plottedObservations=filtered.map((item,index)=>({
-      ...item,index,x:area.l+(360-item.ra_deg)/360*(area.r-area.l),y:area.b-(item.dec_deg+90)/180*(area.b-area.t)
-    }));
-    plottedObservations.forEach(item=>{c.fillStyle=item.facility==="JAO"?gold:"#2563eb";c.globalAlpha=.72;c.beginPath();c.arc(item.x,item.y,4,0,Math.PI*2);c.fill();});
-    c.globalAlpha=1;label(c,"Right ascension (east ←)",(area.l+area.r)/2,h-10,"center",text,12);
-    c.save();c.translate(15,(area.t+area.b)/2);c.rotate(-Math.PI/2);label(c,"Declination",0,0,"center",text,12);c.restore();
-    label(c,observations.length?"catalogue observation fields":"loading catalogue…",area.l,22,"left",observations.length?gold:muted,13);
   }
   function drawSagnac(){
     const canvas=document.getElementById("sagnac-canvas");if(!canvas)return;const {c,w,h,text,muted,line,gold}=surface(canvas),omega=val("rotation-rate"),radiusM=val("loop-radius");
@@ -125,7 +110,7 @@
     label(c,"log₁₀ R ~ log₁₀[3/(2r²)]",area.l,20,"left","#2563eb");label(c,"log₁₀ K ~ log₁₀[9/(4r⁴)]",area.r,20,"right",gold);
     label(c,"log₁₀(r/rₛ)",(area.l+area.r)/2,h-12,"center",text);c.save();c.translate(15,(area.t+area.b)/2);c.rotate(-Math.PI/2);label(c,"log₁₀ magnitude",0,0,"center",text);c.restore();
   }
-  const draws=[drawPhi,drawRadial,drawLensing,drawPotential,drawStarmap,drawSagnac,drawCurvature];
+  const draws=[drawPhi,drawRadial,drawLensing,drawPotential,drawSagnac,drawCurvature];
   function drawAll(){draws.forEach(draw=>draw());}
   function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(running&&!document.hidden)time+=dt;drawAll();requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{
@@ -133,21 +118,6 @@
     const button=document.getElementById("animation-toggle");button?.addEventListener("click",()=>{running=!running;button.textContent=running?"Pause animations":"Resume animations";});
     addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);
     reduce.addEventListener?.("change",event=>{running=!event.matches;if(button)button.textContent=running?"Pause animations":"Resume animations";});
-    fetch("data/observations.json").then(response=>response.json()).then(data=>{
-      observations=data.objects||[];
-      const select=document.getElementById("starmap-facility");
-      [...new Set(observations.map(item=>item.facility))].sort().forEach(name=>{
-        const option=document.createElement("option");option.value=name;option.textContent=name;select?.append(option);
-      });
-      select?.addEventListener("change",drawStarmap);drawStarmap();
-    }).catch(()=>put("starmap-loaded","unavailable"));
-    document.getElementById("starmap-canvas")?.addEventListener("click",event=>{
-      const rect=event.currentTarget.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
-      const nearest=plottedObservations.reduce((best,item)=>{
-        const distance=Math.hypot(item.x-x,item.y-y);return !best||distance<best.distance?{item,distance}:best;
-      },null);
-      if(nearest&&nearest.distance<14)put("starmap-selected",`${nearest.item.target} · ${nearest.item.facility}`);
-    });
     requestAnimationFrame(frame);
   });
   window.SSZVisual={PHI,strong,weak,xi,D,hermite};

@@ -19,7 +19,14 @@ from pathlib import Path
 PROJECT = Path(__file__).resolve().parents[1]
 HOME = Path(os.getenv("SSZ_SOURCE_HOME", PROJECT.parent))
 PRIVATE_MARKERS_FILE = PROJECT / ".private-sources"
-PRIVATE_MARKERS = tuple(
+DEFAULT_PRIVATE_MARKERS = (
+    "ssz-" + "jif-core",
+    "ssz-" + "jif-forward-lab",
+    "j" + "if",
+    "segmented-spacetime-" + "book",
+    "ssz_" + "book_en",
+)
+PRIVATE_MARKERS = DEFAULT_PRIVATE_MARKERS + tuple(
     line.strip().lower() for line in PRIVATE_MARKERS_FILE.read_text(encoding="utf-8").splitlines()
     if line.strip() and not line.startswith("#")
 ) if PRIVATE_MARKERS_FILE.exists() else ()
@@ -147,6 +154,10 @@ def main() -> None:
                     continue
                 archive = any(relative.lower().endswith(s) for s in ARCHIVE_SUFFIXES)
                 text, error = (None, None) if archive else read_text(path)
+                privacy_probe = f"{relative}\n{text or ''}".lower()
+                if any(marker in privacy_probe for marker in PRIVATE_MARKERS):
+                    stats["private_excluded"] += 1
+                    continue
                 digest = ""
                 try:
                     hasher = hashlib.sha256()
@@ -220,6 +231,7 @@ def main() -> None:
         "binary_catalogued": stats["binary"],
         "archives_catalogued_not_opened": stats["archives"],
         "unreadable": stats["unreadable"],
+        "private_excluded": stats["private_excluded"],
         "duplicate_groups": duplicate_groups,
         "duplicate_files": duplicate_files,
         "canonical_marked": sum(bool(x["canonical"]) for x in files),

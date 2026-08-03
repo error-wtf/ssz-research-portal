@@ -160,7 +160,7 @@ def build_formula_candidates() -> list[dict]:
     inline_re = re.compile(r"`([^`]*(?:Xi|Ξ|D\(|r_s|dJ|K\(|R\()[^`]*)`")
     priority = [
         "CANONICAL_XI_AND_BLEND_RESOLUTION.md", "SSZ_CANONICAL_FORMULAS_2026.md",
-        "JIF_FOUNDATION_CANONICAL.md", "formula_compendium.md", "black_hole_metric.md",
+        "formula_compendium.md", "black_hole_metric.md",
         "singularities.md", "ppn_formulas.md", "worked_examples.md",
     ]
     selected = sorted(

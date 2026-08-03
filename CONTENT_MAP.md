@@ -12,6 +12,7 @@
 | `reproducibility.html` | architecture, code rules, precision, provenance, release, security |
 | `glossary.html` | symbols, glossary and critical FAQ |
 | `formulas.html` | formula-by-formula units, domains, code, tests and guardrails |
+| `papers.html` | searchable public bibliography, item verification and P0 claim history |
 | `research.html` | papers, data domains, theory development, historical corrections and scoped paper-plot gallery |
 
 Machine-readable inventories live in `data/`. Long-form governance and audit records live in the project-root Markdown files.

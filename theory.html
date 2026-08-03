@@ -4,12 +4,13 @@
 <title>SSZ Theory — Segmented Spacetime</title>
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/@phosphor-icons/web"></script>
 <link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]]},options:{enableMenu:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head><body>
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>THEORY FROM A TO Z</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a aria-current="page" href="theory.html">Theory</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
 <header class="hero"><div><span class="eyebrow">Four levels of explanation</span><h1>SSZ theory<br><span class="gradient-text">from A to Z</span></h1><p class="lead">Intuition, physics, mathematics, implementation and validation are kept together so that no formula floats free of its assumptions.</p></div><div class="hero-orbit"><span class="orbit-core">ds²</span></div></header>
-<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
+<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#differential">Differential geometry</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#papers">Paper map</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
 
 <section id="segmentation" class="section">
 <div class="section-head"><span class="section-kicker">Foundations</span><h2>What “segmented” means</h2><p class="lead">Segmentation is a model description of how local radial and temporal scaling is encoded by a dimensionless field Ξ. It is not, by itself, proof that spacetime is literally made of discrete blocks.</p></div>
@@ -18,6 +19,16 @@
 <article class="card level"><h3>Physical</h3><p>A static observer at radius r is assigned dτ=D(r)dt. Radial proper length is scaled inversely in the diagonal ansatz. Local measurements still use local proper time and proper distance.</p></article>
 <article class="card level"><h3>Mathematical</h3><div class="formula"><span class="equation"><span class="math-var">D</span>(r) = <span class="frac"><span>1</span><span>1 + Ξ(r)</span></span>, &nbsp; <span class="math-var">s</span>(r) = 1 + Ξ(r) = <span class="frac"><span>1</span><span>D(r)</span></span></span></div><p>Ξ, D and s are dimensionless. The field depends on the dimensionless ratio r/r<sub>s</sub> once a central mass fixes r<sub>s</sub>.</p></article>
 <article class="card level"><h3>Implementation</h3><p>Code must declare the observable class, select the applicable branch or PPN method, retain units, and test limits before producing a number.</p><pre>observable → class → method → scope → calculate</pre></article>
+</div>
+</section>
+
+<section id="differential" class="section">
+<div class="section-head"><span class="section-kicker">Differential geometry</span><h2>From one radial function to curvature</h2><p>The metric is not merely a clock formula. Once \(D(r)\) is fixed, the Levi-Civita connection, geodesics and curvature tensors follow from ordinary differential geometry within the declared static spherical ansatz.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>Connection</h3><div class="formula rendered-math">\( \Gamma^{\rho}_{\ \mu\nu}=\frac{1}{2}g^{\rho\sigma}(\partial_\mu g_{\sigma\nu}+\partial_\nu g_{\sigma\mu}-\partial_\sigma g_{\mu\nu}) \)</div><p>The connection contains first radial derivatives of \(D\). This is why a value-continuous branch join is insufficient: derivative jumps would create non-smooth geometry or distributional structure.</p></article>
+<article class="card"><h3>Curvature</h3><div class="formula rendered-math">\( R^{\rho}_{\ \sigma\mu\nu}=\partial_\mu\Gamma^\rho_{\nu\sigma}-\partial_\nu\Gamma^\rho_{\mu\sigma}+\Gamma^\rho_{\mu\lambda}\Gamma^\lambda_{\nu\sigma}-\Gamma^\rho_{\nu\lambda}\Gamma^\lambda_{\mu\sigma} \)</div><p>Ricci and Kretschmann scalars depend on first and second derivatives. The C² bridge makes these finite through the transition, but says nothing by itself about the limit at the areal centre.</p></article>
+<article class="card"><h3>Effective source diagnostic</h3><div class="formula rendered-math">\( G_{\mu\nu}=R_{\mu\nu}-\frac{1}{2}Rg_{\mu\nu},\qquad T^{\rm eff}_{\mu\nu}=G_{\mu\nu}/(8\pi G) \)</div><p>This can diagnose what effective stress tensor would support the geometry. It is not a derivation of matter dynamics and must not be mistaken for a fundamental SSZ field equation.</p></article>
+<article class="card"><h3>Regularity ladder</h3><ol><li>finite metric coefficients;</li><li>non-degenerate signature;</li><li>finite connection in a suitable chart;</li><li>finite curvature invariants;</li><li>extendible geodesics and causal curves.</li></ol><p>The current continuation fails the invariant-curvature rung at \(r\to0\).</p></article>
 </div>
 </section>
 
@@ -123,6 +134,16 @@
 <tr><td>Timelike orbit</td><td>perihelion, ISCO, epicycles</td><td>geodesic/effective-potential machinery</td><td>do not infer from D at one radius</td></tr>
 <tr><td>Wave dynamics</td><td>QNM, inspiral, ringdown</td><td>perturbation equations from declared dynamics</td><td>proxy frequency is not a full waveform</td></tr>
 </tbody></table></div>
+</section>
+
+<section id="papers" class="section">
+<div class="section-head"><span class="section-kicker">Theory → literature → tests</span><h2>How the public paper record maps onto the model</h2></div>
+<div class="grid grid-3">
+<article class="card"><h3>Foundational proposals</h3><p>Segmentation, structural constants, emergent axes and frequency language motivate the programme. Several of these are hypotheses rather than consequences of the canonical metric.</p></article>
+<article class="card"><h3>Metric and strong field</h3><p>The metric, dual-velocity, boundary and singularity papers contain the claims most affected by the P0 correction. Historical claims are retained as history, not repeated as current results.</p></article>
+<article class="card"><h3>Observable applications</h3><p>Redshift, curvature detection, radio-wave and nebular papers propose mappings to observations. Each requires an explicit likelihood, uncertainties and comparison model before it can count as empirical evidence.</p></article>
+</div>
+<p class="callout"><strong>Audit the sequence:</strong> use the <a href="papers.html">paper and claim catalogue</a> for all 25 numbered public SSZ manuscripts, verified item links, topics and P0 status.</p>
 </section>
 
 <section id="falsification" class="section">

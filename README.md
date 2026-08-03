@@ -24,7 +24,7 @@ python3 scripts/check_secrets.py
 node scripts/test_physics.js
 ```
 
-The source inventory uses public, neutral project-relative path references. It never publishes `/home/error`, credentials, or authenticated remote URLs.
+The source inventory uses public, neutral project-relative path references. It never publishes local home-directory paths, credentials, or authenticated remote URLs.
 
 `data/public-repositories-all.json` records the 42 in-scope public repositories in the 3 August 2026 API snapshot. `data/public-research-repositories.json` selects all 30 in-scope classified physics and mathematics projects. The generated browser catalogue needs no GitHub token.
 

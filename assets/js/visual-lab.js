@@ -88,24 +88,22 @@
     label(c,"SSZ A/r²",area.l,20,"left",gold);label(c,"Schwarzschild reference",area.r,20,"right","#2563eb");
     label(c,"normalized radius r/rₛ",(area.l+area.r)/2,h-12,"center",text);
   }
-  const stars=Array.from({length:180},(_,i)=>{
-    const u=((i*73)%181+.5)/181,v=((i*109)%179+.5)/179;
-    return {angle:Math.PI*2*u,radius:Math.sqrt(v),size:1+((i*17)%7)/3,heat:(i*29)%100};
-  });
+  let observations=[], plottedObservations=[];
   function drawStarmap(){
     const canvas=document.getElementById("starmap-canvas");if(!canvas)return;
-    const {c,w,h,text,muted,line,gold}=surface(canvas),scale=val("starmap-scale"),transform=document.getElementById("starmap-transform")?.checked;
-    put("starmap-scale-out",fmt(scale,2));const cx=w/2,cy=h/2,maxR=Math.min(w,h)*.43;
-    [0.25,.5,.75,1].forEach(part=>ring(c,cx,cy,maxR*part,line,1,part<1?[3,5]:[]));
-    c.strokeStyle=line;c.beginPath();c.moveTo(cx-maxR,cy);c.lineTo(cx+maxR,cy);c.moveTo(cx,cy-maxR);c.lineTo(cx,cy+maxR);c.stroke();
-    stars.forEach(star=>{
-      const physical=.25+star.radius*12/scale,d=transform?D(physical):1,rr=star.radius*maxR*d;
-      const twinkle=running?.8+.2*Math.sin(time*2+star.angle*7):1;
-      c.globalAlpha=.45+.55*star.heat/100;c.fillStyle=star.heat>65?gold:star.heat<25?"#60a5fa":text;
-      c.beginPath();c.arc(cx+Math.cos(star.angle)*rr,cy+Math.sin(star.angle)*rr,star.size*twinkle,0,Math.PI*2);c.fill();
-    });c.globalAlpha=1;
-    label(c,transform?"illustrative SSZ radial mapping ON":"catalogue coordinates",18,25,"left",transform?gold:text,14);
-    label(c,"deterministic synthetic catalogue · not observational data",w/2,h-14,"center",muted,12);
+    const {c,w,h,text,muted,line,gold}=surface(canvas),limit=val("starmap-limit")||120,facility=document.getElementById("starmap-facility")?.value||"";
+    put("starmap-limit-out",limit);put("starmap-loaded",observations.length||"loading");
+    const area={l:58,r:w-24,t:38,b:h-52};
+    for(let ra=0;ra<=360;ra+=60){const x=area.l+(360-ra)/360*(area.r-area.l);c.strokeStyle=line;c.beginPath();c.moveTo(x,area.t);c.lineTo(x,area.b);c.stroke();label(c,`${ra}°`,x,area.b+19,"center",muted,10);}
+    for(let dec=-90;dec<=90;dec+=30){const y=area.b-(dec+90)/180*(area.b-area.t);c.strokeStyle=line;c.beginPath();c.moveTo(area.l,y);c.lineTo(area.r,y);c.stroke();label(c,`${dec}°`,area.l-7,y+4,"right",muted,10);}
+    const filtered=observations.filter(item=>!facility||item.facility===facility).slice(0,limit);
+    plottedObservations=filtered.map((item,index)=>({
+      ...item,index,x:area.l+(360-item.ra_deg)/360*(area.r-area.l),y:area.b-(item.dec_deg+90)/180*(area.b-area.t)
+    }));
+    plottedObservations.forEach(item=>{c.fillStyle=item.facility==="JAO"?gold:"#2563eb";c.globalAlpha=.72;c.beginPath();c.arc(item.x,item.y,4,0,Math.PI*2);c.fill();});
+    c.globalAlpha=1;label(c,"Right ascension (east ←)",(area.l+area.r)/2,h-10,"center",text,12);
+    c.save();c.translate(15,(area.t+area.b)/2);c.rotate(-Math.PI/2);label(c,"Declination",0,0,"center",text,12);c.restore();
+    label(c,observations.length?"catalogue observation fields":"loading catalogue…",area.l,22,"left",observations.length?gold:muted,13);
   }
   function drawSagnac(){
     const canvas=document.getElementById("sagnac-canvas");if(!canvas)return;const {c,w,h,text,muted,line,gold}=surface(canvas),omega=val("rotation-rate"),radiusM=val("loop-radius");
@@ -135,6 +133,21 @@
     const button=document.getElementById("animation-toggle");button?.addEventListener("click",()=>{running=!running;button.textContent=running?"Pause animations":"Resume animations";});
     addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);
     reduce.addEventListener?.("change",event=>{running=!event.matches;if(button)button.textContent=running?"Pause animations":"Resume animations";});
+    fetch("data/observations.json").then(response=>response.json()).then(data=>{
+      observations=data.objects||[];
+      const select=document.getElementById("starmap-facility");
+      [...new Set(observations.map(item=>item.facility))].sort().forEach(name=>{
+        const option=document.createElement("option");option.value=name;option.textContent=name;select?.append(option);
+      });
+      select?.addEventListener("change",drawStarmap);drawStarmap();
+    }).catch(()=>put("starmap-loaded","unavailable"));
+    document.getElementById("starmap-canvas")?.addEventListener("click",event=>{
+      const rect=event.currentTarget.getBoundingClientRect(),x=event.clientX-rect.left,y=event.clientY-rect.top;
+      const nearest=plottedObservations.reduce((best,item)=>{
+        const distance=Math.hypot(item.x-x,item.y-y);return !best||distance<best.distance?{item,distance}:best;
+      },null);
+      if(nearest&&nearest.distance<14)put("starmap-selected",`${nearest.item.target} · ${nearest.item.facility}`);
+    });
     requestAnimationFrame(frame);
   });
   window.SSZVisual={PHI,strong,weak,xi,D,hermite};

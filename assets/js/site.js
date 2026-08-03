@@ -9,7 +9,9 @@
     if (menu) {
       const here = location.pathname.split("/").pop() || "index.html";
       const link = (href,label) => `<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`;
-      const group = (label, entries) => `<details class="nav-group"${entries.some(([href])=>href===here)?" open":""}><summary>${label}</summary><div class="nav-submenu">${entries.map(([href,text])=>link(href,text)).join("")}</div></details>`;
+      // Keep all groups collapsed by default. The current page remains marked
+      // with aria-current, but opening a group is an explicit user action.
+      const group = (label, entries) => `<details class="nav-group"><summary>${label}</summary><div class="nav-submenu">${entries.map(([href,text])=>link(href,text)).join("")}</div></details>`;
       menu.innerHTML = [
         link("index.html","Overview"),
         group("Learn", [["theory.html","Theory"],["formulas.html","Formulas"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["glossary.html","Glossary"]]),

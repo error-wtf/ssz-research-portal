@@ -81,6 +81,9 @@ summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .nav-links a:hover, .nav-links a[aria-current="page"], .nav-button:hover {
   color: var(--gold); background: var(--surface-2);
 }
+.reviewer-panel { position:fixed; right:1rem; bottom:1rem; z-index:60; display:grid; gap:.35rem; max-width:min(26rem,calc(100vw - 2rem)); padding:1rem 1.1rem; border:1px solid var(--gold); border-radius:1rem; background:var(--surface); box-shadow:var(--shadow); }
+.reviewer-panel a { color:var(--blue); font-weight:800; }
+.reviewer-panel small { color:var(--muted); }
 .menu-toggle { display: none; margin-left: auto; }
 
 .page { max-width: 1360px; margin: auto; padding: 2rem 1.4rem 6rem; }

@@ -77,8 +77,10 @@
     });
     document.querySelectorAll("[data-reviewer-toggle]").forEach(button=>button.addEventListener("click",()=>{
       const enabled=root.dataset.reviewer!=="true";root.dataset.reviewer=String(enabled);
-      localStorage.setItem("ssz-reviewer",String(enabled));button.textContent=enabled?"Reviewer: ON":"Reviewer: OFF";button.setAttribute("aria-pressed",String(enabled));
+      localStorage.setItem("ssz-reviewer",String(enabled));localStorage.setItem("ssz-reviewer-toggles",String(Number(localStorage.getItem("ssz-reviewer-toggles")||0)+1));button.textContent=enabled?"Reviewer: ON":"Reviewer: OFF";button.setAttribute("aria-pressed",String(enabled));renderReviewerPanel();
     }));
+    function renderReviewerPanel(){let panel=document.getElementById("reviewer-panel");if(root.dataset.reviewer!=="true"){panel?.remove();return;}if(!panel){panel=document.createElement("aside");panel.id="reviewer-panel";panel.className="reviewer-panel";panel.setAttribute("aria-live","polite");document.body.append(panel);}const views=Number(localStorage.getItem("ssz-reviewer-views")||0)+1;localStorage.setItem("ssz-reviewer-views",String(views));panel.innerHTML=`<strong>Reviewer mode active</strong><span>Report scientific, code or provenance issues:</span><a href="mailto:mail@error.wtf?subject=SSZ%20Research%20Portal%20review">mail@error.wtf</a><small>Local browser statistics: ${views} reviewer-mode page activations · ${Number(localStorage.getItem("ssz-reviewer-toggles")||0)} toggles. No data is transmitted.</small>`;}
+    renderReviewerPanel();
 
     document.querySelectorAll("[data-copy]").forEach(button => {
       button.addEventListener("click", async () => {

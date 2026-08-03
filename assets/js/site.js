@@ -6,6 +6,11 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".nav-links");
+    if (menu) {
+      const pages = [["index.html","Overview"],["theory.html","Theory"],["regimes.html","Regimes"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["formulas.html","Formulas"],["visual-lab.html","Visual lab"],["workbench.html","Workbench"],["tests.html","Tests"],["evidence.html","Evidence"],["repositories.html","Repositories"],["papers.html","Papers"],["reproducibility.html","Reproduce"],["falsification.html","Falsification"],["glossary.html","Glossary"],["atlas.html","Atlas"]];
+      const here = location.pathname.split("/").pop() || "index.html";
+      menu.innerHTML = pages.map(([href,label])=>`<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`).join("") + '<button class="nav-button" data-reviewer-toggle>Reviewer</button><button class="nav-button" data-theme-toggle>◐ Theme</button>';
+    }
     if (menu && !menu.querySelector('a[href="formulas.html"]')) {
       const link = document.createElement("a");
       link.href = "formulas.html";

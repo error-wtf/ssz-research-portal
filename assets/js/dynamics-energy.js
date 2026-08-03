@@ -4,6 +4,7 @@
   if (!$("dynamics-potential-canvas")) return;
   const phi = (1 + Math.sqrt(5)) / 2;
   let phase = 0, playing = true, frame = 0;
+  let potentialPlaying = true, potentialFrame = 0, potentialDirection = 1;
   const smooth = t => t*t*t*(t*(t*6-15)+10);
   function xi(x) {
     const strong = 1 - Math.exp(-phi / x), weak = 1 / (2*x);
@@ -38,8 +39,18 @@
     $("emg-rays-out").textContent=rays;$("emg-wave-out").textContent=wave.toFixed(3);
   }
   function loop(){if(!playing)return;phase+=.035;emergence();frame=requestAnimationFrame(loop);}
+  function potentialLoop(){
+    if(!potentialPlaying)return;
+    const slider=$("dyn-r"), min=+slider.min, max=+slider.max;
+    let value=+slider.value+potentialDirection*.018;
+    if(value>=max){value=max;potentialDirection=-1;}
+    if(value<=min){value=min;potentialDirection=1;}
+    slider.value=String(value);potential();potentialFrame=requestAnimationFrame(potentialLoop);
+  }
   ["dyn-l","dyn-r"].forEach(id=>$(id).addEventListener("input",potential));
   ["emg-rays","emg-wave"].forEach(id=>$(id).addEventListener("input",emergence));
   $("emg-play").addEventListener("click",()=>{playing=!playing;$("emg-play").textContent=playing?"Pause interference":"Resume interference";playing?loop():cancelAnimationFrame(frame);});
-  addEventListener("resize",()=>{potential();emergence();});potential();loop();
+  $("dyn-play").addEventListener("click",()=>{potentialPlaying=!potentialPlaying;$("dyn-play").setAttribute("aria-pressed",String(potentialPlaying));$("dyn-play").textContent=potentialPlaying?"Pause radial sweep":"Resume radial sweep";$("dyn-motion").textContent=potentialPlaying?"radial sweep active":"paused";potentialPlaying?potentialLoop():cancelAnimationFrame(potentialFrame);});
+  $("dyn-reset").addEventListener("click",()=>{$("dyn-r").value="3";potentialDirection=1;potential();});
+  addEventListener("resize",()=>{potential();emergence();});potential();loop();potentialLoop();
 })();

@@ -11,12 +11,17 @@
     document.getElementById("formula-count").textContent=`${shown.length} of ${formulas.length} reviewed equations shown.`;
     document.getElementById("formula-catalog").innerHTML=shown.map(item=>`<article class="formula-entry" data-searchable>
       <div class="formula-entry-head"><div><span class="badge canonical">${esc(item.topic)}</span><h3>${esc(item.name)}</h3></div><button class="nav-button formula-copy" data-formula="${esc(item.latex)}">Copy source</button></div>
-      <div class="formula rendered-math" aria-label="${esc(item.name)}">\\(${esc(item.latex)}\\)</div>
+      <div class="math-box rendered-math" data-label="${esc(item.id)}" aria-label="${esc(item.name)}">\\[${esc(item.latex)}\\]</div>
       <dl class="formula-meta"><dt>Units</dt><dd>${esc(item.units)}</dd><dt>Domain</dt><dd>${esc(item.domain)}</dd><dt>Guardrail</dt><dd>${esc(item.caution)}</dd></dl>
     </article>`).join("");
     window.MathJax?.typesetPromise?.([document.getElementById("formula-catalog")]);
     document.querySelectorAll(".formula-copy").forEach(button=>button.addEventListener("click",async()=>{
-      await navigator.clipboard.writeText(button.dataset.formula);button.textContent="Copied";setTimeout(()=>button.textContent="Copy source",1000);
+      try {
+        await navigator.clipboard.writeText(button.dataset.formula);
+      } catch {
+        const area=document.createElement("textarea");area.value=button.dataset.formula;document.body.append(area);area.select();document.execCommand("copy");area.remove();
+      }
+      button.textContent="Copied";setTimeout(()=>button.textContent="Copy source",1000);
     }));
   }
   document.addEventListener("DOMContentLoaded",async()=>{

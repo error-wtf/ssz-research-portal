@@ -11,7 +11,8 @@
   function surface(){
     const canvas=$("starmap-canvas"),rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);
     const w=Math.max(320,rect.width||800),h=Math.max(420,rect.height||620);
-    canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+    const targetW=Math.round(w*dpr),targetH=Math.round(h*dpr);
+    if(canvas.width!==targetW||canvas.height!==targetH){canvas.width=targetW;canvas.height=targetH;}
     const c=canvas.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
     c.fillStyle=css("--surface");c.fillRect(0,0,w,h);
     return {canvas,c,w,h,area:{l:48,r:w-28,t:34,b:h-46}};

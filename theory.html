@@ -10,7 +10,7 @@
 <nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>THEORY FROM A TO Z</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a aria-current="page" href="theory.html">Theory</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
 <header class="hero"><div><span class="eyebrow">Four levels of explanation</span><h1>SSZ theory<br><span class="gradient-text">from A to Z</span></h1><p class="lead">Intuition, physics, mathematics, implementation and validation are kept together so that no formula floats free of its assumptions.</p></div><div class="hero-orbit"><span class="orbit-core">ds²</span></div></header>
-<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#notation">Notation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#bridge">C² bridge</a><a href="#differential">Geometry</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#measurements">Measurements</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#inference">Inference</a><a href="#status">Claim status</a><a href="#papers">Paper map</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
+<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#notation">Notation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#bridge">C² bridge</a><a href="#differential">Geometry</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#measurements">Measurements</a><a href="#electromagnetism">Electromagnetism</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#inference">Inference</a><a href="#status">Claim status</a><a href="#programme">Programme map</a><a href="#papers">Paper map</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
 
 <section id="segmentation" class="section">
 <div class="section-head"><span class="section-kicker">Foundations</span><h2>What “segmented” means</h2><p class="lead">Segmentation is a model description of how local radial and temporal scaling is encoded by a dimensionless field Ξ. It is not, by itself, proof that spacetime is literally made of discrete blocks.</p></div>
@@ -169,6 +169,17 @@ H_5(t)={}&h_{00}(t)y_0+h\,h_{10}(t)y'_0+h^2h_{20}(t)y''_0\\
 <details><summary>One-way versus two-way measurement</summary><p>One-way timing requires a synchronisation convention between separated clocks. Round-trip timing can avoid that convention but measures a different observable. A factor of two from path duplication is separate from a factor such as (1+γ) in a PPN formula.</p></details>
 </section>
 
+<section id="electromagnetism" class="section">
+<div class="section-head"><span class="section-kicker">Fields and propagation</span><h2>Electromagnetism: what follows, what is proposed, what is missing</h2><p>Several SSZ papers use frequency, radial scaling and rotating-wave language. These layers must be separated from standard electromagnetism on the effective metric.</p></div>
+<div class="grid grid-3">
+<article class="card"><span class="badge canonical">Standard geometric layer</span><h3>Local Maxwell propagation</h3><p>Given a metric, Maxwell equations can be written covariantly as \(\nabla_\mu F^{\mu\nu}=\mu_0J^\nu\) and \(\nabla_{[\alpha}F_{\beta\gamma]}=0\). Geometric optics then follows null characteristics while every local inertial frame measures \(c\).</p></article>
+<article class="card"><span class="badge open">SSZ proposal</span><h3>Radial scaling gauge</h3><p>Amplitude, phase or radial field scalings proposed by the paper programme require an explicit map between coordinate components, orthonormal measurements and conserved flux. A scaling rule must preserve units and boundary conditions.</p></article>
+<article class="card"><span class="badge open">Interpretation</span><h3>Rotating-space picture</h3><p>A visual or topological interpretation of Maxwell waves as rotating space is not equivalent to a covariant action. Its empirical content begins only when it yields a distinct, gauge-consistent observable.</p></article>
+</div>
+<div class="math-box" data-label="Covariant electromagnetic baseline">\[\displaystyle \nabla_\mu F^{\mu\nu}=\mu_0J^\nu,\qquad \nabla_{[\alpha}F_{\beta\gamma]}=0,\qquad k_\mu k^\mu=0\ \text{(geometric optics)}\]</div>
+<div class="callout warning"><strong>No in-flight retuning shortcut:</strong> gravitational redshift is an endpoint comparison of observer frequencies in a stationary geometry. It need not be described as a photon continuously losing locally measured energy along its path.</div>
+</section>
+
 <section id="interior" class="section">
 <div class="section-head"><span class="section-kicker">P0 correction</span><h2>SSZ Interior and Global Structure</h2><p>Finite time dilation at r=r<sub>s</sub> removes the Schwarzschild-style vanishing of the static time factor there. It does not settle what happens at the areal centre.</p></div>
 <div class="grid grid-2">
@@ -209,6 +220,18 @@ H_5(t)={}&h_{00}(t)y_0+h\,h_{10}(t)y'_0+h^2h_{20}(t)y''_0\\
 <article class="card"><h3>Observable applications</h3><p>Redshift, curvature detection, radio-wave and nebular papers propose mappings to observations. Each requires an explicit likelihood, uncertainties and comparison model before it can count as empirical evidence.</p></article>
 </div>
 <p class="callout"><strong>Audit the sequence:</strong> use the <a href="papers.html">paper and claim catalogue</a> for all 25 numbered public SSZ manuscripts, verified item links, topics and P0 status.</p>
+</section>
+
+<section id="programme" class="section">
+<div class="section-head"><span class="section-kicker">Theory architecture</span><h2>From the locked static metric to the wider research programme</h2><p>The public corpus contains several layers with different maturity. They should cooperate without being treated as one already-derived fundamental theory.</p></div>
+<div class="table-wrap"><table><thead><tr><th>Layer</th><th>Current object</th><th>What is reproducible</th><th>What remains open</th></tr></thead><tbody>
+<tr><td>Static geometry</td><td>piecewise \(\Xi\), derived \(D,A,B\), diagonal metric</td><td>limits, C² bridge, components, geodesic diagnostics</td><td>fundamental derivation and global interior</td></tr>
+<tr><td>Weak-field compatibility</td><td>β=γ=1 PPN assignment</td><td>clock, perihelion, lensing and Shapiro reference calculations</td><td>independent novel weak-field discriminator</td></tr>
+<tr><td>Strong-field phenomenology</td><td>finite horizon clock factor and effective orbit calculations</td><td>metric-specific numerical candidates</td><td>rotation, perturbations, transfer and full forward imaging</td></tr>
+<tr><td>Astrophysical pipelines</td><td>mass projection, nebulae, energy and starmap analyses</td><td>captured scripts, residuals, plots and test snapshots</td><td>selection control, uncertainty hierarchy and external replication</td></tr>
+<tr><td>Foundational extensions</td><td>structural constants, emergent axes, coherence and wave interpretations</td><td>specific algebraic constructions and code experiments</td><td>derivation from one covariant action and decisive experiments</td></tr>
+</tbody></table></div>
+<p class="callout"><strong>Canonical reading order:</strong> definitions → metric → limits → observable-specific forward model → code → test → data comparison → interpretation. Reversing that order turns numerical agreement into circular support.</p>
 </section>
 
 <section id="falsification" class="section">

@@ -1,8 +1,8 @@
 (() => {
   "use strict";
-  const PHI=(1+Math.sqrt(5))/2, C=299792458;
-  const strong=x=>1-Math.exp(-PHI/x);
-  const weak=x=>1/(2*x);
+  const PHI=window.SSZ.PHI, C=299792458;
+  const strong=window.SSZ.strong;
+  const weak=window.SSZ.weak;
   const sp=x=>-PHI*Math.exp(-PHI/x)/x**2;
   const spp=x=>Math.exp(-PHI/x)*(2*PHI/x**3-PHI**2/x**4);
   const wp=x=>-1/(2*x*x), wpp=x=>1/x**3;
@@ -10,9 +10,9 @@
     const a0=y0,a1=w*d0,a2=w*w*dd0/2,A=y1-a0-a1-a2,B=w*d1-a1-2*a2,Q=w*w*dd1-2*a2;
     return a0+a1*t+a2*t*t+(10*A-4*B+Q/2)*t**3+(-15*A+7*B-Q)*t**4+(6*A-3*B+Q/2)*t**5;
   }
-  const xi=x=>x<1.8?strong(x):x>2.2?weak(x):hermite((x-1.8)/.4,strong(1.8),sp(1.8),spp(1.8),weak(2.2),wp(2.2),wpp(2.2),.4);
-  const D=x=>1/(1+xi(x));
-  const regime=x=>x<1.8?"strong":x>2.2?"weak":"C² bridge";
+  const xi=window.SSZ.xi;
+  const D=window.SSZ.dilation;
+  const regime=window.SSZ.branch;
   const val=id=>Number(document.getElementById(id)?.value);
   const put=(id,value)=>document.getElementById(id)?.replaceChildren(document.createTextNode(value));
   const fmt=(x,n=4)=>x.toLocaleString("en-US",{maximumFractionDigits:n});
@@ -115,10 +115,10 @@
   function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(running&&!document.hidden)time+=dt;drawAll();requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{
     document.querySelectorAll(".visual-controls input").forEach(input=>input.addEventListener("input",drawAll));
-    const button=document.getElementById("animation-toggle");button?.addEventListener("click",()=>{running=!running;button.textContent=running?"Pause animations":"Resume animations";});
+    const button=document.getElementById("animation-toggle");button?.addEventListener("click",()=>{running=!running;button.textContent=running?"Pause animations":"Resume animations";window.dispatchEvent(new CustomEvent("ssz-animation-change",{detail:{running}}));});
     addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);
     reduce.addEventListener?.("change",event=>{running=!event.matches;if(button)button.textContent=running?"Pause animations":"Resume animations";});
     requestAnimationFrame(frame);
   });
-  window.SSZVisual={PHI,strong,weak,xi,D,hermite};
+  window.SSZVisual={PHI,strong,weak,xi,D,hermite,isRunning:()=>running};
 })();

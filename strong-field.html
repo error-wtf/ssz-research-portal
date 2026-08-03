@@ -1,11 +1,12 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="SSZ strong-field observables, interior structure, limitations and falsification."><title>Strong Field and Global Structure — SSZ</title>
 <script src="https://cdn.tailwindcss.com"></script><script src="https://unpkg.com/@phosphor-icons/web"></script><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},options:{enableMenu:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
-<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">R</span><span><strong>Segmented Spacetime</strong><small>STRONG FIELD · INTERIOR · FALSIFICATION</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a aria-current="page" href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">R</span><span><strong>Segmented Spacetime</strong><small>STRONG FIELD · INTERIOR · FALSIFICATION</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a href="regimes.html">Regimes</a><a aria-current="page" href="strong-field.html">Strong field</a><a href="visual-lab.html">Visual lab</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
 <header class="hero"><div><span class="eyebrow">P0 scientific correction</span><h1>Strong field and<br><span class="gradient-text">global structure</span></h1><p class="lead">The horizon result is finite. The canonical areal centre is not regular. Both statements are true and must never be collapsed into one another.</p></div><div class="hero-orbit"><span class="orbit-core">K</span></div></header>
-<nav class="toc"><a href="#horizon">Horizon</a><a href="#observables">Observables</a><a href="#interior">Interior</a><a href="#global">Global completion</a><a href="#falsification">Falsification</a><a href="#roadmap">Roadmap</a></nav>
+<nav class="toc"><a href="#horizon">Horizon</a><a href="#local">Local geometry</a><a href="#orbits">Orbits</a><a href="#observables">Observables</a><a href="#effective-source">Effective source</a><a href="#interior">Interior</a><a href="#rotation">Rotation</a><a href="#global">Global completion</a><a href="#falsification">Falsification</a><a href="#roadmap">Roadmap</a></nav>
 
 <section id="horizon" class="section">
 <div class="section-head"><span class="section-kicker">Strongest secure result</span><h2>Finite horizon time dilation</h2></div>
@@ -15,9 +16,26 @@
 <article class="card metric-card"><strong>−0.308…</strong><span>g_tt/c² at r_s</span></article>
 <article class="card metric-card"><strong>finite</strong><span>diagonal coefficients at r_s</span></article>
 </div>
-<div class="formula big">Ξ(r_s)=1−e<sup>−φ</sup>, &nbsp; D(r_s)=1/(2−e<sup>−φ</sup>)</div>
+<div class="math-box" data-label="Horizon checkpoint">\[\displaystyle \Xi(r_s)=1-e^{-\varphi}\approx0.801711847,\qquad D(r_s)=\frac1{2-e^{-\varphi}}\approx0.555027709\]</div>
 <p>This establishes that the declared diagonal SSZ metric does not have the Schwarzschild-coordinate zero/infinity pair at r_s. It is a precise model result. Whether the surface is a global event horizon requires the complete causal geometry, not just local coefficients.</p>
 </section>
+
+<section id="local" class="section"><div class="section-head"><span class="section-kicker">Local versus coordinate physics</span><h2>Static frames, proper distance and radial light</h2><p>The strong field amplifies the cost of confusing chart quantities with local observables. A static orthonormal frame makes the distinction explicit.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>Static orthonormal frame</h3><div class="math-box" data-label="Local basis">\[\displaystyle e_{\hat0}=\frac1{Dc}\partial_t,\qquad e_{\hat r}=D\,\partial_r,\qquad e_{\hat\theta}=\frac1r\partial_\theta,\qquad e_{\hat\phi}=\frac1{r\sin\theta}\partial_\phi\]</div><p>Components carrying hats are measured in this local frame. The construction requires a physically admissible static observer.</p></article>
+<article class="card"><h3>Null coordinate slope</h3><div class="math-box" data-label="Radial ds² = 0">\[\displaystyle \frac{dr}{dt}=\pm cD^2(r),\qquad \Delta t=\frac1c\int_{r_1}^{r_2}\frac{dr}{D^2(r)}\]</div><p>This describes the selected coordinates. The local frame measures the light ray at \(c\).</p></article>
+<article class="card"><h3>Proper radial length</h3><div class="math-box" data-label="Constant-time slice">\[\displaystyle \ell(r_1,r_2)=\int_{r_1}^{r_2}\frac{dr}{D(r)}\]</div><p>It is a spatial-slice distance—not the elapsed proper time of an infalling observer.</p></article>
+<article class="card"><h3>Static redshift</h3><div class="math-box" data-label="Two endpoints">\[\displaystyle \frac{\nu_o}{\nu_e}=\frac{D(r_e)}{D(r_o)},\qquad 1+z=\frac{D(r_o)}{D(r_e)}\]</div><p>Doppler motion, transfer through plasma and atmospheric line formation must be added for real spectra.</p></article>
+</div></section>
+
+<section id="orbits" class="section"><div class="section-head"><span class="section-kicker">Geodesic diagnostics</span><h2>Photon candidates, circular matter orbits and stability</h2><p>Strong-field radii are solutions of differential conditions in a specified metric version. They are not universal constants that can be copied between historic SSZ variants.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>Null effective potential</h3><div class="math-box" data-label="Equatorial null motion">\[\displaystyle \dot r^2=\frac{E^2}{c^2}-\frac{A(r)L^2}{r^2},\qquad \frac d{dr}\!\left(\frac{A}{r^2}\right)=0\]</div><p>A candidate circular photon orbit also needs accessibility and an instability check from the second derivative.</p></article>
+<article class="card"><h3>Critical impact parameter</h3><div class="math-box" data-label="Static spherical shadow proxy">\[\displaystyle b_{\rm crit}=\frac{r_{\rm ph}}{\sqrt{A(r_{\rm ph})}}\]</div><p>This geometric proxy is not yet a synthetic EHT image. Rotation, inclination, plasma emissivity and instrumental response change an observed shadow.</p></article>
+<article class="card"><h3>Timelike circular orbit</h3><div class="math-box" data-label="Energy and angular momentum">\[\displaystyle L^2=\frac{c^2r^3A'}{2A-rA'},\qquad E^2=\frac{2c^4A^2}{2A-rA'}\]</div><p>The expressions follow for the declared static areal-radius metric and convention. A denominator failure marks a domain boundary, not a numerical nuisance.</p></article>
+<article class="card"><h3>Marginal stability</h3><div class="math-box" data-label="ISCO condition">\[\displaystyle V'_{\rm eff}=0,\qquad V''_{\rm eff}=0,\qquad \Omega^2=\frac{c^2A'}{2r}\]</div><p>An ISCO result must report the branch, root-finding interval, tolerance and comparison clock.</p></article>
+</div>
+<div class="callout warning"><strong>Current portal rule:</strong> the bridge can introduce an interior stationary point of \(A/r^2\). It is reported as a metric candidate, never silently relabelled as an observationally confirmed photon sphere.</div></section>
 
 <section id="observables" class="section">
 <div class="section-head"><span class="section-kicker">Derived model observables</span><h2>Photon sphere, ISCO, shadow, redshift and ringdown</h2><p>Each quantity needs its own differential problem. None can be read from D(r_s) alone.</p></div>
@@ -33,6 +51,12 @@
 <div class="callout tested"><strong>Interpretation rule:</strong> a numerically stable critical orbit is a result of the implemented effective metric. It is not automatically an observed feature of nature.</div>
 </section>
 
+<section id="effective-source" class="section"><div class="section-head"><span class="section-kicker">Diagnostic—not fundamental matter</span><h2>Einstein tensor and effective energy conditions</h2><p>The geometry can be inserted into the Einstein tensor to ask what GR-style effective source would support it. This does not derive SSZ dynamics.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>Effective source</h3><div class="math-box" data-label="GR diagnostic">\[\displaystyle G_{\mu\nu}=R_{\mu\nu}-\frac12Rg_{\mu\nu},\qquad T_{\mu\nu}^{\rm eff}=\frac{G_{\mu\nu}}{8\pi G}\]</div><p>Density and principal pressures must be projected into an orthonormal frame before energy-condition statements are made.</p></article>
+<article class="card"><h3>Condition ladder</h3><div class="math-box" data-label="Principal-frame inequalities">\[\displaystyle \mathrm{WEC}:\ \rho\ge0,\ \rho+\frac{p_i}{c^2}\ge0;\qquad \mathrm{DEC}:\ \rho\ge\frac{|p_i|}{c^2}\]</div><p>Historic tests reporting finite transition proxies or bounded effective quantities do not override the P0 invariant divergence at \(r\to0\).</p></article>
+</div></section>
+
 <section id="interior" class="section">
 <div class="section-head"><span class="section-kicker">Central P0 correction</span><h2>SSZ Interior and Global Structure</h2><p class="lead">The formal strong branch approaches Ξ→1 and D→1/2 as r→0. Finite field and metric coefficients do not make the areal centre regular.</p></div>
 <div class="grid grid-3">
@@ -42,6 +66,14 @@
 </div>
 <div class="callout warning"><strong>Conclusion:</strong> complete central singularity freedom has not been proven. Older documentation that states Ξ→0, D→1 or a flat centre from the same decay branch is mathematically inconsistent and is treated as superseded legacy material.</div>
 </section>
+
+<section id="rotation" class="section"><div class="section-head"><span class="section-kicker">Unfinished extension</span><h2>Rotation, frame dragging and perturbations</h2></div><div class="grid grid-3">
+<article class="card"><h3>Rotating metric</h3><p>A complete axisymmetric solution must determine \(g_{t\phi}\), horizon/ergosurface structure, multipoles and the static limit from one set of dynamics. A Kerr-inspired analogy is not yet that derivation.</p></article>
+<article class="card"><h3>Linear perturbations</h3><p>QNM frequencies require a well-defined perturbation operator, gauge choice, potentials and ingoing/outgoing boundary conditions. Static \(D(r)\) alone is insufficient.</p></article>
+<article class="card"><h3>Waveform inference</h3><p>The LIGO repository explicitly labels current strain corrections as a V0 proxy. Likelihood differences from that pipeline are engineering and exploratory evidence, not a locked SSZ waveform detection.</p></article>
+</div>
+<div class="math-box" data-label="Stationary Sagnac structure">\[\displaystyle \Delta t=-\frac2c\oint\frac{g_{0i}}{g_{00}}\,dx^i\]</div>
+<p>The familiar \(4A\Omega/c^2\) result follows only after specifying the rotating-loop limit. Potential-dependent, direction-symmetric terms cancel differently from genuine direction-odd terms.</p></section>
 
 <section id="global" class="section">
 <div class="section-head"><span class="section-kicker">What a completion must supply</span><h2>Requirements for a global solution</h2></div>

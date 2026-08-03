@@ -15,8 +15,10 @@
       "topic": "electromagnetism",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_01_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_01_Radial_Scaling_Gauge_for_Maxwell_Fields.md",
+      "local_source": "09_PAPERS/markdown/paper_01_Radial_Scaling_Gauge_for_Maxwell_Fields.md",
+      "summary": "Introduces a radial scaling prescription for Maxwell fields and asks how field amplitudes and flux relations transform under SSZ radial scaling.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -29,7 +31,9 @@
       "status": "local index verified",
       "peer_review": "preprint / not established",
       "public_url": "https://www.researchgate.net/publication/395694324_Dual_Velocities_in_Segmented_Spacetime_-_Escape_Fall_and_Gravitational_Redshift",
-      "local_source": "09_PAPERS/markdown/paper_02_…",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_02_Dual_Velocities_in_Segmented_Spacetime.md",
+      "local_source": "09_PAPERS/markdown/paper_02_Dual_Velocities_in_Segmented_Spacetime.md",
+      "summary": "Develops the escape/fall dual-velocity language and its relation to static gravitational redshift. Coordinate, dual and locally measured velocities must remain distinct.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -42,7 +46,9 @@
       "status": "local index verified",
       "peer_review": "preprint / not established",
       "public_url": "https://www.researchgate.net/publication/392363927_Segmented_Spacetime_-_A_Frequency-Based_Framework_for_Gravity_Light_and_Black_Holes",
-      "local_source": "09_PAPERS/markdown/paper_03_…",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_03_A_Frequency-Based_Framework_for_Gravity_Light_and_Black_Holes.md",
+      "local_source": "09_PAPERS/markdown/paper_03_A_Frequency-Based_Framework_for_Gravity_Light_and_Black_Holes.md",
+      "summary": "Presents the frequency-centred overview of SSZ, connecting the segment field, clock factor and proposed black-hole phenomenology.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -54,8 +60,10 @@
       "topic": "geometry",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_04_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_04_On_the_Complete_Metric_of_Black_Holes.md",
+      "local_source": "09_PAPERS/markdown/paper_04_On_the_Complete_Metric_of_Black_Holes.md",
+      "summary": "States a static spherical SSZ metric proposal and discusses horizon behaviour. Current use is constrained by the P0 central-curvature correction.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -68,7 +76,9 @@
       "status": "local index verified",
       "peer_review": "preprint / not established",
       "public_url": "https://www.researchgate.net/publication/397756840_Segmented_Spacetime_-Infalling_Matter_and_Radiowaves",
-      "local_source": "09_PAPERS/markdown/paper_05_…",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_05_Infalling_Matter_and_Radiowaves.md",
+      "local_source": "09_PAPERS/markdown/paper_05_Infalling_Matter_and_Radiowaves.md",
+      "summary": "Studies infalling matter and radio-wave propagation in the effective geometry, with emphasis on observer-dependent frequency and travel-time interpretation.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -80,8 +90,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_06_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_06_Von_-Segmentierung_zu_Euler.md",
+      "local_source": "09_PAPERS/markdown/paper_06_Von_-Segmentierung_zu_Euler.md",
+      "summary": "Builds a proposed chain from golden-ratio segmentation to Euler-type relations. These structural steps are model hypotheses, not consequences of the metric alone.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -93,8 +105,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_07_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_07_Kinematische_Schlie_ung_Escape_vs_Fall.md",
+      "local_source": "09_PAPERS/markdown/paper_07_Kinematische_Schlie_ung_Escape_vs_Fall.md",
+      "summary": "Formulates a kinematic closure between escape and fall descriptions and identifies invariant or reciprocal combinations used by the programme.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -106,8 +120,10 @@
       "topic": "electromagnetism",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_08_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_08_Segment-Based_Group_Velocity.md",
+      "local_source": "09_PAPERS/markdown/paper_08_Segment-Based_Group_Velocity.md",
+      "summary": "Defines a segment-based group-velocity description for propagation. Its operational meaning depends on distinguishing coordinate and local measurements.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -120,7 +136,9 @@
       "status": "local index verified",
       "peer_review": "preprint / not established",
       "public_url": "https://www.researchgate.net/publication/397570946_Segmented_Spacetime_and_the_Dark_Star_Problem_-_A_Historical_and_Geometric_Reassessment_of_Light_Escape_in_Strong_Gravity",
-      "local_source": "09_PAPERS/markdown/paper_09_…",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_09_The_Dark_Star_Problem.md",
+      "local_source": "09_PAPERS/markdown/paper_09_The_Dark_Star_Problem.md",
+      "summary": "Revisits the historical dark-star problem through finite horizon time scaling and escape conditions in SSZ.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -132,8 +150,10 @@
       "topic": "observables",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_10_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_10_Frequency-Based_Curvature_Detection.md",
+      "local_source": "09_PAPERS/markdown/paper_10_Frequency-Based_Curvature_Detection.md",
+      "summary": "Proposes curvature detection through dynamic frequency comparisons and links laboratory/astronomical clock observables to the weak-field implementation.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -146,7 +166,9 @@
       "status": "local index verified",
       "peer_review": "preprint / not established",
       "public_url": "https://www.researchgate.net/publication/397386282_Segmented_Spacetime_and_the_Origin_of_Molecular_Zones_in_Expanding_Nebulae",
-      "local_source": "09_PAPERS/markdown/paper_11_…",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_11_Origin_of_Molecular_Zones_in_Expanding_Nebulae.md",
+      "local_source": "09_PAPERS/markdown/paper_11_Origin_of_Molecular_Zones_in_Expanding_Nebulae.md",
+      "summary": "Applies SSZ-inspired mappings to molecular and radio zones in expanding nebulae, especially G79.29+0.46. The interpretation remains conditional on the supplied data pipeline.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -158,8 +180,10 @@
       "topic": "strong field",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_12_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_12_SSZ_as_Natural_Regulator_of_Superradiant_Instabilities.md",
+      "local_source": "09_PAPERS/markdown/paper_12_SSZ_as_Natural_Regulator_of_Superradiant_Instabilities.md",
+      "summary": "Explores whether SSZ strong-field scaling can regulate superradiant-instability proxies. A complete perturbation theory is still required.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -171,8 +195,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_13_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_13__and_as_Structural_Constants.md",
+      "local_source": "09_PAPERS/markdown/paper_13__and_as_Structural_Constants.md",
+      "summary": "Investigates φ and π as structural constants in segmentation geometry. The proposed relations are foundational hypotheses requiring independent derivation and tests.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -184,8 +210,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_14_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_14_Emergent_Spatial_Axes_from_Orthogonal_Temporal_Interference.md",
+      "local_source": "09_PAPERS/markdown/paper_14_Emergent_Spatial_Axes_from_Orthogonal_Temporal_Interference.md",
+      "summary": "Proposes emergent spatial axes from orthogonal temporal interference. This is a speculative construction beyond the locked static metric.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -197,8 +225,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_15_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_15_Structural_Origin_of_the_Fine-Structure_Constant.md",
+      "local_source": "09_PAPERS/markdown/paper_15_Structural_Origin_of_the_Fine-Structure_Constant.md",
+      "summary": "Connects bound-energy scaling to the fine-structure constant. Fit quality and structural interpretation must be separated from derivation.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -210,8 +240,10 @@
       "topic": "interior",
       "status": "historical / requires P0 correction",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_16_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_16_Solution_to_the_Paradox_of_Singularities.md",
+      "local_source": "09_PAPERS/markdown/paper_16_Solution_to_the_Paradox_of_Singularities.md",
+      "summary": "Historically claimed a resolution of singularities. P0 supersedes the global claim: the canonical diagonal continuation has divergent central curvature.",
       "scope_note": "Historical claim: superseded by the P0 result that the canonical diagonal continuation has divergent central curvature."
     },
     {
@@ -224,7 +256,9 @@
       "status": "historical / requires P0 correction",
       "peer_review": "preprint / not established",
       "public_url": "https://vixra.org/pdf/2411.0074v1.pdf",
-      "local_source": "09_PAPERS/markdown/paper_17_…",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_17_Natural_Boundary_of_Black_Holes_-_Cosmic_Censorship.md",
+      "local_source": "09_PAPERS/markdown/paper_17_Natural_Boundary_of_Black_Holes_-_Cosmic_Censorship.md",
+      "summary": "Interprets a natural black-hole boundary in relation to cosmic censorship. Its historical regularity language is limited by the current P0 interior result.",
       "scope_note": "Historical claim: superseded by the P0 result that the canonical diagonal continuation has divergent central curvature."
     },
     {
@@ -236,8 +270,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_18_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_18__2_and_in_Segmented_Spacetime_-_Calibration.md",
+      "local_source": "09_PAPERS/markdown/paper_18__2_and_in_Segmented_Spacetime_-_Calibration.md",
+      "summary": "Documents φ/2 and β calibration choices and their numerical role. Calibration identities are not automatically fundamental constants of nature.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -249,8 +285,10 @@
       "topic": "geometry",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_19_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_19_Geometric_Resolution_of_Lorentz_Indeterminacy_at_v_0.md",
+      "local_source": "09_PAPERS/markdown/paper_19_Geometric_Resolution_of_Lorentz_Indeterminacy_at_v_0.md",
+      "summary": "Proposes a geometric treatment of the Lorentz transformation at v=0 and discusses how local frames are embedded in segmented descriptions.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -262,8 +300,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_20_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_20__as_a_Temporal_Growth_Function.md",
+      "local_source": "09_PAPERS/markdown/paper_20__as_a_Temporal_Growth_Function.md",
+      "summary": "Treats φ as a temporal growth function and motivates the strong-branch exponential. The choice remains declared model structure.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -275,8 +315,10 @@
       "topic": "observables",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_21_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_21_Interpretation_of_Gravitational_Redshift.md",
+      "local_source": "09_PAPERS/markdown/paper_21_Interpretation_of_Gravitational_Redshift.md",
+      "summary": "Explains static gravitational redshift through D and Ξ, including the distinction between endpoint clock comparison and in-flight photon retuning.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -288,8 +330,10 @@
       "topic": "electromagnetism",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_22_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_22_Maxwell_Waves_as_Rotating_Space.md",
+      "local_source": "09_PAPERS/markdown/paper_22_Maxwell_Waves_as_Rotating_Space.md",
+      "summary": "Offers a rotating-space interpretation of Maxwell waves. The picture is interpretive unless tied to a covariant electromagnetic action.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -301,8 +345,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_23_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_23_Additive_Decomposition_of_Light-Travel_Time.md",
+      "local_source": "09_PAPERS/markdown/paper_23_Additive_Decomposition_of_Light-Travel_Time.md",
+      "summary": "Separates contributions to observed light-travel time and warns that geometry, propagation medium and source/observer motion must be modelled independently.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -314,8 +360,10 @@
       "topic": "relativity",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_24_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_24_Transformation-Based_Definition_of_Local_Lorentz_Invariance.md",
+      "local_source": "09_PAPERS/markdown/paper_24_Transformation-Based_Definition_of_Local_Lorentz_Invariance.md",
+      "summary": "Defines local Lorentz invariance through transformations and relates the construction to frame-dragging language. A rotating global SSZ solution remains open.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     },
     {
@@ -327,8 +375,10 @@
       "topic": "foundations",
       "status": "local index verified",
       "peer_review": "preprint / not established",
-      "public_url": "https://www.researchgate.net/profile/Carmen-Wrede/research",
-      "local_source": "09_PAPERS/markdown/paper_25_…",
+      "public_url": "",
+      "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_25_Irreversible_Coherence-Collapse_Law_g_g_.md",
+      "local_source": "09_PAPERS/markdown/paper_25_Irreversible_Coherence-Collapse_Law_g_g_.md",
+      "summary": "Proposes an irreversible coherence-collapse transition between two regimes. It is not part of the public canonical static metric lock.",
       "scope_note": "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
     }
   ]

@@ -20,8 +20,8 @@ PROJECT = Path(__file__).resolve().parents[1]
 HOME = Path(os.getenv("SSZ_SOURCE_HOME", PROJECT.parent))
 PRIVATE_MARKERS_FILE = PROJECT / ".private-sources"
 DEFAULT_PRIVATE_MARKERS = (
-    "ssz-" + "jif-core",
-    "ssz-" + "jif-forward-lab",
+    "ssz-" + "j" + "if-core",
+    "ssz-" + "j" + "if-forward-lab",
     "j" + "if",
     "segmented-spacetime-" + "book",
     "ssz_" + "book_en",

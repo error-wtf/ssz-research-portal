@@ -1,38 +1,39 @@
 <!doctype html><html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Formula and Symbol Reference — SSZ</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Complete curated SSZ formula reference with typography, units, domains, limits and scientific guardrails.">
+<title>Formula and Symbol Reference — SSZ</title>
 <script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
-<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]]},options:{enableMenu:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><script defer src="assets/js/formulas.js"></script>
+<script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},options:{enableMenu:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script><script defer src="assets/js/formulas.js"></script>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
-<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">ƒ</span><span><strong>Segmented Spacetime</strong><small>FORMULA REFERENCE</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">ƒ</span><span><strong>Segmented Spacetime</strong><small>FORMULA REFERENCE</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a href="regimes.html">Regimes</a><a href="strong-field.html">Strong field</a><a href="visual-lab.html">Visual lab</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
-<header class="hero"><div><span class="eyebrow">Formula → code → test</span><h1>Formula and<br><span class="gradient-text">symbol reference</span></h1><p class="lead">Central equations are stated with units, domains, limits, implementation rules, test links and the misinterpretations they do not permit.</p></div><div class="hero-orbit"><span class="orbit-core">Ξ</span></div></header>
-<div class="control"><label for="formula-search">Search formulas</label><input class="search" data-page-search id="formula-search" placeholder="redshift, metric, PPN, centre…"></div>
-<section class="section"><div class="section-head"><h2>Geometry and scale</h2></div><div class="grid grid-2">
-<article class="card" data-searchable><h3>Schwarzschild scale</h3><div class="formula">r<sub>s</sub>=2GM/c²</div><p><strong>Units:</strong> m. <strong>Domain:</strong> M&gt;0. <strong>Example:</strong> one solar mass gives about 2.953 km. <strong>Code:</strong> <code>2*G*M/c**2</code>. <strong>Guardrail:</strong> do not use GM/c² under the same symbol.</p></article>
-<article class="card" data-searchable><h3>Diagonal metric</h3><div class="formula">ds²=−D²c²dt²+D⁻²dr²+r²dΩ²</div><p><strong>Units:</strong> length² per term. <strong>Scope:</strong> static spherical effective geometry. <strong>Test:</strong> tensor/inverse/horizon suites. <strong>Guardrail:</strong> this ansatz is not a derived global solution.</p></article>
-</div></section>
-<section class="section"><div class="section-head"><h2>Segment field and branches</h2></div><div class="grid grid-3">
-<article class="card" data-searchable><h3>Strong branch</h3><div class="formula">Ξ=1−exp(−φr_s/r)</div><p>Dimensionless; r/r_s&lt;1.8. Limits: Ξ(r_s)=0.801711847, Ξ→1 inward. Tested by strong-branch and horizon limits.</p></article>
-<article class="card" data-searchable><h3>C² blend</h3><div class="formula">Ξ=H<sub>5</sub>(t), t=(r/r_s−1.8)/0.4</div><p>Endpoint value, slope and curvature come from both branches. A cubic zero-slope smoothstep is not equivalent.</p></article>
-<article class="card" data-searchable><h3>Weak branch</h3><div class="formula">Ξ=r_s/(2r)</div><p>Dimensionless; r/r_s&gt;2.2. Limits: 0.05 at 10r_s and zero at infinity.</p></article>
-</div></section>
-<section class="section"><div class="section-head"><h2>Clocks, redshift and phase</h2></div><div class="grid grid-2">
-<article class="card" data-searchable><h3>Time factor</h3><div class="formula">D=1/(1+Ξ), dτ=Ddt</div><p>D is dimensionless. At r_s, D≈0.555027709. This demonstrates finite horizon time scaling, not central regularity.</p></article>
-<article class="card" data-searchable><h3>Static redshift proxy</h3><div class="formula">z=1/D−1=Ξ</div><p>Dimensionless. Applies to the declared static clock map. Real spectra also require motion, atmosphere, transfer and observer modelling.</p></article>
+<header class="hero"><div><span class="eyebrow">Equation → domain → implementation → evidence</span><h1>Formula and<br><span class="gradient-text">symbol reference</span></h1><p class="lead">A formula is shown only with its variables, units, assumptions and failure modes. Display mathematics follows the clear card system of the original research dashboard while preserving accessible source text.</p></div><div class="hero-orbit"><span class="orbit-core">Ξ</span></div></header>
 
+<section class="section"><div class="section-head"><span class="section-kicker">Canonical spine</span><h2>Six equations that define the current static model</h2></div>
+<div class="grid grid-2">
+<article class="card"><h3>Mass scale</h3><div class="math-box" data-label="Geometry">\[\displaystyle r_s=\frac{2GM}{c^2},\qquad x=\frac r{r_s}\]</div><p>\(r_s\) has units of length; \(x\) is the dimensionless areal radius.</p></article>
+<article class="card"><h3>Piecewise segment field</h3><div class="math-box" data-label="Canonical field">\[\displaystyle
+\Xi(x)=\begin{cases}
+1-e^{-\varphi/x},&x<1.8\\
+H_5((x-1.8)/0.4),&1.8\le x\le2.2\\
+(2x)^{-1},&x>2.2
+\end{cases}\]</div><p>The bridge is derivative-matched through second order.</p></article>
+<article class="card"><h3>Clock and radial factors</h3><div class="math-box" data-label="Derived scaling">\[\displaystyle D=\frac1{1+\Xi},\qquad A=D^2,\qquad B=D^{-2},\qquad AB=1\]</div><p>These are derived from \(\Xi\), not independently fitted functions.</p></article>
+<article class="card"><h3>Static spherical line element</h3><div class="math-box" data-label="Effective geometry">\[\displaystyle ds^2=-D^2c^2dt^2+D^{-2}dr^2+r^2(d\theta^2+\sin^2\theta\,d\phi^2)\]</div><p>The coordinate \(r\) is areal: symmetry spheres have area \(4\pi r^2\).</p></article>
+<article class="card"><h3>Static clock comparison</h3><div class="math-box" data-label="Operational measurement">\[\displaystyle d\tau=D(r)\,dt,\qquad 1+z=\frac{D(r_o)}{D(r_e)}\]</div><p>Emitter, observer and kinematic terms must be stated.</p></article>
+<article class="card"><h3>P0 interior asymptotics</h3><div class="math-box" data-label="Current limitation">\[\displaystyle A\to\frac14,\qquad R\sim\frac3{2r^2},\qquad K\sim\frac9{4r^4}\]</div><p>Finite metric coefficients do not remove the invariant central divergence.</p></article>
+</div></section>
 
+<section class="section"><div class="section-head"><span class="section-kicker">Reading discipline</span><h2>Every formula carries four boundaries</h2></div><div class="grid grid-4">
+<article class="card"><h3>Domain</h3><p>Coordinate range, branch, approximation order and observer class.</p></article>
+<article class="card"><h3>Dimensions</h3><p>Units of every symbol and a consistent dimensional check.</p></article>
+<article class="card"><h3>Provenance</h3><p>Definition, mathematical consequence, implementation, test or empirical comparison.</p></article>
+<article class="card"><h3>Non-claim</h3><p>The conclusion that does not follow from the equation or its software test.</p></article>
 </div></section>
-<section class="section"><div class="section-head"><h2>Weak-field observable machinery</h2></div><div class="grid grid-3">
-<article class="card" data-searchable><h3>Lensing</h3><div class="formula">α=(1+γ)r_s/b</div><p>Radians; γ=1 in the declared PPN limit. Uses both temporal and spatial metric contributions.</p></article>
-<article class="card" data-searchable><h3>Shapiro delay</h3><div class="formula">Δt=(1+γ)(r_s/c)ln(4r₁r₂/d²)</div><p>Seconds. One-way/round-trip geometry is separate from the PPN factor.</p></article>
-<article class="card" data-searchable><h3>Perihelion advance</h3><div class="formula">Δω=6πGM/[a(1−e²)c²]</div><p>Radians per orbit in the weak-field β=γ=1 limit. Agreement does not test the SSZ centre.</p></article>
-</div></section>
-<section class="section"><div class="section-head"><h2>Interior asymptotics</h2></div><div class="grid grid-3">
-<article class="card" data-searchable><h3>Metric limit</h3><div class="formula">A=D²→1/4</div><p>Finite but not sufficient for local Euclidean/Minkowski regularity at an areal centre.</p></article>
-<article class="card" data-searchable><h3>Ricci scalar</h3><div class="formula">R~3/(2r²)</div><p>Unit m⁻². Halving r multiplies the leading divergence by four.</p></article>
-<article class="card" data-searchable><h3>Kretschmann scalar</h3><div class="formula">K~9/(4r⁴)</div><p>Unit m⁻⁴. Halving r multiplies the leading divergence by sixteen; it is coordinate-invariant.</p></article>
-</div></section>
-<section class="section"><div class="callout"><strong>Extraction record:</strong> 4,000 unique formula candidates were extracted from normal text, Markdown and existing TeX sources. They remain candidates until a human assigns context, domain and canonical status. See <a href="data/formula-candidates.json">the machine catalogue</a> and <a href="FORMULA_CATALOG.md">curation notes</a>.</div></section>
-<section class="section" id="complete-reference"><div class="section-head"><span class="section-kicker">Reviewed equations</span><h2>Complete curated formula browser</h2><p class="lead">These equations are rendered typographically, remain available as accessible source text, and carry topic, units, domain and a scientific guardrail. Extracted candidates are not silently promoted into this list.</p></div>
-<div class="filter-bar"><input id="formula-catalog-search" class="search" type="search" placeholder="Search equation, name, domain or caution…"><select id="formula-topic"><option value="">All formula topics</option></select></div><p id="formula-count" aria-live="polite"></p><div id="formula-catalog" class="formula-catalog"></div></section>
-</main><footer class="footer"><div class="footer-inner"><div><strong>Formula reference</strong><p>Normal HTML mathematics; no TeX build pipeline.</p></div><div><a href="data/formulas.json">Curated formula JSON</a></div><div><a href="glossary.html">Symbols</a></div></div></footer></body></html>
+
+<section class="section" id="complete-reference"><div class="section-head"><span class="section-kicker">Reviewed equations</span><h2>Complete curated formula browser</h2><p class="lead">Search the full reviewed catalogue across geometry, regimes, local frames, geodesics, observables, energy conditions, statistics, weak field, strong field and validation. Automatically extracted candidates remain separate.</p></div>
+<div class="filter-bar"><input id="formula-catalog-search" class="search" type="search" placeholder="Search equation, name, domain or caution…"><select id="formula-topic"><option value="">All formula topics</option></select></div><p id="formula-count" aria-live="polite">Loading reviewed formulas…</p><div id="formula-catalog" class="formula-catalog"></div></section>
+
+<section class="section"><div class="callout"><strong>Extraction boundary:</strong> 4,000 unique formula candidates were found in ordinary text, Markdown and existing TeX sources. They are available in <a href="data/formula-candidates.json">the machine catalogue</a> but never become canonical without context review. See <a href="FORMULA_CATALOG.md">curation notes</a>.</div></section>
+</main><footer class="footer"><div class="footer-inner"><div><strong>Formula reference</strong><p>Static HTML with progressive MathJax SVG enhancement.</p></div><div><a href="data/formulas.json">Reviewed formula JSON</a></div><div><a href="regimes.html">Regime boundaries</a><br><a href="glossary.html">Symbols and terms</a></div></div></footer>
+</body></html>

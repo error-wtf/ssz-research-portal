@@ -19,7 +19,12 @@
     nodes.forEach(node=>{c.fillStyle=colours[node.repo.domain];c.beginPath();c.arc(node.x,node.y,node.r,0,Math.PI*2);c.fill();if(node.repo.name===selected){c.strokeStyle=textColour();c.lineWidth=3;c.stroke();}});
     c.fillStyle=textColour();c.font="600 11px Inter";c.textAlign="center";nodes.filter(node=>node.r>13||node.repo.name===selected).forEach(node=>c.fillText(node.repo.name,node.x,node.y+node.r+13));
   }
-  function listPaths(title,paths){return paths.length?`<details><summary>${title} (${paths.length})</summary><ul>${paths.map(path=>`<li><code>${escapeHtml(path)}</code></li>`).join("")}</ul></details>`:"";}
+  function fileUrl(repo,path){
+    if(!repo.public_url)return"";
+    const marker=`physics/${repo.name}/`,relative=path.startsWith(marker)?path.slice(marker.length):path;
+    return `${repo.public_url.replace(/\/$/,"")}/blob/${encodeURIComponent(repo.default_branch||"main")}/${relative.split("/").map(encodeURIComponent).join("/")}`;
+  }
+  function listPaths(repo,title,paths){return paths.length?`<details><summary>${title} (${paths.length})</summary><ul>${paths.map(path=>{const url=fileUrl(repo,path);return`<li>${url?`<a href="${escapeHtml(url)}" target="_blank" rel="noopener"><code>${escapeHtml(path)}</code></a>`:`<code>${escapeHtml(path)}</code>`}</li>`}).join("")}</ul></details>`:"";}
   function render(){
     const query=document.getElementById("atlas-search").value.toLowerCase(),domain=document.getElementById("atlas-domain").value,sort=document.getElementById("atlas-sort").value;
     let rows=data.filter(repo=>(!query||JSON.stringify(repo).toLowerCase().includes(query))&&(!domain||repo.domain===domain)&&(!selected||repo.name===selected));
@@ -31,7 +36,7 @@
       <div class="atlas-stats"><span><strong>${repo.counts.files.toLocaleString()}</strong> files</span><span><strong>${repo.counts.tests.toLocaleString()}</strong> test artefacts</span><span><strong>${repo.counts.documents.toLocaleString()}</strong> documents</span><span><strong>${repo.counts.images.toLocaleString()}</strong> images</span><span><strong>${formatBytes(repo.counts.bytes)}</strong> total</span></div>
       <div class="catalog-meta">${repo.roles.map(role=>`<span class="badge">${escapeHtml(role)}</span>`).join("")}${repo.languages.slice(0,5).map(item=>`<span class="badge">${escapeHtml(item.extension)} · ${item.count}</span>`).join("")}</div>
       <p><strong>Branch / commit:</strong> <code>${escapeHtml(repo.default_branch||"unknown")}</code> / <code>${escapeHtml(repo.commit||"unknown")}</code></p>
-      ${listPaths("Key documents",repo.key_documents)}${listPaths("Results, reports and locks",repo.result_files)}
+      ${listPaths(repo,"Key documents",repo.key_documents)}${listPaths(repo,"Results, reports and locks",repo.result_files)}
     </article>`).join("")||"<p>No repository matches the current filters.</p>";
     drawMap();
   }

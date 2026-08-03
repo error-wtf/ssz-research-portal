@@ -10,12 +10,13 @@
   const D=x=>window.SSZVisual.D(Math.max(1e-6,x));
   const derivative=(f,x,h=1e-5)=>(f(x+h)-f(x-h))/(2*h);
   const second=(f,x,h=1e-4)=>(f(x+h)-2*f(x)+f(x-h))/(h*h);
-  let time=0,last=performance.now();
+  let time=0,last=performance.now(),running=!matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function surface(id){
     const canvas=$(id);if(!canvas)return null;
     const rect=canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),w=Math.max(320,rect.width||700),h=Math.max(330,rect.height||430);
-    canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+    const targetW=Math.round(w*dpr),targetH=Math.round(h*dpr);
+    if(canvas.width!==targetW||canvas.height!==targetH){canvas.width=targetW;canvas.height=targetH;}
     const c=canvas.getContext("2d");c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
     return {c,w,h,a:{l:62,r:w-24,t:38,b:h-48}};
   }
@@ -97,9 +98,9 @@
   }
   const draws=[drawContinuity,drawComponents,drawClocks,drawSpectrum,drawNull];
   function drawAll(){draws.forEach(draw=>draw());}
-  function frame(now){time+=Math.min((now-last)/1000,.05);last=now;drawAll();requestAnimationFrame(frame);}
+  function frame(now){if(running&&!document.hidden)time+=Math.min((now-last)/1000,.05);last=now;drawAll();requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{
     ["continuity-join","continuity-window","component-radius","clock-inner","clock-outer","spectrum-line","spectrum-emitter","spectrum-observer","null-start","null-end"].forEach(id=>$(id)?.addEventListener("input",drawAll));
-    addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);requestAnimationFrame(frame);
+    addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);addEventListener("ssz-animation-change",event=>{running=Boolean(event.detail?.running);});requestAnimationFrame(frame);
   });
 })();

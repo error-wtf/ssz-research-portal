@@ -140,11 +140,14 @@ h3 { margin-top: 0; }
 .callout.open { border-left-color: var(--open); }
 .callout.tested { border-left-color: var(--blue); }
 .formula {
-  padding: 1rem 1.2rem; margin: 1rem 0; background: var(--surface-2);
-  border: 1px solid var(--line); border-left: 4px solid var(--gold);
-  border-radius: .8rem; font: 500 clamp(1.08rem, 1.8vw, 1.32rem)/1.9 "STIX Two Math", "Cambria Math", Georgia, serif;
-  overflow-x: auto; letter-spacing: .01em;
+  padding: 1.25rem 1.2rem; margin: 1rem 0;
+  background: linear-gradient(135deg,var(--surface),color-mix(in srgb,var(--surface-2) 55%,var(--surface)));
+  border: 1px solid color-mix(in srgb,var(--gold) 30%,var(--line)); border-left: 4px solid var(--gold);
+  border-radius: 1rem; box-shadow: 0 4px 14px rgba(15,23,42,.045);
+  font: 500 clamp(1.08rem, 1.8vw, 1.32rem)/1.9 "STIX Two Math", "Cambria Math", Georgia, serif;
+  overflow-x: auto; letter-spacing: .01em; text-align:center;
 }
+.formula:hover { box-shadow:0 10px 22px rgba(15,23,42,.08); transform:translateY(-1px); }
 .formula.big { font-size: clamp(1.15rem, 2.3vw, 1.65rem); text-align: center; padding-block: 1.35rem; }
 .math-box {
   position: relative; display: grid; place-items: center; min-height: 6.5rem;
@@ -299,6 +302,9 @@ details[open] summary { margin-bottom: .7rem; }
 .atlas-card details ul { max-height: 16rem; overflow: auto; }
 .pagination { display:flex; align-items:center; justify-content:center; gap:.7rem; margin-top:1rem; }
 .pagination button { padding:.45rem .7rem; border:1px solid var(--line); background:var(--surface); color:var(--text); border-radius:.5rem; cursor:pointer; }
+.progress-track { width:9rem; height:.55rem; overflow:hidden; border-radius:999px; background:var(--surface-2); }
+.progress-track span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--gold),var(--ok)); }
+.evaluation-canvas { width:100%; height:420px; display:block; border:1px solid var(--line); border-radius:1rem; background:var(--surface); }
 
 .footer { border-top: 1px solid var(--line); background: var(--surface); }
 .footer-inner {

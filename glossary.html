@@ -2,7 +2,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Glossary and FAQ — SSZ</title>
 <script src="https://cdn.tailwindcss.com"></script><link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
 </head><body><a class="skip-link" href="#main">Skip to content</a>
-<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">A</span><span><strong>Segmented Spacetime</strong><small>GLOSSARY · SYMBOLS · FAQ</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a aria-current="page" href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">A</span><span><strong>Segmented Spacetime</strong><small>GLOSSARY · SYMBOLS · FAQ</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a href="theory.html">Theory</a><a href="regimes.html">Regimes</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a aria-current="page" href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
 <header class="hero"><div><span class="eyebrow">Definitions before conclusions</span><h1>Glossary,<br><span class="gradient-text">symbols and FAQ</span></h1><p class="lead">Search the vocabulary of SSZ, geometry, observables, testing and scientific status.</p></div><div class="hero-orbit"><span class="orbit-core">Aa</span></div></header>
 <section class="section"><div class="control"><label for="glossary-search">Search this page</label><input id="glossary-search" class="search" data-page-search placeholder="Ξ, proper time, regularity, PPN…"></div></section>
@@ -15,23 +15,33 @@
 <article class="card" data-searchable><h3>R, K</h3><p>Ricci scalar and Kretschmann scalar. In the current diagonal centre limit they diverge as r⁻² and r⁻⁴.</p></article>
 
 <article class="card" data-searchable><h3>γ, β</h3><p>PPN parameters. The declared SSZ weak-field completion uses γ=β=1.</p></article>
-<article class="card" data-searchable><h3>z</h3><p>Static redshift proxy z=1/D−1=Ξ within the declared clock mapping.</p></article>
+<article class="card" data-searchable><h3>z</h3><p>Redshift convention defined by \(1+z=\nu_e/\nu_o\). The identity z=1/D−1=Ξ applies only to a static emitter compared with a static observer at infinity.</p></article>
+<article class="card" data-searchable><h3>A(r), B(r)</h3><p>Temporal and radial coefficients \(A=D^2\) and \(B=D^{-2}\). Their product is one in the current diagonal ansatz.</p></article>
+<article class="card" data-searchable><h3>x</h3><p>Normalised areal radius \(x=r/r_s\). Branch derivatives must state whether they are taken with respect to x or physical radius r.</p></article>
 </div></section>
 <section class="section"><div class="section-head"><h2>Glossary</h2></div><div class="grid grid-2">
 <article class="card" data-searchable><h3>Areal radius</h3><p>The radius defined by a symmetry sphere’s area 4πr². Its zero is geometrically significant.</p></article>
 <article class="card" data-searchable><h3>Canonical</h3><p>The currently selected source or definition within the project hierarchy. A later P0 correction can supersede an older file labelled canonical.</p></article>
 <article class="card" data-searchable><h3>Coordinate singularity</h3><p>A chart failure removable by changing coordinates, unlike an invariant curvature divergence.</p></article>
+<article class="card" data-searchable><h3>C² bridge</h3><p>The quintic Hermite transition that matches Ξ, its first derivative and its second derivative at x=1.8 and x=2.2. Smooth joining does not derive a physical phase transition.</p></article>
+<article class="card" data-searchable><h3>Captured run</h3><p>A test result stored with date, environment, command and outcome. The latest supplied all-tests capture records 1,296 passed outcomes across twelve repository runs; it is not 1,296 independent experiments.</p></article>
 <article class="card" data-searchable><h3>Empirical compatibility</h3><p>Data do not reject a model within a defined analysis. It is weaker than unique confirmation.</p></article>
 <article class="card" data-searchable><h3>Event horizon</h3><p>A global causal boundary, definable only from the full spacetime—not merely a zero or finite value of one local coefficient.</p></article>
+<article class="card" data-searchable><h3>Effective source</h3><p>The stress tensor obtained by inserting the metric into a GR-style Einstein tensor. It diagnoses the geometry but is not a derived fundamental SSZ matter theory.</p></article>
 <article class="card" data-searchable><h3>Falsifiability</h3><p>The existence of observations or mathematical results that could rule out a model.</p></article>
 <article class="card" data-searchable><h3>Geodesic completeness</h3><p>Whether all inextendible geodesics have complete affine/proper parameter ranges. Finite coefficients do not prove it.</p></article>
+<article class="card" data-searchable><h3>Local orthonormal frame</h3><p>A tetrad in which an observer reports physical components. It separates local measurements from chart-dependent quantities such as dr/dt.</p></article>
 
 <article class="card" data-searchable><h3>Legacy</h3><p>Historical material retained for development history but not used as current scientific authority.</p></article>
 <article class="card" data-searchable><h3>Model lock</h3><p>A frozen formula/parameter/method specification used to make downstream results reproducible.</p></article>
+<article class="card" data-searchable><h3>Observable class</h3><p>The physical type of measurement—static clock, null path, timelike orbit, wave or dataset fit—which determines the required forward model.</p></article>
+<article class="card" data-searchable><h3>Paired sign test</h3><p>A test of how often one method wins within matched pairs. It does not measure effect size or correct automatically for selection, flexibility or correlation.</p></article>
 <article class="card" data-searchable><h3>P0 correction</h3><p>A highest-priority scientific correction. Here it retracts complete singularity freedom and restores the correct interior scope.</p></article>
 <article class="card" data-searchable><h3>PPN</h3><p>Parameterized post-Newtonian formalism for systematic weak-field comparisons.</p></article>
 <article class="card" data-searchable><h3>Proper time</h3><p>The invariant time measured by a clock along a timelike worldline.</p></article>
 <article class="card" data-searchable><h3>Regular centre</h3><p>An areal centre with appropriate local geometry and finite curvature invariants—not merely finite metric components.</p></article>
+<article class="card" data-searchable><h3>Regime boundary</h3><p>A declared formula-domain join, observable approximation boundary or physical transition. These three meanings are distinct and must be labelled.</p></article>
+<article class="card" data-searchable><h3>Residual</h3><p>A defined difference between data and model output. A small residual supports only that pipeline until uncertainty, covariance and alternative models are included.</p></article>
 <article class="card" data-searchable><h3>Software validation</h3><p>Evidence that code satisfies specified tests. It is not direct evidence that nature selects the model.</p></article>
 <article class="card" data-searchable><h3>Strong field</h3><p>A regime where weak-field expansions are insufficient and full metric/geodesic dynamics matter.</p></article>
 </div></section>
@@ -43,6 +53,8 @@
 
 <details data-searchable><summary>What would falsify SSZ?</summary><p>Locked strong-field forward predictions that fail sufficiently precise data, weak-field regressions, or a mathematical inconsistency in any proposed dynamical completion.</p></details>
 <details data-searchable><summary>Why are there multiple test totals?</summary><p>Different reports count functions, parameterised cases, custom phases, repositories or historical result artefacts. A valid total must state its scope and command.</p></details>
+<details data-searchable><summary>Do the latest supplied tests pass?</summary><p>The latest supplied live snapshot records 1,296 passed and zero failed outcomes across twelve repositories. An earlier April snapshot records dependency and collection failures. The portal preserves both instead of silently rewriting history.</p></details>
+<details data-searchable><summary>Why does a historical report say curvature is finite?</summary><p>That interpretation predates the P0 invariant calculation. C² transition smoothness can coexist with a separate divergence at the areal centre; the latter supersedes the older global regularity claim.</p></details>
 <details data-searchable><summary>Can a passing fit prove SSZ?</summary><p>No. Model flexibility, data selection, nuisance parameters, covariance and alternative models must be assessed independently.</p></details>
 </section>
 </main><footer class="footer"><div class="footer-inner"><div><strong>Glossary</strong><p>Shared language for critical review.</p></div><div><a href="theory.html">Theory</a></div><div><a href="strong-field.html">Limitations</a></div></div></footer></body></html>

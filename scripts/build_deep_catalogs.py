@@ -11,6 +11,7 @@ from __future__ import annotations
 import csv
 import json
 import re
+from urllib.parse import quote
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +52,34 @@ HISTORICAL = {
     "Segmented Spacetime and the Natural Boundary of Black Holes: Implications for the Cosmic Censorship Conjecture",
 }
 
+PAPER_SUMMARIES = {
+    1: "Introduces a radial scaling prescription for Maxwell fields and asks how field amplitudes and flux relations transform under SSZ radial scaling.",
+    2: "Develops the escape/fall dual-velocity language and its relation to static gravitational redshift. Coordinate, dual and locally measured velocities must remain distinct.",
+    3: "Presents the frequency-centred overview of SSZ, connecting the segment field, clock factor and proposed black-hole phenomenology.",
+    4: "States a static spherical SSZ metric proposal and discusses horizon behaviour. Current use is constrained by the P0 central-curvature correction.",
+    5: "Studies infalling matter and radio-wave propagation in the effective geometry, with emphasis on observer-dependent frequency and travel-time interpretation.",
+    6: "Builds a proposed chain from golden-ratio segmentation to Euler-type relations. These structural steps are model hypotheses, not consequences of the metric alone.",
+    7: "Formulates a kinematic closure between escape and fall descriptions and identifies invariant or reciprocal combinations used by the programme.",
+    8: "Defines a segment-based group-velocity description for propagation. Its operational meaning depends on distinguishing coordinate and local measurements.",
+    9: "Revisits the historical dark-star problem through finite horizon time scaling and escape conditions in SSZ.",
+    10: "Proposes curvature detection through dynamic frequency comparisons and links laboratory/astronomical clock observables to the weak-field implementation.",
+    11: "Applies SSZ-inspired mappings to molecular and radio zones in expanding nebulae, especially G79.29+0.46. The interpretation remains conditional on the supplied data pipeline.",
+    12: "Explores whether SSZ strong-field scaling can regulate superradiant-instability proxies. A complete perturbation theory is still required.",
+    13: "Investigates φ and π as structural constants in segmentation geometry. The proposed relations are foundational hypotheses requiring independent derivation and tests.",
+    14: "Proposes emergent spatial axes from orthogonal temporal interference. This is a speculative construction beyond the locked static metric.",
+    15: "Connects bound-energy scaling to the fine-structure constant. Fit quality and structural interpretation must be separated from derivation.",
+    16: "Historically claimed a resolution of singularities. P0 supersedes the global claim: the canonical diagonal continuation has divergent central curvature.",
+    17: "Interprets a natural black-hole boundary in relation to cosmic censorship. Its historical regularity language is limited by the current P0 interior result.",
+    18: "Documents φ/2 and β calibration choices and their numerical role. Calibration identities are not automatically fundamental constants of nature.",
+    19: "Proposes a geometric treatment of the Lorentz transformation at v=0 and discusses how local frames are embedded in segmented descriptions.",
+    20: "Treats φ as a temporal growth function and motivates the strong-branch exponential. The choice remains declared model structure.",
+    21: "Explains static gravitational redshift through D and Ξ, including the distinction between endpoint clock comparison and in-flight photon retuning.",
+    22: "Offers a rotating-space interpretation of Maxwell waves. The picture is interpretive unless tied to a covariant electromagnetic action.",
+    23: "Separates contributions to observed light-travel time and warns that geometry, propagation medium and source/observer motion must be modelled independently.",
+    24: "Defines local Lorentz invariance through transformations and relates the construction to frame-dragging language. A rotating global SSZ solution remains open.",
+    25: "Proposes an irreversible coherence-collapse transition between two regimes. It is not part of the public canonical static metric lock.",
+}
+
 def topic(title: str) -> str:
     return next((value for key, value in TOPICS.items() if key.lower() in title.lower()), "foundations")
 
@@ -62,13 +91,23 @@ def papers() -> dict:
         if not match:
             continue
         number, key, title, year = (part.strip() for part in match.groups())
+        number_int = int(number)
         status = "historical / requires P0 correction" if title in HISTORICAL else "local index verified"
+        manuscripts = sorted((PAPER_INDEX.parent / "markdown").glob(f"paper_{number}_*.md"))
+        manuscript_name = manuscripts[0].name if manuscripts else ""
+        manuscript_url = (
+            "https://github.com/error-wtf/ssz-complete-documentation/blob/main/"
+            f"09_PAPERS/markdown/{quote(manuscript_name)}"
+            if manuscript_name else ""
+        )
         rows.append({
-            "number": int(number), "key": key, "title": title, "year": int(year),
+            "number": number_int, "key": key, "title": title, "year": int(year),
             "authors": "Carmen N. Wrede; Lino P. Casu", "topic": topic(title),
             "status": status, "peer_review": "preprint / not established",
-            "public_url": PUBLIC_LINKS.get(title, RESEARCHGATE),
-            "local_source": f"09_PAPERS/markdown/paper_{number}_…",
+            "public_url": PUBLIC_LINKS.get(title, ""),
+            "manuscript_url": manuscript_url,
+            "local_source": f"09_PAPERS/markdown/{manuscript_name}",
+            "summary": PAPER_SUMMARIES[number_int],
             "scope_note": (
                 "Historical claim: superseded by the P0 result that the canonical diagonal "
                 "continuation has divergent central curvature."
@@ -226,6 +265,40 @@ def formulas() -> dict:
         ("residual", "Normalized residual", r"\rho_i=[y_i-f(x_i;\theta)]/\sigma_i", "data analysis", "1", "independent Gaussian uncertainty", "Correlated measurements require a covariance matrix."),
         ("chi-square", "Correlated chi-square", r"\chi^2=(\mathbf y-\mathbf f)^T C^{-1}(\mathbf y-\mathbf f)", "data analysis", "1", "specified covariance C", "Model comparison must also address parameters, priors and selection effects."),
         ("curvature-dimensions", "Curvature dimensional check", r"[R]=L^{-2},\qquad[K]=L^{-4}", "validation", "m⁻² and m⁻⁴", "geometric units restored consistently", "A required sanity check for central asymptotics."),
+        ("strong-limit", "Strong-branch central field limit", r"\lim_{x\to0^+}\Xi_s(x)=1", "limits", "1", "formal inner continuation", "This is a field limit, not proof that the centre belongs to a regular manifold."),
+        ("d-centre", "Central clock-factor limit", r"\lim_{x\to0^+}D(x)=1/2", "limits", "1", "formal inner continuation", "Finite D does not imply finite curvature."),
+        ("asymptotic-flat", "Asymptotic flatness checkpoint", r"\lim_{x\to\infty}\Xi=0,\quad\lim_{x\to\infty}D=1", "limits", "1", "weak branch", "An asymptotic limit does not determine the global interior."),
+        ("strong-weak-intersection", "Raw branch intersection", r"1-e^{-\varphi/x_\times}=1/(2x_\times)", "regimes", "1", "comparison of unblended branch formulas", "The raw intersection is not one of the declared bridge endpoints."),
+        ("hermite-complete", "Complete C² bridge", r"H_5=h_{00}y_0+h h_{10}y'_0+h^2h_{20}y''_0+h_{01}y_1+h h_{11}y'_1+h^2h_{21}y''_1", "regimes", "1", "1.8 ≤ x ≤ 2.2", "Every derivative is taken with respect to the same normalized coordinate x."),
+        ("d-first", "Clock-factor derivative", r"D'=-\Xi'/(1+\Xi)^2", "metric", "inverse length or 1 in x", "differentiable branch", "Derivative units depend on whether the independent variable is r or x."),
+        ("a-first", "Temporal coefficient derivative", r"A'=2DD'", "metric", "inverse length or 1 in x", "A=D²", "Used in circular-orbit diagnostics."),
+        ("b-first", "Radial coefficient derivative", r"B'=-2D^{-3}D'", "metric", "inverse length or 1 in x", "B=D⁻²", "Large coordinate coefficients are not by themselves invariant singularities."),
+        ("static-tetrad-time", "Static orthonormal time leg", r"e_{\hat 0}=D^{-1}c^{-1}\partial_t", "local frames", "inverse length", "D>0, static observer", "Defines a local frame only where a static observer is physically admissible."),
+        ("static-tetrad-radial", "Static orthonormal radial leg", r"e_{\hat r}=D\,\partial_r", "local frames", "inverse length", "D>0", "Separates local radial measurements from coordinate components."),
+        ("four-acceleration", "Static-observer radial acceleration", r"a^{\hat r}=c^2D'(r)", "local frames", "m/s²", "static diagonal ansatz and proper radial frame", "Sign and interpretation depend on derivative convention and observer choice."),
+        ("lagrangian", "Geodesic Lagrangian", r"2\mathcal L=g_{\mu\nu}\dot x^\mu\dot x^\nu", "geodesics", "velocity squared", "affinely parametrised trajectory", "An effective test-particle Lagrangian is not the missing fundamental field action."),
+        ("radial-timelike", "Timelike radial equation", r"\dot r^2=E^2/c^2-A(r)\left(c^2+L^2/r^2\right)", "geodesics", "m²/s²", "equatorial timelike geodesic; convention-dependent E and L", "Must be re-derived if the metric convention changes."),
+        ("radial-null-effective", "Null radial equation", r"\dot r^2=E^2/c^2-A(r)L^2/r^2", "geodesics", "m²/s²", "equatorial null geodesic", "Turning points and circular orbits are different conditions."),
+        ("photon-stability", "Null-orbit stability diagnostic", r"d^2[A(r)/r^2]/dr^2\lessgtr0", "strong field", "m⁻⁴", "at a stationary null orbit", "The sign convention must be matched to the chosen effective potential."),
+        ("orbital-frequency", "Circular-orbit coordinate frequency", r"\Omega^2=c^2A'(r)/(2r)", "geodesics", "s⁻²", "static spherical metric in areal radius", "Coordinate frequency requires conversion before comparison with a local clock."),
+        ("timelike-angular-momentum", "Circular timelike angular momentum", r"L^2=c^2r^3A'/(2A-rA')", "geodesics", "m⁴/s² under specific convention", "circular timelike orbit", "Denominator and normalization conventions must be checked."),
+        ("timelike-energy", "Circular timelike energy", r"E^2=2c^4A^2/(2A-rA')", "geodesics", "energy-per-mass squared", "circular timelike orbit", "Stability requires a separate second-derivative condition."),
+        ("isco-condition", "Marginal orbit stability", r"d^2V_{\rm eff}/dr^2=0", "strong field", "potential per length²", "on a circular timelike solution", "Solving this condition is metric- and branch-specific."),
+        ("shadow-impact", "Critical shadow impact parameter", r"b_{\rm crit}=r_{\rm ph}/\sqrt{A(r_{\rm ph})}", "strong field", "m", "accessible unstable circular null orbit", "A shadow observable additionally needs source, inclination, transfer and rotation."),
+        ("redshift-two-static", "Two-radius frequency ratio", r"\nu_o/\nu_e=D(r_e)/D(r_o)", "observables", "1", "static emitter and observer", "Inverse placement of emitter and observer changes the reported z convention."),
+        ("doppler-factor", "Special-relativistic line-of-sight Doppler factor", r"\delta=[\gamma(1-\beta\cos\vartheta)]^{-1}", "observables", "1", "local inertial comparison", "This kinematic factor is separate from static gravitational scaling."),
+        ("observed-frequency", "Combined schematic frequency map", r"\nu_{\rm obs}=\nu_{\rm emit}[D_e/D_o]\,\delta\,\mathcal T", "observables", "Hz", "declared transfer factor T", "The transfer factor is model-dependent; this is a bookkeeping relation, not a universal closed formula."),
+        ("ppn-gtt", "PPN temporal metric expansion", r"g_{tt}/c^2=-1+2U/c^2-2\beta U^2/c^4+O(c^{-6})", "weak field", "1", "|U|/c² ≪ 1", "The sign of U must follow the declared PPN convention."),
+        ("ppn-gij", "PPN spatial metric expansion", r"g_{ij}=[1+2\gamma U/c^2+O(c^{-4})]\delta_{ij}", "weak field", "1", "weak quasi-static field", "A coordinate-gauge statement used for specific observable calculations."),
+        ("energy-density", "Effective density projection", r"\rho_{\rm eff}=T^{\rm eff}_{\hat0\hat0}/c^2", "energy conditions", "kg/m³", "chosen orthonormal frame", "Effective-source diagnostics are not fundamental SSZ matter content."),
+        ("wec", "Weak energy condition", r"\rho\ge0,\qquad \rho+p_i/c^2\ge0", "energy conditions", "energy density", "orthonormal principal frame", "A diagnostic condition; violations do not alone select or reject an effective geometry."),
+        ("dec", "Dominant energy condition", r"\rho\ge|p_i|/c^2", "energy conditions", "energy density", "orthonormal principal frame", "Requires a physically interpreted effective source."),
+        ("sec", "Strong energy condition", r"\rho+\sum_i p_i/c^2\ge0,\quad \rho+p_i/c^2\ge0", "energy conditions", "energy density", "orthonormal principal frame", "Its relevance depends on the underlying dynamical theory."),
+        ("binomial-sign", "Two-sided paired sign-test probability", r"p=2\sum_{k=0}^{\min(w,n-w)}{n\choose k}2^{-n}", "statistics", "1", "independent exchangeable paired signs under the null", "Does not account for model flexibility, selection or correlated pairs."),
+        ("confidence-interval", "Bootstrap percentile interval", r"CI_{1-\alpha}=[Q_{\alpha/2}(\hat\theta^*),Q_{1-\alpha/2}(\hat\theta^*)]", "statistics", "same as estimator", "representative resampling scheme", "Bootstrap validity depends on sampling structure and independence assumptions."),
+        ("bic", "Bayesian information criterion", r"\mathrm{BIC}=k\ln n-2\ln\hat L", "statistics", "1", "regular likelihood and sample-size assumptions", "Lower BIC is an asymptotic model-selection heuristic, not proof."),
+        ("aic", "Akaike information criterion", r"\mathrm{AIC}=2k-2\ln\hat L", "statistics", "1", "maximum likelihood comparison", "Relative predictive criterion; absolute fit and data quality remain separate."),
+        ("sagnac-integral", "Stationary-spacetime Sagnac integral", r"\Delta t=-2c^{-1}\oint g_{0i}/g_{00}\,dx^i", "rotation", "s", "stationary metric and declared coordinates", "The leading 4AΩ/c² formula follows only in its controlled rotating-loop limit."),
     ]
     return {
         "status": "curated current formula reference",

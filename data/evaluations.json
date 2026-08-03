@@ -1,0 +1,412 @@
+{
+  "generated_from": [
+    "ssz-all-tests/LIVE_STATUS.json",
+    "ssz-all-tests/MASTER_RESULTS.json",
+    "Segmented-Spacetime-Mass-Projection-Unified-Results/summary_full_pipeline_enriched.json",
+    "Segmented-Spacetime-Mass-Projection-Unified-Results/outputs/complete_test_results.json"
+  ],
+  "current_snapshot": {
+    "date": "2026-05-04",
+    "repositories": 12,
+    "passed": 1296,
+    "failed": 0,
+    "status": "captured all-green snapshot",
+    "warning": "Counts are repository test outcomes from a recorded environment. They are not independent experiments and not all tests have equal scientific scope."
+  },
+  "repositories": [
+    {
+      "repository": "ssz-qubits",
+      "passed": 184,
+      "failed": 0,
+      "expected": 184,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "ssz-metric-pure",
+      "passed": 36,
+      "failed": 0,
+      "expected": 36,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "segmented-calculation-suite",
+      "passed": 158,
+      "failed": 0,
+      "expected": 158,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "ssz-schumann",
+      "passed": 178,
+      "failed": 0,
+      "expected": 178,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "ssz-lensing",
+      "passed": 279,
+      "failed": 0,
+      "expected": 279,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "Unified-Results",
+      "passed": 147,
+      "failed": 0,
+      "expected": 147,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "ssz-trajectories",
+      "passed": 63,
+      "failed": 0,
+      "expected": 63,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "g79-cygnus-tests",
+      "passed": 5,
+      "failed": 0,
+      "expected": 5,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "ssz-lagrange",
+      "passed": 54,
+      "failed": 0,
+      "expected": 54,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "segmented-energy",
+      "passed": 7,
+      "failed": 0,
+      "expected": 7,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "frequency-curvature-validation",
+      "passed": 82,
+      "failed": 0,
+      "expected": 82,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    },
+    {
+      "repository": "chord-partition (local)",
+      "passed": 103,
+      "failed": 0,
+      "expected": 103,
+      "status": "PASS",
+      "snapshot": "2026-05-04",
+      "environment": "Python 3.12 · Windows 11",
+      "evidence_class": "captured repository test run",
+      "does_not_prove": "Independent empirical preference for SSZ or validity outside the asserted code paths."
+    }
+  ],
+  "historical_snapshot": {
+    "date": "2026-04-28",
+    "repositories": [
+      {
+        "repository": "ssz-qubits",
+        "expected": 184,
+        "passed": 184,
+        "failed": 0,
+        "rate_label": "100.0%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "ssz-metric-pure",
+        "expected": 46,
+        "passed": 36,
+        "failed": 0,
+        "rate_label": "78.3%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "segmented-calculation-suite",
+        "expected": 158,
+        "passed": 88,
+        "failed": 0,
+        "rate_label": "55.7%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "ssz-schuhman-experiment",
+        "expected": 191,
+        "passed": 171,
+        "failed": 0,
+        "rate_label": "89.5%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "ssz-lagrange",
+        "expected": 54,
+        "passed": 110,
+        "failed": 2,
+        "rate_label": "203.7%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "ssz-lensing",
+        "expected": 279,
+        "passed": 279,
+        "failed": 0,
+        "rate_label": "100.0%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "expected": 139,
+        "passed": 0,
+        "failed": 1,
+        "rate_label": "0.0%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "ssz-trajectories",
+        "expected": 63,
+        "passed": 63,
+        "failed": 0,
+        "rate_label": "100.0%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "segmented-energy",
+        "expected": 6,
+        "passed": 0,
+        "failed": 2,
+        "rate_label": "0.0%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      },
+      {
+        "repository": "g79-cygnus-test",
+        "expected": 5,
+        "passed": 0,
+        "failed": 0,
+        "rate_label": "0.0%",
+        "status": "historical-conflicting-snapshot",
+        "interpretation": "Retained because it records earlier collection, dependency or counting problems; it must not be merged with the later live snapshot."
+      }
+    ],
+    "warning": "This earlier orchestration snapshot contains dependency, collection and expected-count inconsistencies. It is shown for auditability, not combined with the later snapshot."
+  },
+  "unified_execution": {
+    "date": "2025-12-07T05:16:52.619363",
+    "categories": [
+      {
+        "category": "root_level",
+        "passed": 30,
+        "failed": 0,
+        "skipped": 14,
+        "duration_seconds": 87.16,
+        "unit": "executed or classified script"
+      },
+      {
+        "category": "scripts",
+        "passed": 4,
+        "failed": 0,
+        "skipped": 10,
+        "duration_seconds": 7.32,
+        "unit": "executed or classified script"
+      },
+      {
+        "category": "validation",
+        "passed": 0,
+        "failed": 0,
+        "skipped": 1,
+        "duration_seconds": 0.0,
+        "unit": "executed or classified script"
+      }
+    ],
+    "warning": "A passed script may be a smoke test, export tool or analysis runner rather than a pytest physics assertion."
+  },
+  "mass_projection_evaluation": {
+    "sample_pairs": 67,
+    "segment_better": 66,
+    "share_segment_better": 0.9850746268656716,
+    "binomial_two_sided_p": 9.215718466126788e-19,
+    "median": {
+      "seg": 0.00013127890123455202,
+      "gr": 0.22451074793479994,
+      "sr": 0.013392538194732637,
+      "grsr": 0.22470474793479994
+    },
+    "confidence_intervals": {
+      "seg": [
+        8.896789012343201e-05,
+        0.000308728190396208
+      ],
+      "gr": [
+        0.22439836193202112,
+        0.22465474793479995
+      ],
+      "sr": [
+        0.0009828652146344843,
+        0.04030241797254982
+      ],
+      "grsr": [
+        0.22466932022391795,
+        0.22480087139158894
+      ]
+    },
+    "mass_bins": [
+      {
+        "bin": 0,
+        "lo_log10M": 29.388424154620214,
+        "hi_log10M": 30.728800185270646,
+        "N": 10,
+        "med_seg": 0.000199780300796751,
+        "med_grsr": 0.2249022808007889,
+        "med_gr": 0.22472437139158896,
+        "med_sr": NaN
+      },
+      {
+        "bin": 1,
+        "lo_log10M": 30.728800185270646,
+        "hi_log10M": 32.069176215921075,
+        "N": 9,
+        "med_seg": 0.00012299819750673425,
+        "med_grsr": 0.22480087139158894,
+        "med_gr": 0.22462187139158893,
+        "med_sr": NaN
+      },
+      {
+        "bin": 2,
+        "lo_log10M": 32.069176215921075,
+        "hi_log10M": 33.40955224657151,
+        "N": 0,
+        "med_seg": NaN,
+        "med_grsr": NaN,
+        "med_gr": NaN,
+        "med_sr": NaN
+      },
+      {
+        "bin": 3,
+        "lo_log10M": 33.40955224657151,
+        "hi_log10M": 34.74992827722194,
+        "N": 0,
+        "med_seg": NaN,
+        "med_grsr": NaN,
+        "med_gr": NaN,
+        "med_sr": NaN
+      },
+      {
+        "bin": 4,
+        "lo_log10M": 34.74992827722194,
+        "hi_log10M": 36.09030430787237,
+        "N": 0,
+        "med_seg": NaN,
+        "med_grsr": NaN,
+        "med_gr": NaN,
+        "med_sr": NaN
+      },
+      {
+        "bin": 5,
+        "lo_log10M": 36.09030430787237,
+        "hi_log10M": 37.430680338522805,
+        "N": 42,
+        "med_seg": 0.00011006790122888101,
+        "med_grsr": 0.22466764519046956,
+        "med_gr": 0.22445480349035998,
+        "med_sr": NaN
+      },
+      {
+        "bin": 6,
+        "lo_log10M": 37.430680338522805,
+        "hi_log10M": 38.77105636917324,
+        "N": 1,
+        "med_seg": 2.444584681873508,
+        "med_grsr": 3.056833959084014,
+        "med_gr": 0.15574487139158893,
+        "med_sr": 2.2997293210676015
+      },
+      {
+        "bin": 7,
+        "lo_log10M": 38.77105636917324,
+        "hi_log10M": 40.11143239982367,
+        "N": 3,
+        "med_seg": 5.470777803772891,
+        "med_grsr": 6.235954115451046,
+        "med_gr": 0.13625512860841105,
+        "med_sr": 4.879138254802268
+      }
+    ],
+    "interpretation": "Within this specific 67-pair pipeline and its residual definition, the segmented model has the lower residual in 66 pairs.",
+    "limitations": [
+      "The result is conditional on the supplied sample, preprocessing, residual definition and model parameterisation.",
+      "A paired sign test does not by itself establish a causal physical mechanism.",
+      "Model flexibility, selection effects and external replication require separate evaluation.",
+      "Several high-mass bins are empty or sparsely populated."
+    ]
+  },
+  "canonical_corrections": [
+    {
+      "historical_claim": "finite curvature everywhere / singularities resolved",
+      "current_status": "superseded by P0",
+      "current_statement": "For the canonical diagonal continuation, R ~ 3/(2r²) and K ~ 9/(4r⁴) as r approaches the areal centre."
+    },
+    {
+      "historical_claim": "a green software suite confirms the physical theory",
+      "current_status": "overstatement",
+      "current_statement": "A green suite confirms only the encoded assertions in the recorded environment."
+    },
+    {
+      "historical_claim": "all result counters are directly additive",
+      "current_status": "invalid counting rule",
+      "current_statement": "Pytest cases, scripts, phases, logs, skips and historical snapshots remain separate units."
+    }
+  ]
+}

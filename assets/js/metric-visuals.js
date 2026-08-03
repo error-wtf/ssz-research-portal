@@ -2,7 +2,7 @@
   "use strict";
   const $ = id => document.getElementById(id);
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let playing = false, frame = 0, last = 0;
+  let playing = !reduced, frame = 0, last = 0;
   const value = () => 10 ** Number($("metric-radius").value);
   const fmt = (v, d=6) => Number.isFinite(v) ? (Math.abs(v)>=1e4 || (Math.abs(v)<1e-4 && v!==0) ? v.toExponential(3) : v.toFixed(d)) : "—";
   function surface(canvas) {
@@ -48,11 +48,51 @@
     const lx=Math.log10(Math.min(1,Math.max(1e-4,x)));c.strokeStyle="#7c3aed";c.setLineDash([5,4]);c.beginPath();c.moveTo(xp(lx),T);c.lineTo(xp(lx),B);c.stroke();c.setLineDash([]);
     c.fillStyle=gold;c.fillText("A→1/4",L+8,T+16);c.fillStyle="#2563eb";c.fillText("R~3/(2x²)",L+80,T+16);c.fillStyle="#b42318";c.fillText("K~9/(4x⁴)",L+178,T+16);
   }
+  function velocities(x) {
+    const s=surface($("metric-velocities")),{c,w,h,ink,gold,line}=s;axes(s,"Escape–fall dual scales and their exact product","log₁₀(x = r/rₛ)","velocity scale / c");
+    const L=62,R=w-20,T=35,B=h-50,xp=q=>L+(q+4)/6*(R-L),yp=q=>B-Math.min(q,10)/10*(B-T);
+    c.strokeStyle=line;for(let q=-4;q<=2;q++){c.beginPath();c.moveTo(xp(q),T);c.lineTo(xp(q),B);c.stroke();c.fillStyle=ink;c.fillText(`10^${q}`,xp(q)-12,B+18);}
+    const draw=(fn,color)=>{c.strokeStyle=color;c.lineWidth=3;c.beginPath();for(let i=0;i<=600;i++){const lx=-4+6*i/600,y=fn(10**lx);i?c.lineTo(xp(lx),yp(y)):c.moveTo(xp(lx),yp(y));}c.stroke();};
+    draw(q=>1/Math.sqrt(q),"#2563eb");draw(q=>Math.sqrt(q),gold);draw(()=>1,"#059669");
+    const lx=Math.log10(x);c.strokeStyle="#b42318";c.setLineDash([5,4]);c.beginPath();c.moveTo(xp(lx),T);c.lineTo(xp(lx),B);c.stroke();c.setLineDash([]);
+    c.fillStyle="#2563eb";c.fillText("vₑₛc/c",L+8,T+16);c.fillStyle=gold;c.fillText("dual vfall/c",L+75,T+16);c.fillStyle="#059669";c.fillText("product/c² = 1",L+168,T+16);
+  }
   function render() {
-    const x=value(),xi=SSZ.xi(x),D=SSZ.dilation(x),A=D*D,B=1/A,xip=SSZ.derivative(SSZ.xi,x),xipp=SSZ.derivative(q=>SSZ.derivative(SSZ.xi,q),x);
+    const x=value(),xi=SSZ.xi(x),D=SSZ.dilation(x),A=D*D,B=1/A,xip=SSZ.derivative(SSZ.xi,x),xipp=SSZ.derivative(q=>SSZ.derivative(SSZ.xi,q),x),vesc=1/Math.sqrt(x),vfall=Math.sqrt(x);
     $("metric-radius-out").textContent=fmt(x,4);$("metric-branch").textContent=SSZ.branch(x);$("metric-xi").textContent=fmt(xi);$("metric-d").textContent=fmt(D);$("metric-a").textContent=fmt(A);$("metric-b").textContent=fmt(B);$("metric-ab").textContent=fmt(A*B,9);$("metric-xip").textContent=fmt(xip);$("metric-xipp").textContent=fmt(xipp);
     $("metric-bridge-distance").textContent=x<1.8?`${fmt(1.8-x,4)} rₛ below`:x>2.2?`${fmt(x-2.2,4)} rₛ above`:"inside bridge";
-    $("metric-limit-a").textContent=x<=1?`${fmt(A,7)} (tends to 0.25)`:"select x≤1";geometry(x);branches(x);coefficients(x);limits(x);
+    $("metric-vesc").textContent=fmt(vesc);$("metric-vfall").textContent=fmt(vfall);$("metric-vproduct").textContent=fmt(vesc*vfall,9);$("metric-vproxy").textContent=fmt(Math.sqrt(Math.max(0,1-D*D)));
+    $("metric-limit-a").textContent=x<=1?`${fmt(A,7)} (tends to 0.25)`:"select x≤1";geometry(x);branches(x);coefficients(x);velocities(x);limits(x);
+  }
+  function setLogRadius(logx, pause=true) {
+    $("metric-radius").value=Math.max(-4,Math.min(2,logx));
+    if(pause){playing=false;last=0;syncPlay();}
+    render();
+  }
+  function syncPlay() {
+    $("metric-play").setAttribute("aria-pressed",String(playing));
+    $("metric-play").textContent=playing?"Pause radial sweep":"Play radial sweep";
+    $("metric-animation-status").textContent=playing?"Animation active":"Animation paused";
+    $("metric-animation-status").className=`badge ${playing?"tested":"open"}`;
+  }
+  function bindCanvas(canvas) {
+    const select=event=>{
+      const rect=canvas.getBoundingClientRect(),fraction=Math.max(0,Math.min(1,(event.clientX-rect.left)/rect.width));
+      setLogRadius(-4+6*fraction);
+    };
+    canvas.addEventListener("pointerdown",event=>{canvas.setPointerCapture?.(event.pointerId);select(event);});
+    canvas.addEventListener("pointermove",event=>{if(event.buttons)select(event);});
+    canvas.addEventListener("wheel",event=>{event.preventDefault();setLogRadius(Number($("metric-radius").value)+(event.deltaY>0?.08:-.08));},{passive:false});
+    canvas.addEventListener("keydown",event=>{if(event.key==="ArrowLeft"||event.key==="ArrowRight"){event.preventDefault();setLogRadius(Number($("metric-radius").value)+(event.key==="ArrowRight"?.04:-.04));}});
+  }
+  function selectScope(mode) {
+    const descriptions={
+      horizon:["tested","<strong>Horizon:</strong> repeated formula and repository tests reproduce finite Ξ(rₛ), D(rₛ), A(rₛ) and B(rₛ). The synchronized probe is positioned at x=1.",0],
+      centre:["warning","<strong>Centre extrapolation:</strong> the displayed R and K asymptotics diagnose the present diagonal expression as x approaches zero. This statement is limited to that extrapolation.",-4],
+      completion:["open","<strong>Possible completion:</strong> a new inner metric, matching surface, minimal sphere or boundary geometry can be tested against regularity, junction, causal and stability conditions. No no-go result excludes such an SSZ construction.",-.3]
+    },[kind,text,logx]=descriptions[mode]||descriptions.horizon;
+    document.querySelectorAll("[data-metric-scope]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.metricScope===mode)));
+    $("metric-scope-explanation").className=`callout ${kind}`;$("metric-scope-explanation").innerHTML=text;setLogRadius(logx);
   }
   function animate(now) {
     if(playing&&!reduced){if(!last)last=now;const next=Number($("metric-radius").value)+(now-last)*.00022;last=now;$("metric-radius").value=next>2?-4:next;render();}else last=0;
@@ -60,9 +100,11 @@
   }
   document.addEventListener("DOMContentLoaded",()=>{
     $("metric-radius").addEventListener("input",render);
-    $("metric-play").addEventListener("click",()=>{playing=!playing;$("metric-play").setAttribute("aria-pressed",String(playing));$("metric-play").textContent=playing?"Pause radial sweep":"Play radial sweep";if(reduced&&playing){$("metric-radius").value=1;playing=false;$("metric-play").setAttribute("aria-pressed","false");$("metric-play").textContent="Play radial sweep";render();}});
-    $("metric-reset").addEventListener("click",()=>{$("metric-radius").value=0;render();});
-    addEventListener("resize",render);addEventListener("ssz-theme-change",render);render();frame=requestAnimationFrame(animate);
+    $("metric-play").addEventListener("click",()=>{playing=!playing;if(reduced&&playing){$("metric-radius").value=1;playing=false;}syncPlay();render();});
+    $("metric-reset").addEventListener("click",()=>{setLogRadius(0);});
+    ["metric-geometry","metric-branches","metric-coefficients","metric-velocities","metric-limits"].forEach(id=>bindCanvas($(id)));
+    document.querySelectorAll("[data-metric-scope]").forEach(button=>button.addEventListener("click",()=>selectScope(button.dataset.metricScope)));
+    addEventListener("resize",render);addEventListener("ssz-theme-change",render);syncPlay();render();selectScope("horizon");playing=!reduced;syncPlay();frame=requestAnimationFrame(animate);
   });
   addEventListener("pagehide",()=>cancelAnimationFrame(frame));
 })();

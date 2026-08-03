@@ -303,6 +303,8 @@ details[open] summary { margin-bottom: .7rem; }
 .lab-canvas { display: block; width: 100%; height: 430px; background: var(--surface); touch-action: none; }
 .metric-master-controls { border:1px solid var(--line); border-radius:1rem; box-shadow:var(--shadow); }
 .metric-wide-canvas { margin-top:1rem; border:1px solid var(--line); border-radius:1rem; box-shadow:var(--shadow); }
+.metric-wide-canvas:focus, #metric-geometry:focus { outline:3px solid var(--gold); outline-offset:3px; }
+.metric-scope-tabs .button[aria-pressed="true"] { background:var(--deep); color:var(--surface); border-color:var(--deep); }
 .plot-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
 .plot-gallery figure { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); box-shadow: var(--shadow); }
 .plot-gallery a { display: block; aspect-ratio: 16/9; overflow: hidden; background: var(--surface-2); }

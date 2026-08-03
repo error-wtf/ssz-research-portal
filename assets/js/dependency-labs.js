@@ -7,7 +7,7 @@
   function current(x){const xi=window.SSZ.xi(x),D=window.SSZ.dilation(x),A=D*D,B=1/A;return{x,xi,D,A,B,light:A,distance:properDistance(x),R:1.5/x**2,K:2.25/x**4};}
   function interpretation(v){
     if(interiorMode==="horizon")return `<strong>Horizon focus:</strong> at x=${fmt(v.x)}, D=${fmt(v.D)} and the diagonal coefficients remain finite. This local result does <em>not</em> prove that no global event horizon exists.`;
-    if(interiorMode==="centre")return `<strong>Centre focus:</strong> finite A→1/4 is compatible with divergent P0 asymptotics R~3/(2r²) and K~9/(4r⁴). The current areal centre is not regular.`;
+    if(interiorMode==="centre")return `<strong>Centre focus:</strong> finite A→1/4 is compatible with R~3/(2r²) and K~9/(4r⁴) for the present diagonal extrapolation. This diagnoses that continuation while leaving a separately derived SSZ inner solution or boundary completion open.`;
     return `<strong>Global focus:</strong> the coefficient and slice-distance displays do not decide maximal extension, affine completeness, trapped surfaces or causal boundaries. Those remain open derivations.`;
   }
   function drawInterior(v){

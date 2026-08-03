@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SSZ evidence ledger",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "canonical_lock",
+    "claims"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "canonical_lock": {
+      "type": "string"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "statement",
+          "evidence_class",
+          "status",
+          "canonical_version",
+          "mathematical_assumptions",
+          "definitions",
+          "formula_ids",
+          "domain",
+          "observer_coordinate_scope",
+          "source_document",
+          "source_section",
+          "source_sha256",
+          "repository",
+          "repository_path",
+          "commit_sha",
+          "test_id",
+          "reproduction_command",
+          "inputs",
+          "numerical_result",
+          "uncertainty",
+          "dependencies",
+          "conflicts",
+          "does_not_prove",
+          "falsification_criterion",
+          "last_reviewed"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^SSZ-CLAIM-[A-Z0-9-]+$"
+          }
+        }
+      }
+    }
+  }
+}

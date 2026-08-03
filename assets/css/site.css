@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 :root {
   --bg: #f8fafc;
@@ -17,6 +16,12 @@
   --shadow: 0 12px 35px rgba(15, 23, 42, .08);
   --radius: 1.25rem;
 }
+[data-reviewer="true"] .callout.warning,[data-reviewer="true"] .callout.open,
+[data-reviewer="true"] .badge.corrected,[data-reviewer="true"] .badge.open {
+  outline:2px solid color-mix(in srgb,var(--danger) 70%,transparent); outline-offset:2px;
+}
+[data-reviewer="true"] .reviewer-priority { display:block; }
+.reviewer-priority { display:none; }
 
 [data-theme="dark"] {
   --bg: #0b1120;
@@ -149,6 +154,7 @@ h3 { margin-top: 0; }
   overflow-x: auto; overflow-y: hidden; letter-spacing: .01em; text-align:center;
 }
 .formula:hover { box-shadow:0 10px 22px rgba(15,23,42,.08); transform:translateY(-1px); }
+.formula mjx-container,.rendered-math mjx-container { max-width:100%; overflow-x:auto; overflow-y:hidden; padding:.3rem; }
 .formula.big { font-size: clamp(1.15rem, 2.3vw, 1.65rem); text-align: center; padding-block: 1.35rem; }
 .math-box {
   position: relative; display: grid; place-items: center; min-height: 6.5rem;
@@ -320,6 +326,26 @@ details[open] summary { margin-bottom: .7rem; }
 }
 .evidence-ladder strong,.evidence-ladder span { grid-column:2; }
 .evidence-ladder span { color:var(--muted); font-size:.86rem; }
+.scope-strip {
+  display:flex; flex-wrap:wrap; gap:.45rem .75rem; align-items:center; margin:1rem 0 2rem;
+  padding:.8rem 1rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2);
+  color:var(--muted); font-size:.82rem;
+}
+.scope-strip strong { color:var(--text); }
+.claim-list { display:grid; gap:1rem; margin-top:1.2rem; }
+.claim-card { border:1px solid var(--line); border-radius:1rem; background:var(--surface); box-shadow:var(--shadow); overflow:hidden; }
+.claim-card > header { display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.2rem; background:var(--surface-2); }
+.claim-card header div { min-width:0; }
+.claim-card header h3 { margin:.35rem 0 .15rem; }
+.claim-card header small { margin-left:.5rem; color:var(--muted); }
+.claim-card header code,.hash { overflow-wrap:anywhere; }
+.claim-statement { padding:1rem 1.2rem; margin:0; font-size:1.04rem; }
+.claim-card details { border-top:1px solid var(--line); padding:.85rem 1.2rem 1.2rem; }
+.claim-detail-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1rem; }
+.claim-detail-grid section { padding:1rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2); min-width:0; }
+.claim-detail-grid h4 { margin:.15rem 0 .55rem; }
+.claim-detail-grid p,.claim-detail-grid li { font-size:.84rem; }
+.claim-graph { min-height:560px; }
 
 .footer { border-top: 1px solid var(--line); background: var(--surface); }
 .footer-inner {
@@ -358,6 +384,7 @@ details[open] summary { margin-bottom: .7rem; }
 .starmap-detail { position:absolute; left:1rem; right:1rem; bottom:1rem; display:flex; flex-wrap:wrap; gap:.35rem .8rem; padding:.75rem 1rem; border:1px solid var(--line); border-radius:.8rem; color:var(--text); background:color-mix(in srgb,var(--surface) 92%,transparent); backdrop-filter:blur(10px); font-size:.78rem; }
 .starmap-detail strong { width:100%; }
 .starmap-detail span,.starmap-detail small { color:var(--muted); }
+.dynamic-fragment-targets { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
 
 @media (max-width: 980px) {
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem; background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -373,6 +400,7 @@ details[open] summary { margin-bottom: .7rem; }
   .graph { grid-template-columns: repeat(2,1fr); }
   .research-map { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .formula-catalog { grid-template-columns:1fr; }
+  .claim-detail-grid { grid-template-columns:1fr; }
   .starmap-layout { grid-template-columns:1fr; }
   .research-map div::after { display:none; }
   .graph-node::after { display:none; }

@@ -1,5 +1,25 @@
 {
-  "count": 10,
+  "schema_version": "1.0.0",
+  "canonical_lock": "P0-2026.08",
+  "last_reviewed": "2026-08-03",
+  "evidence_classes": [
+    "Definition",
+    "Mathematically derived result",
+    "Algebraic identity",
+    "Numerical result",
+    "Software Unit Test",
+    "Regression test",
+    "Engineering benchmark",
+    "Synthetic test",
+    "Real-data compatibility",
+    "Forward comparison",
+    "Fit",
+    "Null result",
+    "Interpretation",
+    "Hypothesis",
+    "Open derivation",
+    "Empirically unconfirmed prediction"
+  ],
   "claims": [
     {
       "id": "SSZ-CLAIM-SCOPE-001",

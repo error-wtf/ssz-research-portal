@@ -1,0 +1,380 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-08-03",
+  "stage_order": [
+    "definition",
+    "derivation",
+    "implementation",
+    "internal_test",
+    "forward_model",
+    "real_data",
+    "uncertainty_model",
+    "model_comparison",
+    "independent_reproduction",
+    "falsification"
+  ],
+  "status_vocabulary": [
+    "complete",
+    "partial",
+    "proxy",
+    "legacy",
+    "open",
+    "excluded",
+    "hypothesis"
+  ],
+  "domains": [
+    {
+      "domain": "Static clocks",
+      "stages": {
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "partial",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Finite static-clock dilation is defined; this does not establish global causal structure."
+    },
+    {
+      "domain": "Gravitational redshift",
+      "stages": {
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Current public comparisons are compatibility studies, not independent confirmation."
+    },
+    {
+      "domain": "PPN",
+      "stages": {
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Weak-field consistency does not validate the strong-field completion."
+    },
+    {
+      "domain": "Light deflection",
+      "stages": {
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Separate analytic limiting checks from observational inference."
+    },
+    {
+      "domain": "Shapiro delay",
+      "stages": {
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Public artifacts primarily test the weak-field limit."
+    },
+    {
+      "domain": "Mercury perihelion",
+      "stages": {
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Agreement is a limiting-regime check."
+    },
+    {
+      "domain": "Timelike orbits",
+      "stages": {
+        "definition": "complete",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Bridge-local stationary candidates require sensitivity certificates."
+    },
+    {
+      "domain": "Null geodesics",
+      "stages": {
+        "definition": "complete",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "A stationary effective-potential candidate is not a full observation."
+    },
+    {
+      "domain": "Lensing",
+      "stages": {
+        "definition": "partial",
+        "derivation": "partial",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "open"
+      },
+      "audit_note": "No complete source-to-detector inference pipeline is established."
+    },
+    {
+      "domain": "Photon sphere",
+      "stages": {
+        "definition": "complete",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "The current candidate is matching-sensitive."
+    },
+    {
+      "domain": "Shadow",
+      "stages": {
+        "definition": "partial",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "proxy",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Impact parameter is a shadow proxy without plasma/radiative transfer."
+    },
+    {
+      "domain": "ISCO",
+      "stages": {
+        "definition": "complete",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Candidate depends on static metric and matching prescription."
+    },
+    {
+      "domain": "Sagnac",
+      "stages": {
+        "definition": "complete",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "partial",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Rotation analogies must retain observer and synchronization scope."
+    },
+    {
+      "domain": "Neutron stars",
+      "stages": {
+        "definition": "partial",
+        "derivation": "open",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "open"
+      },
+      "audit_note": "No canonical matter-coupled stellar solution."
+    },
+    {
+      "domain": "S-stars",
+      "stages": {
+        "definition": "partial",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "partial",
+        "forward_model": "partial",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Exploratory comparisons require full nuisance/systematics treatment."
+    },
+    {
+      "domain": "Sgr A*",
+      "stages": {
+        "definition": "partial",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Point-mass and Galactic mass models must not be conflated."
+    },
+    {
+      "domain": "M87*",
+      "stages": {
+        "definition": "partial",
+        "derivation": "partial",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "No complete SSZ radiative-transfer fit."
+    },
+    {
+      "domain": "EHT-scale tests",
+      "stages": {
+        "definition": "partial",
+        "derivation": "partial",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "partial",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "partial"
+      },
+      "audit_note": "Image-domain likelihood and systematics remain open."
+    },
+    {
+      "domain": "Nebular and stellar models",
+      "stages": {
+        "definition": "partial",
+        "derivation": "partial",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "open"
+      },
+      "audit_note": "Public repositories contain exploratory models of uneven maturity."
+    },
+    {
+      "domain": "Gravitational waves",
+      "stages": {
+        "definition": "partial",
+        "derivation": "open",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "open"
+      },
+      "audit_note": "No complete perturbation and waveform theory."
+    },
+    {
+      "domain": "Electromagnetic extensions",
+      "stages": {
+        "definition": "partial",
+        "derivation": "open",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "open"
+      },
+      "audit_note": "Not part of the canonical static metric core."
+    },
+    {
+      "domain": "Quantum extensions",
+      "stages": {
+        "definition": "hypothesis",
+        "derivation": "open",
+        "implementation": "partial",
+        "internal_test": "partial",
+        "forward_model": "proxy",
+        "real_data": "open",
+        "uncertainty_model": "open",
+        "model_comparison": "open",
+        "independent_reproduction": "open",
+        "falsification": "open"
+      },
+      "audit_note": "No empirically confirmed quantum-gravity completion."
+    }
+  ],
+  "guardrail": "Internal tests establish implementation behavior, not empirical confirmation."
+}

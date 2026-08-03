@@ -2,6 +2,7 @@
   const root = document.documentElement;
   const savedTheme = localStorage.getItem("ssz-theme");
   if (savedTheme) root.dataset.theme = savedTheme;
+  if (localStorage.getItem("ssz-reviewer") === "true") root.dataset.reviewer = "true";
 
   document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".nav-links");
@@ -37,6 +38,22 @@
       const tests = menu.querySelector('a[href="tests.html"]');
       menu.insertBefore(link, tests || menu.querySelector("[data-theme-toggle]"));
     }
+    [
+      ["regimes.html","Regimes","strong-field.html"],
+      ["interior-global-structure.html","Interior","tests.html"],
+      ["evidence.html","Evidence","repositories.html"],
+      ["falsification.html","Falsification","glossary.html"],
+    ].forEach(([href,label,before])=>{
+      if(!menu||menu.querySelector(`a[href="${href}"]`))return;
+      const link=document.createElement("a");link.href=href;link.textContent=label;
+      if(location.pathname.endsWith(`/${href}`))link.setAttribute("aria-current","page");
+      menu.insertBefore(link,menu.querySelector(`a[href="${before}"]`)||menu.querySelector("[data-theme-toggle]"));
+    });
+    if(menu&&!menu.querySelector("[data-reviewer-toggle]")){
+      const button=document.createElement("button");button.className="nav-button";button.dataset.reviewerToggle="";
+      button.textContent=root.dataset.reviewer==="true"?"Reviewer: on":"Reviewer";
+      menu.insertBefore(button,menu.querySelector("[data-theme-toggle]"));
+    }
     const toggle = document.querySelector(".menu-toggle");
     toggle?.addEventListener("click", () => {
       const open = menu?.classList.toggle("open");
@@ -50,6 +67,10 @@
         window.dispatchEvent(new CustomEvent("ssz-theme-change"));
       });
     });
+    document.querySelectorAll("[data-reviewer-toggle]").forEach(button=>button.addEventListener("click",()=>{
+      const enabled=root.dataset.reviewer!=="true";root.dataset.reviewer=String(enabled);
+      localStorage.setItem("ssz-reviewer",String(enabled));button.textContent=enabled?"Reviewer: on":"Reviewer";
+    }));
 
     document.querySelectorAll("[data-copy]").forEach(button => {
       button.addEventListener("click", async () => {

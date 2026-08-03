@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://error-wtf.github.io/ssz-research-portal/sitemap.xml

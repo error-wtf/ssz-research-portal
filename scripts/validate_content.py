@@ -24,6 +24,11 @@ REQUIRED_JSON = {
     "observations.json": ("count", "objects"),
     "starmap-stars.json": ("count", "stars"),
     "evaluations.json": None,
+    "evidence-ledger.json": ("claims",),
+    "claim-dependencies.json": ("edges",),
+    "strong-field-certificates.json": ("canonical", "sensitivity", "provenance"),
+    "observable-maturity.json": ("domains", "stage_order"),
+    "open-problems-matrix.json": ("problems",),
 }
 
 
@@ -92,7 +97,13 @@ def main():
                       "artifact-category-chart", "artifact-quantity-chart",
                       "snapshot-chart", "diagnostic-chart"):
         assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
-    assert len(list(ROOT.glob("*.html"))) >= 13
+    assert len(list(ROOT.glob("*.html"))) >= 16
+    for page in ("evidence.html", "interior-global-structure.html", "falsification.html"):
+        assert (ROOT / page).exists(), f"missing scientific audit page: {page}"
+    certificates = json.loads((ROOT / "data/strong-field-certificates.json").read_text())
+    assert certificates["precision_decimal_digits"] >= 50
+    assert certificates["sensitivity"]["variant_count"] == 27
+    assert len(json.loads((ROOT / "data/observable-maturity.json").read_text())["domains"]) >= 20
     visual = (ROOT / "visual-lab.html").read_text(encoding="utf-8")
     for canvas_id in ("phi-canvas", "radial-canvas", "lensing-canvas", "potential-canvas",
                       "starmap-canvas", "sagnac-canvas", "curvature-canvas",

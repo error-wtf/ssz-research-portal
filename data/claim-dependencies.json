@@ -1,0 +1,61 @@
+{
+  "edges": [
+    {
+      "source": "SSZ-CLAIM-SCOPE-001",
+      "targets": []
+    },
+    {
+      "source": "SSZ-CLAIM-XI-STRONG-001",
+      "targets": []
+    },
+    {
+      "source": "SSZ-CLAIM-BLEND-C2-001",
+      "targets": [
+        "SSZ-CLAIM-XI-STRONG-001",
+        "SSZ-CLAIM-XI-WEAK-001"
+      ]
+    },
+    {
+      "source": "SSZ-CLAIM-XI-WEAK-001",
+      "targets": []
+    },
+    {
+      "source": "SSZ-CLAIM-METRIC-DIAGONAL-001",
+      "targets": [
+        "SSZ-CLAIM-XI-STRONG-001",
+        "SSZ-CLAIM-BLEND-C2-001",
+        "SSZ-CLAIM-XI-WEAK-001"
+      ]
+    },
+    {
+      "source": "SSZ-CLAIM-HORIZON-D-001",
+      "targets": [
+        "SSZ-CLAIM-XI-STRONG-001",
+        "SSZ-CLAIM-METRIC-DIAGONAL-001"
+      ]
+    },
+    {
+      "source": "SSZ-CLAIM-P0-CENTRE-001",
+      "targets": [
+        "SSZ-CLAIM-METRIC-DIAGONAL-001"
+      ]
+    },
+    {
+      "source": "SSZ-CLAIM-ORBIT-PROXY-001",
+      "targets": [
+        "SSZ-CLAIM-BLEND-C2-001",
+        "SSZ-CLAIM-METRIC-DIAGONAL-001"
+      ]
+    },
+    {
+      "source": "SSZ-CLAIM-TESTS-BOUNDARY-001",
+      "targets": []
+    },
+    {
+      "source": "SSZ-CLAIM-INTERIOR-OPEN-001",
+      "targets": [
+        "SSZ-CLAIM-P0-CENTRE-001"
+      ]
+    }
+  ]
+}

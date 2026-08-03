@@ -51,6 +51,7 @@ const sandbox = {
 };
 sandbox.window = sandbox;
 vm.createContext(sandbox);
+vm.runInContext(fs.readFileSync("assets/js/physics.js", "utf8"), sandbox);
 vm.runInContext(fs.readFileSync("assets/js/visual-lab.js", "utf8"), sandbox);
 assert.equal(typeof ready, "function");
 ready();
@@ -62,7 +63,7 @@ for (const id of ["radial-xi","radial-d","alpha-out","potential-peak","sagnac-ou
 vm.runInContext(fs.readFileSync("assets/js/advanced-visuals.js", "utf8"), sandbox);
 ready();
 sandbox.frame(32);
-for (const id of ["continuity-d0","component-a","clock-ratio","spectrum-observed","null-time"]) {
+for (const id of ["continuity-d0","component-gtt","component-grr","clock-ratio","spectrum-observed","null-time"]) {
   assert.notEqual(element(id).textContent, "", `${id} was not updated`);
 }
 assert.ok(sandbox.SSZVisual.xi(1) > 0.8 && sandbox.SSZVisual.D(1) > 0.55);

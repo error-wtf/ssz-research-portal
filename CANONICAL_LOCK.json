@@ -1,0 +1,12 @@
+{
+  "lock_id": "P0-2026.08",
+  "scope": "public static spherical SSZ effective metric",
+  "dimensionless_radius": "x=r/r_s",
+  "strong_branch": "Xi=1-exp(-phi/x), x<1.8",
+  "transition": "derivative-matched quintic Hermite C2, 1.8<=x<=2.2",
+  "weak_branch": "Xi=1/(2x), x>2.2",
+  "mapping": "D=1/(1+Xi), A=D^2, B=D^-2",
+  "horizon": {"Xi": 0.8017118471377939, "D": 0.5550277096687818},
+  "centre_asymptotics": {"A": "1/4", "R": "3/(2r^2)", "K": "9/(4r^4)", "regular": false},
+  "reviewed": "2026-08-03"
+}

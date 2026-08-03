@@ -5,7 +5,7 @@ const vm = require("node:vm");
 
 const values = {
   "phi-lambda": ".4812", "phi-levels": "9", "radial-probe": "1",
-  "phase-inner": "1", "phase-outer": "6", impact: "8", "potential-max": "8",
+  impact: "8", "potential-max": "8",
   "starmap-scale": "1", "rotation-rate": ".2", "loop-radius": "1",
   "curvature-min": "-5"
 };
@@ -51,8 +51,8 @@ assert.equal(typeof ready, "function");
 ready();
 assert.equal(typeof sandbox.frame, "function");
 sandbox.frame(16);
-for (const id of ["radial-xi","radial-d","phase-delta","alpha-out","potential-peak","sagnac-out"]) {
+for (const id of ["radial-xi","radial-d","alpha-out","potential-peak","sagnac-out"]) {
   assert.notEqual(element(id).textContent, "", `${id} was not updated`);
 }
 assert.ok(sandbox.SSZVisual.xi(1) > 0.8 && sandbox.SSZVisual.D(1) > 0.55);
-console.log("OK: all eight visual modules initialise and update outputs in a mocked browser DOM");
+console.log("OK: all seven public visual modules initialise and update outputs in a mocked browser DOM");

@@ -700,23 +700,6 @@
     "portal_note": ""
   },
   {
-    "name": "ssz-research-portal",
-    "url": "https://github.com/error-wtf/ssz-research-portal",
-    "description": "Comprehensive interactive research portal for Segmented Spacetime, SSZ and JIF",
-    "domain": "physics",
-    "archived": false,
-    "language": "HTML",
-    "topics": [],
-    "default_branch": "main",
-    "homepage": "",
-    "updated_at": "2026-08-03T13:12:13Z",
-    "pushed_at": "2026-08-03T13:09:39Z",
-    "stars": 0,
-    "forks": 0,
-    "license": "NOASSERTION",
-    "portal_note": ""
-  },
-  {
     "name": "ssz-schumann",
     "url": "https://github.com/error-wtf/ssz-schumann",
     "description": "SSZ-Schumann: Segmented Spacetime Analysis of Schumann Resonances - Testing SSZ theory with Earth's electromagnetic resonances",

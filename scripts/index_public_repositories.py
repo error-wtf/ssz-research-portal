@@ -13,6 +13,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 API = "https://api.github.com/users/error-wtf/repos?per_page=100&type=public&sort=updated"
+PRIVATE_MARKERS_FILE = ROOT / ".private-sources"
+PRIVATE_MARKERS = tuple(
+    line.strip().lower() for line in PRIVATE_MARKERS_FILE.read_text(encoding="utf-8").splitlines()
+    if line.strip() and not line.startswith("#")
+) if PRIVATE_MARKERS_FILE.exists() else ()
 
 MATH = {
     "Riemann-Zeta-Zero-Finding-Suite", "claudes-cycles", "pi-cluster",
@@ -83,7 +88,13 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache", help="Path to a cached GitHub API JSON response")
     args = parser.parse_args()
-    catalog = sorted((safe(repo) for repo in load(args.cache)), key=lambda item: item["name"].lower())
+    catalog = sorted(
+        (
+            item for item in (safe(repo) for repo in load(args.cache))
+            if not any(marker in json.dumps(item, ensure_ascii=False).lower() for marker in PRIVATE_MARKERS)
+        ),
+        key=lambda item: item["name"].lower(),
+    )
     research = [repo for repo in catalog if repo["domain"] != "other"]
     (ROOT / "data/public-repositories-all.json").write_text(
         json.dumps(catalog, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"

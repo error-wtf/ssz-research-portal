@@ -1,6 +1,6 @@
 "use strict";
 const assert=require("node:assert/strict"),fs=require("node:fs"),vm=require("node:vm");
-const values={"radius-max":"12","probe-radius":"1","plot-quantity":"xi","mass-input":"1","mass-unit":"solar","calc-radius":"1","jif-frequency":"1000000000","jif-duration":"1"};
+const values={"radius-max":"12","probe-radius":"1","plot-quantity":"xi","mass-input":"1","mass-unit":"solar","calc-radius":"1"};
 const checked={"show-limits":true,"log-axis":false};
 const methods=["setTransform","clearRect","save","restore","beginPath","arc","stroke","fill","moveTo","lineTo","fillRect","strokeRect","setLineDash","translate","rotate","fillText"];
 const ctx=Object.fromEntries(methods.map(x=>[x,()=>{}]));ctx.measureText=t=>({width:String(t).length*7});
@@ -12,6 +12,5 @@ assert.equal(element("radius-max-value").textContent,"12");
 assert.ok(Number(element("xi-value").textContent.replaceAll(",",""))>.8);
 assert.ok(Number(element("d-value").textContent.replaceAll(",",""))>.55);
 assert.match(element("rs-output").textContent,/m$/);
-assert.match(element("jif-output").textContent,/cycles$/);
 assert.equal(typeof sandbox.SSZ.xi,"function");
 console.log("OK: native metric explorer and calculators initialise without Chart.js");

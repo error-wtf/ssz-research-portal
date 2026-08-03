@@ -13,6 +13,14 @@
       const tests = menu.querySelector('a[href="tests.html"]');
       menu.insertBefore(link, tests || menu.querySelector("[data-theme-toggle]"));
     }
+    if (menu && !menu.querySelector('a[href="atlas.html"]')) {
+      const link = document.createElement("a");
+      link.href = "atlas.html";
+      link.textContent = "Atlas";
+      if (location.pathname.endsWith("/atlas.html")) link.setAttribute("aria-current", "page");
+      const repositories = menu.querySelector('a[href="repositories.html"]');
+      menu.insertBefore(link, repositories || menu.querySelector("[data-theme-toggle]"));
+    }
     const toggle = document.querySelector(".menu-toggle");
     toggle?.addEventListener("click", () => {
       const open = menu?.classList.toggle("open");

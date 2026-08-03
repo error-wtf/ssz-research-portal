@@ -1,5 +1,5 @@
 {
-  "count": 37,
+  "count": 35,
   "repositories": [
     {
       "name": "CALCULATION_OF_NUMBER_PI",
@@ -475,44 +475,6 @@
       "working_tree": "clean",
       "file_count": 142,
       "test_related_files": 19
-    },
-    {
-      "name": "ssz-jif-core",
-      "full_name": "error-wtf/ssz-jif-core",
-      "description": "Local SSZ/physics research repository",
-      "public_url": "https://github.com/error-wtf/ssz-jif-core.git",
-      "local_reference": "physics/ssz-jif-core",
-      "scientific_role": "JIF",
-      "tags": [
-        "JIF"
-      ],
-      "default_branch": "main",
-      "commit": "be63a1fde558",
-      "commit_date": "2026-07-27T03:05:24+02:00",
-      "release": "no local tag",
-      "status": "local",
-      "working_tree": "modified",
-      "file_count": 341,
-      "test_related_files": 141
-    },
-    {
-      "name": "ssz-jif-forward-lab",
-      "full_name": "error-wtf/ssz-jif-forward-lab",
-      "description": "Local SSZ/physics research repository",
-      "public_url": "",
-      "local_reference": "physics/ssz-jif-forward-lab",
-      "scientific_role": "JIF",
-      "tags": [
-        "JIF"
-      ],
-      "default_branch": "",
-      "commit": "",
-      "commit_date": "",
-      "release": "no local tag",
-      "status": "local",
-      "working_tree": "clean",
-      "file_count": 2370,
-      "test_related_files": 167
     },
     {
       "name": "ssz-lagrange",

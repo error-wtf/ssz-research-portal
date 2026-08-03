@@ -1,22 +1,214 @@
 {
   "status": "human-curated English catalogue from P0 and current canonical sources",
-  "count": 16,
+  "count": 12,
   "formulas": [
-    {"id":"xi-strong","name":"Strong segment density","html":"Ξ_strong(r) = 1 − exp(−φ r_s/r)","meaning":"Dimensionless operative inner-branch field.","variables":"r areal radius; r_s Schwarzschild scale; φ golden ratio.","units":"dimensionless","domain":"r/r_s < 1.8","limits":"Ξ(r_s)=0.801711847; Ξ→1 as r→0.","example":"At r=r_s, evaluate 1−exp(−φ).","code":"1 - exp(-PHI/x)","tests":["strong-branch limits","horizon value"],"source":"physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md","caution":"A finite horizon value does not prove central regularity."},
-    {"id":"xi-weak","name":"Weak segment density","html":"Ξ_weak(r) = r_s/(2r)","meaning":"Outer weak-field branch.","variables":"r_s Schwarzschild scale; r areal radius.","units":"dimensionless","domain":"r/r_s > 2.2","limits":"Ξ→0 at infinity.","example":"Ξ(10r_s)=0.05.","code":"1/(2*x)","tests":["far-field limits","PPN tests"],"source":"physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md","caution":"Null paths still require full metric or PPN machinery."},
-    {"id":"blend","name":"C2 blend","html":"Ξ(r)=H5(t), t=(r/r_s−1.8)/0.4","meaning":"Quintic Hermite bridge matching value, slope and curvature.","variables":"t normalized blend coordinate.","units":"dimensionless","domain":"1.8 ≤ r/r_s ≤ 2.2","limits":"Matches both branches through second derivative.","example":"t=0 at 1.8r_s and t=1 at 2.2r_s.","code":"quintic Hermite endpoint interpolation","tests":["C2 endpoint suite"],"source":"physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md","caution":"The original cubic zero-slope dashboard interpolation was not canonical."},
-    {"id":"dilation","name":"SSZ time factor","html":"D(r)=1/(1+Ξ(r))","meaning":"Relates static proper and coordinate time by dτ=Ddt.","variables":"D time factor; Ξ segment density.","units":"dimensionless","domain":"Declared Ξ branch.","limits":"D(∞)=1; D(r_s)=0.555027709.","example":"D(r_s)=1/(1+0.801711847).","code":"1/(1+xi)","tests":["finite-horizon dilation","JIF tests"],"source":"physics/hilfsdateien/SSZ_CANONICAL_FORMULAS_2026.md","caution":"Horizon regularisation is not geodesic completeness."},
-    {"id":"metric","name":"Diagonal metric ansatz","html":"ds²=−D²c²dt²+D⁻²dr²+r²dΩ²","meaning":"Static spherical effective geometry.","variables":"dΩ²=dθ²+sin²θ dϕ².","units":"length squared","domain":"Declared exterior/diagonal model.","limits":"Finite coefficients at r_s; divergent central curvature.","example":"At r_s, g_tt/c²≈−0.308.","code":"diag(-D², D⁻², r², r²sin²θ)","tests":["metric tensor","inverse metric"],"source":"physics/ssz-complete-documentation/06_STRONG_FIELD/black_hole_metric.md","caution":"A fundamental global solution is not yet derived."},
-    {"id":"center-a","name":"Central metric limit","html":"A(r)→1/4","meaning":"Since Ξ→1 and D→1/2, A=D² approaches one quarter.","variables":"A=D².","units":"dimensionless","domain":"Formal diagonal continuation r→0.","limits":"Finite coefficient, non-regular areal centre.","example":"(1/2)²=1/4.","code":"0.25","tests":["symbolic centre limit"],"source":"P0 current scientific scope","caution":"Finite A does not prevent curvature divergence."},
-    {"id":"ricci-center","name":"Central Ricci asymptotic","html":"R(r)~3/(2r²)","meaning":"Quadratic curvature divergence.","variables":"R Ricci scalar; r areal radius.","units":"length^-2","domain":"r→0","limits":"Divergent.","example":"Halving r multiplies the leading term by four.","code":"3/(2*r**2)","tests":["symbolic curvature asymptotics"],"source":"P0 current scientific scope","caution":"Supersedes older flat-centre claims."},
-    {"id":"kretschmann-center","name":"Central Kretschmann asymptotic","html":"K(r)~9/(4r⁴)","meaning":"Invariant quartic central divergence.","variables":"K=R_abcd R^abcd.","units":"length^-4","domain":"r→0","limits":"Divergent.","example":"Halving r multiplies the leading term by sixteen.","code":"9/(4*r**4)","tests":["symbolic curvature asymptotics"],"source":"P0 current scientific scope","caution":"Complete singularity freedom is not established."},
-    {"id":"redshift","name":"Static redshift proxy","html":"z(r)=1/D(r)−1=Ξ(r)","meaning":"Static clock-frequency proxy in the declared metric.","variables":"z redshift.","units":"dimensionless","domain":"Static timelike observable.","limits":"z(r_s)=0.801711847; z→0 at infinity.","example":"Observed model frequency is scaled by D.","code":"1/D-1","tests":["clock and redshift tests"],"source":"physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md","caution":"Real spectra also contain kinematics and astrophysical systematics."},
-    {"id":"rs","name":"Schwarzschild scale","html":"r_s=2GM/c²","meaning":"Mass-dependent radial scale.","variables":"G gravity constant; M mass; c light speed.","units":"metres","domain":"M>0","limits":"Linear in mass.","example":"One solar mass gives approximately 2.953 km.","code":"2*G*M/c**2","tests":["constant and unit tests"],"source":"physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md","caution":"Its global interpretation differs between metric models."},
-    {"id":"jif-general","name":"General JIF definition","html":"dJ=dΦ/(2π)","meaning":"Counts full or fractional phase cycles.","variables":"Φ accumulated phase; J cycle count.","units":"cycles, dimensionless","domain":"Systems with a defined phase.","limits":"ΔΦ=2π gives ΔJ=1.","example":"Φ=π is half a cycle.","code":"phase/(2*Math.PI)","tests":["JIF phase counting"],"source":"physics/hilfsdateien/JIF_FOUNDATION_CANONICAL.md","caution":"JIF is not a new absolute time."},
-    {"id":"jif-massive","name":"Massive-system JIF","html":"dJ=f0 dτ=f0 D(r)dt","meaning":"Counts a bound system’s proper phase.","variables":"f0 proper frequency; τ proper time; t coordinate time.","units":"Hz·s = cycles","domain":"Massive or bound systems.","limits":"dJ/dt=f0D.","example":"1 GHz for 1 µs at D=0.8 gives 800 cycles.","code":"f0*D*dt","tests":["JIF precision suite"],"source":"physics/hilfsdateien/JIF_FOUNDATION_CANONICAL.md","caution":"Real experiments are limited by oscillator and transfer noise."},
-    {"id":"jif-photon","name":"Photon path-phase JIF","html":"ΔJ_γ=(1/2π)∫_γ k_μ dx^μ","meaning":"Counts null-path phase rather than photon proper-time phase.","variables":"k_μ wave covector; γ light path.","units":"cycles, dimensionless","domain":"Null paths.","limits":"Photon dτ remains zero.","example":"Interferometer-arm phase difference.","code":"path integral divided by 2π","tests":["photon-phase conceptual gates"],"source":"physics/hilfsdateien/JIF_FOUNDATION_CANONICAL.md","caution":"Never apply the massive f0dτ formula to photons."},
-    {"id":"lensing","name":"PPN light deflection","html":"α=(1+γ)r_s/b","meaning":"Weak-field null-path deflection.","variables":"b impact parameter; γ PPN parameter.","units":"radians","domain":"Weak-field PPN.","limits":"γ=1 gives 2r_s/b.","example":"Solar limb gives about 1.75 arcseconds.","code":"(1+gamma)*rs/b","tests":["lensing deflection"],"source":"physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md","caution":"Do not replace by an Ξ-only shortcut."},
-    {"id":"shapiro","name":"PPN Shapiro delay","html":"Δt=(1+γ)(r_s/c)ln(4r1r2/d²)","meaning":"Weak-field excess light-travel time.","variables":"r1,r2 endpoint radii; d closest approach.","units":"seconds","domain":"Applicable PPN light-path geometry.","limits":"γ=1 gives the GR-compatible factor two.","example":"Cassini constrains γ.","code":"(1+gamma)*(rs/c)*log(4*r1*r2/d**2)","tests":["Shapiro delay","Cassini comparison"],"source":"physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md","caution":"Round-trip duplication is separate from the PPN factor."},
-    {"id":"perihelion","name":"PPN perihelion advance","html":"Δω=6πGM/[a(1−e²)c²]","meaning":"Weak-field secular orbital advance.","variables":"a semi-major axis; e eccentricity.","units":"radians per orbit","domain":"Weak field and slow motion.","limits":"Uses β=γ=1 PPN machinery.","example":"Mercury gives about 42.98 arcseconds per century.","code":"6*pi*G*M/(a*(1-e**2)*c**2)","tests":["perihelion regression"],"source":"physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md","caution":"Weak-field agreement does not test the SSZ interior."}
+    {
+      "id": "xi-strong",
+      "name": "Strong segment density",
+      "html": "Ξ_strong(r) = 1 − exp(−φ r_s/r)",
+      "meaning": "Dimensionless operative inner-branch field.",
+      "variables": "r areal radius; r_s Schwarzschild scale; φ golden ratio.",
+      "units": "dimensionless",
+      "domain": "r/r_s < 1.8",
+      "limits": "Ξ(r_s)=0.801711847; Ξ→1 as r→0.",
+      "example": "At r=r_s, evaluate 1−exp(−φ).",
+      "code": "1 - exp(-PHI/x)",
+      "tests": [
+        "strong-branch limits",
+        "horizon value"
+      ],
+      "source": "physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md",
+      "caution": "A finite horizon value does not prove central regularity."
+    },
+    {
+      "id": "xi-weak",
+      "name": "Weak segment density",
+      "html": "Ξ_weak(r) = r_s/(2r)",
+      "meaning": "Outer weak-field branch.",
+      "variables": "r_s Schwarzschild scale; r areal radius.",
+      "units": "dimensionless",
+      "domain": "r/r_s > 2.2",
+      "limits": "Ξ→0 at infinity.",
+      "example": "Ξ(10r_s)=0.05.",
+      "code": "1/(2*x)",
+      "tests": [
+        "far-field limits",
+        "PPN tests"
+      ],
+      "source": "physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md",
+      "caution": "Null paths still require full metric or PPN machinery."
+    },
+    {
+      "id": "blend",
+      "name": "C2 blend",
+      "html": "Ξ(r)=H5(t), t=(r/r_s−1.8)/0.4",
+      "meaning": "Quintic Hermite bridge matching value, slope and curvature.",
+      "variables": "t normalized blend coordinate.",
+      "units": "dimensionless",
+      "domain": "1.8 ≤ r/r_s ≤ 2.2",
+      "limits": "Matches both branches through second derivative.",
+      "example": "t=0 at 1.8r_s and t=1 at 2.2r_s.",
+      "code": "quintic Hermite endpoint interpolation",
+      "tests": [
+        "C2 endpoint suite"
+      ],
+      "source": "physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md",
+      "caution": "The original cubic zero-slope dashboard interpolation was not canonical."
+    },
+    {
+      "id": "metric",
+      "name": "Diagonal metric ansatz",
+      "html": "ds²=−D²c²dt²+D⁻²dr²+r²dΩ²",
+      "meaning": "Static spherical effective geometry.",
+      "variables": "dΩ²=dθ²+sin²θ dϕ².",
+      "units": "length squared",
+      "domain": "Declared exterior/diagonal model.",
+      "limits": "Finite coefficients at r_s; divergent central curvature.",
+      "example": "At r_s, g_tt/c²≈−0.308.",
+      "code": "diag(-D², D⁻², r², r²sin²θ)",
+      "tests": [
+        "metric tensor",
+        "inverse metric"
+      ],
+      "source": "physics/ssz-complete-documentation/06_STRONG_FIELD/black_hole_metric.md",
+      "caution": "A fundamental global solution is not yet derived."
+    },
+    {
+      "id": "center-a",
+      "name": "Central metric limit",
+      "html": "A(r)→1/4",
+      "meaning": "Since Ξ→1 and D→1/2, A=D² approaches one quarter.",
+      "variables": "A=D².",
+      "units": "dimensionless",
+      "domain": "Formal diagonal continuation r→0.",
+      "limits": "Finite coefficient, non-regular areal centre.",
+      "example": "(1/2)²=1/4.",
+      "code": "0.25",
+      "tests": [
+        "symbolic centre limit"
+      ],
+      "source": "P0 current scientific scope",
+      "caution": "Finite A does not prevent curvature divergence."
+    },
+    {
+      "id": "ricci-center",
+      "name": "Central Ricci asymptotic",
+      "html": "R(r)~3/(2r²)",
+      "meaning": "Quadratic curvature divergence.",
+      "variables": "R Ricci scalar; r areal radius.",
+      "units": "length^-2",
+      "domain": "r→0",
+      "limits": "Divergent.",
+      "example": "Halving r multiplies the leading term by four.",
+      "code": "3/(2*r**2)",
+      "tests": [
+        "symbolic curvature asymptotics"
+      ],
+      "source": "P0 current scientific scope",
+      "caution": "Supersedes older flat-centre claims."
+    },
+    {
+      "id": "kretschmann-center",
+      "name": "Central Kretschmann asymptotic",
+      "html": "K(r)~9/(4r⁴)",
+      "meaning": "Invariant quartic central divergence.",
+      "variables": "K=R_abcd R^abcd.",
+      "units": "length^-4",
+      "domain": "r→0",
+      "limits": "Divergent.",
+      "example": "Halving r multiplies the leading term by sixteen.",
+      "code": "9/(4*r**4)",
+      "tests": [
+        "symbolic curvature asymptotics"
+      ],
+      "source": "P0 current scientific scope",
+      "caution": "Complete singularity freedom is not established."
+    },
+    {
+      "id": "redshift",
+      "name": "Static redshift proxy",
+      "html": "z(r)=1/D(r)−1=Ξ(r)",
+      "meaning": "Static clock-frequency proxy in the declared metric.",
+      "variables": "z redshift.",
+      "units": "dimensionless",
+      "domain": "Static timelike observable.",
+      "limits": "z(r_s)=0.801711847; z→0 at infinity.",
+      "example": "Observed model frequency is scaled by D.",
+      "code": "1/D-1",
+      "tests": [
+        "clock and redshift tests"
+      ],
+      "source": "physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md",
+      "caution": "Real spectra also contain kinematics and astrophysical systematics."
+    },
+    {
+      "id": "rs",
+      "name": "Schwarzschild scale",
+      "html": "r_s=2GM/c²",
+      "meaning": "Mass-dependent radial scale.",
+      "variables": "G gravity constant; M mass; c light speed.",
+      "units": "metres",
+      "domain": "M>0",
+      "limits": "Linear in mass.",
+      "example": "One solar mass gives approximately 2.953 km.",
+      "code": "2*G*M/c**2",
+      "tests": [
+        "constant and unit tests"
+      ],
+      "source": "physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md",
+      "caution": "Its global interpretation differs between metric models."
+    },
+    {
+      "id": "lensing",
+      "name": "PPN light deflection",
+      "html": "α=(1+γ)r_s/b",
+      "meaning": "Weak-field null-path deflection.",
+      "variables": "b impact parameter; γ PPN parameter.",
+      "units": "radians",
+      "domain": "Weak-field PPN.",
+      "limits": "γ=1 gives 2r_s/b.",
+      "example": "Solar limb gives about 1.75 arcseconds.",
+      "code": "(1+gamma)*rs/b",
+      "tests": [
+        "lensing deflection"
+      ],
+      "source": "physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md",
+      "caution": "Do not replace by an Ξ-only shortcut."
+    },
+    {
+      "id": "shapiro",
+      "name": "PPN Shapiro delay",
+      "html": "Δt=(1+γ)(r_s/c)ln(4r1r2/d²)",
+      "meaning": "Weak-field excess light-travel time.",
+      "variables": "r1,r2 endpoint radii; d closest approach.",
+      "units": "seconds",
+      "domain": "Applicable PPN light-path geometry.",
+      "limits": "γ=1 gives the GR-compatible factor two.",
+      "example": "Cassini constrains γ.",
+      "code": "(1+gamma)*(rs/c)*log(4*r1*r2/d**2)",
+      "tests": [
+        "Shapiro delay",
+        "Cassini comparison"
+      ],
+      "source": "physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md",
+      "caution": "Round-trip duplication is separate from the PPN factor."
+    },
+    {
+      "id": "perihelion",
+      "name": "PPN perihelion advance",
+      "html": "Δω=6πGM/[a(1−e²)c²]",
+      "meaning": "Weak-field secular orbital advance.",
+      "variables": "a semi-major axis; e eccentricity.",
+      "units": "radians per orbit",
+      "domain": "Weak field and slow motion.",
+      "limits": "Uses β=γ=1 PPN machinery.",
+      "example": "Mercury gives about 42.98 arcseconds per century.",
+      "code": "6*pi*G*M/(a*(1-e**2)*c**2)",
+      "tests": [
+        "perihelion regression"
+      ],
+      "source": "physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md",
+      "caution": "Weak-field agreement does not test the SSZ interior."
+    }
   ]
 }

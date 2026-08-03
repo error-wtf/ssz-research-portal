@@ -163,26 +163,21 @@
     const massInput = document.getElementById("mass-input");
     const massUnit = document.getElementById("mass-unit");
     const radiusInput = document.getElementById("calc-radius");
-    const frequency = document.getElementById("jif-frequency");
-    const duration = document.getElementById("jif-duration");
     const update = () => {
       const mass = Number(massInput?.value || 1) * (massUnit?.value === "solar" ? SOLAR_MASS : 1);
       const rs = 2 * G * mass / C ** 2;
       const x = Math.max(.0001, Number(radiusInput?.value || 1));
       const d = dilation(x);
-      const f = Number(frequency?.value || 1e9);
-      const t = Number(duration?.value || 1);
       const set = (id, value) => document.getElementById(id)?.replaceChildren(document.createTextNode(value));
       set("rs-output", `${fmt(rs, 6)} m`);
       set("calc-xi", fmt(xi(x), 10));
       set("calc-d", fmt(d, 10));
       set("calc-z", fmt(1 / d - 1, 10));
-      set("jif-output", `${fmt(f * d * t, 4)} cycles`);
       set("photon-output", `${fmt(1.594811, 6)} r_s (declared decay/global comparison)`);
       set("isco-output", "Repository-derived value: verify metric branch and provenance");
       set("shadow-output", "Model-dependent: do not infer from horizon D alone");
     };
-    [massInput, massUnit, radiusInput, frequency, duration].forEach(input => input?.addEventListener("input", update));
+    [massInput, massUnit, radiusInput].forEach(input => input?.addEventListener("input", update));
     update();
   }
 

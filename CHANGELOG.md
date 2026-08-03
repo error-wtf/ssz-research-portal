@@ -7,7 +7,7 @@
 - corrected the strong/weak blend to quintic C² Hermite matching;
 - added Ξ/D plots, reference comparison and calculators;
 - incorporated the P0 central non-regularity correction;
-- generated 21,477-file, 37-repository, 10,817-test and 4,000-formula-candidate catalogues;
+- generated 18,308-file, 35-public-scope-repository, 10,084-test and 4,000-formula-candidate catalogues;
 - added provenance, conflicts, open questions and validation tooling.
 - replaced the broken Chart.js Ξ/D explorer with a dependency-free Canvas renderer,
   including linear/log axes, regime markers, pointer inspection and responsive sizing;
@@ -22,3 +22,10 @@
 - generated a safe snapshot of all 43 public repositories and a complete filtered
   catalogue of 31 public physics/mathematics repositories;
 - added runtime-initialisation tests for the metric explorer and all visual modules.
+- added a complete interactive atlas for 35 public-scope local physics and
+  mathematics repositories, covering 18,720 repository files with key
+  documents, results, test artefacts, image counts, languages and scope notes;
+- removed the private research area from every published page, visualisation,
+  catalogue and machine-readable dataset;
+- added a gitignored local exclusion mechanism so inventory regeneration cannot
+  silently republish private research sources.

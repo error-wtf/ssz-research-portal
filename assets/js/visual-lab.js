@@ -62,18 +62,6 @@
     label(c,"rₛ",cx+Math.sqrt(1/8)*maxR+6,cy-6,"left","#b42318");label(c,`${fmt(x,2)} rₛ`,cx+pr+7,cy+17,"left",gold);
     label(c,`proper radial scale s = ${fmt(s,4)}`,18,25,"left",text,14);label(c,"circle area remains 4πr²",18,h-17,"left",muted,12);
   }
-  function clock(c,cx,cy,r,phase,title,rate,colourValue){
-    ring(c,cx,cy,r,colour("--line"),3);for(let i=0;i<12;i++){const a=i*Math.PI/6;c.beginPath();c.moveTo(cx+Math.cos(a)*r*.86,cy+Math.sin(a)*r*.86);c.lineTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r);c.stroke();}
-    c.strokeStyle=colourValue;c.lineWidth=4;c.beginPath();c.moveTo(cx,cy);c.lineTo(cx+Math.cos(phase-Math.PI/2)*r*.72,cy+Math.sin(phase-Math.PI/2)*r*.72);c.stroke();
-    c.fillStyle=colourValue;c.beginPath();c.arc(cx,cy,5,0,Math.PI*2);c.fill();label(c,title,cx,cy+r+28,"center",colour("--text"),14);label(c,`rate ${fmt(rate,5)}`,cx,cy+r+47,"center",colour("--muted"),12);
-  }
-  function drawPhase(){
-    const canvas=document.getElementById("phase-canvas");if(!canvas)return;const {c,w,h}=surface(canvas);
-    const inner=val("phase-inner"),outer=val("phase-outer"),di=D(inner),doo=D(outer);
-    put("phase-inner-out",`${fmt(inner,2)} rₛ`);put("phase-outer-out",`${fmt(outer,2)} rₛ`);put("phase-di",fmt(di,8));put("phase-do",fmt(doo,8));put("phase-delta",`${fmt(Math.abs(doo-di)*10,6)} cycles`);
-    const radius=Math.min(w*.16,h*.27,100);clock(c,w*.29,h*.45,radius,time*di*2*Math.PI,`inner · ${fmt(inner,2)} rₛ`,di,colour("--gold"));clock(c,w*.71,h*.45,radius,time*doo*2*Math.PI,`outer · ${fmt(outer,2)} rₛ`,doo,"#2563eb");
-    label(c,`phase lead after displayed t: ${fmt(Math.abs(doo-di)*time,4)} cycles`,w/2,h-18,"center",colour("--text"),13);
-  }
   function drawLensing(){
     const canvas=document.getElementById("lensing-canvas");if(!canvas)return;const {c,w,h,text,muted,line,gold}=surface(canvas),b=val("impact"),alpha=2/b;
     put("impact-out",fmt(b,1));put("alpha-out",`${fmt(alpha,6)} rad (${fmt(alpha*180/Math.PI,4)}°)`);
@@ -139,7 +127,7 @@
     label(c,"log₁₀ R ~ log₁₀[3/(2r²)]",area.l,20,"left","#2563eb");label(c,"log₁₀ K ~ log₁₀[9/(4r⁴)]",area.r,20,"right",gold);
     label(c,"log₁₀(r/rₛ)",(area.l+area.r)/2,h-12,"center",text);c.save();c.translate(15,(area.t+area.b)/2);c.rotate(-Math.PI/2);label(c,"log₁₀ magnitude",0,0,"center",text);c.restore();
   }
-  const draws=[drawPhi,drawRadial,drawPhase,drawLensing,drawPotential,drawStarmap,drawSagnac,drawCurvature];
+  const draws=[drawPhi,drawRadial,drawLensing,drawPotential,drawStarmap,drawSagnac,drawCurvature];
   function drawAll(){draws.forEach(draw=>draw());}
   function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(running&&!document.hidden)time+=dt;drawAll();requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{

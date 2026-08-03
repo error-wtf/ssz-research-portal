@@ -8,7 +8,6 @@ SSZ is a scientifically serious, mathematically concrete and falsifiable strong-
 - explicit strong, blend and weak branches;
 - finite declared horizon values `Ξ(r_s)≈0.801711847` and `D(r_s)≈0.555027709`;
 - computable observables and reproducible implementations;
-- a phase-counting definition of JIF;
 - explicit weak-field/PPN compatibility paths;
 - concrete falsification opportunities.
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## 2026-08-03 — Deep research extension
+
+- added a 25-item public SSZ paper catalogue with claim status, topic,
+  peer-review guardrails and partial item-level ResearchGate/viXra verification;
+- added the searchable `papers.html` research-record page;
+- replaced the synthetic 180-point “SSZ starmap” with 240 real observation
+  metadata records plotted in their supplied ICRS coordinates;
+- removed the illustrative radial sky deformation because it was not an
+  observational result;
+- expanded the reviewed formula dataset to 28 equations with MathJax rendering,
+  units, domains, source-text copying and interpretation guardrails;
+- expanded theory with connection, curvature, effective-source diagnostics, a
+  regularity ladder and paper-to-theory mapping;
+- added hard validation for the private-research exclusion and new catalogues.
+
 ## 2026-08-03
 
 - preserved the original dashboard in `source-template/`;

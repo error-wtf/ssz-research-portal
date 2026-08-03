@@ -37,6 +37,7 @@
     );
   }
   const dilation = x => 1 / (1 + xi(x));
+  const branch = x => x < 1.8 ? "strong" : x > 2.2 ? "weak" : "C² bridge";
   const grDilation = x => x > 1 ? Math.sqrt(1 - 1 / x) : null;
   const fmt = (number, digits = 8) => Number.isFinite(number)
     ? number.toLocaleString("en-US", { maximumFractionDigits: digits })
@@ -132,6 +133,7 @@
     document.getElementById("xi-value")?.replaceChildren(document.createTextNode(fmt(xi(x), 9)));
     document.getElementById("d-value")?.replaceChildren(document.createTextNode(fmt(dilation(x), 9)));
     document.getElementById("z-value")?.replaceChildren(document.createTextNode(fmt(xi(x), 9)));
+    document.getElementById("branch-value")?.replaceChildren(document.createTextNode(branch(x)));
   }
 
   function inspectPlot(event) {
@@ -189,5 +191,5 @@
     calculators();
   });
   window.addEventListener("ssz-theme-change", updatePlot);
-  window.SSZ = {PHI, strong, weak, xi, dilation, quinticHermite};
+  window.SSZ = {PHI, strong, weak, xi, dilation, branch, quinticHermite};
 })();

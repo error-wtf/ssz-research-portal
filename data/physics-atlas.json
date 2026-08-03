@@ -434,7 +434,6 @@
         "physics/Segmented-Spacetime-Book/README.md",
         "physics/Segmented-Spacetime-Book/STAGE_0_THEORY_RECONSTRUCTION.md",
         "physics/Segmented-Spacetime-Book/references/README.md",
-        "physics/Segmented-Spacetime-Book/reports/07_jif_canonical_candidate_map.md",
         "physics/Segmented-Spacetime-Book/reports/17_preliminary_book_architecture.md",
         "physics/Segmented-Spacetime-Book/reports/08_existing_book_architecture_audit.md",
         "physics/Segmented-Spacetime-Book/knowledge/argument_graphs/falsifiability.md",
@@ -1075,7 +1074,6 @@
         }
       ],
       "key_documents": [
-        "physics/hilfsdateien/JIF_FOUNDATION_CANONICAL.md",
         "physics/hilfsdateien/SSZ_CANONICAL_FORMULAS_2026.md",
         "physics/hilfsdateien/SSZ_PROJECT_PART_01_THEORY_CORE.md",
         "physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md",

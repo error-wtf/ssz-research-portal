@@ -1,214 +1,258 @@
 {
-  "status": "human-curated English catalogue from P0 and current canonical sources",
-  "count": 12,
+  "status": "curated current formula reference",
+  "count": 28,
   "formulas": [
     {
+      "id": "rs",
+      "name": "Schwarzschild length scale",
+      "latex": "r_s = 2GM/c^2",
+      "topic": "geometry",
+      "units": "m",
+      "domain": "M > 0",
+      "caution": "Defines the radial normalization; it does not itself assert a Schwarzschild metric."
+    },
+    {
+      "id": "x",
+      "name": "Normalized radius",
+      "latex": "x = r/r_s",
+      "topic": "geometry",
+      "units": "1",
+      "domain": "r_s > 0",
+      "caution": "Dimensionless coordinate used by the branch functions."
+    },
+    {
+      "id": "phi",
+      "name": "Golden ratio",
+      "latex": "\\varphi = (1+\\sqrt{5})/2",
+      "topic": "foundations",
+      "units": "1",
+      "domain": "constant",
+      "caution": "A declared SSZ model parameter in the strong branch, not an empirical fit result by itself."
+    },
+    {
       "id": "xi-strong",
-      "name": "Strong segment density",
-      "html": "Ξ_strong(r) = 1 − exp(−φ r_s/r)",
-      "meaning": "Dimensionless operative inner-branch field.",
-      "variables": "r areal radius; r_s Schwarzschild scale; φ golden ratio.",
-      "units": "dimensionless",
-      "domain": "r/r_s < 1.8",
-      "limits": "Ξ(r_s)=0.801711847; Ξ→1 as r→0.",
-      "example": "At r=r_s, evaluate 1−exp(−φ).",
-      "code": "1 - exp(-PHI/x)",
-      "tests": [
-        "strong-branch limits",
-        "horizon value"
-      ],
-      "source": "physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md",
-      "caution": "A finite horizon value does not prove central regularity."
+      "name": "Strong branch",
+      "latex": "\\Xi_s(x)=1-\\exp(-\\varphi/x)",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 < x < 1.8",
+      "caution": "Canonical P0 strong branch."
     },
     {
       "id": "xi-weak",
-      "name": "Weak segment density",
-      "html": "Ξ_weak(r) = r_s/(2r)",
-      "meaning": "Outer weak-field branch.",
-      "variables": "r_s Schwarzschild scale; r areal radius.",
-      "units": "dimensionless",
-      "domain": "r/r_s > 2.2",
-      "limits": "Ξ→0 at infinity.",
-      "example": "Ξ(10r_s)=0.05.",
-      "code": "1/(2*x)",
-      "tests": [
-        "far-field limits",
-        "PPN tests"
-      ],
-      "source": "physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md",
-      "caution": "Null paths still require full metric or PPN machinery."
+      "name": "Weak branch",
+      "latex": "\\Xi_w(x)=1/(2x)",
+      "topic": "field",
+      "units": "1",
+      "domain": "x > 2.2",
+      "caution": "Matches GM/(rc²) because r_s=2GM/c²."
+    },
+    {
+      "id": "blend-t",
+      "name": "Blend coordinate",
+      "latex": "t=(x-1.8)/0.4",
+      "topic": "field",
+      "units": "1",
+      "domain": "1.8 ≤ x ≤ 2.2",
+      "caution": "Maps the transition interval to [0,1]."
     },
     {
       "id": "blend",
-      "name": "C2 blend",
-      "html": "Ξ(r)=H5(t), t=(r/r_s−1.8)/0.4",
-      "meaning": "Quintic Hermite bridge matching value, slope and curvature.",
-      "variables": "t normalized blend coordinate.",
-      "units": "dimensionless",
-      "domain": "1.8 ≤ r/r_s ≤ 2.2",
-      "limits": "Matches both branches through second derivative.",
-      "example": "t=0 at 1.8r_s and t=1 at 2.2r_s.",
-      "code": "quintic Hermite endpoint interpolation",
-      "tests": [
-        "C2 endpoint suite"
-      ],
-      "source": "physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md",
-      "caution": "The original cubic zero-slope dashboard interpolation was not canonical."
+      "name": "Quintic Hermite bridge",
+      "latex": "\\Xi_b(t)=\\sum_{k=0}^{5}a_k t^k",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 ≤ t ≤ 1",
+      "caution": "Six coefficients match value, slope and curvature at both endpoints."
+    },
+    {
+      "id": "blend-conditions",
+      "name": "C² endpoint conditions",
+      "latex": "\\Xi_b^{(k)}(x_i)=\\Xi_i^{(k)}(x_i),\\quad k=0,1,2",
+      "topic": "field",
+      "units": "varies by derivative",
+      "domain": "x_i ∈ {1.8,2.2}",
+      "caution": "The derivatives are with respect to the same normalized coordinate."
+    },
+    {
+      "id": "d",
+      "name": "Time factor",
+      "latex": "D(r)=1/[1+\\Xi(r)]",
+      "topic": "metric",
+      "units": "1",
+      "domain": "declared branch domain",
+      "caution": "Maps the segment field to the static clock factor."
+    },
+    {
+      "id": "s",
+      "name": "Radial stretch",
+      "latex": "s(r)=1+\\Xi(r)=D^{-1}(r)",
+      "topic": "metric",
+      "units": "1",
+      "domain": "declared branch domain",
+      "caution": "Reciprocal scaling used in the diagonal ansatz."
     },
     {
       "id": "metric",
-      "name": "Diagonal metric ansatz",
-      "html": "ds²=−D²c²dt²+D⁻²dr²+r²dΩ²",
-      "meaning": "Static spherical effective geometry.",
-      "variables": "dΩ²=dθ²+sin²θ dϕ².",
-      "units": "length squared",
-      "domain": "Declared exterior/diagonal model.",
-      "limits": "Finite coefficients at r_s; divergent central curvature.",
-      "example": "At r_s, g_tt/c²≈−0.308.",
-      "code": "diag(-D², D⁻², r², r²sin²θ)",
-      "tests": [
-        "metric tensor",
-        "inverse metric"
-      ],
-      "source": "physics/ssz-complete-documentation/06_STRONG_FIELD/black_hole_metric.md",
-      "caution": "A fundamental global solution is not yet derived."
+      "name": "Static spherical metric",
+      "latex": "ds^2=-D^2c^2dt^2+D^{-2}dr^2+r^2d\\Omega^2",
+      "topic": "metric",
+      "units": "m²",
+      "domain": "static spherical effective model",
+      "caution": "The angular radius is areal: sphere area is 4πr²."
     },
     {
-      "id": "center-a",
-      "name": "Central metric limit",
-      "html": "A(r)→1/4",
-      "meaning": "Since Ξ→1 and D→1/2, A=D² approaches one quarter.",
-      "variables": "A=D².",
-      "units": "dimensionless",
-      "domain": "Formal diagonal continuation r→0.",
-      "limits": "Finite coefficient, non-regular areal centre.",
-      "example": "(1/2)²=1/4.",
-      "code": "0.25",
-      "tests": [
-        "symbolic centre limit"
-      ],
-      "source": "P0 current scientific scope",
-      "caution": "Finite A does not prevent curvature divergence."
+      "id": "solid-angle",
+      "name": "Unit-sphere line element",
+      "latex": "d\\Omega^2=d\\theta^2+\\sin^2\\theta\\,d\\phi^2",
+      "topic": "geometry",
+      "units": "1",
+      "domain": "spherical coordinates",
+      "caution": "Angular part of the metric."
     },
     {
-      "id": "ricci-center",
-      "name": "Central Ricci asymptotic",
-      "html": "R(r)~3/(2r²)",
-      "meaning": "Quadratic curvature divergence.",
-      "variables": "R Ricci scalar; r areal radius.",
-      "units": "length^-2",
-      "domain": "r→0",
-      "limits": "Divergent.",
-      "example": "Halving r multiplies the leading term by four.",
-      "code": "3/(2*r**2)",
-      "tests": [
-        "symbolic curvature asymptotics"
-      ],
-      "source": "P0 current scientific scope",
-      "caution": "Supersedes older flat-centre claims."
+      "id": "proper-time",
+      "name": "Static proper time",
+      "latex": "d\\tau=D(r)\\,dt",
+      "topic": "clocks",
+      "units": "s",
+      "domain": "static observer",
+      "caution": "Not the proper time of a photon."
     },
     {
-      "id": "kretschmann-center",
-      "name": "Central Kretschmann asymptotic",
-      "html": "K(r)~9/(4r⁴)",
-      "meaning": "Invariant quartic central divergence.",
-      "variables": "K=R_abcd R^abcd.",
-      "units": "length^-4",
-      "domain": "r→0",
-      "limits": "Divergent.",
-      "example": "Halving r multiplies the leading term by sixteen.",
-      "code": "9/(4*r**4)",
-      "tests": [
-        "symbolic curvature asymptotics"
-      ],
-      "source": "P0 current scientific scope",
-      "caution": "Complete singularity freedom is not established."
+      "id": "radial-null",
+      "name": "Radial null coordinate slope",
+      "latex": "dr/dt=\\pm cD^2(r)",
+      "topic": "null paths",
+      "units": "m/s",
+      "domain": "radial ds²=0",
+      "caution": "Coordinate slope, not locally measured light speed."
     },
     {
-      "id": "redshift",
-      "name": "Static redshift proxy",
-      "html": "z(r)=1/D(r)−1=Ξ(r)",
-      "meaning": "Static clock-frequency proxy in the declared metric.",
-      "variables": "z redshift.",
-      "units": "dimensionless",
-      "domain": "Static timelike observable.",
-      "limits": "z(r_s)=0.801711847; z→0 at infinity.",
-      "example": "Observed model frequency is scaled by D.",
-      "code": "1/D-1",
-      "tests": [
-        "clock and redshift tests"
-      ],
-      "source": "physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md",
-      "caution": "Real spectra also contain kinematics and astrophysical systematics."
+      "id": "redshift-general",
+      "name": "Static emitter-observer redshift",
+      "latex": "1+z=D(r_o)/D(r_e)",
+      "topic": "observables",
+      "units": "1",
+      "domain": "static emitter and observer",
+      "caution": "Requires both radii; z=Ξ only for an observer at infinity."
     },
     {
-      "id": "rs",
-      "name": "Schwarzschild scale",
-      "html": "r_s=2GM/c²",
-      "meaning": "Mass-dependent radial scale.",
-      "variables": "G gravity constant; M mass; c light speed.",
-      "units": "metres",
-      "domain": "M>0",
-      "limits": "Linear in mass.",
-      "example": "One solar mass gives approximately 2.953 km.",
-      "code": "2*G*M/c**2",
-      "tests": [
-        "constant and unit tests"
-      ],
-      "source": "physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md",
-      "caution": "Its global interpretation differs between metric models."
+      "id": "redshift-infinity",
+      "name": "Static redshift to infinity",
+      "latex": "z_\\infty=D^{-1}(r_e)-1=\\Xi(r_e)",
+      "topic": "observables",
+      "units": "1",
+      "domain": "D(∞)=1",
+      "caution": "Does not include Doppler, plasma or transfer effects."
     },
     {
-      "id": "lensing",
-      "name": "PPN light deflection",
-      "html": "α=(1+γ)r_s/b",
-      "meaning": "Weak-field null-path deflection.",
-      "variables": "b impact parameter; γ PPN parameter.",
-      "units": "radians",
-      "domain": "Weak-field PPN.",
-      "limits": "γ=1 gives 2r_s/b.",
-      "example": "Solar limb gives about 1.75 arcseconds.",
-      "code": "(1+gamma)*rs/b",
-      "tests": [
-        "lensing deflection"
-      ],
-      "source": "physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md",
-      "caution": "Do not replace by an Ξ-only shortcut."
+      "id": "horizon-xi",
+      "name": "Horizon segment value",
+      "latex": "\\Xi(r_s)=1-e^{-\\varphi}\\approx0.801711847",
+      "topic": "limits",
+      "units": "1",
+      "domain": "x=1",
+      "caution": "Finite canonical P0 value."
+    },
+    {
+      "id": "horizon-d",
+      "name": "Horizon clock factor",
+      "latex": "D(r_s)=[2-e^{-\\varphi}]^{-1}\\approx0.555027709",
+      "topic": "limits",
+      "units": "1",
+      "domain": "x=1",
+      "caution": "Finite horizon factor; not proof of a regular centre."
+    },
+    {
+      "id": "centre-a",
+      "name": "Central coefficient limit",
+      "latex": "A(r)=D^2(r)\\to1/4",
+      "topic": "interior",
+      "units": "1",
+      "domain": "formal r→0 continuation",
+      "caution": "Finite A does not imply finite curvature."
+    },
+    {
+      "id": "ricci",
+      "name": "Ricci leading asymptotic",
+      "latex": "R(r)\\sim3/(2r^2)",
+      "topic": "interior",
+      "units": "m⁻²",
+      "domain": "formal r→0 continuation",
+      "caution": "Diverges at the areal centre."
+    },
+    {
+      "id": "kretschmann",
+      "name": "Kretschmann leading asymptotic",
+      "latex": "K(r)\\sim9/(4r^4)",
+      "topic": "interior",
+      "units": "m⁻⁴",
+      "domain": "formal r→0 continuation",
+      "caution": "Coordinate-invariant curvature divergence."
+    },
+    {
+      "id": "ppn-lensing",
+      "name": "Leading PPN light deflection",
+      "latex": "\\alpha=(1+\\gamma)r_s/b",
+      "topic": "weak field",
+      "units": "rad",
+      "domain": "b ≫ r_s",
+      "caution": "With γ=1 this gives 2r_s/b; not a strong-field ray trace."
     },
     {
       "id": "shapiro",
-      "name": "PPN Shapiro delay",
-      "html": "Δt=(1+γ)(r_s/c)ln(4r1r2/d²)",
-      "meaning": "Weak-field excess light-travel time.",
-      "variables": "r1,r2 endpoint radii; d closest approach.",
-      "units": "seconds",
-      "domain": "Applicable PPN light-path geometry.",
-      "limits": "γ=1 gives the GR-compatible factor two.",
-      "example": "Cassini constrains γ.",
-      "code": "(1+gamma)*(rs/c)*log(4*r1*r2/d**2)",
-      "tests": [
-        "Shapiro delay",
-        "Cassini comparison"
-      ],
-      "source": "physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md",
-      "caution": "Round-trip duplication is separate from the PPN factor."
+      "name": "Leading Shapiro delay",
+      "latex": "\\Delta t=(1+\\gamma)(r_s/c)\\ln(4r_1r_2/d^2)",
+      "topic": "weak field",
+      "units": "s",
+      "domain": "leading conjunction geometry",
+      "caution": "Geometry and one-way/two-way conventions must be stated."
     },
     {
       "id": "perihelion",
-      "name": "PPN perihelion advance",
-      "html": "Δω=6πGM/[a(1−e²)c²]",
-      "meaning": "Weak-field secular orbital advance.",
-      "variables": "a semi-major axis; e eccentricity.",
-      "units": "radians per orbit",
-      "domain": "Weak field and slow motion.",
-      "limits": "Uses β=γ=1 PPN machinery.",
-      "example": "Mercury gives about 42.98 arcseconds per century.",
-      "code": "6*pi*G*M/(a*(1-e**2)*c**2)",
-      "tests": [
-        "perihelion regression"
-      ],
-      "source": "physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md",
-      "caution": "Weak-field agreement does not test the SSZ interior."
+      "name": "Perihelion advance",
+      "latex": "\\Delta\\omega=6\\pi GM/[a(1-e^2)c^2]",
+      "topic": "weak field",
+      "units": "rad/orbit",
+      "domain": "β=γ=1 weak-field limit",
+      "caution": "Compatibility here does not validate the interior."
+    },
+    {
+      "id": "sagnac",
+      "name": "Leading Sagnac difference",
+      "latex": "\\Delta t\\approx4A\\Omega/c^2",
+      "topic": "rotation",
+      "units": "s",
+      "domain": "standard rotating loop",
+      "caution": "A is loop area here, not the metric coefficient A(r)."
+    },
+    {
+      "id": "null-potential",
+      "name": "Null circular-orbit diagnostic",
+      "latex": "V_{\\rm null}(r)\\propto D^2(r)/r^2",
+      "topic": "strong field",
+      "units": "relative",
+      "domain": "declared diagonal metric",
+      "caution": "A maximum is a candidate circular null orbit; stability needs full analysis."
+    },
+    {
+      "id": "energy",
+      "name": "Stationary geodesic constant",
+      "latex": "E=-g_{tt}u^t",
+      "topic": "geodesics",
+      "units": "convention dependent",
+      "domain": "stationary metric",
+      "caution": "A conserved geodesic quantity, not automatically locally measured energy."
+    },
+    {
+      "id": "angular-momentum",
+      "name": "Azimuthal geodesic constant",
+      "latex": "L=g_{\\phi\\phi}u^\\phi",
+      "topic": "geodesics",
+      "units": "convention dependent",
+      "domain": "axisymmetry",
+      "caution": "Used with normalization and radial equations."
     }
   ]
 }

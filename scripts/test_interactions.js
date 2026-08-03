@@ -6,7 +6,7 @@ const vm = require("node:vm");
 const values = {
   "phi-lambda": ".4812", "phi-levels": "9", "radial-probe": "1",
   impact: "8", "potential-max": "8",
-  "starmap-scale": "1", "rotation-rate": ".2", "loop-radius": "1",
+  "starmap-limit": "120", "starmap-facility": "", "rotation-rate": ".2", "loop-radius": "1",
   "curvature-min": "-5"
 };
 const methods = ["setTransform","clearRect","save","restore","beginPath","arc","stroke","fill",
@@ -22,7 +22,7 @@ function element(id) {
     id, value: values[id] ?? "", checked: id === "starmap-transform",
     textContent: "", width: 0, height: 0,
     getBoundingClientRect: () => ({width: 760, height: 430, left: 0, top: 0}),
-    getContext: () => context, addEventListener: () => {},
+    getContext: () => context, addEventListener: () => {}, append: () => {},
     replaceChildren(node) { this.textContent = node.textContent; }
   };
   if (!canvas) delete item.getContext;
@@ -34,6 +34,7 @@ const sandbox = {
   devicePixelRatio: 1, document: {
     hidden: false, getElementById: element,
     querySelectorAll: () => Object.keys(values).map(element),
+    createElement: tag => ({tagName: tag, value: "", textContent: ""}),
     createTextNode: text => ({textContent: String(text)}),
     addEventListener: (name, callback) => { if (name === "DOMContentLoaded") ready = callback; }
   },
@@ -42,6 +43,7 @@ const sandbox = {
   })[name] || ""}),
   matchMedia: () => ({matches: true, addEventListener: () => {}}),
   requestAnimationFrame: callback => { sandbox.frame = callback; return 1; },
+  fetch: async () => ({json: async () => ({objects: [{target:"test",ra_deg:266,dec_deg:-29,facility:"JAO"}]})}),
   addEventListener: () => {}, CustomEvent: function(){},
 };
 sandbox.window = sandbox;

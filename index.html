@@ -6,7 +6,6 @@
   <meta name="description" content="A provenance-first, interactive research portal for Segmented Spacetime (SSZ) and JIF.">
   <title>Segmented Spacetime — Research Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/site.css">
   <script defer src="assets/js/site.js"></script>
@@ -40,6 +39,7 @@
       <p class="lead">A complete, inspectable research portal for SSZ and JIF: geometry, observables, source code, test evidence, falsification criteria, conflicts, and the unresolved interior problem.</p>
       <div class="actions">
         <a class="button primary" href="#dashboard">Explore the metric</a>
+        <a class="button" href="visual-lab.html">Open the interactive visual lab</a>
         <a class="button" href="theory.html">Read the theory from first principles</a>
         <a class="button" href="reproducibility.html">Reproduce the work</a>
       </div>
@@ -62,6 +62,15 @@
     </div>
     <div class="callout warning" style="margin-top:1.2rem">
       <strong>P0 correction:</strong> finite horizon time dilation is the strongest secure theoretical result. It does not establish a regular centre. In the canonical diagonal continuation, A(r)→1/4 while R(r)~3/(2r²) and K(r)~9/(4r⁴); the areal centre is therefore not regular.
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span class="section-kicker">Self-hosted scientific animation</span><h2>See the equations change</h2><p class="lead">Six responsive visual modules connect parameters to geometry: conceptual φ levels, canonical radial scaling, JIF phase clocks, weak-field lensing, Sagnac rotation and the P0 curvature divergence.</p></div>
+    <div class="grid grid-3">
+      <article class="card"><h3>Canonical mappings</h3><p>Move through r/r<sub>s</sub> and watch Ξ, D and s change together, with the active strong, transition or weak branch shown explicitly.</p></article>
+      <article class="card"><h3>Phase and paths</h3><p>Compare two physical phase clocks, change a lensing impact parameter, and follow counter-propagating signals on a rotating loop.</p></article>
+      <article class="card"><h3>Scientific boundaries</h3><p>Every animation is labelled as canonical, reference, asymptotic or conceptual so that explanatory graphics never silently become evidence.</p><p><a class="button primary" href="visual-lab.html">Launch visual lab</a></p></article>
     </div>
   </section>
 

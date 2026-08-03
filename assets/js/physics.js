@@ -4,7 +4,7 @@
   const G = 6.67430e-11;
   const C = 299792458;
   const SOLAR_MASS = 1.98847e30;
-  let chart;
+  let plotState = null;
 
   const strong = x => 1 - Math.exp(-PHI / x);
   const strongPrime = x => -PHI * Math.exp(-PHI / x) / (x * x);
@@ -44,7 +44,7 @@
 
   function updatePlot() {
     const canvas = document.getElementById("metric-chart");
-    if (!canvas || !window.Chart) return;
+    if (!canvas) return;
     const max = Number(document.getElementById("radius-max")?.value || 12);
     const log = document.getElementById("log-axis")?.checked;
     const showLimits = document.getElementById("show-limits")?.checked;
@@ -56,56 +56,107 @@
       return log ? min * (max / min) ** t : min + (max - min) * t;
     });
     const ssz = xs.map(x => quantity === "xi" ? xi(x) : dilation(x));
-    const gr = xs.map(x => quantity === "xi" ? (x >= 1 ? 1 / Math.sqrt(1 - 1/x) - 1 : null) : grDilation(x));
+    const gr = xs.map(x => quantity === "xi" ? (x > 1 ? 1 / Math.sqrt(1 - 1/x) - 1 : null) : grDilation(x));
     const dark = document.documentElement.dataset.theme === "dark";
     const grid = dark ? "#334155" : "#e2e8f0";
     const text = dark ? "#cbd5e1" : "#475569";
-    chart?.destroy();
-    chart = new Chart(canvas, {
-      type: "line",
-      data: {
-        labels: xs,
-        datasets: [
-          {label: quantity === "xi" ? "SSZ Ξ(x)" : "SSZ D(x)", data: ssz, borderColor: "#b8860b", borderWidth: 3, pointRadius: 0},
-          {label: quantity === "xi" ? "GR equivalent redshift proxy" : "Schwarzschild D", data: gr, borderColor: "#2563eb", borderDash: [8,5], borderWidth: 2, pointRadius: 0}
-        ]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false, parsing: false,
-        interaction: {mode: "index", intersect: false},
-        plugins: {
-          legend: {labels: {color: text}},
-          annotation: undefined,
-          tooltip: {callbacks: {
-            title: items => `r/r_s = ${fmt(xs[items[0].dataIndex], 5)}`,
-            label: item => `${item.dataset.label}: ${item.raw === null ? "outside domain" : fmt(item.raw, 9)}`
-          }}
-        },
-        scales: {
-          x: {type: log ? "logarithmic" : "linear", min, max, grid: {color: grid}, ticks: {color: text}, title: {display: true, text: "Normalized areal radius x = r/r_s", color: text}},
-          y: {grid: {color: grid}, ticks: {color: text}, title: {display: true, text: quantity === "xi" ? "Segment density Ξ" : "Time-dilation factor D", color: text}}
-        }
-      },
-      plugins: [{
-        id: "sszLimits",
-        afterDraw(instance) {
-          if (!showLimits) return;
-          const {ctx, chartArea, scales} = instance;
-          [1, 1.8, 2.2].forEach((x, index) => {
-            const px = scales.x.getPixelForValue(x);
-            if (px < chartArea.left || px > chartArea.right) return;
-            ctx.save(); ctx.strokeStyle = ["#b42318", "#7c3aed", "#7c3aed"][index];
-            ctx.setLineDash([4,4]); ctx.beginPath(); ctx.moveTo(px, chartArea.top); ctx.lineTo(px, chartArea.bottom); ctx.stroke();
-            ctx.fillStyle = text; ctx.font = "11px Inter"; ctx.fillText(["r_s","1.8 r_s","2.2 r_s"][index], px+4, chartArea.top+14); ctx.restore();
-          });
-        }
-      }]
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvas.getBoundingClientRect();
+    const width = Math.max(320, rect.width || 760);
+    const height = Math.max(340, rect.height || 470);
+    canvas.width = Math.round(width * dpr);
+    canvas.height = Math.round(height * dpr);
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const pad = {left: 66, right: 24, top: 48, bottom: 58};
+    const area = {left: pad.left, top: pad.top, right: width-pad.right, bottom: height-pad.bottom};
+    const finite = [...ssz, ...gr].filter(Number.isFinite);
+    const yMin = quantity === "d" ? 0 : 0;
+    const rawMax = Math.max(...finite, 1);
+    const yMax = quantity === "xi" ? Math.min(Math.ceil(rawMax * 4) / 4, 4) : 1.05;
+    const xPos = value => area.left + (log
+      ? Math.log(value/min) / Math.log(max/min)
+      : (value-min)/(max-min)) * (area.right-area.left);
+    const yPos = value => area.bottom - (value-yMin)/(yMax-yMin) * (area.bottom-area.top);
+    ctx.clearRect(0, 0, width, height);
+    ctx.font = "12px Inter, sans-serif";
+    ctx.fillStyle = text;
+    ctx.strokeStyle = grid;
+    ctx.lineWidth = 1;
+    for (let i=0; i<=5; i++) {
+      const value = yMin + (yMax-yMin)*i/5;
+      const py = yPos(value);
+      ctx.beginPath(); ctx.moveTo(area.left, py); ctx.lineTo(area.right, py); ctx.stroke();
+      ctx.textAlign = "right"; ctx.fillText(fmt(value, 2), area.left-9, py+4);
+    }
+    const xTicks = log
+      ? [0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100].filter(value => value >= min && value <= max)
+      : Array.from({length: 6}, (_, i) => min+(max-min)*i/5);
+    xTicks.forEach(value => {
+      const px = xPos(value);
+      ctx.beginPath(); ctx.moveTo(px, area.top); ctx.lineTo(px, area.bottom); ctx.stroke();
+      ctx.textAlign = "center"; ctx.fillText(fmt(value, value < 1 ? 2 : 1), px, area.bottom+20);
     });
+    const line = (values, colour, dashed=false) => {
+      ctx.save(); ctx.strokeStyle = colour; ctx.lineWidth = dashed ? 2 : 3;
+      ctx.setLineDash(dashed ? [8,5] : []); ctx.beginPath();
+      let active = false;
+      values.forEach((value, index) => {
+        if (!Number.isFinite(value) || value > yMax) { active = false; return; }
+        const px=xPos(xs[index]), py=yPos(value);
+        if (!active) ctx.moveTo(px,py); else ctx.lineTo(px,py);
+        active = true;
+      });
+      ctx.stroke(); ctx.restore();
+    };
+    line(gr, "#2563eb", true);
+    line(ssz, dark ? "#e0b84a" : "#b8860b");
+    if (showLimits) [1,1.8,2.2].forEach((value,index) => {
+      if (value < min || value > max) return;
+      const px=xPos(value);
+      ctx.save(); ctx.strokeStyle=index ? "#7c3aed" : "#b42318"; ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(px,area.top); ctx.lineTo(px,area.bottom); ctx.stroke();
+      ctx.fillStyle=text; ctx.textAlign="left"; ctx.fillText(["rₛ","1.8 rₛ","2.2 rₛ"][index],px+4,area.top+14); ctx.restore();
+    });
+    ctx.fillStyle = dark ? "#e0b84a" : "#b8860b"; ctx.fillRect(area.left, 14, 24, 3);
+    ctx.fillStyle=text; ctx.textAlign="left"; ctx.fillText(quantity==="xi" ? "SSZ Ξ(x)" : "SSZ D(x)",area.left+32,20);
+    ctx.strokeStyle="#2563eb"; ctx.setLineDash([8,5]); ctx.beginPath(); ctx.moveTo(area.left+150,16);ctx.lineTo(area.left+174,16);ctx.stroke();ctx.setLineDash([]);
+    ctx.fillStyle=text; ctx.fillText(quantity==="xi" ? "Schwarzschild redshift proxy" : "Schwarzschild D",area.left+182,20);
+    ctx.textAlign="center"; ctx.fillText("Normalized areal radius  x = r/rₛ", (area.left+area.right)/2, height-12);
+    ctx.save();ctx.translate(16,(area.top+area.bottom)/2);ctx.rotate(-Math.PI/2);
+    ctx.fillText(quantity==="xi" ? "Segment density Ξ" : "Time-dilation factor D",0,0);ctx.restore();
+    plotState={canvas,ctx,xs,ssz,gr,xPos,yPos,area,text,quantity};
     const x = Number(document.getElementById("probe-radius")?.value || 1);
+    document.getElementById("radius-max-value")?.replaceChildren(document.createTextNode(fmt(max, 0)));
     document.getElementById("radius-value")?.replaceChildren(document.createTextNode(fmt(x, 3)));
     document.getElementById("xi-value")?.replaceChildren(document.createTextNode(fmt(xi(x), 9)));
     document.getElementById("d-value")?.replaceChildren(document.createTextNode(fmt(dilation(x), 9)));
     document.getElementById("z-value")?.replaceChildren(document.createTextNode(fmt(xi(x), 9)));
+  }
+
+  function inspectPlot(event) {
+    if (!plotState) return;
+    const {canvas, xs, ssz, gr, xPos, yPos, area, text, quantity} = plotState;
+    const rect=canvas.getBoundingClientRect();
+    const px=event.clientX-rect.left;
+    if (px < area.left || px > area.right) return;
+    let index=0, distance=Infinity;
+    xs.forEach((value,i)=>{const next=Math.abs(xPos(value)-px);if(next<distance){distance=next;index=i;}});
+    updatePlot();
+    const state=plotState, x=xs[index], py=yPos(ssz[index]);
+    state.ctx.save();state.ctx.strokeStyle=text;state.ctx.setLineDash([3,3]);
+    state.ctx.beginPath();state.ctx.moveTo(xPos(x),area.top);state.ctx.lineTo(xPos(x),area.bottom);state.ctx.stroke();
+    state.ctx.fillStyle=quantity==="xi" ? "#b8860b" : "#b8860b";
+    state.ctx.beginPath();state.ctx.arc(xPos(x),py,5,0,Math.PI*2);state.ctx.fill();
+    const reference=Number.isFinite(gr[index]) ? fmt(gr[index],6) : "outside domain";
+    const label=`x=${fmt(x,4)}  SSZ=${fmt(ssz[index],6)}  reference=${reference}`;
+    state.ctx.font="12px Inter, sans-serif";
+    const boxWidth=Math.min(340,state.ctx.measureText(label).width+20);
+    const boxX=Math.min(Math.max(area.left,xPos(x)-boxWidth/2),area.right-boxWidth);
+    state.ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--surface").trim() || "#fff";
+    state.ctx.strokeStyle=text;state.ctx.setLineDash([]);state.ctx.fillRect(boxX,area.top+24,boxWidth,28);
+    state.ctx.strokeRect(boxX,area.top+24,boxWidth,28);state.ctx.fillStyle=text;state.ctx.textAlign="center";
+    state.ctx.fillText(label,boxX+boxWidth/2,area.top+43);state.ctx.restore();
   }
 
   function calculators() {
@@ -137,6 +188,8 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     ["radius-max","probe-radius","log-axis","show-limits","plot-quantity"].forEach(id => document.getElementById(id)?.addEventListener("input", updatePlot));
+    document.getElementById("metric-chart")?.addEventListener("pointermove", inspectPlot);
+    window.addEventListener("resize", updatePlot);
     updatePlot();
     calculators();
   });

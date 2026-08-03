@@ -6,61 +6,20 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".nav-links");
-    if (menu) menu.style.visibility = "hidden";
     if (menu) {
-      const pages = [["index.html","Overview"],["theory.html","Theory"],["metric.html","Metric"],["dynamics-energy.html","Dynamics & Energy"],["observations.html","Observables"],["mathematics.html","Mathematics"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["formulas.html","Formulas"],["visual-lab.html","Visual lab"],["workbench.html","Workbench"],["qubits.html","Qubits"],["tests.html","Tests"],["evidence.html","Evidence"],["repositories.html","Repositories"],["papers.html","Papers"],["research.html","Research archive"],["reproducibility.html","Reproduce"],["falsification.html","Falsification"],["glossary.html","Glossary"],["atlas.html","Atlas"]];
       const here = location.pathname.split("/").pop() || "index.html";
-      menu.innerHTML = pages.map(([href,label])=>`<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`).join("") + `<button class="nav-button reviewer-toggle" data-reviewer-toggle aria-pressed="${root.dataset.reviewer==="true"}">${root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF"}</button><button class="nav-button" data-theme-toggle>◐ Theme</button>`;
-      menu.style.visibility = "visible";
-    }
-    if (menu && !menu.querySelector('a[href="formulas.html"]')) {
-      const link = document.createElement("a");
-      link.href = "formulas.html";
-      link.textContent = "Formulas";
-      if (location.pathname.endsWith("/formulas.html")) link.setAttribute("aria-current", "page");
-      const strong = menu.querySelector('a[href="strong-field.html"]');
-      menu.insertBefore(link, strong || menu.querySelector("[data-theme-toggle]"));
-    }
-    if (menu && !menu.querySelector('a[href="visual-lab.html"]')) {
-      const link = document.createElement("a");
-      link.href = "visual-lab.html";
-      link.textContent = "Visual lab";
-      if (location.pathname.endsWith("/visual-lab.html")) link.setAttribute("aria-current", "page");
-      const tests = menu.querySelector('a[href="tests.html"]');
-      menu.insertBefore(link, tests || menu.querySelector("[data-theme-toggle]"));
-    }
-    if (menu && !menu.querySelector('a[href="atlas.html"]')) {
-      const link = document.createElement("a");
-      link.href = "atlas.html";
-      link.textContent = "Atlas";
-      if (location.pathname.endsWith("/atlas.html")) link.setAttribute("aria-current", "page");
-      const repositories = menu.querySelector('a[href="repositories.html"]');
-      menu.insertBefore(link, repositories || menu.querySelector("[data-theme-toggle]"));
-    }
-    if (menu && !menu.querySelector('a[href="papers.html"]')) {
-      const link = document.createElement("a");
-      link.href = "papers.html";
-      link.textContent = "Papers";
-      if (location.pathname.endsWith("/papers.html")) link.setAttribute("aria-current", "page");
-      const tests = menu.querySelector('a[href="tests.html"]');
-      menu.insertBefore(link, tests || menu.querySelector("[data-theme-toggle]"));
-    }
-    [
-      ["regimes.html","Regimes","strong-field.html"],
-      ["interior-global-structure.html","Interior","tests.html"],
-      ["evidence.html","Evidence","repositories.html"],
-      ["falsification.html","Falsification","glossary.html"],
-      ["workbench.html","Workbench","tests.html"],
-    ].forEach(([href,label,before])=>{
-      if(!menu||menu.querySelector(`a[href="${href}"]`))return;
-      const link=document.createElement("a");link.href=href;link.textContent=label;
-      if(location.pathname.endsWith(`/${href}`))link.setAttribute("aria-current","page");
-      menu.insertBefore(link,menu.querySelector(`a[href="${before}"]`)||menu.querySelector("[data-theme-toggle]"));
-    });
-    if(menu&&!menu.querySelector("[data-reviewer-toggle]")){
-      const button=document.createElement("button");button.className="nav-button";button.dataset.reviewerToggle="";
-      button.textContent=root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF";
-      menu.insertBefore(button,menu.querySelector("[data-theme-toggle]"));
+      const link = (href,label) => `<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`;
+      const group = (label, entries) => `<details class="nav-group"${entries.some(([href])=>href===here)?" open":""}><summary>${label}</summary><div class="nav-submenu">${entries.map(([href,text])=>link(href,text)).join("")}</div></details>`;
+      menu.innerHTML = [
+        link("index.html","Overview"),
+        group("Learn", [["theory.html","Theory"],["formulas.html","Formulas"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["glossary.html","Glossary"]]),
+        group("Models", [["metric.html","Metric"],["dynamics-energy.html","Dynamics & Energy"],["mathematics.html","Mathematics"],["qubits.html","Qubits"]]),
+        link("visual-lab.html","Visual lab"),
+        group("Evidence", [["workbench.html","Workbench"],["tests.html","Tests"],["evidence.html","Evidence"],["falsification.html","Falsification"]]),
+        group("Research", [["observations.html","Observables"],["papers.html","Papers"],["research.html","Research archive"],["repositories.html","Repositories"],["atlas.html","Atlas"]]),
+        link("reproducibility.html","Reproduce"),
+        `<button class="nav-button reviewer-toggle" data-reviewer-toggle aria-pressed="${root.dataset.reviewer==="true"}">${root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF"}</button><button class="nav-button" data-theme-toggle>◐ Theme</button>`
+      ].join("");
     }
     const toggle = document.querySelector(".menu-toggle");
     toggle?.addEventListener("click", () => {

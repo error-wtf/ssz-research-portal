@@ -10,7 +10,7 @@
 <nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>THEORY FROM A TO Z</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a aria-current="page" href="theory.html">Theory</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
 <header class="hero"><div><span class="eyebrow">Four levels of explanation</span><h1>SSZ theory<br><span class="gradient-text">from A to Z</span></h1><p class="lead">Intuition, physics, mathematics, implementation and validation are kept together so that no formula floats free of its assumptions.</p></div><div class="hero-orbit"><span class="orbit-core">ds²</span></div></header>
-<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#notation">Notation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#bridge">C² bridge</a><a href="#differential">Geometry</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#measurements">Measurements</a><a href="#electromagnetism">Electromagnetism</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#inference">Inference</a><a href="#status">Claim status</a><a href="#programme">Programme map</a><a href="#papers">Paper map</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
+<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#notation">Notation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#metric-forms">Metric forms</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#bridge">C² bridge</a><a href="#differential">Geometry</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#measurements">Measurements</a><a href="#electromagnetism">Electromagnetism</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#inference">Inference</a><a href="#status">Claim status</a><a href="#programme">Programme map</a><a href="#papers">Paper map</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
 
 <section id="segmentation" class="section">
 <div class="section-head"><span class="section-kicker">Foundations</span><h2>What “segmented” means</h2><p class="lead">Segmentation is a model description of how local radial and temporal scaling is encoded by a dimensionless field Ξ. It is not, by itself, proof that spacetime is literally made of discrete blocks.</p></div>
@@ -94,6 +94,36 @@ H_5(t)={}&h_{00}(t)y_0+h\,h_{10}(t)y'_0+h^2h_{20}(t)y''_0\\
 <article class="card"><h3>Areal radius</h3><p>The area of a symmetry sphere is 4πr². This makes r=0 a geometrically meaningful areal centre, not merely a coordinate label that can be dismissed when curvature invariants diverge.</p><p>The determinant and inverse metric being finite at one radius do not guarantee global regularity.</p></article>
 </div>
 <div class="callout warning"><strong>Scope boundary:</strong> this metric is a mathematically concrete effective geometry. A fundamental action and complete field equations that dynamically generate it are still missing.</div>
+</section>
+
+<section id="metric-forms" class="section">
+<div class="section-head"><span class="section-kicker">SSZ-METRIC_COMPLETE implementation chain</span><h2>Metric, inverse, determinant and coordinate forms</h2><p>The repository computes every component from the primary field. This provides several exact algebraic checks, but coordinate-form equivalence and component finiteness must remain distinct from curvature regularity and global completeness.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>Diagonal tensor</h3><div class="math-box" data-label="Covariant metric">\[
+g_{\mu\nu}=\operatorname{diag}\!\left(-D^2c^2,\;s^2,\;r^2,\;r^2\sin^2\theta\right),\qquad s=1+\Xi=D^{-1}.
+\]</div><p>For \(r>0\) and \(0<\theta<\pi\), the eigenvalue signs are \((-+++)\). Zeros of spherical angular factors on the axis are coordinate degeneracies of spherical coordinates.</p></article>
+<article class="card"><h3>Exact inverse</h3><div class="math-box" data-label="Contravariant metric">\[
+g^{\mu\nu}=\operatorname{diag}\!\left(-\frac{1}{D^2c^2},\;\frac1{s^2},\;\frac1{r^2},\;\frac1{r^2\sin^2\theta}\right).
+\]</div><p>The repository test multiplies \(g_{\mu\alpha}g^{\alpha\nu}\) and compares with \(\delta_\mu^{\ \nu}\) at \(10^{-10}\) relative/absolute tolerance.</p></article>
+<article class="card"><h3>Determinant and volume element</h3><div class="math-box" data-label="Exact algebraic identity">\[
+\det g=-c^2D^2s^2r^4\sin^2\theta=-c^2r^4\sin^2\theta,\qquad \sqrt{-g}=cr^2|\sin\theta|.
+\]</div><p>The cancellation follows from \(Ds=1\). It is an algebraic coupling check; it neither removes the areal centre nor forces curvature invariants to remain finite.</p></article>
+<article class="card"><h3>Local orthonormal coframe</h3><div class="math-box" data-label="Static tetrad">\[
+\vartheta^{\hat0}=Dc\,dt,\quad \vartheta^{\hat1}=s\,dr,\quad
+\vartheta^{\hat2}=r\,d\theta,\quad \vartheta^{\hat3}=r\sin\theta\,d\phi.
+\]</div><p>Then \(ds^2=-(\vartheta^{\hat0})^2+\sum_i(\vartheta^{\hat i})^2\). This is the clean route from coordinate components to local measurements.</p></article>
+</div>
+<h3>Repository flow form</h3>
+<div class="math-box" data-label="Non-diagonal coordinate representation">\[
+ds^2=-c^2(1-\beta^2)dt^2+2\beta c\,dt\,dr+dr^2+r^2d\Omega^2,
+\qquad \gamma=1+\Xi,\quad \beta=\sqrt{1-\gamma^{-2}}.
+\]</div>
+<div class="grid grid-3">
+<article class="card"><h3>Radial null directions</h3><p>In the diagonal chart, \(dr/(c\,dt)=\pm D^2\). In the flow chart the quadratic null condition gives \(dr/(c\,dt)=-\beta\pm1\). These are chart slopes, not a change of locally measured \(c\).</p></article>
+<article class="card"><h3>What is tested</h3><p>The pure-metric suite checks construction from \(\Xi\), inverse multiplication, determinant, signature, branch routing and dynamic tensor dependence. Each is an implementation property of the declared model.</p></article>
+<article class="card"><h3>What remains open</h3><p>A complete proof that the diagonal and flow forms cover the same global manifold, plus an independently derived interior, action, field equations and boundary conditions, is not supplied by these component identities.</p></article>
+</div>
+<p class="callout tested"><strong>Inspect interactively:</strong> use the rebuilt <a href="visual-lab.html#components">metric, inverse and local-frame explorer</a> to switch coordinate form, inverse components, radial scale and polar angle.</p>
 </section>
 
 <section id="inference" class="section">

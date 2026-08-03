@@ -48,13 +48,38 @@
     c.strokeStyle="#b42318";c.setLineDash([4,4]);c.beginPath();c.moveTo(xp(join),a.t);c.lineTo(xp(join),a.b);c.stroke();c.setLineDash([]);
   }
   function drawComponents(){
-    const s=surface("components-canvas");if(!s)return;const {c,w,h,a}=s,xProbe=val("component-radius"),d=D(xProbe),A=d*d,B=1/A;
-    put("component-radius-out",fmt(xProbe,2));put("component-a",fmt(A,9));put("component-b",fmt(B,9));put("component-ab",fmt(A*B,12));put("component-gtt",fmt(-A,9));
-    const min=.05,max=12,xs=Array.from({length:650},(_,i)=>min+(max-min)*i/649),sa=xs.map(x=>({x,y:D(x)**2})),sb=xs.map(x=>({x,y:1/D(x)**2}));
-    const ymax=Math.max(...sb)*1.03,xp=x=>a.l+(x-min)/(max-min)*(a.r-a.l),yp=y=>a.b-y/ymax*(a.b-a.t);
-    axes(c,a,w,h,"x = r/rₛ","metric coefficient");curve(c,sa,xp,yp,colour("--gold"));curve(c,sb,xp,yp,"#2563eb",2.2,[7,4]);
-    c.fillStyle=colour("--gold");c.fillText("A=D²",a.l+25,20);c.fillStyle="#2563eb";c.fillText("B=D⁻²",a.l+105,20);
-    c.strokeStyle="#b42318";c.setLineDash([3,3]);c.beginPath();c.moveTo(xp(xProbe),a.t);c.lineTo(xp(xProbe),a.b);c.stroke();
+    const s=surface("components-canvas");if(!s)return;
+    const {c,w,h,a}=s,xProbe=val("component-radius"),theta=val("component-theta");
+    const form=$("component-form")?.value||"diagonal",log=Boolean($("component-log")?.checked),inverse=Boolean($("component-inverse")?.checked);
+    const density=xi(xProbe),d=D(xProbe),stretch=1/d,A=d*d,B=1/A,beta=Math.sqrt(Math.max(0,1-A));
+    const gtt=form==="diagonal"?-A:-(1-beta*beta),grr=form==="diagonal"?B:1,gtr=form==="diagonal"?0:beta;
+    const nullSlope=form==="diagonal"?`±${fmt(A,6)}`:`${fmt(1-beta,6)} / ${fmt(-1-beta,6)}`;
+    put("component-radius-out",fmt(xProbe,2));put("component-theta-out",`${fmt(theta,0)}°`);
+    put("component-xi",`${fmt(density,8)} · ${window.SSZ.branch(xProbe)}`);put("component-ds",fmt(d*stretch,12));
+    put("component-gtt",fmt(gtt,9));put("component-grr",fmt(grr,9));put("component-gtr",fmt(gtr,9));
+    put("component-signature","− + + +");put("component-det","−1.000000000");put("component-null",nullSlope);
+    const min=.05,max=20,count=760,xs=Array.from({length:count},(_,i)=>{
+      const u=i/(count-1);return log?min*(max/min)**u:min+(max-min)*u;
+    });
+    const series=form==="diagonal"
+      ? (inverse
+        ? [{name:"−gᵗᵗc² = D⁻²",colour:colour("--gold"),dash:[],values:xs.map(x=>({x,y:1/D(x)**2}))},
+           {name:"gʳʳ = D²",colour:"#2563eb",dash:[7,4],values:xs.map(x=>({x,y:D(x)**2}))}]
+        : [{name:"−gₜₜ/c² = D²",colour:colour("--gold"),dash:[],values:xs.map(x=>({x,y:D(x)**2}))},
+           {name:"gᵣᵣ = D⁻²",colour:"#2563eb",dash:[7,4],values:xs.map(x=>({x,y:1/D(x)**2}))}])
+      : (inverse
+        ? [{name:"−gᵗᵗc² = 1",colour:colour("--gold"),dash:[],values:xs.map(x=>({x,y:1}))},
+           {name:"gʳʳ = 1−β²",colour:"#2563eb",dash:[7,4],values:xs.map(x=>({x,y:D(x)**2}))},
+           {name:"gᵗʳc = β",colour:"#7c3aed",dash:[3,3],values:xs.map(x=>({x,y:Math.sqrt(Math.max(0,1-D(x)**2))}))}]
+        : [{name:"−gₜₜ/c² = 1−β²",colour:colour("--gold"),dash:[],values:xs.map(x=>({x,y:D(x)**2}))},
+           {name:"gᵣᵣ = 1",colour:"#2563eb",dash:[7,4],values:xs.map(x=>({x,y:1}))},
+           {name:"gₜᵣ/c = β",colour:"#7c3aed",dash:[3,3],values:xs.map(x=>({x,y:Math.sqrt(Math.max(0,1-D(x)**2))}))}]);
+    const all=series.flatMap(item=>item.values.map(point=>point.y)),ymax=Math.max(...all)*1.08;
+    const xp=x=>a.l+(log?Math.log(x/min)/Math.log(max/min):(x-min)/(max-min))*(a.r-a.l),yp=y=>a.b-y/ymax*(a.b-a.t);
+    axes(c,a,w,h,log?"logarithmic x = r/rₛ":"x = r/rₛ",inverse?"normalised inverse component":"normalised metric component");
+    series.forEach((item,index)=>{curve(c,item.values,xp,yp,item.colour,2.3,item.dash);c.fillStyle=item.colour;c.textAlign="left";c.fillText(item.name,a.l+index*150,20);});
+    [1,1.8,2.2].forEach((boundary,index)=>{c.strokeStyle=index?"#7c3aed":"#b42318";c.setLineDash([3,3]);c.beginPath();c.moveTo(xp(boundary),a.t);c.lineTo(xp(boundary),a.b);c.stroke();});
+    c.strokeStyle="#111827";c.setLineDash([]);c.beginPath();c.moveTo(xp(xProbe),a.t);c.lineTo(xp(xProbe),a.b);c.stroke();
   }
   function clock(c,x,y,r,phase,label,stroke){
     c.strokeStyle=stroke;c.lineWidth=4;c.beginPath();c.arc(x,y,r,0,Math.PI*2);c.stroke();
@@ -100,7 +125,7 @@
   function drawAll(){draws.forEach(draw=>draw());}
   function frame(now){if(running&&!document.hidden)time+=Math.min((now-last)/1000,.05);last=now;drawAll();requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{
-    ["continuity-join","continuity-window","component-radius","clock-inner","clock-outer","spectrum-line","spectrum-emitter","spectrum-observer","null-start","null-end"].forEach(id=>$(id)?.addEventListener("input",drawAll));
+    ["continuity-join","continuity-window","component-radius","component-theta","component-form","component-log","component-inverse","clock-inner","clock-outer","spectrum-line","spectrum-emitter","spectrum-observer","null-start","null-end"].forEach(id=>$(id)?.addEventListener("input",drawAll));
     addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);addEventListener("ssz-animation-change",event=>{running=Boolean(event.detail?.running);});requestAnimationFrame(frame);
   });
 })();

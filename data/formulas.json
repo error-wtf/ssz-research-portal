@@ -1,6 +1,6 @@
 {
   "status": "curated current formula reference",
-  "count": 92,
+  "count": 98,
   "formulas": [
     {
       "id": "rs",
@@ -289,6 +289,60 @@
       "units": "coordinate dependent",
       "domain": "static diagonal ansatz",
       "caution": "Its simple D cancellation does not establish central regularity."
+    },
+    {
+      "id": "metric-volume",
+      "name": "Invariant coordinate-volume density",
+      "latex": "\\sqrt{-g}=c\\,r^2|\\sin\\theta|",
+      "topic": "metric",
+      "units": "coordinate density",
+      "domain": "diagonal spherical chart and D·s=1",
+      "caution": "A simple volume density does not imply finite curvature."
+    },
+    {
+      "id": "static-coframe",
+      "name": "Static orthonormal coframe",
+      "latex": "\\vartheta^{\\hat0}=Dc\\,dt,\\ \\vartheta^{\\hat1}=s\\,dr,\\ \\vartheta^{\\hat2}=r\\,d\\theta,\\ \\vartheta^{\\hat3}=r\\sin\\theta\\,d\\phi",
+      "topic": "local frames",
+      "units": "length",
+      "domain": "static diagonal chart",
+      "caution": "The static frame is an operational basis, not a freely falling frame."
+    },
+    {
+      "id": "flow-gamma",
+      "name": "Flow-form gamma field",
+      "latex": "\\gamma(r)=1+\\Xi(r)=D^{-1}(r)",
+      "topic": "metric forms",
+      "units": "1",
+      "domain": "canonical pure metric mapping",
+      "caution": "The repository calls this gamma; its physical interpretation must follow the declared coordinate construction."
+    },
+    {
+      "id": "flow-beta",
+      "name": "Flow-form beta field",
+      "latex": "\\beta(r)=\\sqrt{1-\\gamma^{-2}(r)}=\\sqrt{1-D^2(r)}",
+      "topic": "metric forms",
+      "units": "1",
+      "domain": "γ ≥ 1",
+      "caution": "This derived coordinate-flow parameter is not automatically a material velocity."
+    },
+    {
+      "id": "flow-metric",
+      "name": "Non-diagonal flow metric",
+      "latex": "ds^2=-c^2(1-\\beta^2)dt^2+2\\beta c\\,dt\\,dr+dr^2+r^2d\\Omega^2",
+      "topic": "metric forms",
+      "units": "length²",
+      "domain": "repository flow coordinate form",
+      "caution": "A cross term does not by itself establish rotation or a global chart equivalence."
+    },
+    {
+      "id": "flow-null-slopes",
+      "name": "Flow-form radial null slopes",
+      "latex": "dr/(c\\,dt)=-\\beta\\pm1",
+      "topic": "null paths",
+      "units": "1",
+      "domain": "radial null curve in flow chart",
+      "caution": "These are coordinate slopes; local light speed remains c."
     },
     {
       "id": "proper-radius",

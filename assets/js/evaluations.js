@@ -65,6 +65,45 @@
     c.fillStyle = muted; c.font = "12px Inter"; c.fillText("Conditional on the supplied 67-pair sample and residual definition.", 24, h - 25);
   }
 
+  function canvasSurface(id) {
+    const canvas = $(id); if (!canvas) return null;
+    const rect = canvas.getBoundingClientRect(), dpr = Math.min(devicePixelRatio || 1, 2);
+    const w = Math.max(rect.width, 320), h = Math.max(rect.height, 420);
+    const targetW = Math.round(w * dpr), targetH = Math.round(h * dpr);
+    if (canvas.width !== targetW || canvas.height !== targetH) { canvas.width = targetW; canvas.height = targetH; }
+    const c = canvas.getContext("2d"); c.setTransform(dpr, 0, 0, dpr, 0, 0); c.clearRect(0, 0, w, h);
+    const style = getComputedStyle(document.documentElement);
+    return {c,w,h,text:style.getPropertyValue("--text").trim(),muted:style.getPropertyValue("--muted").trim(),
+      line:style.getPropertyValue("--line").trim(),gold:style.getPropertyValue("--gold").trim()};
+  }
+
+  function drawConfidenceIntervals() {
+    const surface = canvasSurface("evaluation-ci-chart"); if (!surface || !payload) return;
+    const {c,w,h,text,muted,line,gold}=surface, med=payload.mass_projection_evaluation.median;
+    const ci=payload.mass_projection_evaluation.confidence_intervals;
+    const rows=[["SEG",med.seg,ci.seg,gold],["GR",med.gr,ci.gr,"#2563eb"],["SR",med.sr,ci.sr,"#7c3aed"],["GR+SR",med.grsr,ci.grsr,"#b42318"]];
+    const values=rows.flatMap(row=>[row[1],...row[2]]).filter(value=>value>0),lo=Math.log10(Math.min(...values))-.2,hi=Math.log10(Math.max(...values))+.2;
+    const left=76,right=w-34,top=65,gap=72,x=value=>left+(Math.log10(value)-lo)/(hi-lo)*(right-left);
+    c.font="12px Inter";c.textAlign="center";c.fillStyle=muted;
+    for(let exponent=Math.ceil(lo);exponent<=Math.floor(hi);exponent++){const px=x(10**exponent);c.strokeStyle=line;c.beginPath();c.moveTo(px,38);c.lineTo(px,h-44);c.stroke();c.fillText(`10^${exponent}`,px,h-20);}
+    rows.forEach(([name,value,interval,colour],index)=>{const y=top+index*gap;c.fillStyle=text;c.textAlign="right";c.fillText(name,left-14,y+4);
+      c.strokeStyle=colour;c.lineWidth=5;c.beginPath();c.moveTo(x(interval[0]),y);c.lineTo(x(interval[1]),y);c.stroke();
+      c.fillStyle=colour;c.beginPath();c.arc(x(value),y,7,0,Math.PI*2);c.fill();});
+  }
+
+  function drawMassBins() {
+    const surface=canvasSurface("evaluation-bin-chart");if(!surface||!payload)return;
+    const {c,w,h,text,muted,line,gold}=surface,bins=payload.mass_projection_evaluation.mass_bins;
+    const left=58,right=w-24,top=42,bottom=h-64,slot=(right-left)/bins.length,maxN=Math.max(...bins.map(bin=>bin.N),1);
+    const residuals=bins.flatMap(bin=>[bin.med_seg,bin.med_gr]).filter(Number.isFinite),maxResidual=Math.max(...residuals,1);
+    bins.forEach((bin,index)=>{const x=left+index*slot+slot*.12,width=slot*.76,height=(bottom-top)*bin.N/maxN;
+      c.fillStyle=bin.N<5?"#b42318":gold;c.globalAlpha=.25;c.fillRect(x,bottom-height,width,height);c.globalAlpha=1;
+      c.fillStyle=text;c.textAlign="center";c.fillText(`N=${bin.N}`,x+width/2,bottom-height-7);c.fillStyle=muted;c.fillText(String(bin.bin),x+width/2,bottom+20);
+      if(Number.isFinite(bin.med_seg)){const y=bottom-(bottom-top)*bin.med_seg/maxResidual;c.fillStyle=gold;c.beginPath();c.arc(x+width*.35,y,5,0,Math.PI*2);c.fill();}
+      if(Number.isFinite(bin.med_gr)){const y=bottom-(bottom-top)*bin.med_gr/maxResidual;c.fillStyle="#2563eb";c.beginPath();c.arc(x+width*.65,y,5,0,Math.PI*2);c.fill();}});
+    c.strokeStyle=line;c.beginPath();c.moveTo(left,bottom);c.lineTo(right,bottom);c.stroke();c.fillStyle=muted;c.textAlign="center";c.fillText("mass-bin index · bars show N · points show segmented (gold) and GR (blue) median",w/2,h-18);
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("data/evaluations.json");
     if (!response.ok) throw new Error(`evaluations.json: ${response.status}`);
@@ -72,7 +111,8 @@
     $("current-passed").textContent = payload.current_snapshot.passed.toLocaleString("en-US");
     $("current-repos").textContent = payload.current_snapshot.repositories;
     $("current-failed").textContent = payload.current_snapshot.failed;
-    repositoryTable(); historicalTable(); executionTable(); massResults(); draw();
-    addEventListener("resize", draw); addEventListener("ssz-theme-change", draw);
+    repositoryTable(); historicalTable(); executionTable(); massResults(); draw(); drawConfidenceIntervals(); drawMassBins();
+    const redraw=()=>{draw();drawConfidenceIntervals();drawMassBins();};
+    addEventListener("resize", redraw); addEventListener("ssz-theme-change", redraw);
   });
 })();

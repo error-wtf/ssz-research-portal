@@ -2,6 +2,7 @@
 """Validate JSON topology and non-negotiable scientific wording."""
 
 import json
+import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -76,6 +77,9 @@ def main():
     assert evaluations["current_snapshot"]["passed"] == 1296
     assert evaluations["current_snapshot"]["repositories"] == 12
     assert (ROOT / "regimes.html").exists(), "regime-boundary page missing"
+    tests_page = (ROOT / "tests.html").read_text(encoding="utf-8")
+    for canvas_id in ("evaluation-chart", "evaluation-ci-chart", "evaluation-bin-chart"):
+        assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
     assert len(list(ROOT.glob("*.html"))) >= 13
     visual = (ROOT / "visual-lab.html").read_text(encoding="utf-8")
     for canvas_id in ("phi-canvas", "radial-canvas", "lensing-canvas", "potential-canvas",
@@ -83,6 +87,27 @@ def main():
                       "continuity-canvas", "components-canvas", "clocks-canvas",
                       "spectrum-canvas", "null-canvas"):
         assert f'id="{canvas_id}"' in visual, f"missing visual module: {canvas_id}"
+    for control_id in (
+        "component-radius", "component-theta", "component-form", "component-log",
+        "component-inverse", "component-xi", "component-ds", "component-gtt",
+        "component-grr", "component-gtr", "component-signature", "component-det",
+        "component-null",
+    ):
+        assert f'id="{control_id}"' in visual, f"incomplete metric explorer: {control_id}"
+    advanced = (ROOT / "assets/js/advanced-visuals.js").read_text(encoding="utf-8")
+    assert "window.SSZ.branch" in advanced
+    assert 'form==="diagonal"' in advanced and "1-beta" in advanced
+    physics = (ROOT / "assets/js/physics.js").read_text(encoding="utf-8")
+    assert "orbitDiagnostics" in physics and "angularMomentumSquared" in physics
+    assert (ROOT / "scripts/test_browser_physics.mjs").exists()
+
+    # Independent canonical-value audit for the equations shared by all browser explorers.
+    golden = (1 + math.sqrt(5)) / 2
+    xi_horizon = 1 - math.exp(-golden)
+    dilation_horizon = 1 / (1 + xi_horizon)
+    assert abs(xi_horizon - 0.8017118471377939) < 1e-14
+    assert abs(dilation_horizon - 0.5550277096687818) < 1e-14
+    assert abs(dilation_horizon * (1 + xi_horizon) - 1) < 1e-14
     print("OK: JSON schemas, page set and P0 scientific guardrails validated")
 
 

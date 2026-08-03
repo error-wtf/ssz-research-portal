@@ -39,6 +39,50 @@
   const dilation = x => 1 / (1 + xi(x));
   const branch = x => x < 1.8 ? "strong" : x > 2.2 ? "weak" : "C² bridge";
   const grDilation = x => x > 1 ? Math.sqrt(1 - 1 / x) : null;
+  const metricA = x => dilation(x) ** 2;
+  const derivative = (fn, x, relativeStep = 2e-5) => {
+    const h = Math.max(1e-7, Math.abs(x) * relativeStep);
+    return (fn(x + h) - fn(x - h)) / (2 * h);
+  };
+  const nullPotential = x => metricA(x) / x ** 2;
+  const angularMomentumSquared = x => {
+    const a = metricA(x), ap = derivative(metricA, x);
+    const denominator = 2 * a - x * ap;
+    return denominator > 0 ? x ** 3 * ap / denominator : null;
+  };
+  function stationaryMinimum(fn, lo, hi, samples = 24000) {
+    const step = (hi - lo) / samples;
+    let previous = fn(lo), centre = fn(lo + step), best = null;
+    for (let index = 2; index <= samples; index += 1) {
+      const x = lo + index * step, right = fn(x);
+      if (Number.isFinite(previous) && Number.isFinite(centre) && Number.isFinite(right)
+          && centre < previous && centre < right) best = {x: x - step, value: centre};
+      previous = centre; centre = right;
+    }
+    return best;
+  }
+  function stationaryMaximum(fn, lo, hi, samples = 24000) {
+    const step = (hi - lo) / samples;
+    let previous = fn(lo), centre = fn(lo + step), best = null;
+    for (let index = 2; index <= samples; index += 1) {
+      const x = lo + index * step, right = fn(x);
+      if (Number.isFinite(previous) && Number.isFinite(centre) && Number.isFinite(right)
+          && centre > previous && centre > right
+          && (!best || centre > best.value)) best = {x: x - step, value: centre};
+      previous = centre; centre = right;
+    }
+    return best;
+  }
+  function orbitDiagnostics(maximumRadius = 30) {
+    const photon = stationaryMaximum(nullPotential, 1.8, Math.max(3, maximumRadius));
+    const isco = stationaryMinimum(angularMomentumSquared, photon ? photon.x * 1.001 : 1.8, Math.max(8, maximumRadius));
+    return {
+      photon,
+      criticalImpact: photon ? photon.x / Math.sqrt(metricA(photon.x)) : null,
+      isco,
+      caution: "Stationary radii belong to the declared static diagonal continuation. A bridge-localised extremum may depend on the matching prescription and is not an empirical measurement."
+    };
+  }
   const fmt = (number, digits = 8) => Number.isFinite(number)
     ? number.toLocaleString("en-US", { maximumFractionDigits: digits })
     : "—";
@@ -175,21 +219,16 @@
       set("calc-xi", fmt(xi(x), 10));
       set("calc-d", fmt(d, 10));
       set("calc-z", fmt(1 / d - 1, 10));
-      let candidate = null;
-      const potentialAt = trial => dilation(trial) ** 2 / trial ** 2;
-      let left = potentialAt(1.8), centre = potentialAt(1.80006);
-      for (let i = 2; i < 20000; i += 1) {
-        const trial = 1.8 + i * (1.2 / 20000);
-        const right = potentialAt(trial);
-        if (centre > left && centre > right) candidate = {x: trial - 1.2 / 20000, value: centre};
-        left = centre;
-        centre = right;
-      }
-      set("photon-output", candidate
-        ? `${fmt(candidate.x, 6)} r_s (interior stationary null-potential candidate)`
+      const orbits = orbitDiagnostics(30);
+      set("photon-output", orbits.photon
+        ? `${fmt(orbits.photon.x, 6)} r_s (stationary null-potential candidate)`
         : "No interior stationary maximum in the inspected interval");
-      set("isco-output", "Repository-derived value: verify metric branch and provenance");
-      set("shadow-output", "Model-dependent: do not infer from horizon D alone");
+      set("isco-output", orbits.isco
+        ? `${fmt(orbits.isco.x, 6)} r_s (minimum of circular-orbit L²; bridge-sensitive)`
+        : "No stationary L² minimum in the inspected interval");
+      set("shadow-output", Number.isFinite(orbits.criticalImpact)
+        ? `${fmt(orbits.criticalImpact, 6)} r_s (static critical-impact proxy)`
+        : "Unavailable without a stationary null candidate");
     };
     [massInput, massUnit, radiusInput].forEach(input => input?.addEventListener("input", update));
     update();
@@ -211,5 +250,8 @@
     calculators();
   });
   window.addEventListener("ssz-theme-change", updatePlot);
-  window.SSZ = {PHI, strong, weak, xi, dilation, branch, quinticHermite};
+  window.SSZ = {
+    PHI, strong, weak, xi, dilation, branch, quinticHermite,
+    metricA, derivative, nullPotential, angularMomentumSquared, orbitDiagnostics
+  };
 })();

@@ -2,7 +2,7 @@
 
 ## 2026-08-03 — scientific interface and evidence audit
 
-- expanded the reviewed formula catalogue from 58 to 92 equations and rebuilt formula cards with accessible MathJax display;
+- expanded the reviewed formula catalogue from 58 to 98 equations and rebuilt formula cards with accessible MathJax display, including the pure metric’s inverse, determinant, volume density, coframe and flow form;
 - added a dedicated regime-boundary page with canonical strong, C² bridge and weak branches plus an interactive continuity microscope;
 - expanded theory, strong-field, local-frame, geodesic, effective-source, rotation, electromagnetic and programme-scope documentation;
 - rebuilt the test presentation around a dated 1,296-outcome snapshot, a separately preserved conflicting historical snapshot, Unified execution categories and the 67-pair mass-projection evaluation;
@@ -11,6 +11,10 @@
 - centralised interactive metric calculations on `assets/js/physics.js`, fixed repeated canvas reallocations and made all animation loops honour pause/reduced-motion state;
 - expanded reproducibility rules for environments, data layers, test semantics, anti-circular validation, tolerances and releases;
 - corrected glossary entries to distinguish definitions, static-observer relations, captured runs and P0-superseded claims.
+- rebuilt the metric-component module against `SSZ-METRIC_COMPLETE`, adding diagonal/flow forms, inverse components, determinant, signature, polar-angle context, radial null slopes and explicit P0 boundaries;
+- centralised photon, critical-impact and circular-timelike diagnostics in the published metric engine and added an executable JavaScript consistency test;
+- added bootstrap-interval and mass-bin-support visualisations to the Unified Results evaluation;
+- clarified the overloaded PPN versus flow meanings of γ and β throughout theory and glossary.
 
 ## 2026-08-03 — Deep research extension
 

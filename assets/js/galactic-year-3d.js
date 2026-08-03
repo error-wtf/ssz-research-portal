@@ -36,7 +36,9 @@
   function currentPos(Q,bh=false){const p=bh?Q.phaseBH:Q.phase,a=Q.R,b=a*Math.sqrt(1-Q.e*Q.e),time=Q.time,z=Q.zAmp*Q.zScale*Math.sin(2*Math.PI*time/Q.zPeriod);return[a*(Math.cos(p)-Q.e),z,b*Math.sin(p)];}
   function render3D(Q){
     if(!webglOK)return;const canvas=$("galactic-webgl"),{w,h}=resize(canvas);gl.clearColor(.97,.98,1,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.uniformMatrix4fv(uMatrix,false,cameraMatrix(w,h));
-    for(let ring=1;ring<=10;ring++){const r=ring*1.05,vertices=[];for(let i=0;i<=128;i++){const a=i/128*Math.PI*2;vertices.push(r*Math.cos(a),0,r*Math.sin(a));}draw(vertices,gl.LINE_STRIP,colour("#94a3b8",.22));}draw(axes(),gl.LINES,colour("#64748b",.45));
+    for(let ring=1;ring<=10;ring++){const r=ring*1.05,vertices=[];for(let i=0;i<=128;i++){const a=i/128*Math.PI*2;vertices.push(r*Math.cos(a),0,r*Math.sin(a));}draw(vertices,gl.LINE_STRIP,colour("#94a3b8",.22));}
+    for(let spoke=0;spoke<16;spoke++){const a=spoke*Math.PI/8;draw([0,0,0,10.5*Math.cos(a),0,10.5*Math.sin(a)],gl.LINES,colour("#94a3b8",.14));}
+    draw(axes(),gl.LINES,colour("#64748b",.45));
     if(state.mode==="measurements"||state.mode==="compare"){draw(orbit(Q,Q.R-Q.dR),gl.LINE_STRIP,colour("#2563eb",.25));draw(orbit(Q,Q.R+Q.dR),gl.LINE_STRIP,colour("#2563eb",.25));}
     draw(orbit(Q),gl.LINE_STRIP,colour("#b8860b",1));
     const sun=currentPos(Q);point([0,0,0],colour("#111827"),13);point(sun,colour("#2563eb"),12);

@@ -10,7 +10,7 @@
     if (menu) {
       const pages = [["index.html","Overview"],["theory.html","Theory"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["formulas.html","Formulas"],["visual-lab.html","Visual lab"],["workbench.html","Workbench"],["qubits.html","Qubits"],["tests.html","Tests"],["evidence.html","Evidence"],["repositories.html","Repositories"],["papers.html","Papers"],["reproducibility.html","Reproduce"],["falsification.html","Falsification"],["glossary.html","Glossary"],["atlas.html","Atlas"]];
       const here = location.pathname.split("/").pop() || "index.html";
-      menu.innerHTML = pages.map(([href,label])=>`<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`).join("") + '<button class="nav-button" data-reviewer-toggle>Reviewer</button><button class="nav-button" data-theme-toggle>◐ Theme</button>';
+      menu.innerHTML = pages.map(([href,label])=>`<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`).join("") + `<button class="nav-button reviewer-toggle" data-reviewer-toggle aria-pressed="${root.dataset.reviewer==="true"}">${root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF"}</button><button class="nav-button" data-theme-toggle>◐ Theme</button>`;
       menu.style.visibility = "visible";
     }
     if (menu && !menu.querySelector('a[href="formulas.html"]')) {
@@ -59,7 +59,7 @@
     });
     if(menu&&!menu.querySelector("[data-reviewer-toggle]")){
       const button=document.createElement("button");button.className="nav-button";button.dataset.reviewerToggle="";
-      button.textContent=root.dataset.reviewer==="true"?"Reviewer: on":"Reviewer";
+      button.textContent=root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF";
       menu.insertBefore(button,menu.querySelector("[data-theme-toggle]"));
     }
     const toggle = document.querySelector(".menu-toggle");
@@ -77,7 +77,7 @@
     });
     document.querySelectorAll("[data-reviewer-toggle]").forEach(button=>button.addEventListener("click",()=>{
       const enabled=root.dataset.reviewer!=="true";root.dataset.reviewer=String(enabled);
-      localStorage.setItem("ssz-reviewer",String(enabled));button.textContent=enabled?"Reviewer: on":"Reviewer";
+      localStorage.setItem("ssz-reviewer",String(enabled));button.textContent=enabled?"Reviewer: ON":"Reviewer: OFF";button.setAttribute("aria-pressed",String(enabled));
     }));
 
     document.querySelectorAll("[data-copy]").forEach(button => {

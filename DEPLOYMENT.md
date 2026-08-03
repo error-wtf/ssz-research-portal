@@ -2,7 +2,10 @@
 
 The site is GitHub Pages compatible without a build step. All internal asset links are relative.
 
-The included workflow publishes the repository root as a Pages artefact after validation. Required repository setting: **Pages → Source → GitHub Actions**.
+`pages-workflow.example.yml` documents an optional Actions deployment after
+renaming it to `.github/workflows/pages.yml` with a credential authorised to
+manage workflows. The current deployment uses GitHub Pages’ `main`/root branch
+source, so the published site requires no workflow permission.
 
 Local preview:
 

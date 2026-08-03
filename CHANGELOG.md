@@ -15,6 +15,9 @@
 - centralised photon, critical-impact and circular-timelike diagnostics in the published metric engine and added an executable JavaScript consistency test;
 - added bootstrap-interval and mass-bin-support visualisations to the Unified Results evaluation;
 - clarified the overloaded PPN versus flow meanings of γ and β throughout theory and glossary.
+- expanded the evidence portal with a corrected 9,300-row artefact catalogue, category/quantity charts and repository coverage table;
+- added source-audited Galactic Year, chord-partition and Schumann-resonance interactive modules with explicit consistency findings and non-claim boundaries;
+- reduced Visual Lab CPU load by separating static from animated canvases and throttling animation loops to approximately 30 frames per second.
 
 ## 2026-08-03 — Deep research extension
 

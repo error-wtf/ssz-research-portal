@@ -104,6 +104,25 @@
     c.strokeStyle=line;c.beginPath();c.moveTo(left,bottom);c.lineTo(right,bottom);c.stroke();c.fillStyle=muted;c.textAlign="center";c.fillText("mass-bin index · bars show N · points show segmented (gold) and GR (blue) median",w/2,h-18);
   }
 
+  function drawRankedBars(id, rows, title) {
+    const surface=canvasSurface(id);if(!surface||!payload)return;
+    const {c,w,h,text,muted,line,gold}=surface,shown=rows.slice(0,9),max=Math.max(...shown.map(row=>row.count),1);
+    const left=Math.min(205,w*.42),right=w-32,top=46,gap=Math.min(39,(h-76)/shown.length);
+    c.fillStyle=text;c.font="700 13px Inter";c.textAlign="left";c.fillText(title,20,22);
+    shown.forEach((row,index)=>{const y=top+index*gap,width=(right-left)*row.count/max;
+      c.fillStyle=line;c.fillRect(left,y-12,right-left,20);c.fillStyle=index===0?gold:"#2563eb";c.fillRect(left,y-12,width,20);
+      c.fillStyle=text;c.textAlign="right";c.fillText(row.name.length>27?`${row.name.slice(0,25)}…`:row.name,left-10,y+3);
+      c.textAlign="left";c.fillText(row.count.toLocaleString("en-US"),Math.min(left+width+7,right-42),y+3);});
+    c.fillStyle=muted;c.font="11px Inter";c.textAlign="left";c.fillText("Catalogue rows · discovery coverage, not pass outcomes",20,h-18);
+  }
+
+  function artifactCoverage() {
+    const data=payload.artifact_catalogue,total=data.count;
+    $("artifact-repositories").innerHTML=data.repositories.slice(0,20).map(row=>`<tr><td><a href="https://github.com/error-wtf/${encodeURIComponent(row.name)}" target="_blank" rel="noopener">${escapeHtml(row.name)}</a></td><td>${row.count.toLocaleString("en-US")}</td><td>${fmt(100*row.count/total,2)}%</td></tr>`).join("");
+    drawRankedBars("artifact-category-chart",data.categories,"Test-category classification");
+    drawRankedBars("artifact-quantity-chart",data.quantities,"Scientific-quantity classification");
+  }
+
   document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch("data/evaluations.json");
     if (!response.ok) throw new Error(`evaluations.json: ${response.status}`);
@@ -111,8 +130,8 @@
     $("current-passed").textContent = payload.current_snapshot.passed.toLocaleString("en-US");
     $("current-repos").textContent = payload.current_snapshot.repositories;
     $("current-failed").textContent = payload.current_snapshot.failed;
-    repositoryTable(); historicalTable(); executionTable(); massResults(); draw(); drawConfidenceIntervals(); drawMassBins();
-    const redraw=()=>{draw();drawConfidenceIntervals();drawMassBins();};
+    repositoryTable(); historicalTable(); executionTable(); massResults(); artifactCoverage(); draw(); drawConfidenceIntervals(); drawMassBins();
+    const redraw=()=>{draw();drawConfidenceIntervals();drawMassBins();artifactCoverage();};
     addEventListener("resize", redraw); addEventListener("ssz-theme-change", redraw);
   });
 })();

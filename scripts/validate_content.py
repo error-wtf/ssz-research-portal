@@ -76,16 +76,19 @@ def main():
     evaluations = json.loads((ROOT / "data/evaluations.json").read_text(encoding="utf-8"))
     assert evaluations["current_snapshot"]["passed"] == 1296
     assert evaluations["current_snapshot"]["repositories"] == 12
+    assert evaluations["artifact_catalogue"]["count"] == 9300
     assert (ROOT / "regimes.html").exists(), "regime-boundary page missing"
     tests_page = (ROOT / "tests.html").read_text(encoding="utf-8")
-    for canvas_id in ("evaluation-chart", "evaluation-ci-chart", "evaluation-bin-chart"):
+    for canvas_id in ("evaluation-chart", "evaluation-ci-chart", "evaluation-bin-chart",
+                      "artifact-category-chart", "artifact-quantity-chart"):
         assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
     assert len(list(ROOT.glob("*.html"))) >= 13
     visual = (ROOT / "visual-lab.html").read_text(encoding="utf-8")
     for canvas_id in ("phi-canvas", "radial-canvas", "lensing-canvas", "potential-canvas",
                       "starmap-canvas", "sagnac-canvas", "curvature-canvas",
                       "continuity-canvas", "components-canvas", "clocks-canvas",
-                      "spectrum-canvas", "null-canvas"):
+                      "spectrum-canvas", "null-canvas", "galactic-year-canvas",
+                      "chord-canvas", "schumann-canvas"):
         assert f'id="{canvas_id}"' in visual, f"missing visual module: {canvas_id}"
     for control_id in (
         "component-radius", "component-theta", "component-form", "component-log",
@@ -108,6 +111,17 @@ def main():
     assert abs(xi_horizon - 0.8017118471377939) < 1e-14
     assert abs(dilation_horizon - 0.5550277096687818) < 1e-14
     assert abs(dilation_horizon * (1 + xi_horizon) - 1) < 1e-14
+
+    # Repository-visual counterchecks: keep adopted Galactic kinematics separate
+    # from the Sgr A* point-mass model, and verify the Schumann baseline.
+    G, c, solar_mass, kpc, year = 6.67430e-11, 299792458, 1.98847e30, 3.085677581491367e19, 365.25 * 86400
+    radius, velocity, central_mass = 8.3 * kpc, 220_000, 4.3e6 * solar_mass
+    galactic_kinematic_myr = 2 * math.pi * radius / velocity / year / 1e6
+    galactic_point_mass_myr = 2 * math.pi * math.sqrt(radius**3 / (G * central_mass)) / year / 1e6
+    assert 230 < galactic_kinematic_myr < 235
+    assert galactic_point_mass_myr > 10_000
+    schumann_f1 = .74 * c / (2 * math.pi * 6_371_000) * math.sqrt(2)
+    assert 7.7 < schumann_f1 < 8.0
     print("OK: JSON schemas, page set and P0 scientific guardrails validated")
 
 

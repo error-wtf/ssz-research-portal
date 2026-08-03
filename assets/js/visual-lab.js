@@ -114,13 +114,14 @@
   }
   const draws=[drawPhi,drawRadial,drawLensing,drawPotential,drawSagnac,drawCurvature];
   function drawAll(){draws.forEach(draw=>draw());}
-  function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(running&&!document.hidden)time+=dt;drawAll();requestAnimationFrame(frame);}
+  const animated=[drawPhi,drawRadial,drawLensing,drawSagnac];
+  function frame(now){if(now-last<33){requestAnimationFrame(frame);return;}const dt=Math.min((now-last)/1000,.05);last=now;if(running&&!document.hidden){time+=dt;animated.forEach(draw=>draw());}requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{
     document.querySelectorAll(".visual-controls input").forEach(input=>input.addEventListener("input",drawAll));
     const button=document.getElementById("animation-toggle");button?.addEventListener("click",()=>{running=!running;button.textContent=running?"Pause animations":"Resume animations";window.dispatchEvent(new CustomEvent("ssz-animation-change",{detail:{running}}));});
     addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);
     reduce.addEventListener?.("change",event=>{running=!event.matches;if(button)button.textContent=running?"Pause animations":"Resume animations";});
-    requestAnimationFrame(frame);
+    drawAll();requestAnimationFrame(frame);
   });
   window.SSZVisual={PHI,strong,weak,xi,D,hermite,isRunning:()=>running};
 })();

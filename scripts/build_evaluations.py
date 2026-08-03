@@ -8,6 +8,7 @@ private topics and copied source documents never enter the output.
 from __future__ import annotations
 
 import json
+from collections import Counter
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -25,6 +26,7 @@ def build() -> dict:
     historical = read_json(ALL_TESTS / "MASTER_RESULTS.json")
     paired = read_json(UNIFIED / "summary_full_pipeline_enriched.json")
     executed = read_json(UNIFIED / "outputs/complete_test_results.json")
+    catalogue = read_json(PROJECT / "data" / "tests.json")
 
     repositories = []
     for name, result in live.items():
@@ -70,6 +72,9 @@ def build() -> dict:
 
     total_passed = sum(item["passed"] for item in repositories)
     total_failed = sum(item["failed"] for item in repositories)
+    category_counts = Counter(item["category"] for item in catalogue["tests"])
+    repository_counts = Counter(item["repository"] for item in catalogue["tests"])
+    quantity_counts = Counter(item["quantity"] for item in catalogue["tests"])
     return {
         "generated_from": [
             "ssz-all-tests/LIVE_STATUS.json",
@@ -95,6 +100,23 @@ def build() -> dict:
             "date": executed["timestamp"],
             "categories": categories,
             "warning": "A passed script may be a smoke test, export tool or analysis runner rather than a pytest physics assertion.",
+        },
+        "artifact_catalogue": {
+            "count": len(catalogue["tests"]),
+            "unit": "catalogued test/result artefact",
+            "categories": [
+                {"name": name, "count": count}
+                for name, count in category_counts.most_common()
+            ],
+            "repositories": [
+                {"name": name, "count": count}
+                for name, count in repository_counts.most_common()
+            ],
+            "quantities": [
+                {"name": name, "count": count}
+                for name, count in quantity_counts.most_common()
+            ],
+            "warning": "Catalogue rows support discovery and coverage analysis. They are not pass outcomes and cannot be added to captured-run totals.",
         },
         "mass_projection_evaluation": {
             "sample_pairs": paired["paired"]["N_pairs"],

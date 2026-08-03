@@ -359,6 +359,12 @@ details[open] summary { margin-bottom: .7rem; }
 .claim-card header small { margin-left:.5rem; color:var(--muted); }
 .claim-card header code,.hash { overflow-wrap:anywhere; }
 .claim-statement { padding:1rem 1.2rem; margin:0; font-size:1.04rem; }
+.claim-formula-panel { margin:0 1.2rem 1.2rem; padding:1rem; border:1px solid color-mix(in srgb,var(--gold) 38%,var(--line)); border-radius:1rem; background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 96%,var(--gold)),var(--surface)); box-shadow:inset 0 1px 0 rgba(255,255,255,.45); }
+.claim-formula-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:.4rem 1rem; margin-bottom:.65rem; color:var(--muted); font-size:.82rem; letter-spacing:.02em; }
+.claim-formula-heading strong { color:var(--text); font-size:.92rem; }
+.claim-formula-panel .math-box { margin:.55rem 0; overflow-x:auto; text-align:center; border-color:color-mix(in srgb,var(--gold) 26%,var(--line)); background:color-mix(in srgb,var(--surface) 92%,var(--bg)); }
+.claim-formula-panel .math-box svg { max-width:100%; height:auto; }
+.claim-formula-panel > p { margin:.35rem 0 .8rem; text-align:center; color:var(--muted); }
 .claim-card details { border-top:1px solid var(--line); padding:.85rem 1.2rem 1.2rem; }
 .claim-detail-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1rem; }
 .claim-detail-grid section { padding:1rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2); min-width:0; }

@@ -46,7 +46,7 @@
     {
       "id": "SSZ-CLAIM-XI-STRONG-001",
       "title": "Canonical strong branch",
-      "statement": "For x=r/r_s<1.8, Xi_strong(x)=1-exp(-phi/x).",
+      "statement": "The canonical strong branch applies below the normalized radius 1.8.",
       "evidence_class": "Definition",
       "status": "canonical",
       "canonical_version": "P0-2026.08",
@@ -96,7 +96,7 @@
     {
       "id": "SSZ-CLAIM-BLEND-C2-001",
       "title": "Derivative-matched C2 bridge",
-      "statement": "The interval 1.8<=x<=2.2 is a quintic Hermite bridge matching Xi, dXi/dx and d2Xi/dx2 at both endpoints.",
+      "statement": "Between normalized radii 1.8 and 2.2, a quintic Hermite bridge matches the field, its slope and its curvature at both endpoints.",
       "evidence_class": "Definition",
       "status": "canonical",
       "canonical_version": "P0-2026.08",
@@ -152,7 +152,7 @@
     {
       "id": "SSZ-CLAIM-XI-WEAK-001",
       "title": "Canonical weak branch",
-      "statement": "For x>2.2, Xi_weak(x)=1/(2x)=r_s/(2r).",
+      "statement": "The canonical weak branch applies above the normalized radius 2.2 and approaches zero at infinity.",
       "evidence_class": "Definition",
       "status": "canonical",
       "canonical_version": "P0-2026.08",
@@ -200,7 +200,7 @@
     {
       "id": "SSZ-CLAIM-METRIC-DIAGONAL-001",
       "title": "Canonical diagonal metric",
-      "statement": "The public static ansatz is ds2=-D2 c2 dt2+D^-2 dr2+r2 dOmega2 with D=(1+Xi)^-1.",
+      "statement": "The public static ansatz is a diagonal, spherically symmetric metric derived from the canonical clock factor.",
       "evidence_class": "Definition",
       "status": "canonical",
       "canonical_version": "P0-2026.08",
@@ -259,7 +259,7 @@
     {
       "id": "SSZ-CLAIM-HORIZON-D-001",
       "title": "Finite horizon time factor",
-      "statement": "Within the declared static geometry, Xi(r_s)=0.8017118471377938 and D(r_s)=0.5550277096687818.",
+      "statement": "At the Schwarzschild scale, the locked strong branch yields finite segment-density and clock factors.",
       "evidence_class": "Mathematically derived result",
       "status": "canonical",
       "canonical_version": "P0-2026.08",
@@ -314,7 +314,7 @@
     {
       "id": "SSZ-CLAIM-P0-CENTRE-001",
       "title": "Non-regular areal centre",
-      "statement": "For the present canonical diagonal continuation, A tends to 1/4 while R~3/(2r2) and K~9/(4r4); the areal centre is not regular.",
+      "statement": "For the present canonical diagonal continuation, the temporal coefficient remains finite while the relevant curvature invariants diverge toward the areal centre.",
       "evidence_class": "Mathematically derived result",
       "status": "corrected",
       "canonical_version": "P0-2026.08",

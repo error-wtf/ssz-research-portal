@@ -43,6 +43,7 @@
       ["interior-global-structure.html","Interior","tests.html"],
       ["evidence.html","Evidence","repositories.html"],
       ["falsification.html","Falsification","glossary.html"],
+      ["workbench.html","Workbench","tests.html"],
     ].forEach(([href,label,before])=>{
       if(!menu||menu.querySelector(`a[href="${href}"]`))return;
       const link=document.createElement("a");link.href=href;link.textContent=label;

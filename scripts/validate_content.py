@@ -97,8 +97,8 @@ def main():
                       "artifact-category-chart", "artifact-quantity-chart",
                       "snapshot-chart", "diagnostic-chart"):
         assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
-    assert len(list(ROOT.glob("*.html"))) >= 16
-    for page in ("evidence.html", "interior-global-structure.html", "falsification.html"):
+    assert len(list(ROOT.glob("*.html"))) >= 17
+    for page in ("evidence.html", "interior-global-structure.html", "falsification.html", "workbench.html"):
         assert (ROOT / page).exists(), f"missing scientific audit page: {page}"
     certificates = json.loads((ROOT / "data/strong-field-certificates.json").read_text())
     assert certificates["precision_decimal_digits"] >= 50
@@ -136,6 +136,10 @@ def main():
     assert "properDistance" in dependency_labs and "P0 leading centre asymptotics" in dependency_labs
     galactic_3d = (ROOT / "assets/js/galactic-year-3d.js").read_text(encoding="utf-8")
     assert 'getContext("webgl"' in galactic_3d and "scientific_roles" in galactic_3d
+    workbench = (ROOT / "workbench.html").read_text(encoding="utf-8")
+    for element_id in ("blend-lab-canvas", "geodesic-canvas", "independence-canvas", "interior-sandbox-canvas", "dimension-formula"):
+        assert f'id="{element_id}"' in workbench
+    assert (ROOT / "data/test-independence.json").exists()
 
     # Independent canonical-value audit for the equations shared by all browser explorers.
     golden = (1 + math.sqrt(5)) / 2

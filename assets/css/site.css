@@ -166,6 +166,9 @@ h3 { margin-top: 0; }
   font: 500 clamp(1.18rem, 2.2vw, 1.65rem)/1.7 "STIX Two Math", "Cambria Math", Georgia, serif;
 }
 .math-box mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .35rem; }
+.math-box > mjx-container, .formula > mjx-container { display:block; min-width:0; max-width:100%; }
+.math-box, .formula, .card, .equation-notes, .symbol-list { min-width:0; overflow-wrap:anywhere; }
+.equation-notes strong, .equation-notes span { overflow-wrap:anywhere; word-break:normal; }
 .math-box[data-label]::before {
   content: attr(data-label); position: absolute; left: 1rem; top: .55rem;
   color: var(--muted); font: 800 .64rem/1 Inter, sans-serif;
@@ -409,6 +412,12 @@ details[open] summary { margin-bottom: .7rem; }
 .regime-lane.physical { grid-template-columns:.8fr .4fr .6fr .4fr 2fr 2.8fr; }
 .regime-lane span { display:grid; place-items:center; padding:.5rem; border-right:1px solid var(--line); color:var(--muted); font-size:.75rem; text-align:center; }
 .regime-lane i { position:absolute; top:0; bottom:0; width:3px; background:#b42318; transform:translateX(-50%); box-shadow:0 0 0 3px color-mix(in srgb,#b42318 20%,transparent); }
+.maturity-pipeline { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.65rem; margin:1rem 0; }
+.maturity-stage { display:grid; gap:.35rem; min-height:5.5rem; padding:.7rem; border:1px solid var(--line); border-radius:.7rem; background:var(--surface); }
+.maturity-stage span { color:var(--muted); font-size:.78rem; }
+.maturity-stage.complete { border-left:5px solid #16836b; }
+.maturity-stage.partial,.maturity-stage.proxy { border-left:5px solid #b8860b; }
+.maturity-stage.open,.maturity-stage.hypothesis { border-left:5px solid #b42318; }
 
 @media (max-width: 980px) {
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem; background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -427,6 +436,7 @@ details[open] summary { margin-bottom: .7rem; }
   .claim-detail-grid { grid-template-columns:1fr; }
   .starmap-layout { grid-template-columns:1fr; }
   .galactic-small-multiples { grid-template-columns:1fr; }
+  .maturity-pipeline { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .research-map div::after { display:none; }
   .graph-node::after { display:none; }
 }
@@ -449,6 +459,7 @@ details[open] summary { margin-bottom: .7rem; }
   .research-map { grid-template-columns:1fr; }
   .equation-notes { grid-template-columns:1fr; }
   .math-box { min-height:5rem; padding-inline:.65rem; font-size:1.08rem; }
+  .equation-notes { grid-template-columns:1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

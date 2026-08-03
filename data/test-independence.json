@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-08-03",
+  "record_count": 9300,
+  "repository_count": 28,
+  "category_count": 7,
+  "source_manifest_sha256": "0873b50faebb418a1cb223276c8207f82764ba22d7aaf40185feae1c893e231b",
+  "groups": [
+    {
+      "name": "Lensing and observation",
+      "records": 1504,
+      "repositories": 6,
+      "source_files": 242,
+      "categories": {
+        "Unit/integration test": 1285,
+        "Data comparison": 174,
+        "Limit test": 25,
+        "Numerical test": 15,
+        "Dimensional check": 5
+      },
+      "independence_status": "not established by catalogue grouping"
+    },
+    {
+      "name": "Metric and geometry",
+      "records": 989,
+      "repositories": 13,
+      "source_files": 208,
+      "categories": {
+        "Unit/integration test": 852,
+        "Symbolic test": 68,
+        "Limit test": 48,
+        "Data comparison": 13,
+        "Numerical test": 6,
+        "Dimensional check": 2
+      },
+      "independence_status": "not established by catalogue grouping"
+    },
+    {
+      "name": "Other research artefacts",
+      "records": 43,
+      "repositories": 8,
+      "source_files": 43,
+      "categories": {
+        "Unit/integration test": 41,
+        "Limit test": 2
+      },
+      "independence_status": "not established by catalogue grouping"
+    },
+    {
+      "name": "Strong field",
+      "records": 100,
+      "repositories": 6,
+      "source_files": 15,
+      "categories": {
+        "Unit/integration test": 93,
+        "Limit test": 2,
+        "Data comparison": 5
+      },
+      "independence_status": "not established by catalogue grouping"
+    },
+    {
+      "name": "Tests and validation",
+      "records": 6586,
+      "repositories": 21,
+      "source_files": 1759,
+      "categories": {
+        "Data comparison": 446,
+        "Unit/integration test": 5846,
+        "Symbolic test": 13,
+        "Numerical test": 64,
+        "Limit test": 123,
+        "Dimensional check": 89,
+        "Regression test": 5
+      },
+      "independence_status": "not established by catalogue grouping"
+    },
+    {
+      "name": "Weak field",
+      "records": 78,
+      "repositories": 8,
+      "source_files": 13,
+      "categories": {
+        "Unit/integration test": 75,
+        "Numerical test": 1,
+        "Limit test": 2
+      },
+      "independence_status": "not established by catalogue grouping"
+    }
+  ],
+  "guardrails": [
+    "A catalogue record is not necessarily a test function or an independent test case.",
+    "Parameterized cases, logs, result artefacts and assertions may share code, formulas and data.",
+    "These groups expose shared provenance; they do not claim a count of independent physical domains."
+  ]
+}

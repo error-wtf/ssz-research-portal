@@ -15,13 +15,13 @@
       const linked = Boolean(paper.public_url);
       return (!query || text.includes(query)) &&
         (!topic || paper.topic === topic) &&
-        (!status || (status === "historical" && paper.status.startsWith("historical")) ||
-          (status === "current" && !paper.status.startsWith("historical")) ||
+        (!status || (status === "supplementary" && paper.status === "supplementary explanation planned") ||
+          (status === "current" && paper.status !== "supplementary explanation planned") ||
           (status === "linked" && linked));
     });
     document.getElementById("paper-status").textContent = `${shown.length} of ${state.papers.length} primary papers shown.`;
     document.getElementById("paper-list").innerHTML = shown.map(paper => {
-      const historic = paper.status.startsWith("historical");
+      const historic = paper.status === "supplementary explanation planned";
       const linked = Boolean(paper.public_url);
       return `<article class="paper-card">
         <div class="paper-number">${String(paper.number).padStart(2, "0")}</div>
@@ -45,7 +45,7 @@
       state.papers = data.papers;
       document.getElementById("paper-count").textContent = data.count;
       document.getElementById("linked-count").textContent = state.papers.filter(p => Boolean(p.public_url)).length;
-      document.getElementById("historic-count").textContent = state.papers.filter(p => p.status.startsWith("historical")).length;
+      document.getElementById("historic-count").textContent = state.papers.filter(p => p.status === "supplementary explanation planned").length;
       const topics = [...new Set(state.papers.map(p => p.topic))].sort();
       document.getElementById("paper-topic").insertAdjacentHTML("beforeend", topics.map(value => `<option>${escape(value)}</option>`).join(""));
       ["paper-search", "paper-topic", "paper-status-filter"].forEach(id =>

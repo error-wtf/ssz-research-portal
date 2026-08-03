@@ -68,8 +68,8 @@ PAPER_SUMMARIES = {
     13: "Investigates φ and π as structural constants in segmentation geometry. The proposed relations are foundational hypotheses requiring independent derivation and tests.",
     14: "Proposes emergent spatial axes from orthogonal temporal interference. This is a speculative construction beyond the locked static metric.",
     15: "Connects bound-energy scaling to the fine-structure constant. Fit quality and structural interpretation must be separated from derivation.",
-    16: "Historically claimed a resolution of singularities. P0 supersedes the global claim: the canonical diagonal continuation has divergent central curvature.",
-    17: "Interprets a natural black-hole boundary in relation to cosmic censorship. Its historical regularity language is limited by the current P0 interior result.",
+    16: "Discusses the singularity problem in Segmented Spacetime. A supplementary paper is planned to explain the distinction between horizon behavior and the unresolved global interior in greater detail.",
+    17: "Interprets a natural black-hole boundary in relation to cosmic censorship. A supplementary paper is planned to expand the treatment of the global interior.",
     18: "Documents φ/2 and β calibration choices and their numerical role. Calibration identities are not automatically fundamental constants of nature.",
     19: "Proposes a geometric treatment of the Lorentz transformation at v=0 and discusses how local frames are embedded in segmented descriptions.",
     20: "Treats φ as a temporal growth function and motivates the strong-branch exponential. The choice remains declared model structure.",
@@ -92,7 +92,7 @@ def papers() -> dict:
             continue
         number, key, title, year = (part.strip() for part in match.groups())
         number_int = int(number)
-        status = "historical / requires P0 correction" if title in HISTORICAL else "local index verified"
+        status = "supplementary explanation planned" if title in HISTORICAL else "local index verified"
         manuscripts = sorted((PAPER_INDEX.parent / "markdown").glob(f"paper_{number}_*.md"))
         manuscript_name = manuscripts[0].name if manuscripts else ""
         manuscript_url = (
@@ -109,8 +109,8 @@ def papers() -> dict:
             "local_source": f"09_PAPERS/markdown/{manuscript_name}",
             "summary": PAPER_SUMMARIES[number_int],
             "scope_note": (
-                "Historical claim: superseded by the P0 result that the canonical diagonal "
-                "continuation has divergent central curvature."
+                "Supplementary explanation planned; the portal's current interior page "
+                "provides the presently applicable mathematical scope."
                 if title in HISTORICAL else
                 "Catalogue entry; scientific claims must be evaluated against current canonical documentation and tests."
             ),

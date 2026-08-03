@@ -43,6 +43,34 @@
     function renderReviewerPanel(){let panel=document.getElementById("reviewer-panel");if(root.dataset.reviewer!=="true"){panel?.remove();return;}if(!panel){panel=document.createElement("aside");panel.id="reviewer-panel";panel.className="reviewer-panel";panel.setAttribute("aria-live","polite");document.body.append(panel);}const views=Number(localStorage.getItem("ssz-reviewer-views")||0)+1;localStorage.setItem("ssz-reviewer-views",String(views));panel.innerHTML=`<strong>Reviewer mode active</strong><span>Report scientific, code or provenance issues:</span><a href="mailto:mail@error.wtf?subject=SSZ%20Research%20Portal%20review">mail@error.wtf</a><small>Local browser statistics: ${views} reviewer-mode page activations · ${Number(localStorage.getItem("ssz-reviewer-toggles")||0)} toggles. No data is transmitted.</small>`;}
     renderReviewerPanel();
 
+    // Full-resolution research-archive images stay on the page and close via
+    // Escape, the close button or a click on the dark backdrop.
+    document.querySelectorAll('.plot-gallery a[href$=".png"], .plot-gallery a[href$=".jpg"], .plot-gallery a[href$=".jpeg"], .plot-gallery a[href$=".webp"]').forEach(anchor => {
+      anchor.addEventListener('click', event => {
+        event.preventDefault();
+        const overlay = document.createElement('div');
+        overlay.className = 'image-lightbox';
+        overlay.setAttribute('role', 'dialog');
+        overlay.setAttribute('aria-modal', 'true');
+        const image = document.createElement('img');
+        image.src = anchor.href;
+        image.alt = anchor.querySelector('img')?.alt || 'Full-resolution research figure';
+        const close = document.createElement('button');
+        close.type = 'button';
+        close.textContent = '× Close (Esc)';
+        const caption = anchor.closest('figure')?.querySelector('figcaption')?.textContent.trim();
+        overlay.append(close, image);
+        if (caption) { const text = document.createElement('figcaption'); text.textContent = caption; overlay.append(text); }
+        const remove = () => { overlay.remove(); document.removeEventListener('keydown', onKey); };
+        const onKey = event => { if (event.key === 'Escape') remove(); };
+        close.addEventListener('click', remove);
+        overlay.addEventListener('click', event => { if (event.target === overlay) remove(); });
+        document.addEventListener('keydown', onKey);
+        document.body.append(overlay);
+        close.focus();
+      });
+    });
+
     document.querySelectorAll("[data-copy]").forEach(button => {
       button.addEventListener("click", async () => {
         const selector = button.getAttribute("data-copy");

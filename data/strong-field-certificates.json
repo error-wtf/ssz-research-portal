@@ -14,7 +14,7 @@
       "derivative_residual": "4.54024741249e-58",
       "second_derivative": "-2.35846610759089181578729298895",
       "extremum": "maximum",
-      "critical_impact_proxy": "2.65652521198915352119181321990809416448592928159469296638526",
+      "critical_impact_proxy": "2.65652521198915352119181321990809416448592928159469296638527",
       "methods": [
         "240-cell derivative sign scan",
         "180-step bisection",
@@ -47,12 +47,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.1498583244161790402797827034728520940566086648473023214361",
-          "derivative_residual": "8.15117613554e-56",
-          "second_derivative": "3524.56349665807872359663474462",
-          "extremum": "minimum"
         }
       },
       {
@@ -71,12 +65,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.14985923951189587268815589666950338089619599317051966340003",
-          "derivative_residual": "2.07901147338e-55",
-          "second_derivative": "3547.48258110066814346918446326",
-          "extremum": "minimum"
         }
       },
       {
@@ -95,12 +83,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.14986014287440061220704988532559929404856834108297989333749",
-          "derivative_residual": "1.46709574435e-55",
-          "second_derivative": "3570.40229371904641918657288313",
-          "extremum": "minimum"
         }
       },
       {
@@ -119,12 +101,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.19981021102255416023225906003682943651486874245297001173444",
-          "derivative_residual": "1.07839461262e-56",
-          "second_derivative": "2630.31135289672654264942631588",
-          "extremum": "minimum"
         }
       },
       {
@@ -143,12 +119,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.19981144114619989934674433635970374660742287292980068974992",
-          "derivative_residual": "1.14344692825e-55",
-          "second_derivative": "2647.47654358036036965128058843",
-          "extremum": "minimum"
         }
       },
       {
@@ -167,12 +137,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.1998126554461254705741115822511856677568166525847294951313",
-          "derivative_residual": "6.58302872438e-56",
-          "second_derivative": "2664.64229678410658691614641983",
-          "extremum": "minimum"
         }
       },
       {
@@ -191,12 +155,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24975470433046839948814128374181539714979855007796112786318",
-          "derivative_residual": "1.73331806811e-55",
-          "second_derivative": "2034.51182226451338371545461987",
-          "extremum": "minimum"
         }
       },
       {
@@ -215,12 +173,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24975629985042282945911035644664451776838966998490263078094",
-          "derivative_residual": "2.54099911716e-55",
-          "second_derivative": "2047.83733202456800209255368295",
-          "extremum": "minimum"
         }
       },
       {
@@ -239,12 +191,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24975787477841049510451736467571889086158378586703329812109",
-          "derivative_residual": "1.82769809675e-55",
-          "second_derivative": "2061.16335187436619183376009972",
-          "extremum": "minimum"
         }
       },
       {
@@ -263,12 +209,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.14990460802865147791216359243543254619439807046374555625297",
-          "derivative_residual": "2.09050211768e-55",
-          "second_derivative": "5236.37382296637621260990674964",
-          "extremum": "minimum"
         }
       },
       {
@@ -287,12 +227,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.14990522742409266925305667576866811015588530055740477580406",
-          "derivative_residual": "2.00626681808e-55",
-          "second_derivative": "5270.60225399452116320375642698",
-          "extremum": "minimum"
         }
       },
       {
@@ -311,12 +245,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.14990583883419242511895747381933289125303620446551576979036",
-          "derivative_residual": "3.65101519664e-55",
-          "second_derivative": "5304.83141034598244138578423891",
-          "extremum": "minimum"
         }
       },
       {
@@ -335,12 +263,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.19986602397583152089020835844061548200245782147592550842931",
-          "derivative_residual": "6.5834505631e-56",
-          "second_derivative": "3727.40434337410345831551938941",
-          "extremum": "minimum"
         }
       },
       {
@@ -353,18 +275,12 @@
           "derivative_residual": "4.54024741249e-58",
           "second_derivative": "-2.35846610759089181578729298895",
           "extremum": "maximum",
-          "critical_impact_proxy": "2.65652521198915352119181321990809416448592928159469296638526",
+          "critical_impact_proxy": "2.65652521198915352119181321990809416448592928159469296638527",
           "methods": [
             "240-cell derivative sign scan",
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.19986689698168840165802271846528163428995873981066010846962",
-          "derivative_residual": "1.02772452698e-55",
-          "second_derivative": "3751.8574359391491876241369458",
-          "extremum": "minimum"
         }
       },
       {
@@ -383,12 +299,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.19986775869514559248773758343978763562667819801827465144095",
-          "derivative_residual": "7.66175852964e-56",
-          "second_derivative": "3776.31116796717829071207973339",
-          "extremum": "minimum"
         }
       },
       {
@@ -407,12 +317,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24982025769433366947238219628327879374468210464516924949567",
-          "derivative_residual": "2.50545693677e-55",
-          "second_derivative": "2777.5853059548660813161071896",
-          "extremum": "minimum"
         }
       },
       {
@@ -431,12 +335,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24982143313238154851812898945211345013696883596562003621989",
-          "derivative_residual": "2.7066874846e-55",
-          "second_derivative": "2795.87453768989465462517955527",
-          "extremum": "minimum"
         }
       },
       {
@@ -455,12 +353,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24982259331463268855735238409660392706077359539102513937411",
-          "derivative_residual": "3.03729746767e-55",
-          "second_derivative": "2814.16434220570056290029511699",
-          "extremum": "minimum"
         }
       },
       {
@@ -479,12 +371,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.14993961719374658905962016877268111467896407568967147275086",
-          "derivative_residual": "4.27636984418e-55",
-          "second_derivative": "8274.63670099595052180475736501",
-          "extremum": "minimum"
         }
       },
       {
@@ -503,12 +389,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.1499400113690506749208144748826897672609429531250354361317",
-          "derivative_residual": "4.77221359092e-55",
-          "second_derivative": "8329.01354706594521485067786042",
-          "extremum": "minimum"
         }
       },
       {
@@ -527,12 +407,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.14994040043446526124200060624466568251697717767054351626877",
-          "derivative_residual": "3.23660200236e-55",
-          "second_derivative": "8383.39124815087808627259445168",
-          "extremum": "minimum"
         }
       },
       {
@@ -551,12 +425,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.19990977838232091393604612260340969383557306417280604015668",
-          "derivative_residual": "1.36505835667e-55",
-          "second_derivative": "5536.77100009073468488379431079",
-          "extremum": "minimum"
         }
       },
       {
@@ -575,12 +443,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.19991036946156142393609061917364093432681850181545714369968",
-          "derivative_residual": "3.79758248749e-55",
-          "second_derivative": "5573.2894102711038489498970698",
-          "extremum": "minimum"
         }
       },
       {
@@ -599,12 +461,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.1999109528522605272362152055484362566715949048077155251743",
-          "derivative_residual": "2.00810657942e-55",
-          "second_derivative": "5609.80855897459066738950845218",
-          "extremum": "minimum"
         }
       },
       {
@@ -623,12 +479,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24987309809582664619025805028854703545600253215749610869035",
-          "derivative_residual": "9.12158475979e-56",
-          "second_derivative": "3935.4631157181710346218717276",
-          "extremum": "minimum"
         }
       },
       {
@@ -647,12 +497,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24987393251650715979106234819578887711998627220109886477157",
-          "derivative_residual": "1.4691662858e-55",
-          "second_derivative": "3961.51676373502826651867155487",
-          "extremum": "minimum"
         }
       },
       {
@@ -671,12 +515,6 @@
             "180-step bisection",
             "60-digit Newton/secant refinement"
           ]
-        },
-        "timelike_l2_candidate": {
-          "x": "2.24987475604592589320595108535556464098619179606908903154935",
-          "derivative_residual": "2.29769036621e-55",
-          "second_derivative": "3987.57106300972582594431184452",
-          "extremum": "minimum"
         }
       }
     ],
@@ -692,7 +530,7 @@
   },
   "provenance": {
     "repository": "error-wtf/ssz-research-portal",
-    "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+    "commit_sha": "d6c8d28425774c01de4799e70551e0539be9a1ec",
     "code_path": "scripts/build_strong_field_certificates.py",
     "browser_engine_path": "assets/js/physics.js",
     "browser_engine_sha256": "789dda760e14448dea61a1a0c285545ce196d845e09559b5225d22bcc060f376",

@@ -109,13 +109,18 @@ def main():
                       "starmap-canvas", "sagnac-canvas", "curvature-canvas",
                       "continuity-canvas", "components-canvas", "clocks-canvas",
                       "spectrum-canvas", "null-canvas", "galactic-year-canvas",
-                      "chord-canvas", "schumann-canvas"):
+                      "chord-canvas", "schumann-canvas", "interior-canvas",
+                      "galactic-webgl", "galactic-top-canvas", "galactic-side-canvas",
+                      "galactic-clock-canvas"):
         assert f'id="{canvas_id}"' in visual, f"missing visual module: {canvas_id}"
     for control_id in (
         "component-radius", "component-theta", "component-form", "component-log",
         "component-inverse", "component-xi", "component-ds", "component-gtt",
         "component-grr", "component-gtr", "component-signature", "component-det",
         "component-null",
+        "interior-radius", "interior-xi", "interior-d", "interior-r", "interior-k",
+        "regime-radius", "regime-formula", "regime-description",
+        "galactic-time", "galactic-z-period", "galactic-z-scale",
     ):
         assert f'id="{control_id}"' in visual, f"incomplete metric explorer: {control_id}"
     advanced = (ROOT / "assets/js/advanced-visuals.js").read_text(encoding="utf-8")
@@ -124,6 +129,13 @@ def main():
     physics = (ROOT / "assets/js/physics.js").read_text(encoding="utf-8")
     assert "orbitDiagnostics" in physics and "angularMomentumSquared" in physics
     assert (ROOT / "scripts/test_browser_physics.mjs").exists()
+    theory = (ROOT / "theory.html").read_text(encoding="utf-8")
+    assert '<dl class="notation-definition">' in theory
+    assert "<dt><var>t</var></dt>" in theory and "<strong>4πr²</strong>" in theory
+    dependency_labs = (ROOT / "assets/js/dependency-labs.js").read_text(encoding="utf-8")
+    assert "properDistance" in dependency_labs and "P0 leading centre asymptotics" in dependency_labs
+    galactic_3d = (ROOT / "assets/js/galactic-year-3d.js").read_text(encoding="utf-8")
+    assert 'getContext("webgl"' in galactic_3d and "scientific_roles" in galactic_3d
 
     # Independent canonical-value audit for the equations shared by all browser explorers.
     golden = (1 + math.sqrt(5)) / 2

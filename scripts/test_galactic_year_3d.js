@@ -1,0 +1,13 @@
+"use strict";
+const fs=require("node:fs"),vm=require("node:vm"),assert=require("node:assert/strict");
+const sandbox={window:{},document:{addEventListener(){}},console,Math,Number,performance:{now:()=>0}};
+vm.createContext(sandbox);vm.runInContext(fs.readFileSync("assets/js/galactic-year-3d.js","utf8"),sandbox);
+const calc=sandbox.window.SSZGalacticYear3D.calculate;
+const q=calc({R:8.122,dR:.031,v:240,dv:8,mu:6.411,e:.07,zAmp:.093,zPeriod:70,zScale:1,time:230});
+assert.ok(q.period>207&&q.period<209,"kinematic period");
+assert.ok(q.periodMu>201&&q.periodMu<203,"proper-motion period");
+assert.ok(q.periodBH>10000,"Sgr A* countermodel period");
+assert.ok(q.enclosed>1e11&&q.enclosed<1.2e11,"equivalent enclosed mass");
+assert.ok(q.xi>2.4e-11&&q.xi<2.8e-11,"weak-field Xi");
+assert.ok(q.clock>0&&q.clock<.01,"separate accumulated clock diagnostic");
+console.log("OK: 3D Galactic Year measurements, dynamics countermodel and clock layer remain numerically separated");

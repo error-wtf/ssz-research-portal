@@ -38,6 +38,7 @@ jobs:
           node scripts/test_browser_physics.mjs
           node scripts/test_interactions.js
           node scripts/test_metric_explorer.js
+          node scripts/test_galactic_year_3d.js
       - name: Upload validated site
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3

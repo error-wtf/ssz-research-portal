@@ -142,7 +142,7 @@ claims = [
           [], "All public software results", "Engineering and numerical evidence", "Portal test audit",
           "Evidence ladder", "TEST-BOUNDARY", digest(ROOT/"data/evaluations.json"), "error-wtf/ssz-research-portal",
           "tests.html", "", "58c1ebbfce188cdab91e0b791add3e72af437ed3", "strict-evaluation-json",
-          "python3 scripts/validate_content.py", [], "1,296 outcomes in the latest captured snapshot",
+          "python3 scripts/audit_test_catalog.py", [], "9,300 records; 5,294 unique repository/test definitions; 1,296-pass historical execution subset",
           "Non-statistical aggregate", [], ["tests-confirm-nature"], ["Independent experiment", "model preference"],
           "Any portal language equating an internal PASS with empirical confirmation violates this claim."),
     claim("SSZ-CLAIM-INTERIOR-OPEN-001", "Global interior remains open",

@@ -445,9 +445,9 @@
       "code_symbol": "",
       "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
       "test_id": "strict-evaluation-json",
-      "reproduction_command": "python3 scripts/validate_content.py",
+      "reproduction_command": "python3 scripts/audit_test_catalog.py",
       "inputs": [],
-      "numerical_result": "1,296 outcomes in the latest captured snapshot",
+      "numerical_result": "9,300 records; 5,294 unique repository/test definitions; 1,296-pass historical execution subset",
       "uncertainty": "Non-statistical aggregate",
       "dependencies": [],
       "conflicts": [

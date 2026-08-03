@@ -2,9 +2,17 @@
   const root = document.documentElement;
   const savedTheme = localStorage.getItem("ssz-theme");
   if (savedTheme) root.dataset.theme = savedTheme;
+  if (localStorage.getItem("ssz-reviewer") === "true") root.dataset.reviewer = "true";
 
   document.addEventListener("DOMContentLoaded", () => {
     const menu = document.querySelector(".nav-links");
+    if (menu) menu.style.visibility = "hidden";
+    if (menu) {
+      const pages = [["index.html","Overview"],["theory.html","Theory"],["metric.html","Metric"],["dynamics-energy.html","Dynamics & Energy"],["observations.html","Observables"],["mathematics.html","Mathematics"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["formulas.html","Formulas"],["visual-lab.html","Visual lab"],["workbench.html","Workbench"],["qubits.html","Qubits"],["tests.html","Tests"],["evidence.html","Evidence"],["repositories.html","Repositories"],["papers.html","Papers"],["research.html","Research archive"],["reproducibility.html","Reproduce"],["falsification.html","Falsification"],["glossary.html","Glossary"],["atlas.html","Atlas"]];
+      const here = location.pathname.split("/").pop() || "index.html";
+      menu.innerHTML = pages.map(([href,label])=>`<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`).join("") + `<button class="nav-button reviewer-toggle" data-reviewer-toggle aria-pressed="${root.dataset.reviewer==="true"}">${root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF"}</button><button class="nav-button" data-theme-toggle>◐ Theme</button>`;
+      menu.style.visibility = "visible";
+    }
     if (menu && !menu.querySelector('a[href="formulas.html"]')) {
       const link = document.createElement("a");
       link.href = "formulas.html";
@@ -37,6 +45,23 @@
       const tests = menu.querySelector('a[href="tests.html"]');
       menu.insertBefore(link, tests || menu.querySelector("[data-theme-toggle]"));
     }
+    [
+      ["regimes.html","Regimes","strong-field.html"],
+      ["interior-global-structure.html","Interior","tests.html"],
+      ["evidence.html","Evidence","repositories.html"],
+      ["falsification.html","Falsification","glossary.html"],
+      ["workbench.html","Workbench","tests.html"],
+    ].forEach(([href,label,before])=>{
+      if(!menu||menu.querySelector(`a[href="${href}"]`))return;
+      const link=document.createElement("a");link.href=href;link.textContent=label;
+      if(location.pathname.endsWith(`/${href}`))link.setAttribute("aria-current","page");
+      menu.insertBefore(link,menu.querySelector(`a[href="${before}"]`)||menu.querySelector("[data-theme-toggle]"));
+    });
+    if(menu&&!menu.querySelector("[data-reviewer-toggle]")){
+      const button=document.createElement("button");button.className="nav-button";button.dataset.reviewerToggle="";
+      button.textContent=root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF";
+      menu.insertBefore(button,menu.querySelector("[data-theme-toggle]"));
+    }
     const toggle = document.querySelector(".menu-toggle");
     toggle?.addEventListener("click", () => {
       const open = menu?.classList.toggle("open");
@@ -50,6 +75,12 @@
         window.dispatchEvent(new CustomEvent("ssz-theme-change"));
       });
     });
+    document.querySelectorAll("[data-reviewer-toggle]").forEach(button=>button.addEventListener("click",()=>{
+      const enabled=root.dataset.reviewer!=="true";root.dataset.reviewer=String(enabled);
+      localStorage.setItem("ssz-reviewer",String(enabled));localStorage.setItem("ssz-reviewer-toggles",String(Number(localStorage.getItem("ssz-reviewer-toggles")||0)+1));button.textContent=enabled?"Reviewer: ON":"Reviewer: OFF";button.setAttribute("aria-pressed",String(enabled));renderReviewerPanel();
+    }));
+    function renderReviewerPanel(){let panel=document.getElementById("reviewer-panel");if(root.dataset.reviewer!=="true"){panel?.remove();return;}if(!panel){panel=document.createElement("aside");panel.id="reviewer-panel";panel.className="reviewer-panel";panel.setAttribute("aria-live","polite");document.body.append(panel);}const views=Number(localStorage.getItem("ssz-reviewer-views")||0)+1;localStorage.setItem("ssz-reviewer-views",String(views));panel.innerHTML=`<strong>Reviewer mode active</strong><span>Report scientific, code or provenance issues:</span><a href="mailto:mail@error.wtf?subject=SSZ%20Research%20Portal%20review">mail@error.wtf</a><small>Local browser statistics: ${views} reviewer-mode page activations · ${Number(localStorage.getItem("ssz-reviewer-toggles")||0)} toggles. No data is transmitted.</small>`;}
+    renderReviewerPanel();
 
     document.querySelectorAll("[data-copy]").forEach(button => {
       button.addEventListener("click", async () => {

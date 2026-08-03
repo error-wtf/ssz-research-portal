@@ -238,13 +238,13 @@
       "year": 2025,
       "authors": "Carmen N. Wrede; Lino P. Casu",
       "topic": "interior",
-      "status": "historical / requires P0 correction",
+      "status": "supplementary explanation planned",
       "peer_review": "preprint / not established",
       "public_url": "",
       "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_16_Solution_to_the_Paradox_of_Singularities.md",
       "local_source": "09_PAPERS/markdown/paper_16_Solution_to_the_Paradox_of_Singularities.md",
-      "summary": "Historically claimed a resolution of singularities. P0 supersedes the global claim: the canonical diagonal continuation has divergent central curvature.",
-      "scope_note": "Historical claim: superseded by the P0 result that the canonical diagonal continuation has divergent central curvature."
+      "summary": "Discusses the singularity problem in Segmented Spacetime. A supplementary paper is planned to explain the distinction between horizon behavior and the unresolved global interior in greater detail.",
+      "scope_note": "Supplementary explanation planned; the portal's current interior page provides the presently applicable mathematical scope."
     },
     {
       "number": 17,
@@ -253,13 +253,13 @@
       "year": 2025,
       "authors": "Carmen N. Wrede; Lino P. Casu",
       "topic": "interior",
-      "status": "historical / requires P0 correction",
+      "status": "supplementary explanation planned",
       "peer_review": "preprint / not established",
       "public_url": "https://vixra.org/pdf/2411.0074v1.pdf",
       "manuscript_url": "https://github.com/error-wtf/ssz-complete-documentation/blob/main/09_PAPERS/markdown/paper_17_Natural_Boundary_of_Black_Holes_-_Cosmic_Censorship.md",
       "local_source": "09_PAPERS/markdown/paper_17_Natural_Boundary_of_Black_Holes_-_Cosmic_Censorship.md",
-      "summary": "Interprets a natural black-hole boundary in relation to cosmic censorship. Its historical regularity language is limited by the current P0 interior result.",
-      "scope_note": "Historical claim: superseded by the P0 result that the canonical diagonal continuation has divergent central curvature."
+      "summary": "Interprets a natural black-hole boundary in relation to cosmic censorship. A supplementary paper is planned to expand the treatment of the global interior.",
+      "scope_note": "Supplementary explanation planned; the portal's current interior page provides the presently applicable mathematical scope."
     },
     {
       "number": 18,

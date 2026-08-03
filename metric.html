@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive visual reference for the canonical public SSZ static metric, branches, coefficients and limits.">
+  <title>SSZ Metric</title>
+  <link rel="stylesheet" href="assets/css/site.css?v=20260803.8">
+  <script defer src="assets/js/mathjax-config.js?v=20260803.5"></script>
+  <script defer src="assets/vendor/mathjax/tex-svg.js"></script>
+  <script defer src="assets/js/site.js?v=20260803.8"></script>
+  <script defer src="assets/js/physics.js"></script>
+  <script defer src="assets/js/metric-visuals.js?v=20260803.5"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><strong>Segmented Spacetime</strong></a><button class="nav-button menu-toggle">Menu</button><div class="nav-links"></div></div></nav>
+<main id="main" class="page">
+  <header class="hero"><div><span class="eyebrow">Canonical static sector · interactive formula atlas</span><h1>The SSZ <span class="gradient-text">metric</span></h1><p class="lead">Definitions, branches, coefficients and limits are linked to one synchronized radius probe. Animation illustrates mathematical dependence; it is not an astrophysical simulation.</p></div></header>
+
+  <section class="section" aria-labelledby="metric-controls-title">
+    <div class="section-head"><span class="badge canonical">Shared radius probe</span><h2 id="metric-controls-title">Move through the metric</h2><p>All diagrams below use <var>x</var> = <var>r</var>/<var>r</var><sub>s</sub>. Play moves logarithmically from the present centre diagnostic toward the asymptotic region.</p></div>
+    <div class="visual-controls metric-master-controls">
+      <div class="control"><label for="metric-radius">Normalized areal radius <var>x</var> = <var>r</var>/<var>r</var><sub>s</sub> <output id="metric-radius-out">1.0000</output></label><input id="metric-radius" type="range" min="-4" max="2" step=".002" value="0"></div>
+      <div class="actions"><button class="button" id="metric-play" type="button" aria-pressed="true">Pause radial sweep</button><button class="button" id="metric-reset" type="button">Reset to horizon</button><span id="metric-animation-status" class="badge tested" aria-live="polite">Animation active</span></div>
+      <div class="result"><div><small>active branch</small><strong id="metric-branch">strong</strong></div><div><small>Ξ(x)</small><strong id="metric-xi">—</strong></div><div><small>D(x)</small><strong id="metric-d">—</strong></div><div><small>A(x)</small><strong id="metric-a">—</strong></div><div><small>B(x)</small><strong id="metric-b">—</strong></div><div><small>A·B</small><strong id="metric-ab">1</strong></div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ansatz-title">
+    <div class="section-head"><span class="badge canonical">Definition</span><h2 id="ansatz-title">Static diagonal ansatz</h2></div>
+    <div class="math-box">\[ds^2=-A(r)c^2dt^2+B(r)dr^2+r^2(d\theta^2+\sin^2\theta\,d\phi^2)\]</div>
+    <div class="math-box">\[D=(1+\Xi)^{-1},\qquad A=D^2,\qquad B=D^{-2},\qquad AB=1\]</div>
+    <div class="visual-grid"><div class="visual-controls"><h3>Geometric reading</h3><p>The animated local chart shows how the time and radial coordinate scales change with the selected radius. The angular sphere retains areal radius <var>r</var>.</p><p><strong>Interact:</strong> drag horizontally over any diagram, use the mouse wheel, or focus a canvas and press ←/→.</p><p class="callout warning"><strong>Coordinate statement:</strong> changing coordinate slopes does not change the locally measured value of <var>c</var>.</p></div><div><canvas id="metric-geometry" class="lab-canvas" aria-label="Animated and interactive coordinate-scale and radial light-cone representation of the static metric" tabindex="0"></canvas><label class="metric-local-control">Geometry radius <output data-metric-local-output>—</output><input data-metric-local-radius aria-label="Geometry normalized radius" type="range" min="-4" max="2" step=".002" value="0"></label></div></div>
+    <p>The coordinate <var>r</var> is the areal radius: a sphere at fixed <var>r</var> has area 4π<var>r</var><sup>2</sup>. This is an effective static spherical geometry and a concrete basis for further dynamical development.</p>
+  </section>
+
+  <section class="section" aria-labelledby="branches-title">
+    <div class="section-head"><span class="badge canonical">Piecewise definition</span><h2 id="branches-title">Canonical branches and C² bridge</h2><p>The moving marker and shaded bridge make the routing and its derivative matching visible.</p></div>
+    <div class="grid grid-3">
+      <article class="card metric-preset-card" data-metric-preset="0"><h3>Strong</h3><div class="math-box">\[\Xi_{\rm strong}(x)=1-e^{-\varphi/x},\quad x&lt;1.8\]</div><button class="button" type="button" data-metric-preset="0">Explore at x=1</button></article>
+      <article class="card metric-preset-card" data-metric-preset=".30103"><h3>C² bridge</h3><div class="math-box">\[\Xi_{\rm bridge}(x)=\sum_{k=0}^{5}a_k t^k,\quad t=\frac{x-1.8}{0.4}\]</div><p>Six endpoint constraints match value, first derivative and second derivative.</p><button class="button" type="button" data-metric-preset=".30103">Explore at x=2</button></article>
+      <article class="card metric-preset-card" data-metric-preset="1"><h3>Weak</h3><div class="math-box">\[\Xi_{\rm weak}(x)=\frac{1}{2x},\quad x&gt;2.2\]</div><button class="button" type="button" data-metric-preset="1">Explore at x=10</button></article>
+    </div>
+    <canvas id="metric-branches" class="lab-canvas metric-wide-canvas" aria-label="Animated and interactive Xi branch function and first two radial derivatives; drag to select radius" tabindex="0"></canvas><label class="metric-local-control">Branch radius <output data-metric-local-output>—</output><input data-metric-local-radius aria-label="Branch normalized radius" type="range" min="-4" max="2" step=".002" value="0"></label>
+    <div class="result"><div><small>Ξ′(x), numerical</small><strong id="metric-xip">—</strong></div><div><small>Ξ″(x), numerical</small><strong id="metric-xipp">—</strong></div><div><small>distance to bridge</small><strong id="metric-bridge-distance">—</strong></div></div>
+  </section>
+
+  <section class="section" aria-labelledby="coefficients-title">
+    <div class="section-head"><span class="badge tested">Algebraic identities</span><h2 id="coefficients-title">From Ξ to D, A and B</h2><p>Each bar is evaluated from the same selected radius. The reciprocal product is recalculated rather than hard-coded.</p></div>
+    <canvas id="metric-coefficients" class="lab-canvas metric-wide-canvas" aria-label="Animated and interactive comparison of Xi, D, A and B with reciprocal identity; drag to select radius" tabindex="0"></canvas><label class="metric-local-control">Coefficient radius <output data-metric-local-output>—</output><input data-metric-local-radius aria-label="Coefficient normalized radius" type="range" min="-4" max="2" step=".002" value="0"></label>
+    <div class="math-box">\[D=\frac{1}{1+\Xi},\qquad g_{tt}=-D^2,\qquad g_{rr}=D^{-2},\qquad |g_{tt}|g_{rr}=1\]</div>
+  </section>
+
+  <section class="section" aria-labelledby="velocity-title">
+    <div class="section-head"><span class="badge tested">Tested kinematic identity</span><h2 id="velocity-title">Escape–fall duality</h2><p>The public corpus defines a complementary fall scale <var>v</var><sub>fall</sub>. It is an algebraic kinematic dual, not a locally measured material 3-velocity.</p></div>
+    <div class="grid grid-2"><article class="card"><h3>Dual velocity pair</h3><div class="math-box">\[\frac{v_{\rm esc}}{c}=\sqrt{\frac{r_s}{r}}=\frac1{\sqrt{x}},\qquad \frac{v_{\rm fall}}{c}=\sqrt{\frac{r}{r_s}}=\sqrt{x}\]</div><div class="math-box">\[v_{\rm esc}\,v_{\rm fall}=c^2\]</div><p>The product identity is mass-independent after normalization and is tested across multiple radii in the repository suite.</p></article><article class="card"><h3>Do not mix two meanings</h3><p>The dual <var>v</var><sub>fall</sub> can exceed <var>c</var> for <var>r</var> &gt; <var>r</var><sub>s</sub> because it is a reciprocal kinematic scale. It does not describe a local object overtaking light. A separate metric-derived infall-speed proxy sometimes used in the corpus is <var>c</var>√(1−<var>D</var><sup>2</sup>); it must be labelled separately.</p></article></div>
+    <canvas id="metric-velocities" class="lab-canvas metric-wide-canvas" aria-label="Animated and interactive escape and dual fall velocity scales with invariant product" tabindex="0"></canvas><label class="metric-local-control">Velocity radius <output data-metric-local-output>—</output><input data-metric-local-radius aria-label="Velocity normalized radius" type="range" min="-4" max="2" step=".002" value="0"></label>
+    <div class="result"><div><small>v<sub>esc</sub>/c</small><strong id="metric-vesc">—</strong></div><div><small>dual v<sub>fall</sub>/c</small><strong id="metric-vfall">—</strong></div><div><small>v<sub>esc</sub>v<sub>fall</sub>/c²</small><strong id="metric-vproduct">1</strong></div><div><small>metric infall proxy/c</small><strong id="metric-vproxy">—</strong></div></div>
+  </section>
+
+  <section class="section" aria-labelledby="limits-title">
+    <div class="section-head"><span class="badge tested">Tested horizon · open completion</span><h2 id="limits-title">Horizon result and areal-centre scope</h2><p>The test corpus repeatedly verifies finite Ξ and D at <var>r</var> = <var>r</var><sub>s</sub>. Explore the tested horizon, the present centre extrapolation and possible completion requirements separately.</p></div>
+    <div class="filter-bar metric-scope-tabs" role="group" aria-label="Choose metric scope"><button class="button" type="button" data-metric-scope="horizon" aria-pressed="true">Horizon</button><button class="button" type="button" data-metric-scope="centre" aria-pressed="false">Centre extrapolation</button><button class="button" type="button" data-metric-scope="completion" aria-pressed="false">Possible completion</button></div>
+    <div id="metric-scope-explanation" class="callout tested" aria-live="polite"></div>
+    <div class="grid grid-2">
+      <article class="card"><h3>At <var>r</var> = <var>r</var><sub>s</sub>: repeatedly tested</h3><div class="math-box">\[\Xi(r_s)\approx0.801711847,\qquad D(r_s)\approx0.555027710\]</div><p>Repository tests repeatedly reproduce these finite values and the associated metric identities. This establishes finite static-chart time scaling at the tested radius; a software test is still not an empirical observation or a proof of global causal structure.</p></article>
+      <article class="card"><h3>As <var>r</var> → 0: completion remains open</h3><div class="math-box">\[A\to\frac14,\qquad R\sim\frac{3}{2r^2},\qquad K\sim\frac{9}{4r^4}\]</div><p>These asymptotics diagnose the current diagonal extrapolation to the areal centre. They do not rule out a different SSZ inner solution, a non-areal boundary construction or another mathematically complete continuation. Whether SSZ supplies such a completion remains an open research question.</p></article>
+    </div>
+    <canvas id="metric-limits" class="lab-canvas metric-wide-canvas" aria-label="Animated and interactive logarithmic centre asymptotics for A, Ricci scalar and Kretschmann scalar; drag to select radius" tabindex="0"></canvas><label class="metric-local-control">Limit radius <output data-metric-local-output>—</output><input data-metric-local-radius aria-label="Limit normalized radius" type="range" min="-4" max="2" step=".002" value="0"></label>
+    <div class="result"><div><small>A asymptotic diagnostic</small><strong id="metric-limit-a">—</strong></div><div><small>R·x² proxy</small><strong id="metric-limit-r">1.5</strong></div><div><small>K·x⁴ proxy</small><strong id="metric-limit-k">2.25</strong></div></div>
+    <p class="callout warning"><strong>Epistemic boundary:</strong> the curvature curves visualize the leading asymptotic terms of the presently declared diagonal continuation. They neither prove a regular global interior nor prove that no alternative SSZ completion can resolve the centre question.</p>
+  </section>
+</main>
+<footer class="footer"><div class="footer-inner"><div><strong>SSZ metric atlas</strong><p>One canonical implementation, synchronized formula views.</p></div><div><a href="formulas.html">Formula catalogue</a></div><div><a href="interior-global-structure.html">Interior and global structure</a></div></div></footer>
+</body>
+</html>

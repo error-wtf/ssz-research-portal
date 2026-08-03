@@ -1,5 +1,7 @@
 # Deployment
 
+The GitHub Pages source is the validated `agent/portal-scientific-audit-foundation` branch. The public site is rebuilt from this branch after each push.
+
 The site is GitHub Pages compatible without a build step. All internal asset links are relative.
 
 `pages-workflow.example.yml` documents an optional Actions deployment after

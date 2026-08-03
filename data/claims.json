@@ -2,115 +2,505 @@
   "count": 10,
   "claims": [
     {
-      "id": "scope",
-      "category": "Einordnung",
+      "id": "SSZ-CLAIM-SCOPE-001",
+      "title": "Scientific status",
+      "statement": "SSZ is a mathematically concrete and falsifiable strong-field research programme, not a complete or empirically confirmed fundamental theory.",
+      "evidence_class": "Interpretation",
       "status": "canonical",
-      "claim": "SSZ ist ein mathematisch konkretes, falsifizierbares Starkfeld-Forschungsprogramm, aber keine vollständige oder empirisch bestätigte Fundamentaltheorie.",
-      "evidence": [
-        "P0-Direktive",
-        "Known Limitations",
-        "Falsification Criteria"
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Public static SSZ scope only"
       ],
-      "limit": "Wirkung, vollständige Feldgleichungen und globale innere Lösung fehlen."
+      "definitions": [
+        "effective geometry",
+        "empirical confirmation"
+      ],
+      "formula_ids": [],
+      "domain": "Public SSZ programme",
+      "observer_coordinate_scope": "Epistemic scope, not a coordinate claim",
+      "source_document": "Canonical Xi and Blend Resolution",
+      "source_section": "P0 scope",
+      "source_id": "P0-SCOPE",
+      "source_sha256": "c8ae6f404ddea391efa38970d14f95c5bef7202cda09e16331a020dc15fba1d3",
+      "repository": "error-wtf/ssz-research-portal",
+      "repository_path": "SCIENTIFIC_SCOPE.md",
+      "code_symbol": "",
+      "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+      "test_id": "privacy-and-scope-guard",
+      "reproduction_command": "python3 scripts/validate_content.py",
+      "inputs": [],
+      "numerical_result": "Scope guard passes",
+      "uncertainty": "Not statistical",
+      "dependencies": [],
+      "conflicts": [
+        "legacy-complete-theory-language"
+      ],
+      "does_not_prove": [
+        "A fundamental action",
+        "complete field equations",
+        "empirical confirmation"
+      ],
+      "falsification_criterion": "A complete public derivation or decisive independent evidence would require this status to be updated, not silently reworded.",
+      "last_reviewed": "2026-08-03"
     },
     {
-      "id": "horizon",
-      "category": "mathematical consequence",
+      "id": "SSZ-CLAIM-XI-STRONG-001",
+      "title": "Canonical strong branch",
+      "statement": "The canonical strong branch applies below the normalized radius 1.8.",
+      "evidence_class": "Definition",
       "status": "canonical",
-      "claim": "Die kanonische Zeitdilatation bleibt bei r=r_s endlich: D≈0,555027709.",
-      "evidence": [
-        "xi-strong",
-        "dilation",
-        "Horizon-Grenzwerttests"
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "x>0",
+        "phi=(1+sqrt(5))/2"
       ],
-      "limit": "Aussage betrifft den Horizont, nicht das areale Zentrum."
+      "definitions": [
+        "x=r/r_s",
+        "Xi"
+      ],
+      "formula_ids": [
+        "SSZ-FORM-XI-STRONG"
+      ],
+      "domain": "0<x<1.8",
+      "observer_coordinate_scope": "Static spherical areal-radius chart",
+      "source_document": "Canonical Xi and Blend Resolution",
+      "source_section": "Canonical strong branch",
+      "source_id": "P0-XI-STRONG",
+      "source_sha256": "c8ae6f404ddea391efa38970d14f95c5bef7202cda09e16331a020dc15fba1d3",
+      "repository": "error-wtf/SSZ-METRIC_COMPLETE",
+      "repository_path": "ssz_metric/xi.py",
+      "code_symbol": "xi_strong",
+      "commit_sha": "b7643f437f46a170f05e492609b27ed2a8acae73",
+      "test_id": "test_canonical_strong_branch_formula",
+      "reproduction_command": "pytest -q tests/test_canonical_xi_primary.py",
+      "inputs": [
+        {
+          "name": "x",
+          "unit": "1",
+          "range": "0<x<1.8"
+        }
+      ],
+      "numerical_result": "Definition and sampled implementation agree",
+      "uncertainty": "Floating-point tolerance declared by test",
+      "dependencies": [],
+      "conflicts": [
+        "reversed-exponent-legacy"
+      ],
+      "does_not_prove": [
+        "Microphysical origin of Xi",
+        "global interior solution"
+      ],
+      "falsification_criterion": "Any implementation or publication using a different formula under this Claim-ID fails the canonical lock.",
+      "last_reviewed": "2026-08-03"
     },
     {
-      "id": "center",
-      "category": "mathematical consequence",
+      "id": "SSZ-CLAIM-BLEND-C2-001",
+      "title": "Derivative-matched C2 bridge",
+      "statement": "Between normalized radii 1.8 and 2.2, a quintic Hermite bridge matches the field, its slope and its curvature at both endpoints.",
+      "evidence_class": "Definition",
+      "status": "canonical",
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Both endpoint branches are twice differentiable"
+      ],
+      "definitions": [
+        "x0=1.8",
+        "x1=2.2",
+        "quintic Hermite basis"
+      ],
+      "formula_ids": [
+        "SSZ-FORM-BLEND-H5"
+      ],
+      "domain": "1.8<=x<=2.2",
+      "observer_coordinate_scope": "Static spherical areal-radius chart",
+      "source_document": "Canonical Xi and Blend Resolution",
+      "source_section": "Blend resolution",
+      "source_id": "P0-BLEND-C2",
+      "source_sha256": "c8ae6f404ddea391efa38970d14f95c5bef7202cda09e16331a020dc15fba1d3",
+      "repository": "error-wtf/ssz-research-portal",
+      "repository_path": "assets/js/physics.js",
+      "code_symbol": "hermite5",
+      "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+      "test_id": "browser-branch-continuity",
+      "reproduction_command": "node scripts/test_browser_physics.mjs",
+      "inputs": [
+        {
+          "name": "x0",
+          "value": 1.8
+        },
+        {
+          "name": "x1",
+          "value": 2.2
+        }
+      ],
+      "numerical_result": "Six endpoint identities tested",
+      "uncertainty": "Browser regression tolerance",
+      "dependencies": [
+        "SSZ-CLAIM-XI-STRONG-001",
+        "SSZ-CLAIM-XI-WEAK-001"
+      ],
+      "conflicts": [
+        "zero-slope-smoothstep-drift"
+      ],
+      "does_not_prove": [
+        "Uniqueness among all possible C2 completions",
+        "blend-independent orbit extrema"
+      ],
+      "falsification_criterion": "Failure of any value, slope or curvature endpoint identity rejects this bridge implementation.",
+      "last_reviewed": "2026-08-03"
+    },
+    {
+      "id": "SSZ-CLAIM-XI-WEAK-001",
+      "title": "Canonical weak branch",
+      "statement": "The canonical weak branch applies above the normalized radius 2.2 and approaches zero at infinity.",
+      "evidence_class": "Definition",
+      "status": "canonical",
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "x>2.2"
+      ],
+      "definitions": [
+        "x=r/r_s",
+        "Xi"
+      ],
+      "formula_ids": [
+        "SSZ-FORM-XI-WEAK"
+      ],
+      "domain": "x>2.2",
+      "observer_coordinate_scope": "Static spherical areal-radius chart",
+      "source_document": "Canonical Xi and Blend Resolution",
+      "source_section": "Canonical weak branch",
+      "source_id": "P0-XI-WEAK",
+      "source_sha256": "c8ae6f404ddea391efa38970d14f95c5bef7202cda09e16331a020dc15fba1d3",
+      "repository": "error-wtf/SSZ-METRIC_COMPLETE",
+      "repository_path": "ssz_metric/xi.py",
+      "code_symbol": "xi_weak",
+      "commit_sha": "b7643f437f46a170f05e492609b27ed2a8acae73",
+      "test_id": "test_canonical_weak_branch_formula",
+      "reproduction_command": "pytest -q tests/test_canonical_xi_primary.py",
+      "inputs": [
+        {
+          "name": "x",
+          "unit": "1",
+          "range": "x>2.2"
+        }
+      ],
+      "numerical_result": "Definition and sampled implementation agree",
+      "uncertainty": "Floating-point tolerance declared by test",
+      "dependencies": [],
+      "conflicts": [
+        "wrong-far-field-limit"
+      ],
+      "does_not_prove": [
+        "Novel weak-field empirical preference"
+      ],
+      "falsification_criterion": "A nonzero asymptotic Xi or coefficient other than 1/2 rejects the locked weak branch.",
+      "last_reviewed": "2026-08-03"
+    },
+    {
+      "id": "SSZ-CLAIM-METRIC-DIAGONAL-001",
+      "title": "Canonical diagonal metric",
+      "statement": "The public static ansatz is a diagonal, spherically symmetric metric derived from the canonical clock factor.",
+      "evidence_class": "Definition",
+      "status": "canonical",
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Static",
+        "spherical symmetry",
+        "r is areal radius"
+      ],
+      "definitions": [
+        "D",
+        "Xi",
+        "areal radius"
+      ],
+      "formula_ids": [
+        "SSZ-FORM-D",
+        "SSZ-FORM-METRIC"
+      ],
+      "domain": "r>0 in the declared static chart",
+      "observer_coordinate_scope": "Static observers and spherical coordinates",
+      "source_document": "SSZ-METRIC_COMPLETE specification",
+      "source_section": "Diagonal metric",
+      "source_id": "METRIC-DIAGONAL",
+      "source_sha256": "0e879432b903337e404d5086272dff6a100982772bf1ae4a576895edb7fe8752",
+      "repository": "error-wtf/SSZ-METRIC_COMPLETE",
+      "repository_path": "ssz_metric/metric.py",
+      "code_symbol": "metric_diagonal",
+      "commit_sha": "b7643f437f46a170f05e492609b27ed2a8acae73",
+      "test_id": "test_metric_diagonal",
+      "reproduction_command": "pytest -q tests/test_metric_diagonal.py",
+      "inputs": [
+        {
+          "name": "c",
+          "unit": "m s^-1"
+        },
+        {
+          "name": "r",
+          "unit": "m"
+        }
+      ],
+      "numerical_result": "Inverse and determinant identities pass",
+      "uncertainty": "Test tolerances in source",
+      "dependencies": [
+        "SSZ-CLAIM-XI-STRONG-001",
+        "SSZ-CLAIM-BLEND-C2-001",
+        "SSZ-CLAIM-XI-WEAK-001"
+      ],
+      "conflicts": [],
+      "does_not_prove": [
+        "Fundamental action",
+        "dynamical formation",
+        "rotating solution"
+      ],
+      "falsification_criterion": "Violation of inverse, determinant, signature or declared branch mapping rejects the implementation.",
+      "last_reviewed": "2026-08-03"
+    },
+    {
+      "id": "SSZ-CLAIM-HORIZON-D-001",
+      "title": "Finite horizon time factor",
+      "statement": "At the Schwarzschild scale, the locked strong branch yields finite segment-density and clock factors.",
+      "evidence_class": "Mathematically derived result",
+      "status": "canonical",
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Use the locked strong branch at x=1",
+        "D=(1+Xi)^-1"
+      ],
+      "definitions": [
+        "x=1",
+        "static clock factor"
+      ],
+      "formula_ids": [
+        "SSZ-FORM-XI-STRONG",
+        "SSZ-FORM-D"
+      ],
+      "domain": "r=r_s",
+      "observer_coordinate_scope": "Static observer limit in the declared chart",
+      "source_document": "Canonical Xi and Blend Resolution",
+      "source_section": "Horizon checkpoint",
+      "source_id": "P0-HORIZON",
+      "source_sha256": "c8ae6f404ddea391efa38970d14f95c5bef7202cda09e16331a020dc15fba1d3",
+      "repository": "error-wtf/ssz-research-portal",
+      "repository_path": "assets/js/physics.js",
+      "code_symbol": "branch",
+      "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+      "test_id": "browser-horizon-values",
+      "reproduction_command": "node scripts/test_browser_physics.mjs",
+      "inputs": [
+        {
+          "name": "x",
+          "value": 1,
+          "unit": "1"
+        }
+      ],
+      "numerical_result": "Xi=0.8017118471377938; D=0.5550277096687818",
+      "uncertainty": "Absolute numerical audit <1e-14",
+      "dependencies": [
+        "SSZ-CLAIM-XI-STRONG-001",
+        "SSZ-CLAIM-METRIC-DIAGONAL-001"
+      ],
+      "conflicts": [
+        "legacy-Xi-horizon-equals-one"
+      ],
+      "does_not_prove": [
+        "Global horizon absence",
+        "central regularity",
+        "geodesic completeness"
+      ],
+      "falsification_criterion": "A reproducible evaluation of the locked formula outside tolerance rejects the implementation or quoted values.",
+      "last_reviewed": "2026-08-03"
+    },
+    {
+      "id": "SSZ-CLAIM-P0-CENTRE-001",
+      "title": "Non-regular areal centre",
+      "statement": "For the current canonical diagonal continuation in areal radius, the invariant calculation yields a finite temporal coefficient and divergent Ricci/Kretschmann asymptotics; this does not rule out a different SSZ interior completion.",
+      "evidence_class": "Mathematically derived result",
       "status": "corrected",
-      "claim": "Die kanonische diagonale Fortsetzung ist am arealen Zentrum nicht regulär.",
-      "evidence": [
-        "A→1/4",
-        "R~3/(2r²)",
-        "K~9/(4r⁴)"
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Formal continuation of the strong branch to r->0",
+        "r remains areal radius"
       ],
-      "limit": "Eine andere innere Lösung oder Randgeometrie könnte separat konstruiert werden."
+      "definitions": [
+        "A=D2",
+        "Ricci scalar R",
+        "Kretschmann scalar K"
+      ],
+      "formula_ids": [
+        "SSZ-FORM-CENTRE-A",
+        "SSZ-FORM-CENTRE-R",
+        "SSZ-FORM-CENTRE-K"
+      ],
+      "domain": "r->0+",
+      "observer_coordinate_scope": "Canonical diagonal continuation; not a new interior solution",
+      "source_document": "Canonical Xi and Blend Resolution",
+      "source_section": "P0 centre correction",
+      "source_id": "P0-CENTRE",
+      "source_sha256": "c8ae6f404ddea391efa38970d14f95c5bef7202cda09e16331a020dc15fba1d3",
+      "repository": "error-wtf/ssz-research-portal",
+      "repository_path": "theory.html#interior",
+      "code_symbol": "",
+      "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+      "test_id": "p0-centre-guard",
+      "reproduction_command": "python3 scripts/validate_content.py",
+      "inputs": [
+        {
+          "name": "r",
+          "limit": "0+"
+        }
+      ],
+      "numerical_result": "A->1/4; R~3/(2r^2); K~9/(4r^4)",
+      "uncertainty": "Asymptotic statement",
+      "dependencies": [
+        "SSZ-CLAIM-METRIC-DIAGONAL-001"
+      ],
+      "conflicts": [
+        "legacy-singularity-free-centre"
+      ],
+      "does_not_prove": [
+        "No alternative interior can exist",
+        "global causal classification"
+      ],
+      "falsification_criterion": "A regular-centre claim for this continuation is rejected unless all invariant divergences are removed by a demonstrated geometry.",
+      "last_reviewed": "2026-08-03"
     },
     {
-      "id": "weak",
-      "category": "test result",
-      "status": "tested",
-      "claim": "Der deklarierte PPN-Grenzfall verwendet β=γ=1 und reproduziert die entsprechenden Standardformeln.",
-      "evidence": [
-        "ppn_formulas.md",
-        "PPN-Tests"
+      "id": "SSZ-CLAIM-ORBIT-PROXY-001",
+      "title": "Blend-localized stationary candidates",
+      "statement": "Current photon and timelike stationary candidates computed near x=2.1–2.2 are reproducible static-metric diagnostics; their physical interpretation remains conditional on the matching prescription and a complete forward model.",
+      "evidence_class": "Numerical result",
+      "status": "conditional",
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Canonical derivative-matched bridge",
+        "static diagonal metric"
       ],
-      "limit": "Kompatibilität in diesem Grenzfall bestätigt nicht das Gesamtmodell."
+      "definitions": [
+        "null effective potential",
+        "timelike angular momentum proxy"
+      ],
+      "formula_ids": [
+        "SSZ-FORM-NULL-POTENTIAL",
+        "SSZ-FORM-L2"
+      ],
+      "domain": "1.8<=x<=2.2",
+      "observer_coordinate_scope": "Static spherical effective-potential calculation",
+      "source_document": "Portal browser physics audit",
+      "source_section": "Orbit diagnostics",
+      "source_id": "ORBIT-PROXY",
+      "source_sha256": "789dda760e14448dea61a1a0c285545ce196d845e09559b5225d22bcc060f376",
+      "repository": "error-wtf/ssz-research-portal",
+      "repository_path": "assets/js/physics.js",
+      "code_symbol": "orbitDiagnostics",
+      "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+      "test_id": "browser-orbit-diagnostics",
+      "reproduction_command": "node scripts/test_browser_physics.mjs",
+      "inputs": [
+        {
+          "name": "grid_step",
+          "value": 0.0005
+        }
+      ],
+      "numerical_result": "null candidate x≈2.130175; impact proxy≈2.656527; L2 minimum x≈2.199652",
+      "uncertainty": "Grid and interpolation sensitivity not yet a full certificate",
+      "dependencies": [
+        "SSZ-CLAIM-BLEND-C2-001",
+        "SSZ-CLAIM-METRIC-DIAGONAL-001"
+      ],
+      "conflicts": [
+        "historic-universal-photon-sphere-values"
+      ],
+      "does_not_prove": [
+        "Blend independence",
+        "observable shadow image",
+        "ISCO theorem"
+      ],
+      "falsification_criterion": "Material displacement under admissible C2 bridges falsifies universality and retains only matching-dependent status.",
+      "last_reviewed": "2026-08-03"
     },
     {
-      "id": "blend",
-      "category": "implementation",
+      "id": "SSZ-CLAIM-TESTS-BOUNDARY-001",
+      "title": "Software evidence boundary",
+      "statement": "A passing software assertion establishes only the encoded property in its recorded environment.",
+      "evidence_class": "Software Unit Test",
       "status": "canonical",
-      "claim": "Die operative Blendzone 1,8–2,2 r_s verlangt C²/quintische Hermite-Interpolation.",
-      "evidence": [
-        "CANONICAL_XI_AND_BLEND_RESOLUTION.md",
-        "release audit"
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Test source, inputs and environment are identified"
       ],
-      "limit": "Konkrete Koeffizienten müssen aus beiden Zweigen und deren Ableitungen kommen."
+      "definitions": [
+        "PASS",
+        "empirical confirmation"
+      ],
+      "formula_ids": [],
+      "domain": "All public software results",
+      "observer_coordinate_scope": "Engineering and numerical evidence",
+      "source_document": "Portal test audit",
+      "source_section": "Evidence ladder",
+      "source_id": "TEST-BOUNDARY",
+      "source_sha256": "a6b919d95c15e01735a66bb71b0cc2689075e447051657d0f3c86277a0e24cfc",
+      "repository": "error-wtf/ssz-research-portal",
+      "repository_path": "tests.html",
+      "code_symbol": "",
+      "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+      "test_id": "strict-evaluation-json",
+      "reproduction_command": "python3 scripts/audit_test_catalog.py",
+      "inputs": [],
+      "numerical_result": "9,300 catalogue records; 5,294 unique repository/test definitions; 28 test-bearing repositories; 2,280 source files; 1,296-pass historical execution subset",
+      "uncertainty": "Non-statistical aggregate",
+      "dependencies": [],
+      "conflicts": [
+        "tests-confirm-nature"
+      ],
+      "does_not_prove": [
+        "Independent experiment",
+        "model preference"
+      ],
+      "falsification_criterion": "Any portal language equating an internal PASS with empirical confirmation violates this claim.",
+      "last_reviewed": "2026-08-03"
     },
     {
-      "id": "tests",
-      "category": "test result",
-      "status": "catalogued",
-      "claim": "Der Bestand enthält umfangreiche automatisierte und dokumentierte Tests.",
-      "evidence": [
-        "tests.json",
-        "SSZ_COMPREHENSIVE_TEST_AUDIT_REPORT.md"
-      ],
-      "limit": "Audit-Summen variieren nach Zeitpunkt, Scope und Zählmethode; Softwaretests sind keine Naturbestätigung."
-    },
-    {
-      "id": "ligo",
-      "category": "open question",
+      "id": "SSZ-CLAIM-INTERIOR-OPEN-001",
+      "title": "Global interior remains open",
+      "statement": "The public corpus contains interior proposals, energy-condition analyses and related tests, but no single canonical, globally matched solution has yet been certified for regularity, maximal extension, geodesic completeness and causal completeness together.",
+      "evidence_class": "Open derivation",
       "status": "open",
-      "claim": "Ein vollständiges SSZ-Gravitationswellen-Wellenformmodell ist noch nicht vorhanden.",
-      "evidence": [
-        "known_limitations.md",
-        "LIGO interpretation locks"
+      "canonical_version": "P0-2026.08",
+      "mathematical_assumptions": [
+        "Current public corpus and P0 hierarchy"
       ],
-      "limit": "Proxy- und Pipeline-Tests dürfen nicht als vollständige Vorhersage gelesen werden."
-    },
-    {
-      "id": "rotation",
-      "category": "open question",
-      "status": "open",
-      "claim": "Eine vollständige Kerr-artige rotierende SSZ-Lösung ist nicht abgeschlossen.",
-      "evidence": [
-        "known_limitations.md"
+      "definitions": [
+        "interior solution",
+        "maximal extension"
       ],
-      "limit": "PPN-Frame-Dragging und Skizzen ersetzen keine globale rotierende Lösung."
-    },
-    {
-      "id": "empirical",
-      "category": "epistemic boundary",
-      "status": "canonical",
-      "claim": "Reproduzierbarer Code und PASS-Ergebnisse zeigen Implementierungskonsistenz, nicht automatisch empirische Wahrheit.",
-      "evidence": [
-        "P0-Direktive",
-        "test methodology"
+      "formula_ids": [],
+      "domain": "r<=r_s and global extension",
+      "observer_coordinate_scope": "Global geometric scope",
+      "source_document": "Canonical Xi and Blend Resolution",
+      "source_section": "Open completion tasks",
+      "source_id": "INTERIOR-OPEN",
+      "source_sha256": "c8ae6f404ddea391efa38970d14f95c5bef7202cda09e16331a020dc15fba1d3",
+      "repository": "error-wtf/ssz-research-portal",
+      "repository_path": "interior-global-structure.html",
+      "code_symbol": "",
+      "commit_sha": "58c1ebbfce188cdab91e0b791add3e72af437ed3",
+      "test_id": "open-problem-presence",
+      "reproduction_command": "python3 scripts/validate_claims.py",
+      "inputs": [],
+      "numerical_result": "Open",
+      "uncertainty": "Not applicable",
+      "dependencies": [
+        "SSZ-CLAIM-P0-CENTRE-001"
       ],
-      "limit": "Naturvergleich benötigt unabhängige Daten, Unsicherheiten und Modellselektion."
-    },
-    {
-      "id": "falsifiable",
-      "category": "methodology",
-      "status": "canonical",
-      "claim": "Abweichende Rotverschiebungs-, Schatten-, Timing- oder Ringdownmessungen können SSZ begrenzen oder widerlegen.",
-      "evidence": [
-        "falsification_criteria.md"
+      "conflicts": [
+        "legacy-complete-singularity-resolution"
       ],
-      "limit": "Schwellwerte sind nur belastbar, wenn vollständige Vorwärtsmodelle und Systematiken feststehen."
+      "does_not_prove": [
+        "Impossibility of a future regular completion"
+      ],
+      "falsification_criterion": "A complete public solution must supply a metric, source/dynamics, junction conditions, invariants and causal/geodesic analysis.",
+      "last_reviewed": "2026-08-03"
     }
   ]
 }

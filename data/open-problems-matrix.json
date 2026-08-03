@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-08-03",
+  "problems": [
+    {
+      "id": "SSZ-OPEN-015",
+      "problem": "Cartesian 3D Starmap parity",
+      "current_status": "Portal projection is functional but less complete than the local Segmented-Spacetime-Starmaps repository viewer",
+      "acceptance_criterion": "Audit the repository's Cartesian viewer, coordinate transforms, camera controls, catalogue selection, overlays and export path; reproduce the public features with documented provenance and browser tests",
+      "negative_result": "Do not present a simplified point cloud as a faithful reproduction until coordinate conventions and feature parity are verified.",
+      "dependencies": ["Segmented-Spacetime-Starmaps", "Gaia catalogue provenance"],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-001",
+      "problem": "Fundamental action",
+      "current_status": "No canonical variational action",
+      "acceptance_criterion": "Derive an action whose Euler\u2013Lagrange equations recover the declared metric sector",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-002",
+      "problem": "Field equations",
+      "current_status": "Metric ansatz exists; complete dynamics do not",
+      "acceptance_criterion": "State and solve covariant field equations",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-003",
+      "problem": "Stress-energy interpretation",
+      "current_status": "Effective source interpretation remains incomplete",
+      "acceptance_criterion": "Derive stress tensor and test conservation and energy conditions",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-004",
+      "problem": "Global interior solution",
+      "current_status": "Diagonal continuation is centrally singular",
+      "acceptance_criterion": "Construct and match a physical interior or boundary geometry",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-005",
+      "problem": "Causal structure",
+      "current_status": "Finite static coefficients are known locally",
+      "acceptance_criterion": "Complete maximal extension and causal diagram",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-006",
+      "problem": "Stability",
+      "current_status": "No complete mode-stability proof",
+      "acceptance_criterion": "Establish linear and nonlinear stability domains",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-007",
+      "problem": "Rotation",
+      "current_status": "No complete nonperturbative rotating solution",
+      "acceptance_criterion": "Derive rotating geometry and recover static limit",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-008",
+      "problem": "Perturbations and QNMs",
+      "current_status": "Published values are proxy-level",
+      "acceptance_criterion": "Derive gauge-controlled perturbation equations and spectra",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-009",
+      "problem": "Waveforms",
+      "current_status": "No complete waveform generator",
+      "acceptance_criterion": "Build equations, radiation sector and injection studies",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-010",
+      "problem": "EHT radiative transfer",
+      "current_status": "Shadow proxies exist",
+      "acceptance_criterion": "Implement plasma emission, transfer and image-domain likelihood",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-011",
+      "problem": "Compact-star matter",
+      "current_status": "No canonical EOS-coupled solution",
+      "acceptance_criterion": "Solve stellar structure with declared matter model",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-012",
+      "problem": "Systematic uncertainty",
+      "current_status": "Sensitivity work is incomplete",
+      "acceptance_criterion": "Propagate blend, numerical, data and nuisance uncertainties",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-013",
+      "problem": "Independent reproduction",
+      "current_status": "Most checks are project-internal",
+      "acceptance_criterion": "Obtain independent code and data reproduction",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    },
+    {
+      "id": "SSZ-OPEN-014",
+      "problem": "Uniqueness of golden-ratio structure",
+      "current_status": "Motivated but not uniquely derived",
+      "acceptance_criterion": "Prove uniqueness or quantify competing parameterizations",
+      "negative_result": "Failure of the acceptance criterion constrains or rejects the proposed completion.",
+      "dependencies": [],
+      "status": "open"
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
 
 :root {
   --bg: #f8fafc;
@@ -17,6 +16,12 @@
   --shadow: 0 12px 35px rgba(15, 23, 42, .08);
   --radius: 1.25rem;
 }
+[data-reviewer="true"] .callout.warning,[data-reviewer="true"] .callout.open,
+[data-reviewer="true"] .badge.corrected,[data-reviewer="true"] .badge.open {
+  outline:2px solid color-mix(in srgb,var(--danger) 70%,transparent); outline-offset:2px;
+}
+[data-reviewer="true"] .reviewer-priority { display:block; }
+.reviewer-priority { display:none; }
 
 [data-theme="dark"] {
   --bg: #0b1120;
@@ -76,6 +81,9 @@ summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .nav-links a:hover, .nav-links a[aria-current="page"], .nav-button:hover {
   color: var(--gold); background: var(--surface-2);
 }
+.reviewer-panel { position:fixed; right:1rem; bottom:1rem; z-index:60; display:grid; gap:.35rem; max-width:min(26rem,calc(100vw - 2rem)); padding:1rem 1.1rem; border:1px solid var(--gold); border-radius:1rem; background:var(--surface); box-shadow:var(--shadow); }
+.reviewer-panel a { color:var(--blue); font-weight:800; }
+.reviewer-panel small { color:var(--muted); }
 .menu-toggle { display: none; margin-left: auto; }
 
 .page { max-width: 1360px; margin: auto; padding: 2rem 1.4rem 6rem; }
@@ -149,6 +157,11 @@ h3 { margin-top: 0; }
   overflow-x: auto; overflow-y: hidden; letter-spacing: .01em; text-align:center;
 }
 .formula:hover { box-shadow:0 10px 22px rgba(15,23,42,.08); transform:translateY(-1px); }
+.formula mjx-container,.rendered-math mjx-container { max-width:100%; overflow-x:auto; overflow-y:hidden; padding:.3rem; }
+.formula mjx-container[display="true"], .math-box mjx-container[display="true"] { display:block; width:100%; overflow-x:auto; overflow-y:hidden; text-align:center; }
+.card > p { max-width:72ch; }
+.equation-notes mjx-container:not([display="true"]), .notation-definition mjx-container:not([display="true"]) { white-space:nowrap; }
+.equation-notes strong { white-space:nowrap; }
 .formula.big { font-size: clamp(1.15rem, 2.3vw, 1.65rem); text-align: center; padding-block: 1.35rem; }
 .math-box {
   position: relative; display: grid; place-items: center; min-height: 6.5rem;
@@ -160,6 +173,9 @@ h3 { margin-top: 0; }
   font: 500 clamp(1.18rem, 2.2vw, 1.65rem)/1.7 "STIX Two Math", "Cambria Math", Georgia, serif;
 }
 .math-box mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .35rem; }
+.math-box > mjx-container, .formula > mjx-container { display:block; min-width:0; max-width:100%; }
+.math-box, .formula, .card, .equation-notes, .symbol-list { min-width:0; overflow-wrap:anywhere; }
+.equation-notes strong, .equation-notes span { overflow-wrap:anywhere; word-break:normal; }
 .math-box[data-label]::before {
   content: attr(data-label); position: absolute; left: 1rem; top: .55rem;
   color: var(--muted); font: 800 .64rem/1 Inter, sans-serif;
@@ -285,6 +301,15 @@ details[open] summary { margin-bottom: .7rem; }
 }
 .visual-controls { padding: 1.25rem; background: var(--surface-2); border-right: 1px solid var(--line); }
 .lab-canvas { display: block; width: 100%; height: 430px; background: var(--surface); touch-action: none; }
+.metric-master-controls { border:1px solid var(--line); border-radius:1rem; box-shadow:var(--shadow); }
+.metric-wide-canvas { margin-top:1rem; border:1px solid var(--line); border-radius:1rem; box-shadow:var(--shadow); }
+.metric-wide-canvas:focus, #metric-geometry:focus { outline:3px solid var(--gold); outline-offset:3px; }
+.metric-scope-tabs .button[aria-pressed="true"] { background:var(--deep); color:var(--surface); border-color:var(--deep); }
+.metric-local-control { display:grid; grid-template-columns:1fr auto; gap:.35rem 1rem; align-items:center; margin:.65rem 1rem 1rem; padding:.75rem 1rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2); font-weight:700; }
+.metric-local-control input { grid-column:1/-1; width:100%; }
+.metric-local-control output { font-family:ui-monospace,monospace; color:var(--gold); }
+.metric-preset-card { cursor:pointer; }
+.metric-preset-card:hover { border-color:var(--gold); transform:translateY(-2px); }
 .plot-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
 .plot-gallery figure { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); box-shadow: var(--shadow); }
 .plot-gallery a { display: block; aspect-ratio: 16/9; overflow: hidden; background: var(--surface-2); }
@@ -320,6 +345,32 @@ details[open] summary { margin-bottom: .7rem; }
 }
 .evidence-ladder strong,.evidence-ladder span { grid-column:2; }
 .evidence-ladder span { color:var(--muted); font-size:.86rem; }
+.scope-strip {
+  display:flex; flex-wrap:wrap; gap:.45rem .75rem; align-items:center; margin:1rem 0 2rem;
+  padding:.8rem 1rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2);
+  color:var(--muted); font-size:.82rem;
+}
+.scope-strip strong { color:var(--text); }
+.claim-list { display:grid; gap:1rem; margin-top:1.2rem; }
+.claim-card { border:1px solid var(--line); border-radius:1rem; background:var(--surface); box-shadow:var(--shadow); overflow:hidden; }
+.claim-card > header { display:flex; justify-content:space-between; gap:1rem; padding:1rem 1.2rem; background:var(--surface-2); }
+.claim-card header div { min-width:0; }
+.claim-card header h3 { margin:.35rem 0 .15rem; }
+.claim-card header small { margin-left:.5rem; color:var(--muted); }
+.claim-card header code,.hash { overflow-wrap:anywhere; }
+.claim-statement { padding:1rem 1.2rem; margin:0; font-size:1.04rem; }
+.claim-formula-panel { margin:0 1.2rem 1.2rem; padding:1rem; border:1px solid color-mix(in srgb,var(--gold) 38%,var(--line)); border-radius:1rem; background:linear-gradient(145deg,color-mix(in srgb,var(--surface) 96%,var(--gold)),var(--surface)); box-shadow:inset 0 1px 0 rgba(255,255,255,.45); }
+.claim-formula-heading { display:flex; flex-wrap:wrap; justify-content:space-between; gap:.4rem 1rem; margin-bottom:.65rem; color:var(--muted); font-size:.82rem; letter-spacing:.02em; }
+.claim-formula-heading strong { color:var(--text); font-size:.92rem; }
+.claim-formula-panel .math-box { margin:.55rem 0; overflow-x:auto; text-align:center; border-color:color-mix(in srgb,var(--gold) 26%,var(--line)); background:color-mix(in srgb,var(--surface) 92%,var(--bg)); }
+.claim-formula-panel .math-box svg { max-width:100%; height:auto; }
+.claim-formula-panel > p { margin:.35rem 0 .8rem; text-align:center; color:var(--muted); }
+.claim-card details { border-top:1px solid var(--line); padding:.85rem 1.2rem 1.2rem; }
+.claim-detail-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; margin-top:1rem; }
+.claim-detail-grid section { padding:1rem; border:1px solid var(--line); border-radius:.8rem; background:var(--surface-2); min-width:0; }
+.claim-detail-grid h4 { margin:.15rem 0 .55rem; }
+.claim-detail-grid p,.claim-detail-grid li { font-size:.84rem; }
+.claim-graph { min-height:560px; }
 
 .footer { border-top: 1px solid var(--line); background: var(--surface); }
 .footer-inner {
@@ -358,8 +409,47 @@ details[open] summary { margin-bottom: .7rem; }
 .starmap-detail { position:absolute; left:1rem; right:1rem; bottom:1rem; display:flex; flex-wrap:wrap; gap:.35rem .8rem; padding:.75rem 1rem; border:1px solid var(--line); border-radius:.8rem; color:var(--text); background:color-mix(in srgb,var(--surface) 92%,transparent); backdrop-filter:blur(10px); font-size:.78rem; }
 .starmap-detail strong { width:100%; }
 .starmap-detail span,.starmap-detail small { color:var(--muted); }
+.dynamic-fragment-targets { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.notation-definition { display:grid; gap:.55rem; margin:1rem 0; }
+.notation-definition div { display:grid; grid-template-columns:4.5rem 1fr; align-items:center; gap:.8rem; padding:.55rem .7rem; border:1px solid var(--line); border-radius:.7rem; background:var(--surface-2); }
+.notation-definition dt { font-size:1.15rem; font-weight:800; color:var(--deep); }
+.notation-definition dd { margin:0; color:var(--muted); }
+@media (max-width: 680px) {
+  .notation-definition div { grid-template-columns: minmax(3.2rem, 5.2rem) 1fr; align-items:start; }
+  .equation-notes div { grid-template-columns: minmax(3.2rem, 5.2rem) 1fr; align-items:start; }
+  .math-box, .formula { padding-inline:.7rem; font-size:1.05rem; }
+}
+.coordinate-card var { font-family:Georgia,serif; font-weight:700; color:var(--deep); }
+.galactic-modebar,.galactic-viewbar { display:flex; flex-wrap:wrap; gap:.5rem; margin:1rem 0; }
+.galactic-modebar .active { color:#fff; background:var(--deep); border-color:var(--deep); }
+.galactic-stage { position:relative; min-width:0; }
+.galactic-webgl { min-height:620px; cursor:grab; touch-action:none; background:linear-gradient(180deg,#f8fafc,#eef2f7); }
+.galactic-webgl:active { cursor:grabbing; }
+#galactic-year-canvas { display:none !important; }
+.galactic-overlay { position:absolute; top:1rem; left:1rem; display:grid; gap:.25rem; max-width:min(26rem,80%); padding:.8rem 1rem; border:1px solid var(--line); border-radius:.8rem; background:color-mix(in srgb,var(--surface) 90%,transparent); backdrop-filter:blur(8px); pointer-events:none; }
+.galactic-overlay strong { letter-spacing:.12em; color:var(--gold); }
+.galactic-overlay span,.galactic-overlay small { color:var(--muted); }
+.galactic-small-multiples { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; margin:1rem 0; }
+.galactic-small-multiples figure { margin:0; padding:.7rem; border:1px solid var(--line); border-radius:1rem; background:var(--surface); }
+.galactic-small-multiples canvas { display:block; width:100%; height:190px; }
+.galactic-small-multiples figcaption { color:var(--muted); font-size:.78rem; text-align:center; }
+.fallback-panel { margin:1rem 0; }
+.regime-lanes { display:grid; gap:1.2rem; margin:1.2rem 0; }
+.regime-lane { position:relative; display:grid; min-height:4.2rem; border:1px solid var(--line); border-radius:.8rem; overflow:hidden; }
+.regime-lane.analytic { grid-template-columns:2.8fr .4fr 4.8fr; }
+.regime-lane.physical { grid-template-columns:.8fr .4fr .6fr .4fr 2fr 2.8fr; }
+.regime-lane span { display:grid; place-items:center; padding:.5rem; border-right:1px solid var(--line); color:var(--muted); font-size:.75rem; text-align:center; }
+.regime-lane i { position:absolute; top:0; bottom:0; width:3px; background:#b42318; transform:translateX(-50%); box-shadow:0 0 0 3px color-mix(in srgb,#b42318 20%,transparent); }
+.maturity-pipeline { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.65rem; margin:1rem 0; }
+.maturity-stage { display:grid; gap:.35rem; min-height:5.5rem; padding:.7rem; border:1px solid var(--line); border-radius:.7rem; background:var(--surface); }
+.maturity-stage span { color:var(--muted); font-size:.78rem; }
+.maturity-stage.complete { border-left:5px solid #16836b; }
+.maturity-stage.partial,.maturity-stage.proxy { border-left:5px solid #b8860b; }
+.maturity-stage.open,.maturity-stage.hypothesis { border-left:5px solid #b42318; }
 
-@media (max-width: 980px) {
+/* Switch to the compact navigation before the 23-link research menu becomes
+   crowded on medium-width laptops and tablets. */
+@media (max-width: 1180px) {
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem; background: var(--surface); border-bottom: 1px solid var(--line); }
   .nav-links.open { display: grid; grid-template-columns: repeat(2,1fr); }
   .menu-toggle { display: inline-flex; }
@@ -373,7 +463,10 @@ details[open] summary { margin-bottom: .7rem; }
   .graph { grid-template-columns: repeat(2,1fr); }
   .research-map { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .formula-catalog { grid-template-columns:1fr; }
+  .claim-detail-grid { grid-template-columns:1fr; }
   .starmap-layout { grid-template-columns:1fr; }
+  .galactic-small-multiples { grid-template-columns:1fr; }
+  .maturity-pipeline { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .research-map div::after { display:none; }
   .graph-node::after { display:none; }
 }
@@ -396,6 +489,7 @@ details[open] summary { margin-bottom: .7rem; }
   .research-map { grid-template-columns:1fr; }
   .equation-notes { grid-template-columns:1fr; }
   .math-box { min-height:5rem; padding-inline:.65rem; font-size:1.08rem; }
+  .equation-notes { grid-template-columns:1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

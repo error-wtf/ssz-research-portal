@@ -1,0 +1,545 @@
+{
+  "schema_version": "1.0.0",
+  "generated": "2026-08-03",
+  "precision_decimal_digits": 60,
+  "metric": "ds\u00b2=-D\u00b2c\u00b2dt\u00b2+D\u207b\u00b2dr\u00b2+r\u00b2d\u03a9\u00b2; D=(1+Xi)\u207b\u00b9",
+  "canonical_bridge": "derivative-matched quintic Hermite C\u00b2",
+  "canonical": {
+    "x0": "1.8",
+    "x1": "2.2",
+    "epsilon": "0.0",
+    "photon_candidate": {
+      "x": "2.13053951682559097861001825697404670483773364399721986420845",
+      "newton_x": "2.13053951682559097861001825697404670483773364399721986420825",
+      "derivative_residual": "4.54024741249e-58",
+      "second_derivative": "-2.35846610759089181578729298895",
+      "extremum": "maximum",
+      "critical_impact_proxy": "2.65652521198915352119181321990809416448592928159469296638527",
+      "methods": [
+        "240-cell derivative sign scan",
+        "180-step bisection",
+        "60-digit Newton/secant refinement"
+      ]
+    },
+    "timelike_l2_candidate": {
+      "x": "2.19986689698168840165802271846528163428995873981066010846962",
+      "derivative_residual": "1.02772452698e-55",
+      "second_derivative": "3751.8574359391491876241369458",
+      "extremum": "minimum"
+    }
+  },
+  "sensitivity": {
+    "variant_count": 27,
+    "variants": [
+      {
+        "x0": "1.75",
+        "x1": "2.15",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.07964962328497568701265170907241599523643553996614678585942",
+          "newton_x": "2.07964962328497568701265170907241599523643553996614678585959",
+          "derivative_residual": "4.1889151293e-58",
+          "second_derivative": "-2.45687850878157633285073246755",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.60600702242855997862081099244410304226278459522455370115432",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.15",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.07984175629472535730150973241732825749861603893646730737467",
+          "newton_x": "2.07984175629472535730150973241732825749861603893646730737518",
+          "derivative_residual": "1.249977104e-57",
+          "second_derivative": "-2.46203875303573848430558738158",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.60613327369987872339153049501436111979263312012988030562868",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.15",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.08003294498622180842003970946663531909775328015521757970351",
+          "newton_x": "2.08003294498622180842003970946663531909775328015521757970362",
+          "derivative_residual": "2.68041484871e-58",
+          "second_derivative": "-2.46723282397194647813513469669",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.60625872454479406483325175324580714362967141106811904352741",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.2",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.11527165549999881760082658985098344881338948601393653684616",
+          "newton_x": "2.11527165549999881760082658985098344881338948601393653684638",
+          "derivative_residual": "4.08667474115e-58",
+          "second_derivative": "-1.88772413325663588807461712495",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.64737692544288420286681544037284321803173520001124675245898",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.2",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.11550157147163927938092819512242941273504179784108014501537",
+          "newton_x": "2.11550157147163927938092819512242941273504179784108014501531",
+          "derivative_residual": "1.14880509117e-58",
+          "second_derivative": "-1.89156541172038522265202391808",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.64752748871328888176142411400038026238741527445300344481823",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.2",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.1157304381238844712727225358218840894398414270077172277945",
+          "newton_x": "2.11573043812388447127272253582188408943984142700771722779397",
+          "derivative_residual": "1.01094894051e-57",
+          "second_derivative": "-1.8954363911438569003697521114",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.64767712841940292580981885258115233291925540655187233484926",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.25",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.14980611690507150454744627073376466984947040059040256935602",
+          "newton_x": "2.14980611690507150454744627073376466984947040059040256935646",
+          "derivative_residual": "6.42005186659e-58",
+          "second_derivative": "-1.47702738392485205758308441393",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.68821011752748430459472819319916374440446866551846609764104",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.25",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.15007645830224795041269244847254845445796684415302917078766",
+          "newton_x": "2.15007645830224795041269244847254845445796684415302917078727",
+          "derivative_residual": "5.67837391437e-58",
+          "second_derivative": "-1.47994406609916131803713598078",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.68838647315951470496299034816183671391159307499301392481894",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.75",
+        "x1": "2.25",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.15034566111364010532497890837493348943341090355995862071227",
+          "newton_x": "2.15034566111364010532497890837493348943341090355995862071172",
+          "derivative_residual": "8.2137814342e-58",
+          "second_derivative": "-1.48288698778328390778612633684",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.68856178242113035837723282076630785930939654405690799625738",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.15",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.09350750379750628781396867619875410593878783024647795067255",
+          "newton_x": "2.09350750379750628781396867619875410593878783024647795067231",
+          "derivative_residual": "7.66700504034e-58",
+          "second_derivative": "-3.13186876766881120403314768984",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.61440534803295785888022952178183208045857195723369898433095",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.15",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.09366442842769912622117147662434470791447937583130493023306",
+          "newton_x": "2.09366442842769912622117147662434470791447937583130493023304",
+          "derivative_residual": "3.65923520938e-59",
+          "second_derivative": "-3.13875328732235201959632343255",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.61450883339932662627230868251828522732707132196849594186798",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.15",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.09382051209782046722232316300485115602385005021262746416312",
+          "newton_x": "2.09382051209782046722232316300485115602385005021262746416323",
+          "derivative_residual": "3.40974244067e-58",
+          "second_derivative": "-3.14567478313781779759862398842",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.61461163177887737262101318647691283686885621400965969696084",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.2",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.13034742608569295077636477782430490065269109439229807820969",
+          "newton_x": "2.13034742608569295077636477782430490065269109439229807820986",
+          "derivative_residual": "4.00548612897e-58",
+          "second_derivative": "-2.35346048411216160243478551156",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.65639890003973960211296718670024822352444785820701359642579",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.2",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.13053951682559097861001825697404670483773364399721986420845",
+          "newton_x": "2.13053951682559097861001825697404670483773364399721986420825",
+          "derivative_residual": "4.54024741249e-58",
+          "second_derivative": "-2.35846610759089181578729298895",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.65652521198915352119181321990809416448592928159469296638527",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.2",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.13073064582842919131363112211401415248373673070738975699027",
+          "newton_x": "2.13073064582842919131363112211401415248373673070738975699042",
+          "derivative_residual": "3.59086076855e-58",
+          "second_derivative": "-2.36350408724315750347144681983",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.6566507122732689963906099038391015336062124502678519724833",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.25",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.16611173685120826701666011018926361011778451827092868786813",
+          "newton_x": "2.16611173685120826701666011018926361011778451827092868786831",
+          "derivative_residual": "3.21493281664e-58",
+          "second_derivative": "-1.81101321504716151117170303206",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.69783778417365330141401178086622235841545880213437300042496",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.25",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.16634161386361093475805457981182495805517646194895544576443",
+          "newton_x": "2.16634161386361093475805457981182495805517646194895544576481",
+          "derivative_residual": "6.9347700234e-58",
+          "second_derivative": "-1.81474525222470218688063284711",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.69798845362670673502371665475382595923090493529851377605484",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.8",
+        "x1": "2.25",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.16657042021505732461201450901437297020752580567680827490905",
+          "newton_x": "2.16657042021505732461201450901437297020752580567680827490888",
+          "derivative_residual": "3.14889214042e-58",
+          "second_derivative": "-1.81850575558180083287472562239",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.6981381857935172520168184619432866270943064663024436593557",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.15",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.10599359485071867811492685622670759823569901412126892758114",
+          "newton_x": "2.10599359485071867811492685622670759823569901412126892758112",
+          "derivative_residual": "9.73478806097e-59",
+          "second_derivative": "-4.10982543641116297385204053481",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.62207443269252562730527568443125638584124978459223104370192",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.15",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.10611805193294586911627371519724061472071371836594215870166",
+          "newton_x": "2.10611805193294586911627371519724061472071371836594215870172",
+          "derivative_residual": "2.42062028589e-58",
+          "second_derivative": "-4.11929032590711200244345409922",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.62215674774777426618109460957519512852613127996527264301755",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.15",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.10624178619071832277382546020463576547372726234690015007964",
+          "newton_x": "2.1062417861907183227738254602046357654737272623469001500793",
+          "derivative_residual": "1.39304911166e-57",
+          "second_derivative": "-4.12879564115175335477703225815",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.62223849095573487523345270962596057679306933161258207452343",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.2",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.14403665290262193109122961460582274241709618033185945398502",
+          "newton_x": "2.14403665290262193109122961460582274241709618033185945398484",
+          "derivative_residual": "5.3029635885e-58",
+          "second_derivative": "-2.99641923701084660252182615979",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.66470984481110825154544071080799132730503660009225112613637",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.2",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.14419365190698801678135275861359970280132645708603820609227",
+          "newton_x": "2.14419365190698801678135275861359970280132645708603820609221",
+          "derivative_residual": "1.71501024841e-58",
+          "second_derivative": "-3.00308864425146123428557417124",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.66481343134300554870482503483337021848454256432644897393569",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.2",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.1443497954785107122404185978648996239025119695148763197167",
+          "newton_x": "2.14434979547851071224041859786489962390251196951487631971702",
+          "derivative_residual": "9.51933202338e-58",
+          "second_derivative": "-3.00979340085267799293005070431",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.66491632130948875055984218995483224053771187090972504608701",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.25",
+        "epsilon": "-0.02",
+        "photon_candidate": {
+          "x": "2.18099784201706541620876439719093718736015153248306595123124",
+          "newton_x": "2.18099784201706541620876439719093718736015153248306595123092",
+          "derivative_residual": "7.20645923915e-58",
+          "second_derivative": "-2.25480061597775318607383455616",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.70676521697758056619753913948227896274614512949805510076061",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.25",
+        "epsilon": "0.0",
+        "photon_candidate": {
+          "x": "2.18119004216753912728444337657712051507599846411755738661418",
+          "newton_x": "2.18119004216753912728444337657712051507599846411755738661452",
+          "derivative_residual": "7.73224648911e-58",
+          "second_derivative": "-2.2596575205361163809609431816",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.70689168171963610569516459632248510386809585710540761953534",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      },
+      {
+        "x0": "1.85",
+        "x1": "2.25",
+        "epsilon": "0.02",
+        "photon_candidate": {
+          "x": "2.18138126255313099601643214139971952964026191394311437032959",
+          "newton_x": "2.18138126255313099601643214139971952964026191394311437032962",
+          "derivative_residual": "6.87175368759e-59",
+          "second_derivative": "-2.2645454274964629930436820518",
+          "extremum": "maximum",
+          "critical_impact_proxy": "2.70701732286294254149768495801559952653322218670391994471378",
+          "methods": [
+            "240-cell derivative sign scan",
+            "180-step bisection",
+            "60-digit Newton/secant refinement"
+          ]
+        }
+      }
+    ],
+    "photon_candidate_range": [
+      "2.07964962328497568701265170907",
+      "2.1813812625531309960164321414"
+    ],
+    "critical_impact_range": [
+      "2.60600702242855997862081099244",
+      "2.70701732286294254149768495802"
+    ],
+    "interpretation": "The stationary null candidate remains inside the varied matching interval and changes with admissible higher-order bridge structure; it is matching-sensitive, not branch-intrinsic."
+  },
+  "provenance": {
+    "repository": "error-wtf/ssz-research-portal",
+    "commit_sha": "d6c8d28425774c01de4799e70551e0539be9a1ec",
+    "code_path": "scripts/build_strong_field_certificates.py",
+    "browser_engine_path": "assets/js/physics.js",
+    "browser_engine_sha256": "789dda760e14448dea61a1a0c285545ce196d845e09559b5225d22bcc060f376",
+    "reproduce": "python3 scripts/build_strong_field_certificates.py"
+  },
+  "limitations": [
+    "Static spherical diagonal metric only",
+    "No rotation, plasma or radiative transfer",
+    "Stationary effective-potential candidates are not observations",
+    "Variants are a structured sensitivity sample, not an exhaustive space of C\u00b2 completions"
+  ]
+}

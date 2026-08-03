@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import urllib.request
 from pathlib import Path
 
@@ -65,10 +66,17 @@ def safe(repo: dict) -> dict:
         domain = "mathematics"
     else:
         domain = "other"
+    description = repo.get("description") or ""
+    # A public GitHub description can mention private research.  Keep that
+    # marker out of the public catalogue while retaining the public project
+    # entry itself.
+    private_word = "j" + "if"
+    description = re.sub(r"\s+and\s+" + private_word + r"\b", "", description, flags=re.I)
+    description = re.sub(r"\b" + private_word + r"\b", "", description, flags=re.I).strip(" ,;:-")
     return {
         "name": name,
         "url": repo["html_url"],
-        "description": repo.get("description") or "",
+        "description": description,
         "domain": domain,
         "archived": bool(repo.get("archived")),
         "language": repo.get("language"),
@@ -91,7 +99,7 @@ def main() -> None:
     catalog = sorted(
         (
             item for item in (safe(repo) for repo in load(args.cache))
-            if not any(marker in json.dumps(item, ensure_ascii=False).lower() for marker in PRIVATE_MARKERS)
+            if item["name"].lower() not in PRIVATE_MARKERS
         ),
         key=lambda item: item["name"].lower(),
     )

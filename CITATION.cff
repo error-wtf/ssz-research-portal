@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this research portal, cite the versioned portal and the specific source repositories linked by the evidence ledger."
+title: "Segmented Spacetime Research Portal"
+type: software
+version: "2026.08-p0"
+date-released: "2026-08-03"
+url: "https://error-wtf.github.io/ssz-research-portal/"
+repository-code: "https://github.com/error-wtf/ssz-research-portal"
+license: "SEE-LICENSE-IN-LICENSE_INFORMATION.md"
+authors:
+  - name: "SSZ research contributors"
+abstract: "A public, P0-corrected, machine-readable research portal for the Segmented Spacetime effective-geometry programme."

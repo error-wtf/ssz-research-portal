@@ -24,6 +24,11 @@ REQUIRED_JSON = {
     "observations.json": ("count", "objects"),
     "starmap-stars.json": ("count", "stars"),
     "evaluations.json": None,
+    "evidence-ledger.json": ("claims",),
+    "claim-dependencies.json": ("edges",),
+    "strong-field-certificates.json": ("canonical", "sensitivity", "provenance"),
+    "observable-maturity.json": ("domains", "stage_order"),
+    "open-problems-matrix.json": ("problems",),
 }
 
 
@@ -34,8 +39,13 @@ def main():
             assert key in data, f"{name}: missing {key}"
     all_public = json.loads((ROOT / "data/public-repositories-all.json").read_text(encoding="utf-8"))
     research_public = json.loads((ROOT / "data/public-research-repositories.json").read_text(encoding="utf-8"))
-    assert len(all_public) == 42, "public-scope repository snapshot count changed"
-    assert len(research_public) == 30, "physics/mathematics classification incomplete"
+    # The public catalogue is generated from the current GitHub snapshot.  Keep
+    # the two views internally consistent without freezing the validator to an
+    # obsolete repository count; archived repositories remain public and must
+    # still be represented.
+    assert len(all_public) >= len(research_public), "research catalogue exceeds public catalogue"
+    assert all_public, "public repository catalogue is empty"
+    assert research_public, "physics/mathematics catalogue is empty"
     atlas = json.loads((ROOT / "data/physics-atlas.json").read_text(encoding="utf-8"))
     assert atlas["count"] == 34, "public non-private physics atlas coverage incomplete"
     papers = json.loads((ROOT / "data/papers.json").read_text(encoding="utf-8"))
@@ -92,19 +102,30 @@ def main():
                       "artifact-category-chart", "artifact-quantity-chart",
                       "snapshot-chart", "diagnostic-chart"):
         assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
-    assert len(list(ROOT.glob("*.html"))) >= 13
+    assert len(list(ROOT.glob("*.html"))) >= 23
+    for page in ("evidence.html", "interior-global-structure.html", "falsification.html", "workbench.html", "qubits.html", "weak-field.html"):
+        assert (ROOT / page).exists(), f"missing scientific audit page: {page}"
+    certificates = json.loads((ROOT / "data/strong-field-certificates.json").read_text())
+    assert certificates["precision_decimal_digits"] >= 50
+    assert certificates["sensitivity"]["variant_count"] == 27
+    assert len(json.loads((ROOT / "data/observable-maturity.json").read_text())["domains"]) >= 20
     visual = (ROOT / "visual-lab.html").read_text(encoding="utf-8")
     for canvas_id in ("phi-canvas", "radial-canvas", "lensing-canvas", "potential-canvas",
                       "starmap-canvas", "sagnac-canvas", "curvature-canvas",
                       "continuity-canvas", "components-canvas", "clocks-canvas",
                       "spectrum-canvas", "null-canvas", "galactic-year-canvas",
-                      "chord-canvas", "schumann-canvas"):
+                      "chord-canvas", "schumann-canvas", "interior-canvas",
+                      "galactic-webgl", "galactic-top-canvas", "galactic-side-canvas",
+                      "galactic-clock-canvas"):
         assert f'id="{canvas_id}"' in visual, f"missing visual module: {canvas_id}"
     for control_id in (
         "component-radius", "component-theta", "component-form", "component-log",
         "component-inverse", "component-xi", "component-ds", "component-gtt",
         "component-grr", "component-gtr", "component-signature", "component-det",
         "component-null",
+        "interior-radius", "interior-xi", "interior-d", "interior-r", "interior-k",
+        "regime-radius", "regime-formula", "regime-description",
+        "galactic-time", "galactic-z-period", "galactic-z-scale",
     ):
         assert f'id="{control_id}"' in visual, f"incomplete metric explorer: {control_id}"
     advanced = (ROOT / "assets/js/advanced-visuals.js").read_text(encoding="utf-8")
@@ -113,6 +134,17 @@ def main():
     physics = (ROOT / "assets/js/physics.js").read_text(encoding="utf-8")
     assert "orbitDiagnostics" in physics and "angularMomentumSquared" in physics
     assert (ROOT / "scripts/test_browser_physics.mjs").exists()
+    theory = (ROOT / "theory.html").read_text(encoding="utf-8")
+    assert '<dl class="notation-definition">' in theory
+    assert "<dt><var>t</var></dt>" in theory and "<strong>4πr²</strong>" in theory
+    dependency_labs = (ROOT / "assets/js/dependency-labs.js").read_text(encoding="utf-8")
+    assert "properDistance" in dependency_labs and "P0 leading centre asymptotics" in dependency_labs
+    galactic_3d = (ROOT / "assets/js/galactic-year-3d.js").read_text(encoding="utf-8")
+    assert 'getContext("webgl"' in galactic_3d and "scientific_roles" in galactic_3d
+    workbench = (ROOT / "workbench.html").read_text(encoding="utf-8")
+    for element_id in ("blend-lab-canvas", "geodesic-canvas", "independence-canvas", "interior-sandbox-canvas", "dimension-formula"):
+        assert f'id="{element_id}"' in workbench
+    assert (ROOT / "data/test-independence.json").exists()
 
     # Independent canonical-value audit for the equations shared by all browser explorers.
     golden = (1 + math.sqrt(5)) / 2

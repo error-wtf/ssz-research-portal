@@ -1149,7 +1149,7 @@
     },
     {
       "name": "segmented-calculation-suite",
-      "summary": "[](.) [](.) [](.) [](.) [](https://colab.research.google.com/github/error-wtf/segmented-calculation-suite/blob/main/SSZ_Colab_Full_App.ipynb)",
+      "summary": "Archived calculation suite with a directly runnable Google Colab notebook: https://colab.research.google.com/github/error-wtf/segmented-calculation-suite/blob/main/SSZ_Colab_Full_App.ipynb",
       "domain": "research-archive",
       "roles": [
         "Theory",

@@ -1,6 +1,7 @@
 (() => {
   "use strict";
   const escapeHtml=value=>String(value??"").replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+  const safeSummary=value=>{const raw=String(value??"").replace(/\[\]\(\.\)\s*/g,"").replace(/\[([^\]]*)\]\((https?:\/\/[^)]+)\)/g,"$1 — $2");return escapeHtml(raw).replace(/(https:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1 ↗</a>');};
   const formatBytes=bytes=>bytes<1e6?`${(bytes/1e3).toFixed(1)} kB`:`${(bytes/1e6).toFixed(1)} MB`;
   const colours={"theory-and-geometry":"#b8860b","data-and-validation":"#2563eb","simulation-and-visualisation":"#7c3aed","mathematics":"#087f5b","research-archive":"#b42318"};
   let data=[],nodes=[],selected="";
@@ -32,7 +33,7 @@
     document.getElementById("atlas-count").textContent=`${rows.length} of ${data.length}`;
     document.getElementById("atlas-list").innerHTML=rows.map(repo=>`<article class="atlas-card">
       <div class="atlas-card-head"><div><span class="badge" style="border-color:${colours[repo.domain]};color:${colours[repo.domain]}">${escapeHtml(repo.domain.replaceAll("-"," "))}</span><h3>${repo.public_url?`<a href="${escapeHtml(repo.public_url)}" rel="noopener">${escapeHtml(repo.name)}</a>`:escapeHtml(repo.name)}</h3></div><span class="badge ${repo.archived?"":"canonical"}">${repo.archived?"archived":"active/local"}</span></div>
-      <p>${escapeHtml(repo.summary)}</p>${repo.scope_note?`<div class="callout warning"><strong>Scope note:</strong> ${escapeHtml(repo.scope_note)}</div>`:""}
+      <p>${safeSummary(repo.summary)}</p>${repo.scope_note?`<div class="callout warning"><strong>Scope note:</strong> ${escapeHtml(repo.scope_note)}</div>`:""}
       <div class="atlas-stats"><span><strong>${repo.counts.files.toLocaleString()}</strong> files</span><span><strong>${repo.counts.tests.toLocaleString()}</strong> test artefacts</span><span><strong>${repo.counts.documents.toLocaleString()}</strong> documents</span><span><strong>${repo.counts.images.toLocaleString()}</strong> images</span><span><strong>${formatBytes(repo.counts.bytes)}</strong> total</span></div>
       <div class="catalog-meta">${repo.roles.map(role=>`<span class="badge">${escapeHtml(role)}</span>`).join("")}${repo.languages.slice(0,5).map(item=>`<span class="badge">${escapeHtml(item.extension)} · ${item.count}</span>`).join("")}</div>
       <p><strong>Branch / commit:</strong> <code>${escapeHtml(repo.default_branch||"unknown")}</code> / <code>${escapeHtml(repo.commit||"unknown")}</code></p>

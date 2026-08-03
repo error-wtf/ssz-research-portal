@@ -2,6 +2,8 @@
 
 A static, provenance-first GitHub Pages portal for Segmented Spacetime (SSZ). It expands the supplied `ssz_forschungs_dashboard_v2.html` design into an English research site without a framework, database or backend. LaTeX source material may be analysed, while published equations are accessible HTML rather than a required TeX build.
 
+**Live Pages:** [error-wtf.github.io/ssz-research-portal](https://error-wtf.github.io/ssz-research-portal/)
+
 The self-hosted visual laboratory contains seven interactive Canvas modules: conceptual φ segmentation, canonical Ξ/D radial scaling, weak-field lensing, a metric-derived null-potential diagnostic, a deterministic starmap projection, a standard Sagnac reference and P0 central-curvature asymptotics. The research archive also includes selected, clearly scoped figures from `ssz-paper-plots`.
 
 ## Run
@@ -26,7 +28,7 @@ node scripts/test_physics.js
 
 The source inventory uses public, neutral project-relative path references. It never publishes local home-directory paths, credentials, or authenticated remote URLs.
 
-`data/public-repositories-all.json` records the 42 in-scope public repositories in the 3 August 2026 API snapshot. `data/public-research-repositories.json` selects all 30 in-scope classified physics and mathematics projects. The generated browser catalogue needs no GitHub token.
+`data/public-repositories-all.json` records the public repositories in the latest API snapshot. `data/public-research-repositories.json` selects the classified physics and mathematics projects. The generated browser catalogue needs no GitHub token.
 
 ## Scientific scope
 

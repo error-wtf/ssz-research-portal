@@ -1,0 +1,564 @@
+{
+  "pages_audited": 23,
+  "repositories_audited": 34,
+  "test_catalog_records": 9300,
+  "page_issue_count": 23,
+  "issues": [
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "LOST_EINSTEIN_PAPERS"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "LOST_EINSTEIN_PAPERS"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "SSZ-HOW-TO-BEAM"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "SSZ-HOW-TO-BEAM"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "SSZ-METRIC_COMPLETE"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "claudes-cycles"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "claudes-cycles"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "hilfsdateien"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "hilfsdateien"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "segmented-calculation-suite"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "ssz-all-tests"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "ssz-all-tests"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "ssz-complete-documentation"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "ssz-full-metric"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "ssz-full-metric"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "ssz-metric-final"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "ssz-metric-final"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "ssz-metric-pure"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "ssz-metric-pure"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "ssz-paper-plots"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "ssz-paper-plots"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository only in catalogue/atlas",
+      "detail": "ssz-theory-readiness"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "ssz-theory-readiness"
+    }
+  ],
+  "repository_coverage": [
+    {
+      "repository": "CALCULATION_OF_NUMBER_PI",
+      "public_url": "https://github.com/error-wtf/CALCULATION_OF_NUMBER_PI",
+      "content_pages": [
+        "mathematics.html"
+      ],
+      "direct_link_pages": [
+        "mathematics.html"
+      ],
+      "interactive_context_pages": [
+        "mathematics.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "LOST_EINSTEIN_PAPERS",
+      "public_url": "https://github.com/error-wtf/LOST_EINSTEIN_PAPERS",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "Riemann-Zeta-Zero-Finding-Suite",
+      "public_url": "https://github.com/error-wtf/Riemann-Zeta-Zero-Finding-Suite",
+      "content_pages": [
+        "mathematics.html"
+      ],
+      "direct_link_pages": [
+        "mathematics.html"
+      ],
+      "interactive_context_pages": [
+        "mathematics.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "SEGMENTED_SPACETIME",
+      "public_url": "https://github.com/error-wtf/SEGMENTED_SPACETIME",
+      "content_pages": [
+        "visual-lab.html"
+      ],
+      "direct_link_pages": [
+        "visual-lab.html"
+      ],
+      "interactive_context_pages": [
+        "visual-lab.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "SSZ-HOW-TO-BEAM",
+      "public_url": "https://github.com/error-wtf/SSZ-HOW-TO-BEAM",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "SSZ-METRIC_COMPLETE",
+      "public_url": "https://github.com/error-wtf/SSZ-METRIC_COMPLETE",
+      "content_pages": [
+        "theory.html",
+        "visual-lab.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [
+        "visual-lab.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "public_url": "https://github.com/error-wtf/Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "content_pages": [
+        "observations.html"
+      ],
+      "direct_link_pages": [
+        "observations.html"
+      ],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "Segmented-Spacetime-Starmaps",
+      "public_url": "https://github.com/error-wtf/Segmented-Spacetime-Starmaps",
+      "content_pages": [
+        "observations.html"
+      ],
+      "direct_link_pages": [
+        "observations.html"
+      ],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "chord-partition",
+      "public_url": "https://github.com/error-wtf/chord-partition",
+      "content_pages": [
+        "mathematics.html",
+        "visual-lab.html"
+      ],
+      "direct_link_pages": [
+        "mathematics.html",
+        "visual-lab.html"
+      ],
+      "interactive_context_pages": [
+        "mathematics.html",
+        "visual-lab.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "claudes-cycles",
+      "public_url": "https://github.com/error-wtf/claudes-cycles",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "counterexample-commons",
+      "public_url": "https://github.com/error-wtf/counterexample-commons",
+      "content_pages": [
+        "mathematics.html"
+      ],
+      "direct_link_pages": [
+        "mathematics.html"
+      ],
+      "interactive_context_pages": [
+        "mathematics.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "emergent-spacetime",
+      "public_url": "https://github.com/error-wtf/emergent-spacetime",
+      "content_pages": [
+        "dynamics-energy.html"
+      ],
+      "direct_link_pages": [
+        "dynamics-energy.html"
+      ],
+      "interactive_context_pages": [
+        "dynamics-energy.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "frequency-curvature-validation",
+      "public_url": "https://github.com/error-wtf/frequency-curvature-validation",
+      "content_pages": [
+        "observations.html",
+        "weak-field.html"
+      ],
+      "direct_link_pages": [
+        "observations.html",
+        "weak-field.html"
+      ],
+      "interactive_context_pages": [
+        "weak-field.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "g79-cygnus-tests",
+      "public_url": "https://github.com/error-wtf/g79-cygnus-tests",
+      "content_pages": [
+        "observations.html"
+      ],
+      "direct_link_pages": [
+        "observations.html"
+      ],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "galactic-year",
+      "public_url": "https://github.com/error-wtf/galactic-year",
+      "content_pages": [
+        "observations.html",
+        "visual-lab.html"
+      ],
+      "direct_link_pages": [
+        "observations.html",
+        "visual-lab.html"
+      ],
+      "interactive_context_pages": [
+        "visual-lab.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "hilfsdateien",
+      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien.git",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "pardon-symplectic-geometry-ssz-lab",
+      "public_url": "https://github.com/error-wtf/pardon-symplectic-geometry-ssz-lab",
+      "content_pages": [
+        "mathematics.html"
+      ],
+      "direct_link_pages": [
+        "mathematics.html"
+      ],
+      "interactive_context_pages": [
+        "mathematics.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "pi-cluster",
+      "public_url": "https://github.com/error-wtf/pi-cluster",
+      "content_pages": [
+        "mathematics.html"
+      ],
+      "direct_link_pages": [
+        "mathematics.html"
+      ],
+      "interactive_context_pages": [
+        "mathematics.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "segmented-calculation-suite",
+      "public_url": "https://github.com/error-wtf/segmented-calculation-suite",
+      "content_pages": [
+        "theory.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "segmented-energy",
+      "public_url": "https://github.com/error-wtf/segmented-energy",
+      "content_pages": [
+        "dynamics-energy.html"
+      ],
+      "direct_link_pages": [
+        "dynamics-energy.html"
+      ],
+      "interactive_context_pages": [
+        "dynamics-energy.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-all-tests",
+      "public_url": "https://github.com/error-wtf/ssz-all-tests",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "ssz-complete-documentation",
+      "public_url": "https://github.com/error-wtf/ssz-complete-documentation",
+      "content_pages": [
+        "research.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "ssz-full-metric",
+      "public_url": "https://github.com/error-wtf/ssz-full-metric.git",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "ssz-lagrange",
+      "public_url": "https://github.com/error-wtf/ssz-lagrange",
+      "content_pages": [
+        "dynamics-energy.html"
+      ],
+      "direct_link_pages": [
+        "dynamics-energy.html"
+      ],
+      "interactive_context_pages": [
+        "dynamics-energy.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-lensing",
+      "public_url": "https://github.com/error-wtf/ssz-lensing",
+      "content_pages": [
+        "dynamics-energy.html"
+      ],
+      "direct_link_pages": [
+        "dynamics-energy.html"
+      ],
+      "interactive_context_pages": [
+        "dynamics-energy.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-ligo-tests",
+      "public_url": "https://github.com/error-wtf/ssz-ligo-tests",
+      "content_pages": [
+        "observations.html"
+      ],
+      "direct_link_pages": [
+        "observations.html"
+      ],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "ssz-metric-final",
+      "public_url": "https://github.com/error-wtf/ssz-metric-final.git",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "ssz-metric-pure",
+      "public_url": "https://github.com/error-wtf/ssz-metric-pure",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "ssz-paper-plots",
+      "public_url": "https://github.com/error-wtf/ssz-paper-plots",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "ssz-qubits",
+      "public_url": "https://github.com/error-wtf/ssz-qubits",
+      "content_pages": [
+        "qubits.html"
+      ],
+      "direct_link_pages": [
+        "qubits.html"
+      ],
+      "interactive_context_pages": [
+        "qubits.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-radial-scaling",
+      "public_url": "https://github.com/error-wtf/ssz-radial-scaling",
+      "content_pages": [
+        "dynamics-energy.html",
+        "mathematics.html"
+      ],
+      "direct_link_pages": [
+        "dynamics-energy.html",
+        "mathematics.html"
+      ],
+      "interactive_context_pages": [
+        "dynamics-energy.html",
+        "mathematics.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-schumann",
+      "public_url": "https://github.com/error-wtf/ssz-schumann",
+      "content_pages": [
+        "observations.html",
+        "visual-lab.html"
+      ],
+      "direct_link_pages": [
+        "observations.html",
+        "visual-lab.html"
+      ],
+      "interactive_context_pages": [
+        "visual-lab.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-theory-readiness",
+      "public_url": "https://github.com/error-wtf/ssz-theory-readiness.git",
+      "content_pages": [],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "ssz-trajectories",
+      "public_url": "https://github.com/error-wtf/ssz-trajectories",
+      "content_pages": [
+        "dynamics-energy.html"
+      ],
+      "direct_link_pages": [
+        "dynamics-energy.html"
+      ],
+      "interactive_context_pages": [
+        "dynamics-energy.html"
+      ],
+      "coverage_status": "interactive"
+    }
+  ],
+  "coverage_summary": {
+    "interactive": 18,
+    "catalogue-only": 10,
+    "explained": 6
+  }
+}

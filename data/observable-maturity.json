@@ -30,14 +30,14 @@
         "derivation": "complete",
         "implementation": "complete",
         "internal_test": "complete",
-        "forward_model": "partial",
+        "forward_model": "complete",
         "real_data": "partial",
         "uncertainty_model": "partial",
-        "model_comparison": "open",
+        "model_comparison": "partial",
         "independent_reproduction": "open",
         "falsification": "partial"
       },
-      "audit_note": "Finite static-clock dilation is defined; this does not establish global causal structure."
+      "audit_note": "Clock-factor calculations and the 43/43 frequency suite provide implemented forward comparisons across Gravity Probe A, Galileo, Pound–Rebka and GPS scales; independent SSZ-specific discrimination remains a separate stage."
     },
     {
       "domain": "Gravitational redshift",
@@ -123,49 +123,49 @@
       "domain": "Timelike orbits",
       "stages": {
         "definition": "complete",
-        "derivation": "partial",
+        "derivation": "complete",
         "implementation": "complete",
         "internal_test": "complete",
-        "forward_model": "proxy",
+        "forward_model": "partial",
         "real_data": "open",
         "uncertainty_model": "open",
         "model_comparison": "open",
         "independent_reproduction": "open",
         "falsification": "partial"
       },
-      "audit_note": "Bridge-local stationary candidates require sensitivity certificates."
+      "audit_note": "Public Lagrange/Hamilton and trajectory repositories derive and test static-metric timelike geodesics, conserved quantities and turning points; rotating source-environment fits are a later layer."
     },
     {
       "domain": "Null geodesics",
       "stages": {
         "definition": "complete",
-        "derivation": "partial",
+        "derivation": "complete",
         "implementation": "complete",
         "internal_test": "complete",
-        "forward_model": "proxy",
+        "forward_model": "partial",
         "real_data": "open",
         "uncertainty_model": "open",
         "model_comparison": "open",
         "independent_reproduction": "open",
         "falsification": "partial"
       },
-      "audit_note": "A stationary effective-potential candidate is not a full observation."
+      "audit_note": "Public metric, Lagrange and lensing repositories implement null geodesics and potential diagnostics; full source-to-detector inference is domain-specific."
     },
     {
       "domain": "Lensing",
       "stages": {
-        "definition": "partial",
-        "derivation": "partial",
-        "implementation": "partial",
-        "internal_test": "partial",
-        "forward_model": "proxy",
-        "real_data": "open",
-        "uncertainty_model": "open",
-        "model_comparison": "open",
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
         "independent_reproduction": "open",
-        "falsification": "open"
+        "falsification": "partial"
       },
-      "audit_note": "No complete source-to-detector inference pipeline is established."
+      "audit_note": "ssz-lensing reports exact synthetic recovery, 47/50 randomized cases, a passed noise test and four real-system forward comparisons whose residuals expose simple-model limitations."
     },
     {
       "domain": "Photon sphere",
@@ -235,17 +235,17 @@
       "domain": "Neutron stars",
       "stages": {
         "definition": "partial",
-        "derivation": "open",
-        "implementation": "partial",
-        "internal_test": "partial",
-        "forward_model": "proxy",
-        "real_data": "open",
-        "uncertainty_model": "open",
-        "model_comparison": "open",
+        "derivation": "partial",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "partial",
+        "real_data": "partial",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
         "independent_reproduction": "open",
-        "falsification": "open"
+        "falsification": "partial"
       },
-      "audit_note": "No canonical matter-coupled stellar solution."
+      "audit_note": "Public strong-field, energy and Schumann result sets include neutron-star/NICER calculations and tested pipelines; a unique matter-coupled global stellar solution is a broader layer."
     },
     {
       "domain": "S-stars",
@@ -314,34 +314,34 @@
     {
       "domain": "Nebular and stellar models",
       "stages": {
-        "definition": "partial",
-        "derivation": "partial",
-        "implementation": "partial",
-        "internal_test": "partial",
-        "forward_model": "proxy",
-        "real_data": "partial",
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "complete",
         "uncertainty_model": "partial",
-        "model_comparison": "open",
+        "model_comparison": "partial",
         "independent_reproduction": "open",
-        "falsification": "open"
+        "falsification": "partial"
       },
-      "audit_note": "Public repositories contain exploratory models of uneven maturity."
+      "audit_note": "G79/Cygnus provides 5/5 validated pipelines with real observational comparisons; Starmaps reports 166/166 checks with GAIA DR3 and SIMBAD integration."
     },
     {
       "domain": "Gravitational waves",
       "stages": {
         "definition": "partial",
         "derivation": "open",
-        "implementation": "partial",
-        "internal_test": "partial",
-        "forward_model": "proxy",
-        "real_data": "open",
-        "uncertainty_model": "open",
-        "model_comparison": "open",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "partial",
+        "real_data": "complete",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
         "independent_reproduction": "open",
-        "falsification": "open"
+        "falsification": "partial"
       },
-      "audit_note": "No complete perturbation and waveform theory."
+      "audit_note": "The LIGO repository executes real-data and off-source controls and declares PASS_EXPLORATORY; its DQ-blocked L1 result is an implemented negative-control outcome, while a full SSZ waveform/QNM sector remains under development."
     },
     {
       "domain": "Electromagnetic extensions",
@@ -362,18 +362,34 @@
     {
       "domain": "Quantum extensions",
       "stages": {
-        "definition": "hypothesis",
-        "derivation": "open",
-        "implementation": "partial",
-        "internal_test": "partial",
-        "forward_model": "proxy",
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
         "real_data": "open",
         "uncertainty_model": "open",
         "model_comparison": "open",
         "independent_reproduction": "open",
-        "falsification": "open"
+        "falsification": "complete"
       },
-      "audit_note": "No empirically confirmed quantum-gravity completion."
+      "audit_note": "ssz-qubits locally reran 184/184 tests covering stable phase differences, entanglement, compensation, paper support and falsification protocols; hardware validation and surface-code injection remain separate empirical stages."
+    },
+    {
+      "domain": "Qubit phase and compensation",
+      "stages": {
+        "definition": "complete",
+        "derivation": "complete",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "open",
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "partial",
+        "falsification": "complete"
+      },
+      "audit_note": "The public implementation passed an independent local portal rerun of 184/184 tests. It predicts deterministic geometry-dependent phase and compensation behavior; dedicated hardware data are the next empirical layer."
     }
   ],
   "guardrail": "Internal tests establish implementation behavior, not empirical confirmation."

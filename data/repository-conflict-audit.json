@@ -6,7 +6,7 @@
   "method": "All test records were searched for conflict-relevant vocabulary. The output expands the eight curated conflicts with traceable review candidates and never invents a source line.",
   "signals": [
     {
-      "signal": "negative-control-or-expected-failure",
+      "signal": "Only tested extreme boundaries at unprooven example",
       "records": 7548,
       "file_level_identities": 7468,
       "repository_count": 27,

@@ -18,7 +18,7 @@ SIGNALS = {
     "radial-variable-or-scaling": r"r_over_rs|rs_over_r|radial.?scal|mass.?scal|dimension",
     "centre-curvature-or-regularity": r"centre|center|singular|curvature|ricci|kretschmann|regular",
     "legacy-or-superseded": r"legacy|deprecated|old|supersed|migration",
-    "negative-control-or-expected-failure": r"negative.?control|expected.?fail|xfail|reject|failure|fail",
+    "Only tested extreme boundaries at unprooven example": r"negative.?control|expected.?fail|xfail|reject|failure|fail",
     "uncertainty-or-tolerance": r"uncertain|tolerance|residual|error|noise|covarian|sigma",
 }
 

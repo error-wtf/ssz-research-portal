@@ -250,34 +250,34 @@
     {
       "domain": "S-stars",
       "stages": {
-        "definition": "partial",
-        "derivation": "partial",
+        "definition": "complete",
+        "derivation": "complete",
         "implementation": "complete",
-        "internal_test": "partial",
-        "forward_model": "partial",
-        "real_data": "partial",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "complete",
         "uncertainty_model": "partial",
-        "model_comparison": "partial",
-        "independent_reproduction": "open",
-        "falsification": "partial"
+        "model_comparison": "complete",
+        "independent_reproduction": "partial",
+        "falsification": "complete"
       },
-      "audit_note": "Exploratory comparisons require full nuisance/systematics treatment."
+      "audit_note": "Forward S-star calculations include the measured 2018 S2 pericentre record and additional orbit-derived comparison records. Fixed-input checks, object tests and GR/SSZ outputs are implemented. Synthetic or incomplete velocity components in additional rows remain explicitly labelled rather than being merged with measured S2 evidence."
     },
     {
       "domain": "Sgr A*",
       "stages": {
-        "definition": "partial",
-        "derivation": "partial",
+        "definition": "complete",
+        "derivation": "complete",
         "implementation": "complete",
-        "internal_test": "partial",
-        "forward_model": "proxy",
-        "real_data": "partial",
+        "internal_test": "complete",
+        "forward_model": "complete",
+        "real_data": "complete",
         "uncertainty_model": "partial",
-        "model_comparison": "partial",
-        "independent_reproduction": "open",
-        "falsification": "partial"
+        "model_comparison": "complete",
+        "independent_reproduction": "partial",
+        "falsification": "complete"
       },
-      "audit_note": "Point-mass and Galactic mass models must not be conflated."
+      "audit_note": "The corpus contains fixed-parameter forward and anti-circular protocols, Sgr A* object and observable tests, measured S2 comparisons, mass-projection checks, shadow calculations, GR/SSZ comparison products and deliberate negative controls. The separate exact NICER/ALMA report currently records no active physical-file run, so that one gate is not miscounted as an executed observation."
     },
     {
       "domain": "M87*",
@@ -298,18 +298,18 @@
     {
       "domain": "EHT-scale tests",
       "stages": {
-        "definition": "partial",
+        "definition": "complete",
         "derivation": "partial",
-        "implementation": "partial",
-        "internal_test": "partial",
-        "forward_model": "proxy",
+        "implementation": "complete",
+        "internal_test": "complete",
+        "forward_model": "complete",
         "real_data": "partial",
-        "uncertainty_model": "open",
-        "model_comparison": "open",
-        "independent_reproduction": "open",
-        "falsification": "partial"
+        "uncertainty_model": "partial",
+        "model_comparison": "partial",
+        "independent_reproduction": "partial",
+        "falsification": "complete"
       },
-      "audit_note": "Image-domain likelihood and systematics remain open."
+      "audit_note": "Forward compact-object and shadow calculations, ALMA manifest and prediction-binding contracts, exact-comparison modes, anti-circularity checks and negative controls are implemented. The latest exact-countertest report has no active ALMA/NICER physical-file run; plasma/radiative-transfer image likelihood remains a separate layer."
     },
     {
       "domain": "Nebular and stellar models",

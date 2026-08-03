@@ -1,0 +1,5052 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-08-03",
+  "source": "data/tests.json",
+  "source_sha256": "0873b50faebb418a1cb223276c8207f82764ba22d7aaf40185feae1c893e231b",
+  "records_examined": 9300,
+  "method": "Every catalogue record is searched against published domain and evidence-stage vocabularies. Overlap is intentional. Counts show catalogue coverage; they do not turn a software record into an independent experiment or a completed theory.",
+  "domains": [
+    {
+      "domain": "Static clocks",
+      "records": 168,
+      "unique_definitions": 88,
+      "file_level_identities": 168,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "Segmented-Spacetime-Starmaps",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "pardon-symplectic-geometry-ssz-lab",
+        "segmented-calculation-suite",
+        "ssz-all-tests",
+        "ssz-complete-documentation",
+        "ssz-full-metric",
+        "ssz-lensing",
+        "ssz-ligo-tests",
+        "ssz-metric-final",
+        "ssz-metric-pure",
+        "ssz-qubits"
+      ],
+      "repository_count": 16,
+      "source_file_count": 79,
+      "categories": {
+        "Data comparison": 1,
+        "Limit test": 1,
+        "Numerical test": 5,
+        "Unit/integration test": 161
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 6,
+          "definitions": 3,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "derivation": {
+          "records": 2,
+          "definitions": 2,
+          "repositories": 2,
+          "source_files": 2
+        },
+        "implementation": {
+          "records": 168,
+          "definitions": 88,
+          "repositories": 16,
+          "source_files": 79
+        },
+        "internal_test": {
+          "records": 168,
+          "definitions": 88,
+          "repositories": 16,
+          "source_files": 79
+        },
+        "forward_model": {
+          "records": 7,
+          "definitions": 4,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "real_data": {
+          "records": 168,
+          "definitions": 88,
+          "repositories": 16,
+          "source_files": 79
+        },
+        "uncertainty_model": {
+          "records": 10,
+          "definitions": 3,
+          "repositories": 3,
+          "source_files": 10
+        },
+        "model_comparison": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "independent_reproduction": {
+          "records": 64,
+          "definitions": 37,
+          "repositories": 10,
+          "source_files": 39
+        },
+        "falsification": {
+          "records": 160,
+          "definitions": 80,
+          "repositories": 14,
+          "source_files": 73
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_clock_network_approach",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_experimental_roadmap.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_time_dilation_factor",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_bridge_metric.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_clock_ratio",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_phase_frequency_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_gps_satellite_redshift",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_validation_ssz_calibrated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_gps_time_dilation_clocks",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_predictions_forward.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_pound_rebka_harvard_tower",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_validation_ssz_calibrated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_radial_scaling_and_em_scaling",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_em_clock_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_radial_time_correction",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_em_clock_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_redshift_static_and_gps_proxy",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_em_clock_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_time_dilation_D",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_em_clock_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_time_dilation",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/smoke_test_all.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_time_dilation_limits",
+          "category": "Limit test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/ssz_test_suite.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_time_dilation_at_rs",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/tests/test_integration.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_time_dilation_crossover",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/test_time_dilation_crossover.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_first_order_time_dilation_gradient",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section5_relation_to_gr.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_galileo_eccentric_dynamic",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_dynamic_loops.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_galileo_eccentric_orbit",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section3_first_order_shifts.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_gps_relativistic_correction",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section3_first_order_shifts.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_iss_gps_ground_dynamic",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_dynamic_loops.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_optical_clock_cm_resolution",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section6_ssz_integration.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_pound_rebka_prediction",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section3_first_order_shifts.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_ssz_time_dilation_formula",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_ssz_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_gps_correction",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-complete-documentation/07_VALIDATION/gps_validation.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_gps_drift_matches_observation",
+          "category": "Data comparison",
+          "file": "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Gravitational redshift",
+      "records": 170,
+      "unique_definitions": 95,
+      "file_level_identities": 170,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "Segmented-Spacetime-Starmaps",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "segmented-calculation-suite",
+        "ssz-all-tests",
+        "ssz-full-metric",
+        "ssz-lensing",
+        "ssz-ligo-tests",
+        "ssz-metric-final",
+        "ssz-metric-pure",
+        "ssz-qubits"
+      ],
+      "repository_count": 14,
+      "source_file_count": 104,
+      "categories": {
+        "Data comparison": 15,
+        "Numerical test": 2,
+        "Symbolic test": 2,
+        "Unit/integration test": 151
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 8,
+          "definitions": 5,
+          "repositories": 4,
+          "source_files": 8
+        },
+        "derivation": {
+          "records": 3,
+          "definitions": 3,
+          "repositories": 3,
+          "source_files": 3
+        },
+        "implementation": {
+          "records": 170,
+          "definitions": 95,
+          "repositories": 14,
+          "source_files": 104
+        },
+        "internal_test": {
+          "records": 170,
+          "definitions": 95,
+          "repositories": 14,
+          "source_files": 104
+        },
+        "forward_model": {
+          "records": 19,
+          "definitions": 13,
+          "repositories": 6,
+          "source_files": 17
+        },
+        "real_data": {
+          "records": 170,
+          "definitions": 95,
+          "repositories": 14,
+          "source_files": 104
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 20,
+          "definitions": 12,
+          "repositories": 7,
+          "source_files": 13
+        },
+        "independent_reproduction": {
+          "records": 75,
+          "definitions": 39,
+          "repositories": 10,
+          "source_files": 58
+        },
+        "falsification": {
+          "records": 128,
+          "definitions": 65,
+          "repositories": 13,
+          "source_files": 90
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_observables_redshift",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_all_modules_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_redshift_energy_bookkeeping_multiplicative",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observables_ssz_reference.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_redshift_z_formula",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observables_ssz_reference.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_xi_gradient_determines_redshift",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observables_ssz_reference.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_gps_satellite_redshift",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_validation_ssz_calibrated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_observable_redshift_and_dilation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_advanced_features.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_pound_rebka_harvard_tower",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_validation_ssz_calibrated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_redshift_positive",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_metric_kerr.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_redshift_positive",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_metric_static.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_redshift_predictions",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_predictions_forward.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_redshift_static_and_gps_proxy",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_em_clock_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_redshift_consistency",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/DATA_COLUMNS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_redshift_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/LABORATORY_COMPARABILITY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_redshift_consistency",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/DATA_COLUMNS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_redshift_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/LABORATORY_COMPARABILITY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_redshift_mapping",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_ssz_kernel.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_hz_ssz_sun",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_habitable_zone.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_pound_rebka_prediction",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section3_first_order_shifts.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_ssz_redshift_prediction",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_ssz_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_earth_weak_field_z_ssz_equals_z_gr",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_pound_rebka",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_pound_rebka_matches_harvard",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_redshift_consistency",
+          "category": "Data comparison",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/DATA_COLUMNS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_redshift_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/LABORATORY_COMPARABILITY.md",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "PPN",
+      "records": 82,
+      "unique_definitions": 51,
+      "file_level_identities": 82,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-full-metric",
+        "ssz-lensing",
+        "ssz-metric-final"
+      ],
+      "repository_count": 8,
+      "source_file_count": 37,
+      "categories": {
+        "Data comparison": 14,
+        "Limit test": 6,
+        "Unit/integration test": 62
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 6,
+          "definitions": 4,
+          "repositories": 4,
+          "source_files": 6
+        },
+        "implementation": {
+          "records": 82,
+          "definitions": 51,
+          "repositories": 8,
+          "source_files": 37
+        },
+        "internal_test": {
+          "records": 82,
+          "definitions": 51,
+          "repositories": 8,
+          "source_files": 37
+        },
+        "forward_model": {
+          "records": 4,
+          "definitions": 4,
+          "repositories": 2,
+          "source_files": 3
+        },
+        "real_data": {
+          "records": 82,
+          "definitions": 51,
+          "repositories": 8,
+          "source_files": 37
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 14,
+          "definitions": 7,
+          "repositories": 3,
+          "source_files": 7
+        },
+        "independent_reproduction": {
+          "records": 40,
+          "definitions": 37,
+          "repositories": 6,
+          "source_files": 13
+        },
+        "falsification": {
+          "records": 82,
+          "definitions": 51,
+          "repositories": 8,
+          "source_files": 37
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_null_light_requires_ppn",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_method_assignment.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_null_uses_ppn",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observable_dispatcher.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_timelike_orbit_uses_ppn",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observable_dispatcher.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_lensing_and_shapiro_completion",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_null_ppn_completion_recovers_full_solar_limb_deflection",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_method_matrix.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_perihelion_orbit_calculations",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_ppn_completion_evaluation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_prime_directive.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_ppn_parameters",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_weak_field_limit",
+          "category": "Limit test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_basic_ppn_calculation",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/quick_install_tests.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_beta_equals_one",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/COMPREHENSIVE_TESTS_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_beta_equals_one",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/REAL_DATA_TESTS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_beta_equals_one",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_ssz_real_data_comprehensive.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_beta_equals_one",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/COMPREHENSIVE_TESTS_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_beta_equals_one",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/COMPREHENSIVE_TESTS_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_exact",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/COMPREHENSIVE_TESTS_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_exact",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/test_ppn_exact.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_exact",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/REAL_DATA_TESTS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_exact",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/COMPREHENSIVE_TESTS_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_exact",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/COMPREHENSIVE_TESTS_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_gamma_equals_one",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_ssz_real_data_comprehensive.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_limit",
+          "category": "Limit test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/CONTRIBUTING.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_limit",
+          "category": "Limit test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/CONTRIBUTING.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_ppn_parameters",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/smoke_test_all.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Light deflection",
+      "records": 42,
+      "unique_definitions": 30,
+      "file_level_identities": 42,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "frequency-curvature-validation",
+        "ssz-all-tests",
+        "ssz-lensing",
+        "ssz-metric-final"
+      ],
+      "repository_count": 5,
+      "source_file_count": 18,
+      "categories": {
+        "Numerical test": 6,
+        "Unit/integration test": 36
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 42,
+          "definitions": 30,
+          "repositories": 5,
+          "source_files": 18
+        },
+        "internal_test": {
+          "records": 42,
+          "definitions": 30,
+          "repositories": 5,
+          "source_files": 18
+        },
+        "forward_model": {
+          "records": 2,
+          "definitions": 2,
+          "repositories": 1,
+          "source_files": 2
+        },
+        "real_data": {
+          "records": 42,
+          "definitions": 30,
+          "repositories": 5,
+          "source_files": 18
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "independent_reproduction": {
+          "records": 20,
+          "definitions": 20,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "falsification": {
+          "records": 36,
+          "definitions": 27,
+          "repositories": 5,
+          "source_files": 12
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_full_structure",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_inversely_proportional_to_b",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/integration/legacy_test_light_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_minimal_vs_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_proportional_to_1_b",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_proportional_to_mass",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_scales_with_mass",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/integration/legacy_test_light_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_sun_minimal",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_weak_field_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_lensing_deflection",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_predictions_forward.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_light_deflection_sun_grazing",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/integration/legacy_test_light_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_null_ppn_completion_recovers_full_solar_limb_deflection",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_method_matrix.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_full_structure",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_minimal_vs_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_numerical_exact",
+          "category": "Numerical test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_sun_earth_minimal",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_weak_field_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_light_deflection_sun",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section5_relation_to_gr.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_deflection_xi_vs_ppn_factor",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_deflection_xi_vs_ppn_factor",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_deflection_xi_vs_ppn_factor",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_deflection_xi_vs_ppn_factor",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_gaia_deflection_precision",
+          "category": "Numerical test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_gaia_deflection_precision",
+          "category": "Numerical test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_gaia_deflection_precision",
+          "category": "Numerical test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_2.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Shapiro delay",
+      "records": 62,
+      "unique_definitions": 46,
+      "file_level_identities": 62,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-lensing"
+      ],
+      "repository_count": 5,
+      "source_file_count": 16,
+      "categories": {
+        "Numerical test": 1,
+        "Unit/integration test": 61
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 62,
+          "definitions": 46,
+          "repositories": 5,
+          "source_files": 16
+        },
+        "internal_test": {
+          "records": 62,
+          "definitions": 46,
+          "repositories": 5,
+          "source_files": 16
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 62,
+          "definitions": 46,
+          "repositories": 5,
+          "source_files": 16
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "independent_reproduction": {
+          "records": 45,
+          "definitions": 38,
+          "repositories": 4,
+          "source_files": 9
+        },
+        "falsification": {
+          "records": 61,
+          "definitions": 45,
+          "repositories": 5,
+          "source_files": 15
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_full_structure",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_minimal_vs_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_proportional_to_1_b",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_proportional_to_mass",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_sun_minimal",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_deflection_weak_field_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_lensing_and_shapiro_completion",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_null_shapiro_delay",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_advanced_features.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_delay",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_predictions_forward.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_delay_sun_earth",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/integration/legacy_test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_full_structure",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_increases_with_mass",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/integration/legacy_test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_minimal_vs_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_numerical_exact",
+          "category": "Numerical test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_sun_earth_minimal",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_weak_field_approximation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/integration/legacy_test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_shapiro_weak_field_exact",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_shapiro_deflection.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_delay_magnitude",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_delay_magnitude",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_gamma_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_gamma_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_closer_approach_larger_delay",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_closer_approach_larger_delay",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_delay_positive",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Mercury perihelion",
+      "records": 15,
+      "unique_definitions": 14,
+      "file_level_identities": 15,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-metric-final"
+      ],
+      "repository_count": 5,
+      "source_file_count": 9,
+      "categories": {
+        "Unit/integration test": 15
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 15,
+          "definitions": 14,
+          "repositories": 5,
+          "source_files": 9
+        },
+        "internal_test": {
+          "records": 15,
+          "definitions": 14,
+          "repositories": 5,
+          "source_files": 9
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 15,
+          "definitions": 14,
+          "repositories": 5,
+          "source_files": 9
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "independent_reproduction": {
+          "records": 6,
+          "definitions": 6,
+          "repositories": 3,
+          "source_files": 5
+        },
+        "falsification": {
+          "records": 8,
+          "definitions": 8,
+          "repositories": 4,
+          "source_files": 7
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_perihelion_orbit_calculations",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_perihelion_orbit_precession",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_predictions_forward.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_timelike_orbit_precession",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_advanced_features.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_mercury_perihelion_precession",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section5_relation_to_gr.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_mercury_venus_radar",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_mercury_perihelion",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_mercury_perihelion",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lagrange/test_lagrange_ssz_aggregated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_s2_perihelion",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lagrange/test_lagrange_ssz_aggregated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_mercury_precession",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_perihelion.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_mercury_precession",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_ppn.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_precession_eccentricity_dependence",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_perihelion.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_precession_per_orbit",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_perihelion.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_precession_scales_inverse",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_ppn.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_precession_scaling",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_perihelion.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_ssz_correction_small",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_perihelion.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Timelike orbits",
+      "records": 78,
+      "unique_definitions": 53,
+      "file_level_identities": 78,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "Segmented-Spacetime-Starmaps",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "segmented-calculation-suite",
+        "ssz-all-tests",
+        "ssz-metric-final",
+        "ssz-metric-pure",
+        "ssz-trajectories"
+      ],
+      "repository_count": 11,
+      "source_file_count": 47,
+      "categories": {
+        "Data comparison": 9,
+        "Unit/integration test": 69
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 78,
+          "definitions": 53,
+          "repositories": 11,
+          "source_files": 47
+        },
+        "internal_test": {
+          "records": 78,
+          "definitions": 53,
+          "repositories": 11,
+          "source_files": 47
+        },
+        "forward_model": {
+          "records": 6,
+          "definitions": 6,
+          "repositories": 3,
+          "source_files": 3
+        },
+        "real_data": {
+          "records": 78,
+          "definitions": 53,
+          "repositories": 11,
+          "source_files": 47
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 9,
+          "definitions": 5,
+          "repositories": 3,
+          "source_files": 9
+        },
+        "independent_reproduction": {
+          "records": 45,
+          "definitions": 26,
+          "repositories": 8,
+          "source_files": 32
+        },
+        "falsification": {
+          "records": 72,
+          "definitions": 47,
+          "repositories": 11,
+          "source_files": 42
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_radial_timelike_norm_for_rest_at_infinity",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_theorem_2_timelike_worldline",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_proof_framework.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_timelike_norm",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_bridge_metric.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_timelike_norm_scaled",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_worldline.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_timelike_orbit_classification",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observable_dispatcher.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_timelike_orbit_uses_ppn",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observable_dispatcher.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_timelike_static_classification",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observable_dispatcher.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_timelike_static_uses_xi_proxy",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observable_dispatcher.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_energy_earth_high_orbit",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_sparse_validators.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_energy_earth_low_orbit",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_sparse_validators.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_perihelion_orbit_calculations",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_perihelion_orbit_precession",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_predictions_forward.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_timelike_orbit_precession",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_advanced_features.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_orbital",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/EXTERNAL_DATASETS_GUIDE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_orbital",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/EXTERNAL_DATASETS_GUIDE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_orbital_parameters",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/DATA_COLUMNS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_orbital_parameters",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/DATA_COLUMNS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_calculate_for_planet",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_ssz_orbits.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_extreme_cases",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_ssz_orbits.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_gr_orbital_period",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_ssz_orbits.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_observable_signature",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_ssz_orbits.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_period_difference",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_ssz_orbits.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_schwarzschild_radius",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_ssz_orbits.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_segment_saturation",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_ssz_orbits.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Null geodesics",
+      "records": 14,
+      "unique_definitions": 7,
+      "file_level_identities": 13,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "segmented-calculation-suite",
+        "ssz-all-tests"
+      ],
+      "repository_count": 3,
+      "source_file_count": 7,
+      "categories": {
+        "Unit/integration test": 14
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 14,
+          "definitions": 7,
+          "repositories": 3,
+          "source_files": 7
+        },
+        "internal_test": {
+          "records": 14,
+          "definitions": 7,
+          "repositories": 3,
+          "source_files": 7
+        },
+        "forward_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "real_data": {
+          "records": 14,
+          "definitions": 7,
+          "repositories": 3,
+          "source_files": 7
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "independent_reproduction": {
+          "records": 12,
+          "definitions": 6,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "falsification": {
+          "records": 14,
+          "definitions": 7,
+          "repositories": 3,
+          "source_files": 7
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_light_travel_time_exceeds_flat_time",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_null_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_null_dt_dr_exceeds_flat_coordinate_value",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_null_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_null_geodesics",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_all_modules_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_null_geodesics",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_all_modules_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_null_geodesic_dr_dT_bounded",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_null_geodesic_path_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_dr_dT_bounded",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_dr_dT_bounded",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_dr_dT_bounded",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_dr_dT_bounded",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_path_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_path_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_path_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_null_geodesic_path_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_geodesics_3.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Lensing",
+      "records": 1517,
+      "unique_definitions": 648,
+      "file_level_identities": 1512,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "g79-cygnus-tests",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-lensing",
+        "ssz-metric-pure"
+      ],
+      "repository_count": 7,
+      "source_file_count": 251,
+      "categories": {
+        "Data comparison": 174,
+        "Dimensional check": 5,
+        "Limit test": 25,
+        "Numerical test": 15,
+        "Unit/integration test": 1298
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 16,
+          "definitions": 7,
+          "repositories": 2,
+          "source_files": 16
+        },
+        "derivation": {
+          "records": 97,
+          "definitions": 43,
+          "repositories": 4,
+          "source_files": 47
+        },
+        "implementation": {
+          "records": 1517,
+          "definitions": 648,
+          "repositories": 7,
+          "source_files": 251
+        },
+        "internal_test": {
+          "records": 1517,
+          "definitions": 648,
+          "repositories": 7,
+          "source_files": 251
+        },
+        "forward_model": {
+          "records": 7,
+          "definitions": 4,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "real_data": {
+          "records": 1517,
+          "definitions": 648,
+          "repositories": 7,
+          "source_files": 251
+        },
+        "uncertainty_model": {
+          "records": 30,
+          "definitions": 12,
+          "repositories": 2,
+          "source_files": 20
+        },
+        "model_comparison": {
+          "records": 294,
+          "definitions": 113,
+          "repositories": 4,
+          "source_files": 76
+        },
+        "independent_reproduction": {
+          "records": 514,
+          "definitions": 197,
+          "repositories": 4,
+          "source_files": 48
+        },
+        "falsification": {
+          "records": 1027,
+          "definitions": 413,
+          "repositories": 6,
+          "source_files": 136
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "06_FINDINGS_G79_CYGNUS_TESTS",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/06_FINDINGS_G79_CYGNUS_TESTS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_lensing_and_shapiro_completion",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_weak_field_ppn_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_lensing_deflection",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_observable_predictions_forward.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_null_lensing",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/legacy_tests/legacy_test_advanced_features.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_lensing_proxy_positive",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_ssz_kernel.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "API_EXAMPLES_AND_QUERIES",
+          "category": "Data comparison",
+          "file": "physics/g79-cygnus-tests/data/API_EXAMPLES_AND_QUERIES.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "CHANGELOG",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/CHANGELOG.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "COMPLETE_VERIFICATION_SUMMARY",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/COMPLETE_VERIFICATION_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "CONTRIBUTING",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/CONTRIBUTING.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "FIGURE_CHECKLIST_COAUTHORS",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/FIGURE_CHECKLIST_COAUTHORS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "FINAL_CLEANUP_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/FINAL_CLEANUP_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "GENERATION_SUCCESS_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/GENERATION_SUCCESS_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "GIT_UPDATE_PACKAGE",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/GIT_UPDATE_PACKAGE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "METHODS",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/METHODS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "PAPER_MATERIALS_COMPLETE",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/PAPER_MATERIALS_COMPLETE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "PAPER_SECTIONS",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/docs/PAPER_SECTIONS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "PIPELINE_STRATEGY",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/PIPELINE_STRATEGY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "PUBLICATION_README",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/PUBLICATION_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "PUBLICATION_REVIEW_ANALYSIS",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/PUBLICATION_REVIEW_ANALYSIS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "PUBLICATION_SUMMARY",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/publication_outputs/PUBLICATION_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "README",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "README_UPDATED",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/README_UPDATED.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "REPOSITORY_FINAL_ASSESSMENT",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/REPOSITORY_FINAL_ASSESSMENT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "g79-cygnus-tests",
+          "test_name": "RUN_ALL_VALIDATED_TESTS",
+          "category": "Unit/integration test",
+          "file": "physics/g79-cygnus-tests/RUN_ALL_VALIDATED_TESTS.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Photon sphere",
+      "records": 47,
+      "unique_definitions": 25,
+      "file_level_identities": 47,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "hilfsdateien",
+        "segmented-calculation-suite",
+        "ssz-all-tests",
+        "ssz-lensing",
+        "ssz-ligo-tests",
+        "ssz-metric-final"
+      ],
+      "repository_count": 8,
+      "source_file_count": 40,
+      "categories": {
+        "Limit test": 1,
+        "Unit/integration test": 46
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 2,
+          "definitions": 2,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "derivation": {
+          "records": 6,
+          "definitions": 3,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "implementation": {
+          "records": 47,
+          "definitions": 25,
+          "repositories": 8,
+          "source_files": 40
+        },
+        "internal_test": {
+          "records": 47,
+          "definitions": 25,
+          "repositories": 8,
+          "source_files": 40
+        },
+        "forward_model": {
+          "records": 7,
+          "definitions": 4,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "real_data": {
+          "records": 47,
+          "definitions": 25,
+          "repositories": 8,
+          "source_files": 40
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "independent_reproduction": {
+          "records": 19,
+          "definitions": 6,
+          "repositories": 4,
+          "source_files": 18
+        },
+        "falsification": {
+          "records": 34,
+          "definitions": 15,
+          "repositories": 8,
+          "source_files": 31
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_observable_dispatcher.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_photon_sphere",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/smoke_test_all.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_r_phi_cross_verification",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_horizon_hawking_predictions.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/segcalc/tests/test_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_invariants_hard.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_regime_classification.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_interferometer_phase_difference",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_interferometer_phase_difference",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_interferometer_phase_difference",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_interferometer_phase_difference",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lensing/test_radial_scaling_gauge_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_invariants_hard.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_invariants_hard_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_invariants_hard_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_invariants_hard_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_regime_classification.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_regime_classification_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_regime_classification_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_regime_classification_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_photon_sphere_ssz_smaller",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lagrange/test_lagrange_ssz_aggregated.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Shadow",
+      "records": 15,
+      "unique_definitions": 15,
+      "file_level_identities": 15,
+      "repositories": [
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-metric-final"
+      ],
+      "repository_count": 4,
+      "source_file_count": 7,
+      "categories": {
+        "Data comparison": 3,
+        "Unit/integration test": 12
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 15,
+          "definitions": 15,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "internal_test": {
+          "records": 15,
+          "definitions": 15,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 15,
+          "definitions": 15,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 3,
+          "definitions": 3,
+          "repositories": 3,
+          "source_files": 3
+        },
+        "independent_reproduction": {
+          "records": 5,
+          "definitions": 5,
+          "repositories": 1,
+          "source_files": 2
+        },
+        "falsification": {
+          "records": 9,
+          "definitions": 9,
+          "repositories": 4,
+          "source_files": 5
+        }
+      },
+      "examples": [
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_compare_with_eht_shadow",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/REAL_DATA_TESTS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_compare_with_eht_shadow",
+          "category": "Data comparison",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/REAL_DATA_TESTS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_diameter",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VIII_validation/test_ch26_30_validation.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_ng_eht",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VIII_validation/test_ch26_30_validation.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_size",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_ssz_deficit",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_m87_shadow",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_m87_star_shadow_prediction",
+          "category": "Data comparison",
+          "file": "physics/ssz-all-tests/aggregated/Unified-Results/test_unified_results_real_data.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_GR_bound",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_angular",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_coordinate",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_distance_scaling",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_exists",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_mass_scaling",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_sgr_a_star",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "ISCO",
+      "records": 17,
+      "unique_definitions": 14,
+      "file_level_identities": 17,
+      "repositories": [
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "pardon-symplectic-geometry-ssz-lab",
+        "ssz-all-tests",
+        "ssz-ligo-tests",
+        "ssz-metric-final",
+        "ssz-trajectories"
+      ],
+      "repository_count": 6,
+      "source_file_count": 11,
+      "categories": {
+        "Limit test": 1,
+        "Unit/integration test": 16
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "implementation": {
+          "records": 17,
+          "definitions": 14,
+          "repositories": 6,
+          "source_files": 11
+        },
+        "internal_test": {
+          "records": 17,
+          "definitions": 14,
+          "repositories": 6,
+          "source_files": 11
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 17,
+          "definitions": 14,
+          "repositories": 6,
+          "source_files": 11
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "independent_reproduction": {
+          "records": 6,
+          "definitions": 3,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "falsification": {
+          "records": 9,
+          "definitions": 6,
+          "repositories": 5,
+          "source_files": 8
+        }
+      },
+      "examples": [
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_isco_radius",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/smoke_test_all.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "pardon-symplectic-geometry-ssz-lab",
+          "test_name": "test_report_covers_every_discovered_test_class",
+          "category": "Unit/integration test",
+          "file": "physics/pardon-symplectic-geometry-ssz-lab/tests/test_math_core.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_discontinuity_at_100",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-trajectories/test_xi.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_discontinuity_at_100",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-trajectories/test_xi_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_discontinuity_at_100",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-trajectories/test_xi_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_discontinuity_at_100",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-trajectories/test_xi_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_schwarzschild_isco",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lagrange/test_lagrange_ssz_aggregated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_ssz_isco_finite",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lagrange/test_lagrange_ssz_aggregated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-ligo-tests",
+          "test_name": "test_isco_at_6m",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-ligo-tests/tests/integration/test_inspiral_phase_forward_model.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_ISCO_GR_limit",
+          "category": "Limit test",
+          "file": "physics/ssz-metric-final/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_ISCO_outside_photon_sphere",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_isco_above_photon_sphere",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_isco.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_isco_correction",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_isco.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_isco_legacy_method",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_isco.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_isco_mass_scaling",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_isco.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_isco_prograde",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_isco.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-trajectories",
+          "test_name": "test_discontinuity_at_100",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-trajectories/tests/test_xi.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Sagnac",
+      "records": 0,
+      "unique_definitions": 0,
+      "file_level_identities": 0,
+      "repositories": [],
+      "repository_count": 0,
+      "source_file_count": 0,
+      "categories": {},
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "internal_test": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "forward_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "real_data": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "independent_reproduction": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "falsification": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        }
+      },
+      "examples": []
+    },
+    {
+      "domain": "Neutron stars",
+      "records": 27,
+      "unique_definitions": 21,
+      "file_level_identities": 27,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "frequency-curvature-validation",
+        "segmented-calculation-suite",
+        "ssz-all-tests",
+        "ssz-schumann"
+      ],
+      "repository_count": 5,
+      "source_file_count": 22,
+      "categories": {
+        "Data comparison": 3,
+        "Limit test": 1,
+        "Unit/integration test": 23
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "implementation": {
+          "records": 27,
+          "definitions": 21,
+          "repositories": 5,
+          "source_files": 22
+        },
+        "internal_test": {
+          "records": 27,
+          "definitions": 21,
+          "repositories": 5,
+          "source_files": 22
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 27,
+          "definitions": 21,
+          "repositories": 5,
+          "source_files": 22
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 3,
+          "definitions": 3,
+          "repositories": 2,
+          "source_files": 3
+        },
+        "independent_reproduction": {
+          "records": 19,
+          "definitions": 16,
+          "repositories": 5,
+          "source_files": 14
+        },
+        "falsification": {
+          "records": 22,
+          "definitions": 16,
+          "repositories": 5,
+          "source_files": 19
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_mocked_nicer_download_and_verify",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_nicer_fetch_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_mocked_nicer_search_and_locate",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_nicer_fetch_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_neutron_star_report_and_limitations",
+          "category": "Limit test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_neutron_star_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_neutron_star_surface_physics",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_neutron_star_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_nicer_countertest",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external_countertests/test_nicer_exact_countertest_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_nicer_data_loading",
+          "category": "Data comparison",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_new_capabilities.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_nicer_manifest_generation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_nicer_fetch_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_nicer_pipeline_contract",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_nicer_pipeline_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_double_pulsar_j0737",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_neutron_star_energy",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/segcalc/tests/test_ssz_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_neutron_star_regime",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/segcalc/tests/test_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_neutron_star_strong_field",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/test_weak_field_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_hulse_taylor_pulsar_orbital_decay",
+          "category": "Data comparison",
+          "file": "physics/ssz-all-tests/aggregated/Unified-Results/test_unified_results_real_data.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_energy",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_ssz_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_energy",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_ssz_physics_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_energy",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_ssz_physics_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_energy",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_ssz_physics_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_instrument_nicer",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VIII_validation/test_ch26_30_validation.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_redshift_prediction",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VIII_validation/test_ch26_30_validation.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics_1.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics_2.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_neutron_star_regime",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/segmented-calculation-suite/test_physics_3.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_nicer_observation_feasibility",
+          "category": "Data comparison",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "S-stars",
+      "records": 8,
+      "unique_definitions": 6,
+      "file_level_identities": 8,
+      "repositories": [
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-ligo-tests"
+      ],
+      "repository_count": 4,
+      "source_file_count": 7,
+      "categories": {
+        "Unit/integration test": 8
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 8,
+          "definitions": 6,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "internal_test": {
+          "records": 8,
+          "definitions": 6,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "forward_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "real_data": {
+          "records": 8,
+          "definitions": 6,
+          "repositories": 4,
+          "source_files": 7
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "independent_reproduction": {
+          "records": 2,
+          "definitions": 2,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "falsification": {
+          "records": 7,
+          "definitions": 5,
+          "repositories": 3,
+          "source_files": 6
+        }
+      },
+      "examples": [
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_full_workflow_s2",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_full_workflow_s2",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_full_workflow_s2",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_full_workflow_s2",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_s2_star_orbit",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_s2_perihelion",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lagrange/test_lagrange_ssz_aggregated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-ligo-tests",
+          "test_name": "test_gps_start_in_range",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-ligo-tests/tests/test_real_hdf5_readonly_access.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-ligo-tests",
+          "test_name": "test_meta_gps_start_present",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-ligo-tests/tests/test_real_hdf5_readonly_access.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Sgr A*",
+      "records": 5,
+      "unique_definitions": 5,
+      "file_level_identities": 5,
+      "repositories": [
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "ssz-all-tests",
+        "ssz-metric-final"
+      ],
+      "repository_count": 3,
+      "source_file_count": 5,
+      "categories": {
+        "Data comparison": 1,
+        "Unit/integration test": 4
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 5,
+          "definitions": 5,
+          "repositories": 3,
+          "source_files": 5
+        },
+        "internal_test": {
+          "records": 5,
+          "definitions": 5,
+          "repositories": 3,
+          "source_files": 5
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 5,
+          "definitions": 5,
+          "repositories": 3,
+          "source_files": 5
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "independent_reproduction": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "falsification": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        }
+      },
+      "examples": [
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_sgr_a_star_values",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/ssz_test_suite.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_sgr_a_star_is_supermassive",
+          "category": "Data comparison",
+          "file": "physics/ssz-all-tests/aggregated/Unified-Results/test_unified_results_real_data.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_complete_sgr_a_star",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_complete_metric.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_sgr_a_star_observables",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_observables_complete.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_sgr_a_star",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "M87*",
+      "records": 6,
+      "unique_definitions": 4,
+      "file_level_identities": 6,
+      "repositories": [
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "hilfsdateien",
+        "ssz-all-tests"
+      ],
+      "repository_count": 3,
+      "source_file_count": 6,
+      "categories": {
+        "Data comparison": 1,
+        "Unit/integration test": 5
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 6,
+          "definitions": 4,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "internal_test": {
+          "records": 6,
+          "definitions": 4,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 6,
+          "definitions": 4,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "independent_reproduction": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "falsification": {
+          "records": 5,
+          "definitions": 3,
+          "repositories": 3,
+          "source_files": 5
+        }
+      },
+      "examples": [
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_full_workflow_m87",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_full_workflow_m87",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_full_workflow_m87",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_full_workflow_m87",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/PERFECTION_ROADMAP.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_m87_shadow",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_m87_star_shadow_prediction",
+          "category": "Data comparison",
+          "file": "physics/ssz-all-tests/aggregated/Unified-Results/test_unified_results_real_data.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "EHT-scale tests",
+      "records": 26,
+      "unique_definitions": 25,
+      "file_level_identities": 26,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-metric-final"
+      ],
+      "repository_count": 5,
+      "source_file_count": 15,
+      "categories": {
+        "Data comparison": 4,
+        "Unit/integration test": 22
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "implementation": {
+          "records": 26,
+          "definitions": 25,
+          "repositories": 5,
+          "source_files": 15
+        },
+        "internal_test": {
+          "records": 26,
+          "definitions": 25,
+          "repositories": 5,
+          "source_files": 15
+        },
+        "forward_model": {
+          "records": 1,
+          "definitions": 1,
+          "repositories": 1,
+          "source_files": 1
+        },
+        "real_data": {
+          "records": 26,
+          "definitions": 25,
+          "repositories": 5,
+          "source_files": 15
+        },
+        "uncertainty_model": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "model_comparison": {
+          "records": 4,
+          "definitions": 4,
+          "repositories": 4,
+          "source_files": 4
+        },
+        "independent_reproduction": {
+          "records": 15,
+          "definitions": 15,
+          "repositories": 3,
+          "source_files": 9
+        },
+        "falsification": {
+          "records": 17,
+          "definitions": 17,
+          "repositories": 5,
+          "source_files": 10
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "FETCH_ALMA",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/external_validation/alma/FETCH_ALMA.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_alma_countertest",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external_countertests/test_alma_exact_countertest_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_alma_data_loading",
+          "category": "Data comparison",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_new_capabilities.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_alma_manifest_generation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_alma_fetch_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_alma_pipeline_contract",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_alma_pipeline_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_mocked_alma_download_and_verify",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_alma_fetch_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_mocked_alma_search_and_locate",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests_external/test_alma_fetch_contract.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_compare_with_eht_shadow",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/REAL_DATA_TESTS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "FETCH_ALMA",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/SSZ-METRIC_COMPLETE/external_validation/alma/FETCH_ALMA.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "test_compare_with_eht_shadow",
+          "category": "Data comparison",
+          "file": "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/REAL_DATA_TESTS_README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_diameter",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VIII_validation/test_ch26_30_validation.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_ng_eht",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VIII_validation/test_ch26_30_validation.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_size",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_bh_shadow_ssz_deficit",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_eht_resolution",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_m87_shadow",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_VI_astrophysics/test_ch23_24_astrophysics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_m87_star_shadow_prediction",
+          "category": "Data comparison",
+          "file": "physics/ssz-all-tests/aggregated/Unified-Results/test_unified_results_real_data.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_no_event_horizon",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/aggregated/ssz-lagrange/test_lagrange_ssz_aggregated.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-all-tests",
+          "test_name": "test_no_event_horizon",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-all-tests/tests/part_V_strong_field/test_ch18_22_strong_field.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_GR_bound",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_geodesics.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_angular",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_coordinate",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_distance_scaling",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_shadow_radius.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "ssz-metric-final",
+          "test_name": "test_shadow_exists",
+          "category": "Unit/integration test",
+          "file": "physics/ssz-metric-final/tests/test_geodesics.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Nebular and stellar models",
+      "records": 283,
+      "unique_definitions": 231,
+      "file_level_identities": 283,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "Segmented-Spacetime-Starmaps",
+        "g79-cygnus-tests",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-complete-documentation",
+        "ssz-lensing",
+        "ssz-metric-pure",
+        "ssz-schumann"
+      ],
+      "repository_count": 10,
+      "source_file_count": 186,
+      "categories": {
+        "Data comparison": 20,
+        "Limit test": 17,
+        "Numerical test": 5,
+        "Unit/integration test": 241
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 0,
+          "definitions": 0,
+          "repositories": 0,
+          "source_files": 0
+        },
+        "derivation": {
+          "records": 24,
+          "definitions": 15,
+          "repositories": 4,
+          "source_files": 19
+        },
+        "implementation": {
+          "records": 283,
+          "definitions": 231,
+          "repositories": 10,
+          "source_files": 186
+        },
+        "internal_test": {
+          "records": 283,
+          "definitions": 231,
+          "repositories": 10,
+          "source_files": 186
+        },
+        "forward_model": {
+          "records": 4,
+          "definitions": 4,
+          "repositories": 3,
+          "source_files": 4
+        },
+        "real_data": {
+          "records": 283,
+          "definitions": 231,
+          "repositories": 10,
+          "source_files": 186
+        },
+        "uncertainty_model": {
+          "records": 14,
+          "definitions": 7,
+          "repositories": 3,
+          "source_files": 8
+        },
+        "model_comparison": {
+          "records": 24,
+          "definitions": 15,
+          "repositories": 5,
+          "source_files": 24
+        },
+        "independent_reproduction": {
+          "records": 57,
+          "definitions": 47,
+          "repositories": 3,
+          "source_files": 31
+        },
+        "falsification": {
+          "records": 198,
+          "definitions": 161,
+          "repositories": 7,
+          "source_files": 106
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "06_FINDINGS_G79_CYGNUS_TESTS",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/06_FINDINGS_G79_CYGNUS_TESTS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "ALL_TESTS_PRINT",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/testergebnisse/2025-10-17_gaia_ssz_real/ALL_TESTS_PRINT.txt",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "Segmented_Spacetime_and_the_Origin_of_Molecular_Zones_in_Expanding_Nebulae.docx",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/papers/validation/Segmented_Spacetime_and_the_Origin_of_Molecular_Zones_in_Expanding_Nebulae.docx.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "Segmented_Spacetime_and_the_Origin_of_Molecular_Zones_in_Expanding_Nebulae.docx",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/Segmented_Spacetime_and_the_Origin_of_Molecular_Zones_in_Expanding_Nebulae.docx.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "Segmented_Spacetime_and_the_Origin_of_Molecular_Zones_in_Expanding_Nebulae.docx",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/Segmented_Spacetime_and_the_Origin_of_Molecular_Zones_in_Expanding_Nebulae.docx.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_g79_cli_smoke_run",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_segwave_cli.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_g79_dataset_exists",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_segwave_cli.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_gaia_smoke",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_data_fetch.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_harmonize_columns_preserves_required",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_gaia_required_columns.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_harmonize_columns_rejects_missing_errors",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_gaia_required_columns.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_harmonize_columns_soft_fills_missing_errors",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_gaia_required_columns.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_stellar_nucleosynthesis_animation",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/TODO_DOCUMENTATION_UPLOAD.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_stellar_nucleosynthesis_animation",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/TODO_DOCUMENTATION_UPLOAD.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "ACHIEVEMENT_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ACHIEVEMENT_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "HOW_TO_TEST",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/HOW_TO_TEST.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "PROJECT_FINAL_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/PROJECT_FINAL_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "direct_test_plots",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/direct_test_plots.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "error_handling_test",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/error_handling_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "gradio_simple_test",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/gradio_simple_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "quick_akari_test",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/quick_akari_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_actual_data",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_actual_data.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_akari_fetch",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_akari_fetch.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_app_real_data",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Starmaps/ssz_explorer/test_app_real_data.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Starmaps",
+          "test_name": "test_asymptotic_behavior",
+          "category": "Limit test",
+          "file": "physics/Segmented-Spacetime-Starmaps/test_xi_validated.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Gravitational waves",
+      "records": 629,
+      "unique_definitions": 588,
+      "file_level_identities": 622,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-complete-documentation",
+        "ssz-ligo-tests",
+        "ssz-metric-final"
+      ],
+      "repository_count": 7,
+      "source_file_count": 183,
+      "categories": {
+        "Data comparison": 35,
+        "Dimensional check": 47,
+        "Limit test": 17,
+        "Numerical test": 1,
+        "Unit/integration test": 529
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 101,
+          "definitions": 91,
+          "repositories": 2,
+          "source_files": 24
+        },
+        "derivation": {
+          "records": 58,
+          "definitions": 52,
+          "repositories": 2,
+          "source_files": 11
+        },
+        "implementation": {
+          "records": 629,
+          "definitions": 588,
+          "repositories": 7,
+          "source_files": 183
+        },
+        "internal_test": {
+          "records": 629,
+          "definitions": 588,
+          "repositories": 7,
+          "source_files": 183
+        },
+        "forward_model": {
+          "records": 84,
+          "definitions": 83,
+          "repositories": 2,
+          "source_files": 8
+        },
+        "real_data": {
+          "records": 629,
+          "definitions": 588,
+          "repositories": 7,
+          "source_files": 183
+        },
+        "uncertainty_model": {
+          "records": 4,
+          "definitions": 4,
+          "repositories": 1,
+          "source_files": 4
+        },
+        "model_comparison": {
+          "records": 81,
+          "definitions": 76,
+          "repositories": 2,
+          "source_files": 33
+        },
+        "independent_reproduction": {
+          "records": 426,
+          "definitions": 391,
+          "repositories": 5,
+          "source_files": 38
+        },
+        "falsification": {
+          "records": 507,
+          "definitions": 466,
+          "repositories": 6,
+          "source_files": 102
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_ligo_style_detection",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_experimental_roadmap.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_no_copy_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_all_modules_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_no_copy_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_full_verbose_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_no_copy_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_maximum_detail_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_gamma_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_gamma_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_gw170817_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "ARTIFACT_SCORE_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/ARTIFACT_SCORE_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "COMPLETE_PROJECT_CHECK",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/progress/COMPLETE_PROJECT_CHECK.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "COMPLETE_PROJECT_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/progress/COMPLETE_PROJECT_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "COMPLETE_PROJECT_SUMMARY",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/progress/COMPLETE_PROJECT_SUMMARY.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "DQ_AWARE_FINAL_LIGO_STATUS",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/DQ_AWARE_FINAL_LIGO_STATUS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "DQ_STATE_VECTOR_BIT_PROVENANCE_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/DQ_STATE_VECTOR_BIT_PROVENANCE_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "FINAL_INTERPRETATION_LOCK",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/FINAL_INTERPRETATION_LOCK.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "FULL_RECURSIVE_RELEASE_SCAN_REPORT",
+          "category": "Data comparison",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/data_manifest/FULL_RECURSIVE_RELEASE_SCAN_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "GAUSSIANITY_ARTIFACT_GATE_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/GAUSSIANITY_ARTIFACT_GATE_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "GA_INTERFEROMETER_SYNTHETIC_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/GA_INTERFEROMETER_SYNTHETIC_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "GW250207_ARTIFACT_GATE_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/GW250207_ARTIFACT_GATE_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "H1_L1_COHERENCE_PIPELINE_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/H1_L1_COHERENCE_PIPELINE_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "H1_L1_MINI_PIPELINE_TEST_PLAN",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/docs/H1_L1_MINI_PIPELINE_TEST_PLAN.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "H1_ONLY_EXPLORATORY_STRAIN_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/H1_ONLY_EXPLORATORY_STRAIN_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "HDF5_SYMLINK_FORENSICS_REPORT",
+          "category": "Data comparison",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/data_manifest/HDF5_SYMLINK_FORENSICS_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "L1_ARTIFACT_GATE_FINAL_STATUS",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/L1_ARTIFACT_GATE_FINAL_STATUS.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "L1_DQ_FLAG_CHECK_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/L1_DQ_FLAG_CHECK_REPORT.md",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Electromagnetic extensions",
+      "records": 412,
+      "unique_definitions": 360,
+      "file_level_identities": 412,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "ssz-all-tests",
+        "ssz-ligo-tests",
+        "ssz-schumann"
+      ],
+      "repository_count": 7,
+      "source_file_count": 85,
+      "categories": {
+        "Data comparison": 30,
+        "Dimensional check": 1,
+        "Limit test": 3,
+        "Symbolic test": 1,
+        "Unit/integration test": 377
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 24,
+          "definitions": 16,
+          "repositories": 5,
+          "source_files": 19
+        },
+        "derivation": {
+          "records": 8,
+          "definitions": 8,
+          "repositories": 4,
+          "source_files": 6
+        },
+        "implementation": {
+          "records": 412,
+          "definitions": 360,
+          "repositories": 7,
+          "source_files": 85
+        },
+        "internal_test": {
+          "records": 412,
+          "definitions": 360,
+          "repositories": 7,
+          "source_files": 85
+        },
+        "forward_model": {
+          "records": 13,
+          "definitions": 13,
+          "repositories": 3,
+          "source_files": 6
+        },
+        "real_data": {
+          "records": 412,
+          "definitions": 360,
+          "repositories": 7,
+          "source_files": 85
+        },
+        "uncertainty_model": {
+          "records": 8,
+          "definitions": 8,
+          "repositories": 2,
+          "source_files": 3
+        },
+        "model_comparison": {
+          "records": 59,
+          "definitions": 52,
+          "repositories": 5,
+          "source_files": 21
+        },
+        "independent_reproduction": {
+          "records": 249,
+          "definitions": 210,
+          "repositories": 7,
+          "source_files": 43
+        },
+        "falsification": {
+          "records": 359,
+          "definitions": 307,
+          "repositories": 7,
+          "source_files": 72
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_alpha_reference",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_fine_structure_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_fine_structure_proxy",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_fine_structure_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_frequency_curvature_proxy",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_phase_frequency_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_phi_constant",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_fine_structure_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_planck_scale_context_and_limitations",
+          "category": "Limit test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_fine_structure_domain.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_alpha_zero_constant_velocity",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/lastworking/test_segwave_core.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_alpha_zero_constant_velocity",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_segwave_core.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_fit_alpha_execution",
+          "category": "Data comparison",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_segwave_cli.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_fixed_alpha_execution",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_segwave_cli.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_mutually_exclusive_alpha",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_segwave_cli.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_tau_monotonic_with_alpha",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/scripts/tests/test_cosmo_multibody.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_two_shells_alpha_one",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/lastworking/test_segwave_core.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_two_shells_alpha_one",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/tests/test_segwave_core.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_two_shells_alpha_one",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete/reports/PIPELINE_REPAIR_AFTER_REFACTORING.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+          "test_name": "test_two_shells_alpha_one",
+          "category": "Unit/integration test",
+          "file": "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/validation_complete_extended/reports/PIPELINE_REPAIR_AFTER_REFACTORING.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "ERWEITERTE_VALIDIERUNGSTABELLEN",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/ERWEITERTE_VALIDIERUNGSTABELLEN.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "README",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/README.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "run_all_tests",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/run_all_tests.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_aces_mission_sensitivity",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section6_ssz_integration.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_delay_magnitude",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_delay_magnitude",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_gamma_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_cassini_gamma_constraint",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_shapiro_delay.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_closer_approach_larger_delay",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Quantum extensions",
+      "records": 1103,
+      "unique_definitions": 447,
+      "file_level_identities": 1102,
+      "repositories": [
+        "SSZ-HOW-TO-BEAM",
+        "SSZ-METRIC_COMPLETE",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "segmented-calculation-suite",
+        "ssz-all-tests",
+        "ssz-ligo-tests",
+        "ssz-qubits",
+        "ssz-radial-scaling"
+      ],
+      "repository_count": 9,
+      "source_file_count": 76,
+      "categories": {
+        "Data comparison": 5,
+        "Dimensional check": 35,
+        "Limit test": 10,
+        "Numerical test": 40,
+        "Unit/integration test": 1013
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 140,
+          "definitions": 46,
+          "repositories": 3,
+          "source_files": 40
+        },
+        "derivation": {
+          "records": 45,
+          "definitions": 18,
+          "repositories": 3,
+          "source_files": 25
+        },
+        "implementation": {
+          "records": 1103,
+          "definitions": 447,
+          "repositories": 9,
+          "source_files": 76
+        },
+        "internal_test": {
+          "records": 1103,
+          "definitions": 447,
+          "repositories": 9,
+          "source_files": 76
+        },
+        "forward_model": {
+          "records": 10,
+          "definitions": 4,
+          "repositories": 2,
+          "source_files": 10
+        },
+        "real_data": {
+          "records": 1103,
+          "definitions": 447,
+          "repositories": 9,
+          "source_files": 76
+        },
+        "uncertainty_model": {
+          "records": 25,
+          "definitions": 10,
+          "repositories": 2,
+          "source_files": 15
+        },
+        "model_comparison": {
+          "records": 35,
+          "definitions": 14,
+          "repositories": 3,
+          "source_files": 20
+        },
+        "independent_reproduction": {
+          "records": 754,
+          "definitions": 306,
+          "repositories": 5,
+          "source_files": 39
+        },
+        "falsification": {
+          "records": 1087,
+          "definitions": 431,
+          "repositories": 8,
+          "source_files": 60
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_analyze_quantum_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_analyzer_instantiation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_check_quantum_inequalities",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_check_semicalssical_validity",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_compute_curvature_scale",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_estimate_hawking_temperature",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_prove_quantum_theorem",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_quantum_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_all_modules_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_quantum_consistency",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_all_modules_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_quantum_result_structure",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_theorem_quantum",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/run_all_modules_test.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-HOW-TO-BEAM",
+          "test_name": "test_weak_bridge_quantum",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-HOW-TO-BEAM/tests/test_quantum_consistency.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_qubit_array_simulation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_new_capabilities.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "ERWEITERTE_VALIDIERUNGSTABELLEN",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/ERWEITERTE_VALIDIERUNGSTABELLEN.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "test_conclusion_4_classical_not_quantum",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/tests/test_section7_conclusion.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "COMPLETE_PROJECT_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/COMPLETE_PROJECT_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "COMPLETE_PROJECT_REPORT_DE",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/COMPLETE_PROJECT_REPORT_DE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "ERWEITERTE_VALIDIERUNGSTABELLEN",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/frequency-curvature-validation/docs/ERWEITERTE_VALIDIERUNGSTABELLEN.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "FINAL_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/FINAL_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "FINAL_REPORT_DE",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/FINAL_REPORT_DE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "H1_L1_COHERENCE_PIPELINE_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/H1_L1_COHERENCE_PIPELINE_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "PAPER_D_VALIDATION_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/PAPER_D_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "SSZ_QUBITS_CORRECTION_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/SSZ_QUBITS_CORRECTION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_analyze_qubit_returns_segment_analysis",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        }
+      ]
+    },
+    {
+      "domain": "Qubit phase and compensation",
+      "records": 1089,
+      "unique_definitions": 434,
+      "file_level_identities": 1089,
+      "repositories": [
+        "SSZ-METRIC_COMPLETE",
+        "frequency-curvature-validation",
+        "hilfsdateien",
+        "segmented-calculation-suite",
+        "ssz-all-tests",
+        "ssz-ligo-tests",
+        "ssz-qubits"
+      ],
+      "repository_count": 7,
+      "source_file_count": 72,
+      "categories": {
+        "Data comparison": 5,
+        "Dimensional check": 35,
+        "Limit test": 10,
+        "Numerical test": 40,
+        "Unit/integration test": 999
+      },
+      "stage_evidence": {
+        "definition": {
+          "records": 140,
+          "definitions": 46,
+          "repositories": 3,
+          "source_files": 40
+        },
+        "derivation": {
+          "records": 45,
+          "definitions": 18,
+          "repositories": 3,
+          "source_files": 25
+        },
+        "implementation": {
+          "records": 1089,
+          "definitions": 434,
+          "repositories": 7,
+          "source_files": 72
+        },
+        "internal_test": {
+          "records": 1089,
+          "definitions": 434,
+          "repositories": 7,
+          "source_files": 72
+        },
+        "forward_model": {
+          "records": 10,
+          "definitions": 4,
+          "repositories": 2,
+          "source_files": 10
+        },
+        "real_data": {
+          "records": 1089,
+          "definitions": 434,
+          "repositories": 7,
+          "source_files": 72
+        },
+        "uncertainty_model": {
+          "records": 25,
+          "definitions": 10,
+          "repositories": 2,
+          "source_files": 15
+        },
+        "model_comparison": {
+          "records": 35,
+          "definitions": 14,
+          "repositories": 3,
+          "source_files": 20
+        },
+        "independent_reproduction": {
+          "records": 745,
+          "definitions": 297,
+          "repositories": 4,
+          "source_files": 38
+        },
+        "falsification": {
+          "records": 1073,
+          "definitions": 418,
+          "repositories": 5,
+          "source_files": 56
+        }
+      },
+      "examples": [
+        {
+          "repository": "SSZ-METRIC_COMPLETE",
+          "test_name": "test_qubit_array_simulation",
+          "category": "Unit/integration test",
+          "file": "physics/SSZ-METRIC_COMPLETE/tests/test_new_capabilities.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "frequency-curvature-validation",
+          "test_name": "ERWEITERTE_VALIDIERUNGSTABELLEN",
+          "category": "Unit/integration test",
+          "file": "physics/frequency-curvature-validation/docs/ERWEITERTE_VALIDIERUNGSTABELLEN.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "COMPLETE_PROJECT_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/COMPLETE_PROJECT_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "COMPLETE_PROJECT_REPORT_DE",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/COMPLETE_PROJECT_REPORT_DE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "ERWEITERTE_VALIDIERUNGSTABELLEN",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/frequency-curvature-validation/docs/ERWEITERTE_VALIDIERUNGSTABELLEN.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "FINAL_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/FINAL_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "FINAL_REPORT_DE",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/FINAL_REPORT_DE.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "H1_L1_COHERENCE_PIPELINE_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-ligo-tests/reports/H1_L1_COHERENCE_PIPELINE_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "PAPER_D_VALIDATION_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/PAPER_D_VALIDATION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "hilfsdateien",
+          "test_name": "SSZ_QUBITS_CORRECTION_REPORT",
+          "category": "Unit/integration test",
+          "file": "physics/hilfsdateien/markdowns/ssz-qubits/SSZ_QUBITS_CORRECTION_REPORT.md",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_analyze_qubit_returns_segment_analysis",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_d_ssz_equals_one_over_one_plus_xi",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_d_ssz_less_than_one",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_decoherence_rate_positive",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_effective_T2_less_than_base",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_effective_T2_nearly_equals_base",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_evaporation_time_solar_mass",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_gate_timing_correction_at_reference",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_hawking_temp_inverse_mass",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_hawking_temp_solar_mass",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_height_to_time_offset_sign",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_pair_mismatch_increases_with_height_diff",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_pair_mismatch_zero_for_same_height",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        },
+        {
+          "repository": "segmented-calculation-suite",
+          "test_name": "test_qubit_creation",
+          "category": "Unit/integration test",
+          "file": "physics/segmented-calculation-suite/tests/test_qubit.py",
+          "status": "catalogued"
+        }
+      ]
+    }
+  ],
+  "unassigned_file_level_identities": 4978
+}

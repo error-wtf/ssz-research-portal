@@ -97,8 +97,8 @@ def main():
                       "artifact-category-chart", "artifact-quantity-chart",
                       "snapshot-chart", "diagnostic-chart"):
         assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
-    assert len(list(ROOT.glob("*.html"))) >= 17
-    for page in ("evidence.html", "interior-global-structure.html", "falsification.html", "workbench.html"):
+    assert len(list(ROOT.glob("*.html"))) >= 19
+    for page in ("evidence.html", "interior-global-structure.html", "falsification.html", "workbench.html", "qubits.html", "weak-field.html"):
         assert (ROOT / page).exists(), f"missing scientific audit page: {page}"
     certificates = json.loads((ROOT / "data/strong-field-certificates.json").read_text())
     assert certificates["precision_decimal_digits"] >= 50

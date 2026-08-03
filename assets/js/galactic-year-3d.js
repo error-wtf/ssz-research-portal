@@ -72,5 +72,5 @@
   }
   function animate(now){if(state.playing){const dt=Math.min((now-state.last)/1000,.1),slider=$("galactic-time");slider.value=(Number(slider.value)+dt*4)%250;state.yaw+=dt*.32;redraw();}state.last=now;requestAnimationFrame(animate);}
   window.SSZGalacticYear3D={calculate};
-  document.addEventListener("DOMContentLoaded",()=>{try{initGL();$("galactic-webgl-status").textContent="WebGL active · drag rotate · wheel zoom · Shift-drag pan · double-click focus";}catch(error){$("galactic-webgl-status").textContent=`WebGL unavailable: ${error.message}. Use the accessible 2D fallback below.`;}bind();redraw();requestAnimationFrame(animate);});
+  document.addEventListener("DOMContentLoaded",()=>{state.playing=true;try{initGL();$("galactic-webgl-status").textContent="WebGL active · animated 3D camera · drag rotate · wheel zoom · Shift-drag pan · double-click focus";}catch(error){$("galactic-webgl-status").textContent=`WebGL unavailable: ${error.message}. The self-hosted animated 3D render remains visible above.`;}bind();const play=$("galactic-play");if(play)play.textContent="Pause";redraw();requestAnimationFrame(animate);});
 })();

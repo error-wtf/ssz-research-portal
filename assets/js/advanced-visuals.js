@@ -123,9 +123,10 @@
   }
   const draws=[drawContinuity,drawComponents,drawClocks,drawSpectrum,drawNull];
   function drawAll(){draws.forEach(draw=>draw());}
-  function frame(now){if(running&&!document.hidden)time+=Math.min((now-last)/1000,.05);last=now;drawAll();requestAnimationFrame(frame);}
+  const animated=[drawClocks,drawNull];
+  function frame(now){if(now-last<33){requestAnimationFrame(frame);return;}if(running&&!document.hidden){time+=Math.min((now-last)/1000,.05);animated.forEach(draw=>draw());}last=now;requestAnimationFrame(frame);}
   document.addEventListener("DOMContentLoaded",()=>{
     ["continuity-join","continuity-window","component-radius","component-theta","component-form","component-log","component-inverse","clock-inner","clock-outer","spectrum-line","spectrum-emitter","spectrum-observer","null-start","null-end"].forEach(id=>$(id)?.addEventListener("input",drawAll));
-    addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);addEventListener("ssz-animation-change",event=>{running=Boolean(event.detail?.running);});requestAnimationFrame(frame);
+    addEventListener("resize",drawAll);addEventListener("ssz-theme-change",drawAll);addEventListener("ssz-animation-change",event=>{running=Boolean(event.detail?.running);});drawAll();requestAnimationFrame(frame);
   });
 })();

@@ -273,6 +273,181 @@
     ],
     "warning": "A passed script may be a smoke test, export tool or analysis runner rather than a pytest physics assertion."
   },
+  "artifact_catalogue": {
+    "count": 9300,
+    "unit": "catalogued test/result artefact",
+    "categories": [
+      {
+        "name": "Unit/integration test",
+        "count": 8192
+      },
+      {
+        "name": "Data comparison",
+        "count": 638
+      },
+      {
+        "name": "Limit test",
+        "count": 202
+      },
+      {
+        "name": "Dimensional check",
+        "count": 96
+      },
+      {
+        "name": "Numerical test",
+        "count": 86
+      },
+      {
+        "name": "Symbolic test",
+        "count": 81
+      },
+      {
+        "name": "Regression test",
+        "count": 5
+      }
+    ],
+    "repositories": [
+      {
+        "name": "ssz-all-tests",
+        "count": 4369
+      },
+      {
+        "name": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+        "count": 870
+      },
+      {
+        "name": "hilfsdateien",
+        "count": 802
+      },
+      {
+        "name": "SSZ-HOW-TO-BEAM",
+        "count": 620
+      },
+      {
+        "name": "ssz-ligo-tests",
+        "count": 554
+      },
+      {
+        "name": "ssz-lensing",
+        "count": 275
+      },
+      {
+        "name": "SSZ-METRIC_COMPLETE",
+        "count": 246
+      },
+      {
+        "name": "ssz-schumann",
+        "count": 198
+      },
+      {
+        "name": "ssz-qubits",
+        "count": 194
+      },
+      {
+        "name": "counterexample-commons",
+        "count": 189
+      },
+      {
+        "name": "segmented-calculation-suite",
+        "count": 179
+      },
+      {
+        "name": "ssz-metric-final",
+        "count": 144
+      },
+      {
+        "name": "Segmented-Spacetime-Starmaps",
+        "count": 128
+      },
+      {
+        "name": "ssz-radial-scaling",
+        "count": 116
+      },
+      {
+        "name": "frequency-curvature-validation",
+        "count": 76
+      },
+      {
+        "name": "ssz-trajectories",
+        "count": 64
+      },
+      {
+        "name": "pardon-symplectic-geometry-ssz-lab",
+        "count": 52
+      },
+      {
+        "name": "ssz-metric-pure",
+        "count": 45
+      },
+      {
+        "name": "g79-cygnus-tests",
+        "count": 43
+      },
+      {
+        "name": "ssz-full-metric",
+        "count": 37
+      },
+      {
+        "name": "chord-partition",
+        "count": 32
+      },
+      {
+        "name": "ssz-theory-readiness",
+        "count": 20
+      },
+      {
+        "name": "ssz-paper-plots",
+        "count": 19
+      },
+      {
+        "name": "claudes-cycles",
+        "count": 13
+      },
+      {
+        "name": "ssz-complete-documentation",
+        "count": 10
+      },
+      {
+        "name": "segmented-energy",
+        "count": 3
+      },
+      {
+        "name": "Riemann-Zeta-Zero-Finding-Suite",
+        "count": 1
+      },
+      {
+        "name": "ssz-lagrange",
+        "count": 1
+      }
+    ],
+    "quantities": [
+      {
+        "name": "Tests and validation",
+        "count": 6586
+      },
+      {
+        "name": "Lensing and observation",
+        "count": 1504
+      },
+      {
+        "name": "Metric and geometry",
+        "count": 989
+      },
+      {
+        "name": "Strong field",
+        "count": 100
+      },
+      {
+        "name": "Weak field",
+        "count": 78
+      },
+      {
+        "name": "Other research artefacts",
+        "count": 43
+      }
+    ],
+    "warning": "Catalogue rows support discovery and coverage analysis. They are not pass outcomes and cannot be added to captured-run totals."
+  },
   "mass_projection_evaluation": {
     "sample_pairs": 67,
     "segment_better": 66,

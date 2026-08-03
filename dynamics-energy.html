@@ -79,6 +79,17 @@
     <div class="callout"><strong>Scope boundary.</strong> These mathematical correspondences can validate transformations and numerical methods. They do not by themselves establish a quantum theory of gravity.</div>
   </section>
 
+  <section id="emergence-lab" class="section">
+    <p class="eyebrow">Executable repository visualizations</p>
+    <h2>Dynamics and emergence laboratory</h2>
+    <p>Two synchronized views turn repository equations into inspectable motion: the left panel follows the canonical static-metric null potential; the right panel ports the directional temporal-interference model from <a href="https://github.com/error-wtf/emergent-spacetime">emergent-spacetime</a> into a local browser canvas.</p>
+    <div class="grid grid-2">
+      <article class="card"><h3>Metric potential</h3><div class="control"><label>Angular momentum <output id="dyn-l-out">3.00</output> rₛ</label><input id="dyn-l" type="range" min=".5" max="8" step=".05" value="3"></div><div class="control"><label>Radius probe <output id="dyn-r-out">3.00</output> rₛ</label><input id="dyn-r" type="range" min=".25" max="12" step=".01" value="3"></div><canvas id="dynamics-potential-canvas" class="lab-canvas" aria-label="Canonical SSZ null effective-potential explorer" tabindex="0"></canvas><div class="result"><div><small>A(r)</small><strong id="dyn-a">—</strong></div><div><small>V<sub>null</sub></small><strong id="dyn-v">—</strong></div><div><small>active branch</small><strong id="dyn-branch">—</strong></div></div></article>
+      <article class="card"><h3>Temporal interference</h3><div class="control"><label>Directional symmetry <output id="emg-rays-out">5</output></label><input id="emg-rays" type="range" min="3" max="12" step="1" value="5"></div><div class="control"><label>Normalized wavelength <output id="emg-wave-out">0.10</output></label><input id="emg-wave" type="range" min=".04" max=".3" step=".005" value=".1"></div><button class="button" id="emg-play" type="button">Pause interference</button><canvas id="emergence-canvas" class="lab-canvas" aria-label="Animated directional temporal-interference field" tabindex="0"></canvas></article>
+    </div>
+    <div class="callout nuance"><strong>Interpretation boundary.</strong> The potential panel is computed from the declared metric. The interference panel is the repository’s executable emergent-pattern model: it visualizes its mathematical superposition, while its connection to physical spatial emergence remains a research interpretation.</div>
+  </section>
+
   <section id="completion" class="section">
     <p class="eyebrow">Global structure</p>
     <h2>What “completeness” means here</h2>

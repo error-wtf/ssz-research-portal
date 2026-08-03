@@ -2,7 +2,7 @@
   "use strict";
   const $=id=>document.getElementById(id), num=id=>Number($(id)?.value);
   const G=6.67430e-11,C=299792458,MS=1.98847e30,KPC=3.085677581491367e19,YEAR=365.25*86400,MBH=4.3e6*MS;
-  const state={mode:"measurements",view:"free",yaw:-.72,pitch:.48,distance:24,panX:0,panY:0,drag:false,lastX:0,lastY:0,playing:false,last:performance.now()};
+  const state={mode:"measurements",view:"free",yaw:-.72,pitch:.62,distance:20,panX:0,panY:0,drag:false,lastX:0,lastY:0,playing:false,last:performance.now()};
   let gl,program,positionBuffer,uMatrix,uColour,uSize,webglOK=false;
   const identity=()=>new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]);
   function multiply(a,b){const o=new Float32Array(16);for(let r=0;r<4;r++)for(let c=0;c<4;c++)for(let k=0;k<4;k++)o[c*4+r]+=a[k*4+r]*b[c*4+k];return o;}
@@ -36,7 +36,7 @@
   function currentPos(Q,bh=false){const p=bh?Q.phaseBH:Q.phase,a=Q.R,b=a*Math.sqrt(1-Q.e*Q.e),time=Q.time,z=Q.zAmp*Q.zScale*Math.sin(2*Math.PI*time/Q.zPeriod);return[a*(Math.cos(p)-Q.e),z,b*Math.sin(p)];}
   function render3D(Q){
     if(!webglOK)return;const canvas=$("galactic-webgl"),{w,h}=resize(canvas);gl.clearColor(.97,.98,1,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);gl.uniformMatrix4fv(uMatrix,false,cameraMatrix(w,h));
-    draw(disk(),gl.LINE_STRIP,colour("#94a3b8",.22));draw(axes(),gl.LINES,colour("#64748b",.45));
+    for(let ring=1;ring<=10;ring++){const r=ring*1.05,vertices=[];for(let i=0;i<=128;i++){const a=i/128*Math.PI*2;vertices.push(r*Math.cos(a),0,r*Math.sin(a));}draw(vertices,gl.LINE_STRIP,colour("#94a3b8",.22));}draw(axes(),gl.LINES,colour("#64748b",.45));
     if(state.mode==="measurements"||state.mode==="compare"){draw(orbit(Q,Q.R-Q.dR),gl.LINE_STRIP,colour("#2563eb",.25));draw(orbit(Q,Q.R+Q.dR),gl.LINE_STRIP,colour("#2563eb",.25));}
     draw(orbit(Q),gl.LINE_STRIP,colour("#b8860b",1));
     const sun=currentPos(Q);point([0,0,0],colour("#111827"),13);point(sun,colour("#2563eb"),12);

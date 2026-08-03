@@ -78,10 +78,12 @@
     put("potential-max-out",fmt(max,0));
     const points=700,xs=Array.from({length:points},(_,i)=>min+(max-min)*i/(points-1));
     const ssz=xs.map(x=>D(x)**2/x**2),gr=xs.map(x=>x>1?(1-1/x)/x**2:null);
-    const extrema=[];for(let i=1;i<ssz.length-1;i++)if(ssz[i]>ssz[i-1]&&ssz[i]>ssz[i+1])extrema.push(i);
-    const peakIndex=extrema.length?extrema.reduce((best,i)=>ssz[i]>ssz[best]?i:best,extrema[0]):null;
-    const peakX=peakIndex===null?null:xs[peakIndex],ymax=Math.max(...ssz,...gr.filter(Number.isFinite))*1.08;
+    const diagnostic=window.SSZ.orbitDiagnostics(max),peakX=diagnostic.photon?.x??null;
+    const peakIndex=peakX===null?null:xs.reduce((best,xValue,index)=>Math.abs(xValue-peakX)<Math.abs(xs[best]-peakX)?index:best,0);
+    const ymax=Math.max(...ssz,...gr.filter(Number.isFinite))*1.08;
     put("potential-peak",peakX===null?"none in plotted domain":`${fmt(peakX,5)} rₛ`);
+    put("potential-impact",Number.isFinite(diagnostic.criticalImpact)?`${fmt(diagnostic.criticalImpact,5)} rₛ`:"not available");
+    put("potential-isco",diagnostic.isco?`${fmt(diagnostic.isco.x,5)} rₛ · bridge-sensitive`:"none in plotted domain");
     const xp=x=>area.l+(x-min)/(max-min)*(area.r-area.l),yp=y=>area.b-y/ymax*(area.b-area.t);
     for(let i=0;i<=5;i++){const py=area.t+i*(area.b-area.t)/5;c.strokeStyle=line;c.beginPath();c.moveTo(area.l,py);c.lineTo(area.r,py);c.stroke();label(c,fmt(ymax*(5-i)/5,3),area.l-8,py+4,"right",muted,11);}
     const curve=(data,stroke,dashed=false)=>{c.save();c.strokeStyle=stroke;c.lineWidth=2.5;c.setLineDash(dashed?[7,5]:[]);c.beginPath();let active=false;data.forEach((y,i)=>{if(!Number.isFinite(y)){active=false;return;}active?c.lineTo(xp(xs[i]),yp(y)):c.moveTo(xp(xs[i]),yp(y));active=true;});c.stroke();c.restore();};

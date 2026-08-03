@@ -1,6 +1,6 @@
 {
   "status": "curated current formula reference",
-  "count": 28,
+  "count": 58,
   "formulas": [
     {
       "id": "rs",
@@ -253,6 +253,276 @@
       "units": "convention dependent",
       "domain": "axisymmetry",
       "caution": "Used with normalization and radial equations."
+    },
+    {
+      "id": "metric-a",
+      "name": "Temporal metric coefficient",
+      "latex": "A(r)=D^2(r)",
+      "topic": "metric",
+      "units": "1",
+      "domain": "static diagonal ansatz",
+      "caution": "A is not an independently fitted field."
+    },
+    {
+      "id": "metric-b",
+      "name": "Radial metric coefficient",
+      "latex": "B(r)=D^{-2}(r)",
+      "topic": "metric",
+      "units": "1",
+      "domain": "static diagonal ansatz",
+      "caution": "The identity A·B=1 is specific to this ansatz."
+    },
+    {
+      "id": "inverse-metric",
+      "name": "Inverse metric",
+      "latex": "g^{\\mu\\nu}=\\operatorname{diag}[-1/(D^2c^2),D^2,r^{-2},(r^2\\sin^2\\theta)^{-1}]",
+      "topic": "metric",
+      "units": "component dependent",
+      "domain": "D ≠ 0 and spherical chart",
+      "caution": "Coordinate components must not be interpreted as local measurements."
+    },
+    {
+      "id": "metric-determinant",
+      "name": "Metric determinant",
+      "latex": "\\det g=-c^2r^4\\sin^2\\theta",
+      "topic": "metric",
+      "units": "coordinate dependent",
+      "domain": "static diagonal ansatz",
+      "caution": "Its simple D cancellation does not establish central regularity."
+    },
+    {
+      "id": "proper-radius",
+      "name": "Proper radial length",
+      "latex": "\\ell=\\int_{r_1}^{r_2}dr/D(r)",
+      "topic": "measurements",
+      "units": "m",
+      "domain": "constant-t spatial slice",
+      "caution": "This is slice dependent and is not infall proper time."
+    },
+    {
+      "id": "null-time",
+      "name": "Radial null travel time",
+      "latex": "\\Delta t=c^{-1}\\int_{r_1}^{r_2}dr/D^2(r)",
+      "topic": "null paths",
+      "units": "s",
+      "domain": "radial null curve in static chart",
+      "caution": "A coordinate travel time, not a variable local light speed."
+    },
+    {
+      "id": "strong-first",
+      "name": "Strong-branch first derivative",
+      "latex": "\\Xi_s'(x)=-(\\varphi/x^2)e^{-\\varphi/x}",
+      "topic": "field",
+      "units": "1",
+      "domain": "x > 0",
+      "caution": "Derivative is with respect to normalized radius x."
+    },
+    {
+      "id": "strong-second",
+      "name": "Strong-branch second derivative",
+      "latex": "\\Xi_s''(x)=e^{-\\varphi/x}(2\\varphi/x^3-\\varphi^2/x^4)",
+      "topic": "field",
+      "units": "1",
+      "domain": "x > 0",
+      "caution": "Used in the left endpoint C² match."
+    },
+    {
+      "id": "weak-first",
+      "name": "Weak-branch first derivative",
+      "latex": "\\Xi_w'(x)=-1/(2x^2)",
+      "topic": "field",
+      "units": "1",
+      "domain": "x > 0",
+      "caution": "Used in the right endpoint C² match."
+    },
+    {
+      "id": "weak-second",
+      "name": "Weak-branch second derivative",
+      "latex": "\\Xi_w''(x)=1/x^3",
+      "topic": "field",
+      "units": "1",
+      "domain": "x > 0",
+      "caution": "Used in the right endpoint C² match."
+    },
+    {
+      "id": "hermite-left-value",
+      "name": "Quintic Hermite left-value basis",
+      "latex": "h_{00}=1-10t^3+15t^4-6t^5",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 ≤ t ≤ 1",
+      "caution": "One of six endpoint-interpolation basis functions."
+    },
+    {
+      "id": "hermite-left-slope",
+      "name": "Quintic Hermite left-slope basis",
+      "latex": "h_{10}=t-6t^3+8t^4-3t^5",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 ≤ t ≤ 1",
+      "caution": "Multiplied by interval width and left slope."
+    },
+    {
+      "id": "hermite-left-curvature",
+      "name": "Quintic Hermite left-curvature basis",
+      "latex": "h_{20}=(t^2-3t^3+3t^4-t^5)/2",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 ≤ t ≤ 1",
+      "caution": "Multiplied by interval width squared and left curvature."
+    },
+    {
+      "id": "hermite-right-value",
+      "name": "Quintic Hermite right-value basis",
+      "latex": "h_{01}=10t^3-15t^4+6t^5",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 ≤ t ≤ 1",
+      "caution": "One of six endpoint-interpolation basis functions."
+    },
+    {
+      "id": "hermite-right-slope",
+      "name": "Quintic Hermite right-slope basis",
+      "latex": "h_{11}=-4t^3+7t^4-3t^5",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 ≤ t ≤ 1",
+      "caution": "Multiplied by interval width and right slope."
+    },
+    {
+      "id": "hermite-right-curvature",
+      "name": "Quintic Hermite right-curvature basis",
+      "latex": "h_{21}=(t^3-2t^4+t^5)/2",
+      "topic": "field",
+      "units": "1",
+      "domain": "0 ≤ t ≤ 1",
+      "caution": "Multiplied by interval width squared and right curvature."
+    },
+    {
+      "id": "christoffel",
+      "name": "Levi-Civita connection",
+      "latex": "\\Gamma^\\rho_{\\mu\\nu}=\\tfrac12g^{\\rho\\sigma}(\\partial_\\mu g_{\\sigma\\nu}+\\partial_\\nu g_{\\sigma\\mu}-\\partial_\\sigma g_{\\mu\\nu})",
+      "topic": "differential geometry",
+      "units": "coordinate dependent",
+      "domain": "metric-compatible torsion-free connection",
+      "caution": "Connection components can be chart singular even when invariants are finite."
+    },
+    {
+      "id": "riemann",
+      "name": "Riemann tensor",
+      "latex": "R^\\rho_{\\ \\sigma\\mu\\nu}=\\partial_\\mu\\Gamma^\\rho_{\\nu\\sigma}-\\partial_\\nu\\Gamma^\\rho_{\\mu\\sigma}+\\Gamma^\\rho_{\\mu\\lambda}\\Gamma^\\lambda_{\\nu\\sigma}-\\Gamma^\\rho_{\\nu\\lambda}\\Gamma^\\lambda_{\\mu\\sigma}",
+      "topic": "differential geometry",
+      "units": "m⁻²",
+      "domain": "Levi-Civita connection",
+      "caution": "Sign depends on the declared curvature convention."
+    },
+    {
+      "id": "einstein",
+      "name": "Einstein tensor",
+      "latex": "G_{\\mu\\nu}=R_{\\mu\\nu}-\\tfrac12Rg_{\\mu\\nu}",
+      "topic": "differential geometry",
+      "units": "m⁻²",
+      "domain": "declared metric and sign convention",
+      "caution": "A geometric diagnostic here, not a derived SSZ equation of motion."
+    },
+    {
+      "id": "effective-source",
+      "name": "Effective stress tensor diagnostic",
+      "latex": "T_{\\mu\\nu}^{\\rm eff}=G_{\\mu\\nu}/(8\\pi G)",
+      "topic": "dynamics",
+      "units": "stress-energy",
+      "domain": "GR-style diagnostic convention",
+      "caution": "Does not supply a fundamental SSZ matter action."
+    },
+    {
+      "id": "geodesic",
+      "name": "Geodesic equation",
+      "latex": "d^2x^\\mu/d\\lambda^2+\\Gamma^\\mu_{\\alpha\\beta}(dx^\\alpha/d\\lambda)(dx^\\beta/d\\lambda)=0",
+      "topic": "geodesics",
+      "units": "coordinate dependent",
+      "domain": "affine parameter λ",
+      "caution": "Applies to free test trajectories in the effective geometry."
+    },
+    {
+      "id": "four-velocity",
+      "name": "Timelike normalization",
+      "latex": "g_{\\mu\\nu}u^\\mu u^\\nu=-c^2",
+      "topic": "geodesics",
+      "units": "m²/s²",
+      "domain": "timelike worldline",
+      "caution": "Null trajectories instead have zero norm."
+    },
+    {
+      "id": "null-turning",
+      "name": "Null turning-point impact parameter",
+      "latex": "b^2=r_{\\rm turn}^2/A(r_{\\rm turn})",
+      "topic": "strong field",
+      "units": "m²",
+      "domain": "equatorial null geodesic",
+      "caution": "A turning point is not automatically a circular orbit."
+    },
+    {
+      "id": "photon-condition",
+      "name": "Circular null-orbit condition",
+      "latex": "d[A(r)/r^2]/dr=0",
+      "topic": "strong field",
+      "units": "m⁻³",
+      "domain": "static spherical metric",
+      "caution": "Stability follows from the second derivative and global accessibility."
+    },
+    {
+      "id": "clock-ratio",
+      "name": "Static clock-rate ratio",
+      "latex": "d\\tau_1/d\\tau_2=D(r_1)/D(r_2)",
+      "topic": "clocks",
+      "units": "1",
+      "domain": "static clocks compared in one stationary chart",
+      "caution": "Transport and kinematic effects require a fuller protocol."
+    },
+    {
+      "id": "weak-xi",
+      "name": "Weak-field potential correspondence",
+      "latex": "\\Xi_w=GM/(rc^2)",
+      "topic": "weak field",
+      "units": "1",
+      "domain": "r > 2.2r_s",
+      "caution": "Follows algebraically from r_s=2GM/c²."
+    },
+    {
+      "id": "weak-d",
+      "name": "Weak-field time-factor expansion",
+      "latex": "D=(1+\\Xi)^{-1}=1-\\Xi+\\Xi^2+O(\\Xi^3)",
+      "topic": "weak field",
+      "units": "1",
+      "domain": "|Ξ| < 1",
+      "caution": "A local series; observable calculations still need the full metric."
+    },
+    {
+      "id": "residual",
+      "name": "Normalized residual",
+      "latex": "\\rho_i=[y_i-f(x_i;\\theta)]/\\sigma_i",
+      "topic": "data analysis",
+      "units": "1",
+      "domain": "independent Gaussian uncertainty",
+      "caution": "Correlated measurements require a covariance matrix."
+    },
+    {
+      "id": "chi-square",
+      "name": "Correlated chi-square",
+      "latex": "\\chi^2=(\\mathbf y-\\mathbf f)^T C^{-1}(\\mathbf y-\\mathbf f)",
+      "topic": "data analysis",
+      "units": "1",
+      "domain": "specified covariance C",
+      "caution": "Model comparison must also address parameters, priors and selection effects."
+    },
+    {
+      "id": "curvature-dimensions",
+      "name": "Curvature dimensional check",
+      "latex": "[R]=L^{-2},\\qquad[K]=L^{-4}",
+      "topic": "validation",
+      "units": "m⁻² and m⁻⁴",
+      "domain": "geometric units restored consistently",
+      "caution": "A required sanity check for central asymptotics."
     }
   ]
 }

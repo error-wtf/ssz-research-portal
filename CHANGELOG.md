@@ -2,6 +2,16 @@
 
 ## 2026-08-03 — Deep research extension
 
+- rebuilt the Starmaps module around 3,000 real Gaia-derived catalogue records,
+  four projections, proper-motion vectors, filters, inspection and PNG export;
+- added five interactive metric modules for C² continuity, metric components,
+  static clocks, spectral shift and radial null travel;
+- expanded the theory reference with notation, the six quintic Hermite basis
+  functions, operational measurements, statistical inference and a P0
+  correction matrix;
+- expanded the reviewed formula catalogue from 28 to 58 equations;
+- excluded 63 private source files and every private book artefact before public
+  inventory, formula and test catalogue generation;
 - added a 25-item public SSZ paper catalogue with claim status, topic,
   peer-review guardrails and partial item-level ResearchGate/viXra verification;
 - added the searchable `papers.html` research-record page;
@@ -9,7 +19,7 @@
   metadata records plotted in their supplied ICRS coordinates;
 - removed the illustrative radial sky deformation because it was not an
   observational result;
-- expanded the reviewed formula dataset to 28 equations with MathJax rendering,
+- expanded the reviewed formula dataset initially to 28 equations with MathJax rendering,
   units, domains, source-text copying and interpretation guardrails;
 - expanded theory with connection, curvature, effective-source diagnostics, a
   regularity ladder and paper-to-theory mapping;

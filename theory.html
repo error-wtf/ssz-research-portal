@@ -10,7 +10,7 @@
 <nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>THEORY FROM A TO Z</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a aria-current="page" href="theory.html">Theory</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
 <header class="hero"><div><span class="eyebrow">Four levels of explanation</span><h1>SSZ theory<br><span class="gradient-text">from A to Z</span></h1><p class="lead">Intuition, physics, mathematics, implementation and validation are kept together so that no formula floats free of its assumptions.</p></div><div class="hero-orbit"><span class="orbit-core">ds²</span></div></header>
-<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#differential">Differential geometry</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#papers">Paper map</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
+<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#notation">Notation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#bridge">C² bridge</a><a href="#differential">Geometry</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#measurements">Measurements</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#inference">Inference</a><a href="#status">Claim status</a><a href="#papers">Paper map</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
 
 <section id="segmentation" class="section">
 <div class="section-head"><span class="section-kicker">Foundations</span><h2>What “segmented” means</h2><p class="lead">Segmentation is a model description of how local radial and temporal scaling is encoded by a dimensionless field Ξ. It is not, by itself, proof that spacetime is literally made of discrete blocks.</p></div>
@@ -20,6 +20,17 @@
 <article class="card level"><h3>Mathematical</h3><div class="formula"><span class="equation"><span class="math-var">D</span>(r) = <span class="frac"><span>1</span><span>1 + Ξ(r)</span></span>, &nbsp; <span class="math-var">s</span>(r) = 1 + Ξ(r) = <span class="frac"><span>1</span><span>D(r)</span></span></span></div><p>Ξ, D and s are dimensionless. The field depends on the dimensionless ratio r/r<sub>s</sub> once a central mass fixes r<sub>s</sub>.</p></article>
 <article class="card level"><h3>Implementation</h3><p>Code must declare the observable class, select the applicable branch or PPN method, retain units, and test limits before producing a number.</p><pre>observable → class → method → scope → calculate</pre></article>
 </div>
+</section>
+
+<section id="notation" class="section">
+<div class="section-head"><span class="section-kicker">Language before calculation</span><h2>Coordinates, units and epistemic status</h2><p class="lead">Every SSZ statement depends on what is being measured, which branch is used and whether the result is a definition, a mathematical consequence, a numerical test or an empirical claim.</p></div>
+<div class="grid grid-3">
+<article class="card"><h3>Coordinates</h3><p>\(t\) is the static chart time, \(r\) is the areal radius, and \((\theta,\phi)\) are spherical angles. The sphere at fixed \(r\) has area \(4\pi r^2\).</p></article>
+<article class="card"><h3>Natural scale</h3><div class="math-box" data-label="Mass scale">\(r_s=\dfrac{2GM}{c^2},\qquad x=\dfrac{r}{r_s}\)</div><p>The public implementation evaluates a universal dimensionless profile in \(x\), then restores physical units through \(r_s\).</p></article>
+<article class="card"><h3>Units</h3><p>\(\Xi\), \(D\), \(A\) and \(B\) are dimensionless. Radius carries length, coordinate time carries time, and curvature invariants scale as \(R\sim L^{-2}\) and \(K\sim L^{-4}\).</p></article>
+</div>
+<div class="equation-notes"><div><strong>\(G\)</strong><span>Newtonian gravitational constant</span></div><div><strong>\(c\)</strong><span>locally measured invariant light speed</span></div><div><strong>\(\varphi\)</strong><span>golden ratio \((1+\sqrt5)/2\), dimensionless model constant</span></div><div><strong>\(x\)</strong><span>normalised areal radius \(r/r_s\)</span></div></div>
+<div class="callout"><strong>Reading rule:</strong> “implemented” means that reproducible code exists. “Tested” means that an assertion or comparison was executed. Neither word, by itself, means that nature empirically prefers SSZ.</div>
 </section>
 
 <section id="differential" class="section">
@@ -32,6 +43,27 @@
 </div>
 </section>
 
+<section id="bridge" class="section">
+<div class="section-head"><span class="section-kicker">Exact transition construction</span><h2>The derivative-matched quintic Hermite bridge</h2><p>The transition is the unique degree-five polynomial that transports the value, slope and curvature of both neighbouring branches across \(x_0=1.8\) and \(x_1=2.2\). It is an explicit model prescription, not a fitted curve and not a hidden interpolation toward Schwarzschild.</p></div>
+<div class="math-box" data-label="Normalised transition coordinate">\(t=\dfrac{x-x_0}{h},\qquad h=x_1-x_0=0.4,\qquad 0\le t\le1\)</div>
+<div class="math-box" data-label="C² Hermite interpolant">\[
+\begin{aligned}
+H_5(t)={}&h_{00}(t)y_0+h\,h_{10}(t)y'_0+h^2h_{20}(t)y''_0\\
+&+h_{01}(t)y_1+h\,h_{11}(t)y'_1+h^2h_{21}(t)y''_1 .
+\end{aligned}
+\]</div>
+<div class="grid grid-2">
+<article class="card"><h3>Left basis</h3><div class="math-box">\(\begin{aligned}h_{00}&=1-10t^3+15t^4-6t^5\\h_{10}&=t-6t^3+8t^4-3t^5\\h_{20}&=\tfrac12(t^2-3t^3+3t^4-t^5)\end{aligned}\)</div></article>
+<article class="card"><h3>Right basis</h3><div class="math-box">\(\begin{aligned}h_{01}&=10t^3-15t^4+6t^5\\h_{11}&=-4t^3+7t^4-3t^5\\h_{21}&=\tfrac12(t^3-2t^4+t^5)\end{aligned}\)</div></article>
+</div>
+<div class="derivation-steps">
+<div class="derivation-step"><div><h3>Evaluate the physical branches</h3><p>\(y_0=\Xi_{\rm strong}(x_0)\), \(y_1=\Xi_{\rm weak}(x_1)\), together with their first and second derivatives with respect to \(x\).</p></div></div>
+<div class="derivation-step"><div><h3>Apply the interval scale</h3><p>The factors \(h\) and \(h^2\) convert endpoint derivatives in \(x\) into derivatives in the normalised coordinate \(t\).</p></div></div>
+<div class="derivation-step"><div><h3>Verify all six identities</h3><p>\(H_5^{(k)}(0)=\Xi_{\rm strong}^{(k)}(x_0)\) and \(H_5^{(k)}(1)=\Xi_{\rm weak}^{(k)}(x_1)\) for \(k=0,1,2\).</p></div></div>
+</div>
+<p class="callout tested"><strong>Interactive audit:</strong> the <a href="index.html#metric-explorer">metric explorer</a> and <a href="visual-lab.html#continuity">continuity microscope</a> evaluate this construction directly. The Schwarzschild trace is shown only as a reference curve.</p>
+</section>
+
 <section id="time" class="section">
 <div class="section-head"><span class="section-kicker">Time, frames and light</span><h2>Proper time is not coordinate time</h2></div>
 <div class="grid grid-3">
@@ -40,6 +72,17 @@
 <article class="card"><h3>Light</h3><p>A photon follows a null path with dτ=0. Every local freely falling observer measures light at c; coordinate speeds may differ because coordinates and metric coefficients differ.</p></article>
 </div>
 <div class="callout"><strong>Local statement:</strong> c is locally constant. A radial coordinate expression such as dr/dt is not automatically a locally measured speed. Confusing the two produces false superluminal or “slowed photon” claims.</div>
+</section>
+
+<section id="measurements" class="section">
+<div class="section-head"><span class="section-kicker">Operational observables</span><h2>How metric quantities become measurements</h2><p>A coordinate expression becomes physical only after an observer, apparatus and comparison procedure are specified.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>Static redshift between two radii</h3><div class="math-box" data-label="Emitter–observer comparison">\(1+z=\dfrac{\nu_{\rm emit}}{\nu_{\rm obs}}=\dfrac{D(r_{\rm obs})}{D(r_{\rm emit})}\)</div><p>This assumes static emitter and observer in the same stationary geometry. Doppler motion, cosmological expansion and propagation through matter require additional terms.</p></article>
+<article class="card"><h3>Radial null travel time</h3><div class="math-box" data-label="Coordinate travel integral">\(\Delta t=\dfrac1c\int_{r_1}^{r_2}\dfrac{dr}{D^2(r)}\)</div><p>The integral describes the selected static coordinates. A local observer still measures light at \(c\).</p></article>
+<article class="card"><h3>Proper radial distance</h3><div class="math-box" data-label="Spatial slice">\(\ell(r_1,r_2)=\int_{r_1}^{r_2}\dfrac{dr}{D(r)}\)</div><p>This is the length on a constant-\(t\) slice of the diagonal ansatz; it is not the proper time of an infalling observer.</p></article>
+<article class="card"><h3>Impact-parameter geometry</h3><div class="math-box" data-label="Null turning point">\(b^2=\dfrac{r_{\rm turn}^2}{A(r_{\rm turn})},\qquad A=D^2\)</div><p>Photon-ring and lensing claims require the full null geodesic problem, not only the value of \(\Xi\) at a selected radius.</p></article>
+</div>
+<div class="callout warning"><strong>Do not mix observable classes:</strong> static redshift, radial coordinate slope, lensing deflection, orbital stability and wave ringdown are related through the geometry, but they are not interchangeable formulas.</div>
 </section>
 
 <section id="metric" class="section">
@@ -51,6 +94,28 @@
 <article class="card"><h3>Areal radius</h3><p>The area of a symmetry sphere is 4πr². This makes r=0 a geometrically meaningful areal centre, not merely a coordinate label that can be dismissed when curvature invariants diverge.</p><p>The determinant and inverse metric being finite at one radius do not guarantee global regularity.</p></article>
 </div>
 <div class="callout warning"><strong>Scope boundary:</strong> this metric is a mathematically concrete effective geometry. A fundamental action and complete field equations that dynamically generate it are still missing.</div>
+</section>
+
+<section id="inference" class="section">
+<div class="section-head"><span class="section-kicker">From calculation to evidence</span><h2>Prediction, uncertainty and model comparison</h2><p>Numerical agreement is meaningful only when inputs, uncertainties, nuisance parameters and a comparison model are explicit.</p></div>
+<div class="research-map"><div><strong>Claim</strong><span>scope and status</span></div><div><strong>Equation</strong><span>branch and assumptions</span></div><div><strong>Code</strong><span>version and units</span></div><div><strong>Test</strong><span>tolerance and data</span></div><div><strong>Evidence</strong><span>likelihood and alternatives</span></div></div>
+<div class="grid grid-2">
+<article class="card"><h3>Residual and uncertainty</h3><div class="math-box" data-label="Normalised residual">\(\rho_i=\dfrac{y_i-f(x_i;\theta)}{\sigma_i}\)</div><p>A residual without \(\sigma_i\) cannot state statistical tension. Correlated data require a covariance matrix rather than independent denominators.</p></article>
+<article class="card"><h3>Model comparison</h3><div class="math-box" data-label="Gaussian quadratic form">\(\chi^2=(\mathbf y-\mathbf f)^{\mathsf T}C^{-1}(\mathbf y-\mathbf f)\)</div><p>A smaller \(\chi^2\) is not enough if models have different flexibility, priors or effective parameter counts. The comparison protocol must be fixed before interpreting a preference.</p></article>
+</div>
+<p class="callout open"><strong>Current limit:</strong> several public applications demonstrate computable mappings or compatibility checks. A unified uncertainty-aware likelihood pipeline across all strong-field observables remains open.</p>
+</section>
+
+<section id="status" class="section">
+<div class="section-head"><span class="section-kicker">Canonical correction map</span><h2>What P0 changed—and what it did not</h2><p>The internal long-form synthesis is used only to identify topics that deserve explanation. Where its pre-P0 conclusions conflict with the current canonical geometry, the current derivation and reproducible tests win.</p></div>
+<div class="table-wrap"><table class="status-matrix"><thead><tr><th>Question</th><th>Current canonical statement</th><th>Superseded overstatement</th><th>Reason</th></tr></thead><tbody>
+<tr><td>Horizon clock factor</td><td class="current">Finite: \(D(r_s)\approx0.555027709\)</td><td>Vanishing or infinite static dilation</td><td>Direct evaluation of the canonical strong branch</td></tr>
+<tr><td>Inner limit of Ξ</td><td class="current">\(\Xi(r)\to1\) as \(r\to0^+\)</td><td class="superseded">\(\Xi\to0\) at the centre</td><td>\(1-\exp(-\varphi r_s/r)\to1\)</td></tr>
+<tr><td>Metric coefficient</td><td class="current">\(A=D^2\to1/4\)</td><td>Metric finiteness implies regularity</td><td>Finite components do not control invariants</td></tr>
+<tr><td>Central curvature</td><td class="current">\(R\sim3/(2r^2)\), \(K\sim9/(4r^4)\)</td><td class="superseded">Complete singularity freedom</td><td>Invariant curvature diverges at the areal centre</td></tr>
+<tr><td>Theory status</td><td class="current">Concrete falsifiable effective geometry</td><td>Completed fundamental gravity theory</td><td>No complete covariant action, dynamics or global interior yet</td></tr>
+</tbody></table></div>
+<div class="callout warning"><strong>Publication boundary:</strong> the private reference book is neither copied nor linked from this portal. Its historical claims cannot override P0, the current source hierarchy or reproducible mathematics.</div>
 </section>
 
 <section id="branches" class="section">

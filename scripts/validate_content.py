@@ -21,6 +21,7 @@ REQUIRED_JSON = {
     "physics-atlas.json": ("count", "repositories"),
     "papers.json": ("count", "papers"),
     "observations.json": ("count", "objects"),
+    "starmap-stars.json": ("count", "stars"),
 }
 
 
@@ -34,14 +35,17 @@ def main():
     assert len(all_public) == 42, "public-scope repository snapshot count changed"
     assert len(research_public) == 30, "physics/mathematics classification incomplete"
     atlas = json.loads((ROOT / "data/physics-atlas.json").read_text(encoding="utf-8"))
-    assert atlas["count"] == 35, "public physics atlas coverage incomplete"
+    assert atlas["count"] == 34, "public non-private physics atlas coverage incomplete"
     papers = json.loads((ROOT / "data/papers.json").read_text(encoding="utf-8"))
     observations = json.loads((ROOT / "data/observations.json").read_text(encoding="utf-8"))
     formulas = json.loads((ROOT / "data/formulas.json").read_text(encoding="utf-8"))
+    starmap = json.loads((ROOT / "data/starmap-stars.json").read_text(encoding="utf-8"))
     assert papers["count"] == 25, "numbered paper index incomplete"
     assert len(papers["papers"]) == papers["count"]
     assert observations["count"] >= 200, "observation catalogue subset too small"
-    assert len(formulas["formulas"]) >= 25, "curated formula reference too small"
+    assert len(formulas["formulas"]) >= 50, "curated formula reference too small"
+    assert starmap["count"] >= 3000, "Gaia starmap catalogue too small"
+    assert "legacy Xi and D columns are not used" in starmap["guardrail"]
     assert {item["domain"] for item in research_public} == {
         "physics", "mathematics", "physics-and-mathematics"
     }
@@ -64,9 +68,15 @@ def main():
     private_markers = ("ji" + "f", "joint " + "interval framework")
     for marker in private_markers:
         assert marker not in publishable.lower(), f"private research marker published: {marker}"
+    private_book_markers = ("ssz_" + "book_en", "segmented-spacetime-" + "book")
+    for marker in private_book_markers:
+        assert marker not in publishable.lower(), f"private book artefact published: {marker}"
     assert len(list(ROOT.glob("*.html"))) >= 8
     visual = (ROOT / "visual-lab.html").read_text(encoding="utf-8")
-    for canvas_id in ("phi-canvas", "radial-canvas", "lensing-canvas", "potential-canvas", "starmap-canvas", "sagnac-canvas", "curvature-canvas"):
+    for canvas_id in ("phi-canvas", "radial-canvas", "lensing-canvas", "potential-canvas",
+                      "starmap-canvas", "sagnac-canvas", "curvature-canvas",
+                      "continuity-canvas", "components-canvas", "clocks-canvas",
+                      "spectrum-canvas", "null-canvas"):
         assert f'id="{canvas_id}"' in visual, f"missing visual module: {canvas_id}"
     print("OK: JSON schemas, page set and P0 scientific guardrails validated")
 

@@ -142,10 +142,46 @@ h3 { margin-top: 0; }
 .formula {
   padding: 1rem 1.2rem; margin: 1rem 0; background: var(--surface-2);
   border: 1px solid var(--line); border-left: 4px solid var(--gold);
-  border-radius: .8rem; font: 600 clamp(1rem, 1.6vw, 1.18rem)/1.8 "Inter", sans-serif;
+  border-radius: .8rem; font: 500 clamp(1.08rem, 1.8vw, 1.32rem)/1.9 "STIX Two Math", "Cambria Math", Georgia, serif;
   overflow-x: auto; letter-spacing: .01em;
 }
 .formula.big { font-size: clamp(1.15rem, 2.3vw, 1.65rem); text-align: center; padding-block: 1.35rem; }
+.math-box {
+  position: relative; display: grid; place-items: center; min-height: 6.5rem;
+  margin: 1.15rem 0; padding: 1.5rem 1.25rem 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 34%, var(--line));
+  border-radius: 1rem; overflow-x: auto;
+  background: linear-gradient(135deg, var(--surface), var(--surface-2));
+  box-shadow: inset 4px 0 0 var(--gold);
+  font: 500 clamp(1.18rem, 2.2vw, 1.65rem)/1.7 "STIX Two Math", "Cambria Math", Georgia, serif;
+}
+.math-box mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .35rem; }
+.math-box[data-label]::before {
+  content: attr(data-label); position: absolute; left: 1rem; top: .55rem;
+  color: var(--muted); font: 800 .64rem/1 Inter, sans-serif;
+  letter-spacing: .09em; text-transform: uppercase;
+}
+.equation-notes {
+  display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .55rem 1rem;
+  margin: .8rem 0 1.4rem; padding: 1rem; border-radius: .8rem; background: var(--surface-2);
+}
+.equation-notes div { display: grid; grid-template-columns: minmax(3.8rem,auto) 1fr; gap: .55rem; }
+.equation-notes strong { color: var(--deep); font-family: "STIX Two Math", Georgia, serif; }
+.equation-notes span { color: var(--muted); font-size: .88rem; }
+.derivation-steps { counter-reset: derivation; display: grid; gap: .8rem; margin: 1rem 0; }
+.derivation-step {
+  counter-increment: derivation; display: grid; grid-template-columns: 2.4rem 1fr;
+  gap: .85rem; align-items: start; padding: 1rem; border: 1px solid var(--line);
+  border-radius: .9rem; background: var(--surface);
+}
+.derivation-step::before {
+  content: counter(derivation); display: grid; place-items: center; width: 2.25rem;
+  aspect-ratio: 1; border-radius: 50%; color: white; background: var(--gold); font-weight: 800;
+}
+.derivation-step > div > :first-child { margin-top: 0; }
+.status-matrix td:first-child { font-weight: 800; }
+.status-matrix .current { color: var(--ok); }
+.status-matrix .superseded { color: var(--danger); }
 .equation { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .35em; white-space: nowrap; }
 .math-var { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
 .frac { display: inline-grid; grid-template-rows: auto auto; vertical-align: middle; text-align: center; line-height: 1.25; }
@@ -294,6 +330,13 @@ details[open] summary { margin-bottom: .7rem; }
 .formula-meta { display:grid; grid-template-columns:auto 1fr; gap:.35rem .8rem; margin:0; font-size:.87rem; }
 .formula-meta dt { font-weight:800; color:var(--deep); }
 .formula-meta dd { margin:0; color:var(--muted); }
+.starmap-layout { display:grid; grid-template-columns:minmax(270px,340px) 1fr; border:1px solid var(--line); border-radius:1.25rem; overflow:hidden; background:var(--surface); box-shadow:var(--shadow); }
+.starmap-stage { position:relative; min-width:0; }
+.starmap-canvas { height:clamp(520px,62vw,760px); cursor:grab; touch-action:none; }
+.starmap-canvas:active { cursor:grabbing; }
+.starmap-detail { position:absolute; left:1rem; right:1rem; bottom:1rem; display:flex; flex-wrap:wrap; gap:.35rem .8rem; padding:.75rem 1rem; border:1px solid var(--line); border-radius:.8rem; color:var(--text); background:color-mix(in srgb,var(--surface) 92%,transparent); backdrop-filter:blur(10px); font-size:.78rem; }
+.starmap-detail strong { width:100%; }
+.starmap-detail span,.starmap-detail small { color:var(--muted); }
 
 @media (max-width: 980px) {
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 1rem; background: var(--surface); border-bottom: 1px solid var(--line); }
@@ -309,6 +352,7 @@ details[open] summary { margin-bottom: .7rem; }
   .graph { grid-template-columns: repeat(2,1fr); }
   .research-map { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .formula-catalog { grid-template-columns:1fr; }
+  .starmap-layout { grid-template-columns:1fr; }
   .research-map div::after { display:none; }
   .graph-node::after { display:none; }
 }
@@ -329,6 +373,8 @@ details[open] summary { margin-bottom: .7rem; }
   .paper-card { grid-template-columns:1fr; }
   .paper-number { width:3rem; }
   .research-map { grid-template-columns:1fr; }
+  .equation-notes { grid-template-columns:1fr; }
+  .math-box { min-height:5rem; padding-inline:.65rem; font-size:1.08rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,7 +1,7 @@
 {
   "generated": "2026-08-03",
   "root_reference": "physics/",
-  "count": 35,
+  "count": 34,
   "repositories": [
     {
       "name": "CALCULATION_OF_NUMBER_PI",
@@ -373,89 +373,6 @@
         "physics/SSZ-METRIC_COMPLETE/04_FINDINGS_UNIFIED_RESULTS.md",
         "physics/SSZ-METRIC_COMPLETE/VALIDATION_OUTPUTS_COMPLETE.md",
         "physics/SSZ-METRIC_COMPLETE/EXACT_BENCHMARK_REPLAY_REPORT.md"
-      ],
-      "scope_note": ""
-    },
-    {
-      "name": "Segmented-Spacetime-Book",
-      "summary": "Segmented Spacetime — lossless corpus reconstruction",
-      "domain": "theory-and-geometry",
-      "roles": [
-        "Theory",
-        "Documentation"
-      ],
-      "public_url": "",
-      "archived": false,
-      "default_branch": "stage-1-reconstruction",
-      "commit": "536371b120a0",
-      "counts": {
-        "files": 8450,
-        "bytes": 375818024,
-        "tests": 266,
-        "documents": 7586,
-        "images": 323,
-        "code": 196
-      },
-      "languages": [
-        {
-          "extension": ".md",
-          "count": 7349
-        },
-        {
-          "extension": ".png",
-          "count": 317
-        },
-        {
-          "extension": ".txt",
-          "count": 201
-        },
-        {
-          "extension": ".py",
-          "count": 194
-        },
-        {
-          "extension": ".yml",
-          "count": 141
-        },
-        {
-          "extension": ".json",
-          "count": 114
-        },
-        {
-          "extension": ".pdf",
-          "count": 27
-        },
-        {
-          "extension": ".csv",
-          "count": 22
-        }
-      ],
-      "key_documents": [
-        "physics/Segmented-Spacetime-Book/README.md",
-        "physics/Segmented-Spacetime-Book/STAGE_0_THEORY_RECONSTRUCTION.md",
-        "physics/Segmented-Spacetime-Book/references/README.md",
-        "physics/Segmented-Spacetime-Book/reports/17_preliminary_book_architecture.md",
-        "physics/Segmented-Spacetime-Book/reports/08_existing_book_architecture_audit.md",
-        "physics/Segmented-Spacetime-Book/knowledge/argument_graphs/falsifiability.md",
-        "physics/Segmented-Spacetime-Book/book/specs/ARCHITECTURE_FREEZE.md",
-        "physics/Segmented-Spacetime-Book/knowledge/argument_graphs/canonical_ssz_field.md",
-        "physics/Segmented-Spacetime-Book/references/repos/ssz-complete-documentation/README.md",
-        "physics/Segmented-Spacetime-Book/references/repos/SSZ-Book-Project/README.md",
-        "physics/Segmented-Spacetime-Book/references/repos/SSZ-Book-Project/03_FORMULAS_MATHEMATICS.md"
-      ],
-      "result_files": [
-        "physics/Segmented-Spacetime-Book/STAGE_0_PROGRESS_REPORT.md",
-        "physics/Segmented-Spacetime-Book/STAGE_1_COMPLETION_REPORT.md",
-        "physics/Segmented-Spacetime-Book/STAGE_MINUS_1_PROGRESS_REPORT.md",
-        "physics/Segmented-Spacetime-Book/STAGE_1B_COMPREHENSION_REPORT.md",
-        "physics/Segmented-Spacetime-Book/inventory/quality_gate_results.json",
-        "physics/Segmented-Spacetime-Book/scripts/build_completion_report.py",
-        "physics/Segmented-Spacetime-Book/reports/21_quality_gate_results.md",
-        "physics/Segmented-Spacetime-Book/reports/13_claim_registry_summary.md",
-        "physics/Segmented-Spacetime-Book/reports/semantic_consistency_audit.md",
-        "physics/Segmented-Spacetime-Book/reports/11_concept_registry_summary.md",
-        "physics/Segmented-Spacetime-Book/reports/comprehension_coverage_report.md",
-        "physics/Segmented-Spacetime-Book/reports/12_notation_and_equation_audit.md"
       ],
       "scope_note": ""
     },

@@ -35,6 +35,17 @@
   --gold-light: #3a2f13;
   --shadow: 0 15px 40px rgba(0, 0, 0, .3);
 }
+[data-theme="dark"] .button.primary,
+[data-theme="dark"] .button.primary:hover {
+  color: var(--bg);
+  background: var(--deep);
+  border-color: var(--deep);
+}
+[data-theme="dark"] .button:not(.primary) {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--line);
+}
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 6rem; }

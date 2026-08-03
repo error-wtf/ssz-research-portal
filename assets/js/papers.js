@@ -29,6 +29,7 @@
         <h3>${escape(paper.title)}</h3><p>${escape(paper.authors)}</p>
         <p>${escape(paper.summary || "Summary pending source review.")}</p>
         <p class="scope-note">${escape(paper.scope_note)}</p>
+        ${historic ? `<p class="callout"><strong>Planned clarification:</strong> when time permits, a fundamentally explanatory and supplementary paper may follow. Careful follow-up across all of our projects takes time; the current P0 boundary shown here applies meanwhile.</p>` : ""}
         <div class="paper-actions">${linked ? `<a href="${escape(paper.public_url)}" target="_blank" rel="noopener">Public publication page</a>` : `<span class="scope-note">Item-level public page not yet verified</span>`}
         ${paper.manuscript_url ? `<a href="${escape(paper.manuscript_url)}" target="_blank" rel="noopener">Read source manuscript</a>` : ""}
         <code>${escape(paper.key)}</code><span>${escape(paper.peer_review)}</span></div></div>

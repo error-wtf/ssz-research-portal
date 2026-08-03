@@ -334,7 +334,7 @@
     {
       "id": "SSZ-CLAIM-P0-CENTRE-001",
       "title": "Non-regular areal centre",
-      "statement": "For the present canonical diagonal continuation, the temporal coefficient remains finite while the relevant curvature invariants diverge toward the areal centre.",
+      "statement": "For the current canonical diagonal continuation in areal radius, the invariant calculation yields a finite temporal coefficient and divergent Ricci/Kretschmann asymptotics; this does not rule out a different SSZ interior completion.",
       "evidence_class": "Mathematically derived result",
       "status": "corrected",
       "canonical_version": "P0-2026.08",
@@ -388,7 +388,7 @@
     {
       "id": "SSZ-CLAIM-ORBIT-PROXY-001",
       "title": "Blend-localized stationary candidates",
-      "statement": "Current photon and timelike stationary candidates computed near x=2.1–2.2 are matching-prescription diagnostics, not universal SSZ observables.",
+      "statement": "Current photon and timelike stationary candidates computed near x=2.1–2.2 are reproducible static-metric diagnostics; their physical interpretation remains conditional on the matching prescription and a complete forward model.",
       "evidence_class": "Numerical result",
       "status": "conditional",
       "canonical_version": "P0-2026.08",
@@ -467,7 +467,7 @@
       "test_id": "strict-evaluation-json",
       "reproduction_command": "python3 scripts/audit_test_catalog.py",
       "inputs": [],
-      "numerical_result": "9,300 records; 5,294 unique repository/test definitions; 1,296-pass historical execution subset",
+      "numerical_result": "9,300 catalogue records; 5,294 unique repository/test definitions; 28 test-bearing repositories; 2,280 source files; 1,296-pass historical execution subset",
       "uncertainty": "Non-statistical aggregate",
       "dependencies": [],
       "conflicts": [
@@ -483,7 +483,7 @@
     {
       "id": "SSZ-CLAIM-INTERIOR-OPEN-001",
       "title": "Global interior remains open",
-      "statement": "No public canonical solution currently proves a regular global interior, maximal extension, geodesic completeness or causal completeness.",
+      "statement": "The public corpus contains interior proposals, energy-condition analyses and related tests, but no single canonical, globally matched solution has yet been certified for regularity, maximal extension, geodesic completeness and causal completeness together.",
       "evidence_class": "Open derivation",
       "status": "open",
       "canonical_version": "P0-2026.08",

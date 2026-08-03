@@ -70,8 +70,9 @@ def main() -> None:
         "source_sha256": hashlib.sha256(raw).hexdigest(),
         "method": (
             "All test records were searched for conflict-relevant vocabulary. "
-            "The output expands the eight curated conflicts with traceable "
-            "review candidates and never invents a source line."
+            "The output expands seven curated review signals with traceable "
+            "candidates and never invents a source line; a signal is not by "
+            "itself a resolved scientific conflict."
         ),
         "signals": signals,
     }

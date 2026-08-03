@@ -1,1 +1,68 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SSZ Metric</title><link rel="stylesheet" href="assets/css/site.css"><script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},options:{enableMenu:false}};</script><script defer src="assets/vendor/mathjax/tex-svg.js"></script><script defer src="assets/js/site.js"></script></head><body><a class="skip-link" href="#main">Skip to content</a><nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><strong>Segmented Spacetime</strong></a><button class="nav-button menu-toggle">Menu</button><div class="nav-links"></div></div></nav><main id="main" class="page"><header class="hero"><div><span class="eyebrow">Canonical static sector</span><h1>The SSZ <span class="gradient-text">metric</span></h1><p class="lead">Definitions, branches, coefficients, limits and the boundary between established calculations and open global completion.</p></div></header><section class="section"><h2>Static diagonal ansatz</h2><div class="math-box">\[ds^2=-A(r)c^2dt^2+B(r)dr^2+r^2(d\theta^2+\sin^2\theta\,d\phi^2)\]</div><div class="math-box">\[D=(1+\Xi)^{-1},\qquad A=D^2,\qquad B=D^{-2},\qquad AB=1\]</div><p>The coordinate <var>r</var> is the areal radius. This is an effective static spherical geometry, not a complete derived field theory.</p></section><section class="section"><h2>Canonical branches</h2><div class="grid grid-3"><article class="card"><h3>Strong</h3><div class="math-box">\[\Xi=1-e^{-\varphi r_s/r},\quad r&lt;1.8r_s\]</div></article><article class="card"><h3>C² bridge</h3><p>A derivative-matched quintic Hermite polynomial joins value, slope and curvature from 1.8 to 2.2 <var>r</var><sub>s</sub>.</p></article><article class="card"><h3>Weak</h3><div class="math-box">\[\Xi=\frac{r_s}{2r},\quad r&gt;2.2r_s\]</div></article></div></section><section class="section"><h2>Limits</h2><div class="grid grid-2"><article class="card"><h3>Horizon</h3><div class="math-box">\[\Xi(r_s)\approx0.801711847,\quad D(r_s)\approx0.555027710\]</div><p>Finite coefficients do not establish global horizon absence.</p></article><article class="card"><h3>Areal centre</h3><div class="math-box">\[A\to\frac14,\quad R\sim\frac{3}{2r^2},\quad K\sim\frac{9}{4r^4}\]</div><p>The current diagonal continuation is not regular at the areal centre.</p></article></div></section></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive visual reference for the canonical public SSZ static metric, branches, coefficients and limits.">
+  <title>SSZ Metric</title>
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script>window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg:{fontCache:"global"},options:{enableMenu:false}};</script>
+  <script defer src="assets/vendor/mathjax/tex-svg.js"></script>
+  <script defer src="assets/js/site.js"></script>
+  <script defer src="assets/js/physics.js"></script>
+  <script defer src="assets/js/metric-visuals.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><strong>Segmented Spacetime</strong></a><button class="nav-button menu-toggle">Menu</button><div class="nav-links"></div></div></nav>
+<main id="main" class="page">
+  <header class="hero"><div><span class="eyebrow">Canonical static sector · interactive formula atlas</span><h1>The SSZ <span class="gradient-text">metric</span></h1><p class="lead">Definitions, branches, coefficients and limits are linked to one synchronized radius probe. Animation illustrates mathematical dependence; it is not an astrophysical simulation.</p></div></header>
+
+  <section class="section" aria-labelledby="metric-controls-title">
+    <div class="section-head"><span class="badge canonical">Shared radius probe</span><h2 id="metric-controls-title">Move through the metric</h2><p>All diagrams below use \(x=r/r_s\). Play moves logarithmically from the present centre diagnostic toward the asymptotic region.</p></div>
+    <div class="visual-controls metric-master-controls">
+      <div class="control"><label for="metric-radius">Normalized areal radius \(x=r/r_s\) <output id="metric-radius-out">1.0000</output></label><input id="metric-radius" type="range" min="-4" max="2" step=".002" value="0"></div>
+      <div class="actions"><button class="button" id="metric-play" type="button" aria-pressed="false">Play radial sweep</button><button class="button" id="metric-reset" type="button">Reset to horizon</button></div>
+      <div class="result"><div><small>active branch</small><strong id="metric-branch">strong</strong></div><div><small>Ξ(x)</small><strong id="metric-xi">—</strong></div><div><small>D(x)</small><strong id="metric-d">—</strong></div><div><small>A(x)</small><strong id="metric-a">—</strong></div><div><small>B(x)</small><strong id="metric-b">—</strong></div><div><small>A·B</small><strong id="metric-ab">1</strong></div></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ansatz-title">
+    <div class="section-head"><span class="badge canonical">Definition</span><h2 id="ansatz-title">Static diagonal ansatz</h2></div>
+    <div class="math-box">\[ds^2=-A(r)c^2dt^2+B(r)dr^2+r^2(d\theta^2+\sin^2\theta\,d\phi^2)\]</div>
+    <div class="math-box">\[D=(1+\Xi)^{-1},\qquad A=D^2,\qquad B=D^{-2},\qquad AB=1\]</div>
+    <div class="visual-grid"><div class="visual-controls"><h3>Geometric reading</h3><p>The animated local chart shows how the time and radial coordinate scales change with the selected radius. The angular sphere retains areal radius \(r\).</p><p class="callout warning"><strong>Coordinate statement:</strong> changing coordinate slopes does not change the locally measured value of \(c\).</p></div><canvas id="metric-geometry" class="lab-canvas" aria-label="Animated coordinate-scale and radial light-cone representation of the static metric" tabindex="0"></canvas></div>
+    <p>The coordinate \(r\) is the areal radius: a sphere at fixed \(r\) has area \(4\pi r^2\). This is an effective static spherical geometry, not a complete derived field theory.</p>
+  </section>
+
+  <section class="section" aria-labelledby="branches-title">
+    <div class="section-head"><span class="badge canonical">Piecewise definition</span><h2 id="branches-title">Canonical branches and C² bridge</h2><p>The moving marker and shaded bridge make the routing and its derivative matching visible.</p></div>
+    <div class="grid grid-3">
+      <article class="card"><h3>Strong</h3><div class="math-box">\[\Xi_{\rm strong}(x)=1-e^{-\varphi/x},\quad x&lt;1.8\]</div></article>
+      <article class="card"><h3>C² bridge</h3><div class="math-box">\[\Xi_{\rm bridge}(x)=\sum_{k=0}^{5}a_k t^k,\quad t=\frac{x-1.8}{0.4}\]</div><p>Six endpoint constraints match value, first derivative and second derivative.</p></article>
+      <article class="card"><h3>Weak</h3><div class="math-box">\[\Xi_{\rm weak}(x)=\frac{1}{2x},\quad x&gt;2.2\]</div></article>
+    </div>
+    <canvas id="metric-branches" class="lab-canvas metric-wide-canvas" aria-label="Animated Xi branch function and first two radial derivatives" tabindex="0"></canvas>
+    <div class="result"><div><small>Ξ′(x), numerical</small><strong id="metric-xip">—</strong></div><div><small>Ξ″(x), numerical</small><strong id="metric-xipp">—</strong></div><div><small>distance to bridge</small><strong id="metric-bridge-distance">—</strong></div></div>
+  </section>
+
+  <section class="section" aria-labelledby="coefficients-title">
+    <div class="section-head"><span class="badge tested">Algebraic identities</span><h2 id="coefficients-title">From Ξ to D, A and B</h2><p>Each bar is evaluated from the same selected radius. The reciprocal product is recalculated rather than hard-coded.</p></div>
+    <canvas id="metric-coefficients" class="lab-canvas metric-wide-canvas" aria-label="Animated comparison of Xi, D, A and B with reciprocal identity" tabindex="0"></canvas>
+    <div class="math-box">\[D=\frac{1}{1+\Xi},\qquad g_{tt}=-D^2,\qquad g_{rr}=D^{-2},\qquad |g_{tt}|g_{rr}=1\]</div>
+  </section>
+
+  <section class="section" aria-labelledby="limits-title">
+    <div class="section-head"><span class="badge tested">Tested horizon · open completion</span><h2 id="limits-title">Horizon result and areal-centre scope</h2><p>The test corpus repeatedly verifies finite Ξ and D at \(r=r_s\). The separate centre diagnostic concerns only the presently declared diagonal continuation, not every possible physical SSZ interior.</p></div>
+    <div class="grid grid-2">
+      <article class="card"><h3>At \(r=r_s\): repeatedly tested</h3><div class="math-box">\[\Xi(r_s)\approx0.801711847,\qquad D(r_s)\approx0.555027710\]</div><p>Repository tests repeatedly reproduce these finite values and the associated metric identities. This establishes finite static-chart time scaling at the tested radius; a software test is still not an empirical observation or a proof of global causal structure.</p></article>
+      <article class="card"><h3>As \(r\to0\): completion remains open</h3><div class="math-box">\[A\to\frac14,\qquad R\sim\frac{3}{2r^2},\qquad K\sim\frac{9}{4r^4}\]</div><p>These asymptotics diagnose the current diagonal extrapolation to the areal centre. They do not rule out a different SSZ inner solution, a non-areal boundary construction or another mathematically complete continuation. Whether SSZ supplies such a completion remains an open research question.</p></article>
+    </div>
+    <canvas id="metric-limits" class="lab-canvas metric-wide-canvas" aria-label="Animated logarithmic centre asymptotics for A, Ricci scalar and Kretschmann scalar" tabindex="0"></canvas>
+    <div class="result"><div><small>A asymptotic diagnostic</small><strong id="metric-limit-a">—</strong></div><div><small>R·x² proxy</small><strong id="metric-limit-r">1.5</strong></div><div><small>K·x⁴ proxy</small><strong id="metric-limit-k">2.25</strong></div></div>
+    <p class="callout warning"><strong>Epistemic boundary:</strong> the curvature curves visualize the leading asymptotic terms of the presently declared diagonal continuation. They neither prove a regular global interior nor prove that no alternative SSZ completion can resolve the centre question.</p>
+  </section>
+</main>
+<footer class="footer"><div class="footer-inner"><div><strong>SSZ metric atlas</strong><p>One canonical implementation, synchronized formula views.</p></div><div><a href="formulas.html">Formula catalogue</a></div><div><a href="interior-global-structure.html">Interior and global structure</a></div></div></footer>
+</body>
+</html>

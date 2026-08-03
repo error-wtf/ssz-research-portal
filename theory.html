@@ -6,17 +6,17 @@
 <link rel="stylesheet" href="assets/css/site.css"><script defer src="assets/js/site.js"></script>
 </head><body>
 <a class="skip-link" href="#main">Skip to content</a>
-<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>THEORY FROM A TO Z</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a aria-current="page" href="theory.html">Theory</a><a href="jif.html">JIF</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
+<nav class="site-nav"><div class="nav-inner"><a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>THEORY FROM A TO Z</small></span></a><button class="nav-button menu-toggle" aria-expanded="false">Menu</button><div class="nav-links"><a href="index.html">Overview</a><a aria-current="page" href="theory.html">Theory</a><a href="strong-field.html">Strong field</a><a href="tests.html">Tests</a><a href="repositories.html">Repositories</a><a href="reproducibility.html">Reproduce</a><a href="glossary.html">Glossary</a><button class="nav-button" data-theme-toggle>◐ Theme</button></div></div></nav>
 <main id="main" class="page">
 <header class="hero"><div><span class="eyebrow">Four levels of explanation</span><h1>SSZ theory<br><span class="gradient-text">from A to Z</span></h1><p class="lead">Intuition, physics, mathematics, implementation and validation are kept together so that no formula floats free of its assumptions.</p></div><div class="hero-orbit"><span class="orbit-core">ds²</span></div></header>
-<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#weak">Weak field</a><a href="#rotation">Sagnac</a><a href="#observables">Observables</a><a href="#misreadings">Misreadings</a></nav>
+<nav class="toc" aria-label="On this page"><a href="#segmentation">Segmentation</a><a href="#time">Time and light</a><a href="#metric">Metric</a><a href="#branches">Branches</a><a href="#derivation">Derivation</a><a href="#weak">Weak field</a><a href="#geodesics">Geodesics</a><a href="#rotation">Sagnac</a><a href="#interior">Interior</a><a href="#dynamics">Dynamics</a><a href="#observables">Observables</a><a href="#falsification">Falsification</a><a href="#misreadings">Misreadings</a></nav>
 
 <section id="segmentation" class="section">
 <div class="section-head"><span class="section-kicker">Foundations</span><h2>What “segmented” means</h2><p class="lead">Segmentation is a model description of how local radial and temporal scaling is encoded by a dimensionless field Ξ. It is not, by itself, proof that spacetime is literally made of discrete blocks.</p></div>
 <div class="four-levels grid grid-2">
 <article class="card level"><h3>Intuitive</h3><p>Imagine comparing identical local clocks and rulers at different gravitational radii. SSZ summarises the comparison with one local scaling field. More Ξ means a smaller D and therefore fewer local proper-time seconds per coordinate-time second.</p></article>
 <article class="card level"><h3>Physical</h3><p>A static observer at radius r is assigned dτ=D(r)dt. Radial proper length is scaled inversely in the diagonal ansatz. Local measurements still use local proper time and proper distance.</p></article>
-<article class="card level"><h3>Mathematical</h3><div class="formula">D(r)=1/(1+Ξ(r)), &nbsp; s(r)=1+Ξ(r)=1/D(r)</div><p>Ξ and D are dimensionless. The field depends on the dimensionless ratio r/r_s once a central mass fixes r_s.</p></article>
+<article class="card level"><h3>Mathematical</h3><div class="formula"><span class="equation"><span class="math-var">D</span>(r) = <span class="frac"><span>1</span><span>1 + Ξ(r)</span></span>, &nbsp; <span class="math-var">s</span>(r) = 1 + Ξ(r) = <span class="frac"><span>1</span><span>D(r)</span></span></span></div><p>Ξ, D and s are dimensionless. The field depends on the dimensionless ratio r/r<sub>s</sub> once a central mass fixes r<sub>s</sub>.</p></article>
 <article class="card level"><h3>Implementation</h3><p>Code must declare the observable class, select the applicable branch or PPN method, retain units, and test limits before producing a number.</p><pre>observable → class → method → scope → calculate</pre></article>
 </div>
 </section>
@@ -33,7 +33,8 @@
 
 <section id="metric" class="section">
 <div class="section-head"><span class="section-kicker">Geometry</span><h2>The canonical diagonal metric ansatz</h2></div>
-<div class="formula big">ds² = −D²(r)c²dt² + D⁻²(r)dr² + r²(dθ² + sin²θ dϕ²)</div>
+<div class="formula big"><span class="equation">d<span class="math-var">s</span>² = −<span class="math-var">D</span>²(r)c²d<span class="math-var">t</span>² + <span class="frac"><span>d<span class="math-var">r</span>²</span><span>D²(r)</span></span> + r²[dθ² + sin²(θ)dϕ²]</span></div>
+<dl class="symbol-list"><dt>ds²</dt><dd>invariant spacetime interval</dd><dt>t, r, θ, ϕ</dt><dd>static spherical coordinates; r is the areal radius</dd><dt>D(r)</dt><dd>dimensionless static time factor, derived from Ξ</dd><dt>c</dt><dd>local invariant speed of light</dd></dl>
 <div class="grid grid-2">
 <article class="card"><h3>Components</h3><table><tbody><tr><td>g<sub>tt</sub></td><td>−D²c²</td><td>static clock scaling</td></tr><tr><td>g<sub>rr</sub></td><td>D⁻²</td><td>radial proper-length scaling</td></tr><tr><td>g<sub>θθ</sub></td><td>r²</td><td>areal angular radius</td></tr><tr><td>g<sub>ϕϕ</sub></td><td>r²sin²θ</td><td>azimuthal angular term</td></tr></tbody></table></article>
 <article class="card"><h3>Areal radius</h3><p>The area of a symmetry sphere is 4πr². This makes r=0 a geometrically meaningful areal centre, not merely a coordinate label that can be dismissed when curvature invariants diverge.</p><p>The determinant and inverse metric being finite at one radius do not guarantee global regularity.</p></article>
@@ -44,11 +45,23 @@
 <section id="branches" class="section">
 <div class="section-head"><span class="section-kicker">Piecewise field</span><h2>Strong, transition and weak regimes</h2></div>
 <div class="grid grid-3">
-<article class="card"><span class="badge canonical">r/r_s &lt; 1.8</span><h3>Strong/inner branch</h3><div class="formula">Ξ=1−exp(−φr_s/r)</div><p>Ξ decreases outward. At r_s it is about 0.8017; as the formula is formally continued inward it approaches 1.</p></article>
+<article class="card"><span class="badge canonical">r/r<sub>s</sub> &lt; 1.8</span><h3>Strong/inner branch</h3><div class="formula"><span class="equation">Ξ<sub>strong</sub>(r) = 1 − exp[−φ <span class="frac"><span>r<sub>s</sub></span><span>r</span></span>]</span></div><p>Ξ decreases outward. At r<sub>s</sub> it is about 0.8017; as the formula is formally continued inward it approaches 1.</p></article>
 <article class="card"><span class="badge tested">1.8 ≤ r/r_s ≤ 2.2</span><h3>Blend zone</h3><div class="formula">Ξ=H<sub>5</sub>(t)</div><p>A quintic Hermite polynomial matches value, first derivative and second derivative of both branches. This is an operational interpolation, not yet a derived phase transition.</p></article>
-<article class="card"><span class="badge canonical">r/r_s &gt; 2.2</span><h3>Weak branch</h3><div class="formula">Ξ=r_s/(2r)</div><p>It tends to zero at infinity, so D tends to one and the metric tends to Minkowski form.</p></article>
+<article class="card"><span class="badge canonical">r/r<sub>s</sub> &gt; 2.2</span><h3>Weak branch</h3><div class="formula"><span class="equation">Ξ<sub>weak</sub>(r) = <span class="frac"><span>r<sub>s</sub></span><span>2r</span></span></span></div><p>It tends to zero at infinity, so D tends to one and the metric tends to Minkowski form.</p></article>
 </div>
 <details><summary>Why C² rather than a simple smoothstep?</summary><p>A cubic 3t²−2t³ forces zero endpoint slopes and only guarantees C¹ matching when the neighbouring functions are not themselves flat. The current requirement transports the actual endpoint slope and curvature of both physical branches. That removes artificial derivative jumps through second order.</p></details>
+<div class="callout warning"><strong>Implementation conflict found:</strong> the current <code>segmented-calculation-suite/segcalc/methods/xi.py</code> uses the quintic smoothstep 6t⁵−15t⁴+10t³ to weight the two branch functions. Calling the weight C² does not make the resulting piecewise field C² when the neighbouring branch slopes are non-zero. The portal therefore follows the higher-priority P0 endpoint-derivative match and records this repository drift explicitly.</div>
+</section>
+
+<section id="derivation" class="section">
+<div class="section-head"><span class="section-kicker">Construction and continuity</span><h2>From mass scale to the C² field</h2><p>The current portal treats the branch definitions and the transition prescription as declared model structure. It does not present the bridge as a solution of an undiscovered field equation.</p></div>
+<div class="grid grid-2">
+<article class="card"><h3>1 · Fix the radial scale</h3><div class="formula"><span class="equation">r<sub>s</sub> = <span class="frac"><span>2GM</span><span>c²</span></span>, &nbsp; x = <span class="frac"><span>r</span><span>r<sub>s</sub></span></span></span></div><p>For a positive central mass M, r<sub>s</sub> supplies the length scale and x is dimensionless. The universal curve is written in x; physical metres return through r=xr<sub>s</sub>.</p></article>
+<article class="card"><h3>2 · Derive the scalings</h3><div class="formula"><span class="equation">Ξ(x) → D(x)=<span class="frac"><span>1</span><span>1+Ξ(x)</span></span> → A(x)=D²(x), &nbsp; B(x)=D⁻²(x)</span></div><p>Ξ is primary in the canonical implementation. D, the temporal coefficient A, and radial coefficient B are derived quantities—not separately fitted functions.</p></article>
+<article class="card"><h3>3 · Match six endpoint conditions</h3><p>With t=(x−1.8)/0.4, the quintic H<sub>5</sub>(t)=a₀+a₁t+…+a₅t⁵ matches Ξ, dΞ/dx and d²Ξ/dx² at x=1.8 and x=2.2. Six conditions determine six coefficients.</p><div class="formula"><span class="equation">H<sub>5</sub><sup>(k)</sup>(0)=Ξ<sub>strong</sub><sup>(k)</sup>(1.8), &nbsp; H<sub>5</sub><sup>(k)</sup>(1)=Ξ<sub>weak</sub><sup>(k)</sup>(2.2), &nbsp; k=0,1,2</span></div></article>
+<article class="card"><h3>4 · Test identities and limits</h3><div class="formula"><span class="equation">D(x)s(x)=1, &nbsp; lim<sub>x→∞</sub>Ξ(x)=0, &nbsp; lim<sub>x→∞</sub>D(x)=1</span></div><p>Continuity, monotonicity within the declared branches, horizon values and asymptotic flatness are software-testable. Their success establishes implementation consistency, not empirical truth.</p></article>
+</div>
+<div class="callout tested"><strong>Horizon checkpoint:</strong> Ξ(r<sub>s</sub>)=1−e<sup>−φ</sup>≈0.801711847 and D(r<sub>s</sub>)≈0.555027709. The older value Ξ(r<sub>s</sub>)=1 is not canonical.</div>
 </section>
 
 <section id="weak" class="section">
@@ -61,6 +74,16 @@
 </div>
 </section>
 
+<section id="geodesics" class="section">
+<div class="section-head"><span class="section-kicker">Motion in the effective geometry</span><h2>Worldlines, null paths and conserved quantities</h2></div>
+<div class="grid grid-3">
+<article class="card"><h3>Static clock</h3><p>For dr=dθ=dϕ=0, the metric directly gives dτ=D(r)dt. Comparing two static radii requires a stated emitter and observer.</p><div class="formula"><span class="equation"><span class="frac"><span>dτ</span><span>dt</span></span> = D(r)</span></div></article>
+<article class="card"><h3>Radial light coordinate slope</h3><p>Setting ds²=0 for a radial null path gives a coordinate relation. It is not a locally measured light speed.</p><div class="formula"><span class="equation"><span class="frac"><span>dr</span><span>dt</span></span> = ±cD²(r)</span></div></article>
+<article class="card"><h3>Spherical symmetries</h3><p>Stationarity and rotational symmetry permit conserved energy- and angular-momentum-like quantities for geodesic calculations. Circular photon and matter orbits must be derived from the full effective potential.</p><div class="formula"><span class="equation">E = −g<sub>tt</sub>u<sup>t</sup>, &nbsp; L = g<sub>ϕϕ</sub>u<sup>ϕ</sup></span></div></article>
+</div>
+<div class="callout open"><strong>Strong-field caution:</strong> a radius quoted by an individual repository is not automatically universal across every historic SSZ metric variant. The branch, metric convention, commit and numerical method must accompany it.</div>
+</section>
+
 <section id="rotation" class="section">
 <div class="section-head"><span class="section-kicker">Sagnac and rotation</span><h2>Direction comparison, not a conveyor-belt analogy</h2></div>
 <div class="grid grid-2">
@@ -70,15 +93,46 @@
 <details><summary>One-way versus two-way measurement</summary><p>One-way timing requires a synchronisation convention between separated clocks. Round-trip timing can avoid that convention but measures a different observable. A factor of two from path duplication is separate from a factor such as (1+γ) in a PPN formula.</p></details>
 </section>
 
+<section id="interior" class="section">
+<div class="section-head"><span class="section-kicker">P0 correction</span><h2>SSZ Interior and Global Structure</h2><p>Finite time dilation at r=r<sub>s</sub> removes the Schwarzschild-style vanishing of the static time factor there. It does not settle what happens at the areal centre.</p></div>
+<div class="grid grid-2">
+<article class="card"><span class="badge canonical">Derived limit</span><h3>Metric coefficient</h3><div class="formula"><span class="equation">A(r)=D²(r) → <span class="frac"><span>1</span><span>4</span></span> &nbsp; as &nbsp; r→0</span></div><p>The temporal coefficient remains finite in the formal diagonal continuation.</p></article>
+<article class="card"><span class="badge corrected">Curvature divergence</span><h3>Areal centre</h3><div class="formula"><span class="equation">R(r) ~ <span class="frac"><span>3</span><span>2r²</span></span>, &nbsp; K(r) ~ <span class="frac"><span>9</span><span>4r⁴</span></span></span></div><p>The Ricci scalar R and Kretschmann scalar K diverge. Because the sphere area is 4πr², this is not removed merely by relabelling the coordinate.</p></article>
+</div>
+<div class="grid grid-3">
+<article class="card"><h3>Not established</h3><p>Central regularity, geodesic completeness, causal completeness and a globally regular continuation are not proved.</p></article>
+<article class="card"><h3>Needed for completion</h3><p>A new interior solution or rigorously defined boundary geometry, matching conditions, regularity analysis and suitable matter/energy content.</p></article>
+<article class="card"><h3>Global questions</h3><p>Maximal extension, trapping structure, junction behaviour, rotation and dynamical collapse remain separate research problems.</p></article>
+</div>
+</section>
+
+<section id="dynamics" class="section">
+<div class="section-head"><span class="section-kicker">Foundational status</span><h2>Effective metric versus fundamental dynamics</h2></div>
+<div class="grid grid-2">
+<article class="card"><h3>What exists</h3><p>A defined scalar profile, a concrete diagonal geometry, numerical implementations, observable pipelines and falsifiable comparisons. These are sufficient to study an effective spacetime model.</p></article>
+<article class="card"><h3>What is missing</h3><p>No complete covariant action or field equations currently derive the metric, source coupling, conservation laws, perturbations, rotating solution and interior from a single dynamical principle.</p></article>
+</div>
+<p class="callout warning"><strong>Consequence:</strong> energy conditions, wave propagation and stability cannot be inferred solely from the static profile Ξ(r). Each requires the declared effective stress tensor or underlying dynamics and its domain of validity.</p>
+</section>
+
 <section id="observables" class="section">
 <div class="section-head"><span class="section-kicker">Observable assignment</span><h2>One field does not mean one shortcut</h2></div>
 <div class="table-wrap"><table><thead><tr><th>Class</th><th>Examples</th><th>Method</th><th>Primary caution</th></tr></thead><tbody>
 <tr><td>Static timelike</td><td>clock rate, static redshift</td><td>direct D/Ξ mapping</td><td>include emitter/observer and kinematics</td></tr>
 <tr><td>Null path</td><td>lensing, Shapiro, VLBI</td><td>full metric or PPN completion</td><td>do not use Ξ-only factor</td></tr>
 <tr><td>Timelike orbit</td><td>perihelion, ISCO, epicycles</td><td>geodesic/effective-potential machinery</td><td>do not infer from D at one radius</td></tr>
-<tr><td>Phase</td><td>JIF clocks, interferometers</td><td>proper phase or path phase</td><td>photons have no proper time</td></tr>
 <tr><td>Wave dynamics</td><td>QNM, inspiral, ringdown</td><td>perturbation equations from declared dynamics</td><td>proxy frequency is not a full waveform</td></tr>
 </tbody></table></div>
+</section>
+
+<section id="falsification" class="section">
+<div class="section-head"><span class="section-kicker">Scientific decision points</span><h2>How the model can fail</h2></div>
+<div class="grid grid-2">
+<article class="card"><h3>Internal falsification</h3><p>The declared metric fails if its branch matching violates C² continuity, its code does not reproduce its formulas, a claimed limit is mathematically inconsistent, or a supposedly universal result depends on an undeclared historic variant.</p></article>
+<article class="card"><h3>Observational falsification</h3><p>A precision observation excludes a specified SSZ version when the predicted observable—with uncertainty and nuisance parameters fixed in advance—lies outside the measured confidence region while a valid comparison model remains compatible.</p></article>
+<article class="card"><h3>Discriminating targets</h3><p>Strong-field redshift, shadow morphology, photon-ring structure, orbital frequencies, lensing time delays and ringdown are candidates only where SSZ provides a complete forward model distinct from GR.</p></article>
+<article class="card"><h3>Non-discriminating success</h3><p>Recovering β=γ=1 in the weak-field PPN limit is necessary compatibility evidence. It is not a novel SSZ prediction and cannot by itself select SSZ over GR.</p></article>
+</div>
 </section>
 
 <section id="misreadings" class="section">
@@ -87,9 +141,8 @@
 <article class="card"><h3>“Finite at r_s means no singularity anywhere.”</h3><p>False. Horizon regularity and central regularity are different mathematical questions. Curvature diverges at the areal centre in the current diagonal continuation.</p></article>
 <article class="card"><h3>“A green test proves nature uses SSZ.”</h3><p>False. A test can prove a code path satisfies an assertion or reproduces a dataset transformation. Empirical preference requires uncertainty-aware comparison against alternatives.</p></article>
 <article class="card"><h3>“Segmentation means a literal lattice.”</h3><p>Not established. Ξ is an effective field in the present formalism; the microphysical origin remains open.</p></article>
-<article class="card"><h3>“JIF is a new universal clock.”</h3><p>False. JIF is phase counting: dJ=dΦ/(2π). It is tied to a physical oscillator or path phase.</p></article>
 </div>
 </section>
 </main>
-<footer class="footer"><div class="footer-inner"><div><strong>SSZ Theory</strong><p>P0-corrected, provenance-first presentation.</p></div><div><a href="jif.html">Next: JIF</a></div><div><a href="strong-field.html">Strong-field structure</a></div></div></footer>
+<footer class="footer"><div class="footer-inner"><div><strong>SSZ Theory</strong><p>P0-corrected, provenance-first presentation.</p></div><div><a href="visual-lab.html">Interactive visual lab</a></div><div><a href="strong-field.html">Strong-field structure</a></div></div></footer>
 </body></html>

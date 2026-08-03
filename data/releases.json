@@ -1,9 +1,23 @@
 {
-  "count": 4,
+  "count": 3,
   "releases": [
-    {"date":"2026-08","title":"Research portal synthesis","status":"current","change":"P0 interior correction, full source inventory, provenance-first public documentation."},
-    {"date":"2026-07-01","title":"v1.1.0 release audit","status":"source audit","change":"Decay Xi, quintic C² blend, JIF precision fixes and rhetorical claim gates."},
-    {"date":"2026-06","title":"Canonical documentation consolidation","status":"superseded in part","change":"Broad formulas, validation and repository documentation; interior claims require P0 override."},
-    {"date":"2025–2026","title":"Legacy papers and repository-specific models","status":"historical","change":"Multiple local/global Xi variants, observational proposals and early singularity claims."}
+    {
+      "date": "2026-08",
+      "title": "Research portal synthesis",
+      "status": "current",
+      "change": "P0 interior correction, full source inventory, provenance-first public documentation."
+    },
+    {
+      "date": "2026-06",
+      "title": "Canonical documentation consolidation",
+      "status": "superseded in part",
+      "change": "Broad formulas, validation and repository documentation; interior claims require P0 override."
+    },
+    {
+      "date": "2025–2026",
+      "title": "Legacy papers and repository-specific models",
+      "status": "historical",
+      "change": "Multiple local/global Xi variants, observational proposals and early singularity claims."
+    }
   ]
 }

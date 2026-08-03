@@ -18,6 +18,11 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
 HOME = Path(os.getenv("SSZ_SOURCE_HOME", PROJECT.parent))
+PRIVATE_MARKERS_FILE = PROJECT / ".private-sources"
+PRIVATE_MARKERS = tuple(
+    line.strip().lower() for line in PRIVATE_MARKERS_FILE.read_text(encoding="utf-8").splitlines()
+    if line.strip() and not line.startswith("#")
+) if PRIVATE_MARKERS_FILE.exists() else ()
 ROOTS = [
     HOME / "physics",
     HOME / "rag",
@@ -63,7 +68,6 @@ def repository_for(path: Path) -> str:
 def topic_for(value: str) -> str:
     lowered = value.lower()
     rules = [
-        ("JIF", ("jif", "phase", "phasenzähl")),
         ("Interior and global structure", ("singular", "kretsch", "ricci", "interior", "global_structure")),
         ("Strong field", ("strong", "black_hole", "horizon", "isco", "photon", "qnm", "shadow")),
         ("Weak field", ("ppn", "mercur", "shapiro", "cassini", "weak")),
@@ -134,6 +138,8 @@ def main() -> None:
             for filename in sorted(filenames):
                 path = Path(dirpath) / filename
                 relative = public_path(path)
+                if any(marker in relative.lower() for marker in PRIVATE_MARKERS):
+                    continue
                 try:
                     stat = path.stat()
                 except OSError:

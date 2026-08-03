@@ -1,0 +1,2357 @@
+{
+  "generated": "2026-08-03",
+  "root_reference": "physics/",
+  "count": 35,
+  "repositories": [
+    {
+      "name": "CALCULATION_OF_NUMBER_PI",
+      "summary": "CALCULATION_OF_NUMBER_PI AFTER THE FORMULA OF CHUDNOVSKI",
+      "domain": "mathematics",
+      "roles": [
+        "Simulation",
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/CALCULATION_OF_NUMBER_PI",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "da3a9ab19b00",
+      "counts": {
+        "files": 123,
+        "bytes": 11540872,
+        "tests": 0,
+        "documents": 19,
+        "images": 8,
+        "code": 45
+      },
+      "languages": [
+        {
+          "extension": ".cpp",
+          "count": 19
+        },
+        {
+          "extension": ".py",
+          "count": 18
+        },
+        {
+          "extension": ".bat",
+          "count": 12
+        },
+        {
+          "extension": ".sh",
+          "count": 10
+        },
+        {
+          "extension": ".txt",
+          "count": 9
+        },
+        {
+          "extension": ".exe",
+          "count": 9
+        },
+        {
+          "extension": ".h",
+          "count": 8
+        },
+        {
+          "extension": ".pdf",
+          "count": 8
+        }
+      ],
+      "key_documents": [
+        "physics/CALCULATION_OF_NUMBER_PI/README.md",
+        "physics/CALCULATION_OF_NUMBER_PI/Explanation_of_Formulas.md",
+        "physics/CALCULATION_OF_NUMBER_PI/Explanation_of_Formulas_ReportLab.pdf"
+      ],
+      "result_files": [],
+      "scope_note": ""
+    },
+    {
+      "name": "LOST_EINSTEIN_PAPERS",
+      "summary": "Mission:** safeguard access to Albert Einstein’s *original* publications (1901–1955) by assembling a verifiable, script‑reproducible index of primary sources and—where legally permitted—archiving scans. We focus on **Einstein’s own texts** (journal articles, academy reports, book chapters, proceedings, letters he published as articles). We explicitly avoid secondary commentary.",
+      "domain": "research-archive",
+      "roles": [
+        "Research"
+      ],
+      "public_url": "https://github.com/error-wtf/LOST_EINSTEIN_PAPERS",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "d278d93f4dc6",
+      "counts": {
+        "files": 93,
+        "bytes": 91091095,
+        "tests": 0,
+        "documents": 89,
+        "images": 0,
+        "code": 2
+      },
+      "languages": [
+        {
+          "extension": ".pdf",
+          "count": 88
+        },
+        {
+          "extension": ".py",
+          "count": 2
+        },
+        {
+          "extension": ".349e",
+          "count": 1
+        },
+        {
+          "extension": "[none]",
+          "count": 1
+        },
+        {
+          "extension": ".md",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/LOST_EINSTEIN_PAPERS/README.md",
+        "physics/LOST_EINSTEIN_PAPERS/1916- The Foundation of the General Theory of Relativity (Einstein).pdf",
+        "physics/LOST_EINSTEIN_PAPERS/1906_Über_eine_Methode_zur_Bestimmung_des_Verhältnisses_der_transversalen_und_longitudinalen_Masse_des_Elektrons.pdf"
+      ],
+      "result_files": [],
+      "scope_note": "Historical source archive, not an SSZ validation repository."
+    },
+    {
+      "name": "Riemann-Zeta-Zero-Finding-Suite",
+      "summary": "This repository contains a **modular Python toolkit** for studying the Riemann–Zeta function on the critical line and certifying its non-trivial zeros. It combines exact and asymptotic evaluations of Hardy's `Z`-function, interval arithmetic for rigorous certification, adaptive scanning techniques, and prime sieving methods. The original suite is described in the accompanying analysis documents; this README consolidates those descriptions, explains the purpose of each module, and shows how to run the tools yourself.",
+      "domain": "mathematics",
+      "roles": [
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/Riemann-Zeta-Zero-Finding-Suite",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "6cb723401683",
+      "counts": {
+        "files": 39,
+        "bytes": 2697793,
+        "tests": 1,
+        "documents": 3,
+        "images": 0,
+        "code": 24
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 24
+        },
+        {
+          "extension": ".csv",
+          "count": 3
+        },
+        {
+          "extension": ".txt",
+          "count": 2
+        },
+        {
+          "extension": ".ps1",
+          "count": 2
+        },
+        {
+          "extension": ".json",
+          "count": 2
+        },
+        {
+          "extension": ".4)",
+          "count": 1
+        },
+        {
+          "extension": ".sh",
+          "count": 1
+        },
+        {
+          "extension": ".deb",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/Riemann-Zeta-Zero-Finding-Suite/README.md"
+      ],
+      "result_files": [
+        "physics/Riemann-Zeta-Zero-Finding-Suite/run_block.py"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "SEGMENTED_SPACETIME",
+      "summary": "Exponential Triangle – Gravitation vs. Segmented Spacetime",
+      "domain": "research-archive",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/SEGMENTED_SPACETIME",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "3e57145e848e",
+      "counts": {
+        "files": 23,
+        "bytes": 393749,
+        "tests": 0,
+        "documents": 21,
+        "images": 0,
+        "code": 1
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 21
+        },
+        {
+          "extension": ".html",
+          "count": 1
+        },
+        {
+          "extension": ".4)",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/SEGMENTED_SPACETIME/README.md"
+      ],
+      "result_files": [
+        "physics/SEGMENTED_SPACETIME/Verification Summary of Segmented Spacetime Repository.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "SSZ-HOW-TO-BEAM",
+      "summary": "Mathematical Research Framework for Segmented Spacetime Bridge Metrics",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory",
+        "Documentation"
+      ],
+      "public_url": "https://github.com/error-wtf/SSZ-HOW-TO-BEAM",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "72ac721652c1",
+      "counts": {
+        "files": 274,
+        "bytes": 1586419,
+        "tests": 65,
+        "documents": 61,
+        "images": 0,
+        "code": 203
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 203
+        },
+        {
+          "extension": ".md",
+          "count": 53
+        },
+        {
+          "extension": ".txt",
+          "count": 8
+        },
+        {
+          "extension": "[none]",
+          "count": 4
+        },
+        {
+          "extension": ".sh",
+          "count": 2
+        },
+        {
+          "extension": ".bat",
+          "count": 1
+        },
+        {
+          "extension": ".cff",
+          "count": 1
+        },
+        {
+          "extension": ".toml",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/SSZ-HOW-TO-BEAM/README.md",
+        "physics/SSZ-HOW-TO-BEAM/docs/FALSIFICATION_GUIDE.md",
+        "physics/SSZ-HOW-TO-BEAM/docs/CANONICAL_SSZ_REFERENCE.md",
+        "physics/SSZ-HOW-TO-BEAM/docs/07_beam_falsification_criteria.md",
+        "physics/SSZ-HOW-TO-BEAM/docs/02_observable_method_assignment.md"
+      ],
+      "result_files": [
+        "physics/SSZ-HOW-TO-BEAM/FULL_REPORT.md",
+        "physics/SSZ-HOW-TO-BEAM/TEST_RESULTS.md",
+        "physics/SSZ-HOW-TO-BEAM/EXPECTED_RESULTS.md",
+        "physics/SSZ-HOW-TO-BEAM/V0_8_FREEZE_REPORT.md",
+        "physics/SSZ-HOW-TO-BEAM/REAL_TEST_RESULTS.txt",
+        "physics/SSZ-HOW-TO-BEAM/BASELINE_v0.9_AUDIT.md",
+        "physics/SSZ-HOW-TO-BEAM/FINAL_SUMMARY_REPORT.md",
+        "physics/SSZ-HOW-TO-BEAM/RELEASE_AUDIT_v0.8.0.md",
+        "physics/SSZ-HOW-TO-BEAM/RELEASE_AUDIT_v1.0.0.md",
+        "physics/SSZ-HOW-TO-BEAM/run_complete_validation.py",
+        "physics/SSZ-HOW-TO-BEAM/ALL_CALCULATIONS_OUTPUT.txt",
+        "physics/SSZ-HOW-TO-BEAM/docs/11_validation_levels.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "SSZ-METRIC_COMPLETE",
+      "summary": "Version:** `v1.1.0-canonical-pure` **License:** Anti-Capitalist Software License v1.4 **Authors:** Carmen N. Wrede & Lino Casu",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/SSZ-METRIC_COMPLETE",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "b7643f437f46",
+      "counts": {
+        "files": 290,
+        "bytes": 1562697,
+        "tests": 79,
+        "documents": 102,
+        "images": 0,
+        "code": 161
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 161
+        },
+        {
+          "extension": ".md",
+          "count": 79
+        },
+        {
+          "extension": ".txt",
+          "count": 18
+        },
+        {
+          "extension": ".json",
+          "count": 12
+        },
+        {
+          "extension": ".tex",
+          "count": 5
+        },
+        {
+          "extension": "[none]",
+          "count": 5
+        },
+        {
+          "extension": ".bak",
+          "count": 3
+        },
+        {
+          "extension": ".sh",
+          "count": 2
+        }
+      ],
+      "key_documents": [
+        "physics/SSZ-METRIC_COMPLETE/README.md",
+        "physics/SSZ-METRIC_COMPLETE/MASTER_README.md",
+        "physics/SSZ-METRIC_COMPLETE/PIPELINE_README.md",
+        "physics/SSZ-METRIC_COMPLETE/COMPARISON_README.md",
+        "physics/SSZ-METRIC_COMPLETE/IMPLEMENTATION_STATUS.md",
+        "physics/SSZ-METRIC_COMPLETE/03_SCRIPT_ARCHITECTURE.md",
+        "physics/SSZ-METRIC_COMPLETE/IMPLEMENTATION_SUMMARY.md",
+        "physics/SSZ-METRIC_COMPLETE/AUDIT_CANONICAL_SSZ_DOC_SOURCE.md",
+        "physics/SSZ-METRIC_COMPLETE/COMPLETE_TENSOR_PACKAGE_README.md",
+        "physics/SSZ-METRIC_COMPLETE/legacy_tests/README.md",
+        "physics/SSZ-METRIC_COMPLETE/legacy/README_legacy.md",
+        "physics/SSZ-METRIC_COMPLETE/examples/README_PHI_SPIRAL.md"
+      ],
+      "result_files": [
+        "physics/SSZ-METRIC_COMPLETE/REFACTOR_RESULT.md",
+        "physics/SSZ-METRIC_COMPLETE/FINAL_PROJECT_REPORT.md",
+        "physics/SSZ-METRIC_COMPLETE/generate_all_reports.py",
+        "physics/SSZ-METRIC_COMPLETE/FINAL_SESSION_SUMMARY.md",
+        "physics/SSZ-METRIC_COMPLETE/FINAL_INTEGRITY_REPORT.md",
+        "physics/SSZ-METRIC_COMPLETE/IMPLEMENTATION_SUMMARY.md",
+        "physics/SSZ-METRIC_COMPLETE/AUDIT_PURE_SSZ_REFACTOR.md",
+        "physics/SSZ-METRIC_COMPLETE/FINAL_SUMMARY_AND_REPORT.py",
+        "physics/SSZ-METRIC_COMPLETE/SSZ_VALIDATION_SUMMARY_V2.md",
+        "physics/SSZ-METRIC_COMPLETE/04_FINDINGS_UNIFIED_RESULTS.md",
+        "physics/SSZ-METRIC_COMPLETE/VALIDATION_OUTPUTS_COMPLETE.md",
+        "physics/SSZ-METRIC_COMPLETE/EXACT_BENCHMARK_REPLAY_REPORT.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "Segmented-Spacetime-Book",
+      "summary": "Segmented Spacetime — lossless corpus reconstruction",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory",
+        "Documentation"
+      ],
+      "public_url": "",
+      "archived": false,
+      "default_branch": "stage-1-reconstruction",
+      "commit": "536371b120a0",
+      "counts": {
+        "files": 8450,
+        "bytes": 375818024,
+        "tests": 266,
+        "documents": 7586,
+        "images": 323,
+        "code": 196
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 7349
+        },
+        {
+          "extension": ".png",
+          "count": 317
+        },
+        {
+          "extension": ".txt",
+          "count": 201
+        },
+        {
+          "extension": ".py",
+          "count": 194
+        },
+        {
+          "extension": ".yml",
+          "count": 141
+        },
+        {
+          "extension": ".json",
+          "count": 114
+        },
+        {
+          "extension": ".pdf",
+          "count": 27
+        },
+        {
+          "extension": ".csv",
+          "count": 22
+        }
+      ],
+      "key_documents": [
+        "physics/Segmented-Spacetime-Book/README.md",
+        "physics/Segmented-Spacetime-Book/STAGE_0_THEORY_RECONSTRUCTION.md",
+        "physics/Segmented-Spacetime-Book/references/README.md",
+        "physics/Segmented-Spacetime-Book/reports/07_jif_canonical_candidate_map.md",
+        "physics/Segmented-Spacetime-Book/reports/17_preliminary_book_architecture.md",
+        "physics/Segmented-Spacetime-Book/reports/08_existing_book_architecture_audit.md",
+        "physics/Segmented-Spacetime-Book/knowledge/argument_graphs/falsifiability.md",
+        "physics/Segmented-Spacetime-Book/book/specs/ARCHITECTURE_FREEZE.md",
+        "physics/Segmented-Spacetime-Book/knowledge/argument_graphs/canonical_ssz_field.md",
+        "physics/Segmented-Spacetime-Book/references/repos/ssz-complete-documentation/README.md",
+        "physics/Segmented-Spacetime-Book/references/repos/SSZ-Book-Project/README.md",
+        "physics/Segmented-Spacetime-Book/references/repos/SSZ-Book-Project/03_FORMULAS_MATHEMATICS.md"
+      ],
+      "result_files": [
+        "physics/Segmented-Spacetime-Book/STAGE_0_PROGRESS_REPORT.md",
+        "physics/Segmented-Spacetime-Book/STAGE_1_COMPLETION_REPORT.md",
+        "physics/Segmented-Spacetime-Book/STAGE_MINUS_1_PROGRESS_REPORT.md",
+        "physics/Segmented-Spacetime-Book/STAGE_1B_COMPREHENSION_REPORT.md",
+        "physics/Segmented-Spacetime-Book/inventory/quality_gate_results.json",
+        "physics/Segmented-Spacetime-Book/scripts/build_completion_report.py",
+        "physics/Segmented-Spacetime-Book/reports/21_quality_gate_results.md",
+        "physics/Segmented-Spacetime-Book/reports/13_claim_registry_summary.md",
+        "physics/Segmented-Spacetime-Book/reports/semantic_consistency_audit.md",
+        "physics/Segmented-Spacetime-Book/reports/11_concept_registry_summary.md",
+        "physics/Segmented-Spacetime-Book/reports/comprehension_coverage_report.md",
+        "physics/Segmented-Spacetime-Book/reports/12_notation_and_equation_audit.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "summary": "Segmented Spacetime – Mass Projection & Unified Results",
+      "domain": "data-and-validation",
+      "roles": [
+        "Theory",
+        "Tests",
+        "Data"
+      ],
+      "public_url": "https://github.com/error-wtf/Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "957827e5bfe3",
+      "counts": {
+        "files": 2760,
+        "bytes": 2634063759,
+        "tests": 386,
+        "documents": 1387,
+        "images": 245,
+        "code": 470
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 1313
+        },
+        {
+          "extension": ".py",
+          "count": 395
+        },
+        {
+          "extension": ".json",
+          "count": 276
+        },
+        {
+          "extension": ".png",
+          "count": 219
+        },
+        {
+          "extension": ".csv",
+          "count": 149
+        },
+        {
+          "extension": ".html",
+          "count": 67
+        },
+        {
+          "extension": ".xml",
+          "count": 57
+        },
+        {
+          "extension": "[none]",
+          "count": 41
+        }
+      ],
+      "key_documents": [
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/COLAB_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/INSTALL_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/GIT_SYNC_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/AUTO_MODE_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/TEST_SUITE_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/GUARDRAILS_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/OUTPUT_LOGS_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/SAFE_COMMIT_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/DATA_COLUMNS_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/DATA_SOURCES_README.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/SUMMARY_TOOL_README.md"
+      ],
+      "result_files": [
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/output.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/output-summary.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/rapidity_output.txt",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/RESULTS_ANALYSIS.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/enhanced_report.txt",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/mass_validation.csv",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/analysis_results.csv",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/QUICK_FIX_SUMMARY.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/detailed_results.csv",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/GIT_COMMIT_SUMMARY.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/FULL_OUTPUT_REVIEW.md",
+        "physics/Segmented-Spacetime-Mass-Projection-Unified-Results/DATA_USAGE_SUMMARY.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "Segmented-Spacetime-Starmaps",
+      "summary": "SSZ Explorer - Segmented Spacetime Space Explorer",
+      "domain": "simulation-and-visualisation",
+      "roles": [
+        "Theory",
+        "Visualisation"
+      ],
+      "public_url": "https://github.com/error-wtf/Segmented-Spacetime-Starmaps",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "76b329aa4fa2",
+      "counts": {
+        "files": 399,
+        "bytes": 405025212,
+        "tests": 64,
+        "documents": 160,
+        "images": 12,
+        "code": 196
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 161
+        },
+        {
+          "extension": ".md",
+          "count": 155
+        },
+        {
+          "extension": ".html",
+          "count": 35
+        },
+        {
+          "extension": ".png",
+          "count": 12
+        },
+        {
+          "extension": ".csv",
+          "count": 10
+        },
+        {
+          "extension": ".txt",
+          "count": 5
+        },
+        {
+          "extension": ".ps1",
+          "count": 4
+        },
+        {
+          "extension": ".json",
+          "count": 4
+        }
+      ],
+      "key_documents": [
+        "physics/Segmented-Spacetime-Starmaps/README.md",
+        "physics/Segmented-Spacetime-Starmaps/README_FIRST.md",
+        "physics/Segmented-Spacetime-Starmaps/ARCHITECTURE.md",
+        "physics/Segmented-Spacetime-Starmaps/README_SKYMAP.md",
+        "physics/Segmented-Spacetime-Starmaps/README_REBUILD_STATUS.md",
+        "physics/Segmented-Spacetime-Starmaps/IMPLEMENTATION_CHECKLIST.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/README.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/HF_README.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_exports/README_EXPORTS.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/FALLBACK_README.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/ALL_570_PLOTS_README.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/SSZ_DARK_EDITION_README.md"
+      ],
+      "result_files": [
+        "physics/Segmented-Spacetime-Starmaps/FINAL_SUMMARY.md",
+        "physics/Segmented-Spacetime-Starmaps/PROJECT_SUMMARY.md",
+        "physics/Segmented-Spacetime-Starmaps/ACHIEVEMENT_REPORT.md",
+        "physics/Segmented-Spacetime-Starmaps/test_validation_979.py",
+        "physics/Segmented-Spacetime-Starmaps/PROJECT_FINAL_REPORT.md",
+        "physics/Segmented-Spacetime-Starmaps/FINAL_SESSION_REPORT.md",
+        "physics/Segmented-Spacetime-Starmaps/validation_results_979.csv",
+        "physics/Segmented-Spacetime-Starmaps/COMPLETE_SESSION_SUMMARY.md",
+        "physics/Segmented-Spacetime-Starmaps/FINAL_PHYSICS_FIX_SUMMARY.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/ROADMAP_SUMMARY.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/QUICK_FIX_SUMMARY.md",
+        "physics/Segmented-Spacetime-Starmaps/ssz_explorer/EXECUTIVE_SUMMARY.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "chord-partition",
+      "summary": "SSZ Chord-Partition Eigenmodes** — parametric curves with golden ratio φ resonance.",
+      "domain": "mathematics",
+      "roles": [
+        "Theory",
+        "Tests",
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/chord-partition",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "fcbcad34ae2d",
+      "counts": {
+        "files": 6,
+        "bytes": 19142,
+        "tests": 1,
+        "documents": 2,
+        "images": 0,
+        "code": 1
+      },
+      "languages": [
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        },
+        {
+          "extension": ".py",
+          "count": 1
+        },
+        {
+          "extension": ".md",
+          "count": 1
+        },
+        {
+          "extension": ".yml",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/chord-partition/README.md"
+      ],
+      "result_files": [],
+      "scope_note": ""
+    },
+    {
+      "name": "claudes-cycles",
+      "summary": "A replication of the AI achievement reported by Donald Knuth in his paper *\"Claude's Cycles\"* (2026), using **Windsurf IDE + Claude Opus 4.6**.",
+      "domain": "mathematics",
+      "roles": [
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/claudes-cycles",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "6406b9a9386b",
+      "counts": {
+        "files": 8,
+        "bytes": 2850516,
+        "tests": 1,
+        "documents": 1,
+        "images": 2,
+        "code": 3
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 3
+        },
+        {
+          "extension": ".gif",
+          "count": 2
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".md",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/claudes-cycles/README.md"
+      ],
+      "result_files": [],
+      "scope_note": ""
+    },
+    {
+      "name": "counterexample-commons",
+      "summary": "An Anti-Capitalist AI-Assisted Mathematics Research Lab",
+      "domain": "mathematics",
+      "roles": [
+        "Tests",
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/counterexample-commons",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "9a1febb68ff4",
+      "counts": {
+        "files": 143,
+        "bytes": 755197,
+        "tests": 15,
+        "documents": 55,
+        "images": 7,
+        "code": 58
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 58
+        },
+        {
+          "extension": ".md",
+          "count": 49
+        },
+        {
+          "extension": ".ipynb",
+          "count": 11
+        },
+        {
+          "extension": ".png",
+          "count": 7
+        },
+        {
+          "extension": ".txt",
+          "count": 6
+        },
+        {
+          "extension": "[none]",
+          "count": 5
+        },
+        {
+          "extension": ".yml",
+          "count": 2
+        },
+        {
+          "extension": ".example",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/counterexample-commons/README.md",
+        "physics/counterexample-commons/branding/README.md",
+        "physics/counterexample-commons/docs/GRADIO_UI_ARCHITECTURE.md",
+        "physics/counterexample-commons/reports/SAWIN_REPAIR_IMPLEMENTATION_REPORT.md",
+        "physics/counterexample-commons/case_studies/erdos_unit_distance_2026/README.md",
+        "physics/counterexample-commons/deployment/huggingface_space/README.md",
+        "physics/counterexample-commons/reports/perfection/README_TRUTH.md"
+      ],
+      "result_files": [
+        "physics/counterexample-commons/counterexample_commons/validated_result.py",
+        "physics/counterexample-commons/tests/test_validated_result.py",
+        "physics/counterexample-commons/reports/SAWIN_CLAIM_INTEGRITY_AUDIT.md",
+        "physics/counterexample-commons/reports/BUILD_REPORT_PHASE2_COMPLETE.md",
+        "physics/counterexample-commons/reports/COLAB_NOTEBOOK_FAILURE_AUDIT.md",
+        "physics/counterexample-commons/reports/CORRECTED_PHASE_STATUS_REPORT.md",
+        "physics/counterexample-commons/notebooks/05_Export_Validated_Report.ipynb",
+        "physics/counterexample-commons/reports/RATIONAL_MESH_FIGURE_VALIDATION.md",
+        "physics/counterexample-commons/reports/CONTROL_BOUNDARY_VIOLATION_REPORT.md",
+        "physics/counterexample-commons/reports/SAWIN_REPAIR_IMPLEMENTATION_REPORT.md",
+        "physics/counterexample-commons/reports/IDENTITY_LICENSE_METADATA_VALIDATION.md",
+        "physics/counterexample-commons/reports/RESCUE_FILE_BY_FILE_INTEGRATION_AUDIT.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "emergent-spacetime",
+      "summary": "A generative model of spatial structure from temporal interference.",
+      "domain": "simulation-and-visualisation",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/emergent-spacetime",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "c485bc878c7a",
+      "counts": {
+        "files": 23,
+        "bytes": 384054,
+        "tests": 0,
+        "documents": 20,
+        "images": 0,
+        "code": 1
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 20
+        },
+        {
+          "extension": ".py",
+          "count": 1
+        },
+        {
+          "extension": ".ipynb",
+          "count": 1
+        },
+        {
+          "extension": ".4)",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/emergent-spacetime/README.md"
+      ],
+      "result_files": [
+        "physics/emergent-spacetime/Verification Summary of Segmented Spacetime Repository.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "frequency-curvature-validation",
+      "summary": "Validation Suite for Gravitational Frequency Shift Analysis",
+      "domain": "data-and-validation",
+      "roles": [
+        "Tests"
+      ],
+      "public_url": "https://github.com/error-wtf/frequency-curvature-validation",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "2bb007e6c888",
+      "counts": {
+        "files": 24,
+        "bytes": 189020,
+        "tests": 12,
+        "documents": 5,
+        "images": 0,
+        "code": 13
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 13
+        },
+        {
+          "extension": ".json",
+          "count": 5
+        },
+        {
+          "extension": ".md",
+          "count": 4
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        },
+        {
+          "extension": "[none]",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/frequency-curvature-validation/README.md"
+      ],
+      "result_files": [
+        "physics/frequency-curvature-validation/data/validation_results.json",
+        "physics/frequency-curvature-validation/tests/test_experimental_validation.py",
+        "physics/frequency-curvature-validation/docs/SHAPIRO_DELAY_VALIDATION_REPORT.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "g79-cygnus-tests",
+      "summary": "G79.29+0.46 Segmented Spacetime Validation Suite",
+      "domain": "data-and-validation",
+      "roles": [
+        "Theory",
+        "Tests",
+        "Data",
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/g79-cygnus-tests",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "c4d72c546a46",
+      "counts": {
+        "files": 211,
+        "bytes": 122367124,
+        "tests": 14,
+        "documents": 95,
+        "images": 73,
+        "code": 35
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 65
+        },
+        {
+          "extension": ".gif",
+          "count": 48
+        },
+        {
+          "extension": ".py",
+          "count": 35
+        },
+        {
+          "extension": ".png",
+          "count": 25
+        },
+        {
+          "extension": ".txt",
+          "count": 15
+        },
+        {
+          "extension": ".pdf",
+          "count": 15
+        },
+        {
+          "extension": ".csv",
+          "count": 5
+        },
+        {
+          "extension": ".ps1",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/g79-cygnus-tests/README.md",
+        "physics/g79-cygnus-tests/METHODS.md",
+        "physics/g79-cygnus-tests/README_UPDATED.md",
+        "physics/g79-cygnus-tests/ANIMATIONS_README.md",
+        "physics/g79-cygnus-tests/PUBLICATION_README.md",
+        "physics/g79-cygnus-tests/TELESCOPE_WORKFLOW.md",
+        "physics/g79-cygnus-tests/TELESCOPE_DATA_UPGRADE.md",
+        "physics/g79-cygnus-tests/TEMPERATURE_EQUATIONS_README.md",
+        "physics/g79-cygnus-tests/G79_TELESCOPE_TO_CSV_CHECKLIST.md",
+        "physics/g79-cygnus-tests/docs/THEORY.md",
+        "physics/g79-cygnus-tests/publication_highlights/README.md",
+        "physics/g79-cygnus-tests/data/DATA_STATUS_README.md"
+      ],
+      "result_files": [
+        "physics/g79-cygnus-tests/RESULTS.md",
+        "physics/g79-cygnus-tests/VERIFICATION_REPORT.md",
+        "physics/g79-cygnus-tests/FINAL_CLEANUP_REPORT.md",
+        "physics/g79-cygnus-tests/GENERATION_SUCCESS_REPORT.md",
+        "physics/g79-cygnus-tests/PARSEC_CONVERSION_SUMMARY.md",
+        "physics/g79-cygnus-tests/SSZ_PURE_EXECUTIVE_SUMMARY.md",
+        "physics/g79-cygnus-tests/PUBLICATION_PACKAGE_SUMMARY.md",
+        "physics/g79-cygnus-tests/SCRIPTS_VERIFICATION_REPORT.md",
+        "physics/g79-cygnus-tests/COMPLETE_VERIFICATION_SUMMARY.md",
+        "physics/g79-cygnus-tests/publication_outputs/PUBLICATION_SUMMARY.md",
+        "physics/g79-cygnus-tests/publication_outputs/reports/two_metric_model_output.txt",
+        "physics/g79-cygnus-tests/results/analysis_outputs/two_metric_model_output.txt"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "galactic-year",
+      "summary": "[](https://python.org) [](LICENSE) [](https://github.com/topics/segmented-spacetime)",
+      "domain": "research-archive",
+      "roles": [
+        "Research"
+      ],
+      "public_url": "https://github.com/error-wtf/galactic-year",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "61b7ca569da5",
+      "counts": {
+        "files": 23,
+        "bytes": 35294635,
+        "tests": 0,
+        "documents": 5,
+        "images": 6,
+        "code": 8
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 8
+        },
+        {
+          "extension": ".gif",
+          "count": 5
+        },
+        {
+          "extension": ".pdf",
+          "count": 3
+        },
+        {
+          "extension": ".json",
+          "count": 3
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        },
+        {
+          "extension": "[none]",
+          "count": 1
+        },
+        {
+          "extension": ".md",
+          "count": 1
+        },
+        {
+          "extension": ".png",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/galactic-year/README.md"
+      ],
+      "result_files": [],
+      "scope_note": ""
+    },
+    {
+      "name": "hilfsdateien",
+      "summary": "No repository-level README summary was found.",
+      "domain": "research-archive",
+      "roles": [
+        "Research"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien.git",
+      "archived": false,
+      "default_branch": "main",
+      "commit": "fd3ac98ff221",
+      "counts": {
+        "files": 2521,
+        "bytes": 88536233,
+        "tests": 211,
+        "documents": 2519,
+        "images": 0,
+        "code": 0
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 2517
+        },
+        {
+          "extension": ".pdf",
+          "count": 2
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        }
+      ],
+      "key_documents": [
+        "physics/hilfsdateien/JIF_FOUNDATION_CANONICAL.md",
+        "physics/hilfsdateien/SSZ_CANONICAL_FORMULAS_2026.md",
+        "physics/hilfsdateien/SSZ_PROJECT_PART_01_THEORY_CORE.md",
+        "physics/hilfsdateien/CANONICAL_XI_AND_BLEND_RESOLUTION.md",
+        "physics/hilfsdateien/DEEP_KNOWLEDGE_WIKI/01_THEORY_CORE.md",
+        "physics/hilfsdateien/DEEP_KNOWLEDGE_WIKI/GRAND_UNIFIED_SSZ_THEORY.md",
+        "physics/hilfsdateien/markdowns/SEGMENTED_SPACETIME/README.md",
+        "physics/hilfsdateien/markdowns/ssz-metric-final/README.md",
+        "physics/hilfsdateien/markdowns/emergent-spacetime/README.md",
+        "physics/hilfsdateien/markdowns/ssz-schumann/README.md",
+        "physics/hilfsdateien/markdowns/ssz-paper-plots/README.md",
+        "physics/hilfsdateien/markdowns/ssz-complete-documentation/README.md"
+      ],
+      "result_files": [
+        "physics/hilfsdateien/DEPENDENCY_REPORT.md",
+        "physics/hilfsdateien/RELEASE_AUDIT_FINAL.md",
+        "physics/hilfsdateien/pipeline_execution_report.md",
+        "physics/hilfsdateien/SSZ_COMPREHENSIVE_TEST_AUDIT_REPORT.md",
+        "physics/hilfsdateien/SSZ_PROJECT_PART_17_PIPELINE_VALIDATION.md",
+        "physics/hilfsdateien/DEEP_KNOWLEDGE_WIKI/02_ASTROPHYSICS_VALIDATION.md",
+        "physics/hilfsdateien/markdowns/ssz-radial-scaling/REPORT.md",
+        "physics/hilfsdateien/markdowns/Segmented-Spacetime-Mass-Projection-Unified-Results/output.md",
+        "physics/hilfsdateien/markdowns/g79-cygnus-tests/RESULTS.md",
+        "physics/hilfsdateien/markdowns/segmented-energy/full_output.md",
+        "physics/hilfsdateien/markdowns/SSZ-HOW-TO-BEAM/FULL_REPORT.md",
+        "physics/hilfsdateien/markdowns/ssz-all-tests/full-output.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "pardon-symplectic-geometry-ssz-lab",
+      "summary": "Executable geometric models, numerical diagnostics and an explicitly bounded bridge to Segmented Spacetime (SSZ).",
+      "domain": "mathematics",
+      "roles": [
+        "Theory",
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/pardon-symplectic-geometry-ssz-lab",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "89ecef894c86",
+      "counts": {
+        "files": 85,
+        "bytes": 26635406,
+        "tests": 4,
+        "documents": 20,
+        "images": 26,
+        "code": 31
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 31
+        },
+        {
+          "extension": ".md",
+          "count": 19
+        },
+        {
+          "extension": ".gif",
+          "count": 13
+        },
+        {
+          "extension": ".png",
+          "count": 13
+        },
+        {
+          "extension": ".json",
+          "count": 3
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".csv",
+          "count": 2
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/pardon-symplectic-geometry-ssz-lab/README.md"
+      ],
+      "result_files": [
+        "physics/pardon-symplectic-geometry-ssz-lab/docs/test-validation-report.md",
+        "physics/pardon-symplectic-geometry-ssz-lab/python/test_validation_report.py",
+        "physics/pardon-symplectic-geometry-ssz-lab/docs/hamiltonian-drift-report.md",
+        "physics/pardon-symplectic-geometry-ssz-lab/python/hamiltonian_drift_report.py",
+        "physics/pardon-symplectic-geometry-ssz-lab/data/test_validation_report.json",
+        "physics/pardon-symplectic-geometry-ssz-lab/data/hamiltonian_drift_report.csv"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "pi-cluster",
+      "summary": "HPC Pi Computation Suite + Cluster Benchmark Tool",
+      "domain": "mathematics",
+      "roles": [
+        "Tests",
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/pi-cluster",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "63a11f1072f4",
+      "counts": {
+        "files": 50,
+        "bytes": 169439,
+        "tests": 4,
+        "documents": 7,
+        "images": 0,
+        "code": 32
+      },
+      "languages": [
+        {
+          "extension": ".cpp",
+          "count": 23
+        },
+        {
+          "extension": ".h",
+          "count": 9
+        },
+        {
+          "extension": ".md",
+          "count": 6
+        },
+        {
+          "extension": "[none]",
+          "count": 5
+        },
+        {
+          "extension": ".sbatch",
+          "count": 3
+        },
+        {
+          "extension": ".cu",
+          "count": 2
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        },
+        {
+          "extension": ".in",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/pi-cluster/README.md",
+        "physics/pi-cluster/docs/architecture.md"
+      ],
+      "result_files": [],
+      "scope_note": ""
+    },
+    {
+      "name": "segmented-calculation-suite",
+      "summary": "[](.) [](.) [](.) [](.) [](https://colab.research.google.com/github/error-wtf/segmented-calculation-suite/blob/main/SSZ_Colab_Full_App.ipynb)",
+      "domain": "research-archive",
+      "roles": [
+        "Theory",
+        "Tests",
+        "Simulation"
+      ],
+      "public_url": "https://github.com/error-wtf/segmented-calculation-suite",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "b32d89d2a336",
+      "counts": {
+        "files": 173,
+        "bytes": 1943758,
+        "tests": 30,
+        "documents": 71,
+        "images": 4,
+        "code": 73
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 73
+        },
+        {
+          "extension": ".md",
+          "count": 70
+        },
+        {
+          "extension": ".json",
+          "count": 12
+        },
+        {
+          "extension": ".csv",
+          "count": 8
+        },
+        {
+          "extension": "[none]",
+          "count": 3
+        },
+        {
+          "extension": ".png",
+          "count": 3
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        },
+        {
+          "extension": ".ipynb",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/segmented-calculation-suite/README.md",
+        "physics/segmented-calculation-suite/IMPLEMENTATION_CONTRACT.md",
+        "physics/segmented-calculation-suite/docs/README.md",
+        "physics/segmented-calculation-suite/docs/ARCHITECTURE.md",
+        "physics/segmented-calculation-suite/docs/FORMULA_TRACE.md",
+        "physics/segmented-calculation-suite/docs/IMPLEMENTATION.md",
+        "physics/segmented-calculation-suite/docs/INVENTORY_METHODS.md",
+        "physics/segmented-calculation-suite/docs/G1_G2_METHODS_NOTE.md",
+        "physics/segmented-calculation-suite/docs/IMPLEMENTATION_LOG.md",
+        "physics/segmented-calculation-suite/docs/FORMULA_VERIFICATION.md",
+        "physics/segmented-calculation-suite/docs/METHOD_TEST_PLOT_MAP.md",
+        "physics/segmented-calculation-suite/docs/UI_CANONICALIZATION_REPORT.md"
+      ],
+      "result_files": [
+        "physics/segmented-calculation-suite/REPAIR_REPORT.md",
+        "physics/segmented-calculation-suite/PARITY_REPORT.md",
+        "physics/segmented-calculation-suite/quick_validation.py",
+        "physics/segmented-calculation-suite/test_eso_validation.py",
+        "physics/segmented-calculation-suite/test_golden_validation.py",
+        "physics/segmented-calculation-suite/test_physics_validation.py",
+        "physics/segmented-calculation-suite/validation_176_results.csv",
+        "physics/segmented-calculation-suite/FULL_OUTPUT_PARITY_ANALYSIS.md",
+        "physics/segmented-calculation-suite/batch_results_compact_objects.csv",
+        "physics/segmented-calculation-suite/diff/summary.json",
+        "physics/segmented-calculation-suite/docs/FULL-REPORT.md",
+        "physics/segmented-calculation-suite/diff/diff_report.md"
+      ],
+      "scope_note": "Contains public pre-P0 singularity-free wording; current central non-regularity supersedes it."
+    },
+    {
+      "name": "segmented-energy",
+      "summary": "Segmented Spacetime (SSZ) Energy Framework - Astropy Implementation",
+      "domain": "data-and-validation",
+      "roles": [
+        "Tests",
+        "Data"
+      ],
+      "public_url": "https://github.com/error-wtf/segmented-energy",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "94cb573ca1ce",
+      "counts": {
+        "files": 52,
+        "bytes": 1979895,
+        "tests": 7,
+        "documents": 15,
+        "images": 9,
+        "code": 19
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 19
+        },
+        {
+          "extension": ".md",
+          "count": 13
+        },
+        {
+          "extension": ".png",
+          "count": 9
+        },
+        {
+          "extension": ".csv",
+          "count": 7
+        },
+        {
+          "extension": ".txt",
+          "count": 2
+        },
+        {
+          "extension": ".ipynb",
+          "count": 2
+        }
+      ],
+      "key_documents": [
+        "physics/segmented-energy/README.md",
+        "physics/segmented-energy/README_COMPLETE.md"
+      ],
+      "result_files": [
+        "physics/segmented-energy/full_output.md",
+        "physics/segmented-energy/summary_output.md",
+        "physics/segmented-energy/generate_output.py",
+        "physics/segmented-energy/MASTER_results_gr.csv",
+        "physics/segmented-energy/MASTER_results_ssz.csv",
+        "physics/segmented-energy/TEST_RESULTS_SUMMARY.md",
+        "physics/segmented-energy/MASTER_FINAL_REPORT.txt",
+        "physics/segmented-energy/test_results_complete.csv",
+        "physics/segmented-energy/test_results_ssz_complete.csv",
+        "physics/segmented-energy/FINAL_PERFECT_TEST_results.csv"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-all-tests",
+      "summary": "Authors:** Carmen N. Wrede & Lino P. Casu **License:** Anti-Capitalist Software License v1.4 **Status:** [](https://github.com/error-wtf/ssz-all-tests/actions/workflows/ci.yml)",
+      "domain": "data-and-validation",
+      "roles": [
+        "Tests"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-all-tests",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "ed5359f15de3",
+      "counts": {
+        "files": 450,
+        "bytes": 9725907,
+        "tests": 375,
+        "documents": 20,
+        "images": 20,
+        "code": 393
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 393
+        },
+        {
+          "extension": ".png",
+          "count": 20
+        },
+        {
+          "extension": ".md",
+          "count": 12
+        },
+        {
+          "extension": ".json",
+          "count": 8
+        },
+        {
+          "extension": ".txt",
+          "count": 7
+        },
+        {
+          "extension": ".log",
+          "count": 5
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".tex",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-all-tests/README.md",
+        "physics/ssz-all-tests/tests/README.md"
+      ],
+      "result_files": [
+        "physics/ssz-all-tests/full-output.md",
+        "physics/ssz-all-tests/scan_report.txt",
+        "physics/ssz-all-tests/MASTER_RESULTS.json",
+        "physics/ssz-all-tests/parse_full_output.py",
+        "physics/ssz-all-tests/gen_stream_output.py",
+        "physics/ssz-all-tests/execution_output.txt",
+        "physics/ssz-all-tests/really-full-output.md",
+        "physics/ssz-all-tests/CONSISTENCY_REPORT.md",
+        "physics/ssz-all-tests/generate_gap_report.py",
+        "physics/ssz-all-tests/generate_full_output.py",
+        "physics/ssz-all-tests/aggregated_results.json",
+        "physics/ssz-all-tests/full-output-integrity.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-complete-documentation",
+      "summary": "Segmented Spacetime (SSZ) — Complete Documentation",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory",
+        "Tests",
+        "Documentation"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-complete-documentation",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "b2bac976a75d",
+      "counts": {
+        "files": 195,
+        "bytes": 8743262,
+        "tests": 7,
+        "documents": 195,
+        "images": 0,
+        "code": 0
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 170
+        },
+        {
+          "extension": ".pdf",
+          "count": 24
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-complete-documentation/README.md",
+        "physics/ssz-complete-documentation/03_FORMULAS/ppn_formulas.md",
+        "physics/ssz-complete-documentation/07_VALIDATION/test_methodology.md",
+        "physics/ssz-complete-documentation/11_GUARDRAILS/method_assignment.md",
+        "physics/ssz-complete-documentation/03_FORMULAS/forbidden_formulas.md",
+        "physics/ssz-complete-documentation/03_FORMULAS/formula_compendium.md",
+        "physics/ssz-complete-documentation/08_FALSIFICATION/falsification_criteria.md",
+        "physics/ssz-complete-documentation/03_FORMULAS/DISCRETE_SSZ_STATE_FORMULATION.md",
+        "physics/ssz-complete-documentation/03_FORMULAS/DISCRETE_SSZ_STATE_FORMULATION_DE.md",
+        "physics/ssz-complete-documentation/02_FOUNDATIONS/regime_and_formula_domain_clarification.md",
+        "physics/ssz-complete-documentation/09_PAPERS/markdown/README.md",
+        "physics/ssz-complete-documentation/09_PAPERS/markdown/SSZ_FINAL_KAPITEL_README.md"
+      ],
+      "result_files": [
+        "physics/ssz-complete-documentation/07_VALIDATION/gps_validation.md",
+        "physics/ssz-complete-documentation/07_VALIDATION/nebulae_validation.md",
+        "physics/ssz-complete-documentation/07_VALIDATION/ligo_final_interpretation_lock.md",
+        "physics/ssz-complete-documentation/09_PAPERS/markdown/Verification Summary of Segmented Spacetime Repository.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-full-metric",
+      "summary": "🌌 SSZ Full Metric - Singularity-Free Black Holes",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-full-metric.git",
+      "archived": false,
+      "default_branch": "master",
+      "commit": "1a7d27843da7",
+      "counts": {
+        "files": 142,
+        "bytes": 2096273,
+        "tests": 10,
+        "documents": 71,
+        "images": 5,
+        "code": 59
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 70
+        },
+        {
+          "extension": ".py",
+          "count": 59
+        },
+        {
+          "extension": ".png",
+          "count": 5
+        },
+        {
+          "extension": "[none]",
+          "count": 3
+        },
+        {
+          "extension": ".ps1",
+          "count": 2
+        },
+        {
+          "extension": ".csv",
+          "count": 1
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        },
+        {
+          "extension": ".yml",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-full-metric/README.md",
+        "physics/ssz-full-metric/README_OLD.md",
+        "physics/ssz-full-metric/SSZ_THEORY_ALIGNED_50_PHASES.md",
+        "physics/ssz-full-metric/MISSING_IMPLEMENTATION_ANALYSIS.md",
+        "physics/ssz-full-metric/SESSION_THEORY_ALIGNMENT_COMPLETE.md"
+      ],
+      "result_files": [
+        "physics/ssz-full-metric/eso_validation.py",
+        "physics/ssz-full-metric/PROGRESS_REPORT.md",
+        "physics/ssz-full-metric/EPIC_SESSION_SUMMARY.md",
+        "physics/ssz-full-metric/REPOSITORY_COPY_REPORT.md",
+        "physics/ssz-full-metric/COMPLETE_OUTPUT_ANALYSIS.md",
+        "physics/ssz-full-metric/COMPLETE_SOLUTION_REPORT.md",
+        "physics/ssz-full-metric/SESSION_COMPLETE_SUMMARY.md",
+        "physics/ssz-full-metric/DEEP_ANALYSIS_ALL_OUTPUTS.md",
+        "physics/ssz-full-metric/META_ANALYSIS_ALL_REPORTS.md",
+        "physics/ssz-full-metric/COMPLETE_OUTPUT_ANALYSIS_FINAL.md",
+        "physics/ssz-full-metric/SCIENTIFIC_VALIDATION_CHECKLIST.md",
+        "physics/ssz-full-metric/ULTIMATE_FINAL_REPORT_2025-10-31.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-lagrange",
+      "summary": "Lagrange and Hamilton Formulation of Segmented Spacetime (SSZ)",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-lagrange",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "119cc2a4bd64",
+      "counts": {
+        "files": 19,
+        "bytes": 84813,
+        "tests": 1,
+        "documents": 6,
+        "images": 0,
+        "code": 3
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 5
+        },
+        {
+          "extension": ".csv",
+          "count": 4
+        },
+        {
+          "extension": ".json",
+          "count": 4
+        },
+        {
+          "extension": ".py",
+          "count": 3
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-lagrange/README.md"
+      ],
+      "result_files": [
+        "physics/ssz-lagrange/ssz_cosmo_summary_all.json",
+        "physics/ssz-lagrange/ssz_cosmo_results_divide.csv",
+        "physics/ssz-lagrange/ssz_cosmo_summary_divide.json",
+        "physics/ssz-lagrange/ssz_cosmo_results_multiply.csv",
+        "physics/ssz-lagrange/ssz_cosmo_summary_multiply.json",
+        "physics/ssz-lagrange/results/ssz_cosmo_summary_all.json",
+        "physics/ssz-lagrange/results/ssz_cosmo_results_divide.csv",
+        "physics/ssz-lagrange/results/ssz_cosmo_results_multiply.csv"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-lensing",
+      "summary": "🚀 [**Try it Online! → Launch Gradio Demo**](https://colab.research.google.com/github/error-wtf/ssz-lensing/blob/main/SSZ_Lensing_Colab.ipynb) > > Run the full lensing analysis in your browser - no installation needed!",
+      "domain": "research-archive",
+      "roles": [
+        "Tests",
+        "Visualisation"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-lensing",
+      "archived": true,
+      "default_branch": "master",
+      "commit": "86130b5a81a7",
+      "counts": {
+        "files": 275,
+        "bytes": 6690903,
+        "tests": 27,
+        "documents": 61,
+        "images": 44,
+        "code": 117
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 117
+        },
+        {
+          "extension": ".png",
+          "count": 44
+        },
+        {
+          "extension": ".md",
+          "count": 38
+        },
+        {
+          "extension": ".json",
+          "count": 33
+        },
+        {
+          "extension": ".pdf",
+          "count": 20
+        },
+        {
+          "extension": ".csv",
+          "count": 14
+        },
+        {
+          "extension": ".ipynb",
+          "count": 3
+        },
+        {
+          "extension": ".txt",
+          "count": 3
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-lensing/README.md",
+        "physics/ssz-lensing/FINAL_REPORT_THEORY.md",
+        "physics/ssz-lensing/SSZ_METHODOLOGY_APPLIED.md",
+        "physics/ssz-lensing/FINAL_REPORT_IMPLEMENTATION.md",
+        "physics/ssz-lensing/plots/README.md",
+        "physics/ssz-lensing/docs/IMPLEMENTATION_DOCUMENTATION.md"
+      ],
+      "result_files": [
+        "physics/ssz-lensing/FINAL_REPORT.md",
+        "physics/ssz-lensing/FULL_TEST_REPORT.md",
+        "physics/ssz-lensing/validation_report.md",
+        "physics/ssz-lensing/FINAL_REPORT_THEORY.md",
+        "physics/ssz-lensing/validation_report.json",
+        "physics/ssz-lensing/FINAL_REPORT_VALIDATION.md",
+        "physics/ssz-lensing/FINAL_REPORT_IMPLEMENTATION.md",
+        "physics/ssz-lensing/FINAL_REPORT_VISUALIZATIONS.md",
+        "physics/ssz-lensing/docs/MATH_REPORT.md",
+        "physics/ssz-lensing/reports/TEST_REPORT.md",
+        "physics/ssz-lensing/reports/MATH_REPORT.md",
+        "physics/ssz-lensing/docs/OUTPUT_REPORT.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-ligo-tests",
+      "summary": "Version:** 0.5.0 — 2026-05-21 **Event:** GW240925 (O4b, GWOSC public release) **Status:** `PIPELINE_STATUS: PASS_EXPLORATORY` | `READY_FOR_REAL_LIGO_SSZ_CLAIM: NO`",
+      "domain": "data-and-validation",
+      "roles": [
+        "Tests",
+        "Mathematics"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-ligo-tests",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "85f366487721",
+      "counts": {
+        "files": 459,
+        "bytes": 5413892,
+        "tests": 79,
+        "documents": 195,
+        "images": 0,
+        "code": 141
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 169
+        },
+        {
+          "extension": ".py",
+          "count": 141
+        },
+        {
+          "extension": ".csv",
+          "count": 69
+        },
+        {
+          "extension": ".log",
+          "count": 49
+        },
+        {
+          "extension": ".txt",
+          "count": 26
+        },
+        {
+          "extension": ".json",
+          "count": 2
+        },
+        {
+          "extension": "[none]",
+          "count": 1
+        },
+        {
+          "extension": ".toml",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-ligo-tests/README.md",
+        "physics/ssz-ligo-tests/docs/FORMULA_BRANCH_LOCK.md",
+        "physics/ssz-ligo-tests/reports/OPEN_DATA_METHODOLOGY_POSITION.md",
+        "physics/ssz-ligo-tests/docs/MISSING_FORMULAS_DEVELOPMENT_REPORT.md",
+        "physics/ssz-ligo-tests/reports/DERIVED_FORMULAS_CODE_CONSISTENCY_AUDIT.md",
+        "physics/ssz-ligo-tests/docs/SSZ_INTERFEROMETER_ANHOLONOMY_FORMULATION.md",
+        "physics/ssz-ligo-tests/reports/progress/BOOK_FORMULA_EXTRACTION.md",
+        "physics/ssz-ligo-tests/reports/progress/CARMEN_FORMULA_REGISTRY.md",
+        "physics/ssz-ligo-tests/reports/progress/CARMEN_FORMULA_CONFLICTS.md",
+        "physics/ssz-ligo-tests/reports/progress/FORMULA_AUTHORIZATION_TEST.md",
+        "physics/ssz-ligo-tests/reports/progress/README_FINAL_CONSISTENCY_PASS.md",
+        "physics/ssz-ligo-tests/reports/progress/IMPLEMENTATION_ALIGNMENT_TEST.md"
+      ],
+      "result_files": [
+        "physics/ssz-ligo-tests/AUDIT_FREEZE_TIMESTAMP.txt",
+        "physics/ssz-ligo-tests/reports/BUILD_REPORT.md",
+        "physics/ssz-ligo-tests/logs/unit_audit_run.txt",
+        "physics/ssz-ligo-tests/logs/unit_audit_run2.txt",
+        "physics/ssz-ligo-tests/reports/PSD_WELCH_REPORT.md",
+        "physics/ssz-ligo-tests/docs/FORMULA_BRANCH_LOCK.md",
+        "physics/ssz-ligo-tests/scripts/phase3_part_a_audit.py",
+        "physics/ssz-ligo-tests/docs/REGIME_BOUNDARY_LOCK.md",
+        "physics/ssz-ligo-tests/reports/LIGO_QUESTION_REPORT.md",
+        "physics/ssz-ligo-tests/docs/XI_STRONG_BRANCH_LOCK.md",
+        "physics/ssz-ligo-tests/data_manifest/HDF5_STRUCTURE_REPORT.md",
+        "physics/ssz-ligo-tests/data_manifest/HDF5_DISCOVERY_REPORT.md"
+      ],
+      "scope_note": "Exploratory pipeline/proxy evidence; no complete SSZ waveform or empirical confirmation."
+    },
+    {
+      "name": "ssz-metric-final",
+      "summary": "Segmented Spacetime (SSZ) Metric with Complete Observable Suite",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-metric-final.git",
+      "archived": false,
+      "default_branch": "master",
+      "commit": "ab006fd7322d",
+      "counts": {
+        "files": 146,
+        "bytes": 1192152,
+        "tests": 20,
+        "documents": 82,
+        "images": 1,
+        "code": 51
+      },
+      "languages": [
+        {
+          "extension": ".md",
+          "count": 80
+        },
+        {
+          "extension": ".py",
+          "count": 51
+        },
+        {
+          "extension": "[none]",
+          "count": 4
+        },
+        {
+          "extension": ".yml",
+          "count": 3
+        },
+        {
+          "extension": ".ps1",
+          "count": 2
+        },
+        {
+          "extension": ".txt",
+          "count": 2
+        },
+        {
+          "extension": ".sh",
+          "count": 1
+        },
+        {
+          "extension": ".toml",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-metric-final/README.md",
+        "physics/ssz-metric-final/notebooks/README.md",
+        "physics/ssz-metric-final/tests/README_TESTS.md",
+        "physics/ssz-metric-final/docs/archive/SSZ_THEORY_ALIGNED_50_PHASES.md",
+        "physics/ssz-metric-final/docs/archive/THEORY_INTEGRATION_ESSENTIALS.md",
+        "physics/ssz-metric-final/docs/sessions/SESSION_THEORY_ALIGNMENT_COMPLETE.md"
+      ],
+      "result_files": [
+        "physics/ssz-metric-final/FINAL_QUALITY_REPORT.md",
+        "physics/ssz-metric-final/validation/eso_validation.py",
+        "physics/ssz-metric-final/notebooks/02_Mercury_Validation.md",
+        "physics/ssz-metric-final/.github/ISSUE_TEMPLATE/bug_report.md",
+        "physics/ssz-metric-final/.github/workflows/validation.yml",
+        "physics/ssz-metric-final/docs/archive/ROADMAP_SUMMARY.md",
+        "physics/ssz-metric-final/docs/progress/PROGRESS_REPORT.md",
+        "physics/ssz-metric-final/docs/archive/VALIDATION_STATUS.md",
+        "physics/ssz-metric-final/docs/archive/FINAL_GAP_SUMMARY.md",
+        "physics/ssz-metric-final/docs/archive/EXECUTIVE_SUMMARY_FINAL.md",
+        "physics/ssz-metric-final/docs/archive/GENERATED_OUTPUTS_INDEX.md",
+        "physics/ssz-metric-final/docs/archive/COMPLETE_OUTPUT_ANALYSIS.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-metric-pure",
+      "summary": "SSZ φ-Spiral Metric - Complete 4D Tensor Formulation",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-metric-pure",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "293c7c1549fb",
+      "counts": {
+        "files": 122,
+        "bytes": 1091322,
+        "tests": 10,
+        "documents": 58,
+        "images": 0,
+        "code": 53
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 53
+        },
+        {
+          "extension": ".md",
+          "count": 44
+        },
+        {
+          "extension": ".txt",
+          "count": 9
+        },
+        {
+          "extension": ".tex",
+          "count": 5
+        },
+        {
+          "extension": ".bak",
+          "count": 3
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".ps1",
+          "count": 1
+        },
+        {
+          "extension": ".cff",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-metric-pure/README.md",
+        "physics/ssz-metric-pure/MASTER_README.md",
+        "physics/ssz-metric-pure/README_COMPLETE.md",
+        "physics/ssz-metric-pure/PIPELINE_README.md",
+        "physics/ssz-metric-pure/COMPARISON_README.md",
+        "physics/ssz-metric-pure/03_SCRIPT_ARCHITECTURE.md",
+        "physics/ssz-metric-pure/IMPLEMENTATION_SUMMARY.md",
+        "physics/ssz-metric-pure/COMPLETE_TENSOR_PACKAGE_README.md",
+        "physics/ssz-metric-pure/IMPLEMENTATION_PLAN_100_PERCENT.md",
+        "physics/ssz-metric-pure/PHI_SPIRAL_IMPLEMENTATION_COMPLETE.md",
+        "physics/ssz-metric-pure/examples/README_PHI_SPIRAL.md"
+      ],
+      "result_files": [
+        "physics/ssz-metric-pure/FINAL_PROJECT_REPORT.md",
+        "physics/ssz-metric-pure/generate_all_reports.py",
+        "physics/ssz-metric-pure/FINAL_SESSION_SUMMARY.md",
+        "physics/ssz-metric-pure/IMPLEMENTATION_SUMMARY.md",
+        "physics/ssz-metric-pure/FINAL_SUMMARY_AND_REPORT.py",
+        "physics/ssz-metric-pure/SSZ_VALIDATION_SUMMARY_V2.md",
+        "physics/ssz-metric-pure/generate_validation_report.py",
+        "physics/ssz-metric-pure/FINAL_VERIFICATION_SUMMARY.md",
+        "physics/ssz-metric-pure/04_FINDINGS_UNIFIED_RESULTS.md",
+        "physics/ssz-metric-pure/VALIDATION_OUTPUTS_COMPLETE.md",
+        "physics/ssz-metric-pure/reports/SSZ_COMPLETE_SUMMARY.md",
+        "physics/ssz-metric-pure/reports/FINAL_COMPLETE_REPORT.md"
+      ],
+      "scope_note": "Contains public pre-P0 singularity-free wording; current central non-regularity supersedes it."
+    },
+    {
+      "name": "ssz-paper-plots",
+      "summary": "SSZ Theory: Real-Data Validation & Plot Generation",
+      "domain": "simulation-and-visualisation",
+      "roles": [
+        "Theory",
+        "Visualisation"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-paper-plots",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "e5319d16f343",
+      "counts": {
+        "files": 692,
+        "bytes": 82365525,
+        "tests": 98,
+        "documents": 59,
+        "images": 578,
+        "code": 49
+      },
+      "languages": [
+        {
+          "extension": ".png",
+          "count": 578
+        },
+        {
+          "extension": ".md",
+          "count": 51
+        },
+        {
+          "extension": ".py",
+          "count": 49
+        },
+        {
+          "extension": ".txt",
+          "count": 8
+        },
+        {
+          "extension": ".csv",
+          "count": 4
+        },
+        {
+          "extension": ".json",
+          "count": 1
+        },
+        {
+          "extension": "[none]",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-paper-plots/README.md",
+        "physics/ssz-paper-plots/README_FUTURE_REPO.md",
+        "physics/ssz-paper-plots/REAL_DATA_PLOTS_README.md",
+        "physics/ssz-paper-plots/PLOTS_SCRIPT_THEORY_MAPPING.md",
+        "physics/ssz-paper-plots/answers/README.md",
+        "physics/ssz-paper-plots/data/DATA_README.md",
+        "physics/ssz-paper-plots/plots/README_PLOTS.md",
+        "physics/ssz-paper-plots/plots/FORMULAS_REFERENCE.md",
+        "physics/ssz-paper-plots/docs/REAL_DATA_PLOTS_README.md",
+        "physics/ssz-paper-plots/plots/sharp-break/README.md"
+      ],
+      "result_files": [
+        "physics/ssz-paper-plots/FINAL_REPORT.md",
+        "physics/ssz-paper-plots/CLEANUP_SUMMARY.md",
+        "physics/ssz-paper-plots/EXECUTION_SUMMARY.md",
+        "physics/ssz-paper-plots/FINAL_SUMMARY_PLOTS.md",
+        "physics/ssz-paper-plots/MISSING_PLOTS_SUMMARY.md",
+        "physics/ssz-paper-plots/SESSION_COMPLETE_SUMMARY.md",
+        "physics/ssz-paper-plots/SSZ_NESTED_SUBMETRIC_REPORT.md",
+        "physics/ssz-paper-plots/PAPER_PLOT_CONSISTENCY_REPORT.md",
+        "physics/ssz-paper-plots/generate_validation_plots_compact.py",
+        "physics/ssz-paper-plots/docs/SCIENTIFIC_RESULTS.md",
+        "physics/ssz-paper-plots/plots_modules/ssz_validation_plots.py",
+        "physics/ssz-paper-plots/plots/PLOT_VALIDATION_REPORT.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-qubits",
+      "summary": "SSZ-Qubits: Segmented Spacetime Framework for Quantum Computing",
+      "domain": "research-archive",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-qubits",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "e068fe6d14d5",
+      "counts": {
+        "files": 137,
+        "bytes": 32954291,
+        "tests": 14,
+        "documents": 42,
+        "images": 35,
+        "code": 42
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 42
+        },
+        {
+          "extension": ".md",
+          "count": 40
+        },
+        {
+          "extension": ".png",
+          "count": 35
+        },
+        {
+          "extension": ".docx",
+          "count": 13
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".ipynb",
+          "count": 1
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        },
+        {
+          "extension": ".json",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-qubits/README.md",
+        "physics/ssz-qubits/README_DE.md",
+        "physics/ssz-qubits/README_OLD.md",
+        "physics/ssz-qubits/docs/SSZ_QUBIT_THEORY_SUMMARY.md",
+        "physics/ssz-qubits/docs/SSZ_FORMULA_DOCUMENTATION.md",
+        "physics/ssz-qubits/docs/SSZ_QUBIT_THEORY_SUMMARY_DE.md",
+        "physics/ssz-qubits/docs/SSZ_FORMULA_DOCUMENTATION_DE.md",
+        "physics/ssz-qubits/docs/DISCRETE_SSZ_STATE_FORMULATION.md",
+        "physics/ssz-qubits/docs/DISCRETE_SSZ_STATE_FORMULATION_DE.md",
+        "physics/ssz-qubits/docs/SSZ_Paper_C_Falsifiability_Protocol.md"
+      ],
+      "result_files": [
+        "physics/ssz-qubits/FINAL_REPORT.md",
+        "physics/ssz-qubits/final_summary.py",
+        "physics/ssz-qubits/FINAL_REPORT_DE.md",
+        "physics/ssz-qubits/ssz_roadmap_validation.py",
+        "physics/ssz-qubits/COMPLETE_PROJECT_REPORT.md",
+        "physics/ssz-qubits/PAPER_D_VALIDATION_REPORT.md",
+        "physics/ssz-qubits/COMPLETE_PROJECT_REPORT_DE.md",
+        "physics/ssz-qubits/SSZ_QUBITS_CORRECTION_REPORT.md",
+        "physics/ssz-qubits/reports/full-output.md",
+        "physics/ssz-qubits/reports/RUN_SUMMARY.md",
+        "physics/ssz-qubits/tests/test_validation.py",
+        "physics/ssz-qubits/docs/CONSISTENCY_REPORT.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-radial-scaling",
+      "summary": "Authors:** Carmen N. Wrede, Lino P. Casu, Bingsi",
+      "domain": "research-archive",
+      "roles": [
+        "Research"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-radial-scaling",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "83d58964238a",
+      "counts": {
+        "files": 21,
+        "bytes": 174152,
+        "tests": 8,
+        "documents": 6,
+        "images": 0,
+        "code": 15
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 15
+        },
+        {
+          "extension": ".md",
+          "count": 5
+        },
+        {
+          "extension": ".txt",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-radial-scaling/README.md"
+      ],
+      "result_files": [
+        "physics/ssz-radial-scaling/REPORT.md"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-schumann",
+      "summary": "SSZ-Schumann: Segmented Spacetime Analysis of Schumann Resonances",
+      "domain": "data-and-validation",
+      "roles": [
+        "Theory",
+        "Tests"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-schumann",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "6172213c7333",
+      "counts": {
+        "files": 220,
+        "bytes": 27352479,
+        "tests": 18,
+        "documents": 47,
+        "images": 34,
+        "code": 100
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 100
+        },
+        {
+          "extension": ".md",
+          "count": 38
+        },
+        {
+          "extension": ".png",
+          "count": 34
+        },
+        {
+          "extension": ".json",
+          "count": 15
+        },
+        {
+          "extension": ".csv",
+          "count": 14
+        },
+        {
+          "extension": ".txt",
+          "count": 9
+        },
+        {
+          "extension": "[none]",
+          "count": 3
+        },
+        {
+          "extension": ".yml",
+          "count": 3
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-schumann/README.md",
+        "physics/ssz-schumann/README_OLD.md",
+        "physics/ssz-schumann/SSZ_SCALING_METHODS.md",
+        "physics/ssz-schumann/docs/THEORY.md",
+        "physics/ssz-schumann/docs/SSZ_FORMULAS.md",
+        "physics/ssz-schumann/data/schumann/README.md"
+      ],
+      "result_files": [
+        "physics/ssz-schumann/SSZ_ANALYSIS_REPORT.md",
+        "physics/ssz-schumann/SSZ_SCHUMANN_SUMMARY.md",
+        "physics/ssz-schumann/SSZ_ANALYSIS_REPORT_V2.md",
+        "physics/ssz-schumann/SSZ_STRONGFIELD_RESULTS.md",
+        "physics/ssz-schumann/REAL_DATA_EXTRACTION_REPORT.md",
+        "physics/ssz-schumann/SSZ_SCHUMANN_REALDATA_REPORT.md",
+        "physics/ssz-schumann/SSZ_MATHEMATICAL_VALIDATION_REPORT.md",
+        "physics/ssz-schumann/docs/TEST_REPORT.md",
+        "physics/ssz-schumann/docs/FINAL_REPORT.md",
+        "physics/ssz-schumann/docs/test_results.txt",
+        "physics/ssz-schumann/docs/analysis_output.txt",
+        "physics/ssz-schumann/output/analysis_results.json"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-theory-readiness",
+      "summary": "Local-only workbench for turning the existing Segmented Spacetime research into a single, reproducible, falsifiable theory specification.",
+      "domain": "theory-and-geometry",
+      "roles": [
+        "Theory"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-theory-readiness.git",
+      "archived": false,
+      "default_branch": "master",
+      "commit": "d85ffc0ec19a",
+      "counts": {
+        "files": 50,
+        "bytes": 1907744,
+        "tests": 5,
+        "documents": 17,
+        "images": 0,
+        "code": 13
+      },
+      "languages": [
+        {
+          "extension": ".json",
+          "count": 18
+        },
+        {
+          "extension": ".md",
+          "count": 16
+        },
+        {
+          "extension": ".py",
+          "count": 13
+        },
+        {
+          "extension": "[none]",
+          "count": 1
+        },
+        {
+          "extension": ".toml",
+          "count": 1
+        },
+        {
+          "extension": ".pdf",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-theory-readiness/README.md",
+        "physics/ssz-theory-readiness/docs/INDEPENDENT_REIMPLEMENTATION.md",
+        "physics/ssz-theory-readiness/docs/FALSIFICATION_PREREGISTRATION.md"
+      ],
+      "result_files": [
+        "physics/ssz-theory-readiness/scripts/audit_readiness.py",
+        "physics/ssz-theory-readiness/docs/CROSS_REPOSITORY_AUDIT.md",
+        "physics/ssz-theory-readiness/scripts/audit_16_point_readiness.py"
+      ],
+      "scope_note": ""
+    },
+    {
+      "name": "ssz-trajectories",
+      "summary": "Geodesic toolkit for Segmented Spacetime (SSZ)",
+      "domain": "simulation-and-visualisation",
+      "roles": [
+        "Theory",
+        "Simulation"
+      ],
+      "public_url": "https://github.com/error-wtf/ssz-trajectories",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "b8e6a0c25453",
+      "counts": {
+        "files": 22,
+        "bytes": 70658,
+        "tests": 6,
+        "documents": 2,
+        "images": 0,
+        "code": 16
+      },
+      "languages": [
+        {
+          "extension": ".py",
+          "count": 16
+        },
+        {
+          "extension": "[none]",
+          "count": 2
+        },
+        {
+          "extension": ".md",
+          "count": 2
+        },
+        {
+          "extension": ".toml",
+          "count": 1
+        },
+        {
+          "extension": ".xml",
+          "count": 1
+        }
+      ],
+      "key_documents": [
+        "physics/ssz-trajectories/README.md"
+      ],
+      "result_files": [
+        "physics/ssz-trajectories/reports/TEST_REPORT.md"
+      ],
+      "scope_note": ""
+    }
+  ]
+}

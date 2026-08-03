@@ -13,6 +13,11 @@ from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[1]
 SOURCE_HOME = Path(os.getenv("SSZ_SOURCE_HOME", PROJECT.parent))
+PRIVATE_MARKERS_FILE = PROJECT / ".private-sources"
+PRIVATE_MARKERS = tuple(
+    line.strip().lower() for line in PRIVATE_MARKERS_FILE.read_text(encoding="utf-8").splitlines()
+    if line.strip() and not line.startswith("#")
+) if PRIVATE_MARKERS_FILE.exists() else ()
 PHYSICS = SOURCE_HOME / "physics"
 RAG_REPOS = SOURCE_HOME / "rag" / "repositories.md"
 FILES = json.loads((PROJECT / "data/files.json").read_text(encoding="utf-8"))["files"]
@@ -47,7 +52,6 @@ def classify_repo(name: str, description: str) -> list[str]:
     tags = []
     for tag, needles in {
         "Theory": ("theory", "metric", "spacetime", "geometry", "lagrange"),
-        "JIF": ("jif",),
         "Tests": ("test", "validation", "benchmark"),
         "Data": ("data", "g79", "energy", "mass-projection"),
         "Simulation": ("trajectory", "simulation", "calculation"),
@@ -65,7 +69,10 @@ def build_repositories() -> list[dict]:
     counts = Counter(x["repository"] for x in FILES)
     test_counts = Counter(x["repository"] for x in FILES if x["test_related"])
     repos = []
-    for repo in sorted(p for p in PHYSICS.iterdir() if (p / ".git").exists()):
+    for repo in sorted(
+        p for p in PHYSICS.iterdir()
+        if (p / ".git").exists() and not any(marker in p.name.lower() for marker in PRIVATE_MARKERS)
+    ):
         remote = git(repo, "remote", "get-url", "origin")
         safe_remote = remote if remote.startswith("https://github.com/") else ""
         entry = public.get(repo.name.lower(), {})

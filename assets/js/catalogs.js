@@ -6,35 +6,45 @@
   }
 
   function badge(value, className = "") {
-    return `<span class="badge ${className}">${String(value ?? "unknown")}</span>`;
+    return `<span class="badge ${className}">${escapeHtml(value ?? "unknown")}</span>`;
+  }
+
+  function escapeHtml(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    })[character]);
   }
 
   async function renderRepositories() {
     const target = document.getElementById("repository-catalog");
     if (!target) return;
     const search = document.getElementById("repository-search");
-    const tag = document.getElementById("repository-tag");
-    const data = await loadJson("data/repositories.json");
+    const domain = document.getElementById("repository-domain");
+    const state = document.getElementById("repository-state");
+    const data = await loadJson("data/public-research-repositories.json");
     const render = () => {
       const query = search.value.toLowerCase();
-      const selected = tag.value;
-      const rows = data.repositories.filter(repo =>
+      const selectedDomain = domain.value;
+      const selectedState = state.value;
+      const rows = data.filter(repo =>
         (!query || JSON.stringify(repo).toLowerCase().includes(query)) &&
-        (!selected || repo.tags.includes(selected))
+        (!selectedDomain || repo.domain === selectedDomain) &&
+        (!selectedState || (selectedState === "archived") === repo.archived)
       );
       target.innerHTML = rows.map(repo => `
         <article class="catalog-item" data-searchable>
-          <h3>${repo.public_url ? `<a href="${repo.public_url}" rel="noopener">${repo.name}</a>` : repo.name}</h3>
-          <p>${repo.description}</p>
-          <div class="catalog-meta">${repo.tags.map(x => badge(x)).join("")}${badge(repo.status, repo.status === "active" ? "canonical" : "")}</div>
-          <p><strong>Role:</strong> ${repo.scientific_role}<br>
-          <strong>Branch / commit:</strong> ${repo.default_branch || "unknown"} / <code>${repo.commit || "unknown"}</code><br>
-          <strong>Inventory:</strong> ${repo.file_count.toLocaleString("en-US")} files; ${repo.test_related_files.toLocaleString("en-US")} test-related artefacts<br>
-          <strong>Public source reference:</strong> <code>${repo.local_reference}</code></p>
+          <h3><a href="${escapeHtml(repo.url)}" rel="noopener">${escapeHtml(repo.name)}</a></h3>
+          <p>${escapeHtml(repo.description || "No public repository description supplied.")}</p>
+          <div class="catalog-meta">${badge(repo.domain.replaceAll("-", " "))}${badge(repo.archived ? "archived" : "active", repo.archived ? "" : "canonical")}${repo.language ? badge(repo.language) : ""}${repo.topics.slice(0,5).map(x => badge(x)).join("")}</div>
+          ${repo.portal_note ? `<div class="callout warning"><strong>Scientific scope note:</strong> ${escapeHtml(repo.portal_note)}</div>` : ""}
+          <p><strong>Default branch:</strong> <code>${escapeHtml(repo.default_branch || "unknown")}</code><br>
+          <strong>Latest public push:</strong> ${escapeHtml((repo.pushed_at || "unknown").slice(0,10))}<br>
+          <strong>Licence metadata:</strong> ${escapeHtml(repo.license || "not declared")} ·
+          <strong>Stars / forks:</strong> ${repo.stars} / ${repo.forks}</p>
         </article>`).join("") || "<p>No repositories match this filter.</p>";
-      document.getElementById("repository-count").textContent = `${rows.length} of ${data.count}`;
+      document.getElementById("repository-count").textContent = `${rows.length} of ${data.length}`;
     };
-    [search, tag].forEach(input => input.addEventListener("input", render));
+    [search, domain, state].forEach(input => input.addEventListener("input", render));
     render();
   }
 

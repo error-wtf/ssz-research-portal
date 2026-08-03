@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A provenance-first, interactive research portal for Segmented Spacetime (SSZ) and JIF.">
+  <meta name="description" content="A provenance-first, interactive research portal for Segmented Spacetime (SSZ).">
   <title>Segmented Spacetime — Research Portal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/site.css">
   <script defer src="assets/js/site.js"></script>
@@ -16,12 +15,11 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <nav class="site-nav" aria-label="Main navigation">
   <div class="nav-inner">
-    <a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>SSZ · JIF · RESEARCH PORTAL</small></span></a>
+    <a class="brand" href="index.html"><span class="brand-mark">Ξ</span><span><strong>Segmented Spacetime</strong><small>SSZ · RESEARCH PORTAL</small></span></a>
     <button class="nav-button menu-toggle" aria-expanded="false" aria-label="Open navigation">Menu</button>
     <div class="nav-links">
       <a aria-current="page" href="index.html">Overview</a>
       <a href="theory.html">Theory</a>
-      <a href="jif.html">JIF</a>
       <a href="strong-field.html">Strong field</a>
       <a href="tests.html">Tests</a>
       <a href="repositories.html">Repositories</a>
@@ -37,9 +35,10 @@
     <div>
       <span class="eyebrow"><i class="ph ph-seal-check"></i> P0-corrected scientific scope · August 2026</span>
       <h1>Segmented<br><span class="gradient-text">Spacetime</span></h1>
-      <p class="lead">A complete, inspectable research portal for SSZ and JIF: geometry, observables, source code, test evidence, falsification criteria, conflicts, and the unresolved interior problem.</p>
+      <p class="lead">A complete, inspectable research portal for SSZ: geometry, observables, source code, test evidence, falsification criteria, conflicts, and the unresolved interior problem.</p>
       <div class="actions">
         <a class="button primary" href="#dashboard">Explore the metric</a>
+        <a class="button" href="visual-lab.html">Open the interactive visual lab</a>
         <a class="button" href="theory.html">Read the theory from first principles</a>
         <a class="button" href="reproducibility.html">Reproduce the work</a>
       </div>
@@ -66,11 +65,20 @@
   </section>
 
   <section class="section">
+    <div class="section-head"><span class="section-kicker">Self-hosted scientific animation</span><h2>See the equations change</h2><p class="lead">Seven responsive visual modules connect parameters to geometry: conceptual φ levels, canonical radial scaling, weak-field lensing, null effective potential, starmap projection, Sagnac rotation and the P0 curvature divergence.</p></div>
+    <div class="grid grid-3">
+      <article class="card"><h3>Canonical mappings</h3><p>Move through r/r<sub>s</sub> and watch Ξ, D and s change together, with the active strong, transition or weak branch shown explicitly.</p></article>
+      <article class="card"><h3>Paths and rotation</h3><p>Change a lensing impact parameter, inspect the metric-derived null potential, and follow counter-propagating signals on a rotating loop.</p></article>
+      <article class="card"><h3>Scientific boundaries</h3><p>Every animation is labelled as canonical, reference, asymptotic or conceptual so that explanatory graphics never silently become evidence.</p><p><a class="button primary" href="visual-lab.html">Launch visual lab</a></p></article>
+    </div>
+  </section>
+
+  <section class="section">
     <div class="grid grid-4">
-      <article class="card metric-card"><strong>21,477</strong><span>inventoried files</span></article>
-      <article class="card metric-card"><strong>18,630</strong><span>text sources indexed</span></article>
-      <article class="card metric-card"><strong>10,817</strong><span>test definitions and result artefacts catalogued</span></article>
-      <article class="card metric-card"><strong>37</strong><span>local research repositories mapped</span></article>
+      <article class="card metric-card"><strong>18,308</strong><span>inventoried files</span></article>
+      <article class="card metric-card"><strong>16,245</strong><span>text sources indexed</span></article>
+      <article class="card metric-card"><strong>10,084</strong><span>test definitions and result artefacts catalogued</span></article>
+      <article class="card metric-card"><strong>35</strong><span>public-scope local repositories mapped</span></article>
     </div>
     <p><small>Counts are generated from the current local corpus. They are inventory counts, not claims of independent scientific confirmation.</small></p>
   </section>
@@ -134,13 +142,6 @@
           <div><small>z=1/D−1</small><strong id="calc-z">—</strong></div>
           <div><small>Comparison point</small><strong id="photon-output">—</strong></div>
         </div>
-      </article>
-      <article class="card">
-        <h3>JIF phase counter</h3>
-        <div class="control"><label for="jif-frequency">Proper frequency f₀ (Hz)</label><input id="jif-frequency" type="number" min="0" value="1000000000"></div>
-        <div class="control"><label for="jif-duration">Coordinate interval dt (s)</label><input id="jif-duration" type="number" min="0" step=".001" value="1"></div>
-        <div class="formula">J = f₀D(r)dt = <strong id="jif-output">—</strong></div>
-        <p>JIF is a dimensionless cycle count. It does not replace proper time.</p>
       </article>
       <article class="card">
         <h3>Strong-field comparisons</h3>

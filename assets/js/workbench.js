@@ -33,6 +33,7 @@
 
   let trajectory=[];
   function integrate(){
+    if(!window.SSZ||typeof window.SSZ.dilation!=="function"){$("geo-status").textContent="physics library unavailable";return;}
     const type=$("geo-type").value,r0=n("geo-r0"),E=n("geo-e"),L=n("geo-l"),step=n("geo-step"),mass=type==="timelike"?1:0;let r=r0,phi=0,t=0,sign=-1,turns=0,maxResidual=0;trajectory=[];
     const A=r=>window.SSZ.dilation(Math.max(r,.03))**2,F=r=>E**2-A(r)*(mass+L**2/r**2);
     for(let i=0;i<10000&&r>.055&&r<35;i++){let f=F(r);if(f<0){sign*=-1;turns++;r+=sign*step;f=F(r);if(f<0)break;}const rd=sign*Math.sqrt(Math.max(0,f)),pd=L/r**2,td=E/A(r);maxResidual=Math.max(maxResidual,Math.abs(rd*rd-f));trajectory.push({lambda:i*step,r,phi,t,x:r*Math.cos(phi),y:r*Math.sin(phi),constraint:rd*rd-f});r+=rd*step;phi+=pd*step;t+=td*step;if(turns>8)break;}

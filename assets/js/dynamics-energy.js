@@ -22,11 +22,13 @@
     const L=+$("dyn-l").value, probe=+$("dyn-r").value, {c,w,h}=fit($("dynamics-potential-canvas"));
     const fg=getComputedStyle(document.documentElement).getPropertyValue("--text")||"#172033";
     c.clearRect(0,0,w,h); c.strokeStyle="#bb8b2f"; c.lineWidth=3;c.beginPath();
-    let vmax=0; const pts=[];
-    for(let i=0;i<500;i++){const x=.25+i*11.75/499,v=A(x)*L*L/(x*x);vmax=Math.max(vmax,v);pts.push([x,v]);}
-    pts.forEach(([x,v],i)=>{const px=48+(x-.25)/11.75*(w-70),py=h-38-v/vmax*(h-70);i?c.lineTo(px,py):c.moveTo(px,py);});c.stroke();
+    const pts=[], referenceL=Number($("dyn-l").max);
+    let fixedScale=0;
+    for(let i=0;i<500;i++){const x=.25+i*11.75/499;fixedScale=Math.max(fixedScale,A(x)*referenceL*referenceL/(x*x));}
+    for(let i=0;i<500;i++){const x=.25+i*11.75/499,v=A(x)*L*L/(x*x);pts.push([x,v]);}
+    pts.forEach(([x,v],i)=>{const px=48+(x-.25)/11.75*(w-70),py=h-38-v/fixedScale*(h-70);i?c.lineTo(px,py):c.moveTo(px,py);});c.stroke();
     [1,1.8,2.2].forEach(x=>{const px=48+(x-.25)/11.75*(w-70);c.strokeStyle="#64748b88";c.beginPath();c.moveTo(px,25);c.lineTo(px,h-38);c.stroke();});
-    const pv=A(probe)*L*L/(probe*probe),px=48+(probe-.25)/11.75*(w-70),py=h-38-pv/vmax*(h-70);
+    const pv=A(probe)*L*L/(probe*probe),px=48+(probe-.25)/11.75*(w-70),py=h-38-pv/fixedScale*(h-70);
     c.fillStyle="#3b82f6";c.beginPath();c.arc(px,py,6,0,Math.PI*2);c.fill();c.fillStyle=fg;c.font="12px sans-serif";c.fillText("r / rₛ",w/2,h-9);c.fillText("V",15,25);
     $("dyn-l-out").textContent=L.toFixed(2);$("dyn-r-out").textContent=probe.toFixed(2);$("dyn-a").textContent=A(probe).toPrecision(7);$("dyn-v").textContent=pv.toPrecision(7);$("dyn-branch").textContent=probe<1.8?"strong":probe<=2.2?"C² bridge":"weak";
   }

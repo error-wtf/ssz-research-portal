@@ -2,6 +2,7 @@
   "generated_from": [
     "ssz-all-tests/LIVE_STATUS.json",
     "ssz-all-tests/MASTER_RESULTS.json",
+    "ssz-all-tests/analysis-index.json",
     "Segmented-Spacetime-Mass-Projection-Unified-Results/summary_full_pipeline_enriched.json",
     "Segmented-Spacetime-Mass-Projection-Unified-Results/outputs/complete_test_results.json"
   ],
@@ -243,6 +244,152 @@
     ],
     "warning": "This earlier orchestration snapshot contains dependency, collection and expected-count inconsistencies. It is shown for auditability, not combined with the later snapshot."
   },
+  "audit_snapshot": {
+    "date": "2026-04-29T08:00:13.239857+00:00",
+    "repositories": 13,
+    "detected": 5592,
+    "mapped": 228,
+    "executed": 1175,
+    "expected_minimum": 1128,
+    "count_ok": true,
+    "failures": [
+      {
+        "repository": "ssz-paper-plots",
+        "test": "tests/test_model_comparison.py::test_piecewise_fit",
+        "classification": "VALIDATION",
+        "status": "failed in audit snapshot"
+      },
+      {
+        "repository": "ssz-paper-plots",
+        "test": "tests/test_model_comparison.py::test_model_compatibility",
+        "classification": "VALIDATION",
+        "status": "failed in audit snapshot"
+      },
+      {
+        "repository": "ssz-paper-plots",
+        "test": "tests/test_sharp_break.py::test_sharp_break_location",
+        "classification": "VALIDATION",
+        "status": "failed in audit snapshot"
+      }
+    ],
+    "timeouts": [
+      {
+        "repository": "Segmented-Spacetime-Starmaps",
+        "duration_seconds": 600.09,
+        "exit_code": -1,
+        "interpretation": "Runner timeout or uncompleted validation; not a passing or failing physics assertion."
+      }
+    ],
+    "warning": "This intermediate runner audit uses a different repository set and counting method from both dated snapshots. It documents failure recovery and must remain separate."
+  },
+  "numeric_diagnostics": [
+    {
+      "name": "GPS weak-field redshift",
+      "value": 1.922899e-07,
+      "value_label": "1.922899×10⁻⁷ relative error",
+      "tolerance": 0.001,
+      "tolerance_label": "≤ 1×10⁻³",
+      "repository": "ssz-metric-pure",
+      "source": "tests/test_validation_ssz_calibrated.py",
+      "meaning": "The encoded calibrated weak-field implementation agrees with the GR reference for the selected Earth–GPS configuration.",
+      "boundary": "A comparison to a GR-derived reference is not an independent experimental fit."
+    },
+    {
+      "name": "Pound–Rebka proxy",
+      "value": 0.005119032,
+      "value_label": "5.119032×10⁻³ relative error",
+      "tolerance": 0.01,
+      "tolerance_label": "≤ 1×10⁻²",
+      "repository": "ssz-metric-pure",
+      "source": "tests/test_validation_ssz_calibrated.py",
+      "meaning": "The implementation lies within its encoded one-percent weak-field tolerance.",
+      "boundary": "This runner record does not reconstruct the original measurement likelihood."
+    },
+    {
+      "name": "Mountain clock proxy",
+      "value": 0.001212028,
+      "value_label": "1.212028×10⁻³ relative error",
+      "tolerance": 0.005,
+      "tolerance_label": "≤ 5×10⁻³",
+      "repository": "ssz-metric-pure",
+      "source": "tests/test_validation_ssz_calibrated.py",
+      "meaning": "The selected 1 km elevation case satisfies its encoded weak-field comparison.",
+      "boundary": "The comparison is a numerical reference case, not a new clock experiment."
+    },
+    {
+      "name": "Earth low-orbit energy drift",
+      "value": 7.648e-12,
+      "value_label": "7.648×10⁻¹²",
+      "tolerance": 1e-09,
+      "tolerance_label": "< 1×10⁻⁹ portal guardrail",
+      "repository": "ssz-metric-pure",
+      "source": "tests/test_sparse_validators.py",
+      "meaning": "The sampled numerical trajectory conserves its encoded energy proxy to a small drift.",
+      "boundary": "One integrator and sampling regime do not establish global geodesic completeness."
+    },
+    {
+      "name": "Trapz–Simpson travel-time agreement",
+      "value": 8.238527e-16,
+      "value_label": "8.238527×10⁻¹⁶ relative difference",
+      "tolerance": 1e-09,
+      "tolerance_label": "≤ 1×10⁻⁹",
+      "repository": "ssz-metric-pure",
+      "source": "tests/test_validation_ssz_calibrated.py",
+      "meaning": "Two quadrature methods agree for the encoded Earth-to-GPS path.",
+      "boundary": "Agreement between numerical methods does not validate the underlying metric against nature."
+    }
+  ],
+  "claim_evidence_matrix": [
+    {
+      "claim": "Metric functions and inverse identities are implemented consistently",
+      "class": "mathematical implementation",
+      "status": "tested",
+      "support": "Metric, inverse, compatibility and tensor-pipeline assertions across canonical metric repositories.",
+      "does_not_establish": "A fundamental action, unique field equations or empirical truth."
+    },
+    {
+      "claim": "The weak-field branch reproduces selected reference limits",
+      "class": "reference compatibility",
+      "status": "tested",
+      "support": "GPS, Pound–Rebka, mountain-clock, asymptotic and PPN-style encoded comparisons.",
+      "does_not_establish": "Independent parameter-free confirmation across all weak-field observations."
+    },
+    {
+      "claim": "Selected numerical trajectories are stable",
+      "class": "numerical validation",
+      "status": "tested",
+      "support": "Energy-drift, step-size and quadrature-consistency assertions.",
+      "does_not_establish": "Global geodesic or causal completeness."
+    },
+    {
+      "claim": "The segmented residual is smaller in the supplied paired sample",
+      "class": "dataset-conditioned result",
+      "status": "conditional",
+      "support": "66 of 67 paired residual comparisons; two-sided sign-test p≈9.2×10⁻¹⁹.",
+      "does_not_establish": "Causal mechanism, unbiased selection, flexibility penalty or external replication."
+    },
+    {
+      "claim": "The horizon time-dilation factor remains finite",
+      "class": "canonical analytic result",
+      "status": "tested",
+      "support": "Ξ(rₛ)=0.801711847… and D(rₛ)=0.555027709… from the canonical strong branch.",
+      "does_not_establish": "A regular centre or globally complete interior geometry."
+    },
+    {
+      "claim": "The canonical diagonal continuation is regular at r=0",
+      "class": "superseded claim",
+      "status": "corrected",
+      "support": "No current support: P0 gives R~3/(2r²) and K~9/(4r⁴).",
+      "does_not_establish": "Central regularity; this statement is explicitly rejected."
+    },
+    {
+      "claim": "SSZ is empirically preferred as a fundamental theory",
+      "class": "global empirical claim",
+      "status": "open",
+      "support": "No independent decisive dataset currently establishes this.",
+      "does_not_establish": "Fundamental-theory status or confirmation over GR."
+    }
+  ],
   "unified_execution": {
     "date": "2025-12-07T05:16:52.619363",
     "categories": [
@@ -486,7 +633,7 @@
         "med_seg": 0.000199780300796751,
         "med_grsr": 0.2249022808007889,
         "med_gr": 0.22472437139158896,
-        "med_sr": NaN
+        "med_sr": null
       },
       {
         "bin": 1,
@@ -496,37 +643,37 @@
         "med_seg": 0.00012299819750673425,
         "med_grsr": 0.22480087139158894,
         "med_gr": 0.22462187139158893,
-        "med_sr": NaN
+        "med_sr": null
       },
       {
         "bin": 2,
         "lo_log10M": 32.069176215921075,
         "hi_log10M": 33.40955224657151,
         "N": 0,
-        "med_seg": NaN,
-        "med_grsr": NaN,
-        "med_gr": NaN,
-        "med_sr": NaN
+        "med_seg": null,
+        "med_grsr": null,
+        "med_gr": null,
+        "med_sr": null
       },
       {
         "bin": 3,
         "lo_log10M": 33.40955224657151,
         "hi_log10M": 34.74992827722194,
         "N": 0,
-        "med_seg": NaN,
-        "med_grsr": NaN,
-        "med_gr": NaN,
-        "med_sr": NaN
+        "med_seg": null,
+        "med_grsr": null,
+        "med_gr": null,
+        "med_sr": null
       },
       {
         "bin": 4,
         "lo_log10M": 34.74992827722194,
         "hi_log10M": 36.09030430787237,
         "N": 0,
-        "med_seg": NaN,
-        "med_grsr": NaN,
-        "med_gr": NaN,
-        "med_sr": NaN
+        "med_seg": null,
+        "med_grsr": null,
+        "med_gr": null,
+        "med_sr": null
       },
       {
         "bin": 5,
@@ -536,7 +683,7 @@
         "med_seg": 0.00011006790122888101,
         "med_grsr": 0.22466764519046956,
         "med_gr": 0.22445480349035998,
-        "med_sr": NaN
+        "med_sr": null
       },
       {
         "bin": 6,

@@ -74,13 +74,23 @@ def main():
     for marker in private_book_markers:
         assert marker not in publishable.lower(), f"private book artefact published: {marker}"
     evaluations = json.loads((ROOT / "data/evaluations.json").read_text(encoding="utf-8"))
+    raw_evaluations = (ROOT / "data/evaluations.json").read_text(encoding="utf-8")
+    assert "NaN" not in raw_evaluations and "Infinity" not in raw_evaluations
     assert evaluations["current_snapshot"]["passed"] == 1296
     assert evaluations["current_snapshot"]["repositories"] == 12
     assert evaluations["artifact_catalogue"]["count"] == 9300
+    assert evaluations["audit_snapshot"]["executed"] == 1175
+    assert len(evaluations["audit_snapshot"]["failures"]) == 3
+    assert evaluations["audit_snapshot"]["timeouts"][0]["duration_seconds"] > 600
+    assert len(evaluations["numeric_diagnostics"]) >= 5
+    assert all(row["value"] <= row["tolerance"] for row in evaluations["numeric_diagnostics"])
+    claim_statuses = {row["status"] for row in evaluations["claim_evidence_matrix"]}
+    assert {"tested", "conditional", "corrected", "open"} <= claim_statuses
     assert (ROOT / "regimes.html").exists(), "regime-boundary page missing"
     tests_page = (ROOT / "tests.html").read_text(encoding="utf-8")
     for canvas_id in ("evaluation-chart", "evaluation-ci-chart", "evaluation-bin-chart",
-                      "artifact-category-chart", "artifact-quantity-chart"):
+                      "artifact-category-chart", "artifact-quantity-chart",
+                      "snapshot-chart", "diagnostic-chart"):
         assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
     assert len(list(ROOT.glob("*.html"))) >= 13
     visual = (ROOT / "visual-lab.html").read_text(encoding="utf-8")

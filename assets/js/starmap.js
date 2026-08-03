@@ -2,6 +2,7 @@
   "use strict";
   const DEG=Math.PI/180;
   const state={stars:[],points:[],yaw:0,pitch:0,zoom:1,drag:null,selected:null};
+  let lastFrame=0;
   const $=id=>document.getElementById(id);
   const number=id=>Number($(id)?.value);
   const text=(id,value)=>$(id)?.replaceChildren(document.createTextNode(String(value)));
@@ -61,15 +62,18 @@
     }
     const ra=star.ra_deg*DEG,dec=star.dec_deg*DEG,r=Math.log10(1+star.distance_pc);
     const [x,y,z]=rotate3(r*Math.cos(dec)*Math.cos(ra),r*Math.cos(dec)*Math.sin(ra),r*Math.sin(dec));
-    return [cx+x*scale*.52,cy-z*scale*.52,y>-4,true,y];
+    const depth=Math.max(-3.8,Math.min(3.8,y)),perspective=7/(7+depth);
+    return [cx+x*scale*.52*perspective,cy-z*scale*.52*perspective,depth>-3.7,true,depth];
   }
   function grid(c,mode,area){
     if(!$("starmap-grid").checked)return;
     c.save();c.strokeStyle=css("--line");c.lineWidth=1;c.setLineDash([3,5]);
     const cx=(area.l+area.r)/2,cy=(area.t+area.b)/2,aw=area.r-area.l,ah=area.b-area.t;
     if(mode==="cartesian"){
-      c.setLineDash([]);c.beginPath();c.moveTo(area.l,cy);c.lineTo(area.r,cy);c.moveTo(cx,area.t);c.lineTo(cx,area.b);c.stroke();
-      [1,2,3].forEach(r=>{c.beginPath();c.arc(cx,cy,r*Math.min(aw,ah)/7,0,Math.PI*2);c.stroke();});
+      c.setLineDash([]);c.strokeStyle=css("--muted");c.globalAlpha=.45;
+      c.beginPath();c.moveTo(area.l,cy);c.lineTo(area.r,cy);c.moveTo(cx,area.t);c.lineTo(cx,area.b);c.stroke();
+      for(let i=-4;i<=4;i++){const x=cx+i*aw/10;c.beginPath();c.moveTo(cx,cy);c.lineTo(x,area.b);c.stroke();const y=cy+i*ah/10;c.beginPath();c.moveTo(cx,cy);c.lineTo(area.r,y);c.stroke();}
+      c.globalAlpha=1;c.fillStyle=css("--muted");c.font="11px Inter";c.fillText("x / y / z · perspective depth",area.l,area.b+28);
     } else if(mode==="mollweide"){
       c.beginPath();c.ellipse(cx,cy,Math.min(aw/2,ah),Math.min(aw/4,ah/2),0,0,Math.PI*2);c.stroke();
       for(let dec=-60;dec<=60;dec+=30){c.beginPath();for(let ra=0;ra<=360;ra+=3){const fake={ra_deg:ra,dec_deg:dec},[x,y]=project(fake,mode,area);ra?c.lineTo(x,y):c.moveTo(x,y);}c.stroke();}
@@ -122,6 +126,7 @@
     $("starmap-reset").addEventListener("click",()=>{state.yaw=0;state.pitch=0;state.zoom=1;state.selected=null;draw();});
     $("starmap-export").addEventListener("click",()=>{const link=document.createElement("a");link.download="ssz-starmaps-catalogue.png";link.href=canvas.toDataURL("image/png");link.click();});
     addEventListener("resize",draw);addEventListener("ssz-theme-change",draw);
+    function animate(now){if(now-lastFrame>45){lastFrame=now;if($("starmap-projection")?.value==="cartesian"&&!state.drag){state.yaw+=.006;draw();}}requestAnimationFrame(animate);}requestAnimationFrame(animate);
     try{
       const response=await fetch("data/starmap-stars.json");if(!response.ok)throw new Error(`HTTP ${response.status}`);
       const data=await response.json();state.stars=data.stars||[];text("starmap-loaded",`${state.stars.length} Gaia stars`);draw();

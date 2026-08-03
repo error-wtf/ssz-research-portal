@@ -509,6 +509,12 @@ details[open] summary { margin-bottom: .7rem; }
   .chart-wrap canvas { height: 360px; }
   .lab-canvas { height: 360px; }
   .nav-links.open { grid-template-columns: 1fr; max-height: calc(100vh - 4rem); overflow:auto; }
+  .nav-links > a, .nav-links > .nav-group, .nav-links > .nav-button { width:100%; box-sizing:border-box; }
+  .nav-group { border:1px solid var(--line); border-radius:.65rem; background:var(--surface-2); }
+  .nav-group > summary { display:flex; align-items:center; justify-content:space-between; padding:.75rem .8rem; color:var(--text); }
+  .nav-group[open] > summary { color:var(--gold); border-bottom:1px solid var(--line); }
+  .nav-group[open] .nav-submenu { margin:0; padding:.25rem .45rem .45rem; }
+  .nav-group .nav-submenu a { display:block; padding:.55rem .7rem; border-radius:.45rem; }
   .filter-bar { grid-template-columns:1fr; }
   .paper-card { grid-template-columns:1fr; }
   .paper-number { width:3rem; }

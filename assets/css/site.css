@@ -810,7 +810,9 @@ details li, details code, details a { overflow-wrap: anywhere; }
 @keyframes jif-flow-travel { 0% { left:7%; } 20% { left:27%; } 40% { left:47%; } 60% { left:67%; } 80%,100% { left:91%; } }
 .jif-repository-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
 .recursive-closure-lab { align-items:stretch; }
-.recursive-closure-lab .visual-controls { gap:.8rem; }
+.recursive-closure-lab .visual-controls { gap:.8rem; min-width:0; overflow:hidden; }
+.recursive-closure-lab select { display:block; width:100%; max-width:100%; min-width:0; box-sizing:border-box; overflow:hidden; text-overflow:ellipsis; }
+.recursive-closure-lab .small-note, .recursive-closure-lab .check-row { max-width:100%; overflow-wrap:anywhere; }
 .check-row { display:flex; align-items:flex-start; gap:.5rem; color:var(--muted); font-size:.86rem; }
 .check-row input { margin-top:.3rem; accent-color:var(--gold); }
 .closure-story { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.75rem; margin-top:1rem; }

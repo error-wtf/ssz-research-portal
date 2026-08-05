@@ -98,3 +98,8 @@
   catalogue and machine-readable dataset;
 - added a gitignored local exclusion mechanism so inventory regeneration cannot
   silently republish private research sources.
+# 2026-08-05 — Final visual polish
+
+- Added reduced-motion-safe identity/orbit animation across the portal tabs.
+- Corrected dark-mode contrast for the humorous QM-wink notice and its canvas palette.
+- Verified the 47-public / 35-physics-mathematics / 38-local-atlas counts and complete 38/38 atlas coverage.

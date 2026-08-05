@@ -387,7 +387,7 @@
       "topic": "field",
       "units": "1",
       "domain": "x > 0",
-      "caution": "Used in the right endpoint C² match."
+      "caution": "Sets the weak-branch slope supplied to the right endpoint C² match."
     },
     {
       "id": "weak-second",
@@ -396,7 +396,7 @@
       "topic": "field",
       "units": "1",
       "domain": "x > 0",
-      "caution": "Used in the right endpoint C² match."
+      "caution": "Sets the weak-branch curvature supplied to the right endpoint C² match."
     },
     {
       "id": "hermite-left-value",
@@ -405,7 +405,7 @@
       "topic": "field",
       "units": "1",
       "domain": "0 ≤ t ≤ 1",
-      "caution": "One of six endpoint-interpolation basis functions."
+      "caution": "Weights the value prescribed at the left endpoint."
     },
     {
       "id": "hermite-left-slope",
@@ -432,7 +432,7 @@
       "topic": "field",
       "units": "1",
       "domain": "0 ≤ t ≤ 1",
-      "caution": "One of six endpoint-interpolation basis functions."
+      "caution": "Weights the value prescribed at the right endpoint."
     },
     {
       "id": "hermite-right-slope",
@@ -882,7 +882,7 @@
       "topic": "rotation",
       "units": "s",
       "domain": "stationary metric and declared coordinates",
-      "caution": "The leading 4AΩ/c² formula follows only in its controlled rotating-loop limit."
+      "caution": "The leading 4𝒜Ω/c² formula follows only in its controlled rotating-loop limit; 𝒜 denotes loop area, not metric A(r)."
     }
   ]
 }

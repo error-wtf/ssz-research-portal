@@ -4,6 +4,7 @@
     "SEGMENTED_SPACETIME": "Self-hosted interactive demonstrations and visual explanations of public Segmented Spacetime concepts.",
     "ssz-all-tests": "Cross-repository orchestration, captured run summaries and consistency reports for the public SSZ test suites.",
     "SSZ-METRIC_COMPLETE": "Collected SSZ metric derivations, implementations, comparisons and historical strong-field documentation."
+    ,"ssz-recursive-closure-pc": "Executable recursive closure map, odd Sagnac sector and reduced Poincare-Cartan bookkeeping supplement."
   };
   const repositoryCorrections = {
     "segmented-calculation-suite": "Its public description still says singularity-free; P0 supersedes that global claim.",

@@ -85,6 +85,13 @@
       limit: "A transparent count is a forward-model structure, not confirmation; preregistration, calibration, uncertainties and target-blind analysis remain essential.",
       next: ["evidence.html", "Inspect how claims are tied to evidence"]
     },
+    "recursive-closure.html": {
+      question: "How does a finite rest-distance correction close into the Sagnac difference, reduced action bookkeeping and a phase readout?",
+      path: "Start with one direction, inspect the signed recurrence, then switch to the odd sector and compare the finite partial sum with its exact limit.",
+      meaning: "The animation evaluates a declared geometric closure map and its odd directional projection. It makes convergence and sign structure visible without adding new physical assumptions.",
+      limit: "The projected map is not a complete rotating spacetime or symplectic phase-space flow; the reduced action relation still requires a stationary fixed-frequency optical convention and an experimental forward model.",
+      next: ["jif.html", "Compare the phase readout with the JIF detector ledger"]
+    },
     "schrodinger.html": {
       question: "What does the archived one-dimensional eigenproblem demonstrate, and why is it intentionally labelled a scientific toy?",
       path: "Read the Hamiltonian and boundary assumptions first, vary mode and scale, then compare the output with the explicit limitations.",
@@ -186,6 +193,17 @@
         ["Use the interface as an audit trail", "Change one input, read the units and branch, inspect the formula explanation, then follow the linked test and evidence record. A visual is most valuable when it leads to a quantitative question that another person can reproduce. If a conclusion changes under a declared admissible perturbation, that sensitivity is part of the result."],
         ["What the current corpus has established", "The 9,300-record catalogue, 28 test-bearing repositories and captured 1,296-pass runner show broad mathematical, numerical, pipeline and data-facing work. That breadth is real positive evidence about the public computational programme. It does not collapse shared provenance into independent experiments, and it does not remove the remaining observational completion tasks."],
         ["Where to go next", "Theory explains the construction, Metric exposes its coefficients, Regimes and Weak Field test its limits, Strong Field and Interior expose completion issues, Models derive dynamics or phase, and Evidence, Tests, Observations and Reproducibility establish what was actually checked. The tabs are a connected route, not competing summaries." ]
+      ]
+    },
+    "recursive-closure.html": {
+      title: "How recursive closure reconstructs the directional return-time difference",
+      lede: "This supplement turns the geometric correction series into an executable recurrence and then keeps the odd directional sector, reduced action bookkeeping and phase readout visibly separate.",
+      blocks: [
+        ["One signed recurrence", "With T₀=L/c, β=v/c and σ=±1, the signed remaining distance obeys rₙ₊₁=σβrₙ while each step contributes rₙ/c. The sign is bookkeeping for direction; the convergence condition |β|<1 is what makes the closure a contraction."],
+        ["The odd sector is the Sagnac difference", "Subtracting the two direction-reversed limits removes the even powers and leaves 2T₀(β+β³+β⁵+…). The q-recurrence qₖ₊₁=β²qₖ therefore computes exactly the direction-odd sector without re-evaluating both full sums."],
+        ["From return time to reduced action", "At fixed energy in a stationary optical/Hamilton–Jacobi reduction, the odd-sector bookkeeping is ΔIodd=EΔt up to the declared orientation convention. This is a reduced relation, not a claim that the projected two-dimensional map is symplectic."],
+        ["What the Poincaré–Cartan theorem does and does not say", "Hamiltonian transport preserves the Poincaré–Cartan integral of a transported closed extended-phase-space contour. It does not make arbitrary spatial deformations of a ring invariant; changing the oriented rotation flux can change the integral."],
+        ["Phase is the readout layer", "With E=ℏω, the reduced odd action gives Δφ=ωΔt in the selected convention. A detector prediction must still use the detector’s eigenfrequency and proper time, calibration, noise, nuisance parameters and a preregistered comparison rule."]
       ]
     },
     "theory.html": {
@@ -414,6 +432,7 @@
     "mathematics.html": "Across the full catalogue, 202 records are classified as limit tests, 96 as dimensional checks, 86 as numerical tests and 81 as symbolic tests. These categories show that exact structure and numerical behavior are both being examined. Method-specific certificates still matter because a global count cannot substitute for the particular convergence or error bound of one algorithm.",
     "qubits.html": "The qubit phase/compensation domain maps to 1,089 catalogue records, including definitions associated with forward models, uncertainty language, model comparisons and falsification. The dedicated repository was also rerun locally at 184/184 passing. This is strong computational preparation; the unresolved step is controlled hardware data with independent calibration and a preregistered likelihood.",
     "jif.html": "Phase-ledger, stable-difference and compensation logic appears in the extensive quantum/qubit test clusters, not only in the page animation. The existing tests materially reduce risks of sign, unit, limiting and implementation errors. A detector-level claim must add real calibration ownership, noise propagation and target-independent decision rules rather than repeat those already-passed algebraic checks.",
+    "recursive-closure.html": "The dedicated supplement passes six focused tests: finite recurrence versus direct sum, directional reversal, fixed-point residual, odd-sector and axle identities, reduced action bookkeeping, and rejection of |β|≥1. These are exact implementation checks for the declared recurrence, not independent evidence for a rotating gravitational theory or detector result.",
     "visual-lab.html": "The visual modules sit on tested shared physics helpers and are additionally exercised by browser-interaction and numerical regression tests. Their value is therefore more than decorative. Their limitation is representational: display scaling and animation can communicate a tested quantity but cannot create a new evidence class.",
     "workbench.html": "The workbench reads all 9,300 catalogue records and preserves 5,294 unique repository/test definitions rather than flattening them into one count. Its independence and conflict views are consequences of what the audit learned: coverage is broad, but many records share provenance. Sensitivity and negative-control work should build on that breadth, not dismiss it.",
     "evidence.html": "The corpus contains 638 data-comparison records in addition to thousands of implementation checks, and the observable audit maps forward-model and uncertainty-related definitions in several mature domains. Evidence is therefore not confined to algebra. The exact independence of catalogue matches remains a separate provenance question, which is why the ledger records both positive support and dependence.",
@@ -646,6 +665,22 @@
       limit: "A rotating platform demonstration is not a derived rotating SSZ solution. The full g₀i field and observer congruence must be supplied."
     },
     {
+      match: /Delta.*I|Delta.*phi|mathcal.*I|ΔI|Δφ|hbar|ℏ/,
+      title: "Reduced action becomes a phase readout",
+      purpose: "At fixed energy, the declared reduced stationary bookkeeping maps an odd return-time difference into an action difference and then into a dimensionless phase.",
+      reading: "Keep the orientation convention fixed, multiply the time difference by E, and divide the action by ℏ. If using a detector clock, replace coordinate time with the detector proper-time protocol.",
+      meaning: "This is the bridge from the kinematic closure recurrence to an interferometric quantity while keeping the detector layer explicit.",
+      limit: "The reduced relation is not a complete optical Hamiltonian, a proof of symplecticity for the projected map, or an empirical detector prediction without calibration and uncertainty treatment."
+    },
+    {
+      match: /r_\{?n|rₙ|sigma.*beta|σ.*β|t_\{?n\+1/,
+      title: "The signed closure map contracts the remaining distance",
+      purpose: "Each correction multiplies the signed remaining distance by σβ and adds its current light-travel contribution to the accumulated time.",
+      reading: "Initialize r₀=L and t₀=0, choose σ and β, then iterate one step at a time. The finite value is compared with the geometric fixed point only after the same number of declared steps.",
+      meaning: "The recurrence exposes both direction sign and convergence rate, making the closure auditable rather than hiding it in a closed formula.",
+      limit: "This projected bookkeeping map is not a complete rotating spacetime, a symplectic phase-space flow or an empirical timing model."
+    },
+    {
       match: /nabla_\{?\\?mu|∇|F\^\{\\?mu|k_\{\\?mu\}k|Maxwell|geometric optics/i,
       title: "Electromagnetic fields and rays propagate on the declared geometry",
       purpose: "Covariant Maxwell equations govern fields, while the null condition is the leading geometric-optics limit for wave vectors.",
@@ -822,6 +857,7 @@
     [/emergence-canvas|phi-canvas/, "Conceptual pattern geometry", "Change symmetry, wavelength or logarithmic spacing and observe how the pattern reorganizes. Compare the golden-ratio setting with nearby deliberate alternatives.", "The animation demonstrates interference or nested geometric structure and makes parameter dependence visible.", "This module is conceptual. Visual resemblance does not derive the canonical metric or provide experimental evidence."],
     [/jif-phase/, "Counted phase comparison", "Change radius, proper frequency and duration. Watch the SSZ phasor lag or advance relative to the infinity reference and compare the count ledger.", "Angular separation represents accumulated phase difference; the numeric lag converts that angle into cycles.", "Animation speed is scaled for perception. A detector prediction needs calibration, noise and a preregistered phase convention."],
     [/jif-ledger/, "Detector phase ledger", "Adjust emission, transfer, interaction-node and detector contributions one at a time. Check both the unwrapped total and wrapped phase.", "Vector addition preserves the sign and ownership of each contribution, making cancellation and degeneracy visible.", "A wrapped endpoint alone cannot identify which physical contribution caused it; the full ledger must be retained."],
+    [/closure-canvas/, "Recursive closure and odd Sagnac convergence", "Change β and σ, then use Next step or Animate. Read the signed remaining-distance trace above and the odd-sector partial sum below; compare both finite values with their exact limits.", "The upper trace evaluates rₙ₊₁=σβrₙ and the lower trace evaluates qₖ₊₁=β²qₖ. The two limits show geometric convergence and the direction-odd Sagnac difference in normalized units.", "The plot is a declared kinematic recurrence and reduced bookkeeping visualization. It is not a rotating-spacetime solution, a symplecticity proof or a detector measurement."],
     [/math-radial/, "Log-radial eigenmodes", "Vary mode number and log-grid extent. Count nodes and watch how equal screen spacing in x corresponds to multiplicative spacing in r.", "The displayed family explains the coordinate transform and mode structure used by a numerical radial solver.", "It is a normalized teaching reconstruction, not an eigenvalue certificate for every boundary condition."],
     [/math-symplectic/, "Integrator phase-space behavior", "Increase the step size and compare the closed symplectic orbit with explicit Euler. Read the maximum relative energy drift for both.", "Bounded oscillatory error and preserved phase-space area distinguish the symplectic update from secular Euler drift.", "A visually closed curve does not prove adequate accuracy; convergence must still be checked against smaller steps."],
     [/math-chord|chord-canvas/, "Integer-mode chord curve", "Change p and k, especially between coprime and non-coprime pairs. Compare k/p with φ and observe how closure and repetition change.", "The curve is determined exactly by two integer frequencies; gcd and lcm explain its repetition structure.", "The animation demonstrates mathematics, not a unique physical mechanism behind SSZ."],
@@ -985,6 +1021,7 @@
     "reproducibility.html": "What must be frozen and recorded so that another researcher can reproduce a scientific result rather than only rerun a script?",
     "glossary.html": "How do the portal’s symbols, units and evidence labels keep meanings stable across equations, pages and experiments?",
     "schrodinger.html": "What does the archived one-dimensional eigenproblem demonstrate, and why is it intentionally labelled a scientific toy?"
+    ,"recursive-closure.html": "How does a finite rest-distance correction close into the Sagnac difference, reduced action bookkeeping and a phase readout?"
   };
   Object.entries(pageGuides).forEach(([page, guide]) => {
     if (!guide.blocks) return;
@@ -993,7 +1030,7 @@
     guide.path = guide.path || guide.lede;
     guide.meaning = guide.meaning || blocks[0]?.[1] || guide.lede;
     guide.limit = guide.limit || blocks.at(-1)?.[1] || guide.lede;
-    guide.next ||= guideFallbackNext[page] || ["index.html", "Return to the portal overview"];
+    guide.next ||= guideFallbackNext[page] || (page === "recursive-closure.html" ? ["jif.html", "Compare the phase readout with the JIF detector ledger"] : ["index.html", "Return to the portal overview"]);
   });
   const allFoundationChapters = {...foundationChapters};
   Object.entries(pageGuides).filter(([,value]) => value.blocks).forEach(([page,value]) => { allFoundationChapters[page] = value; });
@@ -1015,14 +1052,10 @@
       const group = (label, entries) => `<details class="nav-group"${entries.some(([href])=>href===here)?" open":""}><summary>${label}</summary><div class="nav-submenu">${entries.map(([href,text])=>link(href,text)).join("")}</div></details>`;
       menu.innerHTML = [
         link("index.html","Overview"),
-        group("Learn", [["theory.html","Theory"],["formulas.html","Formulas"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["glossary.html","Glossary"]]),
-        group("Models", [["metric.html","Metric"],["dynamics-energy.html","Dynamics & Energy"],["mathematics.html","Mathematics"],["qubits.html","Qubits"]]),
-        link("jif.html","JIF"),
-        link("schrodinger.html","QM wink"),
-        link("visual-lab.html","Visual lab"),
-        group("Evidence", [["workbench.html","Workbench"],["tests.html","Tests"],["evidence.html","Evidence"],["falsification.html","Falsification"]]),
-        group("Research", [["observations.html","Observables"],["papers.html","Papers"],["research.html","Research archive"],["repositories.html","Repositories"],["atlas.html","Atlas"]]),
-        link("reproducibility.html","Reproduce"),
+        group("Foundations", [["theory.html","Theory"],["formulas.html","Formulas"],["metric.html","Metric"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"]]),
+        group("Methods & labs", [["dynamics-energy.html","Dynamics & Energy"],["mathematics.html","Mathematics"],["qubits.html","Qubits"],["jif.html","JIF counted phase"],["recursive-closure.html","Recursive closure"],["schrodinger.html","QM wink"],["visual-lab.html","Visual lab"]]),
+        group("Evidence", [["tests.html","Tests"],["evidence.html","Evidence"],["falsification.html","Falsification"],["workbench.html","Workbench"],["reproducibility.html","Reproduce"]]),
+        group("Research map", [["observations.html","Observables"],["papers.html","Papers"],["research.html","Research archive"],["repositories.html","Repositories"],["atlas.html","Atlas"],["glossary.html","Glossary"]]),
         `<button class="nav-button reviewer-toggle" data-reviewer-toggle aria-pressed="${root.dataset.reviewer==="true"}">${root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF"}</button><button class="nav-button" data-theme-toggle>◐ Theme</button>`
       ].join("");
     }

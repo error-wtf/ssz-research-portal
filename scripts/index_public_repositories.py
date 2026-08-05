@@ -36,6 +36,7 @@ PHYSICS = {
     "ssz-ligo-tests", "SSZ-METRIC_COMPLETE",
     "ssz-jif-core", "ssz-jif-forward-lab",
     "ssz-jif-bounded-physical-fusion", "ssz-hilfsdateien",
+    "ssz-recursive-closure-pc",
 }
 BOTH = {"chord-partition", "ssz-radial-scaling", "pardon-symplectic-geometry-ssz-lab"}
 P0_NOTES = {
@@ -46,6 +47,10 @@ P0_NOTES = {
     "segmented-calculation-suite": (
         "The public repository description uses a pre-P0 singularity-free claim; "
         "the portal does not treat that wording as canonical."
+    ),
+    "ssz-recursive-closure-pc": (
+        "Mathematical/software supplement: the projected closure map and reduced "
+        "action bookkeeping are not a complete rotating spacetime or empirical result."
     ),
 }
 

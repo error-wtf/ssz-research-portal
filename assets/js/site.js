@@ -928,6 +928,15 @@
     const source = `${heading} ${text}`;
     const h = heading.toLowerCase();
     const scoped = (title, purpose, reading, meaning, limit) => ({title, purpose, reading, meaning, limit});
+    if (/^at .*r.*r.?s/.test(h)) return formulaRules.find(rule => /horizon-radius values/.test(rule.title));
+    if (/required calculation/.test(h)) return formulaRules.find(rule => /Geodesic dynamics/.test(rule.title));
+    if (/static diagonal ansatz/.test(h) && /D|Xi|A=|AB=/.test(text)) return formulaRules.find(rule => /One field generates/.test(rule.title));
+    if (/c² bridge|c2 bridge/.test(h)) return formulaRules.find(rule => /quintic Hermite/.test(rule.title));
+    if (/horizon result/.test(h) && /A.*(?:→|to|1.?4)|R.*(?:sim|~)/i.test(text)) return formulaRules.find(rule => /Invariant asymptotics/.test(rule.title));
+    if (/waveform inference|classical structure|counter-propagating signals/.test(h)) return formulaRules.find(rule => /Counter-propagating/.test(rule.title));
+    if (/^mathematical$/.test(h) || /test identities and limits/.test(h)) return formulaRules.find(rule => /One field generates/.test(rule.title));
+    if (/null paths/.test(h) && /alpha|γ|impact|b/.test(text)) return formulaRules.find(rule => /Impact geometry/.test(rule.title));
+    if (/canonical weak branch/.test(h) && /D\(/.test(text)) return formulaRules.find(rule => /One field generates/.test(rule.title));
     // Headings are a semantic namespace. They take precedence over broad
     // symbol matches so a shared symbol such as D, A, Γ or Δt cannot borrow
     // an explanation from a neighbouring formula family.

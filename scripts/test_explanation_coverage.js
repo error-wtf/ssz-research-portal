@@ -32,6 +32,17 @@ const semanticChecks = [
 for (const [formula, expected] of semanticChecks) {
   assert.match(explainers.ruleForFormula(formula, "").title, new RegExp(expected, "i"), `semantic explanation mismatch for ${formula}`);
 }
+const headingChecks = [
+  ["Detector layer", "\\Delta t_{\\rm axle}...", "detector layer converts"],
+  ["Connection", "\\Gamma^\\rho_{\\mu\\nu}...", "Christoffel symbols"],
+  ["Curvature", "R^\\rho_{\\sigma\\mu\\nu}...", "Riemann tensor"],
+  ["Sagnac difference", "q_0=2hT_0\\beta...", "odd-sector recurrence"],
+  ["Two observational routes", "T_{kin}=2\\pi R_0/\\Theta_0...", "Kinematic and proper-motion"],
+  ["Hamiltonian flow and area preservation", "p_{n+1}=p_n-h\\omega^2q_n...", "symplectic update"]
+];
+for (const [heading, formula, expected] of headingChecks) {
+  assert.match(explainers.ruleForFormula(formula, heading).title, new RegExp(expected, "i"), `heading explanation mismatch for ${heading}`);
+}
 
 const pages = fs.readdirSync(".").filter(name => name.endsWith(".html"));
 let formulaCount = 0;

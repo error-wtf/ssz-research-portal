@@ -133,7 +133,7 @@
         "independent_reproduction": "open",
         "falsification": "partial"
       },
-      "audit_note": "Public Lagrange/Hamilton and trajectory repositories derive and test static-metric timelike geodesics, conserved quantities and turning points; rotating source-environment fits are a later layer."
+      "audit_note": "Public Lagrange/Hamilton and trajectory repositories derive and test static-metric timelike geodesics, conserved quantities and turning points; rotating source-environment forward dynamics are a later layer."
     },
     {
       "domain": "Null geodesics",
@@ -293,7 +293,7 @@
         "independent_reproduction": "open",
         "falsification": "partial"
       },
-      "audit_note": "No complete SSZ radiative-transfer fit."
+      "audit_note": "No complete SSZ radiative-transfer forward model; the existing geometric comparison remains explicitly scoped."
     },
     {
       "domain": "EHT-scale tests",

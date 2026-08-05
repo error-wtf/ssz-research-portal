@@ -82,6 +82,7 @@ summary:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .brand-mark {
   width: 2.35rem; height: 2.35rem; display: grid; place-items: center;
   border-radius: 50%; border: 2px solid var(--gold); color: var(--gold); font-weight: 800;
+  animation: ssz-logo-breathe 4.8s ease-in-out infinite;
 }
 .brand small { display: block; color: var(--muted); font-size: .67rem; letter-spacing: .08em; }
 .nav-links { margin-left: auto; display: flex; align-items: center; gap: .2rem; flex-wrap: wrap; }
@@ -132,9 +133,14 @@ h3 { margin-top: 0; }
 .hero-orbit::before, .hero-orbit::after {
   content: ""; position: absolute; border: 1px solid var(--gold); border-radius: 50%;
   width: 70%; height: 70%; transform: rotate(25deg) scaleY(.42);
+  animation: ssz-orbit-drift 12s ease-in-out infinite;
 }
-.hero-orbit::after { width: 92%; height: 92%; transform: rotate(-25deg) scaleY(.45); opacity: .45; }
-.orbit-core { font-size: 4.5rem; color: var(--gold); font-weight: 300; }
+.hero-orbit::after { width: 92%; height: 92%; transform: rotate(-25deg) scaleY(.45); opacity: .45; animation-delay:-6s; }
+.orbit-core { font-size: 4.5rem; color: var(--gold); font-weight: 300; animation:ssz-core-pulse 4.8s ease-in-out infinite; }
+@keyframes ssz-logo-breathe { 0%,100% { transform:scale(1); } 50% { transform:scale(1.06); } }
+@keyframes ssz-orbit-drift { 0%,100% { rotate:0deg; scale:1 1; opacity:.72; } 50% { rotate:7deg; scale:1.035 .965; opacity:1; } }
+@keyframes ssz-core-pulse { 0%,100% { opacity:.78; } 50% { opacity:1; text-shadow:0 0 1.2rem color-mix(in srgb,var(--gold) 45%,transparent); } }
+@media (prefers-reduced-motion:reduce) { .brand-mark,.hero-orbit::before,.hero-orbit::after,.orbit-core { animation:none; } }
 .actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.6rem; }
 .button {
   display: inline-flex; gap: .45rem; align-items: center; padding: .75rem 1rem;

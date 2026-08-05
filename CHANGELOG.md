@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-08-05 — Closure synchronization and count semantics
+
+- Synchronized the Recursive Closure canvas with the two directed partial sums, fixed the explicit `r`/`d` series-key bug, and kept the odd sector at zero before its first shared step.
+- Added normalized-unit labels, Poincare–Cartan form and contour notation, exact directed/odd tails, loop-integral context, detector proper-time separation and notation-safe `ℓₙ`/`𝒜` symbols.
+- Added a shared repository/test-count legend: 48 public GitHub repositories, 36 classified physics/mathematics projects, 38 local atlas entries and 28 test-bearing repositories; 9,300 remains a catalogue-record count.
+- Completed the Content Map for all current research, evidence, application and laboratory tabs.
+
 ## 2026-08-05 — Public JIF research tab and catalogue refresh
 
 - Added a dedicated JIF navigation tab with the public paper/timestamp/rights notice, canonical counted-phase definitions, two accessible interactive Canvas laboratories, an animated anti-circular workflow and a four-repository constellation.

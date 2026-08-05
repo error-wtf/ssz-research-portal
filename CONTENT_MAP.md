@@ -10,9 +10,18 @@
 | `visual-lab.html` | seven self-hosted interactive modules for segmentation, metric scaling, lensing, null potential, starmaps, rotation and curvature |
 | `atlas.html` | interactive constellation and detailed source/result cards for all 38 public-scope local physics and mathematics repositories |
 | `strong-field.html` | horizon, observables, P0 interior correction, falsification, roadmap |
+| `metric.html` | canonical metric coefficients, velocity identities, local frames and interactive metric explorer |
+| `weak-field.html` | weak-potential expansion, PPN compatibility, stable residuals and reference-scale checks |
+| `interior-global-structure.html` | central asymptotics, curvature diagnosis, junction conditions and global-completion requirements |
+| `dynamics-energy.html` | action-based motion, effective potentials, conserved quantities and energy diagnostics |
 | `tests.html` | evidence ladder and searchable public-scope test catalogue |
 | `repositories.html` | repository graph, all 36 public physics/mathematics repositories, filters, public metadata and P0 scope notes |
 | `reproducibility.html` | architecture, code rules, precision, provenance, release, security |
+| `evidence.html` | claim/evidence ledger, evidence classes, provenance and non-inferences |
+| `falsification.html` | tested failure modes, evidence ladder, conflicts and decisive next tests |
+| `observations.html` | data-facing applications, forward-model maturity and observation boundaries |
+| `workbench.html` | sensitivity, conflict, independence, interior and falsification audit laboratories |
+| `qubits.html` | stable phase difference, compensation, entanglement proxy and hardware boundary |
 | `glossary.html` | symbols, glossary and critical FAQ |
 | `formulas.html` | formula-by-formula units, domains, code, tests and guardrails |
 | `regimes.html` | branch domains, C² endpoint conditions, validity boundaries and an interactive transition microscope |

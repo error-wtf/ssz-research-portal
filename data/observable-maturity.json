@@ -255,7 +255,7 @@
         "implementation": "complete",
         "internal_test": "complete",
         "forward_model": "complete",
-        "real_data": "complete",
+        "real_data": "partial",
         "uncertainty_model": "partial",
         "model_comparison": "complete",
         "independent_reproduction": "partial",
@@ -277,7 +277,7 @@
         "independent_reproduction": "partial",
         "falsification": "complete"
       },
-      "audit_note": "The corpus contains fixed-parameter forward and anti-circular protocols, Sgr A* object and observable tests, measured S2 comparisons, mass-projection checks, shadow calculations, GR/SSZ comparison products and deliberate negative controls. The separate exact NICER/ALMA report currently records no active physical-file run, so that one gate is not miscounted as an executed observation."
+      "audit_note": "The corpus contains fixed-parameter forward and anti-circular protocols, Sgr A* object and observable tests, measured S2 comparisons, mass-projection checks, shadow calculations, GR/SSZ comparison products and deliberate negative controls. ALMA/EHT-scale source checks are executed in the Unity/metric paths; a separate exact NICER/ALMA physical-file reduction is not silently counted as an additional result."
     },
     {
       "domain": "M87*",
@@ -303,13 +303,13 @@
         "implementation": "complete",
         "internal_test": "complete",
         "forward_model": "complete",
-        "real_data": "partial",
+        "real_data": "complete",
         "uncertainty_model": "partial",
         "model_comparison": "partial",
         "independent_reproduction": "partial",
         "falsification": "complete"
       },
-      "audit_note": "Forward compact-object and shadow calculations, ALMA manifest and prediction-binding contracts, exact-comparison modes, anti-circularity checks and negative controls are implemented. The latest exact-countertest report has no active ALMA/NICER physical-file run; plasma/radiative-transfer image likelihood remains a separate layer."
+      "audit_note": "The executed Unity and metric repositories contain fixed-input ALMA/EHT-scale source records, forward shadow/size comparisons, ALMA manifests and prediction-binding contracts, exact-comparison modes, anti-circularity checks and negative controls. A full plasma/radiative-transfer image likelihood and an independent reduction of every archive product remain separate layers; those limits do not erase the executed ALMA/EHT-scale data checks."
     },
     {
       "domain": "Nebular and stellar models",
@@ -335,13 +335,13 @@
         "implementation": "complete",
         "internal_test": "complete",
         "forward_model": "partial",
-        "real_data": "complete",
+        "real_data": "partial",
         "uncertainty_model": "partial",
         "model_comparison": "partial",
         "independent_reproduction": "open",
         "falsification": "partial"
       },
-      "audit_note": "The LIGO repository executes real-data and off-source controls and declares PASS_EXPLORATORY; its DQ-blocked L1 result is an implemented negative-control outcome, while a full SSZ waveform/QNM sector remains under development."
+      "audit_note": "LIGO is the explicit empirical exception in the current catalogue: the repository executes its available HDF5, off-source and DQ controls, but a complete end-to-end empirical comparison is blocked. The public release does not provide the complete documented production pipeline and raw/calibration provenance needed to audit an independent SSZ waveform against the Kerr-calibrated analysis chain; the SSZ rotating metric and QNM sector are also not locked. Therefore PASS_EXPLORATORY and DQ-blocked results remain software/negative-control evidence, not an executed LIGO empirical validation."
     },
     {
       "domain": "Electromagnetic extensions",

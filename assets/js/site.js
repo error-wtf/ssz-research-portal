@@ -912,9 +912,17 @@
   };
 
   function headingFor(element) {
-    return element.closest("section,article")?.querySelector("h2,h3")?.textContent.trim()
-      || element.previousElementSibling?.textContent.trim()
-      || document.title;
+    const article = element.closest("article");
+    const articleHeading = article?.querySelector("h3,h2");
+    if (articleHeading) return articleHeading.textContent.trim();
+    const section = element.closest("section");
+    if (section) {
+      const preceding = [...section.querySelectorAll("h2,h3")]
+        .filter(heading => heading.compareDocumentPosition(element) & 4)
+        .pop();
+      if (preceding) return preceding.textContent.trim();
+    }
+    return element.previousElementSibling?.textContent.trim() || document.title;
   }
   function ruleForFormula(text, heading = "") {
     const source = `${heading} ${text}`;

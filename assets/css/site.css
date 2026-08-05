@@ -554,6 +554,9 @@ details[open] summary { margin-bottom: .7rem; }
 }
 .jif-canvas:focus { outline:3px solid var(--gold); outline-offset:3px; }
 .qm-notice { background:linear-gradient(135deg,#eef4ff 0%,#fff7dc 100%); border-color:#7c3aed; }
+[data-theme="dark"] .qm-notice { background:linear-gradient(135deg,#172554 0%,#332714 100%); border-color:#a78bfa; color:var(--text); }
+[data-theme="dark"] .qm-notice h2, [data-theme="dark"] .qm-notice strong { color:var(--deep); }
+[data-theme="dark"] .qm-notice .publication-notice-scope { color:#cbd5e1; }
 .qm-cat-orbit { position:relative; display:grid; place-items:center; min-height:280px; font-size:5rem; color:#7c3aed; border:1px solid var(--line); border-radius:50%; background:radial-gradient(circle,#fff 0 16%,transparent 17%),linear-gradient(135deg,rgba(124,58,237,.13),transparent 65%); box-shadow:0 0 0 18px rgba(124,58,237,.04),0 0 0 38px rgba(124,58,237,.025); animation:qm-float 4s ease-in-out infinite; }
 .qm-cat-orbit i { position:absolute; width:72%; height:72%; border:2px dashed rgba(124,58,237,.35); border-radius:50%; animation:qm-spin 12s linear infinite; }
 .qm-cat-orbit b { position:absolute; right:18%; top:17%; font-size:2rem; color:#b8860b; animation:qm-blink 2.4s ease-in-out infinite; }

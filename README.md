@@ -27,6 +27,7 @@ node scripts/test_physics.js
 node scripts/test_jif.js
 node scripts/test_page_guides.js
 node scripts/test_explanation_coverage.js
+node scripts/test_foundational_synthesis.js
 node scripts/test_qubit_lab.js
 ```
 

@@ -26,8 +26,7 @@
   function buildModel() {
     const beta = Number(betaEl.value), sigma = Number(sigmaEl.value), max = Number(stepsEl.value);
     const signed = signedSeries(beta, sigma, max), comparison = signedSeries(beta, -sigma, max), odd = [];
-    let q = 2 * beta, d = 0, dComp = 0;
-    for (let n = 0; n < max; n += 1) { const term = q - dComp, next = d + term; dComp = (next - d) - term; d = next; odd.push({ n: n + 1, d }); q *= beta * beta; }
+    for (let n = 0; n <= max; n += 1) odd.push({ n, d: signed[n].t - comparison[n].t });
     return { beta, sigma, max, signed, comparison, odd, limit: stableGeometricLimit(sigma * beta), oddLimit: 2 * beta / ((1 - beta) * (1 + beta)) };
   }
   function setup() {
@@ -45,15 +44,15 @@
     axes(top, `signed remaining rₙ / L · σ=${v.sigma}`); axes(bot, "odd partial Δtₙ / T₀");
     c.setLineDash([4, 4]); c.strokeStyle = gold; c.beginPath(); c.moveTo(top.l, topY(0)); c.lineTo(top.r, topY(0)); c.stroke(); c.setLineDash([]);
     const whole = Math.min(v.max, Math.floor(position)), alpha = Math.max(0, Math.min(1, position - whole));
-    const drawSeries = (points, y, color, limit) => { c.strokeStyle = color; c.lineWidth = 2.5; c.beginPath(); points.slice(0, whole + 1).forEach((p, i) => { const px = x(p.n), py = y(p[limit ? "d" : "r"]); i ? c.lineTo(px, py) : c.moveTo(px, py); }); if (whole < limit.length - 1) { const a = points[whole], b = points[whole + 1]; c.lineTo(x(a.n + alpha), y(a[limit ? "d" : "r"] + (b[limit ? "d" : "r"] - a[limit ? "d" : "r"]) * alpha)); } c.stroke(); points.slice(0, whole + 1).forEach(p => { c.fillStyle = color; c.beginPath(); c.arc(x(p.n), y(p[limit ? "d" : "r"]), 4, 0, Math.PI * 2); c.fill(); }); if (whole < limit.length - 1 && alpha > 0) { const a = points[whole], b = points[whole + 1], val = a[limit ? "d" : "r"] + (b[limit ? "d" : "r"] - a[limit ? "d" : "r"]) * alpha; c.shadowBlur = 18; c.shadowColor = color; c.fillStyle = color; c.beginPath(); c.arc(x(a.n + alpha), y(val), 7, 0, Math.PI * 2); c.fill(); c.shadowBlur = 0; } };
-    drawSeries(v.signed, z => topY(Math.max(-1, Math.min(1, z))), blue, v.signed);
-    if (compareEl?.checked) { c.save(); c.globalAlpha = .28; drawSeries(v.comparison, z => topY(Math.max(-1, Math.min(1, z))), gold, v.comparison); c.restore(); }
-    drawSeries(v.odd, botY, gold, v.odd);
+    const drawSeries = (points, y, color, valueKey) => { const value = point => point[valueKey]; c.strokeStyle = color; c.lineWidth = 2.5; c.beginPath(); points.slice(0, whole + 1).forEach((p, i) => { const px = x(p.n), py = y(value(p)); i ? c.lineTo(px, py) : c.moveTo(px, py); }); if (whole < points.length - 1) { const a = points[whole], b = points[whole + 1]; c.lineTo(x(a.n + alpha), y(value(a) + (value(b) - value(a)) * alpha)); } c.stroke(); points.slice(0, whole + 1).forEach(p => { c.fillStyle = color; c.beginPath(); c.arc(x(p.n), y(value(p)), 4, 0, Math.PI * 2); c.fill(); }); if (whole < points.length - 1 && alpha > 0) { const a = points[whole], b = points[whole + 1], val = value(a) + (value(b) - value(a)) * alpha; c.shadowBlur = 18; c.shadowColor = color; c.fillStyle = color; c.beginPath(); c.arc(x(a.n + alpha), y(val), 7, 0, Math.PI * 2); c.fill(); c.shadowBlur = 0; } };
+    drawSeries(v.signed, z => topY(Math.max(-1, Math.min(1, z))), blue, "r");
+    if (compareEl?.checked) { c.save(); c.globalAlpha = .28; drawSeries(v.comparison, z => topY(Math.max(-1, Math.min(1, z))), gold, "r"); c.restore(); }
+    drawSeries(v.odd, botY, gold, "d");
     // A shared moving cursor makes the continuous interpolation unmistakable
     // even when successive geometric points are numerically close.
     const cursorX = x(Math.min(v.max, position));
     c.strokeStyle = dark ? "#f8fafc88" : "#0f172a66"; c.lineWidth = 1.5; c.setLineDash([3, 5]); c.beginPath(); c.moveTo(cursorX, top.t); c.lineTo(cursorX, bot.b); c.stroke(); c.setLineDash([]);
-    const currentSigned = v.signed[Math.min(whole, v.max)], nextSigned = v.signed[Math.min(whole + 1, v.max)], currentOdd = v.odd[Math.max(0, Math.min(v.odd.length - 1, whole - 1))], nextOdd = v.odd[Math.max(0, Math.min(v.odd.length - 1, whole))];
+    const currentSigned = v.signed[Math.min(whole, v.max)], nextSigned = v.signed[Math.min(whole + 1, v.max)], currentOdd = v.odd[Math.min(whole, v.max)], nextOdd = v.odd[Math.min(whole + 1, v.max)];
     const currentTime = currentSigned ? currentSigned.t + ((nextSigned?.t ?? currentSigned.t) - currentSigned.t) * alpha : 0;
     const currentOddValue = currentOdd ? currentOdd.d + ((nextOdd?.d ?? currentOdd.d) - currentOdd.d) * alpha : 0;
     c.fillStyle = muted; c.fillText(`finite: ${fmt(currentTime)} · exact: ${fmt(v.limit)}`, top.l, top.b + 25); c.fillText(`odd: ${fmt(currentOddValue)} · exact: ${fmt(v.oddLimit)}`, bot.l, bot.b + 25);

@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-03",
+  "generated": "2026-08-05",
   "root_reference": "physics/",
-  "count": 34,
+  "count": 38,
   "repositories": [
     {
       "name": "CALCULATION_OF_NUMBER_PI",
@@ -2217,6 +2217,66 @@
         "physics/ssz-theory-readiness/scripts/audit_16_point_readiness.py"
       ],
       "scope_note": ""
+    },
+    {
+      "name": "ssz-jif-core",
+      "summary": "Reference implementation of counted phase in the SSZ research framework.",
+      "domain": "theory-and-verification",
+      "roles": ["Theory", "Tests", "Documentation"],
+      "public_url": "https://github.com/error-wtf/ssz-jif-core",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "856d46b97eaf",
+      "counts": {"files": 330, "bytes": 2919631, "tests": 66, "documents": 113, "images": 8, "code": 174},
+      "languages": [{"extension": ".py", "count": 174}, {"extension": ".md", "count": 113}],
+      "key_documents": ["physics/ssz-jif-core/README.md", "physics/ssz-jif-core/docs/SOURCES.md"],
+      "result_files": ["physics/ssz-jif-core/reports/test_report_latest.md"],
+      "scope_note": "Counted-phase implementation and software validation; not empirical confirmation by itself."
+    },
+    {
+      "name": "ssz-jif-forward-lab",
+      "summary": "Anti-circular SSZ/JIF forward models and astrophysical diagnostics.",
+      "domain": "forward-models-and-data",
+      "roles": ["Tests", "Data", "Simulation"],
+      "public_url": "https://github.com/error-wtf/ssz-jif-forward-lab",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "90eb4eb594ca",
+      "counts": {"files": 2255, "bytes": 298990325, "tests": 81, "documents": 176, "images": 19, "code": 279},
+      "languages": [{"extension": ".py", "count": 279}, {"extension": ".md", "count": 176}],
+      "key_documents": ["physics/ssz-jif-forward-lab/README.md", "physics/ssz-jif-forward-lab/CLAIMS_AND_LIMITS.md"],
+      "result_files": ["physics/ssz-jif-forward-lab/results/FINAL_REPORT_DE.md"],
+      "scope_note": "Retrospective target-blind research is not prospective investigator-blinded confirmation."
+    },
+    {
+      "name": "ssz-jif-bounded-physical-fusion",
+      "summary": "Bounded, anti-circular burst-to-radio physical fusion research snapshot.",
+      "domain": "forward-models-and-data",
+      "roles": ["Tests", "Data", "Simulation"],
+      "public_url": "https://github.com/error-wtf/ssz-jif-bounded-physical-fusion",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "a47538a016c1",
+      "counts": {"files": 1890, "bytes": 290112997, "tests": 43, "documents": 126, "images": 4, "code": 137},
+      "languages": [{"extension": ".py", "count": 137}, {"extension": ".md", "count": 126}],
+      "key_documents": ["JIF/ssz-jif-bounded-physical-fusion/README.md", "JIF/ssz-jif-bounded-physical-fusion/CLAIMS_AND_LIMITS.md"],
+      "result_files": ["JIF/ssz-jif-bounded-physical-fusion/results/V1_9_BOUNDED_FUSION_REPORT_DE.md"],
+      "scope_note": "Bounded-input and closure research; missing inputs remain explicitly open."
+    },
+    {
+      "name": "ssz-hilfsdateien",
+      "summary": "Curated SSZ and JIF research companion, formulas, audits, and indexes.",
+      "domain": "documentation",
+      "roles": ["Documentation", "Research"],
+      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien",
+      "archived": true,
+      "default_branch": "main",
+      "commit": "bfd3e28801d9",
+      "counts": {"files": 2305, "bytes": 50145264, "tests": 24, "documents": 2303, "images": 0, "code": 0},
+      "languages": [{"extension": ".md", "count": 2303}],
+      "key_documents": ["physics/hilfsdateien/README.md", "physics/hilfsdateien/index_hilfsdateien.md"],
+      "result_files": ["physics/hilfsdateien/SSZ_COMPREHENSIVE_TEST_AUDIT_REPORT.md"],
+      "scope_note": "Documentation companion; inclusion does not independently establish an empirical claim."
     },
     {
       "name": "ssz-trajectories",

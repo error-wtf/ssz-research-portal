@@ -1,8 +1,8 @@
 {
-  "pages_audited": 23,
-  "repositories_audited": 34,
+  "pages_audited": 24,
+  "repositories_audited": 38,
   "test_catalog_records": 9300,
-  "page_issue_count": 23,
+  "page_issue_count": 20,
   "issues": [
     {
       "page": "portal",
@@ -33,24 +33,6 @@
       "severity": "warning",
       "issue": "repository lacks direct public link",
       "detail": "SSZ-METRIC_COMPLETE"
-    },
-    {
-      "page": "portal",
-      "severity": "warning",
-      "issue": "repository only in catalogue/atlas",
-      "detail": "claudes-cycles"
-    },
-    {
-      "page": "portal",
-      "severity": "warning",
-      "issue": "repository lacks direct public link",
-      "detail": "claudes-cycles"
-    },
-    {
-      "page": "portal",
-      "severity": "warning",
-      "issue": "repository only in catalogue/atlas",
-      "detail": "hilfsdateien"
     },
     {
       "page": "portal",
@@ -259,10 +241,16 @@
     {
       "repository": "claudes-cycles",
       "public_url": "https://github.com/error-wtf/claudes-cycles",
-      "content_pages": [],
-      "direct_link_pages": [],
-      "interactive_context_pages": [],
-      "coverage_status": "catalogue-only"
+      "content_pages": [
+        "mathematics.html"
+      ],
+      "direct_link_pages": [
+        "mathematics.html"
+      ],
+      "interactive_context_pages": [
+        "mathematics.html"
+      ],
+      "coverage_status": "interactive"
     },
     {
       "repository": "counterexample-commons",
@@ -339,10 +327,14 @@
     {
       "repository": "hilfsdateien",
       "public_url": "https://github.com/error-wtf/ssz-hilfsdateien.git",
-      "content_pages": [],
+      "content_pages": [
+        "jif.html"
+      ],
       "direct_link_pages": [],
-      "interactive_context_pages": [],
-      "coverage_status": "catalogue-only"
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
     },
     {
       "repository": "pardon-symplectic-geometry-ssz-lab",
@@ -542,6 +534,62 @@
       "coverage_status": "catalogue-only"
     },
     {
+      "repository": "ssz-jif-core",
+      "public_url": "https://github.com/error-wtf/ssz-jif-core",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-jif-forward-lab",
+      "public_url": "https://github.com/error-wtf/ssz-jif-forward-lab",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-jif-bounded-physical-fusion",
+      "public_url": "https://github.com/error-wtf/ssz-jif-bounded-physical-fusion",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-hilfsdateien",
+      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
       "repository": "ssz-trajectories",
       "public_url": "https://github.com/error-wtf/ssz-trajectories",
       "content_pages": [
@@ -557,8 +605,8 @@
     }
   ],
   "coverage_summary": {
-    "interactive": 18,
-    "catalogue-only": 10,
+    "interactive": 24,
+    "catalogue-only": 8,
     "explained": 6
   }
 }

@@ -47,7 +47,7 @@ def main():
     assert all_public, "public repository catalogue is empty"
     assert research_public, "physics/mathematics catalogue is empty"
     atlas = json.loads((ROOT / "data/physics-atlas.json").read_text(encoding="utf-8"))
-    assert atlas["count"] == 34, "public non-private physics atlas coverage incomplete"
+    assert atlas["count"] == 38, "public non-private physics atlas coverage incomplete"
     papers = json.loads((ROOT / "data/papers.json").read_text(encoding="utf-8"))
     observations = json.loads((ROOT / "data/observations.json").read_text(encoding="utf-8"))
     formulas = json.loads((ROOT / "data/formulas.json").read_text(encoding="utf-8"))
@@ -77,9 +77,6 @@ def main():
         if path.is_file() and ".git" not in path.parts and "source-template" not in path.parts
         and path.suffix.lower() in {".html", ".js", ".css", ".json", ".md", ".py"}
     )
-    private_markers = ("ji" + "f", "joint " + "interval framework")
-    for marker in private_markers:
-        assert marker not in publishable.lower(), f"private research marker published: {marker}"
     private_book_markers = ("ssz_" + "book_en", "segmented-spacetime-" + "book")
     for marker in private_book_markers:
         assert marker not in publishable.lower(), f"private book artefact published: {marker}"
@@ -102,9 +99,14 @@ def main():
                       "artifact-category-chart", "artifact-quantity-chart",
                       "snapshot-chart", "diagnostic-chart"):
         assert f'id="{canvas_id}"' in tests_page, f"missing evaluation visual: {canvas_id}"
-    assert len(list(ROOT.glob("*.html"))) >= 23
-    for page in ("evidence.html", "interior-global-structure.html", "falsification.html", "workbench.html", "qubits.html", "weak-field.html"):
+    assert len(list(ROOT.glob("*.html"))) >= 24
+    for page in ("evidence.html", "interior-global-structure.html", "falsification.html", "workbench.html", "qubits.html", "weak-field.html", "jif.html"):
         assert (ROOT / page).exists(), f"missing scientific audit page: {page}"
+    jif = (ROOT / "jif.html").read_text(encoding="utf-8")
+    for marker in ("PUBLIC RESEARCH TIMESTAMP NOTICE", "expected to follow by the end of 2026",
+                   "reserve all rights not expressly granted under the license",
+                   "jif-phase-canvas", "jif-ledger-canvas"):
+        assert marker.lower() in jif.lower(), f"missing JIF publication boundary: {marker}"
     certificates = json.loads((ROOT / "data/strong-field-certificates.json").read_text())
     assert certificates["precision_decimal_digits"] >= 50
     assert certificates["sensitivity"]["variant_count"] == 27

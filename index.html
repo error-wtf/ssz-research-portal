@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="A provenance-first, interactive research portal for Segmented Spacetime (SSZ).">
   <title>Segmented Spacetime — Research Portal</title>
-  <link rel="stylesheet" href="assets/css/site.css?v=20260803.10">
-  <script defer src="assets/js/site.js?v=20260803.11"></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=20260805.1">
+  <script defer src="assets/js/site.js?v=20260805.1"></script>
+  <script defer src="assets/js/mathjax-config.js?v=20260803.5"></script>
+  <script defer src="assets/vendor/mathjax/tex-svg.js"></script>
   <script defer src="assets/js/physics.js"></script>
 </head>
 <body>
@@ -36,6 +38,7 @@
       <p class="lead">An inspectable public research portal for SSZ: geometry, observables, source code, test evidence, falsification criteria, conflicts, papers, and the unresolved interior problem.</p>
       <div class="actions">
         <a class="button primary" href="#dashboard">Explore the metric</a>
+        <a class="button" href="jif.html">Explore JIF counted phase</a>
         <a class="button" href="visual-lab.html">Open the interactive visual lab</a>
         <a class="button" href="theory.html">Read the theory from first principles</a>
         <a class="button" href="reproducibility.html">Reproduce the work</a>
@@ -76,7 +79,7 @@
       <article class="card metric-card"><strong>18,308</strong><span>inventoried files</span></article>
       <article class="card metric-card"><strong>16,245</strong><span>text sources indexed</span></article>
       <article class="card metric-card"><strong>9,300</strong><span>publishable test definitions and result artefacts catalogued</span></article>
-      <article class="card metric-card"><strong>34</strong><span>public-scope local repositories mapped</span></article>
+      <article class="card metric-card"><strong>38</strong><span>public-scope local repositories mapped</span></article>
     </div>
     <p><small>Counts are generated from the current local corpus. They are inventory counts, not claims of independent scientific confirmation.</small></p>
   </section>
@@ -116,9 +119,9 @@
       <div class="chart-wrap"><canvas id="metric-chart" aria-label="Interactive plot of SSZ and Schwarzschild reference quantities"></canvas></div>
     </div>
     <div class="grid grid-3" style="margin-top:1rem">
-      <article class="card"><h3>Strong branch</h3><div class="formula">Ξ<sub>strong</sub>(r)=1−exp(−φr<sub>s</sub>/r)</div><p>Operative for r/r<sub>s</sub>&lt;1.8. It gives Ξ(r<sub>s</sub>)≈0.801711847.</p></article>
-      <article class="card"><h3>C² blend</h3><div class="formula">Ξ(r)=H<sub>5</sub>(t)</div><p>Values, slopes, and curvatures are matched at both endpoints. The original dashboard’s simplified cubic smoothstep has been corrected.</p></article>
-      <article class="card"><h3>Weak branch</h3><div class="formula">Ξ<sub>weak</sub>(r)=r<sub>s</sub>/(2r)</div><p>Operative for r/r<sub>s</sub>&gt;2.2 and asymptotically flat.</p></article>
+      <article class="card"><h3>Strong branch</h3><div class="formula">\[\Xi_{\mathrm{strong}}(r)=1-\exp\!\left(-\varphi\frac{r_s}{r}\right)\]</div><p>Operative for r/r<sub>s</sub>&lt;1.8. It gives Ξ(r<sub>s</sub>)≈0.801711847.</p></article>
+      <article class="card"><h3>C² blend</h3><div class="formula">\[\Xi(r)=H_5(t)\]</div><p>Values, slopes, and curvatures are matched at both endpoints. The original dashboard’s simplified cubic smoothstep has been corrected.</p></article>
+      <article class="card"><h3>Weak branch</h3><div class="formula">\[\Xi_{\mathrm{weak}}(r)=\frac{r_s}{2r}\]</div><p>Operative for r/r<sub>s</sub>&gt;2.2 and asymptotically flat.</p></article>
     </div>
   </section>
 
@@ -129,7 +132,7 @@
         <h3>Mass and Schwarzschild scale</h3>
         <div class="control"><label for="mass-input">Mass</label><input id="mass-input" type="number" min="0" step=".1" value="1"></div>
         <div class="control"><label for="mass-unit">Unit</label><select id="mass-unit"><option value="solar">solar masses</option><option value="kg">kilograms</option></select></div>
-        <div class="formula">r<sub>s</sub> = 2GM/c² = <strong id="rs-output">—</strong></div>
+        <div class="formula"><span class="equation"><span>\(r_s=\dfrac{2GM}{c^2}=\)</span><strong id="rs-output">—</strong></span></div>
         <p>The mass sets the length scale. The normalized SSZ curves depend on x=r/r<sub>s</sub>.</p>
       </article>
       <article class="card">

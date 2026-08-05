@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-08-05 — Public JIF research tab and catalogue refresh
+
+- Added a dedicated JIF navigation tab with the public paper/timestamp/rights notice, canonical counted-phase definitions, two accessible interactive Canvas laboratories, an animated anti-circular workflow and a four-repository constellation.
+- Added `ssz-jif-core`, `ssz-jif-forward-lab`, `ssz-jif-bounded-physical-fusion` and `ssz-hilfsdateien` to the public catalogue and local research atlas.
+- Corrected repository totals from 43/31/34 to 47 public, 35 physics/mathematics and 38 mapped local public-scope repositories.
+- Replaced ambiguous slash fractions on the Overview with typeset fractions and hardened every formula container against internal line breaks while preserving horizontal scrolling on narrow screens.
+- Updated validation, navigation, sitemap, content map and publication safeguards for the now-authorised public JIF material.
+
 ## 2026-08-03 — Test-evidence dashboard reconstruction
 
 - Added a three-stage runner chronology that preserves the conflicting April snapshot, the intermediate audit failures and the later all-green capture as separate counting units.

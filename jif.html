@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive public overview of JIF counted phase, detector phase ledgers, forward-model safeguards and repositories.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';script-src 'self';style-src 'self';img-src 'self' data:;connect-src 'self';object-src 'none';base-uri 'self'">
+  <title>JIF Counted Phase — SSZ Research Portal</title>
+  <link rel="stylesheet" href="assets/css/site.css?v=20260805.1">
+  <script defer src="assets/js/site.js?v=20260805.1"></script>
+  <script defer src="assets/js/mathjax-config.js?v=20260803.5"></script>
+  <script defer src="assets/vendor/mathjax/tex-svg.js"></script>
+  <script defer src="assets/js/physics.js?v=20260805.1"></script>
+  <script defer src="assets/js/jif.js?v=20260805.1"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark">J</span><span><strong>Segmented Spacetime</strong><small>JIF · COUNTED PHASE</small></span></a>
+    <button class="nav-button menu-toggle" aria-expanded="false" aria-label="Open navigation">Menu</button>
+    <div class="nav-links"></div>
+  </div>
+</nav>
+
+<main id="main" class="page">
+  <aside class="publication-notice" aria-labelledby="jif-public-notice">
+    <span class="publication-notice-mark" aria-hidden="true">⌁</span>
+    <div>
+      <p class="publication-notice-label">Public research timestamp notice</p>
+      <h2 id="jif-public-notice">THE ASSOCIATED PAPERS ARE ALREADY AT AN ADVANCED, NEAR-READY STAGE AND ARE EXPECTED TO FOLLOW BY THE END OF 2026.</h2>
+      <p><strong>THIS RESEARCH IS PUBLIC NOW TO DOCUMENT THE DEVELOPMENT AND AUTHORSHIP OF OUR WORK THROUGH GITHUB'S PUBLIC COMMIT TIMESTAMPS. CARMEN N. WREDE AND LINO P. CASU RESERVE ALL RIGHTS NOT EXPRESSLY GRANTED UNDER THE LICENSE.</strong></p>
+      <p class="publication-notice-scope">Public commit timestamps establish a transparent repository chronology. They do not, by themselves, replace formal publication, peer review, independent replication, or a legal determination of scientific priority.</p>
+    </div>
+  </aside>
+
+  <header class="hero jif-hero">
+    <div>
+      <span class="eyebrow">Counted phase · detector ledgers · forward-only validation</span>
+      <h1>JIF turns phase into an <span class="gradient-text">auditable count</span></h1>
+      <p class="lead">JIF tracks how many phase cycles a physical system accumulates, while keeping massive-system proper time, null-path transfer phase, detector references, and empirical scoring explicitly separate.</p>
+      <div class="actions">
+        <a class="button primary" href="#phase-lab">Explore counted phase</a>
+        <a class="button" href="#repositories">Open repositories</a>
+        <a class="button" href="#limits">Read the evidence boundary</a>
+      </div>
+    </div>
+    <div class="jif-hero-visual" aria-hidden="true">
+      <span class="jif-ring ring-a"></span>
+      <span class="jif-ring ring-b"></span>
+      <span class="jif-ring ring-c"></span>
+      <span class="jif-core-mark">ΔJ</span>
+      <span class="jif-pulse pulse-a"></span>
+      <span class="jif-pulse pulse-b"></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="JIF page sections">
+    <a href="#definition">Definition</a>
+    <a href="#phase-lab">Phase lab</a>
+    <a href="#ledger-lab">Detector ledger</a>
+    <a href="#pipeline">Forward pipeline</a>
+    <a href="#repositories">Repositories</a>
+    <a href="#limits">Limits</a>
+  </nav>
+
+  <section id="definition" class="section">
+    <div class="section-head">
+      <span class="section-kicker">Operational definition</span>
+      <h2>One count, two carefully separated physical routes</h2>
+      <p>JIF is dimensionless counted phase. Its interpretation depends on the worldline and measurement protocol.</p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card jif-definition-card">
+        <span class="badge canonical">Primitive definition</span>
+        <h3>Count phase cycles</h3>
+        <div class="math-box" data-label="Counted phase">\[dJ=\frac{d\Phi}{2\pi}\]</div>
+        <p>One unit of <var>J</var> is one complete phase cycle. This definition does not introduce a new absolute time.</p>
+      </article>
+      <article class="card jif-definition-card">
+        <span class="badge tested">Massive or bound system</span>
+        <h3>Proper-time accumulation</h3>
+        <div class="math-box" data-label="Massive-system route">\[dJ=f_0\,d\tau,\qquad \frac{dJ}{dt}=f_0D(r)\]</div>
+        <p>The static SSZ clock factor maps coordinate time to the system's proper-time phase rate.</p>
+      </article>
+      <article class="card jif-definition-card">
+        <span class="badge open">Null-path observable</span>
+        <h3>Detector-defined difference</h3>
+        <div class="math-box" data-label="Detector phase route">\[\Delta J_D=\frac{\Phi_D^{(2)}-\Phi_D^{(1)}}{2\pi}\]</div>
+        <p>A photon is not assigned proper-time JIF. Emission, transfer, interaction-node and detector contributions are compared at a common detection event.</p>
+      </article>
+    </div>
+    <div class="callout warning"><strong>Interpretation guardrail:</strong> JIF is neither a force acting on light nor evidence that photons carry a proper clock. The detector reference and every transfer contribution must be declared.</div>
+  </section>
+
+  <section id="phase-lab" class="section">
+    <div class="section-head">
+      <span class="badge tested">Interactive canonical mapping</span>
+      <h2>Counted-phase laboratory</h2>
+      <p>Change normalized radius, proper frequency and coordinate duration. The gold phasor accumulates at the SSZ rate \(f_0D(r)\); the blue reference uses \(f_0\). Animation advances the selected coordinate duration without changing the model.</p>
+    </div>
+    <div class="jif-lab">
+      <div class="visual-controls">
+        <div class="control">
+          <label for="jif-radius">Normalized radius log₁₀(r/rₛ) <output id="jif-radius-out">0.000</output></label>
+          <input id="jif-radius" type="range" min="-0.7" max="2" step=".005" value="0">
+        </div>
+        <div class="control">
+          <label for="jif-frequency">Proper frequency log₁₀(f₀/Hz) <output id="jif-frequency-out">3.00</output></label>
+          <input id="jif-frequency" type="range" min="0" max="15" step=".01" value="3">
+        </div>
+        <div class="control">
+          <label for="jif-time">Coordinate duration <output id="jif-time-out">1.000 s</output></label>
+          <input id="jif-time" type="range" min="0" max="5" step=".001" value="1">
+        </div>
+        <div class="actions">
+          <button class="button primary" id="jif-play" type="button" aria-pressed="false">Animate duration</button>
+          <button class="button" id="jif-reset" type="button">Reset</button>
+        </div>
+        <div class="result" aria-live="polite">
+          <div><small>branch</small><strong id="jif-branch">—</strong></div>
+          <div><small>Ξ(r)</small><strong id="jif-xi">—</strong></div>
+          <div><small>D(r)</small><strong id="jif-d">—</strong></div>
+          <div><small>dJ/dt</small><strong id="jif-rate">—</strong></div>
+          <div><small>accumulated J</small><strong id="jif-count">—</strong></div>
+          <div><small>lag vs infinity</small><strong id="jif-lag">—</strong></div>
+        </div>
+      </div>
+      <div class="jif-canvas-panel">
+        <canvas id="jif-phase-canvas" class="jif-canvas" aria-label="Animated comparison of SSZ counted phase and an infinity reference phasor" tabindex="0"></canvas>
+        <p class="figure-note">Gold: local massive-system phase. Blue: infinity reference. The trail is a visual phase history, not measured data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ledger-lab" class="section">
+    <div class="section-head">
+      <span class="badge open">Detector-centred bookkeeping</span>
+      <h2>Build a transparent phase ledger</h2>
+      <p>Compose explicitly supplied phase-cycle contributions. The example is deliberately algebraic: it demonstrates accounting and phase wrapping, not a physical fit.</p>
+    </div>
+    <div class="jif-lab reverse">
+      <div class="visual-controls">
+        <div class="control"><label for="jif-emission">Emission cycles <output id="jif-emission-out">0.60</output></label><input id="jif-emission" type="range" min="-2" max="2" step=".01" value=".6"></div>
+        <div class="control"><label for="jif-transfer">Transfer cycles <output id="jif-transfer-out">0.25</output></label><input id="jif-transfer" type="range" min="-2" max="2" step=".01" value=".25"></div>
+        <div class="control"><label for="jif-node">Interaction-node cycles <output id="jif-node-out">−0.10</output></label><input id="jif-node" type="range" min="-2" max="2" step=".01" value="-.1"></div>
+        <div class="control"><label for="jif-detector">Detector/LO cycles <output id="jif-detector-out">−0.20</output></label><input id="jif-detector" type="range" min="-2" max="2" step=".01" value="-.2"></div>
+        <div class="result" aria-live="polite">
+          <div><small>unwrapped ΔJ</small><strong id="jif-ledger-total">—</strong></div>
+          <div><small>wrapped cycles</small><strong id="jif-ledger-wrapped">—</strong></div>
+          <div><small>wrapped phase</small><strong id="jif-ledger-phase">—</strong></div>
+          <div><small>identifiability</small><strong>requires declared inputs</strong></div>
+        </div>
+      </div>
+      <div class="jif-canvas-panel">
+        <canvas id="jif-ledger-canvas" class="jif-canvas" aria-label="Animated detector phase ledger with emission, transfer, node and detector contributions" tabindex="0"></canvas>
+        <p class="figure-note">Each coloured segment remains individually visible. The final phasor is the wrapped sum; cycle slips and unknown terms cannot be inferred away.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pipeline" class="section">
+    <div class="section-head">
+      <span class="section-kicker">Anti-circular workflow</span>
+      <h2>Prediction before target access</h2>
+      <p>The public forward repositories keep model construction, sealing and scoring as separate operations.</p>
+    </div>
+    <div class="jif-flow" aria-label="Freeze inputs, compute, seal, open target, score">
+      <div class="jif-flow-node"><strong>01</strong><span>Freeze inputs</span><small>sources · hashes · bounds</small></div>
+      <div class="jif-flow-node"><strong>02</strong><span>Compute</span><small>SSZ · transport · JIF</small></div>
+      <div class="jif-flow-node"><strong>03</strong><span>Seal</span><small>prediction receipt</small></div>
+      <div class="jif-flow-node"><strong>04</strong><span>Open target</span><small>after prediction lock</small></div>
+      <div class="jif-flow-node"><strong>05</strong><span>Score</span><small>declared metric · limits</small></div>
+      <span class="jif-flow-pulse" aria-hidden="true"></span>
+    </div>
+    <div class="grid grid-3" style="margin-top:1.2rem">
+      <article class="card"><h3>No back-solving</h3><p>A target radio lag cannot supply missing material, recoupling, emission or detector parameters.</p></article>
+      <article class="card"><h3>Fail closed</h3><p>Incomplete physical closure produces an explicit open or no-onset status, not a fabricated point prediction.</p></article>
+      <article class="card"><h3>Separate evidence classes</h3><p>Identities, software regressions, synthetic diagnostics and empirical comparisons retain different labels.</p></article>
+    </div>
+  </section>
+
+  <section id="repositories" class="section">
+    <div class="section-head">
+      <span class="section-kicker">Public and archived on 5 August 2026</span>
+      <h2>JIF repository constellation</h2>
+      <p>Four versions-free public repository paths preserve code, forward models and supporting documentation. Manuscripts and publication PDFs are intentionally absent until their separate release.</p>
+    </div>
+    <div class="jif-repository-grid">
+      <article class="card repository-feature">
+        <span class="badge canonical">Foundation</span><h3>SSZ–JIF Core</h3>
+        <p>Canonical counted-phase calculations, detector bookkeeping, SSZ clock-factor integration, invariance checks and evidence-ledger documentation.</p>
+        <a class="button" href="https://github.com/error-wtf/ssz-jif-core">Open repository ↗</a>
+      </article>
+      <article class="card repository-feature">
+        <span class="badge tested">Forward research</span><h3>SSZ–JIF Forward Lab</h3>
+        <p>Target-blind astrophysical forward models, provenance locks, phase estimators, EHT diagnostics and explicit closure gates.</p>
+        <a class="button" href="https://github.com/error-wtf/ssz-jif-forward-lab">Open repository ↗</a>
+      </article>
+      <article class="card repository-feature">
+        <span class="badge open">Bounded closure</span><h3>Bounded Physical Fusion</h3>
+        <p>A frozen bounded-input snapshot for burst-to-radio transport, material fusion, SSZ response and detector-centred JIF accounting.</p>
+        <a class="button" href="https://github.com/error-wtf/ssz-jif-bounded-physical-fusion">Open repository ↗</a>
+      </article>
+      <article class="card repository-feature">
+        <span class="badge">Research companion</span><h3>SSZ Hilfsdateien</h3>
+        <p>Curated definitions, formula maps, validation guides, audits and cross-repository indexes supporting the public SSZ/JIF ecosystem.</p>
+        <a class="button" href="https://github.com/error-wtf/ssz-hilfsdateien">Open repository ↗</a>
+      </article>
+    </div>
+    <div class="timestamp-strip">
+      <span><strong>Public chronology</strong> GitHub commit history</span>
+      <i aria-hidden="true"></i>
+      <span><strong>Authorship</strong> Carmen N. Wrede · Lino P. Casu</span>
+      <i aria-hidden="true"></i>
+      <span><strong>Paper horizon</strong> by the end of 2026</span>
+    </div>
+  </section>
+
+  <section id="limits" class="section">
+    <div class="section-head"><span class="section-kicker">Scientific and legal boundary</span><h2>What this public release does—and does not—establish</h2></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Public artifact</th><th>It documents</th><th>It does not establish alone</th></tr></thead>
+        <tbody>
+          <tr><td>Commit timestamp</td><td>Public repository chronology and exact tree state</td><td>Peer review, experimental confirmation, or a final priority ruling</td></tr>
+          <tr><td>Passing software tests</td><td>Checked implementation behaviour under declared fixtures</td><td>Truth of the physical model</td></tr>
+          <tr><td>Synthetic phase visual</td><td>Expected behaviour of stated equations</td><td>A detector observation</td></tr>
+          <tr><td>Retrospective target-blind score</td><td>Separation of prediction construction from target scoring</td><td>Prospective investigator blinding</td></tr>
+          <tr><td>Public source release</td><td>Inspectable methods, provenance and limitations</td><td>Permission beyond the repository's stated licence</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout"><strong>Licence:</strong> the JIF repositories declare the Anticapitalist License, Version 1.4. Commercial use, military applications and surveillance systems are prohibited. Refer to each repository's <code>LICENSE</code> file for the controlling terms.</div>
+  </section>
+</main>
+
+<footer class="footer"><div class="footer-inner">
+  <div><strong>JIF public research</strong><p>Counted phase with explicit provenance and evidence boundaries.</p></div>
+  <div><a href="repositories.html">Repository catalogue</a><br><a href="reproducibility.html">Reproducibility</a></div>
+  <div><a href="#jif-public-notice">Publication notice</a><br><a href="https://github.com/error-wtf">GitHub profile ↗</a></div>
+</div></footer>
+</body>
+</html>

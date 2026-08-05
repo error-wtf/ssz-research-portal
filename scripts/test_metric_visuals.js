@@ -10,7 +10,7 @@ const physicsSource = fs.readFileSync("assets/js/physics.js", "utf8");
 ["metric-geometry", "metric-branches", "metric-coefficients", "metric-velocities", "metric-limits", "metric-radius", "metric-play"]
   .forEach(id => assert(html.includes(`id="${id}"`), `missing metric visual control ${id}`));
 assert(html.includes('src="assets/js/physics.js"'), "metric page must load canonical physics first");
-assert(html.includes('src="assets/js/metric-visuals.js"'), "metric page must load visual module");
+assert(html.includes('src="assets/js/metric-visuals.js'), "metric page must load visual module");
 assert((html.match(/data-metric-local-radius/g)||[]).length === 5, "every metric visualization needs its own visible radius control");
 assert((html.match(/data-metric-preset=/g)||[]).length >= 3, "branch formulas need direct interactive presets");
 assert(!visualSource.includes("Math.random"), "scientific visuals must not use decorative random data");

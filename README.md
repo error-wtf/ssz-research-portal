@@ -4,7 +4,7 @@ A static, provenance-first GitHub Pages portal for Segmented Spacetime (SSZ). It
 
 **Live Pages:** [error-wtf.github.io/ssz-research-portal](https://error-wtf.github.io/ssz-research-portal/)
 
-The self-hosted visual laboratory contains seven interactive Canvas modules: conceptual φ segmentation, canonical Ξ/D radial scaling, weak-field lensing, a metric-derived null-potential diagnostic, a deterministic starmap projection, a standard Sagnac reference and P0 central-curvature asymptotics. The research archive also includes selected, clearly scoped figures from `ssz-paper-plots`.
+The self-hosted portal includes interactive Canvas and WebGL modules for metric geometry, observables, repository evidence and JIF counted phase. The dedicated JIF tab adds animated massive-system phasors, a detector-centred phase ledger, the public paper/timestamp notice and direct links to all four public JIF repositories. The research archive also includes selected, clearly scoped figures from `ssz-paper-plots`.
 
 ## Run
 
@@ -24,6 +24,7 @@ python3 scripts/validate_content.py
 python3 scripts/check_links.py
 python3 scripts/check_secrets.py
 node scripts/test_physics.js
+node scripts/test_jif.js
 ```
 
 The source inventory uses public, neutral project-relative path references. It never publishes local home-directory paths, credentials, or authenticated remote URLs.

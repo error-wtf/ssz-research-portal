@@ -34,6 +34,8 @@ PHYSICS = {
     "segmented-calculation-suite", "segmented-energy", "ssz-complete-documentation",
     "ssz-lensing", "ssz-metric-pure", "ssz-qubits", "ssz-schumann",
     "ssz-ligo-tests", "SSZ-METRIC_COMPLETE",
+    "ssz-jif-core", "ssz-jif-forward-lab",
+    "ssz-jif-bounded-physical-fusion", "ssz-hilfsdateien",
 }
 BOTH = {"chord-partition", "ssz-radial-scaling", "pardon-symplectic-geometry-ssz-lab"}
 P0_NOTES = {
@@ -67,12 +69,6 @@ def safe(repo: dict) -> dict:
     else:
         domain = "other"
     description = repo.get("description") or ""
-    # A public GitHub description can mention private research.  Keep that
-    # marker out of the public catalogue while retaining the public project
-    # entry itself.
-    private_word = "j" + "if"
-    description = re.sub(r"\s+and\s+" + private_word + r"\b", "", description, flags=re.I)
-    description = re.sub(r"\b" + private_word + r"\b", "", description, flags=re.I).strip(" ,;:-")
     return {
         "name": name,
         "url": repo["html_url"],

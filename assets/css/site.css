@@ -283,14 +283,17 @@ h3 { margin-top: 0; }
 .button.primary { color: white; border-color: var(--deep); background: var(--deep); }
 .button:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
 
-.section { margin: 5rem 0; }
+.section { min-width: 0; margin: 5rem 0; }
 .section-head { max-width: 900px; margin-bottom: 2rem; }
 .section-kicker { color: var(--gold); text-transform: uppercase; letter-spacing: .12em; font-size: .73rem; font-weight: 800; }
-.grid { display: grid; gap: 1.2rem; }
+.grid { display: grid; min-width: 0; gap: 1.2rem; }
 .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.reading-boundaries .grid-4 > :nth-child(4) { grid-column: 1 / -1; grid-row: 2; }
+.reading-boundaries .grid-4 > :nth-child(5) { grid-column: 4; grid-row: 1; }
 .card {
+  min-width: 0; overflow: hidden;
   padding: 1.4rem; border-radius: var(--radius); border: 1px solid var(--line);
   background: var(--surface); box-shadow: 0 4px 18px rgba(15,23,42,.035);
 }
@@ -350,9 +353,9 @@ h3 { margin-top: 0; }
 .equation-notes div { display: grid; grid-template-columns: minmax(3.8rem,auto) 1fr; gap: .55rem; }
 .equation-notes strong { color: var(--deep); font-family: "STIX Two Math", Georgia, serif; }
 .equation-notes span { color: var(--muted); font-size: .88rem; }
-.derivation-steps { counter-reset: derivation; display: grid; gap: .8rem; margin: 1rem 0; }
+.derivation-steps { counter-reset: derivation; display: grid; min-width:0; gap: .8rem; margin: 1rem 0; }
 .derivation-step {
-  counter-increment: derivation; display: grid; grid-template-columns: 2.4rem 1fr;
+  counter-increment: derivation; display: grid; grid-template-columns: 2.4rem minmax(0,1fr);
   gap: .85rem; align-items: start; padding: 1rem; border: 1px solid var(--line);
   border-radius: .9rem; background: var(--surface);
 }
@@ -360,6 +363,7 @@ h3 { margin-top: 0; }
   content: counter(derivation); display: grid; place-items: center; width: 2.25rem;
   aspect-ratio: 1; border-radius: 50%; color: white; background: var(--gold); font-weight: 800;
 }
+.derivation-step > div { min-width:0; overflow:hidden; }
 .derivation-step > div > :first-child { margin-top: 0; }
 .status-matrix td:first-child { font-weight: 800; }
 .status-matrix .current { color: var(--ok); }
@@ -410,7 +414,12 @@ h3 { margin-top: 0; }
 }
 .result div { background: var(--surface); padding: .6rem; border-radius: .55rem; }
 .result small { display: block; color: var(--muted); }
-.result strong { font-family: ui-monospace, monospace; }
+.result strong {
+  min-width: 0;
+  font-family: ui-monospace, monospace;
+  font-size: clamp(.78rem, 1.25vw, 1rem);
+  overflow-wrap: anywhere;
+}
 .toggle-row { display: flex; flex-wrap: wrap; gap: .4rem; }
 
 .table-wrap { width: 100%; overflow: auto; border: 1px solid var(--line); border-radius: 1rem; }
@@ -435,11 +444,13 @@ pre {
 }
 .toc a:hover { border-color: var(--gold); color: var(--gold); }
 details {
+  min-width: 0;
   border: 1px solid var(--line); border-radius: .85rem; padding: .85rem 1rem;
   background: var(--surface); margin: .65rem 0;
 }
 summary { cursor: pointer; font-weight: 750; color: var(--deep); }
 details[open] summary { margin-bottom: .7rem; }
+details li, details code, details a { overflow-wrap: anywhere; }
 
 .four-levels { counter-reset: level; }
 .level { position: relative; padding-left: 3.2rem; }
@@ -468,6 +479,7 @@ details[open] summary { margin-bottom: .7rem; }
   background: var(--surface); box-shadow: var(--shadow);
 }
 .visual-controls { padding: 1.25rem; background: var(--surface-2); border-right: 1px solid var(--line); }
+#laboratory .visual-grid { grid-template-columns: minmax(320px, 380px) minmax(0, 1fr); }
 .lab-canvas { display: block; width: 100%; height: 430px; background: var(--surface); touch-action: none; }
 .metric-master-controls { border:1px solid var(--line); border-radius:1rem; box-shadow:var(--shadow); }
 .metric-wide-canvas { margin-top:1rem; border:1px solid var(--line); border-radius:1rem; box-shadow:var(--shadow); }
@@ -492,8 +504,8 @@ details[open] summary { margin-bottom: .7rem; }
 .image-lightbox figcaption { position:absolute; left:1rem; bottom:1rem; right:1rem; color:#fff; text-align:center; font-size:.9rem; }
 .atlas-map { width: 100%; height: 600px; display: block; border: 1px solid var(--line); border-radius: 1.25rem; background: var(--surface); box-shadow: var(--shadow); }
 .atlas-list { display: grid; gap: 1rem; }
-.atlas-card { padding: 1.2rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
-.atlas-card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.atlas-card { min-width:0; overflow:hidden; padding: 1.2rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
+.atlas-card-head { display: flex; flex-wrap:wrap; align-items: flex-start; justify-content: space-between; gap: 1rem; }
 .atlas-card-head h3 { margin-top: .35rem; }
 .atlas-stats { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: .5rem; margin: 1rem 0; }
 .atlas-stats span { padding: .55rem; border-radius: .55rem; background: var(--surface-2); color: var(--muted); font-size: .75rem; }
@@ -567,8 +579,8 @@ details[open] summary { margin-bottom: .7rem; }
 .research-map strong,.research-map span { display:block; }
 .research-map span { margin-top:.35rem; color:var(--muted); font-size:.8rem; }
 .formula-catalog { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
-.formula-entry { padding:1.25rem; border:1px solid var(--line); border-radius:1rem; background:var(--surface); }
-.formula-entry-head { display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; }
+.formula-entry { min-width:0; overflow:hidden; padding:1.25rem; border:1px solid var(--line); border-radius:1rem; background:var(--surface); }
+.formula-entry-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:1rem; }
 .formula-entry-head h3 { margin:.5rem 0 0; }
 .rendered-math { min-height:5.5rem; display:grid; place-items:center; font-size:clamp(1.1rem,2vw,1.45rem); }
 .rendered-math mjx-container { max-width:100%; overflow-x:auto; overflow-y:hidden; padding:.25rem; }
@@ -612,6 +624,7 @@ details[open] summary { margin-bottom: .7rem; }
 .regime-lane.analytic { grid-template-columns:2.8fr .4fr 4.8fr; }
 .regime-lane.physical { grid-template-columns:.8fr .4fr .6fr .4fr 2fr 2.8fr; }
 .regime-lane span { display:grid; place-items:center; padding:.5rem; border-right:1px solid var(--line); color:var(--muted); font-size:.75rem; text-align:center; }
+.regime-lane span { min-width:0; overflow-wrap:anywhere; }
 .regime-lane i { position:absolute; top:0; bottom:0; width:3px; background:#b42318; transform:translateX(-50%); box-shadow:0 0 0 3px color-mix(in srgb,#b42318 20%,transparent); }
 .maturity-pipeline { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:.65rem; margin:1rem 0; }
 .maturity-stage { display:grid; gap:.35rem; min-height:5.5rem; padding:.7rem; border:1px solid var(--line); border-radius:.7rem; background:var(--surface); }
@@ -754,8 +767,11 @@ details[open] summary { margin-bottom: .7rem; }
   .hero { grid-template-columns: 1fr; }
   .hero-orbit { max-width: 360px; margin: auto; width: 100%; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .reading-boundaries .grid-4 > :nth-child(4) { grid-column: 1 / -1; grid-row: auto; }
+  .reading-boundaries .grid-4 > :nth-child(5) { grid-column: auto; grid-row: auto; }
   .dashboard { grid-template-columns: 1fr; }
   .visual-grid { grid-template-columns: 1fr; }
+  #laboratory .visual-grid { grid-template-columns: 1fr; }
   .visual-controls { border-right: 0; border-bottom: 1px solid var(--line); }
   .controls { border-right: 0; border-bottom: 1px solid var(--line); }
   .graph { grid-template-columns: repeat(2,1fr); }
@@ -776,6 +792,7 @@ details[open] summary { margin-bottom: .7rem; }
   .page { padding-inline: 1rem; }
   h1 { font-size: 2.65rem; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .reading-boundaries .grid-4 > :nth-child(4) { grid-column: auto; }
   .plot-gallery { grid-template-columns: 1fr; }
   .atlas-map { height: 440px; }
   .atlas-stats { grid-template-columns: repeat(2,minmax(0,1fr)); }

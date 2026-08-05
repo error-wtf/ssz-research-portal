@@ -1,7 +1,8 @@
 (() => {
   "use strict";
   const $=id=>document.getElementById(id), phi=(1+Math.sqrt(5))/2;
-  const active={radial:true,symplectic:true,chord:true,zeta:true,pi:true,hpc:true,grid:true};
+  const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const active={radial:!reduced,symplectic:!reduced,chord:!reduced,zeta:!reduced,pi:!reduced,hpc:!reduced,grid:!reduced};
   let tick=0;
   function surface(id,h=360){const el=$(id),d=Math.min(devicePixelRatio||1,2),w=Math.max(360,el.clientWidth||760);el.width=w*d;el.height=h*d;const c=el.getContext("2d");c.setTransform(d,0,0,d,0,0);c.clearRect(0,0,w,h);return{c,w,h};}
   function axes(c,w,h,x="parameter",y="value"){c.strokeStyle="#64748b66";c.lineWidth=1;c.beginPath();c.moveTo(48,18);c.lineTo(48,h-34);c.lineTo(w-15,h-34);c.stroke();c.fillStyle="#64748b";c.font="12px sans-serif";c.fillText(x,w/2,h-8);c.save();c.translate(14,h/2);c.rotate(-Math.PI/2);c.fillText(y,0,0);c.restore();}
@@ -42,7 +43,13 @@
     const pointCount=mode==="3d"?m**3:m**2,edgeCount=mode==="3d"?3*m*m*(m-1):2*m*(m-1);$("math-grid-m-out").textContent=m;$("math-grid-angle-out").textContent=Math.round((yaw*180/Math.PI)%360)+"°";$("math-grid-pitch-out").textContent=Math.round(pitch*180/Math.PI)+"°";$("math-grid-points").textContent=pointCount.toLocaleString();$("math-grid-edges").textContent=edgeCount.toLocaleString();$("math-grid-point-law").textContent=mode==="3d"?"points n=m³":"points n=m²";$("math-grid-edge-law").textContent=mode==="3d"?"unit edges 3m²(m−1)":"unit edges 2m(m−1)";$("math-grid-note").textContent=mode==="3d"?"True cubic unit-distance graph under perspective projection. Camera motion does not change the underlying Euclidean distances.":"2D Euclidean lattice under a rigid rotation; every displayed edge has exact unit length.";
   }
   const draws={radial,symplectic,chord,zeta,pi,hpc,grid};
-  document.querySelectorAll(".math-play").forEach(b=>b.addEventListener("click",()=>{const key=b.dataset.mathPlay;active[key]=!active[key];b.textContent=active[key]?`Pause ${key==="symplectic"?"integration":key==="chord"?"trace":key==="zeta"?"scan":key==="hpc"?"worker sweep":key==="grid"?"construction":key==="pi"?"convergence":"mode sweep"}`:"Resume animation";}));
+  const motionLabel=key=>key==="symplectic"?"integration":key==="chord"?"trace":key==="zeta"?"scan":key==="hpc"?"worker sweep":key==="grid"?"rotation":key==="pi"?"convergence":"mode sweep";
+  document.querySelectorAll(".math-play").forEach(b=>{
+    const key=b.dataset.mathPlay;
+    const sync=()=>{b.textContent=active[key]?`Pause ${motionLabel(key)}`:`Resume ${motionLabel(key)}`;b.setAttribute("aria-pressed",String(active[key]));};
+    b.type="button";sync();
+    b.addEventListener("click",()=>{active[key]=!active[key];sync();});
+  });
   document.querySelectorAll("input[id^='math-']").forEach(el=>el.addEventListener("input",()=>Object.values(draws).forEach(fn=>fn())));
   document.querySelectorAll("select[id^='math-']").forEach(el=>el.addEventListener("change",()=>Object.values(draws).forEach(fn=>fn())));
   function loop(){tick++;if(tick===1||tick%3===0)for(const [k,fn] of Object.entries(draws))if(active[k]||tick===1)fn();requestAnimationFrame(loop);}

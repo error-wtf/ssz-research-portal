@@ -54,7 +54,8 @@
   }
   ["dyn-l","dyn-r"].forEach(id=>$(id).addEventListener("input",potential));
   ["emg-rays","emg-wave"].forEach(id=>$(id).addEventListener("input",emergence));
-  $("emg-play").addEventListener("click",()=>{playing=!playing;$("emg-play").textContent=playing?"Pause interference":"Resume interference";playing?loop():cancelAnimationFrame(frame);});
+  $("emg-play").setAttribute("aria-pressed","true");
+  $("emg-play").addEventListener("click",()=>{playing=!playing;$("emg-play").textContent=playing?"Pause interference":"Resume interference";$("emg-play").setAttribute("aria-pressed",String(playing));playing?loop():cancelAnimationFrame(frame);});
   $("dyn-play").addEventListener("click",()=>{potentialPlaying=!potentialPlaying;$("dyn-play").setAttribute("aria-pressed",String(potentialPlaying));$("dyn-play").textContent=potentialPlaying?"Pause radial sweep":"Resume radial sweep";$("dyn-motion").textContent=potentialPlaying?"radial sweep active":"paused";potentialPlaying?potentialLoop():cancelAnimationFrame(potentialFrame);});
   $("dyn-reset").addEventListener("click",()=>{$("dyn-r").value="3";$("dyn-l").value="3";potentialDirection=1;momentumDirection=1;potential();});
   addEventListener("resize",()=>{potential();emergence();});potential();loop();potentialLoop();

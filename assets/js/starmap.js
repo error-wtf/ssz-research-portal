@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const DEG=Math.PI/180;
-  const state={stars:[],points:[],yaw:0,pitch:0,zoom:1,drag:null,selected:null};
+  const state={stars:[],points:[],yaw:0,pitch:0,zoom:1,drag:null,selected:null,autoRotate:true};
   let lastFrame=0;
   const $=id=>document.getElementById(id);
   const number=id=>Number($(id)?.value);
@@ -117,6 +117,18 @@
   }
   document.addEventListener("DOMContentLoaded",async()=>{
     const canvas=$("starmap-canvas");
+    const reset=$("starmap-reset");
+    if(reset&&!$("starmap-rotate")){
+      const rotate=document.createElement("button");
+      rotate.id="starmap-rotate";rotate.type="button";rotate.className="button";
+      rotate.textContent="Pause 3D rotation";rotate.setAttribute("aria-pressed","true");
+      rotate.addEventListener("click",()=>{
+        state.autoRotate=!state.autoRotate;
+        rotate.textContent=state.autoRotate?"Pause 3D rotation":"Resume 3D rotation";
+        rotate.setAttribute("aria-pressed",String(state.autoRotate));
+      });
+      reset.insertAdjacentElement("beforebegin",rotate);
+    }
     ["starmap-projection","starmap-count","starmap-distance","starmap-mag","starmap-colour","starmap-motion","starmap-grid"].forEach(id=>$(id).addEventListener("input",draw));
     canvas.addEventListener("pointerdown",event=>{canvas.setPointerCapture?.(event.pointerId);state.drag={x:event.clientX,y:event.clientY,yaw:state.yaw,pitch:state.pitch};});
     canvas.addEventListener("pointermove",event=>{const rect=canvas.getBoundingClientRect();if(state.drag){state.yaw=state.drag.yaw+(event.clientX-state.drag.x)*.006;state.pitch=Math.max(-Math.PI/2,Math.min(Math.PI/2,state.drag.pitch+(event.clientY-state.drag.y)*.006));draw();}else inspect(event.clientX-rect.left,event.clientY-rect.top);});
@@ -126,7 +138,7 @@
     $("starmap-reset").addEventListener("click",()=>{state.yaw=0;state.pitch=0;state.zoom=1;state.selected=null;draw();});
     $("starmap-export").addEventListener("click",()=>{const link=document.createElement("a");link.download="ssz-starmaps-catalogue.png";link.href=canvas.toDataURL("image/png");link.click();});
     addEventListener("resize",draw);addEventListener("ssz-theme-change",draw);
-    function animate(now){if(now-lastFrame>45){lastFrame=now;if($("starmap-projection")?.value==="cartesian"&&!state.drag){state.yaw+=.006;draw();}}requestAnimationFrame(animate);}requestAnimationFrame(animate);
+    function animate(now){if(now-lastFrame>45){lastFrame=now;if(state.autoRotate&&$("starmap-projection")?.value==="cartesian"&&!state.drag){state.yaw+=.006;draw();}}requestAnimationFrame(animate);}requestAnimationFrame(animate);
     try{
       const response=await fetch("data/starmap-stars.json");if(!response.ok)throw new Error(`HTTP ${response.status}`);
       const data=await response.json();state.stars=data.stars||[];text("starmap-loaded",`${state.stars.length} Gaia stars`);draw();

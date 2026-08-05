@@ -26,6 +26,7 @@ python3 scripts/check_secrets.py
 node scripts/test_physics.js
 node scripts/test_jif.js
 node scripts/test_page_guides.js
+node scripts/test_explanation_coverage.js
 ```
 
 The source inventory uses public, neutral project-relative path references. It never publishes local home-directory paths, credentials, or authenticated remote URLs.

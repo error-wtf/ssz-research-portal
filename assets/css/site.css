@@ -159,8 +159,104 @@ h3 { margin-top: 0; }
 .reading-compass-grid p { margin: .55rem 0 0; }
 .reading-compass-next { margin: 1.2rem 0 0; font-weight: 750; }
 .reading-compass-next a { color: var(--blue); }
+.formula-explainer,
+.visual-explainer,
+.figure-explainer {
+  margin-top: .75rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+  overflow: hidden;
+}
+.formula-explainer > summary,
+.visual-explainer > summary,
+.figure-explainer > summary {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, .45fr) minmax(0, 1fr);
+  gap: .75rem;
+  align-items: baseline;
+  cursor: pointer;
+  padding: .85rem 1rem;
+  list-style: none;
+}
+.formula-explainer > summary::-webkit-details-marker,
+.visual-explainer > summary::-webkit-details-marker,
+.figure-explainer > summary::-webkit-details-marker { display: none; }
+.formula-explainer > summary::before,
+.visual-explainer > summary::before,
+.figure-explainer > summary::before {
+  content: "+";
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: end;
+  color: var(--gold-strong);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.formula-explainer[open] > summary::before,
+.visual-explainer[open] > summary::before,
+.figure-explainer[open] > summary::before { content: "−"; }
+.formula-explainer > summary span,
+.visual-explainer > summary span,
+.figure-explainer > summary span {
+  grid-column: 1;
+  grid-row: 1;
+  padding-right: 1.35rem;
+  color: var(--gold-strong);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.formula-explainer > summary strong,
+.visual-explainer > summary strong,
+.figure-explainer > summary strong {
+  grid-column: 2;
+  font-size: .94rem;
+}
+.explainer-body {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border-top: 1px solid var(--line);
+  background: var(--line);
+}
+.explainer-body section {
+  min-width: 0;
+  padding: 1rem;
+  background: var(--surface);
+}
+.explainer-body h4 {
+  margin: 0 0 .45rem;
+  color: var(--gold-strong);
+  font-size: .75rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.explainer-body p { margin: 0; }
+.explainer-symbols ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  columns: 2;
+}
+.explainer-symbols li { break-inside: avoid; margin-bottom: .35rem; }
+.plot-gallery figure .figure-explainer { text-align: left; }
 @media (max-width: 760px) {
   .reading-compass-grid { grid-template-columns: 1fr; }
+  .formula-explainer > summary,
+  .visual-explainer > summary,
+  .figure-explainer > summary { grid-template-columns: 1fr; }
+  .formula-explainer > summary::before,
+  .visual-explainer > summary::before,
+  .figure-explainer > summary::before { grid-column: 1; justify-self: end; }
+  .formula-explainer > summary span,
+  .visual-explainer > summary span,
+  .figure-explainer > summary span { grid-column: 1; }
+  .formula-explainer > summary strong,
+  .visual-explainer > summary strong,
+  .figure-explainer > summary strong { grid-column: 1; grid-row: 2; }
+  .explainer-body { grid-template-columns: 1fr; }
+  .explainer-symbols ul { columns: 1; }
 }
 .hero-orbit {
   aspect-ratio: 1; border-radius: 50%; position: relative; display: grid; place-items: center;

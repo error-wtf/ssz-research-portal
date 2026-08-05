@@ -1,0 +1,76 @@
+"use strict";
+const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const vm = require("node:vm");
+
+const sandbox = {
+  window: {},
+  location: {pathname: "/index.html"},
+  localStorage: {getItem: () => null, setItem: () => {}},
+  document: {
+    documentElement: {dataset: {}},
+    addEventListener: () => {},
+    querySelector: () => null,
+    querySelectorAll: () => []
+  },
+  history: {replaceState: () => {}},
+  navigator: {}
+};
+sandbox.window = sandbox;
+vm.createContext(sandbox);
+vm.runInContext(fs.readFileSync("assets/js/site.js", "utf8"), sandbox);
+
+const explainers = sandbox.SSZExplainers;
+assert.equal(typeof explainers.ruleForFormula, "function");
+assert.equal(typeof explainers.ruleForVisual, "function");
+assert.equal(typeof explainers.verificationFor, "function");
+
+const pages = fs.readdirSync(".").filter(name => name.endsWith(".html"));
+let formulaCount = 0;
+let visualCount = 0;
+let genericFormulaCount = 0;
+const genericFormulas = [];
+for (const page of pages) {
+  const html = fs.readFileSync(page, "utf8");
+  const formulaPattern = /<(?:div|p)[^>]*class="[^"]*(?:math-box|display-formula|formula(?!-))[^"]*"[^>]*>([\s\S]*?)<\/(?:div|p)>/g;
+  for (const match of html.matchAll(formulaPattern)) {
+    const text = match[1].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    const rule = explainers.ruleForFormula(text, page);
+    assert.ok(rule.purpose.length >= 100, `${page}: formula purpose is too short`);
+    assert.ok(rule.reading.length >= 100, `${page}: formula reading guide is too short`);
+    assert.ok(rule.meaning.length >= 60, `${page}: formula meaning is too short`);
+    assert.ok(rule.limit.length >= 60, `${page}: formula limitation is too short`);
+    const verification = explainers.verificationFor(text, page, page);
+    assert.ok(verification.length >= 180, `${page}: formula verification context is too short`);
+    if (rule.title.startsWith("Quantitative statement")) {
+      genericFormulaCount += 1;
+      genericFormulas.push(`${page}: ${text.slice(0, 120)}`);
+    }
+    formulaCount += 1;
+  }
+  for (const match of html.matchAll(/<canvas[^>]*id="([^"]+)"[^>]*>/g)) {
+    const rule = explainers.ruleForVisual(match[1], "");
+    assert.notEqual(rule.title, "Interactive scientific display", `${page}: canvas #${match[1]} needs a specific explanation`);
+    assert.ok(rule.use.length >= 80, `${page}: canvas #${match[1]} usage explanation is too short`);
+    assert.ok(rule.meaning.length >= 45, `${page}: canvas #${match[1]} meaning is too short`);
+    assert.ok(rule.limit.length >= 45, `${page}: canvas #${match[1]} limitation is too short`);
+    visualCount += 1;
+  }
+}
+
+const catalog = JSON.parse(fs.readFileSync("data/formulas.json", "utf8")).formulas;
+for (const item of catalog) {
+  const rule = explainers.ruleForFormula(item.latex, item.name);
+  if (rule.title.startsWith("Quantitative statement")) {
+    genericFormulaCount += 1;
+    genericFormulas.push(`data/formulas.json ${item.id}: ${item.name} — ${item.latex.slice(0, 100)}`);
+  }
+  const verification = explainers.verificationFor(item.latex, item.name, "formulas.html");
+  assert.ok(verification.length >= 180, `${item.id}: catalogue verification context is too short`);
+}
+
+assert.ok(formulaCount >= 120, "formula inventory unexpectedly shrank");
+assert.ok(visualCount >= 50, "visual inventory unexpectedly shrank");
+if (genericFormulas.length) console.log(genericFormulas.join("\n"));
+assert.equal(genericFormulaCount, 0, `${genericFormulaCount} formulas still use the generic explanation`);
+console.log(`OK: ${formulaCount} static and ${catalog.length} catalogue formulas plus ${visualCount} canvases have specific substantive explanation and verification coverage`);

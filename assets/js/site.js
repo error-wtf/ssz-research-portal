@@ -17,6 +17,7 @@
         group("Learn", [["theory.html","Theory"],["formulas.html","Formulas"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"],["glossary.html","Glossary"]]),
         group("Models", [["metric.html","Metric"],["dynamics-energy.html","Dynamics & Energy"],["mathematics.html","Mathematics"],["qubits.html","Qubits"]]),
         link("jif.html","JIF"),
+        link("schrodinger.html","QM wink"),
         link("visual-lab.html","Visual lab"),
         group("Evidence", [["workbench.html","Workbench"],["tests.html","Tests"],["evidence.html","Evidence"],["falsification.html","Falsification"]]),
         group("Research", [["observations.html","Observables"],["papers.html","Papers"],["research.html","Research archive"],["repositories.html","Repositories"],["atlas.html","Atlas"]]),

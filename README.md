@@ -4,7 +4,7 @@ A static, provenance-first GitHub Pages portal for Segmented Spacetime (SSZ). It
 
 **Live Pages:** [error-wtf.github.io/ssz-research-portal](https://error-wtf.github.io/ssz-research-portal/)
 
-The self-hosted portal includes interactive Canvas and WebGL modules for metric geometry, observables, repository evidence and JIF counted phase. The dedicated JIF tab adds animated massive-system phasors, a detector-centred phase ledger, the public paper/timestamp notice and direct links to all four public JIF repositories. The research archive also includes selected, clearly scoped figures from `ssz-paper-plots`.
+The self-hosted portal includes interactive Canvas and WebGL modules for metric geometry, observables, repository evidence and JIF counted phase. The dedicated JIF tab adds animated massive-system phasors, a detector-centred phase ledger, the public paper/timestamp notice and direct links to all four public JIF repositories. A separate QM wink tab presents the archived one-dimensional Schrödinger-style Easter egg as humour and explicitly not as scientifically validated evidence. The research archive also includes selected, clearly scoped figures from `ssz-paper-plots`.
 
 ## Run
 

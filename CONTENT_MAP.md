@@ -4,6 +4,7 @@
 |---|---|
 | `index.html` | classification, status, Ξ/D dashboard, calculators, theory map |
 | `jif.html` | public JIF notice, counted-phase definitions, animated phase and detector-ledger labs, forward safeguards and repository constellation |
+| `schrodinger.html` | clearly labelled humorous Schrödinger-style Easter egg with toy potential and animated illustrative wave mode |
 | `theory.html` | intuitive-to-implementation theory, metric construction, branches, geodesics, weak field, Sagnac, interior/global structure, dynamics and falsification |
 | `visual-lab.html` | seven self-hosted interactive modules for segmentation, metric scaling, lensing, null potential, starmaps, rotation and curvature |
 | `atlas.html` | interactive constellation and detailed source/result cards for all 38 public-scope local physics and mathematics repositories |

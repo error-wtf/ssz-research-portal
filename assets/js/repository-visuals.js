@@ -20,7 +20,7 @@
     const kinematic=2*Math.PI*radius/speed/YEAR/1e6,kepler=2*Math.PI*Math.sqrt(radius**3/(G*mass))/YEAR/1e6;
     const omegaPeriod=1296000000/mu/1e6;
     const enclosed=speed**2*radius/G/M_SUN;
-    const xi=rs/(2*radius),D=1/(1+xi),ssz=kinematic/D,clockDelta=(ssz-kinematic)*1e6;
+    const xi=rs/(2*radius),D=1/(1+xi),ssz=kinematic*(1+xi),clockDelta=kinematic*xi*1e6;
     const relativeError=Math.hypot(radiusErr/radiusKpc,speedErr/speedKmS);
     const periodError=kinematic*relativeError;
     const totalSpeed=4.74047*mu*radiusKpc;

@@ -10,4 +10,5 @@ assert.ok(q.periodBH>10000,"Sgr A* countermodel period");
 assert.ok(q.enclosed>1e11&&q.enclosed<1.2e11,"equivalent enclosed mass");
 assert.ok(q.xi>2.4e-11&&q.xi<2.8e-11,"weak-field Xi");
 assert.ok(q.clock>0&&q.clock<.01,"separate accumulated clock diagnostic");
+assert.ok(Math.abs(q.clock-230e6*q.xi)<1e-15,"clock diagnostic uses the stable exact SSZ identity");
 console.log("OK: 3D Galactic Year measurements, dynamics countermodel and clock layer remain numerically separated");

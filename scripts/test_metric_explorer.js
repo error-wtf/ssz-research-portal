@@ -13,4 +13,8 @@ assert.ok(Number(element("xi-value").textContent.replaceAll(",",""))>.8);
 assert.ok(Number(element("d-value").textContent.replaceAll(",",""))>.55);
 assert.match(element("rs-output").textContent,/m$/);
 assert.equal(typeof sandbox.SSZ.xi,"function");
+const oneKilogramRadius=sandbox.SSZ.schwarzschildRadius(1);
+assert.ok(Math.abs(oneKilogramRadius-1.485232053823733e-27)<1e-39);
+assert.equal(sandbox.SSZ.fmtPhysical(oneKilogramRadius),"1.48523e-27");
+assert.equal(sandbox.SSZ.fmtPhysical(0),"0");
 console.log("OK: native metric explorer and calculators initialise without Chart.js");

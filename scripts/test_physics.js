@@ -1,5 +1,7 @@
 "use strict";
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const vm = require("node:vm");
 const phi = (1 + Math.sqrt(5)) / 2;
 const strong = x => 1 - Math.exp(-phi / x);
 const strongPrime = x => -phi * Math.exp(-phi / x) / x ** 2;
@@ -40,4 +42,11 @@ assert.ok(Math.abs(sagnac(2,.5)/sagnac(1,.5)-4)<1e-12);
 const phaseDifference = (inner,outer,duration) =>
   Math.abs(1/(1+canonical(outer))-1/(1+canonical(inner)))*duration;
 assert.ok(phaseDifference(1,6,10)>0);
+const weakFieldSandbox={window:{},document:{getElementById:()=>null},Math,Number};
+weakFieldSandbox.window=weakFieldSandbox;
+vm.createContext(weakFieldSandbox);
+vm.runInContext(fs.readFileSync("assets/js/weak-field.js","utf8"),weakFieldSandbox);
+const weakResidual=weakFieldSandbox.SSZWeakField.residual;
+assert.ok(Math.abs(weakResidual(1e12)-2.49999999999875e-25)<1e-39);
+assert.ok(weakResidual(1e12)>0,"far-field residual must not collapse to zero");
 console.log("OK: horizon, far-field, C2 derivatives and visual-lab physics checks passed");

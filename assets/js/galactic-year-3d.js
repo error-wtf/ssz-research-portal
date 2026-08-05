@@ -16,7 +16,7 @@
     gl.useProgram(program);positionBuffer=gl.createBuffer();uMatrix=gl.getUniformLocation(program,"m");uColour=gl.getUniformLocation(program,"colour");uSize=gl.getUniformLocation(program,"size");gl.enable(gl.BLEND);gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);gl.enable(gl.DEPTH_TEST);webglOK=true;
   }
   function calculate({R,dR,v,dv,mu,e,zAmp,zPeriod,zScale,time}){
-    const r=R*KPC,s=v*1000,period=2*Math.PI*r/s/YEAR/1e6,periodMu=1296000000/mu/1e6,periodBH=2*Math.PI*Math.sqrt(r**3/(G*MBH))/YEAR/1e6,enclosed=s*s*r/G/MS,xi=G*MBH/(C*C*r),D=1/(1+xi),clock=time*1e6*(1/D-1),phase=2*Math.PI*time/period,phaseBH=2*Math.PI*time/periodBH;
+    const r=R*KPC,s=v*1000,period=2*Math.PI*r/s/YEAR/1e6,periodMu=1296000000/mu/1e6,periodBH=2*Math.PI*Math.sqrt(r**3/(G*MBH))/YEAR/1e6,enclosed=s*s*r/G/MS,xi=G*MBH/(C*C*r),D=1/(1+xi),clock=time*1e6*xi,phase=2*Math.PI*time/period,phaseBH=2*Math.PI*time/periodBH;
     return{R,dR,v,dv,mu,e,zAmp,zPeriod,zScale,time,period,periodMu,periodBH,enclosed,xi,D,clock,phase,phaseBH};
   }
   function q(){return calculate({R:num("galactic-radius"),dR:num("galactic-radius-error"),v:num("galactic-speed"),dv:num("galactic-speed-error"),mu:num("galactic-proper-motion"),e:num("galactic-eccentricity"),zAmp:num("galactic-z-amplitude"),zPeriod:num("galactic-z-period"),zScale:num("galactic-z-scale"),time:num("galactic-time")});}
@@ -54,7 +54,7 @@
     const gold="#b8860b",blue="#2563eb",muted="#64748b";
     {const {c,w,h}=surface2d("galactic-top-canvas"),s=Math.min(w,h)*.38/Q.R,p=currentPos(Q);c.strokeStyle=gold;c.beginPath();for(let i=0;i<=240;i++){const a=i/240*Math.PI*2,x=w/2+Q.R*(Math.cos(a)-Q.e)*s,y=h/2+Q.R*Math.sqrt(1-Q.e**2)*Math.sin(a)*s;i?c.lineTo(x,y):c.moveTo(x,y);}c.stroke();c.fillStyle=blue;c.beginPath();c.arc(w/2+p[0]*s,h/2+p[2]*s,5,0,Math.PI*2);c.fill();}
     {const {c,w,h}=surface2d("galactic-side-canvas");c.strokeStyle=muted;c.beginPath();c.moveTo(25,h/2);c.lineTo(w-12,h/2);c.stroke();c.strokeStyle="#7c3aed";c.beginPath();for(let i=0;i<=240;i++){const t=Q.period*i/240,x=25+(w-40)*i/240,y=h/2-Q.zAmp*Q.zScale*Math.sin(2*Math.PI*t/Q.zPeriod)*55/Math.max(Q.zAmp*Q.zScale,.01);i?c.lineTo(x,y):c.moveTo(x,y);}c.stroke();const px=25+(w-40)*(Q.time%Q.period)/Q.period;c.fillStyle=blue;c.beginPath();c.arc(px,h/2-Q.zAmp*Q.zScale*Math.sin(2*Math.PI*Q.time/Q.zPeriod)*55/Math.max(Q.zAmp*Q.zScale,.01),5,0,Math.PI*2);c.fill();}
-    {const {c,w,h}=surface2d("galactic-clock-canvas"),max=250e6*(1/Q.D-1);c.strokeStyle=gold;c.beginPath();c.moveTo(25,h-25);c.lineTo(w-15,25);c.stroke();const x=25+(w-40)*Q.time/250,y=h-25-(h-50)*(Q.clock/(max||1));c.fillStyle=blue;c.beginPath();c.arc(x,y,5,0,Math.PI*2);c.fill();c.fillStyle=muted;c.font="11px system-ui";c.fillText(`0 → ${max.toFixed(4)} yr over 250 Myr`,28,18);}
+    {const {c,w,h}=surface2d("galactic-clock-canvas"),max=250e6*Q.xi;c.strokeStyle=gold;c.beginPath();c.moveTo(25,h-25);c.lineTo(w-15,25);c.stroke();const x=25+(w-40)*Q.time/250,y=h-25-(h-50)*(Q.clock/(max||1));c.fillStyle=blue;c.beginPath();c.arc(x,y,5,0,Math.PI*2);c.fill();c.fillStyle=muted;c.font="11px system-ui";c.fillText(`0 → ${max.toFixed(4)} yr over 250 Myr`,28,18);}
   }
   function outputs(Q){
     $("galactic-time-out").textContent=`${Q.time.toFixed(1)} Myr`;$("galactic-z-period-out").textContent=`${Q.zPeriod.toFixed(0)} Myr`;

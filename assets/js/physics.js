@@ -86,6 +86,15 @@
   const fmt = (number, digits = 8) => Number.isFinite(number)
     ? number.toLocaleString("en-US", { maximumFractionDigits: digits })
     : "—";
+  const fmtPhysical = (number, significantDigits = 6) => {
+    if (!Number.isFinite(number)) return "—";
+    if (number === 0) return "0";
+    const magnitude = Math.abs(number);
+    return magnitude < 1e-4 || magnitude >= 1e9
+      ? number.toExponential(significantDigits - 1).replace("e+", "e")
+      : number.toLocaleString("en-US", { maximumSignificantDigits: significantDigits });
+  };
+  const schwarzschildRadius = massKg => 2 * G * massKg / C ** 2;
 
   function updatePlot() {
     const canvas = document.getElementById("metric-chart");
@@ -211,14 +220,15 @@
     const radiusInput = document.getElementById("calc-radius");
     const update = () => {
       const mass = Number(massInput?.value || 1) * (massUnit?.value === "solar" ? SOLAR_MASS : 1);
-      const rs = 2 * G * mass / C ** 2;
+      const rs = schwarzschildRadius(mass);
       const x = Math.max(.0001, Number(radiusInput?.value || 1));
-      const d = dilation(x);
+      const density = xi(x);
+      const d = 1 / (1 + density);
       const set = (id, value) => document.getElementById(id)?.replaceChildren(document.createTextNode(value));
-      set("rs-output", `${fmt(rs, 6)} m`);
-      set("calc-xi", fmt(xi(x), 10));
+      set("rs-output", `${fmtPhysical(rs)} m`);
+      set("calc-xi", fmtPhysical(density));
       set("calc-d", fmt(d, 10));
-      set("calc-z", fmt(1 / d - 1, 10));
+      set("calc-z", fmtPhysical(density));
       const orbits = orbitDiagnostics(30);
       set("photon-output", orbits.photon
         ? `${fmt(orbits.photon.x, 6)} r_s (stationary null-potential candidate)`
@@ -252,6 +262,7 @@
   window.addEventListener("ssz-theme-change", updatePlot);
   window.SSZ = {
     PHI, strong, weak, xi, dilation, branch, quinticHermite,
-    metricA, derivative, nullPotential, angularMomentumSquared, orbitDiagnostics
+    metricA, derivative, nullPotential, angularMomentumSquared, orbitDiagnostics,
+    schwarzschildRadius, fmtPhysical
   };
 })();

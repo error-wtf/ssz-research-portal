@@ -530,10 +530,10 @@
   },
   "provenance": {
     "repository": "error-wtf/ssz-research-portal",
-    "commit_sha": "d6c8d28425774c01de4799e70551e0539be9a1ec",
+    "commit_sha": "e3a7dfb70a70acb5136878eec2c3bd4e83872f0d",
     "code_path": "scripts/build_strong_field_certificates.py",
     "browser_engine_path": "assets/js/physics.js",
-    "browser_engine_sha256": "789dda760e14448dea61a1a0c285545ce196d845e09559b5225d22bcc060f376",
+    "browser_engine_sha256": "4bf06513d5f052e92daf900a646919b97db2a30bc0cfb17737d2031dd2183b2b",
     "reproduce": "python3 scripts/build_strong_field_certificates.py"
   },
   "limitations": [

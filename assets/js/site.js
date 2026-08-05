@@ -175,6 +175,89 @@
       meaning: "Definitions fix units, coordinates and epistemic usage so the same notation is interpreted consistently across pages.",
       limit: "A concise definition is not a derivation; follow its links to the theory, formula and evidence pages for the full argument.",
       next: ["theory.html", "Return to the derivation with the vocabulary fixed"]
+    },
+    "index.html": {
+      title: "The complete SSZ reading route in one view",
+      lede: "The portal is easiest to understand as a chain of definitions, consequences, calculations, tests and observations. Each link has a different evidential role, and none should be skipped when moving from an attractive number to a physical claim.",
+      blocks: [
+        ["Start with the declared object", "SSZ is presented here as a locked static spherical construction: a central mass supplies rₛ, the normalized radius x selects a branch for Ξ, and Ξ generates D and the metric coefficients. This is the object being analyzed. It is not yet a universal action, a rotating completion or a complete matter theory."],
+        ["Follow dependencies, not slogans", "Every later result inherits earlier choices. A clock ratio inherits D and the observer convention; a geodesic inherits the metric and initial data; a lensing result inherits a null path and source model; a catalogue comparison inherits its dataset and uncertainty model. The dependency graph is the portal’s central scientific navigation aid."],
+        ["Separate result classes", "Definitions and algebraic consequences can be exact inside the model. Numerical tests establish implementation behavior. Reference-limit recovery establishes compatibility. Data comparisons add a forward model and measurements. Independent empirical confirmation requires still more. The portal shows all these classes because a single green badge cannot carry their different meanings."],
+        ["Use the interface as an audit trail", "Change one input, read the units and branch, inspect the formula explanation, then follow the linked test and evidence record. A visual is most valuable when it leads to a quantitative question that another person can reproduce. If a conclusion changes under a declared admissible perturbation, that sensitivity is part of the result."],
+        ["What the current corpus has established", "The 9,300-record catalogue, 28 test-bearing repositories and captured 1,296-pass runner show broad mathematical, numerical, pipeline and data-facing work. That breadth is real positive evidence about the public computational programme. It does not collapse shared provenance into independent experiments, and it does not remove the remaining observational completion tasks."],
+        ["Where to go next", "Theory explains the construction, Metric exposes its coefficients, Regimes and Weak Field test its limits, Strong Field and Interior expose completion issues, Models derive dynamics or phase, and Evidence, Tests, Observations and Reproducibility establish what was actually checked. The tabs are a connected route, not competing summaries." ]
+      ]
+    },
+    "theory.html": {
+      title: "The whole theory as one dependency chain",
+      lede: "This page already contains the portal’s longest derivation. The following map is a compact orientation layer so a reader can place every detailed section inside one coherent argument.",
+      blocks: [
+        ["Physical starting point", "Choose the central mass and areal radius, define rₛ and x, and state the observer and coordinate conventions. These choices determine what the symbols mean before any interpretation begins."],
+        ["Primary field and bridge", "Ξ is the primary radial field. Strong, bridge and weak formulas are routed by x; the quintic bridge matches value, slope and curvature at both selected joins. This is a reproducible construction rule whose physical derivation remains a separate question."],
+        ["Metric and consequences", "D maps the field to static clock rate, A and B define the diagonal metric, and the line element supplies intervals. Connections, curvature, geodesics, redshift and travel times are derived from this locked object rather than fitted independently."],
+        ["Measurement and evidence", "A derived quantity becomes an observable only after specifying a worldline, path, source, detector and uncertainty model. The broad test corpus checks many internal and computational layers; data-facing and independent layers must be read claim by claim."],
+        ["Completion boundary", "The current theory is strongest as a defined static exterior and tested computational framework. A globally regular interior, rotating sector, universal covariant action and independent experimental discrimination are explicit development layers, not hidden assumptions."]
+      ]
+    },
+    "strong-field.html": {
+      title: "How to read strong-field results without conflating local and global claims",
+      lede: "Near rₛ, small changes in the metric can produce large changes in derivatives, paths and observables. Strong-field interpretation therefore requires a strict separation between local calculation, source model and global completion.",
+      blocks: [
+        ["Local clock and frame results", "Finite D at a selected radius, proper distance and a static orthonormal frame are local statements for the declared observer. They do not by themselves establish that a static observer can exist everywhere or that the centre is regular."],
+        ["Geodesic candidates", "Photon spheres, circular timelike orbits and ISCO conditions are roots and stability conditions of the selected static metric. They are not automatically observed shadows, accretion structures or ringdowns, which require rotation, emission, plasma and detector forward models."],
+        ["Curvature and effective source", "Ricci and Kretschmann behavior tests invariant geometry. An effective Einstein tensor diagnoses the density and pressures that would support the ansatz within general-relativistic bookkeeping. Neither calculation silently supplies a fundamental matter theory."],
+        ["What the test corpus changes", "Strong-field branch values, derivatives, limits, geodesic residuals and sensitivity are extensively exercised. The remaining question is not whether the displayed equations can be evaluated, but whether a complete source, rotating solution and independent observation select this construction."]
+      ]
+    },
+    "interior-global-structure.html": {
+      title: "Why an interior is a separate geometry problem",
+      lede: "The exterior expression, transition bridge and areal centre are three different loci. A defensible interior must satisfy more than a finite coefficient at one coordinate value.",
+      blocks: [
+        ["The centre is invariantly demanding", "As r approaches zero, curvature scalars, signature and the relation between areal radius and local geometry must be examined. A coordinate transformation cannot remove a genuine invariant divergence."],
+        ["Matching is a boundary problem", "A candidate interior must match the exterior data required by the chosen field equations and junction formalism. Value continuity alone is not enough when derivatives, extrinsic curvature, matter flux or causal structure enter the problem."],
+        ["Local sandbox results have a defined scope", "Polynomial matching, energy-condition samples and finite geodesic integrations are useful constraints on candidate constructions. They do not prove global hyperbolicity, stability, maximal extension or a unique matter completion."],
+        ["What has already been tested", "The catalogue contains strong-field, curvature, junction, energy and geodesic calculations. A meaningful next test must therefore target a specific unresolved global property or independently derive a source and stability analysis, rather than repeat local continuity checks."]
+      ]
+    },
+    "tests.html": {
+      title: "How to read 9,300 tests as a structured body of evidence",
+      lede: "The total is an inventory, not a single experiment. Its value becomes visible when records are separated by assertion type, provenance, execution status and scientific layer.",
+      blocks: [
+        ["What is genuinely broad", "The catalogue includes 8,192 unit/integration records, 638 data comparisons, 202 limit tests, 96 dimensional checks, 86 numerical tests, 81 symbolic tests and five regression records across 28 repositories. This is substantially broader than a superficial unit-test suite."],
+        ["What the captured execution adds", "The dated runner snapshot records 1,296 passes and zero failures in its executed subset. That is direct evidence about one recorded environment. The complete inventory is wider but includes definitions, artefacts and parameterized records that should not be added as independent runs."],
+        ["How to interpret application clusters", "Lensing, gravitational waves, electromagnetic extensions and qubit phase work have large data-facing clusters. The stage audit also identifies forward-model, uncertainty and model-comparison mappings unevenly across domains. These mappings locate real work while preserving the distinction between catalogue classification and methodological independence."],
+        ["The right challenge after a pass", "A pass narrows the space of implementation failures. The next useful question is whether the result survives an alternative code path, stricter tolerance, controlled data perturbation, independent calibration or a discriminating observable. This is how the suite becomes a platform for stronger tests rather than a substitute for them."]
+      ]
+    },
+    "reproducibility.html": {
+      title: "Reproducibility as a complete scientific object",
+      lede: "Reproducing a number requires more than rerunning a script. It requires reconstructing the definitions, versions, inputs, environment, tolerances and decisions that made the number meaningful.",
+      blocks: [
+        ["Freeze the scientific lock", "Record the canonical equations, branch boundaries, constants, data snapshot and decision rules before execution. A later workstation result is not comparable if it silently changes any of these inputs."],
+        ["Freeze the computational route", "Source hashes, dependency versions, numerical precision, random seeds, integration tolerances and hardware-sensitive behavior belong to the route. A stored output without this context is an artefact, not a fully reproducible result."],
+        ["Compare outputs at the right level", "Exact identities need exact or tolerance-aware comparisons; simulations need convergence and uncertainty summaries; data analyses need likelihood and nuisance conventions. A bitwise match is not always the correct scientific criterion, and a close visual plot is not always sufficient."],
+        ["Reproduction and independence", "The 9,300-record corpus demonstrates extensive repeated checking, including independent-reproduction labels in the audit. Those labels expose potentially separate routes but do not prove independence by catalogue matching alone. External data, code and analysis choices determine the stronger claim."]
+      ]
+    },
+    "glossary.html": {
+      title: "A glossary is a map of meanings, not a substitute for derivation",
+      lede: "Symbols such as D, rₛ, Ξ, phase and redshift can be familiar while carrying a precise local convention here. Fixing that convention is what makes cross-page reading reliable.",
+      blocks: [
+        ["Notation has ownership", "A symbol should be read with its page, equation and observer convention. D is a static clock factor in the canonical metric; a detector’s Doppler factor or a different paper’s distance variable must not be silently substituted."],
+        ["Units are part of definitions", "A glossary entry should tell whether a quantity is dimensionless, measured in metres, a frequency, a phase or a normalized residual. Unit annotations make hidden conversions and cancellation errors visible before they reach a plot or claim."],
+        ["Epistemic words are technical terms", "Canonical, tested, reproduced, reference, exploratory, proxy and independent describe evidence status as well as content. The portal uses them deliberately so a mathematically correct expression is not mistaken for an empirically confirmed law."],
+        ["Follow the links outward", "Use the glossary to decode a formula, then follow that formula to its derivation, implementation, test, visualization and evidence record. Definitions are the beginning of a chain; they are not the chain’s final conclusion."]
+      ]
+    },
+    "schrodinger.html": {
+      title: "How the quantum wink fits into the research architecture",
+      lede: "The one-dimensional Schrödinger laboratory is intentionally a teaching model. Its value is to explain an eigenproblem and its numerical assumptions while marking the boundary to real quantum systems.",
+      blocks: [
+        ["What the toy solves", "A Hamiltonian, potential and boundary condition define a finite eigenproblem. Mode number, scale and normalization determine the displayed wave-like functions and energy ordering."],
+        ["What the toy teaches", "The laboratory makes nodes, boundary sensitivity, normalization and numerical parameter dependence visible. These are transferable mathematical ideas, even when the chosen potential is not a complete physical atom."],
+        ["Where the qubit model differs", "The qubit page studies a relative phase accumulated by a controlled two-system clock difference. It does not inherit the toy’s potential or claim that the animation is a microscopic derivation of quantum gravity."],
+        ["How tests constrain the boundary", "The mathematical and numerical corpus supports the displayed algorithm and limiting behavior. It does not turn a finite-box eigenproblem into a measured spectrum or a Willow-device reproduction; those would require a separate Hamiltonian, hardware model and data protocol."]
+      ]
     }
   };
   const researchEcosystemBlocks = [
@@ -883,8 +966,39 @@
     rootNode.querySelectorAll?.("canvas").forEach(decorateVisual);
     rootNode.querySelectorAll?.("figure").forEach(decorateFigure);
   }
+  // Core tabs also carry a full foundation chapter; keep the reading-guide
+  // contract intact by deriving a concise guide from that chapter when the
+  // page-specific guide predates the chapter addition.
+  const guideFallbackNext = {
+    "index.html": ["theory.html", "Continue with the theory from first principles"],
+    "tests.html": ["evidence.html", "Follow tests into the claim–evidence ledger"],
+    "reproducibility.html": ["tests.html", "Inspect the executed test record"],
+    "glossary.html": ["formulas.html", "Read the symbols in their equations"],
+    "schrodinger.html": ["mathematics.html", "Explore the numerical-method laboratories"]
+  };
+  const guideFallbackQuestion = {
+    "index.html": "What is SSZ, what does its present metric calculate, and which parts remain research questions?",
+    "theory.html": "How does SSZ move from a physical idea to a defined geometry, equations of motion and testable observables?",
+    "strong-field.html": "What does the locked static metric imply near rₛ, and which compact-object claims remain bridge- or completion-dependent?",
+    "interior-global-structure.html": "Can the current exterior expression be continued to the areal centre, and what would a defensible global completion require?",
+    "tests.html": "What was actually executed, what passed, and how much independent scientific support do those records provide?",
+    "reproducibility.html": "What must be frozen and recorded so that another researcher can reproduce a scientific result rather than only rerun a script?",
+    "glossary.html": "How do the portal’s symbols, units and evidence labels keep meanings stable across equations, pages and experiments?",
+    "schrodinger.html": "What does the archived one-dimensional eigenproblem demonstrate, and why is it intentionally labelled a scientific toy?"
+  };
+  Object.entries(pageGuides).forEach(([page, guide]) => {
+    if (!guide.blocks) return;
+    const blocks = guide.blocks;
+    guide.question = guideFallbackQuestion[page] || guide.question || guide.title;
+    guide.path = guide.path || guide.lede;
+    guide.meaning = guide.meaning || blocks[0]?.[1] || guide.lede;
+    guide.limit = guide.limit || blocks.at(-1)?.[1] || guide.lede;
+    guide.next ||= guideFallbackNext[page] || ["index.html", "Return to the portal overview"];
+  });
+  const allFoundationChapters = {...foundationChapters};
+  Object.entries(pageGuides).filter(([,value]) => value.blocks).forEach(([page,value]) => { allFoundationChapters[page] = value; });
   window.SSZPageGuides = pageGuides;
-  window.SSZFoundationChapters = foundationChapters;
+  window.SSZFoundationChapters = allFoundationChapters;
   window.SSZTestLessons = testLessons;
   window.SSZExplainers = {ruleForFormula, symbolsFor, verificationFor, ruleForVisual, decorateExplanations};
   const savedTheme = localStorage.getItem("ssz-theme");
@@ -923,7 +1037,7 @@
       const toc = hero.nextElementSibling?.matches(".toc") ? hero.nextElementSibling : null;
       (toc || hero).insertAdjacentElement(toc ? "afterend" : "afterend", section);
     }
-    const foundation = foundationChapters[here];
+    const foundation = allFoundationChapters[here];
     const compass = document.getElementById("reading-compass");
     if (foundation && compass && !document.getElementById("foundational-synthesis")) {
       const section = document.createElement("section");

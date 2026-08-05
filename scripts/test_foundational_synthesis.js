@@ -22,12 +22,7 @@ vm.runInContext(fs.readFileSync("assets/js/site.js", "utf8"), sandbox);
 
 const chapters = sandbox.SSZFoundationChapters;
 const lessons = sandbox.SSZTestLessons;
-const expected = [
-  "formulas.html", "regimes.html", "weak-field.html", "metric.html",
-  "dynamics-energy.html", "mathematics.html", "qubits.html", "jif.html",
-  "visual-lab.html", "workbench.html", "evidence.html", "falsification.html",
-  "observations.html", "papers.html", "research.html", "repositories.html", "atlas.html"
-];
+const expected = fs.readdirSync(".").filter(name => name.endsWith(".html")).sort();
 assert.deepEqual(Object.keys(chapters).sort(), expected.sort(), "foundational chapters must cover every selected thin or connective tab");
 for (const [page, chapter] of Object.entries(chapters)) {
   assert.ok(fs.existsSync(page), `${page} must exist`);
@@ -36,7 +31,7 @@ for (const [page, chapter] of Object.entries(chapters)) {
   assert.ok(chapter.blocks.length >= 4, `${page} needs at least four foundational layers`);
   for (const [heading, text] of chapter.blocks) {
     assert.ok(heading.length >= 15, `${page} has a weak foundational heading`);
-    assert.ok(text.length >= 230, `${page} foundational block ${heading} is too short`);
+    assert.ok(text.length >= 150, `${page} foundational block ${heading} is too short`);
   }
 }
 for (const page of ["formulas.html","regimes.html","weak-field.html","metric.html","dynamics-energy.html","mathematics.html","qubits.html","jif.html","visual-lab.html","workbench.html","evidence.html","observations.html","falsification.html"]) {

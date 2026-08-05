@@ -24,6 +24,14 @@ const explainers = sandbox.SSZExplainers;
 assert.equal(typeof explainers.ruleForFormula, "function");
 assert.equal(typeof explainers.ruleForVisual, "function");
 assert.equal(typeof explainers.verificationFor, "function");
+const semanticChecks = [
+  ["\\Theta_{\\mathrm{PC}}=p_i dq^i-Hdt", "Poincare–Cartan one-form"],
+  ["\\Delta t_{\\rm axle}=4\\mathcal A\\Omega/(c^2-\\Omega^2R^2), \\Delta\\tau_{\\rm det}=\\Delta t_{\\rm axle}/\\gamma, \\Delta\\phi=\\omega_{\\rm det}\\Delta\\tau_{\\rm det}", "proper-time phase"],
+  ["\\Gamma^\\rho_{\\mu\\nu}=1/2 g^{\\rho\\sigma}\\partial g", "Derivatives of the metric build connection"]
+];
+for (const [formula, expected] of semanticChecks) {
+  assert.match(explainers.ruleForFormula(formula, "").title, new RegExp(expected, "i"), `semantic explanation mismatch for ${formula}`);
+}
 
 const pages = fs.readdirSync(".").filter(name => name.endsWith(".html"));
 let formulaCount = 0;

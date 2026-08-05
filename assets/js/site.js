@@ -441,6 +441,22 @@
   };
   const formulaRules = [
     {
+      match: /Theta.*PC|Θ.*PC|I.*PC|Poincare.?Cartan|Poincaré.?Cartan/i,
+      title: "The Poincare–Cartan one-form closes the reduced action contour",
+      purpose: "The Poincare–Cartan one-form combines canonical momentum transport with the Hamiltonian time term. Integrating it around the declared closed extended-phase-space contour gives the action bookkeeping used for the two directed paths.",
+      reading: "Keep the contour orientation fixed, identify pᵢ, qⁱ, H and t on each segment, and include the detector-worldline closing segment before comparing the two paths. The stationary fixed-energy reduction is applied only after the contour has been defined.",
+      meaning: "The odd directed contribution can be related to EΔt in the declared stationary optical reduction, so the recurrence’s return-time difference becomes an action difference before phase readout.",
+      limit: "This is a reduced Hamiltonian bookkeeping relation, not a complete SSZ action or a proof that the projected recurrence is symplectic. Invariance applies to Hamiltonian transport of a closed contour, not arbitrary spatial deformations."
+    },
+    {
+      match: /Delta.*t.*axle|Δt.*axle|Delta.*tau.*det|Δτ.*det|omega.*det|ω.*det|Phase readout|Detector layer/i,
+      title: "The detector layer converts return time into proper-time phase",
+      purpose: "This relation keeps three distinct quantities in order: the axle-frame return-time difference, the detector’s proper-time difference, and the detector-referenced phase readout.",
+      reading: "First evaluate the rotating-loop time difference using the declared area and angular speed. Divide by γ for the co-rotating detector proper time, then multiply by the detector angular frequency; do not mix axle coordinate time with detector frequency without this conversion.",
+      meaning: "The result is an operational phase prediction conditional on the specified detector reference, frequency calibration and loop geometry. It is downstream of the kinematic closure, not its cause.",
+      limit: "The equation does not by itself provide a rotating SSZ spacetime, detector noise model, calibration uncertainty, or an experimental confirmation. The area 𝒜 is the loop area and is distinct from the SSZ metric coefficient A(r)=D²(r)."
+    },
+    {
       match: /r[_ₛs\\]*\s*=.*2GM|2GM.*c\^?2|Schwarzschild scale/i,
       title: "Mass sets the natural length scale",
       purpose: "This relation converts a central mass into the Schwarzschild length rₛ. Dividing the areal radius r by that length gives x=r/rₛ, so objects with very different masses can be compared on the same dimensionless radial axis.",
@@ -902,6 +918,116 @@
   }
   function ruleForFormula(text, heading = "") {
     const source = `${heading} ${text}`;
+    const h = heading.toLowerCase();
+    const scoped = (title, purpose, reading, meaning, limit) => ({title, purpose, reading, meaning, limit});
+    // Headings are a semantic namespace. They take precedence over broad
+    // symbol matches so a shared symbol such as D, A, Γ or Δt cannot borrow
+    // an explanation from a neighbouring formula family.
+    if (/^connection$|christoffel/.test(h)) return scoped(
+      "Christoffel symbols encode the metric connection",
+      "The Christoffel connection is built from the first coordinate derivatives of the metric and its inverse. It is the coefficient-level object used to express parallel transport and geodesic acceleration in the selected coordinates.",
+      "Insert the metric and inverse metric, differentiate with respect to the coordinates, and sum the repeated indices. Keep the index order and sign convention fixed before using the result in the geodesic equation.",
+      "A connection coefficient describes how the coordinate basis changes; it is not itself a curvature invariant or a directly measured force.",
+      "Individual Christoffel symbols change under coordinate transformations. Physical singularity claims require invariant contractions, a stated domain and an admissible observer or path."
+    );
+    if (/curvature/.test(h) && !/invariant|centre|center/.test(h)) return scoped(
+      "The Riemann tensor measures curvature of the connection",
+      "The Riemann tensor combines derivatives of the Christoffel connection with quadratic connection products and antisymmetrizes the derivative pair. It is the next geometric layer after the metric and connection.",
+      "Differentiate the connection in the two indicated coordinate directions, subtract in the stated order, and add the two quadratic contractions. Then contract only when a Ricci or scalar invariant is required.",
+      "Riemann components describe tidal deviation and curvature transport; Ricci and Kretschmann contractions provide coordinate-independent diagnostics when their indices are fully contracted.",
+      "Component values depend on coordinates and conventions. A physical conclusion requires the invariant, sign convention, domain and observer scope to be stated explicitly."
+    );
+    if (/effective source/.test(h)) return scoped(
+      "The effective source is reconstructed from curvature",
+      "The Einstein tensor combines the Ricci tensor and scalar curvature. Dividing it by 8πG defines the effective stress tensor that would reproduce the declared metric in an Einstein-equation diagnostic.",
+      "Compute curvature from the metric first, form Gμν=Rμν−½Rgμν, and project to the stated orthonormal frame before identifying density or principal pressures.",
+      "This layer translates geometry into source-like diagnostics and permits explicit energy-condition checks without claiming that the reconstructed tensor is fundamental matter.",
+      "Without a derived SSZ action and field equations, T_eff is diagnostic rather than a unique physical source. Energy-condition results remain domain- and frame-dependent."
+    );
+    if (/lagrange|geodesic dynamics/.test(h)) return scoped(
+      "The metric Lagrangian generates geodesic dynamics",
+      "The quadratic Lagrangian inserts the declared temporal, radial and angular metric factors into the action of an equatorial path. Euler–Lagrange variation yields the corresponding geodesic equations and conserved quantities.",
+      "Treat dots as derivatives with respect to the declared affine parameter or proper time. Differentiate with respect to each coordinate and use cyclic coordinates only after the metric and symmetry assumptions are fixed.",
+      "The resulting constants and effective potential make trajectory integration and conservation residuals auditable consequences of the metric ansatz.",
+      "This is not a complete matter action, rotating solution or global interior theory. Initial conditions, parameterization and numerical tolerances remain part of any trajectory claim."
+    );
+    if (/hamiltonian flow|symplectic/.test(h)) return scoped(
+      "The symplectic update preserves phase-space area",
+      "The split update advances momentum and then position in an order whose Jacobian has unit determinant. It is a numerical integration map for the declared oscillator, not a new physical law.",
+      "Use the old position for the momentum kick, the updated momentum for the position drift, and evaluate the Jacobian with respect to the original phase-space coordinates.",
+      "Area preservation helps control long-term Hamiltonian drift and makes the numerical method’s geometric property directly testable.",
+      "Symplectic does not mean exact: step size, smoothness, order and finite precision still determine the approximation error."
+    );
+    if (/count phase cycles|proper-time accumulation|detector-defined difference/.test(h)) return formulaRules.find(rule => /Phase is being counted/.test(rule.title));
+    if (/static clock comparison|static redshift|static clocks|static clock/.test(h)) return formulaRules.find(rule => /Clock rates/.test(rule.title));
+    if (/radial null travel|null paths/.test(h)) return formulaRules.find(rule => /null path/.test(rule.title));
+    if (/proper radial/.test(h)) return formulaRules.find(rule => /Proper radial/.test(rule.title));
+    if (/impact-parameter|light-deflection/.test(h)) return formulaRules.find(rule => /Impact geometry/.test(rule.title));
+    if (/sagnac difference/.test(h)) return scoped(
+      "The odd-sector recurrence isolates directional time",
+      "Subtracting the two directed geometric series cancels their even powers and retains the terms that change sign under β→−β. The q-recurrence stores those successive odd contributions.",
+      "Initialize q₀=2hT₀β and Δt₀=0, multiply q by β² at each odd step, and add the current q to the accumulated difference. K counts odd contributions, not directed corrections.",
+      "This is the direction-odd projection of the two routes, so it is a compact representation of their difference rather than a third physical propagation path.",
+      "The recurrence assumes constant inputs and |β|<1. It does not replace a full rotating metric, detector model or independent Sagnac measurement."
+    );
+    if (/continuous loop/.test(h)) return formulaRules.find(rule => /Counter-propagating/.test(rule.title));
+    if (/odd-sector tail|directed tail|closure map/.test(h)) return scoped(
+      "The closure recurrence exposes its exact geometric tail",
+      "The recurrence multiplies the normalized remaining distance by σβ at each declared correction and accumulates its contribution to the return time. The tail formula is the exact remainder after N directed or K odd-sector terms.",
+      "Count N as directed corrections or K as included odd contributions, retain h=ℓ₀/L, and evaluate the signed numerator before taking its absolute magnitude for a convergence diagnostic.",
+      "The finite sequence and its tail make convergence rate, direction reversal and odd-sector isolation visible without hiding them in a closed expression.",
+      "This is projected kinematic bookkeeping. It is not a complete rotating spacetime, a symplectic proof or an experimental timing result."
+    );
+    if (/detector layer|phase readout/.test(h)) return formulaRules.find(rule => /detector layer converts/.test(rule.title));
+    if (/asymptotics|ricci scalar|kretschmann|metric coefficient|areal centre|areal center/.test(h)) return formulaRules.find(rule => /Invariant asymptotics/.test(rule.title));
+    if (/piecewise segment|strong branch|weak branch|c² blend|blend zone|canonical weak|strong\/inner branch/.test(h)) return formulaRules.find(rule => /segment field/.test(rule.title));
+    if (/clock and radial factors|from ξ to d/.test(h)) return formulaRules.find(rule => /One field generates/.test(rule.title));
+    if (/diagonal tensor|exact inverse|determinant and volume|local orthonormal coframe|repository flow form|diagonal form/.test(h)) return formulaRules.find(rule => /line element/.test(rule.title));
+    if (/dual velocity|escape scale|dual fall|exact closure/.test(h)) return formulaRules.find(rule => /Escape and reciprocal/.test(rule.title));
+    if (/two observational routes/.test(h)) return scoped(
+      "Kinematic and proper-motion periods are compared as separate routes",
+      "The two period expressions use observed circular speed or observed angular motion to estimate the same Galactic rotation timescale, with each input retaining its own provenance.",
+      "Use consistent radius and angular units, convert the proper motion to radians per time, and compare only after both periods refer to the same adopted Solar-circle radius.",
+      "Agreement checks the internal kinematic scale and the conversion between tangential speed and angular motion; it is not a point-mass dynamical derivation.",
+      "Distance, streaming motions, non-circular structure and measurement uncertainties must be propagated before treating the routes as an observational constraint."
+    );
+    if (/dynamical consistency/.test(h)) return scoped(
+      "The enclosed-mass and point-mass periods test different dynamics",
+      "The enclosed-mass relation uses the adopted circular speed to infer the mass required inside R₀, while the point-mass period is an explicitly inadequate Sgr A* countermodel at the Solar radius.",
+      "Keep the extended enclosed mass and concentrated black-hole mass separate, use SI units, and compare the resulting periods only as a diagnostic of model assumptions.",
+      "The comparison demonstrates why Galactic kinematics cannot be represented by a single central point mass at R₀.",
+      "It is not a fitted alternative or a complete Galactic potential; baryons, dark matter, rotation curves and uncertainties require a full forward model."
+    );
+    if (/separate ssz clock layer/.test(h)) return formulaRules.find(rule => /Clock rates/.test(rule.title));
+    if (/mode index/.test(h)) return scoped(
+      "Integer mode indices determine repetition structure",
+      "The least-common-multiple divided by the greatest-common-divisor gives the number of combined integer-frequency repetitions required before the parametric pattern returns.",
+      "Reduce p and k to their gcd, compute their lcm, and retain the resulting dimensionless repetition count n as the mode index used by the frequency formula.",
+      "The index describes exact arithmetic closure of the displayed modes and does not depend on camera projection or screen coordinates.",
+      "A mode index is a mathematical bookkeeping quantity; it does not by itself identify a physical eigenmode or gravitational mechanism."
+    );
+    if (/baseline/.test(h)) return scoped(
+      "The baseline frequency supplies the reference mode scale",
+      "The baseline expression maps radius and spherical-harmonic index n to the reference frequency before any declared fractional segmentation shift is applied.",
+      "Insert the radius in metres, the dimensionless mode index and the stated calibration factor η, then compare shifted and unshifted frequencies in the same units.",
+      "Separating the baseline from the shift makes the proposed correction auditable and prevents a visual frequency offset from being mistaken for a new eigenfrequency derivation.",
+      "The expression is a declared cavity-model baseline; medium structure, boundary conditions and independent spectral calibration remain outside it."
+    );
+    if (/ssz-inspired damping/.test(h)) return formulaRules.find(rule => /toy Hamiltonian/.test(rule.title));
+    if (/solved.*numerically diagonalised/.test(h)) return formulaRules.find(rule => /toy Hamiltonian/.test(rule.title));
+    if (/stable differential|surface-code connection/.test(h)) return formulaRules.find(rule => /differential clock factor/.test(rule.title));
+    if (/rotating-space picture/.test(h)) return formulaRules.find(rule => /Electromagnetic fields/.test(rule.title));
+    if (/residual and uncertainty/.test(h)) return formulaRules.find(rule => /Residuals compare/.test(rule.title));
+    if (/null paths/.test(h)) return formulaRules.find(rule => /Impact geometry/.test(rule.title));
+    if (/derivative-matched quintic|verify all six|c² constraint|what the c² constraint/.test(h)) return formulaRules.find(rule => /quintic Hermite/.test(rule.title));
+    if (/marginal stability/.test(h)) return formulaRules.find(rule => /Geodesic dynamics/.test(rule.title));
+    if (/finite horizon time dilation|horizon result/.test(h)) return scoped(
+      "The horizon-radius values are local consequences of the locked branch",
+      "Evaluating the strong branch at r=rₛ gives the declared dimensionless field value and its finite clock factor at that coordinate radius.",
+      "Set x=1, evaluate Ξ=1−e^(−φ), and then calculate D=1/(1+Ξ) without interpreting the coordinate value as a global causal boundary.",
+      "The finite coefficients show what this static ansatz predicts locally at rₛ and provide a reproducible numerical anchor for later diagnostics.",
+      "Finite diagonal coefficients do not establish a regular centre, absence of trapped surfaces, a complete interior or a rotating compact-object solution."
+    );
     return formulaRules.find(rule => rule.match.test(source)) || {
       title: `Quantitative statement for ${heading || "this section"}`,
       purpose: `This displayed relation is the quantitative step used by the surrounding ${heading || "discussion"}. It connects the symbols on the left to the assumptions or derived quantities on the right.`,

@@ -6,6 +6,21 @@ A static, provenance-first GitHub Pages portal for Segmented Spacetime (SSZ). It
 
 The self-hosted portal includes interactive Canvas and WebGL modules for metric geometry, observables, repository evidence and JIF counted phase. The dedicated JIF tab adds animated massive-system phasors, a detector-centred phase ledger, the public paper/timestamp notice and direct links to all four public JIF repositories. A separate QM wink tab presents the archived one-dimensional Schrödinger-style Easter egg as humour and explicitly not as scientifically validated evidence. The research archive also includes selected, clearly scoped figures from `ssz-paper-plots`.
 
+## Creators and licensing
+
+Created by Carmen Wrede, Lino Casu, and Bingsi AI (AI research collaborator;
+formerly the Hermes Agent, later the ChatGPT/Codex collaboration).
+
+Carmen Wrede and Lino Casu are the human authors, responsible researchers and
+legal rights holders. Bingsi AI is credited for research collaboration,
+adversarial review, formula checking and documentation support; it is not
+represented as a legal person or copyright holder.
+
+The portal uses separate terms: source code is all rights reserved under
+`LICENSE-CODE`, while manuscript and documentation materials are governed by
+the Anti-Capitalist Software License v1.4 with all ungranted rights reserved.
+See [`LICENSE.md`](LICENSE.md), [`AUTHORS.md`](AUTHORS.md) and [`NOTICE.md`](NOTICE.md).
+
 ## Riemann-Zeta proof candidate
 
 The portal includes a dedicated linear menu page for the repository-internal

@@ -55,6 +55,11 @@
       height: 100%;
       display: block;
       background: var(--background);
+      transition: filter 0.3s ease, background-color 0.3s ease;
+    }
+
+    html[data-theme="light"] canvas {
+      filter: invert(0.91) hue-rotate(180deg) saturate(0.86) contrast(0.98);
     }
 
     .title-block {
@@ -1317,6 +1322,7 @@
     window.addEventListener("message", event => {
       if (!event.data || event.data.type !== "ssz-theme") return;
       const light = event.data.theme === "light";
+      document.documentElement.dataset.theme = light ? "light" : "dark";
       document.documentElement.style.setProperty("--background", light ? "#f8fbff" : "#01060b");
       document.documentElement.style.setProperty("--panel", light ? "rgba(255,255,255,.88)" : "rgba(6,18,27,.76)");
       document.documentElement.style.setProperty("--panel-border", light ? "rgba(30,76,99,.28)" : "rgba(126,182,211,.28)");

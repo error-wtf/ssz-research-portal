@@ -11,7 +11,7 @@
 .rh-controls { display:grid; align-content:start; gap:.7rem; }
 .rh-controls label { display:grid; gap:.25rem; color:var(--muted); font-size:.86rem; }
 .rh-controls input[type=range] { width:100%; accent-color:var(--gold); }
-.rh-canvas { width:100%; min-height:280px; display:block; border:1px solid var(--line); border-radius:.9rem; background:var(--surface); }
+.rh-canvas { width:100%; min-height:280px; display:block; border:1px solid var(--line); border-radius:.9rem; background:var(--surface); transition:filter .3s ease,background-color .3s ease,border-color .3s ease; }
 .rh-equation { padding:1rem; border-left:3px solid var(--gold); background:color-mix(in srgb,var(--gold-light) 38%,var(--surface)); overflow:auto; }
 .rh-proof-step { position:relative; display:grid; grid-template-columns:2.5rem 1fr; gap:1rem; padding:1.15rem 0; border-bottom:1px solid var(--line); }
 .rh-proof-step:last-child { border-bottom:0; }
@@ -45,16 +45,15 @@
 .visual-explanation p { margin: 0; }
 @media (max-width:850px) { .rh-visual-wide .rh-controls { grid-template-columns: 1fr; } }
 .rh-gif-figure{margin:1.25rem 0 0;border:1px solid var(--line,#d7dee8);border-radius:1rem;padding:1rem;background:var(--surface,#fff)}
-.rh-gif-figure img{display:block;width:100%;height:auto;border-radius:.65rem;background:#07111f}
+.rh-gif-figure img{display:block;width:100%;height:auto;border-radius:.65rem;background:#07111f;transition:filter .3s ease,background-color .3s ease}
 .rh-gif-figure figcaption{margin-top:.75rem;color:var(--muted,#64748b);font-size:.9rem;line-height:1.5}
 .rh-gif-hero{margin-top:1.25rem;border-color:var(--gold,#b8860b);box-shadow:0 12px 36px rgba(0,0,0,.22)}
-/* The canvas renderer is authored in a dark scientific palette.  In the
-   portal's light theme invert only the canvas plane so the same complete
-   animation remains legible without changing its geometry or timing. */
-.rh-visual-wide #rh-dirichlet-canvas{transition:filter .28s ease,background .28s ease}
 .rh-grid-embed{margin-top:1rem;border:1px solid rgba(123,176,203,.24);border-radius:18px;overflow:hidden;background:#01060b;box-shadow:0 18px 50px rgba(0,0,0,.18)}
 .rh-grid-embed iframe{display:block;width:100%;height:min(78vh,760px);min-height:520px;border:0;background:#01060b}
 [data-theme="light"] .rh-grid-embed{border-color:rgba(30,76,99,.24)}
 @media (max-width:700px){.rh-grid-embed iframe{height:620px;min-height:620px}}
-[data-theme="light"] .rh-visual-wide #rh-dirichlet-canvas{filter:invert(.93) hue-rotate(180deg) saturate(.82);background:#f8fbff}
-[data-theme="dark"] .rh-visual-wide #rh-dirichlet-canvas{filter:none;background:#02070d}
+[data-theme="light"] .rh-canvas{filter:invert(.91) hue-rotate(180deg) saturate(.86) contrast(.98);background:#f8fbff;border-color:#9bb4c1}
+[data-theme="dark"] .rh-canvas{filter:none}
+[data-theme="light"] .rh-gif-figure img{filter:invert(.9) hue-rotate(180deg) saturate(.84) contrast(.96);background:#f8fbff}
+[data-theme="dark"] .rh-gif-figure img{filter:none}
+@media (prefers-reduced-motion:reduce){.rh-canvas,.rh-gif-figure img{transition:none}}

@@ -1224,7 +1224,7 @@
         group("Foundations", [["theory.html","Theory"],["formulas.html","Formulas"],["metric.html","Metric"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"]]),
         group("Methods & labs", [["dynamics-energy.html","Dynamics & Energy"],["mathematics.html","Mathematics"],["qubits.html","Qubits"],["jif.html","JIF counted phase"],["recursive-closure.html","Recursive closure"],["schrodinger.html","QM wink"],["visual-lab.html","Visual lab"]]),
         group("Evidence", [["tests.html","Tests"],["evidence.html","Evidence"],["falsification.html","Falsification"],["workbench.html","Workbench"],["reproducibility.html","Reproduce"]]),
-        group("Research map", [["observations.html","Observables"],["papers.html","Papers"],["research.html","Research archive"],["repositories.html","Repositories"],["atlas.html","Atlas"],["glossary.html","Glossary"]]),
+        group("Research map", [["observations.html","Observables"],["papers.html","Papers"],["rh-proof-candidate.html","Riemann-Zeta proof candidate"],["research.html","Research archive"],["repositories.html","Repositories"],["atlas.html","Atlas"],["glossary.html","Glossary"]]),
         `<button class="nav-button reviewer-toggle" data-reviewer-toggle aria-pressed="${root.dataset.reviewer==="true"}">${root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF"}</button><button class="nav-button" data-theme-toggle>◐ Theme</button>`
       ].join("");
     }

@@ -56,4 +56,7 @@
 [data-theme="dark"] .rh-canvas{filter:none}
 [data-theme="light"] .rh-gif-figure img{filter:invert(.9) hue-rotate(180deg) saturate(.84) contrast(.96);background:#f8fbff}
 [data-theme="dark"] .rh-gif-figure img{filter:none}
+.rh-animation-toolbar{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:1rem}
+.rh-animation-toolbar [role="status"]{font-size:.9rem;color:var(--muted)}
+.rh-animation-toolbar .button[aria-pressed="false"]{background:transparent;color:var(--text);border-color:var(--line)}
 @media (prefers-reduced-motion:reduce){.rh-canvas,.rh-gif-figure img{transition:none}}

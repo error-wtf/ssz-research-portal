@@ -1268,6 +1268,9 @@
         root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
         localStorage.setItem("ssz-theme", root.dataset.theme);
         window.dispatchEvent(new CustomEvent("ssz-theme-change"));
+        document.querySelectorAll('iframe[src*="zeta_grid_map_animated"]').forEach(frame => {
+          frame.contentWindow?.postMessage({type: "ssz-theme", theme: root.dataset.theme}, "*");
+        });
       });
     });
     document.querySelectorAll("[data-reviewer-toggle]").forEach(button=>button.addEventListener("click",()=>{

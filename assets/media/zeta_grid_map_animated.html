@@ -1313,6 +1313,19 @@
     resizeCanvas();
     buildGeometry();
     requestAnimationFrame(renderDynamicLayer);
+
+    window.addEventListener("message", event => {
+      if (!event.data || event.data.type !== "ssz-theme") return;
+      const light = event.data.theme === "light";
+      document.documentElement.style.setProperty("--background", light ? "#f8fbff" : "#01060b");
+      document.documentElement.style.setProperty("--panel", light ? "rgba(255,255,255,.88)" : "rgba(6,18,27,.76)");
+      document.documentElement.style.setProperty("--panel-border", light ? "rgba(30,76,99,.28)" : "rgba(126,182,211,.28)");
+      document.documentElement.style.setProperty("--text", light ? "#10202b" : "#f7f8fb");
+      document.documentElement.style.setProperty("--muted", light ? "#29465a" : "#bfd0dd");
+      document.documentElement.style.setProperty("--grid-major", light ? "#78a8bc" : "#17485e");
+      document.documentElement.style.setProperty("--grid-minor", light ? "#c5dbe5" : "#0c2b39");
+      document.documentElement.style.setProperty("--axis", light ? "#36586a" : "#a7b6c4");
+    });
   </script>
 </body>
 </html>

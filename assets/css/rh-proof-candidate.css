@@ -52,5 +52,11 @@
    portal's light theme invert only the canvas plane so the same complete
    animation remains legible without changing its geometry or timing. */
 .rh-visual-wide #rh-dirichlet-canvas{transition:filter .28s ease,background .28s ease}
+.rh-grid-poster{background:#01060b;border:1px solid rgba(123,176,203,.24);border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.24)}
+.rh-grid-poster img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.rh-grid-embed{margin-top:1rem;border:1px solid rgba(123,176,203,.24);border-radius:18px;overflow:hidden;background:#01060b;box-shadow:0 18px 50px rgba(0,0,0,.18)}
+.rh-grid-embed iframe{display:block;width:100%;height:min(78vh,760px);min-height:520px;border:0;background:#01060b}
+[data-theme="light"] .rh-grid-poster,[data-theme="light"] .rh-grid-embed{border-color:rgba(30,76,99,.24)}
+@media (max-width:700px){.rh-grid-embed iframe{height:620px;min-height:620px}}
 [data-theme="light"] .rh-visual-wide #rh-dirichlet-canvas{filter:invert(.93) hue-rotate(180deg) saturate(.82);background:#f8fbff}
 [data-theme="dark"] .rh-visual-wide #rh-dirichlet-canvas{filter:none;background:#02070d}

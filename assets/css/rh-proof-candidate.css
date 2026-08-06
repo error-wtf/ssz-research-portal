@@ -48,3 +48,9 @@
 .rh-gif-figure img{display:block;width:100%;height:auto;border-radius:.65rem;background:#07111f}
 .rh-gif-figure figcaption{margin-top:.75rem;color:var(--muted,#64748b);font-size:.9rem;line-height:1.5}
 .rh-gif-hero{margin-top:1.25rem;border-color:var(--gold,#b8860b);box-shadow:0 12px 36px rgba(0,0,0,.22)}
+/* The canvas renderer is authored in a dark scientific palette.  In the
+   portal's light theme invert only the canvas plane so the same complete
+   animation remains legible without changing its geometry or timing. */
+.rh-visual-wide #rh-dirichlet-canvas{transition:filter .28s ease,background .28s ease}
+[data-theme="light"] .rh-visual-wide #rh-dirichlet-canvas{filter:invert(.93) hue-rotate(180deg) saturate(.82);background:#f8fbff}
+[data-theme="dark"] .rh-visual-wide #rh-dirichlet-canvas{filter:none;background:#02070d}

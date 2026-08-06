@@ -26,4 +26,14 @@
 .rh-flow .arrow { color:var(--gold); font-size:1.3rem; }
 .rh-kicker { color:var(--gold); font-size:.77rem; letter-spacing:.08em; text-transform:uppercase; font-weight:800; }
 .rh-source { font-size:.84rem; color:var(--muted); }
+.proof-detail { margin-top:1rem; padding:1rem 1.15rem; border:1px solid var(--line); border-radius:.8rem; background:color-mix(in srgb,var(--surface-2) 70%,var(--surface)); }
+.proof-detail h3 { margin-top:0; color:var(--gold); }
+.formula-note { color:var(--muted); font-size:.86rem; }
+.derivation-panel { border:1px solid color-mix(in srgb,var(--gold) 35%,var(--line)); border-radius:1rem; overflow:hidden; background:var(--surface); box-shadow:var(--shadow); }
+.derivation-tabs { display:flex; flex-wrap:wrap; gap:.35rem; padding:.75rem; background:var(--surface-2); border-bottom:1px solid var(--line); }
+.derivation-tab { border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:.55rem; padding:.5rem .8rem; cursor:pointer; font-weight:700; }
+.derivation-tab.is-active,.derivation-tab:hover { color:#111; background:var(--gold); border-color:var(--gold); }
+.derivation-body { padding:1.2rem; min-height:10rem; }
+.derivation-index { color:var(--gold); font-size:.75rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
+.derivation-body h3 { margin:.45rem 0; }
 @media (max-width:850px) { .rh-visual-grid { grid-template-columns:1fr; } .rh-toc { top:4.2rem; } }

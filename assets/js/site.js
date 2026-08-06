@@ -1264,13 +1264,15 @@
     });
 
     document.querySelectorAll("[data-theme-toggle]").forEach(button => {
+      const syncEmbeddedThemes = () => document.querySelectorAll('iframe[src*="zeta_grid_map_animated"]').forEach(frame => {
+        frame.contentWindow?.postMessage({type: "ssz-theme", theme: root.dataset.theme}, "*");
+      });
+      document.querySelectorAll('iframe[src*="zeta_grid_map_animated"]').forEach(frame => frame.addEventListener("load", syncEmbeddedThemes, {once: true}));
       button.addEventListener("click", () => {
         root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
         localStorage.setItem("ssz-theme", root.dataset.theme);
         window.dispatchEvent(new CustomEvent("ssz-theme-change"));
-        document.querySelectorAll('iframe[src*="zeta_grid_map_animated"]').forEach(frame => {
-          frame.contentWindow?.postMessage({type: "ssz-theme", theme: root.dataset.theme}, "*");
-        });
+        syncEmbeddedThemes();
       });
     });
     document.querySelectorAll("[data-reviewer-toggle]").forEach(button=>button.addEventListener("click",()=>{

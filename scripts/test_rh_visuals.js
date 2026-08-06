@@ -4,6 +4,9 @@ const fs = require("node:fs");
 
 const page = fs.readFileSync("rh-proof-candidate.html", "utf8");
 const script = fs.readFileSync("assets/js/rh-proof-candidate.js", "utf8");
+const siteScript = fs.readFileSync("assets/js/site.js", "utf8");
+const styles = fs.readFileSync("assets/css/rh-proof-candidate.css", "utf8");
+const gridEmbed = fs.readFileSync("assets/media/zeta_grid_map_animated.html", "utf8");
 for (const asset of [
   "assets/media/dirichlet_partial_sums.gif",
   "assets/media/prime_frequency_spectrum.gif",
@@ -23,4 +26,10 @@ assert.match(script, /bind\('rh-zeta-t'/);
 assert.match(script, /bind\('rh-zeta-sigma'/);
 assert.match(script, /bind\('rh-zeta-n'/);
 assert.match(script, /toggleZeta/);
+assert.match(script, /ssz-theme-change/);
+assert.match(styles, /\[data-theme="light"\] \.rh-canvas/);
+assert.match(styles, /\[data-theme="light"\] \.rh-gif-figure img/);
+assert.match(siteScript, /postMessage\(\{type: "ssz-theme"/);
+assert.match(gridEmbed, /event\.data\.type !== "ssz-theme"/);
+assert.match(gridEmbed, /html\[data-theme="light"\] canvas/);
 console.log("OK: RH canvas, GIF, animation, navigation-safe MathJax and pole guard are present");

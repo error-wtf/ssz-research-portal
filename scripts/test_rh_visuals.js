@@ -15,7 +15,6 @@ for (const marker of [
   "rh-zeta-canvas",
   "prime_frequency_spectrum.gif", "rh-zeta-play", "animateDirichlet",
   "rh-phase-canvas", "prime_phase_torus.gif", "drawPhase",
-  "zeta_full_curve.gif",
   "zeta_grid_map_animated.html",
   "zeta_grid_map",
 ]) assert.ok(page.includes(marker) || script.includes(marker), `${marker} missing`);

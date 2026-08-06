@@ -18,8 +18,8 @@ for (const asset of [
 ]) assert.ok(fs.existsSync(asset), `${asset} missing`);
 for (const marker of [
   "rh-zeta-canvas",
-  "prime_frequency_spectrum.gif", "rh-zeta-play", "animateDirichlet",
-  "rh-phase-canvas", "prime_phase_torus.gif", "drawPhase",
+  "rh-frequency-canvas", "rh-zeta-play", "animateDirichlet", "drawFrequency",
+  "rh-phase-canvas", "drawPhase",
   "zeta_grid_map_animated.html",
   "zeta_grid_map",
 ]) assert.ok(page.includes(marker) || script.includes(marker), `${marker} missing`);
@@ -35,7 +35,8 @@ assert.match(script, /if\(!reduceMotion\)startZeta/);
 assert.match(script, /prefers-reduced-motion/);
 assert.match(script, /Manual value selected/);
 assert.match(siteScript, /Prime-log phase recurrence/);
-assert.match(page, /prime_phase_torus\.gif"[^>]+loading="eager"/);
+assert.equal(page.includes("prime_phase_torus.gif"), false, "non-theme-aware phase GIF remains embedded");
+assert.equal(page.includes("prime_frequency_spectrum.gif"), false, "non-theme-aware frequency GIF remains embedded");
 const manuscriptHash = crypto.createHash("sha256").update(manuscript).digest("hex");
 assert.equal(manuscriptHash, "e6cf8ae93bee70ccb5492879538e480a017d2608fc341d4c27b92601415cb576");
 assert.match(page, new RegExp(`id="canonical-manuscript"[\\s\\S]+data-source-sha256="${manuscriptHash}"`));
@@ -49,10 +50,17 @@ for (const heading of [
   "7. RH symmetry bridge",
   "Appendices",
 ]) assert.ok(page.includes(heading), `canonical manuscript heading missing: ${heading}`);
-assert.match(styles, /\[data-theme="light"\] \.rh-canvas/);
-assert.match(styles, /\[data-theme="light"\] \.rh-gif-figure img/);
+assert.equal(/\.rh-canvas\s*\{[^}]*filter:/s.test(styles), false, "canvas still relies on CSS filtering");
+assert.match(script, /const nativePalettes = \{/);
+assert.match(script, /function semanticCanvasColor/);
+assert.match(script, /function themedContext/);
+assert.match(script, /function paintCanvas/);
+assert.match(script, /rh-frequency-canvas/);
 assert.match(styles, /\.rh-visual-grid > \.visual-explainer \{ grid-column: 1 \/ -1; width: 100%; \}/);
 assert.match(siteScript, /postMessage\(\{type: "ssz-theme"/);
 assert.match(gridEmbed, /event\.data\.type !== "ssz-theme"/);
-assert.match(gridEmbed, /html\[data-theme="light"\] canvas/);
+assert.match(gridEmbed, /const themePalettes = \{/);
+assert.match(gridEmbed, /activeTheme = light \? "light" : "dark"/);
+assert.match(gridEmbed, /targetContext\.fillStyle = palette\.background/);
+assert.equal(/html\[data-theme="light"\] canvas\s*\{[^}]*filter:/s.test(gridEmbed), false, "embedded zeta canvas still relies on CSS filtering");
 console.log("OK: RH canvas, GIF, animation, navigation-safe MathJax and pole guard are present");

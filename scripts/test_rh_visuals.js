@@ -35,6 +35,7 @@ assert.match(script, /Manual value selected/);
 assert.match(page, /prime_phase_torus\.gif"[^>]+loading="eager"/);
 assert.match(styles, /\[data-theme="light"\] \.rh-canvas/);
 assert.match(styles, /\[data-theme="light"\] \.rh-gif-figure img/);
+assert.match(styles, /\.rh-visual-grid > \.visual-explainer \{ grid-column: 1 \/ -1; width: 100%; \}/);
 assert.match(siteScript, /postMessage\(\{type: "ssz-theme"/);
 assert.match(gridEmbed, /event\.data\.type !== "ssz-theme"/);
 assert.match(gridEmbed, /html\[data-theme="light"\] canvas/);

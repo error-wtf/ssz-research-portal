@@ -12,11 +12,12 @@ for (const asset of [
   "assets/data/zeta_term_map.json",
 ]) assert.ok(fs.existsSync(asset), `${asset} missing`);
 for (const marker of [
-  "rh-zeta-canvas", "rh-dirichlet-canvas", "dirichlet_partial_sums.gif",
+  "rh-zeta-canvas",
   "prime_frequency_spectrum.gif", "rh-zeta-play", "animateDirichlet",
   "rh-phase-canvas", "prime_phase_torus.gif", "drawPhase",
   "zeta_full_curve.gif",
-  "zeta_term_map.json",
+  "zeta_grid_map_animated.html",
+  "zeta_grid_map",
 ]) assert.ok(page.includes(marker) || script.includes(marker), `${marker} missing`);
 assert.equal(page.includes("psmallmatrix"), false, "unsupported psmallmatrix remains");
 assert.match(script, /bind\('rh-zeta-t'/);

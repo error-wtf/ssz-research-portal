@@ -6,6 +6,18 @@ A static, provenance-first GitHub Pages portal for Segmented Spacetime (SSZ). It
 
 The self-hosted portal includes interactive Canvas and WebGL modules for metric geometry, observables, repository evidence and JIF counted phase. The dedicated JIF tab adds animated massive-system phasors, a detector-centred phase ledger, the public paper/timestamp notice and direct links to all four public JIF repositories. A separate QM wink tab presents the archived one-dimensional Schrödinger-style Easter egg as humour and explicitly not as scientifically validated evidence. The research archive also includes selected, clearly scoped figures from `ssz-paper-plots`.
 
+## Riemann-Zeta proof candidate
+
+The portal includes a dedicated linear menu page for the repository-internal
+Weyl–Volterra / certified-Lyapunov proof candidate:
+
+[rh-proof-candidate.html](rh-proof-candidate.html)
+
+It explains the dependency chain and provides three responsive canvas
+visualisations plus an animated proof-flow map. The scientific status remains
+CANDIDATE_PROOF_COMPLETE_PENDING_INDEPENDENT_REVIEW; this is an explanatory
+and reproducibility layer, not independent acceptance of RH.
+
 ## Run
 
 ```bash

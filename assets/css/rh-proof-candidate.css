@@ -47,3 +47,4 @@
 .rh-gif-figure{margin:1.25rem 0 0;border:1px solid var(--line,#d7dee8);border-radius:1rem;padding:1rem;background:var(--surface,#fff)}
 .rh-gif-figure img{display:block;width:100%;height:auto;border-radius:.65rem;background:#07111f}
 .rh-gif-figure figcaption{margin-top:.75rem;color:var(--muted,#64748b);font-size:.9rem;line-height:1.5}
+.rh-gif-hero{margin-top:1.25rem;border-color:var(--gold,#b8860b);box-shadow:0 12px 36px rgba(0,0,0,.22)}

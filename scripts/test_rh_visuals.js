@@ -15,7 +15,7 @@ for (const marker of [
   "rh-zeta-canvas", "rh-dirichlet-canvas", "dirichlet_partial_sums.gif",
   "prime_frequency_spectrum.gif", "rh-zeta-play", "animateDirichlet",
   "rh-phase-canvas", "prime_phase_torus.gif", "drawPhase",
-  "zeta_complex_plane.gif",
+  "zeta_full_curve.gif",
   "zeta_term_map.json",
 ]) assert.ok(page.includes(marker) || script.includes(marker), `${marker} missing`);
 assert.equal(page.includes("psmallmatrix"), false, "unsupported psmallmatrix remains");

@@ -34,6 +34,7 @@ assert.match(script, /function animateLabs/);
 assert.match(script, /if\(!reduceMotion\)startZeta/);
 assert.match(script, /prefers-reduced-motion/);
 assert.match(script, /Manual value selected/);
+assert.match(siteScript, /Prime-log phase recurrence/);
 assert.match(page, /prime_phase_torus\.gif"[^>]+loading="eager"/);
 const manuscriptHash = crypto.createHash("sha256").update(manuscript).digest("hex");
 assert.equal(manuscriptHash, "e6cf8ae93bee70ccb5492879538e480a017d2608fc341d4c27b92601415cb576");

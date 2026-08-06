@@ -37,3 +37,10 @@
 .derivation-index { color:var(--gold); font-size:.75rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
 .derivation-body h3 { margin:.45rem 0; }
 @media (max-width:850px) { .rh-visual-grid { grid-template-columns:1fr; } .rh-toc { top:4.2rem; } }
+.rh-visual-wide .rh-visual-grid { grid-template-columns: 1fr; }
+.rh-visual-wide .rh-controls { grid-template-columns: repeat(3, minmax(10rem, 1fr)); align-items: start; }
+.rh-visual-wide .visual-explanation { grid-column: 1 / -1; }
+.visual-explanation { margin-top: .75rem; padding: .8rem 1rem; border-left: 3px solid var(--gold); background: color-mix(in srgb, var(--gold-light) 22%, var(--surface)); color: var(--muted); }
+.visual-explanation h3 { margin: 0 0 .35rem; color: var(--text); font-size: 1rem; }
+.visual-explanation p { margin: 0; }
+@media (max-width:850px) { .rh-visual-wide .rh-controls { grid-template-columns: 1fr; } }

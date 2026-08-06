@@ -162,9 +162,10 @@
 </div>
 <canvas id="rh-theta-canvas" class="rh-canvas" aria-label="Positive rapidly decaying theta source visualisation">
 </canvas>
+<div class="visual-explanation"><h3>What the positive-source plot means</h3><p>The gold curve is a schematic of the positive Gaussian theta source \(\theta(x)\); the dashed curve shows how multiplying by an admissible weight \(e^{|\beta|x}\) still leaves rapid decay. This is why the two Volterra integrals converge absolutely. It is not a sampled proof of the infinite theta series: the rigorous statement comes from the analytic majorant and its declared domain \(|\beta|<1/2\).</p></div>
 </div>
 </div>
-<div class="rh-visual" style="margin-top:1rem">
+<div class="rh-visual rh-visual-wide" style="margin-top:1rem">
 <div class="rh-visual-grid">
 <div class="rh-controls">
 <label>β in endpoint bound <output id="rh-decay-beta-out">0.25</output>
@@ -187,9 +188,10 @@
 </div>
 <canvas id="rh-decay-canvas" class="rh-canvas" aria-label="Endpoint exponential decay bound visualisation">
 </canvas>
+<div class="visual-explanation"><h3>What the endpoint-flux plot means</h3><p>The envelope is \(C_{\alpha,\beta}e^{-2\beta R}\). The prefactor records a finite state-size bound; the slope \(2\beta\) comes from the imaginary part of \(\alpha\). Larger finite \(|\alpha|\) raises the prefactor but does not change the limit. At \(\beta=0\), the exponential no longer decays, so this argument deliberately does not cover the critical line.</p></div>
 </div>
 </div>
-<div class="rh-visual" style="margin-top:1rem">
+<div class="rh-visual rh-visual-wide" style="margin-top:1rem">
 <div class="rh-visual-grid">
 <div class="rh-controls">
 <label>β matrix margin <output id="rh-matrix-beta-out">0.25</output>
@@ -212,9 +214,14 @@
 </div>
 <canvas id="rh-matrix-canvas" class="rh-canvas" aria-label="Lyapunov residual matrix positivity visualisation">
 </canvas>
+<div class="visual-explanation"><h3>What the Schur-margin plot means</h3><p>The cells show the Hermitian residual after its positive exponential factor is removed: the leading entry \(2\beta\), the conjugate correction entries \(\pm i k_\beta\), and the lower-right profile term. The decisive test is the Schur complement \(G_\beta=(1+k_\beta)(T-4\beta)+k_\beta'-\Phi''k_\beta^2/(2\beta)\), not the lower-right cell alone. Green indicates a positive illustrative toy margin; exact positivity is supplied by the symbolic identity and Sturm certificate.</p></div>
 </div>
 </div>
 <div class="rh-visual" style="margin-top:1rem"><div class="rh-visual-grid"><div class="rh-controls"><label>Candidate \(\alpha\) real part <output id="rh-plane-x-out">0.0</output><input id="rh-plane-x" type="range" min="-8" max="8" step=".1" value="0"></label><label>Candidate \(\beta\) <output id="rh-plane-beta-out">0.25</output><input id="rh-plane-beta" type="range" min="-.49" max=".49" step=".01" value=".25"></label><p class="rh-source">The complex-plane view separates the forbidden open half-strips from the critical line. It is a schematic map, not a zero computation.</p><div class="result"><div><small>mapped \(\Re s\)</small><strong id="rh-plane-s-out">0.25</strong></div><div><small>status</small><strong id="rh-plane-status-out">tested half-strip</strong></div></div></div><canvas id="rh-plane-canvas" class="rh-canvas" aria-label="Interactive alpha and s parameter map"></canvas></div></div>
+</section>
+<section id="zeta-live" class="section">
+<div class="section-head"><span class="rh-kicker">03c · live zeta explorer</span><h2>Watch a finite approximation to \(\zeta(\sigma+it)\)</h2><p>This live plot evaluates the alternating Dirichlet approximation \(\eta(s)=\sum_{n=1}^{N}(-1)^{n-1}n^{-s}\) and displays \(\zeta(s)\approx\eta(s)/(1-2^{1-s})\). It is an illustration: truncation and finite precision are not a proof or a zero certificate.</p></div>
+<div class="rh-visual"><div class="rh-visual-grid"><div class="rh-controls"><label>Centre \(t\) <output id="rh-zeta-t-out">14.1</output><input id="rh-zeta-t" type="range" min="0" max="60" step=".1" value="14.1"></label><label>Real part \(\sigma\) <output id="rh-zeta-sigma-out">0.50</output><input id="rh-zeta-sigma" type="range" min=".2" max="1.2" step=".01" value=".5"></label><label>Terms \(N\) <output id="rh-zeta-n-out">160</output><input id="rh-zeta-n" type="range" min="30" max="500" step="10" value="160"></label><button class="button" id="rh-zeta-play" type="button">▶ Animate t</button><div class="result"><div><small>live \(|\zeta|\) proxy</small><strong id="rh-zeta-value-out">—</strong></div><div><small>interpretation</small><strong id="rh-zeta-status-out">finite sample</strong></div></div><p class="rh-source">Gold is \(\Re\zeta\), blue is \(\Im\zeta\), and the marker is the current sample. Use the zero guide only as visual orientation.</p></div><canvas id="rh-zeta-canvas" class="rh-canvas" aria-label="Animated finite approximation to the Riemann zeta function"></canvas></div></div>
 </section>
 <section id="volterra" class="section">
 <div class="section-head">

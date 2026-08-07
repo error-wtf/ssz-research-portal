@@ -11,12 +11,13 @@
     const roles={
       '#02070d':'background','#050b13':'background','#07111f':'background',
       '#f8fafc':'text','#f1f5f9':'text','#0f172a':'text',
-      '#12364a':'grid','#12435a':'grid','#334155':'axis','#cbd5e1':'axis','#a9b9c8':'axis','#8aa4b7':'axis',
+      '#12364a':'grid','#12435a':'grid','#dbe4ee':'grid',
+      '#334155':'axis','#cbd5e1':'axis','#a9b9c8':'axis','#8aa4b7':'axis',
       '#64748b':'muted','#475569':'muted',
       '#b8860b':'gold','#f5df4d':'gold','#ffd84d':'gold',
       '#2563eb':'blue','#37bdf8':'blue','#38bdf8':'blue',
-      '#d9480f':'prime','#f8a4c2':'prime',
-      '#a9c3c8':'composite','#b8b1f0':'composite'
+      '#d9480f':'prime','#f8a4c2':'prime','#e7a1b4':'prime',
+      '#a9c3c8':'composite','#b8b1f0':'composite','#8de0d0':'composite'
     };
     return roles[key]?p[roles[key]]:value;
   }
@@ -54,7 +55,7 @@
   let fullMapFrame=0;function drawFullDirichlet(){const c=$('rh-dirichlet-canvas');if(!c)return;const {x,w,h}=setupCanvas('rh-dirichlet-canvas');const sigma=+$('rh-zeta-sigma').value,t=+$('rh-zeta-t').value,N=+$('rh-zeta-n').value,k=Math.max(1,Math.min(N,Math.floor(dirichletFrame))),data=prepareDirichlet(sigma,t,N),scale=Math.min((w-100)/14,(h-90)/7.6),ox=w/2,oy=h/2;x.clearRect(0,0,w,h);x.fillStyle='#02070d';x.fillRect(0,0,w,h);x.strokeStyle='#12435a';x.lineWidth=1;for(let g=-7;g<=7;g++){const gx=ox+g*scale,gy=oy-g*scale;x.beginPath();x.moveTo(gx,16);x.lineTo(gx,h-34);x.moveTo(42,gy);x.lineTo(w-14,gy);x.stroke();}x.strokeStyle='#a9b9c8';x.lineWidth=1.1;x.beginPath();x.moveTo(42,oy);x.lineTo(w-14,oy);x.moveTo(ox,16);x.lineTo(ox,h-34);x.stroke();const pal=['#f5df4d','#e7a1b4','#a9c3c8','#b8b1f0'];const sigmas=[];for(let j=0;j<14;j++)sigmas.push(-1.1+j*2.1/13);const rays=[];for(let n=2;n<=Math.min(N,24);n++){const color=pal[n%pal.length];for(const sg of sigmas){const r=Math.pow(n,-sg)*scale;x.strokeStyle=color;x.globalAlpha=.25;x.lineWidth=.75;x.beginPath();for(let j=0;j<=100;j++){const a=-Math.PI+2*Math.PI*j/100,px=ox+r*Math.cos(a),py=oy-r*Math.sin(a);j?x.lineTo(px,py):x.moveTo(px,py);}x.stroke();}for(let j=0;j<18;j++){const tv=-4+j*8/17,a=-(tv+(t-(+$('rh-zeta-t').value))*.25)*Math.log(n);rays.push({n,tv,a,color});x.strokeStyle=color;x.globalAlpha=.2;x.beginPath();x.moveTo(ox,oy);x.lineTo(ox+7.2*scale*Math.cos(a),oy-7.2*scale*Math.sin(a));x.stroke();}}x.globalAlpha=1;const pts=data.pts;const cur=pts[k-1],cx=ox+cur.re*scale,cy=oy-cur.im*scale;x.strokeStyle='#37bdf8';x.lineWidth=2;x.beginPath();x.moveTo(ox+cur.prev.re*scale,oy-cur.prev.im*scale);x.lineTo(cx,cy);x.stroke();x.fillStyle='#ffd84d';x.beginPath();x.arc(cx,cy,6,0,Math.PI*2);x.fill();x.fillStyle='#f8a4c2';x.lineWidth=2;x.beginPath();pts.forEach((p,i)=>{const px=ox+p.re*scale,py=oy-p.im*scale;i?x.lineTo(px,py):x.moveTo(px,py);});x.stroke();x.fillStyle='#f8fafc';x.font='600 13px system-ui';x.fillText('Riemann zeta function · complete finite term map',50,26);x.font='12px system-ui';x.fillText(`σ=${sigma.toFixed(2)}  t=${t.toFixed(2)}  S${k}=${cur.re.toFixed(3)} ${cur.im<0?'−':'+'} ${Math.abs(cur.im).toFixed(3)}i`,50,h-12);fullMapFrame=(fullMapFrame+1)%720;}
   function animateDirichlet(){if(!$('rh-dirichlet-canvas'))return;const n=+$('rh-zeta-n')?.value||160;dirichletFrame=dirichletFrame>=n?1:dirichletFrame+1;drawFullDirichlet();requestAnimationFrame(animateDirichlet);}
   let phaseFrame=0;
-  function drawPhase(){
+  function drawPhase(animate=true){
     const c=$('rh-phase-canvas');
     if(!c)return;
     const {x,w,h}=setupCanvas('rh-phase-canvas'),p=paintCanvas(x,w,h);
@@ -102,12 +103,12 @@
     x.fillText(`t=${t.toFixed(2)} · return score (2,3,5)=${score.toFixed(3)}${jumpNow?' · torus wrap jump':''}`,50,25);
     x.fillText('phase log 2',w-90,oy-8);
     x.fillText('phase log 3',ox+8,20);
-    if(!reduceMotion)phaseFrame=(phaseFrame+1)%frameCount;
-    requestAnimationFrame(drawPhase);
+    if(animate&&!reduceMotion)phaseFrame=(phaseFrame+1)%frameCount;
+    if(animate)requestAnimationFrame(drawPhase);
   }
   let frequencyFrame=0;
   function isPrime(n){if(n<2)return false;for(let d=2;d*d<=n;d++)if(n%d===0)return false;return true;}
-  function drawFrequency(){
+  function drawFrequency(animate=true){
     const c=$('rh-frequency-canvas');
     if(!c)return;
     const {x,w,h}=setupCanvas('rh-frequency-canvas'),p=paintCanvas(x,w,h);
@@ -130,7 +131,8 @@
     x.globalAlpha=1;x.strokeStyle=p.blue;x.lineWidth=2;x.stroke();
     for(let n=2;n<=N;n++){const xx=left+(n-2)/(N-2)*plotW,logY=logBottom-(Math.log(n)/maxLog)*(logBottom-logTop);x.globalAlpha=n<=reveal?1:.12;x.fillStyle=isPrime(n)?p.prime:p.composite;x.beginPath();x.arc(xx,logY,isPrime(n)?3.2:2,0,Math.PI*2);x.fill();}
     x.globalAlpha=1;x.fillStyle=p.muted;x.font='12px system-ui';x.fillText(`revealed n ≤ ${reveal} · prime points highlighted`,left,h-13);x.fillStyle=p.prime;x.fillText('prime generator',w-198,23);x.fillStyle=p.composite;x.fillText('composite combination',w-198,40);
-    if(!reduceMotion)frequencyFrame=(frequencyFrame+1)%144;requestAnimationFrame(drawFrequency);
+    if(animate&&!reduceMotion)frequencyFrame=(frequencyFrame+1)%144;
+    if(animate)requestAnimationFrame(drawFrequency);
   }
   function drawPlane(){const c=$('rh-plane-canvas');if(!c)return;const {x,w,h}=setupCanvas('rh-plane-canvas');x.clearRect(0,0,w,h);axes(x,w,h);const bx=+$('rh-plane-x').value,b=+$('rh-plane-beta').value;$('rh-plane-x-out').textContent=bx.toFixed(1);$('rh-plane-beta-out').textContent=b.toFixed(2);$('rh-plane-s-out').textContent=(.5-b).toFixed(3);$('rh-plane-status-out').textContent=b>0&&b<.5?'Weyl-tested half-strip':b<0?'reflection half-strip':'critical line / boundary';const ox=42,oy=h-32,sx=(w-58)/16,sy=(h-54)/1.2;x.fillStyle='#e9c46a';x.fillRect(ox,oy-sy*.5,w-58,sy*.5);x.fillStyle='#264653';x.fillRect(ox,oy-sy*1.0,w-58,sy*.5);x.strokeStyle='#b8860b';x.lineWidth=2;x.beginPath();x.moveTo(ox,oy-sy*.5);x.lineTo(w-14,oy-sy*.5);x.stroke();x.strokeStyle='#7c3aed';x.setLineDash([5,4]);x.beginPath();x.moveTo(ox+8*sx,oy);x.lineTo(ox+8*sx,14);x.stroke();x.setLineDash([]);const px=ox+(bx+8)*sx,py=oy-b*sy;x.fillStyle='#d9480f';x.beginPath();x.arc(px,py,6,0,Math.PI*2);x.fill();x.fillStyle='#64748b';x.fillText('Im α = β',50,25);x.fillText('Re α = ξ',w-86,h-10);x.fillText('critical line β=0',w-150,oy-sy*.5-8);}
   const derivations=[['Positive source → finite weighted tails','\\[\\theta>0,\\quad e^{|\\beta||x|}\\theta\\in L^1(\\mathbb R).\\]','The Gaussian majorant gives a finite weighted integral, so both Volterra tails are genuine functions.'],['Volterra ODE','\\[u_\\pm\\prime+i\\alpha u_\\pm=\\theta.\\]','Differentiate the variable-limit integrals; the boundary term supplies the source.'],['Hermitian residue','\\[H_+=J_+\\prime+A_\\alpha^*J_++J_+A_\\alpha,\\quad H_+>0.\\]','The matrix identity turns scalar profile margins into positive production for the actual state.'],['Global Green balance','\\[M_-(0)-M_+(0)=E_-+E_+.\\]','Finite identities plus vanishing endpoint flux produce the improper identity with fixed orientations.'],['Contradiction','\\[0=M_-(0)-M_+(0)=E_-+E_+>0.\\]','Xi-zero matching forces the origin balance to vanish, while nondegeneracy makes production strictly positive.']];
@@ -149,7 +151,7 @@
   let flowTimer; function animateFlow(){const nodes=[...document.querySelectorAll('.rh-flow .node')];let i=0;clearInterval(flowTimer);flowTimer=setInterval(()=>{nodes.forEach(n=>n.classList.remove('active'));nodes[i%nodes.length].classList.add('active');i++;},850);}
   function bind(id,fn){const e=$(id);if(e)e.addEventListener('input',fn);}
   window.addEventListener('resize',()=>{drawTheta();drawDecay();drawMatrix();drawPlane();drawZeta();drawFullDirichlet();});
-  window.addEventListener('ssz-theme-change',()=>{drawTheta();drawDecay();drawMatrix();drawPlane();drawZeta();drawFullDirichlet();});
+  window.addEventListener('ssz-theme-change',()=>{drawTheta();drawDecay();drawMatrix();drawPlane();drawZeta();drawFullDirichlet();drawPhase(false);drawFrequency(false);});
   bind('rh-beta',drawTheta);bind('rh-decay-beta',drawDecay);bind('rh-alpha',drawDecay);bind('rh-matrix-beta',drawMatrix);bind('rh-matrix-k',drawMatrix);bind('rh-plane-x',drawPlane);bind('rh-plane-beta',drawPlane);bind('rh-zeta-t',()=>{drawZeta();drawFullDirichlet();});bind('rh-zeta-sigma',()=>{drawZeta();drawFullDirichlet();});bind('rh-zeta-n',()=>{drawZeta();drawFullDirichlet();});labControls.forEach(id=>$(id)?.addEventListener('input',()=>pauseLabs('Manual value selected; the shared sweep is paused.')));if($('rh-labs-play'))$('rh-labs-play').addEventListener('click',toggleLabs);if($('rh-zeta-play'))$('rh-zeta-play').addEventListener('click',toggleZeta);
   /* Final full-curve renderer: every declared ring and ray is fitted inside
      the canvas, while the highlighted S_N trajectory is sampled across the

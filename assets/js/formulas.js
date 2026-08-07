@@ -13,6 +13,15 @@
       <div class="formula-entry-head"><div><span class="badge canonical">${esc(item.topic)}</span><h3>${esc(item.name)}</h3></div><button class="nav-button formula-copy" data-formula="${esc(item.latex)}">Copy source</button></div>
       <div class="math-box rendered-math" data-label="${esc(item.id)}" aria-label="${esc(item.name)}">\\[${esc(item.latex)}\\]</div>
       <dl class="formula-meta"><dt>Units</dt><dd>${esc(item.units)}</dd><dt>Domain</dt><dd>${esc(item.domain)}</dd><dt>Guardrail</dt><dd>${esc(item.caution)}</dd></dl>
+      <details class="formula-explanation formula-explainer" data-explanation-owner="formula">
+        <summary><span>Explain this formula</span><strong>${esc(item.name)}</strong></summary>
+        <div class="explainer-body">
+          <section><h4>Purpose</h4><p>This reviewed catalogue entry defines or records <strong>${esc(item.name)}</strong> in the ${esc(item.topic)} branch. It is the quantitative object named by the surrounding section, not an unsupported conclusion.</p></section>
+          <section><h4>How to read it</h4><p>Read the equality from left to right: evaluate the declared inputs first, preserve the displayed normalization, and check that every term uses the stated units. The source form is available through <em>Copy source</em>.</p></section>
+          <section><h4>Domain and meaning</h4><p>The declared domain is <strong>${esc(item.domain)}</strong>. Units are <strong>${esc(item.units)}</strong>. Within that domain the relation provides the named geometric, kinematic, observational or validation quantity; outside it no extension is implied.</p></section>
+          <section><h4>Guardrail and verification</h4><p>${esc(item.caution)} The entry is reviewed for notation, dimensions, limits and regression consistency. Those checks establish the stated relation under its assumptions; they do not turn a model formula into an independent empirical law.</p></section>
+        </div>
+      </details>
     </article>`).join("");
     window.MathJax?.typesetPromise?.([document.getElementById("formula-catalog")]);
     document.querySelectorAll(".formula-copy").forEach(button=>button.addEventListener("click",async()=>{

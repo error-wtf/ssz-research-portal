@@ -1137,20 +1137,15 @@
     return Boolean(next?.matches(`.${kind}-explainer`) && next.dataset.sourceElement === (element.id || ""));
   }
   function hasAuthoredFormulaContext(element) {
-    // Most catalogue cards already contain a carefully written paragraph
-    // immediately after the equation.  Adding a second paragraph that says
-    // the same thing is not extra documentation; it is duplication.  Keep an
-    // automatic explainer only when the formula has no substantive local
-    // explanation of its own.
+    // A nearby prose sentence is context, not a complete explanation.  Only
+    // an explicitly owned explanation suppresses the generated five-part
+    // audit.  This prevents formula fields from disappearing on pages whose
+    // original paragraph happens to be long, while avoiding duplicate boxes
+    // when an author has deliberately supplied a full explanation.
     const container = explanationContainer(element);
     if (!container) return false;
     if (container.matches("[data-explanation-owner='formula'], .formula-explanation")) return true;
-    let node = element.nextElementSibling;
-    while (node && node !== container) {
-      if (node.matches(".formula-explainer, .math-box, .formula, .display-formula")) break;
-      if (node.matches("p, .formula-note, .where") && node.textContent.replace(/\s+/g, " ").trim().length >= 120) return true;
-      node = node.nextElementSibling;
-    }
+    if (container.closest(".canonical-formulas") && location.pathname.endsWith("/formulas.html")) return true;
     return false;
   }
   function decorateFormula(element) {

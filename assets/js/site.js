@@ -1183,7 +1183,7 @@
     if (!container) return false;
     const selector = kind === "visual"
       ? ".visual-explanation, [data-explanation-owner='visual']"
-      : ".formula-explanation, [data-explanation-owner='formula']";
+      : ".formula-explanation, [data-explanation-owner='formula'], [data-explanation-owner='jif']";
     return Boolean(container.querySelector(selector));
   }
   function hasGeneratedExplanation(element, kind) {
@@ -1198,7 +1198,7 @@
     // when an author has deliberately supplied a full explanation.
     const container = explanationContainer(element);
     if (!container) return false;
-    if (container.matches("[data-explanation-owner='formula'], .formula-explanation")) return true;
+    if (container.matches("[data-explanation-owner='formula'], [data-explanation-owner='jif'], .formula-explanation")) return true;
     if (container.closest(".canonical-formulas") && location.pathname.endsWith("/formulas.html")) return true;
     return false;
   }

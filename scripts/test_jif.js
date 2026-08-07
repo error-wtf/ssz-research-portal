@@ -4,6 +4,7 @@ const fs = require("node:fs");
 const vm = require("node:vm");
 
 const html = fs.readFileSync("jif.html", "utf8");
+const siteSource = fs.readFileSync("assets/js/site.js", "utf8");
 for (const marker of [
   "PUBLIC RESEARCH TIMESTAMP NOTICE",
   "expected to follow by the end of 2026",
@@ -11,9 +12,12 @@ for (const marker of [
   'id="jif-phase-canvas"',
   'id="jif-ledger-canvas"',
   "Anticapitalist License, Version 1.4",
+  "data-explanation-owner=\"jif\"",
 ]) {
   assert.ok(html.toLowerCase().includes(marker.toLowerCase()), `missing JIF marker: ${marker}`);
 }
+assert.match(siteSource, /data-explanation-owner='jif'/);
+assert.match(siteSource, /container\.matches\("\[data-explanation-owner='formula'\], \[data-explanation-owner='jif'\]/);
 
 const initial = {
   "jif-radius": "0", "jif-frequency": "3", "jif-time": "1",

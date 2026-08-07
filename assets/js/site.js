@@ -476,7 +476,10 @@
       limit: "rₛ is a scale and coordinate location. Naming it does not by itself establish an event horizon, a material surface or a regular interior."
     },
     {
-      match: /Xi|\\Xi|Ξ/,
+      // Keep this fallback scoped to an actual profile/branch context. A
+      // symbol such as Xi can occur in metric, curvature and observable
+      // formulas that require completely different explanations.
+      match: /(?:segment field|piecewise|strong[- ]branch|weak[- ]branch|canonical weak|c² blend|c2 blend|bridge|time factor|radial stretch|horizon segment)[\s\S]*(?:Xi|\\Xi|Ξ)|(?:Xi|\\Xi|Ξ)[\s\S]*(?:segment field|piecewise|strong[- ]branch|weak[- ]branch|canonical weak|c² blend|c2 blend|bridge|time factor|radial stretch|horizon segment)/i,
       title: "The segment field selects the local SSZ scaling",
       purpose: "Ξ is the dimensionless field from which the portal derives the clock factor D and the radial scale. Strong, bridge and weak expressions describe different intervals of the same normalized radius x.",
       reading: "Evaluate x=r/rₛ first, choose the branch allowed at that x, and then calculate Ξ. Exponential strong-field terms saturate toward the centre, the quintic bridge matches endpoint data, and the weak branch decreases like 1/(2x).",
@@ -946,6 +949,57 @@
     const source = `${heading} ${text}`;
     const h = heading.toLowerCase();
     const scoped = (title, purpose, reading, meaning, limit) => ({title, purpose, reading, meaning, limit});
+    // Segment explanations are branch-specific. The shared symbol Xi must
+    // not cause strong, bridge and weak equations to inherit one another's prose.
+    if (/strong[- ]branch|strong\/inner branch/.test(h)) return scoped(
+      "The strong branch fixes the inner SSZ field",
+      "This is the canonical inner definition of Xi on the declared strong-field interval. It supplies the value used to derive D before the bridge is reached.",
+      "Form x=r/rₛ first, then evaluate the exponential with the declared golden-ratio parameter φ. Do not apply this branch at the bridge or weak-field endpoint.",
+      "The exponential approaches its declared inner limit as x decreases and gives the finite checkpoint Xi(rₛ) recorded by the portal.",
+      "The branch is a model definition on its stated interval. Its finite coefficient does not establish centre regularity, a horizon surface or a fundamental action."
+    );
+    if (/weak[- ]branch|canonical weak/.test(h)) return scoped(
+      "The weak branch restores the asymptotic field",
+      "This is the canonical outer definition Xi_weak=1/(2x)=rₛ/(2r), used beyond the declared bridge interval.",
+      "Form x=r/rₛ first and divide one by 2x. This branch applies only for x>2.2; do not extrapolate it through the bridge or interior.",
+      "Xi decreases to zero as x grows, so D=(1+Xi)⁻¹ approaches one and the static metric approaches its declared asymptotic form.",
+      "This is a leading weak-field branch, not a complete post-Newtonian observable or an empirical fit by itself."
+    );
+    if (/c² blend|c2 blend|bridge/.test(h) && /H_5|H₅|blend|quintic|smoothstep/i.test(text)) return scoped(
+      "The C² bridge transports endpoint data between branches",
+      "The quintic Hermite bridge interpolates between the actual strong and weak endpoint values, slopes and curvatures on the finite transition interval.",
+      "Map x to t=(x−1.8)/0.4, evaluate the six Hermite basis terms, and retain the endpoint derivative data rather than replacing it with a generic smoothstep.",
+      "Matching value, first derivative and second derivative gives C² continuity of the selected field across both joins.",
+      "The bridge is an operational matching prescription. C² smoothness does not derive its locations from field equations or make all bridge-sensitive observables unique."
+    );
+    if (/piecewise segment field/.test(h) && /Xi|Ξ/i.test(text)) return scoped(
+      "The piecewise field routes one radius through three declared branches",
+      "This relation is the branch router: inner strong expression for x<1.8, quintic C² bridge on 1.8≤x≤2.2, and weak expression for x>2.2.",
+      "Compute x=r/rₛ, select exactly one inclusive interval, and evaluate only the formula assigned to that interval.",
+      "The three expressions are parts of one normalized profile; endpoint values, slopes and curvatures are checked at both joins.",
+      "Routing and derivative matching are verified construction properties, not a derivation of the profile from a fundamental action."
+    );
+    if (/(?:Xi|\\Xi|Ξ).*(?:exp|e\^|varphi|\\varphi)/i.test(text)) return scoped(
+      "The strong branch fixes the inner SSZ field",
+      "This expression defines the exponential strong-field branch of the dimensionless profile before the transition interval and supplies the local field value from which the canonical clock and radial factors are derived.",
+      "Form x=r/rₛ first, evaluate the exponential with φ, and use it only on the declared inner interval; never substitute it for the bridge or outer formula when routing a point.",
+      "As x decreases the exponential saturates toward the stated inner limit, which then determines D through D=(1+Xi)⁻¹.",
+      "This is a branch definition, not a proof of centre regularity, a horizon surface, a source equation or a fundamental action."
+    );
+    if (/(?:Xi|\\Xi|Ξ).*(?:frac\{1\}\{2x\}|1\/2x|GM|rc\^?2|r_s)/i.test(text)) return scoped(
+      "The weak branch restores the asymptotic field",
+      "This expression gives the inverse-radius weak-field profile, Xi_weak=1/(2x)=rₛ/(2r)=GM/(rc²), and connects the normalized profile with the leading weak-field potential.",
+      "Evaluate x=r/rₛ and divide by 2x, or use the equivalent dimensional form with G, M, r and c; apply it only after the outer boundary has been crossed.",
+      "The field tends to zero at large radius, so D approaches one and the declared metric becomes asymptotically flat.",
+      "This leading branch is valid only in its stated outer domain and is not a complete observable, global field equation or empirical fit by itself."
+    );
+    if (/H_5|H₅|cases|quintic/i.test(text) && /Xi|Ξ|bridge/i.test(`${heading} ${text}`)) return scoped(
+      "The C² bridge transports endpoint data between branches",
+      "The quintic Hermite expression interpolates between strong and weak endpoint values, slopes and curvatures on the finite transition interval, preserving the canonical branch data rather than inventing new endpoint conditions.",
+      "Map x to t=(x−1.8)/0.4, evaluate the six basis terms, and retain the supplied endpoint derivatives rather than replacing the bridge with a generic cubic.",
+      "Matching values, first derivatives and second derivatives gives C² continuity across both joins.",
+      "The bridge is an operational matching prescription; its smoothness does not derive the locations from fundamental field equations or prove uniqueness of observables that depend on its interior shape."
+    );
     if (/A_\{?p|log.?p.*sqrt|Phi_\{?p|Φ.*log.?p/i.test(text)) return scoped(
       "Prime-indexed recurrences reproduce the known explicit-formula structure",
       "For each prime p, repeated-orbit amplitudes scale by p⁻¹ᐟ² and phases advance by E log p. Summing these indexed cycles reproduces the prime-power terms already present in the zeta explicit formula.",

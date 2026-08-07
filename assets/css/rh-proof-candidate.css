@@ -1,4 +1,5 @@
 .rh-page .hero { background: radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--gold) 18%, transparent), transparent 34%); }
+.rh-closure-note { margin: 1rem 0 1.35rem; line-height: 1.65; }
 .rh-status { display:flex; flex-wrap:wrap; gap:.55rem; margin:1rem 0; }
 .rh-status span { padding:.35rem .65rem; border:1px solid var(--line); border-radius:999px; font-size:.78rem; font-weight:750; }
 .rh-status .proved { color:var(--ok); border-color:color-mix(in srgb,var(--ok) 42%,var(--line)); background:color-mix(in srgb,var(--ok) 8%,transparent); }

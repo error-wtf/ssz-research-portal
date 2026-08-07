@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'">
 <title>Riemann-Zeta proof candidate — SSZ Research Portal</title>
 <link rel="stylesheet" href="assets/css/site.css?v=20260806.1">
-<link rel="stylesheet" href="assets/css/rh-proof-candidate.css?v=20260806.4">
+<link rel="stylesheet" href="assets/css/rh-proof-candidate.css?v=20260807.1">
 <script defer src="assets/js/site.js?v=20260806.2">
 </script>
 <script defer src="assets/js/mathjax-config.js?v=20260806.1">
@@ -70,6 +70,10 @@
 </header>
 <div class="callout warning">
 <strong>Scientific boundary:</strong> this page presents a repository-internal proof candidate, not an independently accepted proof of the Riemann Hypothesis. Every computer-certified inequality is distinguished from the analytic lemmas and remains open to adversarial verification.</div>
+<div class="callout tested rh-closure-note">
+<strong>Canonical closure route:</strong> the current candidate uses the full two-sided Volterra identity
+\(u_-^\alpha(x)-u_+^\alpha(x)=e^{-i\alpha x}\Xi(\alpha)\). Therefore
+\(\Xi(\alpha)=0\) gives state matching for every \(x\), followed by the common ODE and reflected-origin calculation. The historical one-sided sine/trace diagnostic is retained only as a negative-control audit and is not a dependency of the canonical route.</div>
 <section class="section rh-hero-visual" id="zeta-grid-map">
 <div class="section-head"><span class="rh-kicker">00 · analytic continuation geometry</span><h2>The complete ζ-grid map</h2><p class="lead">This is the reference-style visualization: horizontal and vertical lines in the source (s)-plane are mapped through the analytically continued (w=zeta(s)). It is distinct from the finite Dirichlet-term construction below. The geometry is precomputed for the GIF; the embedded canvas provides the same map with density, quality, speed, pause, rebuild, download, and fullscreen controls.</p></div>
 <div class="rh-grid-embed"><iframe src="assets/media/zeta_grid_map_animated.html" title="Interactive analytic continuation zeta grid map" loading="eager"></iframe></div>

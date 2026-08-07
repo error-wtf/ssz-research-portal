@@ -30,6 +30,21 @@ assert.match(siteSource, /A nearby prose sentence is context, not a complete exp
 assert.doesNotMatch(siteSource, /length\s*>=\s*120\)\s*return true/);
 assert.match(formulaRenderer, /class="formula-explanation formula-explainer"/);
 assert.match(formulaRenderer, /<h4>Purpose<\/h4>/);
+assert.match(formulaRenderer, /<h4>Derivation and dependencies<\/h4>/);
+assert.match(formulaRenderer, /<h4>Related formulas<\/h4>/);
+assert.match(formulaRenderer, /verificationFor/);
+const strongRule = explainers.ruleForFormula(
+  "\\Xi_{strong}(r)=1-\\exp(-\\varphi r_s/r)", "Strong branch"
+);
+const weakRule = explainers.ruleForFormula(
+  "\\Xi_{weak}(r)=r_s/(2r)", "Weak branch"
+);
+const bridgeRule = explainers.ruleForFormula(
+  "\\Xi_{bridge}=H_5(t)", "C² blend"
+);
+assert.notEqual(strongRule.title, weakRule.title, "strong and weak branch explanations collapsed");
+assert.notEqual(strongRule.title, bridgeRule.title, "strong and bridge explanations collapsed");
+assert.notEqual(weakRule.title, bridgeRule.title, "weak and bridge explanations collapsed");
 const semanticChecks = [
   ["\\Theta_{\\mathrm{PC}}=p_i dq^i-Hdt", "Poincare–Cartan one-form"],
   ["\\Delta t_{\\rm axle}=4\\mathcal A\\Omega/(c^2-\\Omega^2R^2), \\Delta\\tau_{\\rm det}=\\Delta t_{\\rm axle}/\\gamma, \\Delta\\phi=\\omega_{\\rm det}\\Delta\\tau_{\\rm det}", "proper-time phase"],

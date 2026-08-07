@@ -163,7 +163,7 @@
 </section>
 <section id="visuals" class="section">
 <div class="section-head">
-<span class="rh-kicker">03 · interactive visual laboratory</span>
+<span class="rh-kicker">V1 · interactive visual laboratory</span>
 <h2>Watch the proof’s quantitative backbone</h2>
 <p>These are explanatory canvases computed from the displayed formulas. They are not additional numerical evidence.</p>
 <div class="rh-animation-toolbar">
@@ -241,22 +241,22 @@
 <div class="rh-visual" style="margin-top:1rem"><div class="rh-visual-grid"><div class="rh-controls"><label>Candidate \(\alpha\) real part <output id="rh-plane-x-out">0.0</output><input id="rh-plane-x" type="range" min="-8" max="8" step=".1" value="0"></label><label>Candidate \(\beta\) <output id="rh-plane-beta-out">0.25</output><input id="rh-plane-beta" type="range" min="-.49" max=".49" step=".01" value=".25"></label><p class="rh-source">The complex-plane view separates the forbidden open half-strips from the critical line. It is a schematic map, not a zero computation.</p><div class="result"><div><small>mapped \(\Re s\)</small><strong id="rh-plane-s-out">0.25</strong></div><div><small>status</small><strong id="rh-plane-status-out">tested half-strip</strong></div></div></div><canvas id="rh-plane-canvas" class="rh-canvas" aria-label="Interactive alpha and s parameter map"></canvas><div class="visual-explanation"><h3>How to read the parameter map</h3><p>The horizontal coordinate is \(\xi=\Re\alpha\); the vertical coordinate is \(\beta=\Im\alpha\), and the mapped zeta parameter has \(\Re s=\tfrac12-\beta\). The shaded open half-strips are the regions addressed by the Weyl contradiction, while \(\beta=0\) is the critical line and is not excluded by endpoint decay. Moving either slider changes only the displayed parameter point; it does not locate or certify a zero.</p></div></div></div>
 </section>
 <section id="zeta-live" class="section">
-<div class="section-head"><span class="rh-kicker">03c · live zeta explorer</span><h2>Watch a finite approximation to \(\zeta(\sigma+it)\)</h2><p>This live plot evaluates the alternating Dirichlet approximation \(\eta(s)=\sum_{n=1}^{N}(-1)^{n-1}n^{-s}\) and displays \(\zeta(s)\approx\eta(s)/(1-2^{1-s})\). It is an illustration: truncation and finite precision are not a proof or a zero certificate.</p></div>
+<div class="section-head"><span class="rh-kicker">V2 · live zeta explorer</span><h2>Watch a finite approximation to \(\zeta(\sigma+it)\)</h2><p>This live plot evaluates the alternating Dirichlet approximation \(\eta(s)=\sum_{n=1}^{N}(-1)^{n-1}n^{-s}\) and displays \(\zeta(s)\approx\eta(s)/(1-2^{1-s})\). It is an illustration: truncation and finite precision are not a proof or a zero certificate.</p></div>
 <div class="rh-visual"><div class="rh-visual-grid"><div class="rh-controls"><label>Centre \(t\) <output id="rh-zeta-t-out">14.1</output><input id="rh-zeta-t" type="range" min="0" max="60" step=".1" value="14.1"></label><label>Real part \(\sigma\) <output id="rh-zeta-sigma-out">0.50</output><input id="rh-zeta-sigma" type="range" min=".2" max="1.2" step=".01" value=".5"></label><label>Terms \(N\) <output id="rh-zeta-n-out">160</output><input id="rh-zeta-n" type="range" min="30" max="500" step="10" value="160"></label><button class="button" id="rh-zeta-play" type="button" aria-pressed="false">▶ Animate t</button><div class="result"><div><small>live \(|\zeta|\) proxy</small><strong id="rh-zeta-value-out">—</strong></div><div><small>interpretation</small><strong id="rh-zeta-status-out">finite sample</strong></div></div><p class="rh-source">Gold is \(\Re\zeta\), blue is \(\Im\zeta\), and the marker is the current sample. Use the zero guide only as visual orientation.</p></div><canvas id="rh-zeta-canvas" class="rh-canvas" aria-label="Animated finite approximation to the Riemann zeta function"></canvas><div class="visual-explanation"><h3>What the live zeta explorer means</h3><p>The plotted curves are the real and imaginary parts of a finite alternating eta approximation, converted with \(\zeta(s)\approx\eta(s)/(1-2^{1-s})\). Increasing \(N\) changes truncation error; changing \(\sigma\) changes both term amplitudes and the validity of the numerical proxy. This display can reveal oscillatory structure and near-zero samples, but it is neither the analytically continued function at arbitrary precision nor a zero certificate.</p></div></div></div>
 </section>
 <section id="dirichlet-series" class="section">
-<div class="section-head"><span class="rh-kicker">03d · the classical Dirichlet series</span><h2>The familiar definition of \(\zeta(s)\)</h2><p>For \(\Re s=\sigma>1\), the Riemann zeta function is defined by the absolutely convergent Dirichlet series below. In the critical strip \(0<\sigma<1\), this series is not itself convergent; analytic continuation or the alternating eta relation is required.</p></div>
+<div class="section-head"><span class="rh-kicker">V3 · the classical Dirichlet series</span><h2>The familiar definition of \(\zeta(s)\)</h2><p>For \(\Re s=\sigma>1\), the Riemann zeta function is defined by the absolutely convergent Dirichlet series below. In the critical strip \(0<\sigma<1\), this series is not itself convergent; analytic continuation or the alternating eta relation is required.</p></div>
 <div class="grid grid-2">
 <article class="card"><h3>Dirichlet series</h3><div class="rh-equation">\[\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s},\qquad s=\sigma+it,\qquad \sigma>1.\]</div><p>Writing \(n^{-s}=n^{-\sigma}e^{-it\log n}\) shows that each term has magnitude \(n^{-\sigma}\) and rotates by the phase \(-t\log n\). Absolute convergence follows from the \(p\)-series \(\sum n^{-\sigma}\).</p></article>
 <article class="card"><h3>Finite partial sum and continuation</h3><div class="rh-equation">\[S_N(s)=\sum_{n=1}^{N}n^{-s},\qquad \eta(s)=\sum_{n=1}^{\infty}(-1)^{n-1}n^{-s},\qquad \zeta(s)=\frac{\eta(s)}{1-2^{1-s}}.\]</div><p>The live explorer uses finite \(S_N\) or eta samples only as visual approximations. The last identity supplies continuation away from its denominator’s pole; it does not turn a finite plot into a proof of a zero.</p></article>
 </div>
 <div class="callout"><strong>Domain warning:</strong> at \(\sigma\le1\), do not silently present the raw Dirichlet partial sums as the value of \(\zeta(s)\). The proof candidate uses the completed \(\xi(s)\), the theta transform, and rigorously bounded Volterra tails; this panel explains the classical series and its exact domain.</div>
-<div class="rh-visual rh-visual-wide" style="margin-top:1rem"><div class="section-head"><span class="rh-kicker">03e · prime-frequency spectrum</span><h3>Watch prime and composite logarithmic frequencies assemble</h3><p>The animated spectrum draws \(\omega_n=\log n\) with amplitude \(n^{-\sigma}\). Prime indices are highlighted; composite frequencies are exact non-negative integer combinations of the prime-log generators through unique factorisation.</p></div><canvas id="rh-frequency-canvas" class="rh-canvas" aria-label="Animated prime and composite logarithmic Dirichlet frequencies"></canvas><div class="visual-explanation"><h3>How to read the frequency spectrum</h3><p>The upper band shows the magnitude \(n^{-\sigma}\); the lower band places the same term at frequency \(\omega_n=\log n\). Prime-labelled points are generators, while a composite \(n=\prod p^{v_p(n)}\) has \(\log n=\sum v_p(n)\log p\). The reveal animation is finite and pedagogical; it demonstrates the exact factorisation relation without asserting a common period or any RH consequence.</p></div><p class="rh-source">This is a native theme-aware canvas. It redraws its background, axes, text, prime bars and composite bars for the selected light or dark palette. The repository GIF remains a reproducible standalone companion, not a proof dependency.</p></div>
-<div class="rh-visual rh-visual-wide"><div class="section-head"><span class="rh-kicker">03e · prime phase recurrence</span><h3>Watch the first prime phases move on a torus projection</h3><p>The two-dimensional projection tracks \((t\log 2,t\log 3)\bmod 2\pi\). The score also includes \(\log 5\), so near-returns are approximate recurrences, never a claim of a common exact period.</p></div><canvas id="rh-phase-canvas" class="rh-canvas" aria-label="Animated prime phase torus projection"></canvas><div class="visual-explanation"><h3>How to read the phase recurrence</h3><p>Each point is the pair of wrapped phases \((t\log 2,t\log 3)\bmod 2\pi\); crossing a boundary is a torus wrap, not a discontinuity in the underlying phase. The displayed return score also tests \(e^{-it\log 5}\), so a visually close point is only an approximate recurrence. There is no finite exact common period because unique factorisation makes the prime logarithms rationally independent.</p></div><p class="rh-source">This is a finite geometric visualisation of the logarithmic prime-frequency basis. It is follow-up research and is not a dependency of the proof candidate.</p></div>
+<div class="rh-visual rh-visual-wide" style="margin-top:1rem"><div class="section-head"><span class="rh-kicker">V4 · prime-frequency spectrum</span><h3>Watch prime and composite logarithmic frequencies assemble</h3><p>The animated spectrum draws \(\omega_n=\log n\) with amplitude \(n^{-\sigma}\). Prime indices are highlighted; composite frequencies are exact non-negative integer combinations of the prime-log generators through unique factorisation.</p></div><canvas id="rh-frequency-canvas" class="rh-canvas" aria-label="Animated prime and composite logarithmic Dirichlet frequencies"></canvas><div class="visual-explanation"><h3>How to read the frequency spectrum</h3><p>The upper band shows the magnitude \(n^{-\sigma}\); the lower band places the same term at frequency \(\omega_n=\log n\). Prime-labelled points are generators, while a composite \(n=\prod p^{v_p(n)}\) has \(\log n=\sum v_p(n)\log p\). The reveal animation is finite and pedagogical; it demonstrates the exact factorisation relation without asserting a common period or any RH consequence.</p></div><p class="rh-source">This is a native theme-aware canvas. It redraws its background, axes, text, prime bars and composite bars for the selected light or dark palette. The repository GIF remains a reproducible standalone companion, not a proof dependency.</p></div>
+<div class="rh-visual rh-visual-wide"><div class="section-head"><span class="rh-kicker">V5 · prime phase recurrence</span><h3>Watch the first prime phases move on a torus projection</h3><p>The two-dimensional projection tracks \((t\log 2,t\log 3)\bmod 2\pi\). The score also includes \(\log 5\), so near-returns are approximate recurrences, never a claim of a common exact period.</p></div><canvas id="rh-phase-canvas" class="rh-canvas" aria-label="Animated prime phase torus projection"></canvas><div class="visual-explanation"><h3>How to read the phase recurrence</h3><p>Each point is the pair of wrapped phases \((t\log 2,t\log 3)\bmod 2\pi\); crossing a boundary is a torus wrap, not a discontinuity in the underlying phase. The displayed return score also tests \(e^{-it\log 5}\), so a visually close point is only an approximate recurrence. There is no finite exact common period because unique factorisation makes the prime logarithms rationally independent.</p></div><p class="rh-source">This is a finite geometric visualisation of the logarithmic prime-frequency basis. It is follow-up research and is not a dependency of the proof candidate.</p></div>
 </section>
 <section id="volterra" class="section">
 <div class="section-head">
-<span class="rh-kicker">04 · Volterra solutions</span>
+<span class="rh-kicker">03 · Volterra solutions</span>
 <h2>From the positive source to two canonical tails</h2>
 </div>
 <div class="rh-equation">\[ u_-^\alpha(x)=e^{-i\alpha x}\int_{-\infty}^{x}e^{i\alpha y}\theta(y)\,dy,\qquad u_+^\alpha(x)=-e^{-i\alpha x}\int_{x}^{\infty}e^{i\alpha y}\theta(y)\,dy. \]</div>
@@ -276,7 +276,7 @@
 </section>
 <section id="source-transform" class="section">
 <div class="section-head">
-<span class="rh-kicker">03a · the analytic starting point</span>
+<span class="rh-kicker">04 · the analytic starting point</span>
 <h2>The completed zeta function, its Xi form, and the source transform</h2>
 <p>The proof candidate starts from the completed zeta function, not from a numerical list of zeros. The completion removes the pole at (s=1), incorporates the gamma factor, and gives the functional equation a symmetric form.</p>
 </div>
@@ -288,7 +288,7 @@
 <div class="proof-detail"><h3>Why the source is integrable</h3><p>For (x\ge0), the positive Gaussian representation gives a bound of the form \(\theta(x)\le C_\theta e^{-(2\pi-9/2)x}\). Evenness then yields \(e^{|\beta||x|}\theta(x)\in L^1(\mathbb R)\) whenever \(|\beta|<1/2\), because \(2\pi-9/2-|\beta|>0\). This is the analytic fact that turns both Volterra expressions into actual functions.</p><div class="rh-equation">\[\int_{\mathbb R}|e^{i\alpha x}\theta(x)|\,dx\le\frac{2C_\theta}{2\pi-\frac92-|\beta|}<\infty.\]</div></div>
 </section>
 <section id="derivation" class="section">
-<div class="section-head"><span class="rh-kicker">03b · derivation notebook</span><h2>Every algebraic transition is exposed</h2><p>Use the controls to reveal the exact next implication. The display is explanatory; the underlying proof remains the written chain below.</p></div>
+<div class="section-head"><span class="rh-kicker">05 · derivation notebook</span><h2>Every algebraic transition is exposed</h2><p>Use the controls to reveal the exact next implication. The display is explanatory; the underlying proof remains the written chain below.</p></div>
 <div class="derivation-panel" data-derivation-panel>
 <div class="derivation-tabs" role="tablist"><button class="derivation-tab is-active" data-derivation="0">Source</button><button class="derivation-tab" data-derivation="1">ODE</button><button class="derivation-tab" data-derivation="2">Residue</button><button class="derivation-tab" data-derivation="3">Green</button><button class="derivation-tab" data-derivation="4">Contradiction</button></div>
 <div class="derivation-body"><span class="derivation-index">Step 1 / 5</span><h3 data-derivation-title>Positive source → finite weighted tails</h3><div class="rh-equation" data-derivation-equation>\[\theta>0,\quad e^{|\beta||x|}\theta\in L^1(\mathbb R).\]</div><p data-derivation-text>The Gaussian majorant supplies absolute convergence before any differential equation is differentiated.</p></div>
@@ -296,7 +296,7 @@
 </section>
 <section id="residues" class="section">
 <div class="section-head">
-<span class="rh-kicker">05 · matrix identity</span>
+<span class="rh-kicker">06 · matrix identity</span>
 <h2>The certified scalars must be the actual Hermitian residues</h2>
 </div>
 <div class="rh-proof-step is-active">
@@ -326,7 +326,7 @@
 </section>
 <section id="endpoints" class="section">
 <div class="section-head">
-<span class="rh-kicker">06 · endpoint decay</span>
+<span class="rh-kicker">07 · endpoint decay</span>
 <h2>Why the boundary flux vanishes</h2>
 <p>For \(m=8-B_{DR}>\tfrac12\), \(p_0=\inf_{x\ge1/2}\Phi''(x)>0\), fixed \(0<\beta<\tfrac12\), and finite \(|\alpha|\), define</p>
 </div>
@@ -338,7 +338,7 @@
 </section>
 <section id="green" class="section">
 <div class="section-head">
-<span class="rh-kicker">07 · global balance</span>
+<span class="rh-kicker">08 · global balance</span>
 <h2>Finite Green identities become improper identities</h2>
 </div>
 <div class="grid grid-2">
@@ -356,7 +356,7 @@
 </section>
 <section id="contradiction" class="section">
 <div class="section-head">
-<span class="rh-kicker">08 · contradiction</span>
+<span class="rh-kicker">09 · contradiction</span>
 <h2>The one line the candidate is built around</h2>
 </div>
 <div class="rh-flow">
@@ -385,7 +385,7 @@
 </section>
 <section id="rh-bridge" class="section">
 <div class="section-head">
-<span class="rh-kicker">09 · classical translation</span>
+<span class="rh-kicker">10 · classical translation</span>
 <h2>From the candidate’s α-strip to RH</h2>
 </div>
 <div class="rh-equation">\[\Xi(-\alpha)=\xi\!\left(\frac12-i\alpha\right)=\xi\!\left(1-\left(\frac12+i\alpha\right)\right)=\xi\!\left(\frac12+i\alpha\right)=\Xi(\alpha).\]</div>
@@ -409,7 +409,7 @@
 <!-- RH_MANUSCRIPT_START -->
 <section id="canonical-manuscript" class="section rh-canonical-manuscript" data-source-sha256="e53d60fc0b82aae7bb87f69428e1e42a5c404134b1287b1802d5257e26d300b7">
 <div class="section-head">
-<span class="rh-kicker">10 · complete canonical manuscript</span>
+<span class="rh-kicker">11 · complete canonical manuscript</span>
 <h2>The full proof-candidate text, synchronized from the source repository</h2>
 <p>This section contains the complete text of <code>docs/RH_PROOF_CANDIDATE_COMPLETE.md</code>, not a shortened portal summary. The reader-friendly derivation above and this canonical copy are kept together so omissions are mechanically detectable.</p>
 </div>
@@ -580,7 +580,7 @@ M_-(0)-M_+(0)=0.
 <!-- RH_MANUSCRIPT_END -->
 <section class="section">
 <div class="section-head">
-<span class="rh-kicker">11 · provenance and review</span>
+<span class="rh-kicker">12 · provenance and review</span>
 <h2>Read, reproduce, then try to break it</h2>
 </div>
 <div class="grid grid-3">

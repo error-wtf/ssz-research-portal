@@ -57,6 +57,7 @@
 
   <nav class="toc" aria-label="JIF page sections">
     <a href="#definition">Definition</a>
+    <a href="#canonical-lock">Canonical lock</a>
     <a href="#phase-lab">Phase lab</a>
     <a href="#ledger-lab">Detector ledger</a>
     <a href="#pipeline">Forward pipeline</a>
@@ -91,6 +92,47 @@
       </article>
     </div>
     <div class="callout warning"><strong>Interpretation guardrail:</strong> JIF is neither a force acting on light nor evidence that photons carry a proper clock. The detector reference and every transfer contribution must be declared.</div>
+  </section>
+
+  <section id="canonical-lock" class="section">
+    <div class="section-head">
+      <span class="section-kicker">source hierarchy · v1.3.1</span>
+      <h2>What the four JIF repositories actually establish</h2>
+      <p>This panel is the reading key for the linked repositories. The canonical foundation defines counted phase; the local sanity report checks dimensions; the forward lab adds target-blind transport and scoring. None of those roles may be silently substituted for another.</p>
+    </div>
+    <div class="grid grid-2">
+      <article class="card formula-explanation" data-explanation-owner="jif">
+        <span class="badge canonical">SSZ–JIF Core</span>
+        <h3>Canonical phase chain</h3>
+        <div class="math-box">\[
+          \Xi(r)\longrightarrow D_{\rm SSZ}(r)=\frac{1}{1+\Xi(r)}
+          \longrightarrow d\tau=D_{\rm SSZ}\,dt
+          \longrightarrow d\Phi=2\pi f_0d\tau
+          \longrightarrow dJ=\frac{d\Phi}{2\pi}
+        \]</div>
+        <p><strong>Meaning:</strong> geometry sets the rate and phase counting records the rate. For an ideal timelike oscillator, \(J\) is dimensionless and \(dJ/dt\) has frequency units. Moving observers require their complete worldline in the metric; the static shortcut is not universal.</p>
+        <p><strong>Evidence boundary:</strong> the core repository's unit, invariance and evidence-ledger checks establish implementation consistency. They do not turn a unit-test count into independent experiments or prove global SSZ dynamics.</p>
+      </article>
+      <article class="card formula-explanation" data-explanation-owner="jif">
+        <span class="badge open">Photon transfer</span>
+        <h3>Detector phase, not photon proper time</h3>
+        <div class="math-box">\[
+          \Phi_D^{(a)}=\Phi_E^{(a)}+\Phi_{\rm transfer}^{(a)}
+          +\Phi_{\rm nodes}^{(a)}+\Phi_{\rm detector}^{(a)},
+          \qquad
+          \Delta J_D=\frac{\Phi_D^{(2)}-\Phi_D^{(1)}}{2\pi}
+        \]</div>
+        <p><strong>Meaning:</strong> compare two complete contributions at one declared detector event. A null generator is not assigned a proper-time clock; an optical path model must state its slicing, frequency, medium and endpoints.</p>
+        <p><strong>Forward-lab boundary:</strong> the forward repository keeps ray tracing, instrument nuisance parameters, target locking and scoring separate. Thin-shell images, supplied transfer coefficients and synthetic signals remain controlled research stages, not empirical SSZ confirmation.</p>
+      </article>
+    </div>
+    <div class="callout">
+      <strong>Reviewer route:</strong>
+      <a href="https://github.com/error-wtf/ssz-jif-core/blob/main/docs/JIF_FOUNDATION_CANONICAL.md">canonical foundation</a>,
+      <a href="https://github.com/error-wtf/jif-local-math-sanity">local math sanity report</a>,
+      <a href="https://github.com/error-wtf/ssz-jif-forward-lab/blob/main/docs/HILFSDATEIEN_FORWARD_AUDIT_2026-07-27.md">forward audit</a>.
+      Read them in that order and keep definitions, dimensional checks, transfer modelling and empirical scoring as separate evidence classes.
+    </div>
   </section>
 
   <section id="phase-lab" class="section">

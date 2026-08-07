@@ -1332,24 +1332,31 @@
     }
     const guide = pageGuides[here];
     const hero = document.querySelector("main .hero");
-    if (guide && hero && !document.getElementById("reading-compass")) {
-      const section = document.createElement("section");
+    if (guide && hero) {
+      let section = document.getElementById("reading-compass");
+      if (!section) { section = document.createElement("section");
       section.id = "reading-compass";
       section.className = "section reading-compass";
       section.setAttribute("aria-labelledby", "reading-compass-title");
       section.innerHTML = `<div class="section-head"><span class="section-kicker">Reading compass</span><h2 id="reading-compass-title">How to understand this page</h2><p class="lead">${guide.question}</p></div><div class="reading-compass-grid"><article><span>1 · Reading path</span><p>${guide.path}</p></article><article><span>2 · What a result means</span><p>${guide.meaning}</p></article><article><span>3 · What it does not mean</span><p>${guide.limit}</p></article></div><p class="reading-compass-next"><a href="${guide.next[0]}">${guide.next[1]} →</a></p>`;
+      const readingToc = hero.nextElementSibling?.matches(".toc") ? hero.nextElementSibling : null;
+      if (readingToc && section.previousElementSibling !== readingToc) readingToc.insertAdjacentElement("afterend", section);
       const toc = hero.nextElementSibling?.matches(".toc") ? hero.nextElementSibling : null;
-      (toc || hero).insertAdjacentElement(toc ? "afterend" : "afterend", section);
+      (toc || hero).insertAdjacentElement(toc ? "afterend" : "afterend", section); }
+      section.innerHTML = `<div class="section-head"><span class="section-kicker">Reading compass</span><h2 id="reading-compass-title">How to understand this page</h2><p class="lead">${guide.question}</p></div><div class="reading-compass-grid"><article><span>1 · Reading path</span><p>${guide.path}</p></article><article><span>2 · What a result means</span><p>${guide.meaning}</p></article><article><span>3 · What it does not mean</span><p>${guide.limit}</p></article></div><p class="reading-compass-next"><a href="${guide.next[0]}">${guide.next[1]} →</a></p>`;
     }
     const foundation = allFoundationChapters[here];
     const compass = document.getElementById("reading-compass");
-    if (foundation && compass && !document.getElementById("foundational-synthesis")) {
-      const section = document.createElement("section");
+    if (foundation && compass) {
+      let section = document.getElementById("foundational-synthesis");
+      if (!section) { section = document.createElement("section");
       section.id = "foundational-synthesis";
       section.className = "section foundational-synthesis";
       section.setAttribute("aria-labelledby", "foundational-synthesis-title");
       section.innerHTML = `<div class="section-head"><span class="section-kicker">Foundational synthesis</span><h2 id="foundational-synthesis-title">${foundation.title}</h2><p class="lead">${foundation.lede}</p></div><div class="foundation-grid">${foundation.blocks.map(([title,text],index)=>`<article><span>${String(index+1).padStart(2,"0")}</span><div><h3>${title}</h3><p>${text}</p></div></article>`).join("")}</div>${testLessons[here]?`<aside class="foundation-test-lesson"><span>What the 9,300-record audit adds</span><p>${testLessons[here]}</p></aside>`:""}<p class="foundation-reading-rule"><strong>Reading rule:</strong> keep the positive result and its boundary together. A tested derivation or pipeline is real evidence within its declared scope; a remaining open layer does not erase what has already passed.</p>`;
-      compass.insertAdjacentElement("afterend", section);
+      if (section.previousElementSibling !== compass) compass.insertAdjacentElement("afterend", section);
+      compass.insertAdjacentElement("afterend", section); }
+      section.innerHTML = `<div class="section-head"><span class="section-kicker">Foundational synthesis</span><h2 id="foundational-synthesis-title">${foundation.title}</h2><p class="lead">${foundation.lede}</p></div><div class="foundation-grid">${foundation.blocks.map(([title,text],index)=>`<article><span>${String(index+1).padStart(2,"0")}</span><div><h3>${title}</h3><p>${text}</p></div></article>`).join("")}</div>${testLessons[here]?`<aside class="foundation-test-lesson"><span>What the 9,300-record audit adds</span><p>${testLessons[here]}</p></aside>`:""}<p class="foundation-reading-rule"><strong>Reading rule:</strong> keep the positive result and its boundary together. A tested derivation or pipeline is real evidence within its declared scope; a remaining open layer does not erase what has already passed.</p>`;
     }
     decorateExplanations();
     if (typeof MutationObserver !== "undefined") {

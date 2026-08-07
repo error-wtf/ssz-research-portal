@@ -1,0 +1,1076 @@
+{
+  "schema_version": "1.0",
+  "generated": "2026-08-07",
+  "roles": [
+    {
+      "name": "CALCULATION_OF_NUMBER_PI",
+      "role": "mathematical supplement",
+      "status": [
+        "mathematical supplement"
+      ],
+      "inputs": [
+        "integer sequences",
+        "declared numerical algorithms"
+      ],
+      "outputs": [
+        "pi approximations",
+        "plots",
+        "precision records"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "pi approximations",
+        "plots"
+      ],
+      "test_classes": [
+        "internal mathematical checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not prove a physical SSZ relation or empirical constant."
+    },
+    {
+      "name": "chord-partition",
+      "role": "exploratory mathematical laboratory",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "partition/chord definitions",
+        "test fixtures"
+      ],
+      "outputs": [
+        "combinatorial tables",
+        "visual diagnostics"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "combinatorial tables",
+        "visual diagnostics"
+      ],
+      "test_classes": [
+        "symbolic and enumeration checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not establish a gravitational model or independent physical evidence."
+    },
+    {
+      "name": "claudes-cycles",
+      "role": "exploratory cycle and recurrence laboratory",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "cycle definitions",
+        "toy inputs"
+      ],
+      "outputs": [
+        "cycle tables",
+        "recurrence plots"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "cycle tables",
+        "recurrence plots"
+      ],
+      "test_classes": [
+        "numerical and regression checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not prove a spectral interpretation or RH."
+    },
+    {
+      "name": "counterexample-commons",
+      "role": "counterexample and falsification workspace",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "candidate claims",
+        "minimal counterexamples"
+      ],
+      "outputs": [
+        "counterexample records",
+        "negative controls"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "counterexample records",
+        "negative controls"
+      ],
+      "test_classes": [
+        "unit and logical checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "A counterexample catalogue does not by itself classify the full SSZ theory."
+    },
+    {
+      "name": "emergent-spacetime",
+      "role": "historical emergent-spacetime research surface",
+      "status": [
+        "historical"
+      ],
+      "inputs": [
+        "historical SSZ notes",
+        "legacy parameters"
+      ],
+      "outputs": [
+        "archived arguments",
+        "exploratory plots"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "archived arguments",
+        "exploratory plots"
+      ],
+      "test_classes": [
+        "historical regression where available"
+      ],
+      "evidence_class": "historical/provenance record",
+      "conflicts": [],
+      "does_not_prove": "Does not override current P0 definitions or prove a complete spacetime."
+    },
+    {
+      "name": "frequency-curvature-validation",
+      "role": "frequency and curvature validation suite",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "metric formulas",
+        "frequency/curvature fixtures"
+      ],
+      "outputs": [
+        "invariant checks",
+        "comparison tables"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "invariant checks",
+        "comparison tables"
+      ],
+      "test_classes": [
+        "symbolic, dimensional and limit checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not turn curvature compatibility into empirical confirmation."
+    },
+    {
+      "name": "g79-cygnus-tests",
+      "role": "dataset-facing G79/Cygnus comparison pipeline",
+      "status": [
+        "data-facing"
+      ],
+      "inputs": [
+        "Gaia/SIMBAD records",
+        "locked model inputs"
+      ],
+      "outputs": [
+        "paired residuals",
+        "validation reports"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "paired residuals",
+        "validation reports"
+      ],
+      "test_classes": [
+        "data comparison and pipeline checks"
+      ],
+      "evidence_class": "dataset-conditioned comparison",
+      "conflicts": [],
+      "does_not_prove": "Does not establish universal SSZ validity or independent replication."
+    },
+    {
+      "name": "galactic-year",
+      "role": "exploratory Galactic-year timing model",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "orbital-period assumptions",
+        "mass/radius inputs"
+      ],
+      "outputs": [
+        "period estimates",
+        "timing plots"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "period estimates",
+        "timing plots"
+      ],
+      "test_classes": [
+        "numerical and parameter checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not establish a galactic dynamical law or empirical SSZ confirmation."
+    },
+    {
+      "name": "LOST_EINSTEIN_PAPERS",
+      "role": "historical source and archive collection",
+      "status": [
+        "historical"
+      ],
+      "inputs": [
+        "archival documents",
+        "bibliographic metadata"
+      ],
+      "outputs": [
+        "transcriptions",
+        "research notes"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "transcriptions",
+        "research notes"
+      ],
+      "test_classes": [
+        "provenance and text checks"
+      ],
+      "evidence_class": "historical/provenance record",
+      "conflicts": [],
+      "does_not_prove": "Does not constitute a current derivation or validation."
+    },
+    {
+      "name": "pardon-symplectic-geometry-ssz-lab",
+      "role": "symplectic analogy and geometry laboratory",
+      "status": [
+        "mathematical supplement"
+      ],
+      "inputs": [
+        "canonical one-form",
+        "toy Hamiltonian systems"
+      ],
+      "outputs": [
+        "phase-space plots",
+        "area-preservation checks"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "phase-space plots",
+        "area-preservation checks"
+      ],
+      "test_classes": [
+        "symbolic and numerical checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not derive JIF or prove that the analogy is a physical SSZ mechanism."
+    },
+    {
+      "name": "pi-cluster",
+      "role": "exploratory numerical pi/cluster analysis",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "integer and decimal sequences"
+      ],
+      "outputs": [
+        "cluster statistics",
+        "visualisations"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "cluster statistics",
+        "visualisations"
+      ],
+      "test_classes": [
+        "precision and regression checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not provide evidence for SSZ or RH."
+    },
+    {
+      "name": "Riemann-Zeta-Zero-Finding-Suite",
+      "role": "Riemann-zeta numerical and proof-candidate laboratory",
+      "status": [
+        "mathematical supplement"
+      ],
+      "inputs": [
+        "Xi/Theta definitions",
+        "certified certificates",
+        "zero-search inputs"
+      ],
+      "outputs": [
+        "zero-search outputs",
+        "proof-candidate documents",
+        "interval/sturm artefacts"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "zero-search outputs",
+        "proof-candidate documents"
+      ],
+      "test_classes": [
+        "symbolic, interval, numerical and regression checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not constitute independent peer review or an accepted proof of RH."
+    },
+    {
+      "name": "segmented-calculation-suite",
+      "role": "broad SSZ calculation and regime toolkit",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "P0 Xi branches",
+        "D and metric locks"
+      ],
+      "outputs": [
+        "regime values",
+        "plots",
+        "calculation records"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "regime values",
+        "plots"
+      ],
+      "test_classes": [
+        "unit, limit, dimensional and regression checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [
+        "The public repository description uses a pre-P0 singularity-free claim; the portal does not treat that wording as canonical."
+      ],
+      "does_not_prove": "Its historical singularity-free description is superseded; it does not prove a regular centre."
+    },
+    {
+      "name": "segmented-energy",
+      "role": "energy and effective-source diagnostics",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "static metric",
+        "connection/curvature formulas"
+      ],
+      "outputs": [
+        "energy-condition projections",
+        "diagnostic tables"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "energy-condition projections",
+        "diagnostic tables"
+      ],
+      "test_classes": [
+        "symbolic and invariant checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "An effective source is diagnostic, not a derived fundamental SSZ matter theory."
+    },
+    {
+      "name": "Segmented-Spacetime-Mass-Projection-Unified-Results",
+      "role": "paired mass-projection evaluation pipeline",
+      "status": [
+        "data-facing"
+      ],
+      "inputs": [
+        "frozen paired datasets",
+        "GR/SR comparison models"
+      ],
+      "outputs": [
+        "residual summaries",
+        "bootstrap/sign-test outputs"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "residual summaries",
+        "bootstrap/sign-test outputs"
+      ],
+      "test_classes": [
+        "data-conditioned comparison and uncertainty checks"
+      ],
+      "evidence_class": "dataset-conditioned comparison",
+      "conflicts": [],
+      "does_not_prove": "Does not prove causality, independence from preprocessing or universal SSZ preference."
+    },
+    {
+      "name": "Segmented-Spacetime-Starmaps",
+      "role": "astronomical catalogue and starmap data surface",
+      "status": [
+        "data-facing"
+      ],
+      "inputs": [
+        "Gaia/SIMBAD source records",
+        "coordinate transforms"
+      ],
+      "outputs": [
+        "starmap products",
+        "catalogue checks"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "starmap products",
+        "catalogue checks"
+      ],
+      "test_classes": [
+        "data provenance and pipeline checks"
+      ],
+      "evidence_class": "dataset-conditioned comparison",
+      "conflicts": [],
+      "does_not_prove": "Does not by itself test the SSZ metric or establish a gravitational signal."
+    },
+    {
+      "name": "SEGMENTED_SPACETIME",
+      "role": "public concept and visual demonstration surface",
+      "status": [
+        "visualization"
+      ],
+      "inputs": [
+        "declared SSZ concepts",
+        "static examples"
+      ],
+      "outputs": [
+        "interactive diagrams",
+        "educational plots"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "interactive diagrams",
+        "educational plots"
+      ],
+      "test_classes": [
+        "browser and rendering checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not serve as canonical mathematical authority or empirical evidence."
+    },
+    {
+      "name": "ssz-all-tests",
+      "role": "cross-repository test orchestration and snapshot ledger",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "repository test commands",
+        "captured environments"
+      ],
+      "outputs": [
+        "run summaries",
+        "failure/audit inventories"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "run summaries",
+        "failure/audit inventories"
+      ],
+      "test_classes": [
+        "orchestration and regression checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "A pass count does not equal independent experiments or proof of SSZ."
+    },
+    {
+      "name": "ssz-complete-documentation",
+      "role": "consolidated SSZ documentation corpus",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "current P0 locks",
+        "historical documents"
+      ],
+      "outputs": [
+        "chapter documentation",
+        "formula maps",
+        "audit notes"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "chapter documentation",
+        "formula maps"
+      ],
+      "test_classes": [
+        "documentation and link checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Historical text may be superseded and does not override current P0 canon."
+    },
+    {
+      "name": "ssz-hilfsdateien",
+      "role": "curated historical and auxiliary source archive",
+      "status": [
+        "historical"
+      ],
+      "inputs": [
+        "source extracts",
+        "dated directives"
+      ],
+      "outputs": [
+        "audit inputs",
+        "reference notes"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "audit inputs",
+        "reference notes"
+      ],
+      "test_classes": [
+        "hash/provenance checks"
+      ],
+      "evidence_class": "historical/provenance record",
+      "conflicts": [],
+      "does_not_prove": "Auxiliary files are not automatically model inputs or evidence."
+    },
+    {
+      "name": "SSZ-HOW-TO-BEAM",
+      "role": "beam and transport explanatory laboratory",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "beam definitions",
+        "toy transport assumptions"
+      ],
+      "outputs": [
+        "beam diagrams",
+        "calculation notes"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "beam diagrams",
+        "calculation notes"
+      ],
+      "test_classes": [
+        "numerical and visual checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not establish a complete radiative-transfer or causal model."
+    },
+    {
+      "name": "ssz-jif-bounded-physical-fusion",
+      "role": "bounded-input burst/radio JIF forward snapshot",
+      "status": [
+        "data-facing"
+      ],
+      "inputs": [
+        "frozen burst inputs",
+        "JIF phase ledger",
+        "mass-size locks"
+      ],
+      "outputs": [
+        "bounded predictions",
+        "fusion reports",
+        "hash manifests"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "bounded predictions",
+        "fusion reports"
+      ],
+      "test_classes": [
+        "pipeline, uncertainty and regression checks"
+      ],
+      "evidence_class": "dataset-conditioned comparison",
+      "conflicts": [],
+      "does_not_prove": "A bounded-input result is not independent observational confirmation."
+    },
+    {
+      "name": "ssz-jif-core",
+      "role": "canonical counted-phase and detector-ledger foundation",
+      "status": [
+        "canonical"
+      ],
+      "inputs": [
+        "JIF dJ=dPhi/(2pi)",
+        "D(r)",
+        "proper-time and detector semantics"
+      ],
+      "outputs": [
+        "phase rates",
+        "ledger calculations",
+        "evidence schema"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "phase rates",
+        "ledger calculations"
+      ],
+      "test_classes": [
+        "unit, symbolic, invariance and regression checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not assign photon proper time, define a force or prove SSZ experimentally."
+    },
+    {
+      "name": "ssz-jif-forward-lab",
+      "role": "target-blind JIF/SSZ forward-model laboratory",
+      "status": [
+        "data-facing"
+      ],
+      "inputs": [
+        "JIF core",
+        "ray-transfer assumptions",
+        "locked nuisances"
+      ],
+      "outputs": [
+        "forward images",
+        "visibilities",
+        "phase estimators",
+        "scores"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "forward images",
+        "visibilities"
+      ],
+      "test_classes": [
+        "data pipeline, target-lock and negative-control checks"
+      ],
+      "evidence_class": "dataset-conditioned comparison",
+      "conflicts": [],
+      "does_not_prove": "Does not provide a complete rotating metric, GRMHD inference or independent confirmation."
+    },
+    {
+      "name": "ssz-lagrange",
+      "role": "Lagrangian and geodesic derivation suite",
+      "status": [
+        "canonical-implementation"
+      ],
+      "inputs": [
+        "static diagonal metric",
+        "symmetry assumptions"
+      ],
+      "outputs": [
+        "geodesics",
+        "conserved quantities",
+        "turning points"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "geodesics",
+        "conserved quantities"
+      ],
+      "test_classes": [
+        "symbolic, numerical and limit checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not establish rotating dynamics or astrophysical validation."
+    },
+    {
+      "name": "ssz-lensing",
+      "role": "null-geodesic and lensing forward model",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "metric coefficients",
+        "null geodesic equations",
+        "source geometry"
+      ],
+      "outputs": [
+        "deflection curves",
+        "images",
+        "residuals"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "deflection curves",
+        "images"
+      ],
+      "test_classes": [
+        "synthetic recovery, convergence and data-comparison checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Synthetic recovery and simple-system fits do not prove the full lensing model."
+    },
+    {
+      "name": "ssz-ligo-tests",
+      "role": "LIGO data/control exploration with explicit closure gates",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "available HDF5/DQ controls",
+        "locked analysis inputs"
+      ],
+      "outputs": [
+        "control diagnostics",
+        "exploratory residuals"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "control diagnostics",
+        "exploratory residuals"
+      ],
+      "test_classes": [
+        "file, DQ and negative-control checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not provide a complete public production/calibration chain or empirical SSZ waveform validation."
+    },
+    {
+      "name": "ssz-metric-pure",
+      "role": "pure canonical static metric implementation",
+      "status": [
+        "canonical-implementation"
+      ],
+      "inputs": [
+        "P0 Xi and C2 bridge",
+        "D reciprocal lock"
+      ],
+      "outputs": [
+        "metric coefficients",
+        "limits",
+        "curvature diagnostics"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "metric coefficients",
+        "limits"
+      ],
+      "test_classes": [
+        "symbolic, dimensional, derivative and limit checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [
+        "The public repository description predates the P0 correction. The current diagonal continuation is not regular at the areal centre."
+      ],
+      "does_not_prove": "Historical complete-singularity-free wording is superseded; central curvature still diverges."
+    },
+    {
+      "name": "SSZ-METRIC_COMPLETE",
+      "role": "principal metric derivation and implementation repository",
+      "status": [
+        "canonical"
+      ],
+      "inputs": [
+        "P0 field lock",
+        "static spherical ansatz"
+      ],
+      "outputs": [
+        "metric, inverse, curvature and geodesic formulas"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "metric, inverse, curvature and geodesic formulas"
+      ],
+      "test_classes": [
+        "symbolic and high-precision checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not provide a fundamental action, rotating solution or regular centre."
+    },
+    {
+      "name": "ssz-paper-plots",
+      "role": "publication and result visualisation supplement",
+      "status": [
+        "visualization"
+      ],
+      "inputs": [
+        "locked result tables",
+        "figure recipes"
+      ],
+      "outputs": [
+        "plots",
+        "figure metadata",
+        "publication graphics"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "plots",
+        "figure metadata"
+      ],
+      "test_classes": [
+        "rendering and data-binding checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "A plot does not add evidence beyond its source calculation."
+    },
+    {
+      "name": "ssz-qubits",
+      "role": "qubit phase and computational analogy laboratory",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "qubit states",
+        "phase conventions"
+      ],
+      "outputs": [
+        "phase plots",
+        "test records",
+        "toy comparisons"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "phase plots",
+        "test records"
+      ],
+      "test_classes": [
+        "unit and numerical checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not derive physical SSZ/JIF dynamics from a qubit analogy."
+    },
+    {
+      "name": "ssz-radial-scaling",
+      "role": "radial scaling and normalized-field analysis",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "r_s",
+        "x",
+        "Xi branch definitions"
+      ],
+      "outputs": [
+        "scaling curves",
+        "limit tables",
+        "derivative checks"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "scaling curves",
+        "limit tables"
+      ],
+      "test_classes": [
+        "dimensional, symbolic and limit checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not establish global causal structure or an empirical field."
+    },
+    {
+      "name": "ssz-recursive-closure-pc",
+      "role": "Poincare-Cartan and recursive phase-closure supplement",
+      "status": [
+        "mathematical supplement"
+      ],
+      "inputs": [
+        "canonical one-form",
+        "JIF phase ledger"
+      ],
+      "outputs": [
+        "recursive closure maps",
+        "symplectic diagnostics"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "recursive closure maps",
+        "symplectic diagnostics"
+      ],
+      "test_classes": [
+        "symbolic and area-preservation checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [
+        "Mathematical/software supplement: the projected closure map and reduced action bookkeeping are not a complete rotating spacetime or empirical result."
+      ],
+      "does_not_prove": "Does not turn a reduced phase-space analogy into a complete physical derivation."
+    },
+    {
+      "name": "ssz-research-portal",
+      "role": "public documentation, audit and reproducibility portal",
+      "status": [
+        "canonical"
+      ],
+      "inputs": [
+        "all current locks and repository ledgers"
+      ],
+      "outputs": [
+        "scientific explanations",
+        "catalogues",
+        "audit views"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "scientific explanations",
+        "catalogues"
+      ],
+      "test_classes": [
+        "content, browser, data-integrity and regression checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not independently prove the claims it documents."
+    },
+    {
+      "name": "ssz-schumann",
+      "role": "frequency and electromagnetic comparison laboratory",
+      "status": [
+        "exploratory"
+      ],
+      "inputs": [
+        "frequency records",
+        "declared comparison models"
+      ],
+      "outputs": [
+        "spectra",
+        "correlation tables",
+        "plots"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "spectra",
+        "correlation tables"
+      ],
+      "test_classes": [
+        "numerical and data checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Correlation is not a causal SSZ confirmation."
+    },
+    {
+      "name": "ssz-trajectories",
+      "role": "timelike and null trajectory integration toolkit",
+      "status": [
+        "supporting"
+      ],
+      "inputs": [
+        "static metric",
+        "geodesic constants",
+        "initial conditions"
+      ],
+      "outputs": [
+        "trajectories",
+        "orbit diagnostics",
+        "constraint residuals"
+      ],
+      "upstream": [
+        "P0 Xi branch lock",
+        "current portal canon"
+      ],
+      "downstream": [
+        "trajectories",
+        "orbit diagnostics"
+      ],
+      "test_classes": [
+        "unit/integration, numerical and limit checks"
+      ],
+      "evidence_class": "software and model-internal verification",
+      "conflicts": [],
+      "does_not_prove": "Does not provide rotating spacetime dynamics or independent observational evidence."
+    }
+  ]
+}

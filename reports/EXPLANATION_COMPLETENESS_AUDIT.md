@@ -33,6 +33,18 @@ coverage test rejects generic quantitative explanations and requires substantive
 purpose, reading, meaning, limitation and verification text for every discovered
 formula and canvas.
 
+The portal also ships **36 portal-owned repository role records** in
+`data/repository-scientific-roles.json`. Each record states role, authority
+status, inputs, outputs, upstream/downstream dependencies, test classes,
+evidence class, conflicts and an explicit non-claim boundary. GitHub metadata is
+displayed as metadata only and cannot override those scientific annotations.
+
+Evidence counts are intentionally separated: the catalogue contains **9,300
+catalogued test/result artefacts**; the captured green snapshot contains **1,296
+passing assertions across 12 repositories**; and the intermediate audit contains
+**1,175 executed outcomes** with its own recorded failures and timeout. None is
+presented as 9,300 independent experiments.
+
 ## Trace clarification
 
 The historical one-sided cosine/sine boundary diagnostic is retained only as a

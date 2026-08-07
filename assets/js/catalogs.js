@@ -35,6 +35,8 @@
     const domain = document.getElementById("repository-domain");
     const state = document.getElementById("repository-state");
     const data = await loadJson("data/public-research-repositories.json");
+    const roleData = await loadJson("data/repository-scientific-roles.json");
+    const roles = Object.fromEntries(roleData.roles.map(role => [role.name, role]));
     const render = () => {
       const query = search.value.toLowerCase();
       const selectedDomain = domain.value;
@@ -44,17 +46,21 @@
         (!selectedDomain || repo.domain === selectedDomain) &&
         (!selectedState || (selectedState === "archived") === repo.archived)
       );
-      target.innerHTML = rows.map(repo => `
+      target.innerHTML = rows.map(repo => { const role=roles[repo.name] || {role:"Public research repository",status:["unclassified"],inputs:["portal catalogue"],outputs:["repository artefacts"],upstream:[],downstream:[],test_classes:["metadata review"],evidence_class:"metadata only",conflicts:[],does_not_prove:"The repository description alone does not prove its scientific claims."}; return `
         <article class="catalog-item" data-searchable>
           <h3><a href="${escapeHtml(repo.url)}" target="_blank" rel="noopener">${escapeHtml(repo.name)} <span aria-hidden="true">↗</span></a></h3>
-          <p>${escapeHtml(repo.description || repositoryFallbacks[repo.name] || "Public research repository; detailed role classification is pending source review.")}</p>
+          <p><strong>Scientific role:</strong> ${escapeHtml(role.role)}</p>
+          <p>${escapeHtml(repo.description || repositoryFallbacks[repo.name] || "Public research repository; see the portal-owned role record below.")}</p>
           <div class="catalog-meta">${badge(repo.domain.replaceAll("-", " "))}${badge(repo.archived ? "archived" : "active", repo.archived ? "" : "canonical")}${repo.language ? badge(repo.language) : ""}${repo.topics.slice(0,5).map(x => badge(x)).join("")}</div>
+          <div class="catalog-meta">${role.status.map(value => badge(value, value === "canonical" ? "canonical" : "")).join("")}${badge(role.evidence_class, "tested")}</div>
+          <div class="repository-role-grid"><p><strong>Inputs:</strong> ${escapeHtml(role.inputs.join("; "))}</p><p><strong>Outputs:</strong> ${escapeHtml(role.outputs.join("; "))}</p><p><strong>Tests:</strong> ${escapeHtml(role.test_classes.join("; "))}</p><p><strong>Dependencies:</strong> ${escapeHtml(role.upstream.join("; "))} → ${escapeHtml(role.downstream.join("; "))}</p></div>
           ${(repo.portal_note || repositoryCorrections[repo.name]) ? `<div class="callout warning"><strong>Scientific scope note:</strong> ${escapeHtml(repo.portal_note || repositoryCorrections[repo.name])}</div>` : ""}
+          <details class="repository-boundary"><summary>Evidence and boundary</summary><p><strong>Evidence class:</strong> ${escapeHtml(role.evidence_class)}</p><p><strong>Conflicts / supersession:</strong> ${escapeHtml(role.conflicts.length ? role.conflicts.join("; ") : "No portal conflict currently recorded.")}</p><p><strong>Does not prove:</strong> ${escapeHtml(role.does_not_prove)}</p></details>
           <p><strong>Default branch:</strong> <code>${escapeHtml(repo.default_branch || "unknown")}</code><br>
           <strong>Latest public push:</strong> ${escapeHtml((repo.pushed_at || "unknown").slice(0,10))}<br>
           <strong>Licence metadata:</strong> ${escapeHtml(repo.license || "not declared")} ·
           <strong>Stars / forks:</strong> ${repo.stars} / ${repo.forks}</p>
-        </article>`).join("") || "<p>No repositories match this filter.</p>";
+        </article>`; }).join("") || "<p>No repositories match this filter.</p>";
       document.getElementById("repository-count").textContent = `${rows.length} of ${data.length}`;
     };
     [search, domain, state].forEach(input => input.addEventListener("input", render));

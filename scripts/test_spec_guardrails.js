@@ -3,6 +3,17 @@ const assert = require("node:assert/strict");
 const fs = require("node:fs");
 
 const formulas = JSON.parse(fs.readFileSync("data/formulas.json", "utf8")).formulas;
+const evaluations = JSON.parse(fs.readFileSync("data/evaluations.json", "utf8"));
+assert.equal(evaluations.current_snapshot.passed, 1296);
+assert.equal(evaluations.current_snapshot.repositories, 12);
+assert.equal(evaluations.artifact_catalogue.count, 9300);
+assert.equal(evaluations.artifact_catalogue.unit, "catalogued test/result artefact");
+assert.equal(evaluations.audit_snapshot.executed, 1175);
+const publishable = ["tests.html", "reproducibility.html", "index.html", "evidence.html", "falsification.html", "workbench.html", "glossary.html", "TEST_CATALOG.md"]
+  .map(file => fs.readFileSync(file, "utf8")).join("\n").toLowerCase();
+for (const pattern of [/9300 executed/, /9,300 executed/, /9300 passed/, /9,300 passed/, /all 9300 tests/, /all 9,300 tests/, /complete executed[^.]{0,80}9300/, /complete executed[^.]{0,80}9,300/]) {
+  assert.doesNotMatch(publishable, pattern, `forbidden catalogue/execution conflation: ${pattern}`);
+}
 const byId = Object.fromEntries(formulas.map(item => [item.id, item]));
 assert.match(byId["xi-strong"].latex, /1-\\exp\(-\\varphi\/x\)/);
 assert.match(byId["xi-weak"].latex, /1\/\(2x\)/);
@@ -33,4 +44,19 @@ assert.match(status, /singularity freedom/i);
 const report = fs.readFileSync("reports/EXPLANATION_COMPLETENESS_AUDIT.md", "utf8");
 assert.match(report, /Trace clarification/);
 assert.match(report, /single explanation owner/);
+const roleCatalog = JSON.parse(fs.readFileSync("data/repository-scientific-roles.json", "utf8"));
+assert.equal(roleCatalog.roles.length, 36);
+for (const role of roleCatalog.roles) {
+  for (const field of ["role", "status", "inputs", "outputs", "upstream", "downstream", "test_classes", "evidence_class", "does_not_prove"]) {
+    assert.ok(role[field] && (Array.isArray(role[field]) ? role[field].length : String(role[field]).length), `${role.name}: missing ${field}`);
+  }
+}
+for (const page of fs.readdirSync(".").filter(name => name.endsWith(".html"))) {
+  const source = fs.readFileSync(page, "utf8");
+  assert.match(source, /id="reading-compass"/, `${page}: static reading compass missing`);
+  assert.match(source, /id="foundational-synthesis"/, `${page}: static foundation missing`);
+}
+const siteSource = fs.readFileSync("assets/js/site.js", "utf8");
+assert.match(siteSource, /let section = document\.getElementById\("reading-compass"\)/);
+assert.match(siteSource, /let section = document\.getElementById\("foundational-synthesis"\)/);
 console.log("OK: P0 branch, central asymptotics, JIF guardrails and explanation-registry checks passed");

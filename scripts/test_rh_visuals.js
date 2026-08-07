@@ -30,6 +30,10 @@ assert.match(script, /bind\('rh-zeta-n'/);
 assert.match(script, /toggleZeta/);
 assert.match(script, /ssz-theme-change/);
 assert.match(page, /id="rh-labs-play"/);
+for (const id of ["rh-plane-canvas", "rh-zeta-canvas", "rh-frequency-canvas", "rh-phase-canvas"]) {
+  const canvas = new RegExp(`<canvas id="${id}"[\\s\\S]*?</canvas>[\\s\\S]*?class="visual-explanation"`);
+  assert.match(page, canvas, `${id} must retain an authored explanation box`);
+}
 assert.match(script, /function animateLabs/);
 assert.match(script, /if\(!reduceMotion\)startZeta/);
 assert.match(script, /prefers-reduced-motion/);

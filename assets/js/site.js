@@ -1117,23 +1117,58 @@
   function explainerDetails(kind, title, fields, symbols = []) {
     const details = document.createElement("details");
     details.className = `${kind}-explainer`;
+    details.dataset.explanationKind = kind;
     details.innerHTML = `<summary><span>${kind === "formula" ? "Explain this formula" : kind === "visual" ? "Explain this visual" : "Explain this figure"}</span><strong>${title}</strong></summary><div class="explainer-body">${fields.map(([label,value]) => `<section><h4>${label}</h4><p>${value}</p></section>`).join("")}${symbols.length ? `<section class="explainer-symbols"><h4>Symbols and units</h4><ul>${symbols.map(symbol => `<li>${symbol}</li>`).join("")}</ul></section>` : ""}</div>`;
     return details;
   }
+  function explanationContainer(element) {
+    return element.closest(".rh-visual-grid, .visual-grid, figure, .card, article") || element.parentElement;
+  }
+  function hasManualExplanation(element, kind) {
+    const container = explanationContainer(element);
+    if (!container) return false;
+    const selector = kind === "visual"
+      ? ".visual-explanation, [data-explanation-owner='visual']"
+      : ".formula-explanation, [data-explanation-owner='formula']";
+    return Boolean(container.querySelector(selector));
+  }
+  function hasGeneratedExplanation(element, kind) {
+    const next = element.nextElementSibling;
+    return Boolean(next?.matches(`.${kind}-explainer`) && next.dataset.sourceElement === (element.id || ""));
+  }
+  function hasAuthoredFormulaContext(element) {
+    // Most catalogue cards already contain a carefully written paragraph
+    // immediately after the equation.  Adding a second paragraph that says
+    // the same thing is not extra documentation; it is duplication.  Keep an
+    // automatic explainer only when the formula has no substantive local
+    // explanation of its own.
+    const container = explanationContainer(element);
+    if (!container) return false;
+    if (container.matches("[data-explanation-owner='formula'], .formula-explanation")) return true;
+    let node = element.nextElementSibling;
+    while (node && node !== container) {
+      if (node.matches(".formula-explainer, .math-box, .formula, .display-formula")) break;
+      if (node.matches("p, .formula-note, .where") && node.textContent.replace(/\s+/g, " ").trim().length >= 120) return true;
+      node = node.nextElementSibling;
+    }
+    return false;
+  }
   function decorateFormula(element) {
-    if (element.dataset.explained === "true" || element.closest(".formula-explainer")) return;
+    if (element.dataset.explained === "true" || element.closest(".formula-explainer") || hasManualExplanation(element, "formula") || hasGeneratedExplanation(element, "formula") || hasAuthoredFormulaContext(element)) return;
     element.dataset.explained = "true";
     const text = element.textContent.replace(/\s+/g, " ").trim();
     const heading = headingFor(element);
     const rule = ruleForFormula(text, heading);
     const page = location.pathname.split("/").pop() || "index.html";
-    element.insertAdjacentElement("afterend", explainerDetails("formula", rule.title, [
+    const details = explainerDetails("formula", rule.title, [
       ["Purpose", rule.purpose],
       ["How to read it", rule.reading],
       ["Physical or mathematical meaning", rule.meaning],
       ["Validity and limitation", rule.limit],
       ["Verification status", verificationFor(text, heading, page)]
-    ], symbolsFor(text)));
+    ], symbolsFor(text));
+    details.dataset.sourceElement = element.id || "";
+    element.insertAdjacentElement("afterend", details);
   }
   function ruleForVisual(id, label) {
     const found = visualRules.find(([pattern]) => pattern.test(id));
@@ -1145,7 +1180,10 @@
     };
   }
   function decorateVisual(canvas) {
-    if (canvas.dataset.explained === "true") return;
+    // RH proof canvases with a native `.visual-explanation` already carry the
+    // authoritative, formula-specific explanation.  Do not append a generic
+    // second box (which was the source of the duplicated/misplaced copy).
+    if (canvas.dataset.explained === "true" || hasManualExplanation(canvas, "visual") || hasGeneratedExplanation(canvas, "visual")) return;
     canvas.dataset.explained = "true";
     const rule = ruleForVisual(canvas.id, canvas.getAttribute("aria-label"));
     const scope = canvas.closest("section,article") || canvas.parentElement;
@@ -1155,12 +1193,14 @@
       controls.length ? `Controls: ${controls.join("; ")}.` : "This display has no direct parameter control; use selection, pointer or the accompanying filters where available.",
       buttons.length ? `Actions: ${buttons.join("; ")}.` : ""
     ].filter(Boolean).join(" ");
-    canvas.insertAdjacentElement("afterend", explainerDetails("visual", rule.title, [
+    const details = explainerDetails("visual", rule.title, [
       ["How to use it", `${rule.use} ${interaction}`],
       ["What to watch", "Change one input at a time and connect the moving mark or curve to the adjacent numerical outputs. Use axes, units, colour legend and branch/evidence badges together rather than reading shape alone."],
       ["What the visual means", rule.meaning],
       ["What it does not establish", rule.limit]
-    ]));
+    ]);
+    details.dataset.sourceElement = canvas.id || "";
+    canvas.insertAdjacentElement("afterend", details);
   }
   function decorateFigure(figure) {
     if (figure.dataset.explained === "true") return;

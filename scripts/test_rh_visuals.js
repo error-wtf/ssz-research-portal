@@ -9,6 +9,8 @@ const styles = fs.readFileSync("assets/css/rh-proof-candidate.css", "utf8");
 const gridEmbed = fs.readFileSync("assets/media/zeta_grid_map_animated.html", "utf8");
 const crypto = require("node:crypto");
 const manuscript = fs.readFileSync("assets/docs/RH_PROOF_CANDIDATE_COMPLETE.md");
+assert.ok(fs.existsSync("assets/docs/RH_PROOF_CANDIDATE_REVIEW_GUIDE.md"), "review guide missing");
+assert.ok(fs.existsSync("assets/docs/RH_TRACE_CLOSURE_EXPLANATION.md"), "trace clarification missing");
 for (const asset of [
   "assets/media/dirichlet_partial_sums.gif",
   "assets/media/prime_frequency_spectrum.gif",
@@ -30,6 +32,9 @@ assert.match(script, /bind\('rh-zeta-n'/);
 assert.match(script, /toggleZeta/);
 assert.match(script, /ssz-theme-change/);
 assert.match(page, /id="rh-labs-play"/);
+assert.match(page, /id="reviewer-call"/);
+assert.match(page, /full two-sided Volterra identity/);
+assert.match(page, /negative-control audit/);
 for (const id of ["rh-plane-canvas", "rh-zeta-canvas", "rh-frequency-canvas", "rh-phase-canvas"]) {
   const canvas = new RegExp(`<canvas id="${id}"[\\s\\S]*?</canvas>[\\s\\S]*?class="visual-explanation"`);
   assert.match(page, canvas, `${id} must retain an authored explanation box`);

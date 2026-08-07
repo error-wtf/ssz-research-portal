@@ -1,5 +1,9 @@
 .rh-page .hero { background: radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--gold) 18%, transparent), transparent 34%); }
 .rh-closure-note { margin: 1rem 0 1.35rem; line-height: 1.65; }
+.rh-review-call { margin: 1rem 0 1.5rem; padding: clamp(1.1rem,2.5vw,1.8rem); border: 1px solid color-mix(in srgb, var(--gold) 42%, var(--line)); border-radius: 1rem; background: color-mix(in srgb, var(--surface-2) 72%, var(--surface)); box-shadow: var(--shadow); }
+.rh-review-call h2 { margin: .35rem 0 .55rem; }
+.rh-review-call p { max-width: 100ch; line-height: 1.65; }
+.rh-review-call .button { margin: .35rem .35rem .1rem 0; }
 .rh-status { display:flex; flex-wrap:wrap; gap:.55rem; margin:1rem 0; }
 .rh-status span { padding:.35rem .65rem; border:1px solid var(--line); border-radius:999px; font-size:.78rem; font-weight:750; }
 .rh-status .proved { color:var(--ok); border-color:color-mix(in srgb,var(--ok) 42%,var(--line)); background:color-mix(in srgb,var(--ok) 8%,transparent); }

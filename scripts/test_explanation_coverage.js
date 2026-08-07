@@ -24,6 +24,12 @@ const explainers = sandbox.SSZExplainers;
 assert.equal(typeof explainers.ruleForFormula, "function");
 assert.equal(typeof explainers.ruleForVisual, "function");
 assert.equal(typeof explainers.verificationFor, "function");
+const siteSource = fs.readFileSync("assets/js/site.js", "utf8");
+const formulaRenderer = fs.readFileSync("assets/js/formulas.js", "utf8");
+assert.match(siteSource, /A nearby prose sentence is context, not a complete explanation/);
+assert.doesNotMatch(siteSource, /length\s*>=\s*120\)\s*return true/);
+assert.match(formulaRenderer, /class="formula-explanation formula-explainer"/);
+assert.match(formulaRenderer, /<h4>Purpose<\/h4>/);
 const semanticChecks = [
   ["\\Theta_{\\mathrm{PC}}=p_i dq^i-Hdt", "Poincare–Cartan one-form"],
   ["\\Delta t_{\\rm axle}=4\\mathcal A\\Omega/(c^2-\\Omega^2R^2), \\Delta\\tau_{\\rm det}=\\Delta t_{\\rm axle}/\\gamma, \\Delta\\phi=\\omega_{\\rm det}\\Delta\\tau_{\\rm det}", "proper-time phase"],

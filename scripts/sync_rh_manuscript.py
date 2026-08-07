@@ -28,6 +28,7 @@ def render(markdown: str, digest: str) -> str:
     body: list[str] = []
     paragraph: list[str] = []
     in_math = False
+    math_delimiter: str | None = None
     math_lines: list[str] = []
     list_items: list[str] = []
 
@@ -47,15 +48,17 @@ def render(markdown: str, digest: str) -> str:
         stripped = line.strip()
         if in_math:
             math_lines.append(line)
-            if stripped == r"\]":
+            if stripped == (r"\]" if math_delimiter == r"\[" else "$$"):
                 body.append('<div class="rh-equation">' + "\n".join(math_lines) + "</div>")
                 math_lines.clear()
                 in_math = False
+                math_delimiter = None
             continue
-        if stripped == r"\[":
+        if stripped in {r"\[", "$$"}:
             flush_paragraph()
             close_list()
             in_math = True
+            math_delimiter = stripped
             math_lines = [line]
             continue
         heading = re.match(r"^(#{1,4})\s+(.+)$", line)

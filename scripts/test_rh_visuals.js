@@ -38,7 +38,7 @@ assert.match(siteScript, /Prime-log phase recurrence/);
 assert.equal(page.includes("prime_phase_torus.gif"), false, "non-theme-aware phase GIF remains embedded");
 assert.equal(page.includes("prime_frequency_spectrum.gif"), false, "non-theme-aware frequency GIF remains embedded");
 const manuscriptHash = crypto.createHash("sha256").update(manuscript).digest("hex");
-assert.equal(manuscriptHash, "e6cf8ae93bee70ccb5492879538e480a017d2608fc341d4c27b92601415cb576");
+assert.equal(manuscriptHash, "e53d60fc0b82aae7bb87f69428e1e42a5c404134b1287b1802d5257e26d300b7");
 assert.match(page, new RegExp(`id="canonical-manuscript"[\\s\\S]+data-source-sha256="${manuscriptHash}"`));
 for (const heading of [
   "1. Definitions",

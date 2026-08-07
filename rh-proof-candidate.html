@@ -396,7 +396,7 @@
 </div>
 </section>
 <!-- RH_MANUSCRIPT_START -->
-<section id="canonical-manuscript" class="section rh-canonical-manuscript" data-source-sha256="e6cf8ae93bee70ccb5492879538e480a017d2608fc341d4c27b92601415cb576">
+<section id="canonical-manuscript" class="section rh-canonical-manuscript" data-source-sha256="e53d60fc0b82aae7bb87f69428e1e42a5c404134b1287b1802d5257e26d300b7">
 <div class="section-head">
 <span class="rh-kicker">10 · complete canonical manuscript</span>
 <h2>The full proof-candidate text, synchronized from the source repository</h2>
@@ -404,157 +404,157 @@
 </div>
 <div class="rh-manuscript-provenance">
 <strong>Vendored source SHA-256</strong>
-<code>e6cf8ae93bee70ccb5492879538e480a017d2608fc341d4c27b92601415cb576</code>
+<code>e53d60fc0b82aae7bb87f69428e1e42a5c404134b1287b1802d5257e26d300b7</code>
 <a href="assets/docs/RH_PROOF_CANDIDATE_COMPLETE.md">Open the exact Markdown source</a>
 </div>
 <article class="rh-manuscript-body">
 <h2>Complete RH proof candidate</h2>
 <p><strong>Frozen candidate:</strong> tag <code>rh-candidate-v1</code> (review-branch tip) <strong>Local tag:</strong> <code>rh-candidate-v1</code> <strong>Public status:</strong> <code>CANDIDATE_PROOF_COMPLETE_PENDING_INDEPENDENT_REVIEW</code></p>
-<p>This is the self-contained linear statement of the canonical two-component Weyl--Lyapunov candidate. The older scalar energy draft is not used.</p>
+<p>This is the self-contained linear statement of the canonical two-component Weyl--Lyapunov candidate. The older scalar energy draft is not used. The matrix, certificate, Volterra, and finite Green calculations are written out linearly. The obsolete one-sided cosine/sine trace diagnostic is not used by the canonical matching route.</p>
 <h3>1. Definitions</h3>
 <p>Define the completed zeta function</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 \xi(s)=\frac12s(s-1)\pi^{-s/2}\Gamma(s/2)\zeta(s),
-\]</div>
+$$</div>
 <p>and</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 \Xi(\alpha)=\xi\left(\frac12+i\alpha\right).
-\]</div>
+$$</div>
 <p>Write \(\alpha=\eta+i\beta\), where \(\eta\in\mathbb R\) and \(0&lt;\beta&lt;1/2\). Then</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 s=\frac12+i\alpha=\frac12-\beta+i\eta.
-\]</div>
+$$</div>
 <p>Thus \(\operatorname{Re}s=1/2-\beta\). The source profile is</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 \theta(x)=\Theta_{00}(i e^{2x})>0,
 \qquad \Phi(x)=-\log\theta(x),
-\]</div>
+$$</div>
 <p>with</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 P=\Phi'',
 \qquad T=\frac{2\Phi'\Phi''-\Phi'''}{\Phi''}.
-\]</div>
+$$</div>
 <h3>2. Xi transform and Volterra states</h3>
 <p>The source Mellin formula, under \(t=e^x\), is exactly</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 \Xi(\alpha)=\int_{\mathbb R}e^{i\alpha x}\theta(x)\,dx.
-\]</div>
+$$</div>
 <p>The normalization factor is one. The analytic Gaussian majorant proves absolute convergence for \(|\operatorname{Im}\alpha|&lt;1/2\). Define</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 u_-^\alpha(x)=e^{-i\alpha x}\int_{-\infty}^{x}e^{i\alpha y}\theta(y)\,dy,
-\]</div>
-<div class="rh-equation">\[
+$$</div>
+<div class="rh-equation">$$
 u_+^\alpha(x)=-e^{-i\alpha x}\int_x^{\infty}e^{i\alpha y}\theta(y)\,dy.
-\]</div>
+$$</div>
 <p>Differentiating the convergent integrals gives</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 (u_\pm^\alpha)'+i\alpha u_\pm^\alpha=\theta.
-\]</div>
+$$</div>
 <p>Subtraction gives</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 u_-^\alpha-u_+^\alpha=e^{-i\alpha x}\Xi(\alpha).
-\]</div>
+$$</div>
 <p>Consequently \(\Xi(\alpha)=0\) implies equality of the two states and, by the common differential equation, equality of their derivatives.</p>
 <h3>3. First-order system</h3>
 <p>Set</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 F=-i(u'+\Phi'u),
 \qquad Y=(u,F)^T.
-\]</div>
+$$</div>
 <p>Solving the definition of \(F\) for \(u'\), differentiating \(F\), and using the Volterra equation yields</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 Y'=A_\alpha Y,
 \qquad A_\alpha=
 \begin{pmatrix}-\Phi'&i\\-i\Phi''&-i\alpha\end{pmatrix}.
-\]</div>
+$$</div>
 <p>For locally absolutely continuous \(Y,J\), the product rule gives</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 \frac{d}{dx}(Y^*JY)=Y^*(J'+A_\alpha^*J+J A_\alpha)Y.
-\]</div>
+$$</div>
 <h3>4. Right and reflected-left residuals</h3>
 <p>Let \(q=e^{2\Phi-2\beta x}\). On the right define</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 J_+=q\begin{pmatrix}-1&0\\0&1/P\end{pmatrix}.
-\]</div>
+$$</div>
 <p>Using \(q'=2(\Phi'-\beta)q\) and \(P'=\Phi'''\), direct multiplication gives</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 H_+=J_+'+A_\alpha^*J_++J_+A_\alpha
 =q\operatorname{diag}\left(2\beta,\frac{2\Phi'P-\Phi'''}{P^2}\right)
 =q\operatorname{diag}(2\beta,T/P).
-\]</div>
+$$</div>
 <p>For the left put \(t=-x\), \(P_0=\operatorname{diag}(1,-1)\), and \(Z(t)=P_0Y(-t)\). Evenness gives \(\Phi'(-t)=-\Phi'(t)\) and \(\Phi''(-t)=\Phi''(t)\), so</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 A_-=-P_0A_\alpha(-t)P_0
 =\begin{pmatrix}-\Phi'&i\\-i\Phi''&i\alpha\end{pmatrix}.
-\]</div>
+$$</div>
 <p>Let \(k=k_\beta(t)\) be the compactly supported correction, with \(k(0)=0\) and \(k=0\) beyond its support. Define</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 J_-=q\begin{pmatrix}-1&0\\0&(1+k)/P\end{pmatrix}.
-\]</div>
+$$</div>
 <p>The direct symbolic calculation is</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 H_-=q\begin{pmatrix}
 2\beta&ik\\
 -ik&((1+k)(T-4\beta)+k')/P
 \end{pmatrix}.
-\]</div>
+$$</div>
 <p>Its Schur complement is</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 \operatorname{Schur}(H_-)=\frac{q}{P}G_\beta,
-\]</div>
+$$</div>
 <p>where</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 G_\beta=(1+k_\beta)(T-4\beta)+k_\beta'
 -\frac{P k_\beta^2}{2\beta}.
-\]</div>
+$$</div>
 <p>The compact Arb certificate proves \(0&lt;P&lt;40\) and \(T&gt;500x\) on \([0,1/2]\). The far certificate proves \(P&gt;0\), \(T&gt;2\) for \(x\ge1/2\). The exact rational Sturm certificate proves the two conservative correction polynomials positive on \([0,1/125]\) and \([1/125,1]\). Therefore \(H_+&gt;0\) and \(H_-&gt;0\) on the open half-lines.</p>
 <h3>5. Endpoint and global Green limits</h3>
 <p>For each fixed finite \(|\alpha|\) and \(0&lt;\beta&lt;1/2\), the far certificate gives \(m=8-B_{DR}&gt;1/2\) and \(p_0=\inf P&gt;0\). Convexity gives</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 |u_+(R)|\le\frac{\theta(R)}{\Phi'(R)+\beta},
 \qquad
 |u_-(-R)|\le\frac{\theta(R)}{\Phi'(R)-\beta}.
-\]</div>
+$$</div>
 <p>Since \(m-\beta&gt;0\), the state and second-component bounds imply</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 |M_+(R)|,|M_-(-R)|\le C_{\alpha,\beta}e^{-2\beta R},
-\]</div>
+$$</div>
 <p>with</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 C_{\alpha,\beta}=\frac1{(m-\beta)^2}
  +\frac1{p_0}\left(1+\frac m{m-\beta}
  +\frac{|\alpha|}{m-\beta}\right)^2<\infty.
-\]</div>
+$$</div>
 <p>Hence both endpoint fluxes tend to zero. On finite intervals the oriented identities are</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 M_-(0)-M_-(-R)=E_-(R),
 \qquad M_+(R)-M_+(0)=E_+(R).
-\]</div>
+$$</div>
 <p>Taking \(R\to\infty\) gives</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 E_-=M_-(0),\qquad E_+=-M_+(0),
-\]</div>
+$$</div>
 <p>and therefore</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 M_-(0)-M_+(0)=E_-+E_+.
-\]</div>
+$$</div>
 <h3>6. Strictness, matching, and contradiction</h3>
 <p>Since \(\theta&gt;0\), the equation \(u_+'+i\alpha u_+=\theta\) excludes \(u_+\equiv0\). Continuity gives an open interval on which \(Y_+\ne0\). Because \(H_+&gt;0\) there, \(E_+&gt;0\), hence \(E_-+E_+&gt;0\).</p>
-<p>If \(\Xi(\alpha)=0\), the Volterra difference identity gives \(u_-=u_+\), their derivatives agree, and so do their \(F\)-components. Reflection gives \(Z_-(0)=P_0Y_+(0)\). Since \(k_\beta(0)=0\), direct conjugation gives \(P_0^*J_-(0)P_0=J_+(0)\). Opposite outward normals then give</p>
-<div class="rh-equation">\[
+<p>If \(\Xi(\alpha)=0\), the full two-sided Volterra difference identity gives \(u_-=u_+\) for every \(x\). Both functions solve the same locally absolutely continuous first-order ODE, so their derivatives agree and the definition of \(F\) gives equality of the \(F\)-components. Reflection therefore gives \(Z_-(0)=P_0Y_+(0)\) directly; no one-sided sine-transform inequality is used. Since \(k_\beta(0)=0\), direct conjugation gives \(P_0^*J_-(0)P_0=J_+(0)\). Opposite outward normals then give</p>
+<div class="rh-equation">$$
 M_-(0)-M_+(0)=0.
-\]</div>
+$$</div>
 <p>The global Green identity gives the same quantity as \(E_-+E_+&gt;0\), so</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 0=E_-+E_+>0.
-\]</div>
-<p>Therefore \(\Xi(\alpha)\ne0\) for \(0&lt;\operatorname{Im}\alpha&lt;1/2\).</p>
+$$</div>
+<p>Therefore, subject to the stated analytic identities and certificate hypotheses, \(\Xi(\alpha)\ne0\) for \(0&lt;\operatorname{Im}\alpha&lt;1/2\).</p>
 <h3>7. RH symmetry bridge</h3>
 <p>The completed-zeta functional equation \(\xi(s)=\xi(1-s)\) implies</p>
-<div class="rh-equation">\[
+<div class="rh-equation">$$
 \Xi(-\alpha)=\xi\left(\frac12-i\alpha\right)
 =\xi\left(1-\left(\frac12+i\alpha\right)\right)=\Xi(\alpha).
-\]</div>
+$$</div>
 <p>Nontrivial zeta zeros are the zeros of \(\xi\) in \(0&lt;\operatorname{Re}s&lt;1\); the trivial zeros are separated by the completed factors. The Weyl contradiction excludes the left half of this strip, and evenness excludes the right half. Hence every nontrivial zero has \(\operatorname{Im}\alpha=0\), which is exactly \(\operatorname{Re}s=1/2\).</p>
 <h3>Appendices</h3>
 <p>The exact matrix calculations are implemented in <code>src/hedenmalm/residue_identification.py</code>. The three certificates are:</p>
@@ -563,7 +563,7 @@ M_-(0)-M_+(0)=0.
 <li><code>far_asymptotic_profile.json</code>, SHA-256 <code>acc733efee2765fe2ca3633ab405f02735ef2f2e65ccc88d8ab11b2d8a580de3</code>;</li>
 <li><code>correction_sturm_q_m500_M40.json</code>, SHA-256 <code>6bba83172c4291c688f0337a8aaa0cdc9f3758bdb5b002c76db58e2dc419e9fe</code>.</li>
 </ul>
-<p>Reproduction commands are <code>pytest -q</code> and the certificate commands listed in <code>docs/RIEMANN_ENERGY_PROOF_HANDOVER.md</code>. The manuscript remains a candidate pending independent review; it is not a public claim that RH has been accepted or proved by the mathematical community.</p>
+<p>Reproduction commands are <code>pytest -q</code> and the certificate commands listed in <code>docs/RIEMANN_ENERGY_PROOF_HANDOVER.md</code>. The manuscript remains a proof candidate pending independent review; it is not a public claim that RH has been accepted or independently validated by the mathematical community.</p>
 </article>
 </section>
 <!-- RH_MANUSCRIPT_END -->

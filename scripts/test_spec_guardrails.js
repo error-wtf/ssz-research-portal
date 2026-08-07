@@ -14,6 +14,9 @@ const publishable = ["tests.html", "reproducibility.html", "index.html", "eviden
 for (const pattern of [/9300 executed/, /9,300 executed/, /9300 passed/, /9,300 passed/, /all 9300 tests/, /all 9,300 tests/, /complete executed[^.]{0,80}9300/, /complete executed[^.]{0,80}9,300/]) {
   assert.doesNotMatch(publishable, pattern, `forbidden catalogue/execution conflation: ${pattern}`);
 }
+const testsPage = fs.readFileSync("tests.html", "utf8");
+assert.match(testsPage, /catalogue preserves per-record provenance and status where available/);
+assert.doesNotMatch(testsPage, /complete runner execution establishes per-record outcomes/);
 const byId = Object.fromEntries(formulas.map(item => [item.id, item]));
 assert.match(byId["xi-strong"].latex, /1-\\exp\(-\\varphi\/x\)/);
 assert.match(byId["xi-weak"].latex, /1\/\(2x\)/);
@@ -49,6 +52,11 @@ assert.equal(roleCatalog.roles.length, 36);
 for (const role of roleCatalog.roles) {
   for (const field of ["role", "status", "inputs", "outputs", "upstream", "downstream", "test_classes", "evidence_class", "does_not_prove"]) {
     assert.ok(role[field] && (Array.isArray(role[field]) ? role[field].length : String(role[field]).length), `${role.name}: missing ${field}`);
+  }
+}
+for (const role of roleCatalog.roles) {
+  if (["CALCULATION_OF_NUMBER_PI", "chord-partition", "claudes-cycles", "LOST_EINSTEIN_PAPERS", "Riemann-Zeta-Zero-Finding-Suite"].includes(role.name)) {
+    assert.ok(!role.upstream.some(item => /P0 Xi branch lock|current portal canon/i.test(item)), `${role.name}: mathematical supplement has an unjustified SSZ dependency`);
   }
 }
 for (const page of fs.readdirSync(".").filter(name => name.endsWith(".html"))) {

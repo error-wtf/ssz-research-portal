@@ -18,12 +18,12 @@
         "precision records"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "published mathematical sources",
+        "local numerical fixtures"
       ],
       "downstream": [
         "pi approximations",
-        "plots"
+        "mathematical visual diagnostics"
       ],
       "test_classes": [
         "internal mathematical checks"
@@ -47,12 +47,12 @@
         "visual diagnostics"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "combinatorics definitions",
+        "local partition fixtures"
       ],
       "downstream": [
-        "combinatorial tables",
-        "visual diagnostics"
+        "partition tables",
+        "recurrence/partition visual diagnostics"
       ],
       "test_classes": [
         "symbolic and enumeration checks"
@@ -76,8 +76,8 @@
         "recurrence plots"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "cycle definitions",
+        "local recurrence fixtures"
       ],
       "downstream": [
         "cycle tables",
@@ -105,12 +105,11 @@
         "negative controls"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "candidate claims and falsification fixtures"
       ],
       "downstream": [
         "counterexample records",
-        "negative controls"
+        "negative controls for dependent claims"
       ],
       "test_classes": [
         "unit and logical checks"
@@ -134,8 +133,8 @@
         "exploratory plots"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "archived source material",
+        "historical notes"
       ],
       "downstream": [
         "archived arguments",
@@ -163,8 +162,8 @@
         "comparison tables"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "declared frequency/curvature formulas",
+        "reference-limit fixtures"
       ],
       "downstream": [
         "invariant checks",
@@ -192,8 +191,8 @@
         "validation reports"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "frozen G79/Cygnus inputs",
+        "target-blind comparison protocol"
       ],
       "downstream": [
         "paired residuals",
@@ -221,8 +220,8 @@
         "timing plots"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "astronomical timing inputs",
+        "declared period model"
       ],
       "downstream": [
         "period estimates",
@@ -250,8 +249,8 @@
         "research notes"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "archival documents",
+        "transcription notes"
       ],
       "downstream": [
         "transcriptions",
@@ -279,8 +278,8 @@
         "area-preservation checks"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "symplectic geometry definitions",
+        "local numerical fixtures"
       ],
       "downstream": [
         "phase-space plots",
@@ -307,8 +306,8 @@
         "visualisations"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "pi/cluster datasets",
+        "declared clustering metrics"
       ],
       "downstream": [
         "cluster statistics",
@@ -338,8 +337,9 @@
         "interval/sturm artefacts"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "Riemann-zeta definitions",
+        "zero-search fixtures",
+        "proof-candidate documents"
       ],
       "downstream": [
         "zero-search outputs",
@@ -368,8 +368,8 @@
         "calculation records"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "SSZ-METRIC_COMPLETE",
+        "canonical branch locks"
       ],
       "downstream": [
         "regime values",
@@ -399,8 +399,8 @@
         "diagnostic tables"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "SSZ-METRIC_COMPLETE",
+        "metric coefficients"
       ],
       "downstream": [
         "energy-condition projections",
@@ -428,8 +428,8 @@
         "bootstrap/sign-test outputs"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "frozen mass-projection inputs",
+        "declared comparison protocol"
       ],
       "downstream": [
         "residual summaries",
@@ -457,8 +457,8 @@
         "catalogue checks"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "astronomical catalogue inputs",
+        "starmap schema"
       ],
       "downstream": [
         "starmap products",
@@ -486,8 +486,8 @@
         "educational plots"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "portal-approved concept definitions",
+        "curated visual fixtures"
       ],
       "downstream": [
         "interactive diagrams",
@@ -515,8 +515,9 @@
         "failure/audit inventories"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "public test definitions",
+        "captured runner manifests",
+        "repository locks"
       ],
       "downstream": [
         "run summaries",
@@ -545,8 +546,8 @@
         "audit notes"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "canonical repository sources",
+        "formula and status locks"
       ],
       "downstream": [
         "chapter documentation",
@@ -574,8 +575,8 @@
         "reference notes"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "archived audit inputs",
+        "reference notes"
       ],
       "downstream": [
         "audit inputs",
@@ -603,8 +604,8 @@
         "calculation notes"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "beam/transport definitions",
+        "local fixtures"
       ],
       "downstream": [
         "beam diagrams",
@@ -634,8 +635,8 @@
         "hash manifests"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "ssz-jif-core counted-phase lock",
+        "frozen bounded inputs"
       ],
       "downstream": [
         "bounded predictions",
@@ -665,8 +666,8 @@
         "evidence schema"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "JIF counted-phase definition",
+        "detector ledger schema"
       ],
       "downstream": [
         "phase rates",
@@ -697,8 +698,9 @@
         "scores"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "ssz-jif-core",
+        "frozen observational inputs",
+        "target-blind protocol"
       ],
       "downstream": [
         "forward images",
@@ -727,8 +729,8 @@
         "turning points"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "SSZ-METRIC_COMPLETE",
+        "canonical static metric"
       ],
       "downstream": [
         "geodesics",
@@ -758,8 +760,9 @@
         "residuals"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "ssz-trajectories",
+        "SSZ-METRIC_COMPLETE",
+        "null-geodesic equations"
       ],
       "downstream": [
         "deflection curves",
@@ -787,8 +790,9 @@
         "exploratory residuals"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "ssz-jif-core",
+        "frozen control data",
+        "explicit closure gates"
       ],
       "downstream": [
         "control diagnostics",
@@ -818,11 +822,11 @@
       ],
       "upstream": [
         "P0 Xi branch lock",
-        "current portal canon"
+        "C² branch definitions"
       ],
       "downstream": [
         "metric coefficients",
-        "limits"
+        "limit tables"
       ],
       "test_classes": [
         "symbolic, dimensional, derivative and limit checks"
@@ -848,7 +852,8 @@
       ],
       "upstream": [
         "P0 Xi branch lock",
-        "current portal canon"
+        "C² bridge specification",
+        "canonical metric assumptions"
       ],
       "downstream": [
         "metric, inverse, curvature and geodesic formulas"
@@ -876,8 +881,8 @@
         "publication graphics"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "versioned result artifacts",
+        "figure metadata"
       ],
       "downstream": [
         "plots",
@@ -906,8 +911,8 @@
         "toy comparisons"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "declared phase model",
+        "ssz-jif-core counted-phase semantics where referenced"
       ],
       "downstream": [
         "phase plots",
@@ -938,7 +943,7 @@
       ],
       "upstream": [
         "P0 Xi branch lock",
-        "current portal canon"
+        "normalized-radius definition"
       ],
       "downstream": [
         "scaling curves",
@@ -966,8 +971,8 @@
         "symplectic diagnostics"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "Poincare-Cartan definitions",
+        "local phase-closure fixtures"
       ],
       "downstream": [
         "recursive closure maps",
@@ -997,8 +1002,9 @@
         "audit views"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "canonical SSZ locks",
+        "repository/test catalogues",
+        "evidence ledger"
       ],
       "downstream": [
         "scientific explanations",
@@ -1027,8 +1033,8 @@
         "plots"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "frequency datasets",
+        "declared comparison protocol"
       ],
       "downstream": [
         "spectra",
@@ -1058,8 +1064,9 @@
         "constraint residuals"
       ],
       "upstream": [
-        "P0 Xi branch lock",
-        "current portal canon"
+        "SSZ-METRIC_COMPLETE",
+        "ssz-lagrange",
+        "initial-condition fixtures"
       ],
       "downstream": [
         "trajectories",

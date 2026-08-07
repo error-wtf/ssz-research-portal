@@ -59,4 +59,11 @@ for (const page of fs.readdirSync(".").filter(name => name.endsWith(".html"))) {
 const siteSource = fs.readFileSync("assets/js/site.js", "utf8");
 assert.match(siteSource, /let section = document\.getElementById\("reading-compass"\)/);
 assert.match(siteSource, /let section = document\.getElementById\("foundational-synthesis"\)/);
+assert.doesNotMatch(siteSource, /entries\.some\(\[href\]\s*=>\s*href===here\)\s*\?\s*" open"/, "active page must not force a nav group open");
+assert.match(siteSource, /groups\.filter\(other => other !== group\)/, "navigation must behave as an accordion");
+assert.match(siteSource, /group\.querySelectorAll\("a"\).*group\.removeAttribute\("open"\)/s, "submenu links must close their group");
+for (const page of fs.readdirSync(".").filter(name => name.endsWith(".html"))) {
+  const source = fs.readFileSync(page, "utf8");
+  assert.doesNotMatch(source, /<details\s+class="nav-group"[^>]*\sopen(?:\s|>)/, `${page}: static nav group must start collapsed`);
+}
 console.log("OK: P0 branch, central asymptotics, JIF guardrails and explanation-registry checks passed");

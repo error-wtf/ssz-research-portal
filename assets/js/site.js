@@ -1316,11 +1316,12 @@
   document.addEventListener("DOMContentLoaded", () => {
     const here = location.pathname.split("/").pop() || "index.html";
     const menu = document.querySelector(".nav-links");
+    const toggle = document.querySelector(".menu-toggle");
     if (menu) {
       const link = (href,label) => `<a href="${href}"${here===href?' aria-current="page"':''}>${label}</a>`;
       // Keep all groups collapsed by default. The current page remains marked
       // with aria-current, but opening a group is an explicit user action.
-      const group = (label, entries) => `<details class="nav-group"${entries.some(([href])=>href===here)?" open":""}><summary>${label}</summary><div class="nav-submenu">${entries.map(([href,text])=>link(href,text)).join("")}</div></details>`;
+      const group = (label, entries) => `<details class="nav-group"><summary>${label}</summary><div class="nav-submenu">${entries.map(([href,text])=>link(href,text)).join("")}</div></details>`;
       menu.innerHTML = [
         link("index.html","Overview"),
         group("Foundations", [["theory.html","Theory"],["formulas.html","Formulas"],["metric.html","Metric"],["regimes.html","Regimes"],["weak-field.html","Weak field"],["strong-field.html","Strong field"],["interior-global-structure.html","Interior"]]),
@@ -1329,6 +1330,19 @@
         group("Research map", [["observations.html","Observables"],["papers.html","Papers"],["rh-proof-candidate.html","Riemann-Zeta proof candidate"],["research.html","Research archive"],["repositories.html","Repositories"],["atlas.html","Atlas"],["glossary.html","Glossary"]]),
         `<button class="nav-button reviewer-toggle" data-reviewer-toggle aria-pressed="${root.dataset.reviewer==="true"}">${root.dataset.reviewer==="true"?"Reviewer: ON":"Reviewer: OFF"}</button><button class="nav-button" data-theme-toggle>◐ Theme</button>`
       ].join("");
+      const groups = [...menu.querySelectorAll("details.nav-group")];
+      groups.forEach(group => {
+        group.removeAttribute("open");
+        group.addEventListener("toggle", () => {
+          if (!group.open) return;
+          groups.filter(other => other !== group).forEach(other => other.removeAttribute("open"));
+        });
+        group.querySelectorAll("a").forEach(anchor => anchor.addEventListener("click", () => {
+          group.removeAttribute("open");
+          menu.classList.remove("open");
+          toggle?.setAttribute("aria-expanded", "false");
+        }));
+      });
     }
     const guide = pageGuides[here];
     const hero = document.querySelector("main .hero");
@@ -1366,7 +1380,6 @@
         explanationFrame = requestAnimationFrame(() => decorateExplanations());
       }).observe(document.body, {childList: true, subtree: true});
     }
-    const toggle = document.querySelector(".menu-toggle");
     toggle?.addEventListener("click", () => {
       const open = menu?.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(Boolean(open)));

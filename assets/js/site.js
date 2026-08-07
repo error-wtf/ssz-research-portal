@@ -1333,16 +1333,29 @@
       const groups = [...menu.querySelectorAll("details.nav-group")];
       groups.forEach(group => {
         group.removeAttribute("open");
+        const summary = group.querySelector("summary");
+        summary?.setAttribute("aria-expanded", "false");
         group.addEventListener("toggle", () => {
-          if (!group.open) return;
-          groups.filter(other => other !== group).forEach(other => other.removeAttribute("open"));
+          if (group.open) groups.filter(other => other !== group).forEach(other => other.removeAttribute("open"));
+          summary?.setAttribute("aria-expanded", String(group.open));
         });
         group.querySelectorAll("a").forEach(anchor => anchor.addEventListener("click", () => {
           group.removeAttribute("open");
+          summary?.setAttribute("aria-expanded", "false");
           menu.classList.remove("open");
           toggle?.setAttribute("aria-expanded", "false");
         }));
       });
+      const closeNavigation = () => {
+        groups.forEach(group => { group.removeAttribute("open"); group.querySelector("summary")?.setAttribute("aria-expanded", "false"); });
+        menu.classList.remove("open");
+        toggle?.setAttribute("aria-expanded", "false");
+      };
+      document.addEventListener("click", event => {
+        if (!menu.contains(event.target) && event.target !== toggle) closeNavigation();
+      });
+      document.addEventListener("keydown", event => { if (event.key === "Escape") closeNavigation(); });
+      window.addEventListener("resize", closeNavigation);
     }
     const guide = pageGuides[here];
     const hero = document.querySelector("main .hero");
@@ -1383,6 +1396,7 @@
     toggle?.addEventListener("click", () => {
       const open = menu?.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(Boolean(open)));
+      toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
     });
 
     document.querySelectorAll("[data-theme-toggle]").forEach(button => {

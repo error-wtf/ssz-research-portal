@@ -70,8 +70,17 @@ assert.match(siteSource, /let section = document\.getElementById\("foundational-
 assert.doesNotMatch(siteSource, /entries\.some\(\[href\]\s*=>\s*href===here\)\s*\?\s*" open"/, "active page must not force a nav group open");
 assert.match(siteSource, /groups\.filter\(other => other !== group\)/, "navigation must behave as an accordion");
 assert.match(siteSource, /group\.querySelectorAll\("a"\).*group\.removeAttribute\("open"\)/s, "submenu links must close their group");
+assert.match(siteSource, /event\.key === "Escape"/);
+assert.match(siteSource, /window\.addEventListener\("resize", closeNavigation\)/);
 for (const page of fs.readdirSync(".").filter(name => name.endsWith(".html"))) {
   const source = fs.readFileSync(page, "utf8");
   assert.doesNotMatch(source, /<details\s+class="nav-group"[^>]*\sopen(?:\s|>)/, `${page}: static nav group must start collapsed`);
+  const nav = source.match(/<nav class="site-nav">[\s\S]*?<\/nav>/)?.[0] || "";
+  assert.ok((nav.match(/href="reproducibility\.html">Reproduce/g) || []).length <= 1, `${page}: duplicate Reproduce navigation link`);
 }
+assert.match(fs.readFileSync("repositories.html", "utf8"), /LIGO:[\s\S]*blocked empirical stream[\s\S]*no SSZ-confirmation claim/i);
+const jifNotice = fs.readFileSync("jif.html", "utf8");
+assert.match(jifNotice, /associated papers are in an advanced preparation stage/i);
+assert.doesNotMatch(jifNotice, /THE ASSOCIATED PAPERS ARE ALREADY/i);
+assert.match(fs.readFileSync("rh-proof-candidate.html", "utf8"), /CANDIDATE · INDEPENDENT REVIEW PENDING/);
 console.log("OK: P0 branch, central asymptotics, JIF guardrails and explanation-registry checks passed");

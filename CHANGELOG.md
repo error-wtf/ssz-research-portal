@@ -1,5 +1,17 @@
 # Changelog
 
+# Changelog
+
+## 2026-10-06 — Catalogue refresh, atlas extension and privacy-filter fix
+
+- Refreshed the public repository catalogue from the live GitHub snapshot: 54 public repositories, 40 classified physics/mathematics; added `SSZ_FULL_CLOSURE`, `SSZ-Transport-Bridge`, `SSZ-Spectroscopy-Bridge` and `Sagnac-Reference-Transport` to the physics classification.
+- Extended the local research atlas to 44 mapped repositories with per-repository file/language/test statistics for the four new spectroscopy-layer repositories.
+- Re-ran the local corpus inventory (`SSZ_SOURCE_HOME=/home/error`): 13,900 inventoried files, 12,036 text sources, 6,096 test-related records, 39 mapped local repositories including the spectroscopy bridge.
+- Fixed a privacy-filter defect in `scripts/inventory_files.py`: a ternary bound over the whole marker assignment silently emptied `PRIVATE_MARKERS` whenever `.private-sources` was absent, so JIF/book-marker paths leaked into `files.json`. The defaults now always apply; extra markers are appended only when the file exists. Measured: 137 paths excluded, 0 marker leaks.
+- Extended the inventory roots with `~/SSZ-Spectroscopy-Bridge` (repo lives outside `~/physics` since 2026-10).
+- Replaced the frozen `atlas count == 38` validator assertion with a set-coverage check against the public physics catalogue (archived repos still represented).
+
+
 ## 2026-08-05 — Closure synchronization and count semantics
 
 - Synchronized the Recursive Closure canvas with the two directed partial sums, fixed the explicit `r`/`d` series-key bug, and kept the odd sector at zero before its first shared step.

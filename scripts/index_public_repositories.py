@@ -37,6 +37,8 @@ PHYSICS = {
     "ssz-jif-core", "ssz-jif-forward-lab",
     "ssz-jif-bounded-physical-fusion", "ssz-hilfsdateien",
     "ssz-recursive-closure-pc",
+    "SSZ_FULL_CLOSURE", "SSZ-Transport-Bridge", "SSZ-Spectroscopy-Bridge",
+    "Sagnac-Reference-Transport",
 }
 BOTH = {"chord-partition", "ssz-radial-scaling", "pardon-symplectic-geometry-ssz-lab"}
 P0_NOTES = {

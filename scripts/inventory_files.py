@@ -26,13 +26,18 @@ DEFAULT_PRIVATE_MARKERS = (
     "segmented-spacetime-" + "book",
     "ssz_" + "book_en",
 )
-PRIVATE_MARKERS = DEFAULT_PRIVATE_MARKERS + tuple(
-    line.strip().lower() for line in PRIVATE_MARKERS_FILE.read_text(encoding="utf-8").splitlines()
-    if line.strip() and not line.startswith("#")
-) if PRIVATE_MARKERS_FILE.exists() else ()
+if PRIVATE_MARKERS_FILE.exists():
+    EXTRA_PRIVATE_MARKERS = tuple(
+        line.strip().lower() for line in PRIVATE_MARKERS_FILE.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.startswith("#")
+    )
+else:
+    EXTRA_PRIVATE_MARKERS = ()
+PRIVATE_MARKERS = DEFAULT_PRIVATE_MARKERS + EXTRA_PRIVATE_MARKERS
 ROOTS = [
     HOME / "physics",
     HOME / "rag",
+    HOME / "SSZ-Spectroscopy-Bridge",
 ]
 EXCLUDED_DIRS = {
     ".git", ".hg", ".svn", "node_modules", "venv", ".venv", "__pycache__",
@@ -56,7 +61,12 @@ def public_path(path: Path) -> str:
     try:
         return "physics/" + path.relative_to(HOME / "physics").as_posix()
     except ValueError:
-        return "rag/" + path.relative_to(HOME / "rag").as_posix()
+        pass
+    try:
+        return "spectroscopy-bridge/" + path.relative_to(HOME / "SSZ-Spectroscopy-Bridge").as_posix()
+    except ValueError:
+        pass
+    return "rag/" + path.relative_to(HOME / "rag").as_posix()
 
 
 def repository_for(path: Path) -> str:
@@ -66,9 +76,16 @@ def repository_for(path: Path) -> str:
         candidate = HOME / "physics" / first
         if (candidate / ".git").exists():
             return first
+        # repos migrated into ~/physics/clones/<name> (Oct 2026 layout)
+        if first == "clones" and len(relative.parts) > 1:
+            candidate = HOME / "physics" / "clones" / relative.parts[1]
+            if (candidate / ".git").exists():
+                return relative.parts[1]
         if first == "hilfsdateien" and len(relative.parts) > 2 and relative.parts[1] == "markdowns":
             return relative.parts[2]
         return "SSZ research corpus"
+    if (HOME / "SSZ-Spectroscopy-Bridge") in path.parents:
+        return "SSZ-Spectroscopy-Bridge"
     return "RAG knowledge corpus"
 
 

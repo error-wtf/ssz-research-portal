@@ -47,7 +47,11 @@ def main():
     assert all_public, "public repository catalogue is empty"
     assert research_public, "physics/mathematics catalogue is empty"
     atlas = json.loads((ROOT / "data/physics-atlas.json").read_text(encoding="utf-8"))
-    assert atlas["count"] == 38, "public non-private physics atlas coverage incomplete"
+    assert atlas["count"] == len(atlas["repositories"]), "atlas count mismatch"
+    atlas_names = {item["name"] for item in atlas["repositories"]}
+    physics_public = {item["name"] for item in research_public if item["domain"] == "physics"}
+    missing = physics_public - atlas_names
+    assert not missing, f"public non-private physics atlas coverage incomplete: {sorted(missing)}"
     papers = json.loads((ROOT / "data/papers.json").read_text(encoding="utf-8"))
     observations = json.loads((ROOT / "data/observations.json").read_text(encoding="utf-8"))
     formulas = json.loads((ROOT / "data/formulas.json").read_text(encoding="utf-8"))

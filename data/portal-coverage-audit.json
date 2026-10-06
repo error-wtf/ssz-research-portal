@@ -1,9 +1,21 @@
 {
-  "pages_audited": 24,
-  "repositories_audited": 38,
-  "test_catalog_records": 9300,
-  "page_issue_count": 20,
+  "pages_audited": 27,
+  "repositories_audited": 41,
+  "test_catalog_records": 10569,
+  "page_issue_count": 19,
   "issues": [
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "SSZ-Spectroscopy-Bridge"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "SSZ-Transport-Bridge"
+    },
     {
       "page": "portal",
       "severity": "warning",
@@ -38,7 +50,13 @@
       "page": "portal",
       "severity": "warning",
       "issue": "repository lacks direct public link",
-      "detail": "hilfsdateien"
+      "detail": "SSZ_FULL_CLOSURE"
+    },
+    {
+      "page": "portal",
+      "severity": "warning",
+      "issue": "repository lacks direct public link",
+      "detail": "Sagnac-Reference-Transport"
     },
     {
       "page": "portal",
@@ -68,25 +86,7 @@
       "page": "portal",
       "severity": "warning",
       "issue": "repository only in catalogue/atlas",
-      "detail": "ssz-full-metric"
-    },
-    {
-      "page": "portal",
-      "severity": "warning",
-      "issue": "repository lacks direct public link",
-      "detail": "ssz-full-metric"
-    },
-    {
-      "page": "portal",
-      "severity": "warning",
-      "issue": "repository only in catalogue/atlas",
-      "detail": "ssz-metric-final"
-    },
-    {
-      "page": "portal",
-      "severity": "warning",
-      "issue": "repository lacks direct public link",
-      "detail": "ssz-metric-final"
+      "detail": "ssz-hilfsdateien-private-source"
     },
     {
       "page": "portal",
@@ -115,17 +115,31 @@
     {
       "page": "portal",
       "severity": "warning",
-      "issue": "repository only in catalogue/atlas",
-      "detail": "ssz-theory-readiness"
-    },
-    {
-      "page": "portal",
-      "severity": "warning",
       "issue": "repository lacks direct public link",
-      "detail": "ssz-theory-readiness"
+      "detail": "ssz-research-portal"
     }
   ],
   "repository_coverage": [
+    {
+      "repository": "SSZ-Spectroscopy-Bridge",
+      "public_url": "https://github.com/error-wtf/SSZ-Spectroscopy-Bridge",
+      "content_pages": [
+        "research.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "SSZ-Transport-Bridge",
+      "public_url": "https://github.com/error-wtf/SSZ-Transport-Bridge",
+      "content_pages": [
+        "research.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
     {
       "repository": "CALCULATION_OF_NUMBER_PI",
       "public_url": "https://github.com/error-wtf/CALCULATION_OF_NUMBER_PI",
@@ -152,13 +166,19 @@
       "repository": "Riemann-Zeta-Zero-Finding-Suite",
       "public_url": "https://github.com/error-wtf/Riemann-Zeta-Zero-Finding-Suite",
       "content_pages": [
-        "mathematics.html"
+        "mathematics.html",
+        "recursive-closure.html",
+        "rh-proof-candidate.html"
       ],
       "direct_link_pages": [
-        "mathematics.html"
+        "mathematics.html",
+        "recursive-closure.html",
+        "rh-proof-candidate.html"
       ],
       "interactive_context_pages": [
-        "mathematics.html"
+        "mathematics.html",
+        "recursive-closure.html",
+        "rh-proof-candidate.html"
       ],
       "coverage_status": "interactive"
     },
@@ -198,16 +218,40 @@
       "coverage_status": "interactive"
     },
     {
+      "repository": "SSZ_FULL_CLOSURE",
+      "public_url": "https://github.com/error-wtf/SSZ_FULL_CLOSURE",
+      "content_pages": [
+        "research.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
+      "repository": "Sagnac-Reference-Transport",
+      "public_url": "https://github.com/error-wtf/Sagnac-Reference-Transport",
+      "content_pages": [
+        "research.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
       "repository": "Segmented-Spacetime-Mass-Projection-Unified-Results",
       "public_url": "https://github.com/error-wtf/Segmented-Spacetime-Mass-Projection-Unified-Results",
       "content_pages": [
-        "observations.html"
+        "observations.html",
+        "schrodinger.html"
       ],
       "direct_link_pages": [
-        "observations.html"
+        "observations.html",
+        "schrodinger.html"
       ],
-      "interactive_context_pages": [],
-      "coverage_status": "explained"
+      "interactive_context_pages": [
+        "schrodinger.html"
+      ],
+      "coverage_status": "interactive"
     },
     {
       "repository": "Segmented-Spacetime-Starmaps",
@@ -325,18 +369,6 @@
       "coverage_status": "interactive"
     },
     {
-      "repository": "hilfsdateien",
-      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien.git",
-      "content_pages": [
-        "jif.html"
-      ],
-      "direct_link_pages": [],
-      "interactive_context_pages": [
-        "jif.html"
-      ],
-      "coverage_status": "interactive"
-    },
-    {
       "repository": "pardon-symplectic-geometry-ssz-lab",
       "public_url": "https://github.com/error-wtf/pardon-symplectic-geometry-ssz-lab",
       "content_pages": [
@@ -407,12 +439,68 @@
       "coverage_status": "explained"
     },
     {
-      "repository": "ssz-full-metric",
-      "public_url": "https://github.com/error-wtf/ssz-full-metric.git",
+      "repository": "ssz-hilfsdateien",
+      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-hilfsdateien-private-source",
+      "public_url": "",
       "content_pages": [],
       "direct_link_pages": [],
       "interactive_context_pages": [],
       "coverage_status": "catalogue-only"
+    },
+    {
+      "repository": "ssz-jif-bounded-physical-fusion",
+      "public_url": "https://github.com/error-wtf/ssz-jif-bounded-physical-fusion",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-jif-core",
+      "public_url": "https://github.com/error-wtf/ssz-jif-core",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-jif-forward-lab",
+      "public_url": "https://github.com/error-wtf/ssz-jif-forward-lab",
+      "content_pages": [
+        "jif.html"
+      ],
+      "direct_link_pages": [
+        "jif.html"
+      ],
+      "interactive_context_pages": [
+        "jif.html"
+      ],
+      "coverage_status": "interactive"
     },
     {
       "repository": "ssz-lagrange",
@@ -453,14 +541,6 @@
       ],
       "interactive_context_pages": [],
       "coverage_status": "explained"
-    },
-    {
-      "repository": "ssz-metric-final",
-      "public_url": "https://github.com/error-wtf/ssz-metric-final.git",
-      "content_pages": [],
-      "direct_link_pages": [],
-      "interactive_context_pages": [],
-      "coverage_status": "catalogue-only"
     },
     {
       "repository": "ssz-metric-pure",
@@ -510,6 +590,30 @@
       "coverage_status": "interactive"
     },
     {
+      "repository": "ssz-recursive-closure-pc",
+      "public_url": "https://github.com/error-wtf/ssz-recursive-closure-pc",
+      "content_pages": [
+        "recursive-closure.html"
+      ],
+      "direct_link_pages": [
+        "recursive-closure.html"
+      ],
+      "interactive_context_pages": [
+        "recursive-closure.html"
+      ],
+      "coverage_status": "interactive"
+    },
+    {
+      "repository": "ssz-research-portal",
+      "public_url": "https://github.com/error-wtf/ssz-research-portal",
+      "content_pages": [
+        "reproducibility.html"
+      ],
+      "direct_link_pages": [],
+      "interactive_context_pages": [],
+      "coverage_status": "explained"
+    },
+    {
       "repository": "ssz-schumann",
       "public_url": "https://github.com/error-wtf/ssz-schumann",
       "content_pages": [
@@ -522,70 +626,6 @@
       ],
       "interactive_context_pages": [
         "visual-lab.html"
-      ],
-      "coverage_status": "interactive"
-    },
-    {
-      "repository": "ssz-theory-readiness",
-      "public_url": "https://github.com/error-wtf/ssz-theory-readiness.git",
-      "content_pages": [],
-      "direct_link_pages": [],
-      "interactive_context_pages": [],
-      "coverage_status": "catalogue-only"
-    },
-    {
-      "repository": "ssz-jif-core",
-      "public_url": "https://github.com/error-wtf/ssz-jif-core",
-      "content_pages": [
-        "jif.html"
-      ],
-      "direct_link_pages": [
-        "jif.html"
-      ],
-      "interactive_context_pages": [
-        "jif.html"
-      ],
-      "coverage_status": "interactive"
-    },
-    {
-      "repository": "ssz-jif-forward-lab",
-      "public_url": "https://github.com/error-wtf/ssz-jif-forward-lab",
-      "content_pages": [
-        "jif.html"
-      ],
-      "direct_link_pages": [
-        "jif.html"
-      ],
-      "interactive_context_pages": [
-        "jif.html"
-      ],
-      "coverage_status": "interactive"
-    },
-    {
-      "repository": "ssz-jif-bounded-physical-fusion",
-      "public_url": "https://github.com/error-wtf/ssz-jif-bounded-physical-fusion",
-      "content_pages": [
-        "jif.html"
-      ],
-      "direct_link_pages": [
-        "jif.html"
-      ],
-      "interactive_context_pages": [
-        "jif.html"
-      ],
-      "coverage_status": "interactive"
-    },
-    {
-      "repository": "ssz-hilfsdateien",
-      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien",
-      "content_pages": [
-        "jif.html"
-      ],
-      "direct_link_pages": [
-        "jif.html"
-      ],
-      "interactive_context_pages": [
-        "jif.html"
       ],
       "coverage_status": "interactive"
     },
@@ -605,8 +645,8 @@
     }
   ],
   "coverage_summary": {
-    "interactive": 24,
-    "catalogue-only": 8,
-    "explained": 6
+    "explained": 10,
+    "interactive": 25,
+    "catalogue-only": 6
   }
 }

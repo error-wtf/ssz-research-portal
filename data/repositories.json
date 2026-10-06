@@ -166,8 +166,8 @@
         "Data"
       ],
       "default_branch": "spectroscopy-real-data-20261004",
-      "commit": "30a74d6b92c8",
-      "commit_date": "2026-10-06T15:29:25+02:00",
+      "commit": "b80c8a576d44",
+      "commit_date": "2026-10-06T19:42:06+02:00",
       "release": "working-2026-09-18-integrated-513d09d",
       "status": "local",
       "working_tree": "clean",
@@ -755,8 +755,8 @@
         "Theory"
       ],
       "default_branch": "main",
-      "commit": "b3e6053894f3",
-      "commit_date": "2026-10-06T15:00:20+02:00",
+      "commit": "d37885172c63",
+      "commit_date": "2026-10-06T15:37:44+02:00",
       "release": "no local tag",
       "status": "local",
       "working_tree": "modified",

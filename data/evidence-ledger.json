@@ -521,6 +521,68 @@
       ],
       "falsification_criterion": "A complete public solution must supply a metric, source/dynamics, junction conditions, invariants and causal/geodesic analysis.",
       "last_reviewed": "2026-08-03"
+    },
+    {
+      "id": "SSZ-CLAIM-V4-DOF-001",
+      "title": "V4 negative kinetic channel is a constraint artifact",
+      "statement": "On the ghost-free V4 branch (a1=+0.5, eps=-0.3), the large negative eigenvalue of the full reduced 3x3 kinetic form is a constraint artifact: the negative eigendirection is 100% concentrated in the constraint-eliminated chi(dphi) Lagrange-multiplier channel (v_- sector weight 1.0, v_minus_chi_fraction 0.9999999994), with all constraint pivots healthy (Dh1/DeltaV/pivotA0 nonzero) and rank K = rank G = 3 at every node. The physical (psi,V) subspace remains positive: min lambda(K_phys) = +4.47e-06, and F.4-v2 health PASSES the complete L=6..1000 ladder (min lambda +4.5e-06..+5.2e-09 > 0, lambda ~ 1/L scaling). The earlier 'physical ghost' interpretation is withdrawn for this branch.",
+      "evidence_class": "Numerical certificate",
+      "status": "internally-certified",
+      "canonical_version": "V4-DOF-2026.10",
+      "mathematical_assumptions": [
+        "Ghost-free V4 branch (a1=+0.5, eps=-0.3) with certified profile",
+        "Sec-20.4 constraint architecture: h1/H2/A0 eliminated via Dh1/DeltaV/pivotA0 pivots",
+        "Physical subspace (psi,V); chi = Lagrange-multiplier channel"
+      ],
+      "definitions": [
+        "physical degree of freedom",
+        "constraint artifact",
+        "K_phys principal subblock"
+      ],
+      "formula_ids": [],
+      "domain": "V4 luminal branch, window r in [0.05, 1.35]",
+      "observer_coordinate_scope": "Static spherical chart; areal-radius window; not a coordinate-invariant claim",
+      "source_document": "V4_PHYSICAL_DOF_AUDIT_V1 (+REFINED) and F4_FINITE_L_HEALTH_V4_KPHYS_V2",
+      "source_section": "verdict / k_phys / health",
+      "source_id": "V4-DOF-AUDIT",
+      "source_sha256": "e2bbec4574fcb7d8d022de23cc372ba718555d2fabb95d96055c68f48511bec7",
+      "repository": "error-wtf/SSZ_FULL_CLOSURE",
+      "repository_path": "data/generated/spectral/V4_PHYSICAL_DOF_AUDIT_V1.json",
+      "code_symbol": "run_v4_physical_dof_audit.main",
+      "commit_sha": "b80c8a5",
+      "test_id": "tools/run_v4_physical_dof_audit.py + tools/run_f4_finite_l_kphys_v2.py",
+      "reproduction_command": "python tools/run_v4_physical_dof_audit.py && python tools/run_v4_dof_audit_refined.py && python tools/run_f4_finite_l_kphys_v2.py",
+      "inputs": [
+        {
+          "path": "physics/clones/SSZ_FULL_CLOSURE/data/generated/spectral/V4_PHYSICAL_DOF_AUDIT_V1.json",
+          "sha256": "e2bbec4574fcb7d8d022de23cc372ba718555d2fabb95d96055c68f48511bec7"
+        },
+        {
+          "path": "physics/clones/SSZ_FULL_CLOSURE/data/generated/spectral/V4_PHYSICAL_DOF_AUDIT_V1_REFINED.json",
+          "sha256": "fa2e82cd3fb9cc48476741216927545d3b5afe4d99f1ff50439007bd56f2aea8"
+        },
+        {
+          "path": "physics/clones/SSZ_FULL_CLOSURE/data/generated/spectral/F4_FINITE_L_HEALTH_V4_KPHYS_V2.json",
+          "sha256": "b68a5dd8e50c0387d49b19e99f74efac6958d1a2074a64b94d9b016831c49766"
+        },
+        {
+          "path": "SSZ-Transport-Bridge/artifacts/B8_SECTOR_TRACKING_V4_V1.json",
+          "sha256": "427f5f1bb431a08ba9caeb899432a2f2211f85d400c9c52a5b9d4285100b9e52"
+        }
+      ],
+      "numerical_result": "min lambda(K_phys) = +4.47e-06 (interior window); F.4-v2 all_pass=true over L=6,12,20,42,110,420,1000",
+      "uncertainty": "Not statistical; numerical certificate on the declared window",
+      "dependencies": [],
+      "conflicts": [
+        "physical-ghost-interpretation-withdrawn"
+      ],
+      "does_not_prove": [
+        "Global QNM existence (exterior + coupled Jost/ECS outstanding)",
+        "Empirical confirmation",
+        "Ghost freedom beyond the certified branch and window"
+      ],
+      "falsification_criterion": "If any node of the (psi,V) principal subblock develops min lambda(K_phys) <= 0 on the certified branch and window, or if the chi direction is shown to propagate (nonzero physical speed), this claim is false and the branch is rejected.",
+      "last_reviewed": "2026-10-06"
     }
   ]
 }

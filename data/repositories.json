@@ -1,6 +1,44 @@
 {
-  "count": 38,
+  "count": 41,
   "repositories": [
+    {
+      "name": "SSZ-Spectroscopy-Bridge",
+      "full_name": "error-wtf/SSZ-Spectroscopy-Bridge",
+      "description": "Certified spectral modes + inverse inference + real detector data for SSZ",
+      "public_url": "https://github.com/error-wtf/SSZ-Spectroscopy-Bridge",
+      "local_reference": "physics/SSZ-Spectroscopy-Bridge",
+      "scientific_role": "Data",
+      "tags": [
+        "Data"
+      ],
+      "default_branch": "main",
+      "commit": "536acc7e7f76",
+      "commit_date": "2026-10-06T10:44:36+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 99,
+      "test_related_files": 12
+    },
+    {
+      "name": "SSZ-Transport-Bridge",
+      "full_name": "error-wtf/SSZ-Transport-Bridge",
+      "description": "Generic typed-contract transport bridge: Sagnac reference + SSZ synthetic inversion, zero shared formulas",
+      "public_url": "https://github.com/error-wtf/SSZ-Transport-Bridge",
+      "local_reference": "physics/SSZ-Transport-Bridge",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "a942f9ee294a",
+      "commit_date": "2026-10-05T19:01:06+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 66,
+      "test_related_files": 20
+    },
     {
       "name": "CALCULATION_OF_NUMBER_PI",
       "full_name": "error-wtf/CALCULATION_OF_NUMBER_PI",
@@ -13,12 +51,12 @@
         "Mathematics"
       ],
       "default_branch": "main",
-      "commit": "da3a9ab19b00",
+      "commit": "1c12dcd1fbaa",
       "commit_date": "2025-11-16T12:39:27+01:00",
-      "release": "number_pi",
-      "status": "archived",
-      "working_tree": "modified",
-      "file_count": 123,
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 122,
       "test_related_files": 0
     },
     {
@@ -35,7 +73,7 @@
       "commit": "d278d93f4dc6",
       "commit_date": "2025-11-13T12:36:30+01:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 93,
       "test_related_files": 0
@@ -51,18 +89,18 @@
         "Mathematics"
       ],
       "default_branch": "main",
-      "commit": "6cb723401683",
-      "commit_date": "2025-11-28T23:51:06+01:00",
-      "release": "Rieman_Zeta",
-      "status": "archived",
+      "commit": "2ec72af9b67c",
+      "commit_date": "2026-08-07T23:31:51+02:00",
+      "release": "no local tag",
+      "status": "local",
       "working_tree": "clean",
-      "file_count": 39,
-      "test_related_files": 1
+      "file_count": 206,
+      "test_related_files": 58
     },
     {
       "name": "SEGMENTED_SPACETIME",
       "full_name": "error-wtf/SEGMENTED_SPACETIME",
-      "description": "Keine Beschreibung hinterlegt.",
+      "description": "",
       "public_url": "https://github.com/error-wtf/SEGMENTED_SPACETIME",
       "local_reference": "physics/SEGMENTED_SPACETIME",
       "scientific_role": "Theory",
@@ -73,7 +111,7 @@
       "commit": "3e57145e848e",
       "commit_date": "2025-11-21T05:45:08+01:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 23,
       "test_related_files": 0
@@ -92,16 +130,16 @@
       "default_branch": "main",
       "commit": "72ac721652c1",
       "commit_date": "2026-07-01T02:22:07+02:00",
-      "release": "v1.1.0",
-      "status": "archived",
-      "working_tree": "modified",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
       "file_count": 274,
       "test_related_files": 78
     },
     {
       "name": "SSZ-METRIC_COMPLETE",
       "full_name": "error-wtf/SSZ-METRIC_COMPLETE",
-      "description": "Keine Beschreibung hinterlegt.",
+      "description": "",
       "public_url": "https://github.com/error-wtf/SSZ-METRIC_COMPLETE",
       "local_reference": "physics/SSZ-METRIC_COMPLETE",
       "scientific_role": "Theory",
@@ -111,11 +149,49 @@
       "default_branch": "main",
       "commit": "b7643f437f46",
       "commit_date": "2026-07-28T14:53:17+02:00",
-      "release": "v1.1.0",
-      "status": "archived",
+      "release": "no local tag",
+      "status": "local",
       "working_tree": "clean",
-      "file_count": 290,
+      "file_count": 285,
       "test_related_files": 118
+    },
+    {
+      "name": "SSZ_FULL_CLOSURE",
+      "full_name": "error-wtf/SSZ_FULL_CLOSURE",
+      "description": "SSZ P5 full closure: Horndeski action chain, local spectroscopy, QNM gates, real-data bridge",
+      "public_url": "https://github.com/error-wtf/SSZ_FULL_CLOSURE",
+      "local_reference": "physics/SSZ_FULL_CLOSURE",
+      "scientific_role": "Data",
+      "tags": [
+        "Data"
+      ],
+      "default_branch": "spectroscopy-real-data-20261004",
+      "commit": "2437b6f3cd20",
+      "commit_date": "2026-10-06T02:04:04+02:00",
+      "release": "working-2026-09-18-integrated-513d09d",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 1322,
+      "test_related_files": 263
+    },
+    {
+      "name": "Sagnac-Reference-Transport",
+      "full_name": "error-wtf/Sagnac-Reference-Transport",
+      "description": "Independent Sagnac reference transport validation harness (SSZ-free)",
+      "public_url": "https://github.com/error-wtf/Sagnac-Reference-Transport",
+      "local_reference": "physics/Sagnac-Reference-Transport",
+      "scientific_role": "Tests",
+      "tags": [
+        "Tests"
+      ],
+      "default_branch": "main",
+      "commit": "be74157021b9",
+      "commit_date": "2026-10-05T10:24:38+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 39,
+      "test_related_files": 15
     },
     {
       "name": "Segmented-Spacetime-Mass-Projection-Unified-Results",
@@ -130,13 +206,13 @@
         "Data"
       ],
       "default_branch": "main",
-      "commit": "957827e5bfe3",
-      "commit_date": "2026-07-01T02:22:15+02:00",
-      "release": "v2.0.0-frozen",
-      "status": "archived",
-      "working_tree": "modified",
-      "file_count": 2736,
-      "test_related_files": 1161
+      "commit": "a1a75458bc91",
+      "commit_date": "2026-09-27T09:28:59+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 2712,
+      "test_related_files": 1157
     },
     {
       "name": "Segmented-Spacetime-Starmaps",
@@ -153,7 +229,7 @@
       "commit": "76b329aa4fa2",
       "commit_date": "2026-07-01T02:22:19+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 397,
       "test_related_files": 71
@@ -174,7 +250,7 @@
       "commit": "fcbcad34ae2d",
       "commit_date": "2026-04-29T22:54:19+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 6,
       "test_related_files": 1
@@ -193,7 +269,7 @@
       "commit": "6406b9a9386b",
       "commit_date": "2026-03-05T22:54:02+01:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 8,
       "test_related_files": 1
@@ -213,9 +289,9 @@
       "commit": "9a1febb68ff4",
       "commit_date": "2026-05-28T10:42:24+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
-      "file_count": 143,
+      "file_count": 138,
       "test_related_files": 31
     },
     {
@@ -232,7 +308,7 @@
       "commit": "c485bc878c7a",
       "commit_date": "2025-10-17T04:14:03+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 23,
       "test_related_files": 0
@@ -251,7 +327,7 @@
       "commit": "2bb007e6c888",
       "commit_date": "2026-07-01T00:36:26+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 24,
       "test_related_files": 24
@@ -273,7 +349,7 @@
       "commit": "c4d72c546a46",
       "commit_date": "2026-07-01T02:22:23+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 211,
       "test_related_files": 211
@@ -281,7 +357,7 @@
     {
       "name": "galactic-year",
       "full_name": "error-wtf/galactic-year",
-      "description": "Keine Beschreibung hinterlegt.",
+      "description": "",
       "public_url": "https://github.com/error-wtf/galactic-year",
       "local_reference": "physics/galactic-year",
       "scientific_role": "Research",
@@ -292,29 +368,10 @@
       "commit": "61b7ca569da5",
       "commit_date": "2026-07-01T02:22:27+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 23,
       "test_related_files": 0
-    },
-    {
-      "name": "hilfsdateien",
-      "full_name": "error-wtf/hilfsdateien",
-      "description": "Local SSZ/physics research repository",
-      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien.git",
-      "local_reference": "physics/hilfsdateien",
-      "scientific_role": "Research",
-      "tags": [
-        "Research"
-      ],
-      "default_branch": "main",
-      "commit": "fd3ac98ff221",
-      "commit_date": "2026-07-01T02:29:49+02:00",
-      "release": "no local tag",
-      "status": "local",
-      "working_tree": "modified",
-      "file_count": 2509,
-      "test_related_files": 1144
     },
     {
       "name": "pardon-symplectic-geometry-ssz-lab",
@@ -331,7 +388,7 @@
       "commit": "89ecef894c86",
       "commit_date": "2026-07-25T01:01:37+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 85,
       "test_related_files": 9
@@ -351,7 +408,7 @@
       "commit": "63a11f1072f4",
       "commit_date": "2026-03-31T11:37:33+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 50,
       "test_related_files": 5
@@ -372,10 +429,10 @@
       "commit": "b32d89d2a336",
       "commit_date": "2026-07-01T02:22:31+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
-      "file_count": 173,
-      "test_related_files": 55
+      "file_count": 163,
+      "test_related_files": 46
     },
     {
       "name": "segmented-energy",
@@ -392,15 +449,15 @@
       "commit": "94cb573ca1ce",
       "commit_date": "2026-07-01T02:22:34+02:00",
       "release": "no local tag",
-      "status": "archived",
-      "working_tree": "modified",
+      "status": "local",
+      "working_tree": "clean",
       "file_count": 52,
       "test_related_files": 8
     },
     {
       "name": "ssz-all-tests",
       "full_name": "error-wtf/ssz-all-tests",
-      "description": "Keine Beschreibung hinterlegt.",
+      "description": "",
       "public_url": "https://github.com/error-wtf/ssz-all-tests",
       "local_reference": "physics/ssz-all-tests",
       "scientific_role": "Tests",
@@ -411,8 +468,8 @@
       "commit": "ed5359f15de3",
       "commit_date": "2026-07-01T02:22:38+02:00",
       "release": "no local tag",
-      "status": "archived",
-      "working_tree": "modified",
+      "status": "local",
+      "working_tree": "clean",
       "file_count": 450,
       "test_related_files": 450
     },
@@ -432,29 +489,105 @@
       "commit": "b2bac976a75d",
       "commit_date": "2026-07-01T02:22:42+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 194,
       "test_related_files": 20
     },
     {
-      "name": "ssz-full-metric",
-      "full_name": "error-wtf/ssz-full-metric",
-      "description": "Local SSZ/physics research repository",
-      "public_url": "https://github.com/error-wtf/ssz-full-metric.git",
-      "local_reference": "physics/ssz-full-metric",
-      "scientific_role": "Theory",
+      "name": "ssz-hilfsdateien",
+      "full_name": "error-wtf/ssz-hilfsdateien",
+      "description": "Curated SSZ and JIF research companion, formulas, audits, and indexes.",
+      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien",
+      "local_reference": "physics/ssz-hilfsdateien",
+      "scientific_role": "Research",
       "tags": [
-        "Theory"
+        "Research"
       ],
-      "default_branch": "master",
-      "commit": "1a7d27843da7",
-      "commit_date": "2026-07-01T02:22:47+02:00",
+      "default_branch": "main",
+      "commit": "bfd3e28801d9",
+      "commit_date": "2026-08-05T09:09:10+02:00",
       "release": "no local tag",
       "status": "local",
       "working_tree": "clean",
-      "file_count": 142,
-      "test_related_files": 19
+      "file_count": 2294,
+      "test_related_files": 1084
+    },
+    {
+      "name": "ssz-hilfsdateien-private-source",
+      "full_name": "error-wtf/ssz-hilfsdateien-private-source",
+      "description": "Local SSZ/physics research repository",
+      "public_url": "",
+      "local_reference": "physics/ssz-hilfsdateien-private-source",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "a2bd16d27ab7",
+      "commit_date": "2026-07-01T02:29:49+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 2508,
+      "test_related_files": 1144
+    },
+    {
+      "name": "ssz-jif-bounded-physical-fusion",
+      "full_name": "error-wtf/ssz-jif-bounded-physical-fusion",
+      "description": "Bounded, anti-circular burst-to-radio physical fusion research snapshot.",
+      "public_url": "https://github.com/error-wtf/ssz-jif-bounded-physical-fusion",
+      "local_reference": "physics/ssz-jif-bounded-physical-fusion",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "a47538a016c1",
+      "commit_date": "2026-08-05T09:07:23+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 0,
+      "test_related_files": 0
+    },
+    {
+      "name": "ssz-jif-core",
+      "full_name": "error-wtf/ssz-jif-core",
+      "description": "Reference implementation of counted phase in the SSZ research framework.",
+      "public_url": "https://github.com/error-wtf/ssz-jif-core",
+      "local_reference": "physics/ssz-jif-core",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "856d46b97eaf",
+      "commit_date": "2026-08-05T09:07:23+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 0,
+      "test_related_files": 0
+    },
+    {
+      "name": "ssz-jif-forward-lab",
+      "full_name": "error-wtf/ssz-jif-forward-lab",
+      "description": "Anti-circular SSZ/JIF forward models and astrophysical diagnostics.",
+      "public_url": "https://github.com/error-wtf/ssz-jif-forward-lab",
+      "local_reference": "physics/ssz-jif-forward-lab",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "90eb4eb594ca",
+      "commit_date": "2026-08-05T09:07:23+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 0,
+      "test_related_files": 0
     },
     {
       "name": "ssz-lagrange",
@@ -470,7 +603,7 @@
       "commit": "119cc2a4bd64",
       "commit_date": "2026-07-01T00:36:36+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 19,
       "test_related_files": 1
@@ -490,8 +623,8 @@
       "commit": "86130b5a81a7",
       "commit_date": "2026-07-01T02:22:51+02:00",
       "release": "no local tag",
-      "status": "archived",
-      "working_tree": "modified",
+      "status": "local",
+      "working_tree": "clean",
       "file_count": 275,
       "test_related_files": 52
     },
@@ -507,32 +640,13 @@
         "Mathematics"
       ],
       "default_branch": "main",
-      "commit": "85f366487721",
+      "commit": "bd61b1eed444",
       "commit_date": "2026-07-01T02:22:55+02:00",
       "release": "gw240925-pipeline-freeze-v1",
-      "status": "archived",
-      "working_tree": "modified",
-      "file_count": 454,
-      "test_related_files": 454
-    },
-    {
-      "name": "ssz-metric-final",
-      "full_name": "error-wtf/ssz-metric-final",
-      "description": "Local SSZ/physics research repository",
-      "public_url": "https://github.com/error-wtf/ssz-metric-final.git",
-      "local_reference": "physics/ssz-metric-final",
-      "scientific_role": "Theory",
-      "tags": [
-        "Theory"
-      ],
-      "default_branch": "master",
-      "commit": "ab006fd7322d",
-      "commit_date": "2026-07-01T02:22:59+02:00",
-      "release": "v1.0.0",
       "status": "local",
       "working_tree": "clean",
-      "file_count": 146,
-      "test_related_files": 31
+      "file_count": 454,
+      "test_related_files": 454
     },
     {
       "name": "ssz-metric-pure",
@@ -548,7 +662,7 @@
       "commit": "293c7c1549fb",
       "commit_date": "2026-07-01T02:23:03+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 122,
       "test_related_files": 22
@@ -568,8 +682,8 @@
       "commit": "e5319d16f343",
       "commit_date": "2026-07-01T02:01:34+02:00",
       "release": "no local tag",
-      "status": "archived",
-      "working_tree": "modified",
+      "status": "local",
+      "working_tree": "clean",
       "file_count": 692,
       "test_related_files": 254
     },
@@ -587,9 +701,9 @@
       "commit": "e068fe6d14d5",
       "commit_date": "2026-07-01T02:23:07+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
-      "file_count": 137,
+      "file_count": 135,
       "test_related_files": 24
     },
     {
@@ -606,10 +720,48 @@
       "commit": "83d58964238a",
       "commit_date": "2026-05-13T15:33:00+02:00",
       "release": "no local tag",
-      "status": "archived",
-      "working_tree": "modified",
+      "status": "local",
+      "working_tree": "clean",
       "file_count": 21,
       "test_related_files": 10
+    },
+    {
+      "name": "ssz-recursive-closure-pc",
+      "full_name": "error-wtf/ssz-recursive-closure-pc",
+      "description": "Recursive closure map and reduced Poincare-Cartan reconstruction for the SSZ/JIF research programme",
+      "public_url": "https://github.com/error-wtf/ssz-recursive-closure-pc",
+      "local_reference": "physics/ssz-recursive-closure-pc",
+      "scientific_role": "Research",
+      "tags": [
+        "Research"
+      ],
+      "default_branch": "main",
+      "commit": "27c11e408c39",
+      "commit_date": "2026-08-05T17:24:33+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "clean",
+      "file_count": 5,
+      "test_related_files": 1
+    },
+    {
+      "name": "ssz-research-portal",
+      "full_name": "error-wtf/ssz-research-portal",
+      "description": "Comprehensive interactive research portal for Segmented Spacetime, SSZ and JIF",
+      "public_url": "https://github.com/error-wtf/ssz-research-portal",
+      "local_reference": "physics/ssz-research-portal",
+      "scientific_role": "Theory",
+      "tags": [
+        "Theory"
+      ],
+      "default_branch": "main",
+      "commit": "72c8b196ae85",
+      "commit_date": "2026-10-06T09:28:46+02:00",
+      "release": "no local tag",
+      "status": "local",
+      "working_tree": "modified",
+      "file_count": 142,
+      "test_related_files": 27
     },
     {
       "name": "ssz-schumann",
@@ -626,97 +778,10 @@
       "commit": "6172213c7333",
       "commit_date": "2026-07-01T02:23:11+02:00",
       "release": "no local tag",
-      "status": "archived",
-      "working_tree": "clean",
-      "file_count": 220,
-      "test_related_files": 37
-    },
-    {
-      "name": "ssz-theory-readiness",
-      "full_name": "error-wtf/ssz-theory-readiness",
-      "description": "Local SSZ/physics research repository",
-      "public_url": "https://github.com/error-wtf/ssz-theory-readiness.git",
-      "local_reference": "physics/ssz-theory-readiness",
-      "scientific_role": "Theory",
-      "tags": [
-        "Theory"
-      ],
-      "default_branch": "master",
-      "commit": "d85ffc0ec19a",
-      "commit_date": "2026-07-27T04:55:15+02:00",
-      "release": "no local tag",
       "status": "local",
       "working_tree": "clean",
-      "file_count": 32,
-      "test_related_files": 7
-    },
-    {
-      "name": "ssz-jif-core",
-      "full_name": "error-wtf/ssz-jif-core",
-      "description": "Reference implementation of counted phase in the SSZ research framework.",
-      "public_url": "https://github.com/error-wtf/ssz-jif-core",
-      "local_reference": "physics/ssz-jif-core",
-      "scientific_role": "Theory, Tests, Documentation",
-      "tags": ["Theory", "Tests", "Documentation"],
-      "default_branch": "main",
-      "commit": "856d46b97eaf",
-      "commit_date": "2026-08-05T09:07:23+02:00",
-      "release": "archived public snapshot",
-      "status": "archived",
-      "working_tree": "clean public snapshot",
-      "file_count": 330,
-      "test_related_files": 66
-    },
-    {
-      "name": "ssz-jif-forward-lab",
-      "full_name": "error-wtf/ssz-jif-forward-lab",
-      "description": "Anti-circular SSZ/JIF forward models and astrophysical diagnostics.",
-      "public_url": "https://github.com/error-wtf/ssz-jif-forward-lab",
-      "local_reference": "physics/ssz-jif-forward-lab",
-      "scientific_role": "Tests, Data, Simulation",
-      "tags": ["Tests", "Data", "Simulation"],
-      "default_branch": "main",
-      "commit": "90eb4eb594ca",
-      "commit_date": "2026-08-05T09:07:23+02:00",
-      "release": "archived public snapshot",
-      "status": "archived",
-      "working_tree": "clean public snapshot",
-      "file_count": 2255,
-      "test_related_files": 81
-    },
-    {
-      "name": "ssz-jif-bounded-physical-fusion",
-      "full_name": "error-wtf/ssz-jif-bounded-physical-fusion",
-      "description": "Bounded, anti-circular burst-to-radio physical fusion research snapshot.",
-      "public_url": "https://github.com/error-wtf/ssz-jif-bounded-physical-fusion",
-      "local_reference": "JIF/ssz-jif-bounded-physical-fusion",
-      "scientific_role": "Tests, Data, Simulation",
-      "tags": ["Tests", "Data", "Simulation"],
-      "default_branch": "main",
-      "commit": "a47538a016c1",
-      "commit_date": "2026-08-05T09:07:23+02:00",
-      "release": "archived public snapshot",
-      "status": "archived",
-      "working_tree": "clean public snapshot",
-      "file_count": 1890,
-      "test_related_files": 43
-    },
-    {
-      "name": "ssz-hilfsdateien",
-      "full_name": "error-wtf/ssz-hilfsdateien",
-      "description": "Curated SSZ and JIF research companion, formulas, audits, and indexes.",
-      "public_url": "https://github.com/error-wtf/ssz-hilfsdateien",
-      "local_reference": "physics/hilfsdateien",
-      "scientific_role": "Documentation, Research",
-      "tags": ["Documentation", "Research"],
-      "default_branch": "main",
-      "commit": "bfd3e28801d9",
-      "commit_date": "2026-08-05T09:09:10+02:00",
-      "release": "archived public snapshot",
-      "status": "archived",
-      "working_tree": "clean public snapshot",
-      "file_count": 2305,
-      "test_related_files": 24
+      "file_count": 218,
+      "test_related_files": 37
     },
     {
       "name": "ssz-trajectories",
@@ -733,7 +798,7 @@
       "commit": "b8e6a0c25453",
       "commit_date": "2026-07-01T00:36:46+02:00",
       "release": "no local tag",
-      "status": "archived",
+      "status": "local",
       "working_tree": "clean",
       "file_count": 22,
       "test_related_files": 7

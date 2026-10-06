@@ -2562,7 +2562,7 @@
   },
   {
    "name": "SSZ-Spectroscopy-Bridge",
-   "summary": "Certified spectral modes + inverse inference + real detector data: gates G150-G160 (Leaver continued-fraction gold standard, time-domain pencil, multi-width ensemble, waveform closure).",
+   "summary": "Certified spectral modes + inverse inference + real detector data: gates G150-G184 (Leaver continued-fraction gold standard, certified mode catalogue, waveform closure, blind recovery, GWOSC GW150914, NICER MAXI J1820+070 20-ObsID timing chain with injection control).",
    "domain": "physics",
    "roles": [
     "Simulation",
@@ -2572,11 +2572,11 @@
    "public_url": "https://github.com/error-wtf/SSZ-Spectroscopy-Bridge",
    "archived": false,
    "default_branch": "main",
-   "commit": "0f954b890d2d",
+   "commit": "536acc7e7f76",
    "counts": {
-    "files": 44,
+    "files": 71,
     "bytes": 269702,
-    "tests": 9,
+    "tests": 6,
     "documents": 4,
     "images": 0,
     "code": 16

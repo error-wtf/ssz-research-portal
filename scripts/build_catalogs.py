@@ -64,15 +64,27 @@ def classify_repo(name: str, description: str) -> list[str]:
     return tags or ["Research"]
 
 
+def _iter_local_repos():
+    seen: set[str] = set()
+    for base in (PHYSICS, PHYSICS / "clones"):
+        if not base.is_dir():
+            continue
+        for p in sorted(base.iterdir()):
+            if (
+                (p / ".git").exists()
+                and p.name not in seen
+                and not any(marker in p.name.lower() for marker in PRIVATE_MARKERS)
+            ):
+                seen.add(p.name)
+                yield p
+
+
 def build_repositories() -> list[dict]:
     public = public_repo_rows()
     counts = Counter(x["repository"] for x in FILES)
     test_counts = Counter(x["repository"] for x in FILES if x["test_related"])
     repos = []
-    for repo in sorted(
-        p for p in PHYSICS.iterdir()
-        if (p / ".git").exists() and not any(marker in p.name.lower() for marker in PRIVATE_MARKERS)
-    ):
+    for repo in _iter_local_repos():
         remote = git(repo, "remote", "get-url", "origin")
         safe_remote = remote if remote.startswith("https://github.com/") else ""
         entry = public.get(repo.name.lower(), {})

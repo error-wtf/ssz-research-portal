@@ -12,13 +12,13 @@
         "Data"
       ],
       "default_branch": "main",
-      "commit": "536acc7e7f76",
-      "commit_date": "2026-10-06T10:44:36+02:00",
+      "commit": "ad8bfaef24fe",
+      "commit_date": "2026-10-06T14:52:15+02:00",
       "release": "no local tag",
       "status": "local",
       "working_tree": "clean",
-      "file_count": 99,
-      "test_related_files": 12
+      "file_count": 106,
+      "test_related_files": 13
     },
     {
       "name": "SSZ-Transport-Bridge",
@@ -166,12 +166,12 @@
         "Data"
       ],
       "default_branch": "spectroscopy-real-data-20261004",
-      "commit": "2437b6f3cd20",
-      "commit_date": "2026-10-06T02:04:04+02:00",
+      "commit": "40e7d34aef65",
+      "commit_date": "2026-10-06T14:33:21+02:00",
       "release": "working-2026-09-18-integrated-513d09d",
       "status": "local",
       "working_tree": "clean",
-      "file_count": 1322,
+      "file_count": 1335,
       "test_related_files": 263
     },
     {
@@ -755,8 +755,8 @@
         "Theory"
       ],
       "default_branch": "main",
-      "commit": "72c8b196ae85",
-      "commit_date": "2026-10-06T09:28:46+02:00",
+      "commit": "28ebf941bc14",
+      "commit_date": "2026-10-06T11:02:02+02:00",
       "release": "no local tag",
       "status": "local",
       "working_tree": "modified",

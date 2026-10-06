@@ -2572,12 +2572,12 @@
    "public_url": "https://github.com/error-wtf/SSZ-Spectroscopy-Bridge",
    "archived": false,
    "default_branch": "main",
-   "commit": "536acc7e7f76",
+   "commit": "ad8bfaef24fe",
    "counts": {
-    "files": 71,
+    "files": 80,
     "bytes": 269702,
-    "tests": 6,
-    "documents": 4,
+    "tests": 7,
+    "documents": 5,
     "images": 0,
     "code": 16
    },

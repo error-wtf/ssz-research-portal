@@ -1,5 +1,5 @@
 {
-  "count": 10567,
+  "count": 10569,
   "tests": [
     {
       "repository": "SSZ-Transport-Bridge",
@@ -764,6 +764,21 @@
       "file": "physics/SSZ-Transport-Bridge/tests/test_ssz_closure_backend.py",
       "command": "pytest SSZ-Transport-Bridge/tests/test_ssz_closure_backend.py -q",
       "meaning": "Checks an implemented aspect of “Tests and validation”.",
+      "does_not_prove": "A software test is not empirical confirmation by nature."
+    },
+    {
+      "repository": "SSZ research corpus",
+      "test_name": "frequency-curvature-validation",
+      "category": "Unit/integration test",
+      "quantity": "Metric and geometry",
+      "result": {
+        "PASS": 2
+      },
+      "status": "catalogued",
+      "tolerance": "from implementation/fixture",
+      "file": "physics/SSZ_REPOS/repos/frequency-curvature-validation.md",
+      "command": "see result artefact",
+      "meaning": "Checks an implemented aspect of “Metric and geometry”.",
       "does_not_prove": "A software test is not empirical confirmation by nature."
     },
     {
@@ -15304,6 +15319,23 @@
       "file": "physics/clones/SSZ-Spectroscopy-Bridge/tests/unit/test_ssz_axial_symbolic.py",
       "command": "pytest clones/SSZ-Spectroscopy-Bridge/tests/unit/test_ssz_axial_symbolic.py -q",
       "meaning": "Checks an implemented aspect of “Metric and geometry”.",
+      "does_not_prove": "A software test is not empirical confirmation by nature."
+    },
+    {
+      "repository": "SSZ-Spectroscopy-Bridge",
+      "test_name": "test_registry_guard_controls",
+      "category": "Unit/integration test",
+      "quantity": "Tests and validation",
+      "result": {
+        "FAIL": 2,
+        "FAILED": 1,
+        "PASS": 1
+      },
+      "status": "catalogued",
+      "tolerance": "from implementation/fixture",
+      "file": "physics/clones/SSZ-Spectroscopy-Bridge/tools/test_registry_guard_controls.py",
+      "command": "pytest clones/SSZ-Spectroscopy-Bridge/tools/test_registry_guard_controls.py -q",
+      "meaning": "Checks an implemented aspect of “Tests and validation”.",
       "does_not_prove": "A software test is not empirical confirmation by nature."
     },
     {
